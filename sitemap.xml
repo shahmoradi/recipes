@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc></loc>
+    </url>
+    
+    
+    <url>
+        <loc>/404</loc>
+    </url>
+    
+    <url>
+        <loc>/about/index.html</loc>
+    </url>
+    
+    <url>
+        <loc>/categories/index.html</loc>
+    </url>
+    
+    <url>
+        <loc>/feed.xml</loc>
+    </url>
+    
+    <url>
+        <loc>/filtertags</loc>
+    </url>
+    
+    <url>
+        <loc>/highlights/</loc>
+    </url>
+    
+    <url>
+        <loc>/</loc>
+    </url>
+    
+    <url>
+        <loc>/links.jsonp</loc>
+    </url>
+    
+    <url>
+        <loc>/assets/js/lunr-tags.js</loc>
+    </url>
+    
+    <url>
+        <loc>/nojs</loc>
+    </url>
+    
+    <url>
+        <loc>/search.json</loc>
+    </url>
+    
+    <url>
+        <loc>/sitemap.xml</loc>
+    </url>
+    
+    <url>
+        <loc>/tags/index.html</loc>
+    </url>
+    
+    <url>
+        <loc>/page2/</loc>
+    </url>
+    
+
+    
+    <url>
+        <loc>/programming/version-control-using-git-github/version-control-using-git-github</loc>
+    </url>
+    
+    <url>
+        <loc>/programming/values-variables-types-syntax-error/values-variables-types-syntax-error</loc>
+    </url>
+    
+    <url>
+        <loc>/programming/triangle-area/triangle-area</loc>
+    </url>
+    
+    <url>
+        <loc>/programming/time-to-cook-frozen-egg/time-to-cook-frozen-egg</loc>
+    </url>
+    
+    <url>
+        <loc>/programming/python-variable-aliasing-copying/python-variable-aliasing-copying</loc>
+    </url>
+    
+    <url>
+        <loc>/programming/python-single-line-input-string-manipulation/python-single-line-input-string-manipulation</loc>
+    </url>
+    
+    <url>
+        <loc>/programming/python-script-full-of-syntax-errors/python-script-full-of-syntax-errors</loc>
+    </url>
+    
+    <url>
+        <loc>/programming/python-script-full-of-errors/python-script-full-of-errors</loc>
+    </url>
+    
+    <url>
+        <loc>/programming/python-dictionary-of-class-members/python-dictionary-of-class-members</loc>
+    </url>
+    
+    <url>
+        <loc>/programming/python-call-script-from-bash/python-call-script-from-bash</loc>
+    </url>
+    
+    <url>
+        <loc>/programming/polar-cartesian-coordinates-conversion/polar-cartesian-coordinates-conversion</loc>
+    </url>
+    
+    <url>
+        <loc>/programming/operator-precedence/operator-precedence</loc>
+    </url>
+    
+    <url>
+        <loc>/programming/matrix-initialization/matrix-initialization</loc>
+    </url>
+    
+    <url>
+        <loc>/programming/matlab-working-directory/matlab-working-directory</loc>
+    </url>
+    
+    <url>
+        <loc>/programming/matlab-script-full-of-errors/matlab-script-full-of-errors</loc>
+    </url>
+    
+    <url>
+        <loc>/programming/isprime/isprime</loc>
+    </url>
+    
+    <url>
+        <loc>/programming/integer-overflow/integer-overflow</loc>
+    </url>
+    
+    <url>
+        <loc>/programming/implementing-gaussian-function/implementing-gaussian-function</loc>
+    </url>
+    
+    <url>
+        <loc>/programming/github-readme-webpage/github-readme-webpage</loc>
+    </url>
+    
+    <url>
+        <loc>/programming/function-generators/function-generators</loc>
+    </url>
+    
+    <url>
+        <loc>/programming/fibonacci-sequence-via-recursive-function-calls/fibonacci-sequence-via-recursive-function-calls</loc>
+    </url>
+    
+    <url>
+        <loc>/programming/calculating-directory-size/calculating-directory-size</loc>
+    </url>
+    
+    <url>
+        <loc>/programming/branching-pythonic-way/branching-pythonic-way</loc>
+    </url>
+    
+</urlset>

@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="utf-8">
+<title>VERSION-CONTROL USING GIT AND GITHUB &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<meta name="description" content="CDSLab Recipes">
+<meta name="keywords" content="VCS, git, GitHub, version control system, project, markdown, git branch">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/logo.png">
+<meta name="twitter:title" content="Version-control using Git and GitHub">
+<meta name="twitter:description" content="CDSLab Recipes">
+<meta name="twitter:creator" content="@AmirShahmoradi">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Version-control using Git and GitHub">
+<meta property="og:description" content="CDSLab Recipes">
+<meta property="og:url" content="/programming/version-control-using-git-github/version-control-using-git-github">
+<meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
+<meta property="og:image" content="/images/">
+
+
+
+
+
+<link rel="canonical" href="/programming/version-control-using-git-github/version-control-using-git-github">
+<!-- <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/assets/css/vendor/font-awesome.min.css">
+<link rel="stylesheet" href="/assets/css/vendor/normalize.css">
+<link rel="stylesheet" href="/assets/css/vendor/nprogress.css">
+<link rel="stylesheet" href="/assets/css/vendor/foundation.min.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/post.css">
+
+<!--Mathjax LaTeX engine-->
+
+<style TYPE="text/css">
+code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+</style>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<!-- Icons -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!--
+<link rel="shortcut icon" href="/favicon.png">
+-->
+
+
+<!-- prism
+<link href="/assets/css/prismCoy.css" rel="stylesheet" />
+<link href="/assets/css/prismDefault.css" rel="stylesheet" />
+<link href="/assets/css/prismTwilight.css" rel="stylesheet" />
+-->
+<link href="/assets/css/prismOkaidia.css" rel="stylesheet" />
+<link href="/assets/css/alert.css" rel="stylesheet" />
+
+<!--header anchor links-->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    
+</head>
+<body class="post-template" itemscope itemtype="https://schema.org/WebPage">
+
+
+
+    <main id="notepad-post-container-simple" class="notepad-post-container-simple" role="main">
+        <header class="notepad-post-header-simple">
+            <div class="notepad-post-menu-header-simple">
+
+                <a class="notepad-blog-logo" href=https://www.cdslab.org target="_blank"><img src="/images/logo.png" alt="cdslab.org" /></a>
+                <div class="notepad-blog-menu">      
+                    <div class="notepad-mobile-menu show-for-small">
+                        <a href="#"><i class="fa fa-bars"></i></a>
+                    </div>
+                    <ul class="notepad-menu">
+                        <li class="notepad-mobile-close-btn show-for-small text-right">
+                            <a href="#"><i class="fa fa-times"></i></a>
+                        </li>
+                        
+                            <li>
+                                
+                                    <a href="/">Home</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/highlights">Highlights</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/tags">Tags</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/about">About</a>
+                                
+                            </li>
+                                    
+                        <li><a href="/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+                    </ul>
+                </div>
+            </div>
+
+                <div class="notepad-post-title-simple row">
+                    <div class="small-12 columns">
+                        <div class="notepad-post-meta-simple">
+                            <h2><a href="/programming/version-control-using-git-github/version-control-using-git-github">Version-control using Git and GitHub</a></h2>
+                            <p>
+                                by <strong><a href="https://www.cdslab.org/people" target="_blank">Amir Shahmoradi</a></strong>
+                                
+                                    &#8212; Last updated: 
+                                    <strong><time datetime="2019-07-04T00:00:00-05:00">04 July 2019</time></strong>
+                                
+                                <ul class="tag-box inline">
+                                    <span style="margin-right:1rem;">Tags:</span>
+                                    
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#GitHub" data-toggle="tooltip" title="Posts tagged with GitHub" rel="tag">GitHub</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#VCS" data-toggle="tooltip" title="Posts tagged with VCS" rel="tag">VCS</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#git" data-toggle="tooltip" title="Posts tagged with git" rel="tag">git</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#git branch" data-toggle="tooltip" title="Posts tagged with git branch" rel="tag">git branch</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#markdown" data-toggle="tooltip" title="Posts tagged with markdown" rel="tag">markdown</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#project" data-toggle="tooltip" title="Posts tagged with project" rel="tag">project</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#version control system" data-toggle="tooltip" title="Posts tagged with version control system" rel="tag">version control system</a>
+                                            </li>
+                                            
+                                        
+                                    
+                                </ul>
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <article class="notepad-post-content post tag-simple">
+
+            <div style="text-align:left;">
+                
+<p><strong>Guidelines.</strong> Use the following Markdown language references, or any other reference that you find or prefer, to perform the tasks requested in this quesition.</p>
+
+<ul>
+  <li><a href="markdown-cheatsheet-online.pdf" target="_blank">Markdown language cheat-sheet (pdf)</a></li>
+  <li><a href="https://blog.ghost.org/markdown/" target="_blank">Markdown language reference (web)</a></li>
+  <li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Adam Pritchard’s Markdown cheat-sheet (web)</a></li>
+</ul>
+
+<p>Write the code sections of your answer in Markdown syntax. For example,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```bash
+$ git branch -d test
+error: Cannot delete branch 'test' checked out at 'C:/Users/Amir/git/foo'
+```
+</code></pre></div></div>
+
+<p>will display the following text as highlighted <em>bash</em> code, in your <em>readme.md</em> file (although with a different highlighting and colors).</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git branch <span class="nt">-d</span> <span class="nb">test
+</span>error: Cannot delete branch <span class="s1">'test'</span> checked out at <span class="s1">'C:/Users/Amir/git/foo'</span>
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem.part.1">
+        <h2 id="problem.part.1">Problem Part 1</h2>
+    </a>
+
+</div>
+
+<p>Include the following information with the following format and information in your main directory <code class="highlighter-rouge">readme.md</code> file (note that anything that appears in &lt;&gt; is supposed to be provided by you):</p>
+
+<h3 id="beginning-of-the-readme-files-content"><em>Beginning of the README file’s content</em></h3>
+
+<h4 id="project-name---course-name-season-year">&lt;Project Name&gt; - &lt;Course Name&gt; (&lt;Season&gt; &lt;year&gt;)</h4>
+<p><br />
+<strong>Name:</strong> &lt;first name&gt; &lt;last name&gt;<br />
+<strong>School ID:</strong> &lt;your ID&gt;<br />
+<strong>Email:</strong> &lt;your email&gt;<br />
+<strong>Department:</strong> <a href="\&lt;website address&gt;">Department of &lt;your department&gt;</a><br />
+<strong>University:</strong> <a href="\&lt;website address&gt;">The University of &lt;your university&gt;</a><br />
+<strong>Level:</strong> &lt;undergraduate or graduate&gt; - &lt;Freshman (1st year) / Sophomore (2nd year) / Junior (3rd year) / Senior (4th year) / Dinosaur (5th year and above) &gt;<br />
+<strong>Position Title:</strong> Student<br />
+<strong>Course Webpage:</strong> &lt;the course’s website, if any&gt;<br />
+<strong>Photo (<em>ATTN: should display your photo, not mine!</em>):</strong></p>
+
+<p><img src="AmirShahmoradi.png" alt="Amir Shahmoradi" /></p>
+
+<h4 id="description-of-the-projects-content">Description of the project’s content</h4>
+
+<p>This repository contains my homework, quizzes, and virtually every effort that I have made for &lt;course name&gt;. The structure of the project is the following:</p>
+
+<ul>
+  <li><strong><a href="#homework">homework</a>:</strong> (the homework hyperlink should take the reader to the homework folder)<br />
+  This directory contains all my homework submissions, each of which is a folder properly named with homework number, containing the homework submission.<br />
+  <br /></li>
+  <li><strong><a href="#quiz">quiz</a>:</strong> (the quiz hyperlink should take the reader to the quizzes folder)<br />
+  This directory contains all my quiz submissions, each of which is a folder properly named with quiz number, containing the quiz submission.<br />
+  <br /></li>
+  <li><strong><a href="#exam">exam</a>:</strong> (the exam hyperlink should take the reader to the exams folder)<br />
+  This directory contains all my exam submissions, each of which is a folder properly named with exam name or number, containing the exam submission.<br />
+  <br /></li>
+</ul>
+
+<p>For questions and troubleshooting, please contact:</p>
+
+<p>&lt;your name&gt;<br />
+&lt;your email&gt;<br />
+&lt;any other contact or signature information that you would like to add&gt;</p>
+
+<blockquote>
+  <p>I have not failed. I’ve just found 10,000 ways that won’t work.<br />
+<a href="https://en.wikipedia.org/wiki/Thomas_Edison" target="_blank">Thomas A. Edison</a></p>
+</blockquote>
+
+<h3 id="end-of-the-readme-files-content"><em>End of the README file’s content</em></h3>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution.part.1">
+        <h2 id="solution.part.1">Solution Part 1</h2>
+    </a>
+
+</div>
+
+<p>Use the following Markdown code in your <code class="highlighter-rouge">readme.md</code> file to get the same behavior as requested above:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gu">#### &lt;Project Name&gt; - &lt;Course Name&gt; (&lt;Season&gt; &lt;year&gt;)</span>
+
+<span class="gs">**Name:**</span> <span class="nt">&lt;first</span> <span class="na">name</span><span class="nt">&gt;</span> <span class="nt">&lt;last</span> <span class="na">name</span><span class="nt">&gt;</span>  
+<span class="gs">**School ID:**</span> <span class="nt">&lt;your</span> <span class="na">ID</span><span class="nt">&gt;</span>  
+<span class="gs">**Email:**</span> <span class="nt">&lt;your</span> <span class="na">email</span><span class="nt">&gt;</span>  
+<span class="gs">**Department:**</span> <span class="p">[</span><span class="nv">Department of &lt;your department&gt;</span><span class="p">](</span><span class="nt">&lt;</span><span class="sx">website address</span><span class="nt">&gt;</span><span class="p">)</span>  
+<span class="gs">**University:**</span> <span class="p">[</span><span class="nv">The University of &lt;your university&gt;</span><span class="p">](</span><span class="nt">&lt;</span><span class="sx">website address</span><span class="nt">&gt;</span><span class="p">)</span>  
+<span class="gs">**Level:**</span> <span class="nt">&lt;undergraduate</span> <span class="na">or</span> <span class="na">graduate</span><span class="nt">&gt;</span> - <span class="nt">&lt;Freshman</span> <span class="err">(</span><span class="na">1st</span> <span class="na">year</span><span class="err">)</span> <span class="err">/</span> <span class="na">Sophomore</span> <span class="err">(</span><span class="na">2nd</span> <span class="na">year</span><span class="err">)</span> <span class="err">/</span> <span class="na">Junior</span> <span class="err">(</span><span class="na">3rd</span> <span class="na">year</span><span class="err">)</span> <span class="err">/</span> <span class="na">Senior</span> <span class="err">(</span><span class="na">4th</span> <span class="na">year</span><span class="err">)</span> <span class="err">/</span> <span class="na">Dinosaur</span> <span class="err">(</span><span class="na">5th</span> <span class="na">year</span> <span class="na">and</span> <span class="na">above</span><span class="err">)</span> <span class="nt">&gt;</span>  
+<span class="gs">**Position Title:**</span> Student  
+<span class="gs">**Course Webpage:**</span> <span class="nt">&lt;the</span> <span class="na">course</span><span class="err">'</span><span class="na">s</span> <span class="na">website</span><span class="err">,</span> <span class="na">if</span> <span class="na">any</span><span class="nt">&gt;</span>  
+<span class="gs">**Photo (*ATTN: should display your photo, not mine!*):**</span>  
+
+<span class="p">![</span><span class="nv">Amir Shahmoradi</span><span class="p">](</span><span class="sx">AmirShahmoradi.png</span><span class="p">)</span>  
+
+<span class="gu">#### Description of the project's content  </span>
+
+This repository contains my homework, quizzes, and virtually every effort that I have made for <span class="nt">&lt;course</span> <span class="na">name</span><span class="nt">&gt;</span>. The structure of the project is the following:
+<span class="p">
+*</span> <span class="gs">**[homework](#homework):**</span> (the homework hyperlink should take the reader to the homework folder)  
+    This directory contains all my homework submissions, each of which is a folder properly named with homework number, containing the homework submission.  
+    <span class="nt">&lt;br&gt;</span>
+<span class="p">*</span> <span class="gs">**[quiz](#quiz):**</span> (the quiz hyperlink should take the reader to the quizzes folder)  
+    This directory contains all my quiz submissions, each of which is a folder properly named with quiz number, containing the quiz submission.  
+    <span class="nt">&lt;br&gt;</span>
+<span class="p">*</span> <span class="gs">**[exam](#exam):**</span> (the exam hyperlink should take the reader to the exams folder)  
+    This directory contains all my exam submissions, each of which is a folder properly named with exam name or number, containing the exam submission.  
+    <span class="nt">&lt;br&gt;</span>
+
+For questions and troubleshooting, please contact:  
+
+<span class="nt">&lt;your</span> <span class="na">name</span><span class="nt">&gt;</span>  
+<span class="nt">&lt;your</span> <span class="na">email</span><span class="nt">&gt;</span>  
+<span class="nt">&lt;any</span> <span class="na">other</span> <span class="na">contact</span> <span class="na">or</span> <span class="na">signature</span> <span class="na">information</span> <span class="na">that</span> <span class="na">you</span> <span class="na">would</span> <span class="na">like</span> <span class="na">to</span> <span class="na">add</span><span class="nt">&gt;</span>
+<span class="gt">
+&gt;I have not failed. I've just found 10,000 ways that won't work.  </span>
+<span class="gt">&gt;[Thomas A. Edison](https://en.wikipedia.org/wiki/Thomas_Edison){:target="_blank"}</span>
+</code></pre></div></div>
+
+<p class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> You will have to change the relevant information and hyper-references in the above Markdown code to those that match your information in your repository (including your photo).</p>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem.part.2.A">
+        <h2 id="problem.part.2.A">Problem Part 2.A</h2>
+    </a>
+
+</div>
+
+<p>Create two additional test branches in your project, each of which is branched directly from <em>master</em>. <strong>For each of the following cases, write the command and the corresponding output message of Git, in Markdown language in a file named <code class="highlighter-rouge">readme.md</code> inside your <code class="highlighter-rouge">homework/1/</code> folder in your master branch</strong>. If you don’t have this folder in your project, then create the folder and then place your initial <code class="highlighter-rouge">readme.md</code> file in this folder with your signature as the content of the file. Then stage and commit this file together with the homework-1 folder to your local repository. Throughout the rest of this homework, you will fill this <code class="highlighter-rouge">readme.md</code> file with your answers.</p>
+
+<p>(A) Create two branches, <strong>both from your <em>master</em> branch</strong>, with names <em>test1</em> and <em>test2</em>.</p>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution.part.2.A">
+        <h2 id="solution.part.2.A">Solution Part 2.A</h2>
+    </a>
+
+</div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git branch
+<span class="k">*</span> master
+
+<span class="nv">$ </span>git branch test1
+
+<span class="nv">$ </span>git branch test2
+
+<span class="nv">$ </span>git branch
+<span class="k">*</span> master
+  test1
+  test2
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem.part.2.B">
+        <h2 id="problem.part.2.B">Problem Part 2.B</h2>
+    </a>
+
+</div>
+
+<p>(B) Now check out the <em>test1</em> branch and create a new text file named <code class="highlighter-rouge">test.txt</code> in the <code class="highlighter-rouge">homework/1/</code> directory of this branch.</p>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution.part.2.B">
+        <h2 id="solution.part.2.B">Solution Part 2.B</h2>
+    </a>
+
+</div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout test1
+Switched to branch <span class="s1">'test1'</span>
+
+<span class="nv">$ </span>git status
+On branch test1
+nothing to commit, working tree clean
+
+<span class="nv">$ </span><span class="nb">ls
+</span>readme.md
+
+<span class="nv">$ </span><span class="nb">touch </span>test.txt
+
+<span class="nv">$ </span><span class="nb">ls
+</span>readme.md  test.txt
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem.part.2.C">
+        <h2 id="problem.part.2.C">Problem Part 2.C</h2>
+    </a>
+
+</div>
+
+<p>(C) Inside <code class="highlighter-rouge">test.txt</code> in <em>test1</em> branch write this message: <em>This is some example text for branch test1</em>, and save it.</p>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution.part.2.C">
+        <h2 id="solution.part.2.C">Solution Part 2.C</h2>
+    </a>
+
+</div>
+
+<p>Use <code class="highlighter-rouge">vim test.txt</code> to open <em>vim</em> editor. Press <code class="highlighter-rouge">shift + I</code> to switch to <em>vim insert mode</em>. write <em>This is some example text for branch test1</em> in <code class="highlighter-rouge">test.txt</code> file. Now, Press <code class="highlighter-rouge">ESC</code> key and write <code class="highlighter-rouge">:wq</code> on the <em>vim</em> command line to save the file and quit <em>vim</em>.</p>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem.part.2.D">
+        <h2 id="problem.part.2.D">Problem Part 2.D</h2>
+    </a>
+
+</div>
+
+<p>(D) Now stage and commit <code class="highlighter-rouge">test.txt</code> file to branch <em>test1</em>.</p>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution.part.2.D">
+        <h2 id="solution.part.2.D">Solution Part 2.D</h2>
+    </a>
+
+</div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git status
+On branch test1
+Untracked files:
+  <span class="o">(</span>use <span class="s2">"git add &lt;file&gt;..."</span> to include <span class="k">in </span>what will be committed<span class="o">)</span>
+
+        test.txt
+
+nothing added to commit but untracked files present <span class="o">(</span>use <span class="s2">"git add"</span> to track<span class="o">)</span>
+
+<span class="nv">$ </span>git add <span class="nt">--all</span>
+warning: LF will be replaced by CRLF <span class="k">in </span>test.txt.
+The file will have its original line endings <span class="k">in </span>your working directory.
+
+<span class="nv">$ </span>git commit <span class="nt">-m</span><span class="s2">"committing the test.txt file in test1 branch"</span>
+<span class="o">[</span>test1 715ca59] committing the test.txt file <span class="k">in </span>test1 branch
+1 file changed, 1 insertion<span class="o">(</span>+<span class="o">)</span>
+create mode 100644 test.txt
+
+<span class="nv">$ </span>git status
+On branch test1
+nothing to commit, working tree clean
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem.part.2.E">
+        <h2 id="problem.part.2.E">Problem Part 2.E</h2>
+    </a>
+
+</div>
+
+<p>(E) Checkout the branch <em>test2</em>. Do you still see <code class="highlighter-rouge">test.txt</code> that you just created in your <code class="highlighter-rouge">homework/1/</code> directory? You can search for it by the <em>bash</em> command <code class="highlighter-rouge">ls</code>. Explain why you see/don’t see the file in your working directory anymore.</p>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution.part.2.E">
+        <h2 id="solution.part.2.E">Solution Part 2.E</h2>
+    </a>
+
+</div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout test2
+Switched to branch <span class="s1">'test2'</span>
+
+<span class="nv">$ </span><span class="nb">ls
+</span>readme.md
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">test.txt</code> file is not in the project’s working directory since I just checked out a new branch <em>test2</em> that does not contain any files that were generated and committed in <em>test1</em> branch.</p>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem.part.2.F">
+        <h2 id="problem.part.2.F">Problem Part 2.F</h2>
+    </a>
+
+</div>
+
+<p>(F) Create a new text file named <code class="highlighter-rouge">test.txt</code> in the <code class="highlighter-rouge">homework/1/</code> directory of this branch as well, and add <em>This is some example text for branch test2</em> to its content.</p>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution.part.2.F">
+        <h2 id="solution.part.2.F">Solution Part 2.F</h2>
+    </a>
+
+</div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">touch </span>test.txt
+
+<span class="nv">$ </span>vim test.txt
+
+<span class="nv">$ </span>git status
+On branch test2
+Untracked files:
+  <span class="o">(</span>use <span class="s2">"git add &lt;file&gt;..."</span> to include <span class="k">in </span>what will be committed<span class="o">)</span>
+
+        test.txt
+
+nothing added to commit but untracked files present <span class="o">(</span>use <span class="s2">"git add"</span> to track<span class="o">)</span>
+</code></pre></div></div>
+
+<p>The procedure for adding content to the file is very similar to that in part (C) of the problem, explained above.</p>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem.part.2.G">
+        <h2 id="problem.part.2.G">Problem Part 2.G</h2>
+    </a>
+
+</div>
+
+<p>(G) Now try to checkout <em>test1</em>. What error/warning message do you get? Fix the source of error and then checkout <em>test1</em> branch.</p>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution.part.2.G">
+        <h2 id="solution.part.2.G">Solution Part 2.G</h2>
+    </a>
+
+</div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout test1
+error: The following untracked working tree files would be overwritten by checkout:
+        test.txt
+Please move or remove them before you switch branches.
+Aborting
+
+<span class="nv">$ </span>git add <span class="nt">--all</span>
+warning: LF will be replaced by CRLF <span class="k">in </span>test.txt.
+The file will have its original line endings <span class="k">in </span>your working directory.
+
+<span class="nv">$ </span>git commit <span class="nt">-m</span><span class="s2">"committing the test2 branch changes"</span>
+<span class="o">[</span>test2 fce6a94] committing the test2 branch changes
+1 file changed, 1 insertion<span class="o">(</span>+<span class="o">)</span>
+create mode 100644 test.txt
+
+<span class="nv">$ </span>git status
+On branch test2
+nothing to commit, working tree clean
+
+<span class="nv">$ </span>git checkout test1
+Switched to branch <span class="s1">'test1'</span>
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem.part.2.H">
+        <h2 id="problem.part.2.H">Problem Part 2.H</h2>
+    </a>
+
+</div>
+
+<p>(H) Now merge the content of <em>test1</em> with <em>master</em> branch. (Hint: Note from which branch you doing this merge!)</p>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution.part.2.H">
+        <h2 id="solution.part.2.H">Solution Part 2.H</h2>
+    </a>
+
+</div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout master
+Switched to branch <span class="s1">'master'</span>
+
+<span class="nv">$ </span><span class="nb">ls
+</span>readme.md
+
+<span class="nv">$ </span>git status
+On branch master
+nothing to commit, working tree clean
+
+<span class="nv">$ </span>git merge test1
+Updating a661e87..715ca59
+Fast-forward
+ test.txt | 1 +
+ 1 file changed, 1 insertion<span class="o">(</span>+<span class="o">)</span>
+ create mode 100644 test.txt
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem.part.2.I">
+        <h2 id="problem.part.2.I">Problem Part 2.I</h2>
+    </a>
+
+</div>
+
+<p>(I) Now, what do you see as the content of <em>master</em> branch? (Hint: Use <code class="highlighter-rouge">ls</code> <em>bash</em> command, to list the files in the working directory.)</p>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution.part.2.I">
+        <h2 id="solution.part.2.I">Solution Part 2.I</h2>
+    </a>
+
+</div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ls
+</span>readme.md  test.txt
+
+<span class="nv">$ </span>git status
+On branch master
+nothing to commit, working tree clean
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem.part.2.J">
+        <h2 id="problem.part.2.J">Problem Part 2.J</h2>
+    </a>
+
+</div>
+
+<p>(J) Now merge the content of <em>test2</em> with <em>master</em> branch. What error/warning message do you get? Why does this error arise?</p>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution.part.2.J">
+        <h2 id="solution.part.2.J">Solution Part 2.J</h2>
+    </a>
+
+</div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git merge test2
+Auto-merging test.txt
+CONFLICT <span class="o">(</span>add/add<span class="o">)</span>: Merge conflict <span class="k">in </span>test.txt
+Automatic merge failed<span class="p">;</span> fix conflicts and <span class="k">then </span>commit the result.
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem.part.2.K">
+        <h2 id="problem.part.2.K">Problem Part 2.K</h2>
+    </a>
+
+</div>
+
+<p>(K) Now checkout <em>test2</em>. What error/warning message do you get?</p>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution.part.2.K">
+        <h2 id="solution.part.2.K">Solution Part 2.K</h2>
+    </a>
+
+</div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout test2
+test.txt: needs merge
+error: you need to resolve your current index first
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem.part.2.L">
+        <h2 id="problem.part.2.L">Problem Part 2.L</h2>
+    </a>
+
+</div>
+
+<p>(L) Run the Git command <code class="highlighter-rouge">git status</code>. Why does such a conflict exist, as mentioned in <code class="highlighter-rouge">git status</code> output?</p>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution.part.2.L">
+        <h2 id="solution.part.2.L">Solution Part 2.L</h2>
+    </a>
+
+</div>
+
+<p>Basically, by running <code class="highlighter-rouge">git merge test2</code> command, we attempted to merge the test.txt file of <em>test2</em> branch with the existing <code class="highlighter-rouge">test.txt</code> file of <em>master</em> branch. But the content of the two is different.</p>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem.part.2.M">
+        <h2 id="problem.part.2.M">Problem Part 2.M</h2>
+    </a>
+
+</div>
+
+<p>(M) At this stage, you have two options: Either 1. stage and commit the combined conflicting <code class="highlighter-rouge">test.txt</code> file to Git repository (but this is not recommended), or, 2. open the file <code class="highlighter-rouge">test.txt</code> using <em>vim</em> editor on the command line and resolve the conflict by editing the content of the file to only this sentence: <em>. Then save and quit *vim</em>.</p>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution.part.2.M">
+        <h2 id="solution.part.2.M">Solution Part 2.M</h2>
+    </a>
+
+</div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vim test.txt
+
+<span class="nv">$ </span><span class="nb">cat </span>test.txt
+This is some example text from both test1 and test2 branches combined.
+</code></pre></div></div>
+
+<p>The <em>bash</em> command <code class="highlighter-rouge">cat</code> shows the content of <code class="highlighter-rouge">text.txt</code> file.</p>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem.part.2.N">
+        <h2 id="problem.part.2.N">Problem Part 2.N</h2>
+    </a>
+
+</div>
+
+<p>(N) Now, run <code class="highlighter-rouge">git status</code>, then stage and commit your conflict-resolved file. Then checkout <em>test2</em> branch.</p>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution.part.2.N">
+        <h2 id="solution.part.2.N">Solution Part 2.N</h2>
+    </a>
+
+</div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git status
+On branch master
+You have unmerged paths.
+  <span class="o">(</span>fix conflicts and run <span class="s2">"git commit"</span><span class="o">)</span>
+  <span class="o">(</span>use <span class="s2">"git merge --abort"</span> to abort the merge<span class="o">)</span>
+
+Unmerged paths:
+  <span class="o">(</span>use <span class="s2">"git add &lt;file&gt;..."</span> to mark resolution<span class="o">)</span>
+
+        both added:      test.txt
+
+no changes added to commit <span class="o">(</span>use <span class="s2">"git add"</span> and/or <span class="s2">"git commit -a"</span><span class="o">)</span>
+
+<span class="nv">$ </span>git add test.txt
+
+<span class="nv">$ </span>git commit <span class="nt">-m</span><span class="s2">"adding the test.txt resolution file"</span>
+<span class="o">[</span>master 4c74098] adding the test.txt resolution file
+
+<span class="nv">$ </span>git status
+On branch master
+nothing to commit, working tree clean
+
+<span class="nv">$ </span>git checkout test2
+Switched to branch <span class="s1">'test2'</span>
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem.part.2.O">
+        <h2 id="problem.part.2.O">Problem Part 2.O</h2>
+    </a>
+
+</div>
+
+<p>(O) Now, try deleting branch <em>test1</em>, while on the branch <em>test2</em>. What error/warning message do you get?</p>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution.part.2.O">
+        <h2 id="solution.part.2.O">Solution Part 2.O</h2>
+    </a>
+
+</div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git branch <span class="nt">-d</span> test1
+error: The branch <span class="s1">'test1'</span> is not fully merged.
+If you are sure you want to delete it, run <span class="s1">'git branch -D test1'</span><span class="nb">.</span>
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem.part.2.P">
+        <h2 id="problem.part.2.P">Problem Part 2.P</h2>
+    </a>
+
+</div>
+
+<p>(P) Now, switch back to <em>master</em> branch. Now, try deleting branch <em>test1</em>, while on <em>master</em> branch. What message do you get from Git? List all the existing branches using <code class="highlighter-rouge">git branch</code> command.</p>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution.part.2.P">
+        <h2 id="solution.part.2.P">Solution Part 2.P</h2>
+    </a>
+
+</div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout master
+Switched to branch <span class="s1">'master'</span>
+
+<span class="nv">$ </span>git branch
+<span class="k">*</span> master
+  test2
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem.part.2.Q">
+        <h2 id="problem.part.2.Q">Problem Part 2.Q</h2>
+    </a>
+
+</div>
+
+<p>(Q) Why is there such a difference in Git messages between when you tried deleting <em>test1</em> branch from <em>test2</em> branch, and when you tried deleting <em>test1</em> branch from <em>master</em> branch?</p>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution.part.2.Q">
+        <h2 id="solution.part.2.Q">Solution Part 2.Q</h2>
+    </a>
+
+</div>
+
+<p>The difference arises because whichever branch you are in, Git assumes that the content of any other branch should be first merged for the current branch before deleting the other branch. Therefore, in the first case, Git warns that there are unmerged data between <em>test1</em> and <em>test2</em> branches. But the delete command from <em>master</em> branch gives no error since the content of <em>test1</em> branch has been previously appropriately merged with <em>master</em> branch.</p>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem.part.2.R">
+        <h2 id="problem.part.2.R">Problem Part 2.R</h2>
+    </a>
+
+</div>
+
+<p>(R) Now checkout <em>test2</em> branch. While on <em>test2</em>, try to delete branch <em>test2</em>. What error/message do you get?</p>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution.part.2.R">
+        <h2 id="solution.part.2.R">Solution Part 2.R</h2>
+    </a>
+
+</div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout test2
+Switched to branch <span class="s1">'test2'</span>
+
+<span class="nv">$ </span>git branch <span class="nt">-d</span> test2
+error: Cannot delete branch <span class="s1">'test2'</span> checked out at <span class="s1">'~/test'</span>
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem.part.2.S">
+        <h2 id="problem.part.2.S">Problem Part 2.S</h2>
+    </a>
+
+</div>
+
+<p>(S) Switch back to <em>master</em> and delete <em>test2</em> branch. List all your project branches by the appropriate Git command.</p>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution.part.2.S">
+        <h2 id="solution.part.2.S">Solution Part 2.S</h2>
+    </a>
+
+</div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout master
+Switched to branch <span class="s1">'master'</span>
+
+<span class="nv">$ </span>git branch <span class="nt">-d</span> test2
+Deleted branch test2 <span class="o">(</span>was fce6a94<span class="o">)</span><span class="nb">.</span>
+
+<span class="nv">$ </span>git branch
+<span class="k">*</span> master
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem.part.2.T">
+        <h2 id="problem.part.2.T">Problem Part 2.T</h2>
+    </a>
+
+</div>
+
+<p>(T) Stage and commit all the changes (including the file <code class="highlighter-rouge">test.txt</code>) to your project’s <em>master</em> branch. Now push all to the remote repository.</p>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution.part.2.T">
+        <h2 id="solution.part.2.T">Solution Part 2.T</h2>
+    </a>
+
+</div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git add <span class="nt">--all</span>
+
+<span class="nv">$ </span>git commit
+On branch master
+nothing to commit, working tree clean
+
+<span class="nv">$ </span>git push <span class="nt">--all</span>
+</code></pre></div></div>
+
+
+            </div>
+        </article>
+        <div class="cf"></div>
+<div class="row text-center">
+    <section class="notepad-post-share">
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Version-control using Git and GitHub&quot;%20/programming/version-control-using-git-github/version-control-using-git-github%20via%20&#64;AmirShahmoradi"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+            <i class="fa fa-twitter"></i>
+        </a>
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=/programming/version-control-using-git-github/version-control-using-git-github"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+            <i class="fa fa-facebook"></i>
+        </a>
+        <a class="google-icon" href="https://plus.google.com/share?url=/programming/version-control-using-git-github/version-control-using-git-github"
+           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+            <i class="fa fa-google-plus"></i>
+        </a>
+    </section>
+</div>
+        <div class="cf"></div>
+<div class="notepad-author-info">
+    <div class="row">
+        <section class="notepad-post-author small-12 columns">
+            <a href=https://www.shahmoradi.org target="_blank">
+                <img src="/images/AmirShahmoradi.png" class="notepad-post-author-avatar" alt="Amir Shahmoradi's photo">
+            </a>
+            <span class="author-label">Author</span>
+            <h1>Amir Shahmoradi</h1>
+            <p><a href="mailto:shahmoradi@utexas.edu" class="author-website">shahmoradi@utexas.edu</a></p>
+            <p>Genius is 99% perspiration and 1% inspiration</p>
+        </section>
+    </div>
+</div> 
+        <div class="cf"></div>
+
+        <section class="notepad-disqus row">
+            <div class="small-12 columns">
+                <h1 class="notepad-comments-header">Comments</h1>
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'shahmoradi'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+        </section>
+
+        <div class="cf"></div>
+        <footer class="notepad-site-footer">
+    <div class="copyright">
+         <!-- <section>Last updated 2019 / 07 / 25</section></br> -->
+         <section>Last updated Thursday, 25 Jul 2019 at 01:31 AM CST</section></br>
+         <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
+         <section>SEIR 365 | Arlington TX 76010</section></br>
+    </div>
+    <div class="social-icons">
+        
+        <a href="https://twitter.com/AmirShahmoradi" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        
+        
+        <a href="https://github.com/shahmoradi" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        
+        <div style="color: #000000; float: none; width: 100%; padding-top: 1rem;">
+            <span style="font-size:0.8em">visitor count: 
+                <script type="text/javascript">
+                    var sc_project=12051053; 
+                    var sc_invisible=0; 
+                    var sc_security="e095256f"; 
+                    var sc_text=3; 
+                    var scJsHost = "https://";
+                    document.write("<sc"+"ript type='text/javascript' src='" + scJsHost + 
+                    "statcounter.com/counter/counter.js'></"+"script>");
+                </script>
+            </span>
+        </div>
+        
+    </div>
+    <div class="cf"></div>
+</footer> 
+    </main>
+    <!--dynamic page header-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+  <script src="/assets/js/vendor/modernizr.js"></script>
+  <script src="/assets/js/foundation.min.js"></script>
+  
+  <script src="/assets/js/notepad.js"></script>
+  <script src="/assets/js/scripts.min.js"></script>
+  <script src="/assets/js/vendor/nprogress.js"></script>
+  
+  <script>
+    $(document).foundation();
+  </script>
+  <script type='text/javascript'>console.log("N/A");</script>
+  <script type='text/javascript'>console.log("https://www.cdslab.org/");</script>
+
+<!--header anchor links-->
+<script src="/assets/js/autoAnchorLink.js"></script>
+
+<!-- <script src="/assets/js/prismOkaidia.js"></script>
+<script src="/assets/js/prismTwilight.js"></script>
+<script src="/assets/js/prismDefault.js"></script>
+ -->
+<script src="/assets/js/prismCoy.js"></script> 
+    <!--automatic Table of Content.-->
+    <script src="/assets/js/autoTOC.js"></script>
+</body>
+</html>

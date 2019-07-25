@@ -1,0 +1,119 @@
+
+callback([
+
+  {
+    "text": "value, variable, type, syntax error",
+    "href": "/programming/values-variables-types-syntax-error/values-variables-types-syntax-error"
+  } ,
+
+  {
+    "text": "Version-control using Git and GitHub",
+    "href": "/programming/version-control-using-git-github/version-control-using-git-github"
+  } ,
+
+  {
+    "text": "Time required for cooking a refrigerated egg",
+    "href": "/programming/time-to-cook-frozen-egg/time-to-cook-frozen-egg"
+  } ,
+
+  {
+    "text": "Single-line Python input and string manipulation",
+    "href": "/programming/python-single-line-input-string-manipulation/python-single-line-input-string-manipulation"
+  } ,
+
+  {
+    "text": "Simple GitHub page from README.md file",
+    "href": "/programming/github-readme-webpage/github-readme-webpage"
+  } ,
+
+  {
+    "text": "Python script full of syntax errors",
+    "href": "/programming/python-script-full-of-syntax-errors/python-script-full-of-syntax-errors"
+  } ,
+
+  {
+    "text": "Python script full of errors",
+    "href": "/programming/python-script-full-of-errors/python-script-full-of-errors"
+  } ,
+
+  {
+    "text": "Python script call from the Bash command line",
+    "href": "/programming/python-call-script-from-bash/python-call-script-from-bash"
+  } ,
+
+  {
+    "text": "Python dictionary of class members",
+    "href": "/programming/python-dictionary-of-class-members/python-dictionary-of-class-members"
+  } ,
+
+  {
+    "text": "Python aliasing vs. copying variables",
+    "href": "/programming/python-variable-aliasing-copying/python-variable-aliasing-copying"
+  } ,
+
+  {
+    "text": "Operator precedence",
+    "href": "/programming/operator-precedence/operator-precedence"
+  } ,
+
+  {
+    "text": "Matrix Initialization",
+    "href": "/programming/matrix-initialization/matrix-initialization"
+  } ,
+
+  {
+    "text": "MATLAB working directory",
+    "href": "/programming/matlab-working-directory/matlab-working-directory"
+  } ,
+
+  {
+    "text": "MATLAB script full of errors",
+    "href": "/programming/matlab-script-full-of-errors/matlab-script-full-of-errors"
+  } ,
+
+  {
+    "text": "Is the input number a prime number?",
+    "href": "/programming/isprime/isprime"
+  } ,
+
+  {
+    "text": "Integer overflow",
+    "href": "/programming/integer-overflow/integer-overflow"
+  } ,
+
+  {
+    "text": "Implementing the Bell-shaped (Gaussian) function",
+    "href": "/programming/implementing-gaussian-function/implementing-gaussian-function"
+  } ,
+
+  {
+    "text": "Function generators",
+    "href": "/programming/function-generators/function-generators"
+  } ,
+
+  {
+    "text": "Converting polar and Cartesian vector representations using functions and structures",
+    "href": "/programming/polar-cartesian-coordinates-conversion/polar-cartesian-coordinates-conversion"
+  } ,
+
+  {
+    "text": "Computing the area of a triangle",
+    "href": "/programming/triangle-area/triangle-area"
+  } ,
+
+  {
+    "text": "Computing the Fibonacci sequence via recursive function calls",
+    "href": "/programming/fibonacci-sequence-via-recursive-function-calls/fibonacci-sequence-via-recursive-function-calls"
+  } ,
+
+  {
+    "text": "Calculating the size of a directory",
+    "href": "/programming/calculating-directory-size/calculating-directory-size"
+  } ,
+
+  {
+    "text": "Branching, the Pythonic way",
+    "href": "/programming/branching-pythonic-way/branching-pythonic-way"
+  } 
+
+])

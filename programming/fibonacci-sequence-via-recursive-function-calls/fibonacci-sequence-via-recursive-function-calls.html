@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="utf-8">
+<title>COMPUTING THE FIBONACCI SEQUENCE VIA RECURSIVE FUNCTION CALLS &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<meta name="description" content="CDSLab Recipes">
+<meta name="keywords" content="MATLAB, Python, Fibonacci sequence, recursive, function, recursive function, branching, isreal, round, str2double, input, string">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/logo.png">
+<meta name="twitter:title" content="Computing the Fibonacci sequence via recursive function calls">
+<meta name="twitter:description" content="CDSLab Recipes">
+<meta name="twitter:creator" content="@AmirShahmoradi">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Computing the Fibonacci sequence via recursive function calls">
+<meta property="og:description" content="CDSLab Recipes">
+<meta property="og:url" content="/programming/fibonacci-sequence-via-recursive-function-calls/fibonacci-sequence-via-recursive-function-calls">
+<meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
+<meta property="og:image" content="/images/">
+
+
+
+
+
+<link rel="canonical" href="/programming/fibonacci-sequence-via-recursive-function-calls/fibonacci-sequence-via-recursive-function-calls">
+<!-- <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/assets/css/vendor/font-awesome.min.css">
+<link rel="stylesheet" href="/assets/css/vendor/normalize.css">
+<link rel="stylesheet" href="/assets/css/vendor/nprogress.css">
+<link rel="stylesheet" href="/assets/css/vendor/foundation.min.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/post.css">
+
+<!--Mathjax LaTeX engine-->
+
+<style TYPE="text/css">
+code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+</style>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<!-- Icons -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!--
+<link rel="shortcut icon" href="/favicon.png">
+-->
+
+
+<!-- prism
+<link href="/assets/css/prismCoy.css" rel="stylesheet" />
+<link href="/assets/css/prismDefault.css" rel="stylesheet" />
+<link href="/assets/css/prismTwilight.css" rel="stylesheet" />
+-->
+<link href="/assets/css/prismOkaidia.css" rel="stylesheet" />
+<link href="/assets/css/alert.css" rel="stylesheet" />
+
+<!--header anchor links-->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    
+</head>
+<body class="post-template" itemscope itemtype="https://schema.org/WebPage">
+
+
+
+    <main id="notepad-post-container-simple" class="notepad-post-container-simple" role="main">
+        <header class="notepad-post-header-simple">
+            <div class="notepad-post-menu-header-simple">
+
+                <a class="notepad-blog-logo" href=https://www.cdslab.org target="_blank"><img src="/images/logo.png" alt="cdslab.org" /></a>
+                <div class="notepad-blog-menu">      
+                    <div class="notepad-mobile-menu show-for-small">
+                        <a href="#"><i class="fa fa-bars"></i></a>
+                    </div>
+                    <ul class="notepad-menu">
+                        <li class="notepad-mobile-close-btn show-for-small text-right">
+                            <a href="#"><i class="fa fa-times"></i></a>
+                        </li>
+                        
+                            <li>
+                                
+                                    <a href="/">Home</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/highlights">Highlights</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/tags">Tags</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/about">About</a>
+                                
+                            </li>
+                                    
+                        <li><a href="/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+                    </ul>
+                </div>
+            </div>
+
+                <div class="notepad-post-title-simple row">
+                    <div class="small-12 columns">
+                        <div class="notepad-post-meta-simple">
+                            <h2><a href="/programming/fibonacci-sequence-via-recursive-function-calls/fibonacci-sequence-via-recursive-function-calls">Computing the Fibonacci sequence via recursive function calls</a></h2>
+                            <p>
+                                by <strong><a href="https://www.cdslab.org/people" target="_blank">Amir Shahmoradi</a></strong>
+                                
+                                    &#8212; Last updated: 
+                                    <strong><time datetime="2019-07-04T00:00:00-05:00">04 July 2019</time></strong>
+                                
+                                <ul class="tag-box inline">
+                                    <span style="margin-right:1rem;">Tags:</span>
+                                    
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#Fibonacci sequence" data-toggle="tooltip" title="Posts tagged with Fibonacci sequence" rel="tag">Fibonacci sequence</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#MATLAB" data-toggle="tooltip" title="Posts tagged with MATLAB" rel="tag">MATLAB</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#branching" data-toggle="tooltip" title="Posts tagged with branching" rel="tag">branching</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#function" data-toggle="tooltip" title="Posts tagged with function" rel="tag">function</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#input" data-toggle="tooltip" title="Posts tagged with input" rel="tag">input</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#isreal" data-toggle="tooltip" title="Posts tagged with isreal" rel="tag">isreal</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#recursive" data-toggle="tooltip" title="Posts tagged with recursive" rel="tag">recursive</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#recursive function" data-toggle="tooltip" title="Posts tagged with recursive function" rel="tag">recursive function</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#round" data-toggle="tooltip" title="Posts tagged with round" rel="tag">round</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#str2double" data-toggle="tooltip" title="Posts tagged with str2double" rel="tag">str2double</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#string" data-toggle="tooltip" title="Posts tagged with string" rel="tag">string</a>
+                                            </li>
+                                            
+                                        
+                                    
+                                </ul>
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <article class="notepad-post-content post tag-simple">
+
+            <div style="text-align:left;">
+                
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem">
+        <h2 id="problem">Problem</h2>
+    </a>
+
+</div>
+
+<p>In mathematics, the Fibonacci numbers are the numbers in the following integer sequence, called the Fibonacci sequence, that are characterized by the fact that every number after the first two is the sum of the two preceding ones:</p>
+
+<script type="math/tex; mode=display">0,~1,~1,~2,~3,~5,~8,~13,~21,~34,~55,~89,~144,~\dots</script>
+
+<p>with the following sequence equation,</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{eqnarray}
+     Fib(n) &=& Fib(n-1) + Fib(n-2) ~, \\
+     Fib(0) &=& 0 ~, \\
+     Fib(1) &=& 1 ~.
+\end{eqnarray} %]]></script>
+
+<p>Write a function named <code class="highlighter-rouge">fib</code> that takes in an input argument which should be integer number <code class="highlighter-rouge">n</code>, and then calculates the $n$th number in the Fibonacci sequence and outputs it on the screen. Also, if the input argument is not a non-negative integer, it prints an error message on the screen and asks the user to re-enter a non-negative integer number. Also, when it is done with finding the requested Fibonacci number, it asks again the user to either input a new non-negative integer, or enter ‘stop’ to end the function, like the following,</p>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fib</span>
+<span class="n">Please</span> <span class="n">enter</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">integer</span> <span class="nb">or</span> <span class="nb">type</span> <span class="n">stop</span><span class="p">:</span> <span class="o">-</span><span class="mi">123</span>
+<span class="n">The</span> <span class="nb">input</span> <span class="n">argument</span> <span class="nb">is</span> <span class="nb">not</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">integer</span><span class="err">!</span>
+<span class="n">Please</span> <span class="n">enter</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">integer</span> <span class="nb">or</span> <span class="nb">type</span> <span class="n">stop</span><span class="p">:</span> <span class="n">a</span>
+<span class="n">The</span> <span class="nb">input</span> <span class="n">argument</span> <span class="nb">is</span> <span class="nb">not</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">integer</span><span class="err">!</span>
+<span class="n">Please</span> <span class="n">enter</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">integer</span> <span class="nb">or</span> <span class="nb">type</span> <span class="n">stop</span><span class="p">:</span> <span class="n">amir</span>
+<span class="n">The</span> <span class="nb">input</span> <span class="n">argument</span> <span class="nb">is</span> <span class="nb">not</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">integer</span><span class="err">!</span>
+<span class="n">Please</span> <span class="n">enter</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">integer</span> <span class="nb">or</span> <span class="nb">type</span> <span class="n">stop</span><span class="p">:</span> 
+<span class="n">The</span> <span class="nb">input</span> <span class="n">argument</span> <span class="nb">is</span> <span class="nb">not</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">integer</span><span class="err">!</span>
+<span class="n">Please</span> <span class="n">enter</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">integer</span> <span class="nb">or</span> <span class="nb">type</span> <span class="n">stop</span><span class="p">:</span> <span class="o">-</span><span class="mf">12.3</span>
+<span class="n">The</span> <span class="nb">input</span> <span class="n">argument</span> <span class="nb">is</span> <span class="nb">not</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">integer</span><span class="err">!</span>
+<span class="n">Please</span> <span class="n">enter</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">integer</span> <span class="nb">or</span> <span class="nb">type</span> <span class="n">stop</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">fib</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">Please</span> <span class="n">enter</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">integer</span> <span class="nb">or</span> <span class="nb">type</span> <span class="n">stop</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">fib</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">Please</span> <span class="n">enter</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">integer</span> <span class="nb">or</span> <span class="nb">type</span> <span class="n">stop</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">fib</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">Please</span> <span class="n">enter</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">integer</span> <span class="nb">or</span> <span class="nb">type</span> <span class="n">stop</span><span class="p">:</span> <span class="mi">3</span>
+<span class="n">fib</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">Please</span> <span class="n">enter</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">integer</span> <span class="nb">or</span> <span class="nb">type</span> <span class="n">stop</span><span class="p">:</span> <span class="mi">4</span>
+<span class="n">fib</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">Please</span> <span class="n">enter</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">integer</span> <span class="nb">or</span> <span class="nb">type</span> <span class="n">stop</span><span class="p">:</span> <span class="mi">5</span>
+<span class="n">fib</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">Please</span> <span class="n">enter</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">integer</span> <span class="nb">or</span> <span class="nb">type</span> <span class="n">stop</span><span class="p">:</span> <span class="mi">6</span>
+<span class="n">fib</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">Please</span> <span class="n">enter</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">integer</span> <span class="nb">or</span> <span class="nb">type</span> <span class="n">stop</span><span class="p">:</span> <span class="mi">7</span>
+<span class="n">fib</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="n">Please</span> <span class="n">enter</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">integer</span> <span class="nb">or</span> <span class="nb">type</span> <span class="n">stop</span><span class="p">:</span> <span class="mi">8</span>
+<span class="n">fib</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="o">=</span> <span class="mi">21</span>
+<span class="n">Please</span> <span class="n">enter</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">integer</span> <span class="nb">or</span> <span class="nb">type</span> <span class="n">stop</span><span class="p">:</span> <span class="mi">9</span>
+<span class="n">fib</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span> <span class="o">=</span> <span class="mi">34</span>
+<span class="n">Please</span> <span class="n">enter</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">integer</span> <span class="nb">or</span> <span class="nb">type</span> <span class="n">stop</span><span class="p">:</span> <span class="mi">10</span>
+<span class="n">fib</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">=</span> <span class="mi">55</span>
+<span class="n">Please</span> <span class="n">enter</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">integer</span> <span class="nb">or</span> <span class="nb">type</span> <span class="n">stop</span><span class="p">:</span> <span class="mi">11</span>
+<span class="n">fib</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="o">=</span> <span class="mi">89</span>
+<span class="n">Please</span> <span class="n">enter</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">integer</span> <span class="nb">or</span> <span class="nb">type</span> <span class="n">stop</span><span class="p">:</span> <span class="mi">12</span>
+<span class="n">fib</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> <span class="o">=</span> <span class="mi">144</span>
+<span class="n">Please</span> <span class="n">enter</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">integer</span> <span class="nb">or</span> <span class="nb">type</span> <span class="n">stop</span><span class="p">:</span> <span class="mi">22</span>
+<span class="n">fib</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span> <span class="o">=</span> <span class="mi">17711</span>
+<span class="n">Please</span> <span class="n">enter</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">integer</span> <span class="nb">or</span> <span class="nb">type</span> <span class="n">stop</span><span class="p">:</span> <span class="mi">32</span>
+<span class="n">fib</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span> <span class="o">=</span> <span class="mi">2178309</span>
+<span class="n">Please</span> <span class="n">enter</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">integer</span> <span class="nb">or</span> <span class="nb">type</span> <span class="n">stop</span><span class="p">:</span> <span class="n">stop</span>
+
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    <figure>
+        <a href="#hint-MATLAB" id="hint-MATLAB">
+            <img src="/images/MATLAB.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
+                MATLAB
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p><strong>Hint:</strong></p>
+
+<ol>
+  <li>First write a function <code class="highlighter-rouge">getFib(n_int)</code> that finds the requested Fibonacci number for you, given a <em>strictly</em> non-negative integer input (for example, name it <code class="highlighter-rouge">n_int</code>).<br />
+<br /></li>
+  <li>Then put this function <strong>inside another MATLAB function <code class="highlighter-rouge">fib()</code></strong> that asks the user to input a number (which could be potentially anything: a string, a real number, a complex number, or an integer). You can do this using MATLAB’s builtin function <code class="highlighter-rouge">input()</code>. Read the input value as a <code class="highlighter-rouge">string</code> using this MATLAB function. Then check if the user’s input string is equivalent to <strong>‘stop’</strong> or not. If it is ‘stop’, then the program must return, otherwise, use <code class="highlighter-rouge">str2double()</code> to convert this string to MATLAB numeric type. Then check is the numeric-converted input value is real number (as opposed to complex number) via MATLAB’s function <code class="highlighter-rouge">isreal()</code>. If the value is real, then check if it is a non-negative real number. Also check if it is an <strong>integer</strong> by comparing the value with its rounded value using MATLAB’s function <code class="highlighter-rouge">round()</code>. Thus is the user-input number is really a non-negative integer, then your code should display the result message as given in the above output (by calling your nested function <code class="highlighter-rouge">getFib(n_int)</code>), and then call this function <code class="highlighter-rouge">fib</code> to ask the user to input another number again, to repeat this procedure. If the user-input number is not a non-negative integer, then your code should display the requested message above, and call the function <code class="highlighter-rouge">fib</code> again to ask the user for another input.</li>
+</ol>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    <figure>
+        <a href="#hint-Python" id="hint-Python">
+            <img src="/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p><strong>Hint:</strong></p>
+
+<ol>
+  <li>First write a function <code class="highlighter-rouge">fibo(n_int)</code> that finds the requested Fibonacci number for you, given a non-negative integer input (for example, name it <code class="highlighter-rouge">n_int</code>).</li>
+  <li>Then put this function <strong>inside another Python function <code class="highlighter-rouge">fib(n)</code></strong> that checks the type of the input argument <code class="highlighter-rouge">n</code> and prints the appropriate error message as in the above and then asks the user to enter another number (and then again checks for its type to be integer).</li>
+  <li>Then if this number is an integer, this function <code class="highlighter-rouge">fib(n)</code> passes the integer number <code class="highlighter-rouge">n</code> to the function <code class="highlighter-rouge">fibo(n_int)</code> which is inside of itself (it is a <strong>nested function</strong>), in order to get the requested Fibonacci number.</li>
+  <li>Finally, once the requested Fibonaccy number is obtained, it prints the number value with the requested format as in the above example, AND then asks again the user to input a new non-negative integer, or simply type <code class="highlighter-rouge">stop</code> to stop the function.</li>
+</ol>
+
+<p>Note that, if you call the function as <code class="highlighter-rouge">fib('stop')</code> in the Python interpreter, it should return nothing to you, just like the following example,</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fib</span><span class="p">(</span><span class="s">'stop'</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p>I highly recommend you to write your function in Jupyter notebook, test it there, and then get the results for the same input arguments as in the above example (a string, negative integer, float, and n=1,…,12, and also ‘stop’) and download all of the notebook as a Markdown file, and present this file as your final solution. Name the notebook, <code class="highlighter-rouge">fib.md</code>.</p>
+
+<p class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> You don’t need to know or use anything beyond Python function syntax, Python built-in functions and methods (like <code class="highlighter-rouge">input</code>, <code class="highlighter-rouge">isdigit()</code>, <code class="highlighter-rouge">print</code>, <code class="highlighter-rouge">str()</code>, <code class="highlighter-rouge">int()</code>, …), and Python if-blocks.</p>
+
+<p class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> I recommend you to use Jupyter notebook on your device, since the online version of notebook, can be interrupted repeatedly because of internet connection.</p>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution">
+        <h2 id="solution">Solution</h2>
+    </a>
+
+</div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    <figure>
+        <a href="##solution-MATLAB" id="#solution-MATLAB">
+            <img src="/images/MATLAB.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
+                MATLAB
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>Here is an example implementation of <a href="fib.m" target="_blank">fib.m</a>,</p>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="n">fib</span><span class="p">()</span>
+
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'Please enter a non-negative integer or type stop: '</span><span class="p">,</span><span class="s1">'s'</span><span class="p">);</span>
+    <span class="k">if</span> <span class="nb">strcmp</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="s1">'stop'</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="k">else</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">str2double</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+        <span class="k">if</span> <span class="nb">isreal</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">n</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nb">round</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">==</span><span class="n">n</span>
+                <span class="nb">disp</span><span class="p">([</span><span class="s1">'fib('</span><span class="p">,</span><span class="nb">num2str</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="s1">') = '</span><span class="p">,</span><span class="nb">num2str</span><span class="p">(</span><span class="n">getFib</span><span class="p">(</span><span class="n">n</span><span class="p">))]);</span>
+                <span class="n">fib</span><span class="p">()</span>
+                <span class="k">return</span>
+            <span class="k">end</span>
+        <span class="k">end</span>
+        <span class="nb">disp</span><span class="p">(</span><span class="s1">'The input argument is not a non-negative integer!'</span><span class="p">);</span>
+        <span class="n">fib</span><span class="p">()</span>
+    <span class="k">end</span>
+    
+    <span class="k">function</span> <span class="n">fib</span> <span class="o">=</span> <span class="n">getFib</span><span class="p">(</span><span class="n">n_int</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">n_int</span> <span class="o">==</span> <span class="mi">0</span>
+            <span class="n">fib</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">elseif</span> <span class="n">n_int</span> <span class="o">==</span> <span class="mi">1</span>
+            <span class="n">fib</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">else</span>
+            <span class="n">fib</span> <span class="o">=</span> <span class="n">getFib</span><span class="p">(</span><span class="n">n_int</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">getFib</span><span class="p">(</span><span class="n">n_int</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+        <span class="k">end</span>
+    <span class="k">end</span>
+
+<span class="k">end</span>
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    <figure>
+        <a href="#solution-Python" id="solution-Python">
+            <img src="/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">fibo</span><span class="p">(</span><span class="n">n_int</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">n_int</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">elif</span> <span class="n">n_int</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span> <span class="k">return</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">fibo</span><span class="p">(</span><span class="n">n_int</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibo</span><span class="p">(</span><span class="n">n_int</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="s">'stop'</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">None</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>    <span class="c1"># Make sure n is integer, if not then
+</span>        <span class="k">print</span><span class="p">(</span> <span class="s">'The input argument {} is not a non-negative integer!'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">)</span>    
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Please enter an integer: "</span><span class="p">)</span>  <span class="c1"># Note that n is read as string!
+</span>        <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">n</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> 
+        <span class="k">print</span><span class="p">(</span><span class="s">'Fib({}) = {}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">fibo</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Please enter another integer or type stop: "</span><span class="p">)</span>  <span class="c1"># Note that n is read as string!
+</span>        <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</code></pre></div></div>
+
+
+            </div>
+        </article>
+        <div class="cf"></div>
+<div class="row text-center">
+    <section class="notepad-post-share">
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Computing the Fibonacci sequence via recursive function calls&quot;%20/programming/fibonacci-sequence-via-recursive-function-calls/fibonacci-sequence-via-recursive-function-calls%20via%20&#64;AmirShahmoradi"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+            <i class="fa fa-twitter"></i>
+        </a>
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=/programming/fibonacci-sequence-via-recursive-function-calls/fibonacci-sequence-via-recursive-function-calls"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+            <i class="fa fa-facebook"></i>
+        </a>
+        <a class="google-icon" href="https://plus.google.com/share?url=/programming/fibonacci-sequence-via-recursive-function-calls/fibonacci-sequence-via-recursive-function-calls"
+           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+            <i class="fa fa-google-plus"></i>
+        </a>
+    </section>
+</div>
+        <div class="cf"></div>
+<div class="notepad-author-info">
+    <div class="row">
+        <section class="notepad-post-author small-12 columns">
+            <a href=https://www.shahmoradi.org target="_blank">
+                <img src="/images/AmirShahmoradi.png" class="notepad-post-author-avatar" alt="Amir Shahmoradi's photo">
+            </a>
+            <span class="author-label">Author</span>
+            <h1>Amir Shahmoradi</h1>
+            <p><a href="mailto:shahmoradi@utexas.edu" class="author-website">shahmoradi@utexas.edu</a></p>
+            <p>Genius is 99% perspiration and 1% inspiration</p>
+        </section>
+    </div>
+</div> 
+        <div class="cf"></div>
+
+        <section class="notepad-disqus row">
+            <div class="small-12 columns">
+                <h1 class="notepad-comments-header">Comments</h1>
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'shahmoradi'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+        </section>
+
+        <div class="cf"></div>
+        <footer class="notepad-site-footer">
+    <div class="copyright">
+         <!-- <section>Last updated 2019 / 07 / 25</section></br> -->
+         <section>Last updated Thursday, 25 Jul 2019 at 01:31 AM CST</section></br>
+         <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
+         <section>SEIR 365 | Arlington TX 76010</section></br>
+    </div>
+    <div class="social-icons">
+        
+        <a href="https://twitter.com/AmirShahmoradi" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        
+        
+        <a href="https://github.com/shahmoradi" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        
+        <div style="color: #000000; float: none; width: 100%; padding-top: 1rem;">
+            <span style="font-size:0.8em">visitor count: 
+                <script type="text/javascript">
+                    var sc_project=12051053; 
+                    var sc_invisible=0; 
+                    var sc_security="e095256f"; 
+                    var sc_text=3; 
+                    var scJsHost = "https://";
+                    document.write("<sc"+"ript type='text/javascript' src='" + scJsHost + 
+                    "statcounter.com/counter/counter.js'></"+"script>");
+                </script>
+            </span>
+        </div>
+        
+    </div>
+    <div class="cf"></div>
+</footer> 
+    </main>
+    <!--dynamic page header-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+  <script src="/assets/js/vendor/modernizr.js"></script>
+  <script src="/assets/js/foundation.min.js"></script>
+  
+  <script src="/assets/js/notepad.js"></script>
+  <script src="/assets/js/scripts.min.js"></script>
+  <script src="/assets/js/vendor/nprogress.js"></script>
+  
+  <script>
+    $(document).foundation();
+  </script>
+  <script type='text/javascript'>console.log("N/A");</script>
+  <script type='text/javascript'>console.log("https://www.cdslab.org/");</script>
+
+<!--header anchor links-->
+<script src="/assets/js/autoAnchorLink.js"></script>
+
+<!-- <script src="/assets/js/prismOkaidia.js"></script>
+<script src="/assets/js/prismTwilight.js"></script>
+<script src="/assets/js/prismDefault.js"></script>
+ -->
+<script src="/assets/js/prismCoy.js"></script> 
+    <!--automatic Table of Content.-->
+    <script src="/assets/js/autoTOC.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+[
+	
+		{
+		  "title"      : "Version-control using Git and GitHub",
+		  "category"   : "",
+		  "url"        : "/programming/version-control-using-git-github/version-control-using-git-github",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "value, variable, type, syntax error",
+		  "category"   : "",
+		  "url"        : "/programming/values-variables-types-syntax-error/values-variables-types-syntax-error",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Computing the area of a triangle",
+		  "category"   : "",
+		  "url"        : "/programming/triangle-area/triangle-area",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Time required for cooking a refrigerated egg",
+		  "category"   : "",
+		  "url"        : "/programming/time-to-cook-frozen-egg/time-to-cook-frozen-egg",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Python aliasing vs. copying variables",
+		  "category"   : "",
+		  "url"        : "/programming/python-variable-aliasing-copying/python-variable-aliasing-copying",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Single-line Python input and string manipulation",
+		  "category"   : "",
+		  "url"        : "/programming/python-single-line-input-string-manipulation/python-single-line-input-string-manipulation",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Python script full of syntax errors",
+		  "category"   : "",
+		  "url"        : "/programming/python-script-full-of-syntax-errors/python-script-full-of-syntax-errors",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Python script full of errors",
+		  "category"   : "",
+		  "url"        : "/programming/python-script-full-of-errors/python-script-full-of-errors",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Python dictionary of class members",
+		  "category"   : "",
+		  "url"        : "/programming/python-dictionary-of-class-members/python-dictionary-of-class-members",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Python script call from the Bash command line",
+		  "category"   : "",
+		  "url"        : "/programming/python-call-script-from-bash/python-call-script-from-bash",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Converting polar and Cartesian vector representations using functions and structures",
+		  "category"   : "",
+		  "url"        : "/programming/polar-cartesian-coordinates-conversion/polar-cartesian-coordinates-conversion",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Operator precedence",
+		  "category"   : "",
+		  "url"        : "/programming/operator-precedence/operator-precedence",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Matrix Initialization",
+		  "category"   : "",
+		  "url"        : "/programming/matrix-initialization/matrix-initialization",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "MATLAB working directory",
+		  "category"   : "",
+		  "url"        : "/programming/matlab-working-directory/matlab-working-directory",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "MATLAB script full of errors",
+		  "category"   : "",
+		  "url"        : "/programming/matlab-script-full-of-errors/matlab-script-full-of-errors",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Is the input number a prime number?",
+		  "category"   : "",
+		  "url"        : "/programming/isprime/isprime",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Integer overflow",
+		  "category"   : "",
+		  "url"        : "/programming/integer-overflow/integer-overflow",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Implementing the Bell-shaped (Gaussian) function",
+		  "category"   : "",
+		  "url"        : "/programming/implementing-gaussian-function/implementing-gaussian-function",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Simple GitHub page from README.md file",
+		  "category"   : "",
+		  "url"        : "/programming/github-readme-webpage/github-readme-webpage",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Function generators",
+		  "category"   : "",
+		  "url"        : "/programming/function-generators/function-generators",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Computing the Fibonacci sequence via recursive function calls",
+		  "category"   : "",
+		  "url"        : "/programming/fibonacci-sequence-via-recursive-function-calls/fibonacci-sequence-via-recursive-function-calls",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Calculating the size of a directory",
+		  "category"   : "",
+		  "url"        : "/programming/calculating-directory-size/calculating-directory-size",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Branching, the Pythonic way",
+		  "category"   : "",
+		  "url"        : "/programming/branching-pythonic-way/branching-pythonic-way",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} 
+	
+]
