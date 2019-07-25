@@ -5,30 +5,30 @@
 
 <title type="text">CDSLab Recipes - A repository for all sorts of problems with solutions</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="/feed.xml" />
-<link rel="alternate" type="text/html" href="/" />
-<updated>2019-07-25T01:31:50-05:00</updated>
-<id>/</id>
+<link rel="self" type="application/atom+xml" href="http:/MAPCP2019U/feed.xml" />
+<link rel="alternate" type="text/html" href="http:/MAPCP2019U/" />
+<updated>2019-07-25T01:35:39-05:00</updated>
+<id>http:/MAPCP2019U/</id>
 <author>
   <name>Amir Shahmoradi</name>
-  <uri>/</uri>
+  <uri>http:/MAPCP2019U/</uri>
   <email>shahmoradi@utexas.edu</email>
 </author>
 
 
 <entry>
   <title type="html"><![CDATA[Version-control using Git and GitHub]]></title>
-  <link rel="alternate" type="text/html" href="/programming/version-control-using-git-github/version-control-using-git-github"/>
-  <id>/programming/version-control-using-git-github/version-control-using-git-github</id>
+  <link rel="alternate" type="text/html" href="http:/MAPCP2019U/programming/version-control-using-git-github/version-control-using-git-github"/>
+  <id>http:/MAPCP2019U/programming/version-control-using-git-github/version-control-using-git-github</id>
   <published>2019-07-04T00:00:00-05:00</published>
   <updated>2019-07-04T00:00:00-00:00</updated>
   
   <author>
     <name>Amir Shahmoradi</name>
-    <uri></uri>
+    <uri>http:/MAPCP2019U</uri>
     <email>shahmoradi@utexas.edu</email>
   </author>
-  <category scheme="/tags/#VCS" term="VCS" /><category scheme="/tags/#git" term="git" /><category scheme="/tags/#GitHub" term="GitHub" /><category scheme="/tags/#version%20control%20system" term="version control system" /><category scheme="/tags/#project" term="project" /><category scheme="/tags/#markdown" term="markdown" /><category scheme="/tags/#git%20branch" term="git branch" />
+  <category scheme="http:/MAPCP2019U/tags/#VCS" term="VCS" /><category scheme="http:/MAPCP2019U/tags/#git" term="git" /><category scheme="http:/MAPCP2019U/tags/#GitHub" term="GitHub" /><category scheme="http:/MAPCP2019U/tags/#version%20control%20system" term="version control system" /><category scheme="http:/MAPCP2019U/tags/#project" term="project" /><category scheme="http:/MAPCP2019U/tags/#markdown" term="markdown" /><category scheme="http:/MAPCP2019U/tags/#git%20branch" term="git branch" />
   <content type="html">
   
     
@@ -739,23 +739,23 @@ nothing to commit, working tree clean
 
 
   
-  &lt;p&gt;&lt;a href=&quot;/programming/version-control-using-git-github/version-control-using-git-github&quot;&gt;Version-control using Git and GitHub&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http:/MAPCP2019U/programming/version-control-using-git-github/version-control-using-git-github&quot;&gt;Version-control using Git and GitHub&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;http:/MAPCP2019U&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[value, variable, type, syntax error]]></title>
-  <link rel="alternate" type="text/html" href="/programming/values-variables-types-syntax-error/values-variables-types-syntax-error"/>
-  <id>/programming/values-variables-types-syntax-error/values-variables-types-syntax-error</id>
+  <link rel="alternate" type="text/html" href="http:/MAPCP2019U/programming/values-variables-types-syntax-error/values-variables-types-syntax-error"/>
+  <id>http:/MAPCP2019U/programming/values-variables-types-syntax-error/values-variables-types-syntax-error</id>
   <published>2019-07-04T00:00:00-05:00</published>
   <updated>2019-07-04T00:00:00-00:00</updated>
   
   <author>
     <name>Amir Shahmoradi</name>
-    <uri></uri>
+    <uri>http:/MAPCP2019U</uri>
     <email>shahmoradi@utexas.edu</email>
   </author>
-  <category scheme="/tags/#value" term="value" /><category scheme="/tags/#variable" term="variable" /><category scheme="/tags/#type" term="type" /><category scheme="/tags/#class" term="class" /><category scheme="/tags/#logical" term="logical" /><category scheme="/tags/#whos" term="whos" /><category scheme="/tags/#who" term="who" /><category scheme="/tags/#cell%20array" term="cell array" /><category scheme="/tags/#list" term="list" /><category scheme="/tags/#syntax%20error" term="syntax error" /><category scheme="/tags/#error" term="error" /><category scheme="/tags/#Python" term="Python" /><category scheme="/tags/#MATLAB" term="MATLAB" />
+  <category scheme="http:/MAPCP2019U/tags/#value" term="value" /><category scheme="http:/MAPCP2019U/tags/#variable" term="variable" /><category scheme="http:/MAPCP2019U/tags/#type" term="type" /><category scheme="http:/MAPCP2019U/tags/#class" term="class" /><category scheme="http:/MAPCP2019U/tags/#logical" term="logical" /><category scheme="http:/MAPCP2019U/tags/#whos" term="whos" /><category scheme="http:/MAPCP2019U/tags/#who" term="who" /><category scheme="http:/MAPCP2019U/tags/#cell%20array" term="cell array" /><category scheme="http:/MAPCP2019U/tags/#list" term="list" /><category scheme="http:/MAPCP2019U/tags/#syntax%20error" term="syntax error" /><category scheme="http:/MAPCP2019U/tags/#error" term="error" /><category scheme="http:/MAPCP2019U/tags/#Python" term="Python" /><category scheme="http:/MAPCP2019U/tags/#MATLAB" term="MATLAB" />
   <content type="html">
   
     
@@ -803,7 +803,7 @@ nothing to commit, working tree clean
     
     &lt;figure&gt;
         &lt;a href=&quot;##solution-MATLAB&quot; id=&quot;#solution-MATLAB&quot;&gt;
-            &lt;img src=&quot;/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/MATLAB&quot; target=&quot;_blank&quot;&gt;
@@ -839,7 +839,7 @@ nothing to commit, working tree clean
     
     &lt;figure&gt;
         &lt;a href=&quot;#solution-Python&quot; id=&quot;solution-Python&quot;&gt;
-            &lt;img src=&quot;/images/Python.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/Python.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/Python_(programming_language)&quot; target=&quot;_blank&quot;&gt;
@@ -853,23 +853,23 @@ nothing to commit, working tree clean
 
 
   
-  &lt;p&gt;&lt;a href=&quot;/programming/values-variables-types-syntax-error/values-variables-types-syntax-error&quot;&gt;value, variable, type, syntax error&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http:/MAPCP2019U/programming/values-variables-types-syntax-error/values-variables-types-syntax-error&quot;&gt;value, variable, type, syntax error&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;http:/MAPCP2019U&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Computing the area of a triangle]]></title>
-  <link rel="alternate" type="text/html" href="/programming/triangle-area/triangle-area"/>
-  <id>/programming/triangle-area/triangle-area</id>
+  <link rel="alternate" type="text/html" href="http:/MAPCP2019U/programming/triangle-area/triangle-area"/>
+  <id>http:/MAPCP2019U/programming/triangle-area/triangle-area</id>
   <published>2019-07-04T00:00:00-05:00</published>
   <updated>2019-07-04T00:00:00-00:00</updated>
   
   <author>
     <name>Amir Shahmoradi</name>
-    <uri></uri>
+    <uri>http:/MAPCP2019U</uri>
     <email>shahmoradi@utexas.edu</email>
   </author>
-  <category scheme="/tags/#MATLAB" term="MATLAB" /><category scheme="/tags/#Python" term="Python" /><category scheme="/tags/#unit-testing" term="unit-testing" /><category scheme="/tags/#triangle" term="triangle" /><category scheme="/tags/#area" term="area" /><category scheme="/tags/#function" term="function" /><category scheme="/tags/#list" term="list" /><category scheme="/tags/#nested%20list" term="nested list" /><category scheme="/tags/#cell%20array" term="cell array" /><category scheme="/tags/#matrix" term="matrix" /><category scheme="/tags/#tuple" term="tuple" />
+  <category scheme="http:/MAPCP2019U/tags/#MATLAB" term="MATLAB" /><category scheme="http:/MAPCP2019U/tags/#Python" term="Python" /><category scheme="http:/MAPCP2019U/tags/#unit-testing" term="unit-testing" /><category scheme="http:/MAPCP2019U/tags/#triangle" term="triangle" /><category scheme="http:/MAPCP2019U/tags/#area" term="area" /><category scheme="http:/MAPCP2019U/tags/#function" term="function" /><category scheme="http:/MAPCP2019U/tags/#list" term="list" /><category scheme="http:/MAPCP2019U/tags/#nested%20list" term="nested list" /><category scheme="http:/MAPCP2019U/tags/#cell%20array" term="cell array" /><category scheme="http:/MAPCP2019U/tags/#matrix" term="matrix" /><category scheme="http:/MAPCP2019U/tags/#tuple" term="tuple" />
   <content type="html">
   
     
@@ -890,7 +890,7 @@ nothing to commit, working tree clean
     
     &lt;figure&gt;
         &lt;a href=&quot;#problem-MATLAB&quot; id=&quot;problem-MATLAB&quot;&gt;
-            &lt;img src=&quot;/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/MATLAB&quot; target=&quot;_blank&quot;&gt;
@@ -907,7 +907,7 @@ nothing to commit, working tree clean
     
     &lt;figure&gt;
         &lt;a href=&quot;#problem-Python&quot; id=&quot;problem-Python&quot;&gt;
-            &lt;img src=&quot;/images/Python.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/Python.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/Python_(programming_language)&quot; target=&quot;_blank&quot;&gt;
@@ -947,7 +947,7 @@ nothing to commit, working tree clean
     
     &lt;figure&gt;
         &lt;a href=&quot;##solution-MATLAB&quot; id=&quot;#solution-MATLAB&quot;&gt;
-            &lt;img src=&quot;/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/MATLAB&quot; target=&quot;_blank&quot;&gt;
@@ -975,7 +975,7 @@ nothing to commit, working tree clean
     
     &lt;figure&gt;
         &lt;a href=&quot;#solution-Python&quot; id=&quot;solution-Python&quot;&gt;
-            &lt;img src=&quot;/images/Python.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/Python.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/Python_(programming_language)&quot; target=&quot;_blank&quot;&gt;
@@ -994,23 +994,23 @@ nothing to commit, working tree clean
 
 
   
-  &lt;p&gt;&lt;a href=&quot;/programming/triangle-area/triangle-area&quot;&gt;Computing the area of a triangle&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http:/MAPCP2019U/programming/triangle-area/triangle-area&quot;&gt;Computing the area of a triangle&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;http:/MAPCP2019U&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Time required for cooking a refrigerated egg]]></title>
-  <link rel="alternate" type="text/html" href="/programming/time-to-cook-frozen-egg/time-to-cook-frozen-egg"/>
-  <id>/programming/time-to-cook-frozen-egg/time-to-cook-frozen-egg</id>
+  <link rel="alternate" type="text/html" href="http:/MAPCP2019U/programming/time-to-cook-frozen-egg/time-to-cook-frozen-egg"/>
+  <id>http:/MAPCP2019U/programming/time-to-cook-frozen-egg/time-to-cook-frozen-egg</id>
   <published>2019-07-04T00:00:00-05:00</published>
   <updated>2019-07-04T00:00:00-00:00</updated>
   
   <author>
     <name>Amir Shahmoradi</name>
-    <uri></uri>
+    <uri>http:/MAPCP2019U</uri>
     <email>shahmoradi@utexas.edu</email>
   </author>
-  <category scheme="/tags/#Python" term="Python" /><category scheme="/tags/#MATLAB" term="MATLAB" /><category scheme="/tags/#value" term="value" /><category scheme="/tags/#variable" term="variable" /><category scheme="/tags/#type" term="type" /><category scheme="/tags/#script" term="script" /><category scheme="/tags/#physics" term="physics" /><category scheme="/tags/#heat%20capacity" term="heat capacity" /><category scheme="/tags/#egg" term="egg" />
+  <category scheme="http:/MAPCP2019U/tags/#Python" term="Python" /><category scheme="http:/MAPCP2019U/tags/#MATLAB" term="MATLAB" /><category scheme="http:/MAPCP2019U/tags/#value" term="value" /><category scheme="http:/MAPCP2019U/tags/#variable" term="variable" /><category scheme="http:/MAPCP2019U/tags/#type" term="type" /><category scheme="http:/MAPCP2019U/tags/#script" term="script" /><category scheme="http:/MAPCP2019U/tags/#physics" term="physics" /><category scheme="http:/MAPCP2019U/tags/#heat%20capacity" term="heat capacity" /><category scheme="http:/MAPCP2019U/tags/#egg" term="egg" />
   <content type="html">
   
     
@@ -1041,8 +1041,8 @@ nothing to commit, working tree clean
     
     
     &lt;figure&gt;
-        &lt;a href=&quot;##hint-Python&quot; id=&quot;#hint-Python&quot;&gt;
-            &lt;img src=&quot;/images/Python.png&quot; width=&quot;75px&quot; /&gt;
+        &lt;a href=&quot;#hint-Python&quot; id=&quot;hint-Python&quot;&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/Python.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/Python_(programming_language)&quot; target=&quot;_blank&quot;&gt;
@@ -1067,7 +1067,7 @@ nothing to commit, working tree clean
     
     &lt;figure&gt;
         &lt;a href=&quot;##solution-MATLAB&quot; id=&quot;#solution-MATLAB&quot;&gt;
-            &lt;img src=&quot;/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/MATLAB&quot; target=&quot;_blank&quot;&gt;
@@ -1084,7 +1084,7 @@ nothing to commit, working tree clean
     
     &lt;figure&gt;
         &lt;a href=&quot;#solution-Python&quot; id=&quot;solution-Python&quot;&gt;
-            &lt;img src=&quot;/images/Python.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/Python.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/Python_(programming_language)&quot; target=&quot;_blank&quot;&gt;
@@ -1098,23 +1098,23 @@ nothing to commit, working tree clean
 
 
   
-  &lt;p&gt;&lt;a href=&quot;/programming/time-to-cook-frozen-egg/time-to-cook-frozen-egg&quot;&gt;Time required for cooking a refrigerated egg&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http:/MAPCP2019U/programming/time-to-cook-frozen-egg/time-to-cook-frozen-egg&quot;&gt;Time required for cooking a refrigerated egg&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;http:/MAPCP2019U&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Python aliasing vs. copying variables]]></title>
-  <link rel="alternate" type="text/html" href="/programming/python-variable-aliasing-copying/python-variable-aliasing-copying"/>
-  <id>/programming/python-variable-aliasing-copying/python-variable-aliasing-copying</id>
+  <link rel="alternate" type="text/html" href="http:/MAPCP2019U/programming/python-variable-aliasing-copying/python-variable-aliasing-copying"/>
+  <id>http:/MAPCP2019U/programming/python-variable-aliasing-copying/python-variable-aliasing-copying</id>
   <published>2019-07-04T00:00:00-05:00</published>
   <updated>2019-07-04T00:00:00-00:00</updated>
   
   <author>
     <name>Amir Shahmoradi</name>
-    <uri></uri>
+    <uri>http:/MAPCP2019U</uri>
     <email>shahmoradi@utexas.edu</email>
   </author>
-  <category scheme="/tags/#Python" term="Python" /><category scheme="/tags/#value" term="value" /><category scheme="/tags/#variable" term="variable" /><category scheme="/tags/#type" term="type" /><category scheme="/tags/#alias" term="alias" /><category scheme="/tags/#copy" term="copy" /><category scheme="/tags/#tuple" term="tuple" /><category scheme="/tags/#list" term="list" /><category scheme="/tags/#id" term="id" /><category scheme="/tags/#is" term="is" />
+  <category scheme="http:/MAPCP2019U/tags/#Python" term="Python" /><category scheme="http:/MAPCP2019U/tags/#value" term="value" /><category scheme="http:/MAPCP2019U/tags/#variable" term="variable" /><category scheme="http:/MAPCP2019U/tags/#type" term="type" /><category scheme="http:/MAPCP2019U/tags/#alias" term="alias" /><category scheme="http:/MAPCP2019U/tags/#copy" term="copy" /><category scheme="http:/MAPCP2019U/tags/#tuple" term="tuple" /><category scheme="http:/MAPCP2019U/tags/#list" term="list" /><category scheme="http:/MAPCP2019U/tags/#id" term="id" /><category scheme="http:/MAPCP2019U/tags/#is" term="is" />
   <content type="html">
   
     
@@ -1302,23 +1302,23 @@ nothing to commit, working tree clean
 
 
   
-  &lt;p&gt;&lt;a href=&quot;/programming/python-variable-aliasing-copying/python-variable-aliasing-copying&quot;&gt;Python aliasing vs. copying variables&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http:/MAPCP2019U/programming/python-variable-aliasing-copying/python-variable-aliasing-copying&quot;&gt;Python aliasing vs. copying variables&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;http:/MAPCP2019U&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Single-line Python input and string manipulation]]></title>
-  <link rel="alternate" type="text/html" href="/programming/python-single-line-input-string-manipulation/python-single-line-input-string-manipulation"/>
-  <id>/programming/python-single-line-input-string-manipulation/python-single-line-input-string-manipulation</id>
+  <link rel="alternate" type="text/html" href="http:/MAPCP2019U/programming/python-single-line-input-string-manipulation/python-single-line-input-string-manipulation"/>
+  <id>http:/MAPCP2019U/programming/python-single-line-input-string-manipulation/python-single-line-input-string-manipulation</id>
   <published>2019-07-04T00:00:00-05:00</published>
   <updated>2019-07-04T00:00:00-00:00</updated>
   
   <author>
     <name>Amir Shahmoradi</name>
-    <uri></uri>
+    <uri>http:/MAPCP2019U</uri>
     <email>shahmoradi@utexas.edu</email>
   </author>
-  <category scheme="/tags/#Python" term="Python" /><category scheme="/tags/#branching" term="branching" /><category scheme="/tags/#print" term="print" /><category scheme="/tags/#tuple" term="tuple" /><category scheme="/tags/#input" term="input" /><category scheme="/tags/#string" term="string" />
+  <category scheme="http:/MAPCP2019U/tags/#Python" term="Python" /><category scheme="http:/MAPCP2019U/tags/#branching" term="branching" /><category scheme="http:/MAPCP2019U/tags/#print" term="print" /><category scheme="http:/MAPCP2019U/tags/#tuple" term="tuple" /><category scheme="http:/MAPCP2019U/tags/#input" term="input" /><category scheme="http:/MAPCP2019U/tags/#string" term="string" />
   <content type="html">
   
     
@@ -1392,23 +1392,23 @@ Use &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt; function 
 
 
   
-  &lt;p&gt;&lt;a href=&quot;/programming/python-single-line-input-string-manipulation/python-single-line-input-string-manipulation&quot;&gt;Single-line Python input and string manipulation&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http:/MAPCP2019U/programming/python-single-line-input-string-manipulation/python-single-line-input-string-manipulation&quot;&gt;Single-line Python input and string manipulation&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;http:/MAPCP2019U&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Python script full of syntax errors]]></title>
-  <link rel="alternate" type="text/html" href="/programming/python-script-full-of-syntax-errors/python-script-full-of-syntax-errors"/>
-  <id>/programming/python-script-full-of-syntax-errors/python-script-full-of-syntax-errors</id>
+  <link rel="alternate" type="text/html" href="http:/MAPCP2019U/programming/python-script-full-of-syntax-errors/python-script-full-of-syntax-errors"/>
+  <id>http:/MAPCP2019U/programming/python-script-full-of-syntax-errors/python-script-full-of-syntax-errors</id>
   <published>2019-07-04T00:00:00-05:00</published>
   <updated>2019-07-04T00:00:00-00:00</updated>
   
   <author>
     <name>Amir Shahmoradi</name>
-    <uri></uri>
+    <uri>http:/MAPCP2019U</uri>
     <email>shahmoradi@utexas.edu</email>
   </author>
-  <category scheme="/tags/#Python" term="Python" /><category scheme="/tags/#value" term="value" /><category scheme="/tags/#variable" term="variable" /><category scheme="/tags/#type" term="type" /><category scheme="/tags/#syntax" term="syntax" /><category scheme="/tags/#error" term="error" /><category scheme="/tags/#syntax%20error" term="syntax error" /><category scheme="/tags/#multiple%20assignment" term="multiple assignment" /><category scheme="/tags/#logical" term="logical" /><category scheme="/tags/#alias" term="alias" />
+  <category scheme="http:/MAPCP2019U/tags/#Python" term="Python" /><category scheme="http:/MAPCP2019U/tags/#value" term="value" /><category scheme="http:/MAPCP2019U/tags/#variable" term="variable" /><category scheme="http:/MAPCP2019U/tags/#type" term="type" /><category scheme="http:/MAPCP2019U/tags/#syntax" term="syntax" /><category scheme="http:/MAPCP2019U/tags/#error" term="error" /><category scheme="http:/MAPCP2019U/tags/#syntax%20error" term="syntax error" /><category scheme="http:/MAPCP2019U/tags/#multiple%20assignment" term="multiple assignment" /><category scheme="http:/MAPCP2019U/tags/#logical" term="logical" /><category scheme="http:/MAPCP2019U/tags/#alias" term="alias" />
   <content type="html">
   
     
@@ -1439,7 +1439,7 @@ Use &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt; function 
     
     &lt;figure&gt;
         &lt;a href=&quot;#solution-Python&quot; id=&quot;solution-Python&quot;&gt;
-            &lt;img src=&quot;/images/Python.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/Python.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/Python_(programming_language)&quot; target=&quot;_blank&quot;&gt;
@@ -1453,23 +1453,23 @@ Use &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt; function 
 
 
   
-  &lt;p&gt;&lt;a href=&quot;/programming/python-script-full-of-syntax-errors/python-script-full-of-syntax-errors&quot;&gt;Python script full of syntax errors&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http:/MAPCP2019U/programming/python-script-full-of-syntax-errors/python-script-full-of-syntax-errors&quot;&gt;Python script full of syntax errors&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;http:/MAPCP2019U&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Python script full of errors]]></title>
-  <link rel="alternate" type="text/html" href="/programming/python-script-full-of-errors/python-script-full-of-errors"/>
-  <id>/programming/python-script-full-of-errors/python-script-full-of-errors</id>
+  <link rel="alternate" type="text/html" href="http:/MAPCP2019U/programming/python-script-full-of-errors/python-script-full-of-errors"/>
+  <id>http:/MAPCP2019U/programming/python-script-full-of-errors/python-script-full-of-errors</id>
   <published>2019-07-04T00:00:00-05:00</published>
   <updated>2019-07-04T00:00:00-00:00</updated>
   
   <author>
     <name>Amir Shahmoradi</name>
-    <uri></uri>
+    <uri>http:/MAPCP2019U</uri>
     <email>shahmoradi@utexas.edu</email>
   </author>
-  <category scheme="/tags/#value" term="value" /><category scheme="/tags/#variable" term="variable" /><category scheme="/tags/#type" term="type" /><category scheme="/tags/#syntax%20error" term="syntax error" /><category scheme="/tags/#error" term="error" /><category scheme="/tags/#string" term="string" /><category scheme="/tags/#Python" term="Python" /><category scheme="/tags/#value" term="value" /><category scheme="/tags/#variable" term="variable" /><category scheme="/tags/#type" term="type" />
+  <category scheme="http:/MAPCP2019U/tags/#value" term="value" /><category scheme="http:/MAPCP2019U/tags/#variable" term="variable" /><category scheme="http:/MAPCP2019U/tags/#type" term="type" /><category scheme="http:/MAPCP2019U/tags/#syntax%20error" term="syntax error" /><category scheme="http:/MAPCP2019U/tags/#error" term="error" /><category scheme="http:/MAPCP2019U/tags/#string" term="string" /><category scheme="http:/MAPCP2019U/tags/#Python" term="Python" /><category scheme="http:/MAPCP2019U/tags/#value" term="value" /><category scheme="http:/MAPCP2019U/tags/#variable" term="variable" /><category scheme="http:/MAPCP2019U/tags/#type" term="type" />
   <content type="html">
   
     
@@ -1554,7 +1554,7 @@ And division by 0, will give you a runtime exception: 1/0 = NaN
     
     &lt;figure&gt;
         &lt;a href=&quot;#solution-Python&quot; id=&quot;solution-Python&quot;&gt;
-            &lt;img src=&quot;/images/Python.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/Python.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/Python_(programming_language)&quot; target=&quot;_blank&quot;&gt;
@@ -1588,23 +1588,23 @@ Almost any other error in the code is a syntax error. For example, lines 11,12,1
 
 
   
-  &lt;p&gt;&lt;a href=&quot;/programming/python-script-full-of-errors/python-script-full-of-errors&quot;&gt;Python script full of errors&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http:/MAPCP2019U/programming/python-script-full-of-errors/python-script-full-of-errors&quot;&gt;Python script full of errors&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;http:/MAPCP2019U&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Python dictionary of class members]]></title>
-  <link rel="alternate" type="text/html" href="/programming/python-dictionary-of-class-members/python-dictionary-of-class-members"/>
-  <id>/programming/python-dictionary-of-class-members/python-dictionary-of-class-members</id>
+  <link rel="alternate" type="text/html" href="http:/MAPCP2019U/programming/python-dictionary-of-class-members/python-dictionary-of-class-members"/>
+  <id>http:/MAPCP2019U/programming/python-dictionary-of-class-members/python-dictionary-of-class-members</id>
   <published>2019-07-04T00:00:00-05:00</published>
   <updated>2019-07-04T00:00:00-00:00</updated>
   
   <author>
     <name>Amir Shahmoradi</name>
-    <uri></uri>
+    <uri>http:/MAPCP2019U</uri>
     <email>shahmoradi@utexas.edu</email>
   </author>
-  <category scheme="/tags/#Python" term="Python" /><category scheme="/tags/#value" term="value" /><category scheme="/tags/#variable" term="variable" /><category scheme="/tags/#type" term="type" /><category scheme="/tags/#dictionary" term="dictionary" />
+  <category scheme="http:/MAPCP2019U/tags/#Python" term="Python" /><category scheme="http:/MAPCP2019U/tags/#value" term="value" /><category scheme="http:/MAPCP2019U/tags/#variable" term="variable" /><category scheme="http:/MAPCP2019U/tags/#type" term="type" /><category scheme="http:/MAPCP2019U/tags/#dictionary" term="dictionary" />
   <content type="html">
   
     
@@ -1717,23 +1717,23 @@ Carolina Vedovato
 
 
   
-  &lt;p&gt;&lt;a href=&quot;/programming/python-dictionary-of-class-members/python-dictionary-of-class-members&quot;&gt;Python dictionary of class members&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http:/MAPCP2019U/programming/python-dictionary-of-class-members/python-dictionary-of-class-members&quot;&gt;Python dictionary of class members&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;http:/MAPCP2019U&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Python script call from the Bash command line]]></title>
-  <link rel="alternate" type="text/html" href="/programming/python-call-script-from-bash/python-call-script-from-bash"/>
-  <id>/programming/python-call-script-from-bash/python-call-script-from-bash</id>
+  <link rel="alternate" type="text/html" href="http:/MAPCP2019U/programming/python-call-script-from-bash/python-call-script-from-bash"/>
+  <id>http:/MAPCP2019U/programming/python-call-script-from-bash/python-call-script-from-bash</id>
   <published>2019-07-04T00:00:00-05:00</published>
   <updated>2019-07-04T00:00:00-00:00</updated>
   
   <author>
     <name>Amir Shahmoradi</name>
-    <uri></uri>
+    <uri>http:/MAPCP2019U</uri>
     <email>shahmoradi@utexas.edu</email>
   </author>
-  <category scheme="/tags/#Python" term="Python" /><category scheme="/tags/#working%20directory" term="working directory" /><category scheme="/tags/#directory" term="directory" /><category scheme="/tags/#script" term="script" /><category scheme="/tags/#run" term="run" /><category scheme="/tags/#mkdir" term="mkdir" /><category scheme="/tags/#cd" term="cd" /><category scheme="/tags/#string" term="string" /><category scheme="/tags/#print" term="print" /><category scheme="/tags/#escape%20character" term="escape character" /><category scheme="/tags/#value" term="value" /><category scheme="/tags/#variable" term="variable" /><category scheme="/tags/#type" term="type" />
+  <category scheme="http:/MAPCP2019U/tags/#Python" term="Python" /><category scheme="http:/MAPCP2019U/tags/#working%20directory" term="working directory" /><category scheme="http:/MAPCP2019U/tags/#directory" term="directory" /><category scheme="http:/MAPCP2019U/tags/#script" term="script" /><category scheme="http:/MAPCP2019U/tags/#run" term="run" /><category scheme="http:/MAPCP2019U/tags/#mkdir" term="mkdir" /><category scheme="http:/MAPCP2019U/tags/#cd" term="cd" /><category scheme="http:/MAPCP2019U/tags/#string" term="string" /><category scheme="http:/MAPCP2019U/tags/#print" term="print" /><category scheme="http:/MAPCP2019U/tags/#escape%20character" term="escape character" /><category scheme="http:/MAPCP2019U/tags/#value" term="value" /><category scheme="http:/MAPCP2019U/tags/#variable" term="variable" /><category scheme="http:/MAPCP2019U/tags/#type" term="type" />
   <content type="html">
   
     
@@ -1811,7 +1811,7 @@ MANIPULATION!
     
     &lt;figure&gt;
         &lt;a href=&quot;#solution-Python&quot; id=&quot;solution-Python&quot;&gt;
-            &lt;img src=&quot;/images/Python.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/Python.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/Python_(programming_language)&quot; target=&quot;_blank&quot;&gt;
@@ -1825,23 +1825,23 @@ MANIPULATION!
 
 
   
-  &lt;p&gt;&lt;a href=&quot;/programming/python-call-script-from-bash/python-call-script-from-bash&quot;&gt;Python script call from the Bash command line&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http:/MAPCP2019U/programming/python-call-script-from-bash/python-call-script-from-bash&quot;&gt;Python script call from the Bash command line&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;http:/MAPCP2019U&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Converting polar and Cartesian vector representations using functions and structures]]></title>
-  <link rel="alternate" type="text/html" href="/programming/polar-cartesian-coordinates-conversion/polar-cartesian-coordinates-conversion"/>
-  <id>/programming/polar-cartesian-coordinates-conversion/polar-cartesian-coordinates-conversion</id>
+  <link rel="alternate" type="text/html" href="http:/MAPCP2019U/programming/polar-cartesian-coordinates-conversion/polar-cartesian-coordinates-conversion"/>
+  <id>http:/MAPCP2019U/programming/polar-cartesian-coordinates-conversion/polar-cartesian-coordinates-conversion</id>
   <published>2019-07-04T00:00:00-05:00</published>
   <updated>2019-07-04T00:00:00-00:00</updated>
   
   <author>
     <name>Amir Shahmoradi</name>
-    <uri></uri>
+    <uri>http:/MAPCP2019U</uri>
     <email>shahmoradi@utexas.edu</email>
   </author>
-  <category scheme="/tags/#MATLAB" term="MATLAB" /><category scheme="/tags/#function" term="function" /><category scheme="/tags/#structure" term="structure" /><category scheme="/tags/#isfield" term="isfield" /><category scheme="/tags/#Cartesian" term="Cartesian" /><category scheme="/tags/#polar" term="polar" /><category scheme="/tags/#coordinates" term="coordinates" /><category scheme="/tags/#branching" term="branching" /><category scheme="/tags/#logical" term="logical" />
+  <category scheme="http:/MAPCP2019U/tags/#MATLAB" term="MATLAB" /><category scheme="http:/MAPCP2019U/tags/#function" term="function" /><category scheme="http:/MAPCP2019U/tags/#structure" term="structure" /><category scheme="http:/MAPCP2019U/tags/#isfield" term="isfield" /><category scheme="http:/MAPCP2019U/tags/#Cartesian" term="Cartesian" /><category scheme="http:/MAPCP2019U/tags/#polar" term="polar" /><category scheme="http:/MAPCP2019U/tags/#coordinates" term="coordinates" /><category scheme="http:/MAPCP2019U/tags/#branching" term="branching" /><category scheme="http:/MAPCP2019U/tags/#logical" term="logical" />
   <content type="html">
   
     
@@ -1886,7 +1886,7 @@ MANIPULATION!
     
     &lt;figure&gt;
         &lt;a href=&quot;##solution-MATLAB&quot; id=&quot;#solution-MATLAB&quot;&gt;
-            &lt;img src=&quot;/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/MATLAB&quot; target=&quot;_blank&quot;&gt;
@@ -1900,23 +1900,23 @@ MANIPULATION!
 
 
   
-  &lt;p&gt;&lt;a href=&quot;/programming/polar-cartesian-coordinates-conversion/polar-cartesian-coordinates-conversion&quot;&gt;Converting polar and Cartesian vector representations using functions and structures&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http:/MAPCP2019U/programming/polar-cartesian-coordinates-conversion/polar-cartesian-coordinates-conversion&quot;&gt;Converting polar and Cartesian vector representations using functions and structures&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;http:/MAPCP2019U&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Operator precedence]]></title>
-  <link rel="alternate" type="text/html" href="/programming/operator-precedence/operator-precedence"/>
-  <id>/programming/operator-precedence/operator-precedence</id>
+  <link rel="alternate" type="text/html" href="http:/MAPCP2019U/programming/operator-precedence/operator-precedence"/>
+  <id>http:/MAPCP2019U/programming/operator-precedence/operator-precedence</id>
   <published>2019-07-04T00:00:00-05:00</published>
   <updated>2019-07-04T00:00:00-00:00</updated>
   
   <author>
     <name>Amir Shahmoradi</name>
-    <uri></uri>
+    <uri>http:/MAPCP2019U</uri>
     <email>shahmoradi@utexas.edu</email>
   </author>
-  <category scheme="/tags/#value" term="value" /><category scheme="/tags/#variable" term="variable" /><category scheme="/tags/#type" term="type" /><category scheme="/tags/#operator" term="operator" /><category scheme="/tags/#precedence" term="precedence" /><category scheme="/tags/#operator%20precedence" term="operator precedence" /><category scheme="/tags/#Python" term="Python" /><category scheme="/tags/#MATLAB" term="MATLAB" />
+  <category scheme="http:/MAPCP2019U/tags/#value" term="value" /><category scheme="http:/MAPCP2019U/tags/#variable" term="variable" /><category scheme="http:/MAPCP2019U/tags/#type" term="type" /><category scheme="http:/MAPCP2019U/tags/#operator" term="operator" /><category scheme="http:/MAPCP2019U/tags/#precedence" term="precedence" /><category scheme="http:/MAPCP2019U/tags/#operator%20precedence" term="operator precedence" /><category scheme="http:/MAPCP2019U/tags/#Python" term="Python" /><category scheme="http:/MAPCP2019U/tags/#MATLAB" term="MATLAB" />
   <content type="html">
   
     
@@ -1955,7 +1955,7 @@ MANIPULATION!
     
     &lt;figure&gt;
         &lt;a href=&quot;##solution-MATLAB&quot; id=&quot;#solution-MATLAB&quot;&gt;
-            &lt;img src=&quot;/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/MATLAB&quot; target=&quot;_blank&quot;&gt;
@@ -2000,7 +2000,7 @@ MANIPULATION!
     
     &lt;figure&gt;
         &lt;a href=&quot;#solution-Python&quot; id=&quot;solution-Python&quot;&gt;
-            &lt;img src=&quot;/images/Python.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/Python.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/Python_(programming_language)&quot; target=&quot;_blank&quot;&gt;
@@ -2014,23 +2014,23 @@ MANIPULATION!
 
 
   
-  &lt;p&gt;&lt;a href=&quot;/programming/operator-precedence/operator-precedence&quot;&gt;Operator precedence&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http:/MAPCP2019U/programming/operator-precedence/operator-precedence&quot;&gt;Operator precedence&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;http:/MAPCP2019U&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Matrix Initialization]]></title>
-  <link rel="alternate" type="text/html" href="/programming/matrix-initialization/matrix-initialization"/>
-  <id>/programming/matrix-initialization/matrix-initialization</id>
+  <link rel="alternate" type="text/html" href="http:/MAPCP2019U/programming/matrix-initialization/matrix-initialization"/>
+  <id>http:/MAPCP2019U/programming/matrix-initialization/matrix-initialization</id>
   <published>2019-07-04T00:00:00-05:00</published>
   <updated>2019-07-04T00:00:00-00:00</updated>
   
   <author>
     <name>Amir Shahmoradi</name>
-    <uri></uri>
+    <uri>http:/MAPCP2019U</uri>
     <email>shahmoradi@utexas.edu</email>
   </author>
-  <category scheme="/tags/#value" term="value" /><category scheme="/tags/#variable" term="variable" /><category scheme="/tags/#type" term="type" /><category scheme="/tags/#matrix" term="matrix" /><category scheme="/tags/#initialization" term="initialization" /><category scheme="/tags/#zeros" term="zeros" /><category scheme="/tags/#eye" term="eye" /><category scheme="/tags/#diag" term="diag" /><category scheme="/tags/#numpy" term="numpy" /><category scheme="/tags/#Python" term="Python" /><category scheme="/tags/#MATLAB" term="MATLAB" />
+  <category scheme="http:/MAPCP2019U/tags/#value" term="value" /><category scheme="http:/MAPCP2019U/tags/#variable" term="variable" /><category scheme="http:/MAPCP2019U/tags/#type" term="type" /><category scheme="http:/MAPCP2019U/tags/#matrix" term="matrix" /><category scheme="http:/MAPCP2019U/tags/#initialization" term="initialization" /><category scheme="http:/MAPCP2019U/tags/#zeros" term="zeros" /><category scheme="http:/MAPCP2019U/tags/#eye" term="eye" /><category scheme="http:/MAPCP2019U/tags/#diag" term="diag" /><category scheme="http:/MAPCP2019U/tags/#numpy" term="numpy" /><category scheme="http:/MAPCP2019U/tags/#Python" term="Python" /><category scheme="http:/MAPCP2019U/tags/#MATLAB" term="MATLAB" />
   <content type="html">
   
     
@@ -2063,7 +2063,7 @@ MANIPULATION!
     
     &lt;figure&gt;
         &lt;a href=&quot;##solution-MATLAB&quot; id=&quot;#solution-MATLAB&quot;&gt;
-            &lt;img src=&quot;/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/MATLAB&quot; target=&quot;_blank&quot;&gt;
@@ -2108,7 +2108,7 @@ MANIPULATION!
     
     &lt;figure&gt;
         &lt;a href=&quot;#solution-Python&quot; id=&quot;solution-Python&quot;&gt;
-            &lt;img src=&quot;/images/Python.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/Python.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/Python_(programming_language)&quot; target=&quot;_blank&quot;&gt;
@@ -2122,23 +2122,23 @@ MANIPULATION!
 
 
   
-  &lt;p&gt;&lt;a href=&quot;/programming/matrix-initialization/matrix-initialization&quot;&gt;Matrix Initialization&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http:/MAPCP2019U/programming/matrix-initialization/matrix-initialization&quot;&gt;Matrix Initialization&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;http:/MAPCP2019U&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[MATLAB working directory]]></title>
-  <link rel="alternate" type="text/html" href="/programming/matlab-working-directory/matlab-working-directory"/>
-  <id>/programming/matlab-working-directory/matlab-working-directory</id>
+  <link rel="alternate" type="text/html" href="http:/MAPCP2019U/programming/matlab-working-directory/matlab-working-directory"/>
+  <id>http:/MAPCP2019U/programming/matlab-working-directory/matlab-working-directory</id>
   <published>2019-07-04T00:00:00-05:00</published>
   <updated>2019-07-04T00:00:00-00:00</updated>
   
   <author>
     <name>Amir Shahmoradi</name>
-    <uri></uri>
+    <uri>http:/MAPCP2019U</uri>
     <email>shahmoradi@utexas.edu</email>
   </author>
-  <category scheme="/tags/#MATLAB" term="MATLAB" /><category scheme="/tags/#working%20directory" term="working directory" /><category scheme="/tags/#directory" term="directory" /><category scheme="/tags/#script" term="script" /><category scheme="/tags/#figure" term="figure" /><category scheme="/tags/#plot" term="plot" /><category scheme="/tags/#mkdir" term="mkdir" /><category scheme="/tags/#cd" term="cd" /><category scheme="/tags/#value" term="value" /><category scheme="/tags/#variable" term="variable" /><category scheme="/tags/#type" term="type" />
+  <category scheme="http:/MAPCP2019U/tags/#MATLAB" term="MATLAB" /><category scheme="http:/MAPCP2019U/tags/#working%20directory" term="working directory" /><category scheme="http:/MAPCP2019U/tags/#directory" term="directory" /><category scheme="http:/MAPCP2019U/tags/#script" term="script" /><category scheme="http:/MAPCP2019U/tags/#figure" term="figure" /><category scheme="http:/MAPCP2019U/tags/#plot" term="plot" /><category scheme="http:/MAPCP2019U/tags/#mkdir" term="mkdir" /><category scheme="http:/MAPCP2019U/tags/#cd" term="cd" /><category scheme="http:/MAPCP2019U/tags/#value" term="value" /><category scheme="http:/MAPCP2019U/tags/#variable" term="variable" /><category scheme="http:/MAPCP2019U/tags/#type" term="type" />
   <content type="html">
   
     
@@ -2176,7 +2176,7 @@ MANIPULATION!
     
     &lt;figure&gt;
         &lt;a href=&quot;##solution-MATLAB&quot; id=&quot;#solution-MATLAB&quot;&gt;
-            &lt;img src=&quot;/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/MATLAB&quot; target=&quot;_blank&quot;&gt;
@@ -2221,7 +2221,7 @@ MANIPULATION!
     
     &lt;figure&gt;
         &lt;a href=&quot;##solution-MATLAB&quot; id=&quot;#solution-MATLAB&quot;&gt;
-            &lt;img src=&quot;/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/MATLAB&quot; target=&quot;_blank&quot;&gt;
@@ -2244,23 +2244,23 @@ MANIPULATION!
 
 
   
-  &lt;p&gt;&lt;a href=&quot;/programming/matlab-working-directory/matlab-working-directory&quot;&gt;MATLAB working directory&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http:/MAPCP2019U/programming/matlab-working-directory/matlab-working-directory&quot;&gt;MATLAB working directory&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;http:/MAPCP2019U&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[MATLAB script full of errors]]></title>
-  <link rel="alternate" type="text/html" href="/programming/matlab-script-full-of-errors/matlab-script-full-of-errors"/>
-  <id>/programming/matlab-script-full-of-errors/matlab-script-full-of-errors</id>
+  <link rel="alternate" type="text/html" href="http:/MAPCP2019U/programming/matlab-script-full-of-errors/matlab-script-full-of-errors"/>
+  <id>http:/MAPCP2019U/programming/matlab-script-full-of-errors/matlab-script-full-of-errors</id>
   <published>2019-07-04T00:00:00-05:00</published>
   <updated>2019-07-04T00:00:00-00:00</updated>
   
   <author>
     <name>Amir Shahmoradi</name>
-    <uri></uri>
+    <uri>http:/MAPCP2019U</uri>
     <email>shahmoradi@utexas.edu</email>
   </author>
-  <category scheme="/tags/#value" term="value" /><category scheme="/tags/#variable" term="variable" /><category scheme="/tags/#type" term="type" /><category scheme="/tags/#syntax%20error" term="syntax error" /><category scheme="/tags/#error" term="error" /><category scheme="/tags/#string" term="string" /><category scheme="/tags/#MATLAB" term="MATLAB" />
+  <category scheme="http:/MAPCP2019U/tags/#value" term="value" /><category scheme="http:/MAPCP2019U/tags/#variable" term="variable" /><category scheme="http:/MAPCP2019U/tags/#type" term="type" /><category scheme="http:/MAPCP2019U/tags/#syntax%20error" term="syntax error" /><category scheme="http:/MAPCP2019U/tags/#error" term="error" /><category scheme="http:/MAPCP2019U/tags/#string" term="string" /><category scheme="http:/MAPCP2019U/tags/#MATLAB" term="MATLAB" />
   <content type="html">
   
     
@@ -2302,7 +2302,7 @@ MANIPULATION!
     
     &lt;figure&gt;
         &lt;a href=&quot;##solution-MATLAB&quot; id=&quot;#solution-MATLAB&quot;&gt;
-            &lt;img src=&quot;/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/MATLAB&quot; target=&quot;_blank&quot;&gt;
@@ -2316,23 +2316,23 @@ MANIPULATION!
 
 
   
-  &lt;p&gt;&lt;a href=&quot;/programming/matlab-script-full-of-errors/matlab-script-full-of-errors&quot;&gt;MATLAB script full of errors&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http:/MAPCP2019U/programming/matlab-script-full-of-errors/matlab-script-full-of-errors&quot;&gt;MATLAB script full of errors&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;http:/MAPCP2019U&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Is the input number a prime number?]]></title>
-  <link rel="alternate" type="text/html" href="/programming/isprime/isprime"/>
-  <id>/programming/isprime/isprime</id>
+  <link rel="alternate" type="text/html" href="http:/MAPCP2019U/programming/isprime/isprime"/>
+  <id>http:/MAPCP2019U/programming/isprime/isprime</id>
   <published>2019-07-04T00:00:00-05:00</published>
   <updated>2019-07-04T00:00:00-00:00</updated>
   
   <author>
     <name>Amir Shahmoradi</name>
-    <uri></uri>
+    <uri>http:/MAPCP2019U</uri>
     <email>shahmoradi@utexas.edu</email>
   </author>
-  <category scheme="/tags/#function" term="function" /><category scheme="/tags/#nested%20function" term="nested function" /><category scheme="/tags/#branching" term="branching" /><category scheme="/tags/#logical" term="logical" /><category scheme="/tags/#prime%20number" term="prime number" /><category scheme="/tags/#isprime" term="isprime" /><category scheme="/tags/#MATLAB" term="MATLAB" /><category scheme="/tags/#Python" term="Python" />
+  <category scheme="http:/MAPCP2019U/tags/#function" term="function" /><category scheme="http:/MAPCP2019U/tags/#nested%20function" term="nested function" /><category scheme="http:/MAPCP2019U/tags/#branching" term="branching" /><category scheme="http:/MAPCP2019U/tags/#logical" term="logical" /><category scheme="http:/MAPCP2019U/tags/#prime%20number" term="prime number" /><category scheme="http:/MAPCP2019U/tags/#isprime" term="isprime" /><category scheme="http:/MAPCP2019U/tags/#MATLAB" term="MATLAB" /><category scheme="http:/MAPCP2019U/tags/#Python" term="Python" />
   <content type="html">
   
     
@@ -2363,7 +2363,7 @@ MANIPULATION!
     
     &lt;figure&gt;
         &lt;a href=&quot;#hint-MATLAB&quot; id=&quot;hint-MATLAB&quot;&gt;
-            &lt;img src=&quot;/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/MATLAB&quot; target=&quot;_blank&quot;&gt;
@@ -2388,7 +2388,7 @@ MANIPULATION!
     
     &lt;figure&gt;
         &lt;a href=&quot;##solution-MATLAB&quot; id=&quot;#solution-MATLAB&quot;&gt;
-            &lt;img src=&quot;/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/MATLAB&quot; target=&quot;_blank&quot;&gt;
@@ -2427,7 +2427,7 @@ MANIPULATION!
     
     &lt;figure&gt;
         &lt;a href=&quot;#solution-Python&quot; id=&quot;solution-Python&quot;&gt;
-            &lt;img src=&quot;/images/Python.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/Python.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/Python_(programming_language)&quot; target=&quot;_blank&quot;&gt;
@@ -2454,23 +2454,23 @@ MANIPULATION!
 
 
   
-  &lt;p&gt;&lt;a href=&quot;/programming/isprime/isprime&quot;&gt;Is the input number a prime number?&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http:/MAPCP2019U/programming/isprime/isprime&quot;&gt;Is the input number a prime number?&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;http:/MAPCP2019U&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Integer overflow]]></title>
-  <link rel="alternate" type="text/html" href="/programming/integer-overflow/integer-overflow"/>
-  <id>/programming/integer-overflow/integer-overflow</id>
+  <link rel="alternate" type="text/html" href="http:/MAPCP2019U/programming/integer-overflow/integer-overflow"/>
+  <id>http:/MAPCP2019U/programming/integer-overflow/integer-overflow</id>
   <published>2019-07-04T00:00:00-05:00</published>
   <updated>2019-07-04T00:00:00-00:00</updated>
   
   <author>
     <name>Amir Shahmoradi</name>
-    <uri></uri>
+    <uri>http:/MAPCP2019U</uri>
     <email>shahmoradi@utexas.edu</email>
   </author>
-  <category scheme="/tags/#value" term="value" /><category scheme="/tags/#variable" term="variable" /><category scheme="/tags/#type" term="type" /><category scheme="/tags/#semantic%20error" term="semantic error" /><category scheme="/tags/#overflow" term="overflow" /><category scheme="/tags/#integer" term="integer" /><category scheme="/tags/#Python" term="Python" /><category scheme="/tags/#MATLAB" term="MATLAB" />
+  <category scheme="http:/MAPCP2019U/tags/#value" term="value" /><category scheme="http:/MAPCP2019U/tags/#variable" term="variable" /><category scheme="http:/MAPCP2019U/tags/#type" term="type" /><category scheme="http:/MAPCP2019U/tags/#semantic%20error" term="semantic error" /><category scheme="http:/MAPCP2019U/tags/#overflow" term="overflow" /><category scheme="http:/MAPCP2019U/tags/#integer" term="integer" /><category scheme="http:/MAPCP2019U/tags/#Python" term="Python" /><category scheme="http:/MAPCP2019U/tags/#MATLAB" term="MATLAB" />
   <content type="html">
   
     
@@ -2499,7 +2499,7 @@ MANIPULATION!
     
     &lt;figure&gt;
         &lt;a href=&quot;##solution-MATLAB&quot; id=&quot;#solution-MATLAB&quot;&gt;
-            &lt;img src=&quot;/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/MATLAB&quot; target=&quot;_blank&quot;&gt;
@@ -2542,7 +2542,7 @@ MANIPULATION!
     
     &lt;figure&gt;
         &lt;a href=&quot;#solution-Python&quot; id=&quot;solution-Python&quot;&gt;
-            &lt;img src=&quot;/images/Python.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/Python.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/Python_(programming_language)&quot; target=&quot;_blank&quot;&gt;
@@ -2556,23 +2556,23 @@ MANIPULATION!
 
 
   
-  &lt;p&gt;&lt;a href=&quot;/programming/integer-overflow/integer-overflow&quot;&gt;Integer overflow&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http:/MAPCP2019U/programming/integer-overflow/integer-overflow&quot;&gt;Integer overflow&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;http:/MAPCP2019U&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Implementing the Bell-shaped (Gaussian) function]]></title>
-  <link rel="alternate" type="text/html" href="/programming/implementing-gaussian-function/implementing-gaussian-function"/>
-  <id>/programming/implementing-gaussian-function/implementing-gaussian-function</id>
+  <link rel="alternate" type="text/html" href="http:/MAPCP2019U/programming/implementing-gaussian-function/implementing-gaussian-function"/>
+  <id>http:/MAPCP2019U/programming/implementing-gaussian-function/implementing-gaussian-function</id>
   <published>2019-07-04T00:00:00-05:00</published>
   <updated>2019-07-04T00:00:00-00:00</updated>
   
   <author>
     <name>Amir Shahmoradi</name>
-    <uri></uri>
+    <uri>http:/MAPCP2019U</uri>
     <email>shahmoradi@utexas.edu</email>
   </author>
-  <category scheme="/tags/#Python" term="Python" /><category scheme="/tags/#MATLAB" term="MATLAB" /><category scheme="/tags/#Gaussian" term="Gaussian" /><category scheme="/tags/#bell-shaped" term="bell-shaped" /><category scheme="/tags/#pi" term="pi" /><category scheme="/tags/#value" term="value" /><category scheme="/tags/#variable" term="variable" /><category scheme="/tags/#type" term="type" />
+  <category scheme="http:/MAPCP2019U/tags/#Python" term="Python" /><category scheme="http:/MAPCP2019U/tags/#MATLAB" term="MATLAB" /><category scheme="http:/MAPCP2019U/tags/#Gaussian" term="Gaussian" /><category scheme="http:/MAPCP2019U/tags/#bell-shaped" term="bell-shaped" /><category scheme="http:/MAPCP2019U/tags/#pi" term="pi" /><category scheme="http:/MAPCP2019U/tags/#value" term="value" /><category scheme="http:/MAPCP2019U/tags/#variable" term="variable" /><category scheme="http:/MAPCP2019U/tags/#type" term="type" />
   <content type="html">
   
     
@@ -2597,7 +2597,7 @@ MANIPULATION!
     
     &lt;figure&gt;
         &lt;a href=&quot;#hint-Python&quot; id=&quot;hint-Python&quot;&gt;
-            &lt;img src=&quot;/images/Python.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/Python.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/Python_(programming_language)&quot; target=&quot;_blank&quot;&gt;
@@ -2624,7 +2624,7 @@ MANIPULATION!
     
     &lt;figure&gt;
         &lt;a href=&quot;##solution-MATLAB&quot; id=&quot;#solution-MATLAB&quot;&gt;
-            &lt;img src=&quot;/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/MATLAB&quot; target=&quot;_blank&quot;&gt;
@@ -2641,7 +2641,7 @@ MANIPULATION!
     
     &lt;figure&gt;
         &lt;a href=&quot;#solution-Python&quot; id=&quot;solution-Python&quot;&gt;
-            &lt;img src=&quot;/images/Python.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/Python.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/Python_(programming_language)&quot; target=&quot;_blank&quot;&gt;
@@ -2655,23 +2655,23 @@ MANIPULATION!
 
 
   
-  &lt;p&gt;&lt;a href=&quot;/programming/implementing-gaussian-function/implementing-gaussian-function&quot;&gt;Implementing the Bell-shaped (Gaussian) function&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http:/MAPCP2019U/programming/implementing-gaussian-function/implementing-gaussian-function&quot;&gt;Implementing the Bell-shaped (Gaussian) function&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;http:/MAPCP2019U&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Simple GitHub page from README.md file]]></title>
-  <link rel="alternate" type="text/html" href="/programming/github-readme-webpage/github-readme-webpage"/>
-  <id>/programming/github-readme-webpage/github-readme-webpage</id>
+  <link rel="alternate" type="text/html" href="http:/MAPCP2019U/programming/github-readme-webpage/github-readme-webpage"/>
+  <id>http:/MAPCP2019U/programming/github-readme-webpage/github-readme-webpage</id>
   <published>2019-07-04T00:00:00-05:00</published>
   <updated>2019-07-04T00:00:00-00:00</updated>
   
   <author>
     <name>Amir Shahmoradi</name>
-    <uri></uri>
+    <uri>http:/MAPCP2019U</uri>
     <email>shahmoradi@utexas.edu</email>
   </author>
-  <category scheme="/tags/#VCS" term="VCS" /><category scheme="/tags/#git" term="git" /><category scheme="/tags/#GitHub" term="GitHub" /><category scheme="/tags/#version%20control%20system" term="version control system" /><category scheme="/tags/#project" term="project" /><category scheme="/tags/#markdown" term="markdown" /><category scheme="/tags/#git%20branch" term="git branch" /><category scheme="/tags/#GitHub%20pages" term="GitHub pages" /><category scheme="/tags/#webpage" term="webpage" />
+  <category scheme="http:/MAPCP2019U/tags/#VCS" term="VCS" /><category scheme="http:/MAPCP2019U/tags/#git" term="git" /><category scheme="http:/MAPCP2019U/tags/#GitHub" term="GitHub" /><category scheme="http:/MAPCP2019U/tags/#version%20control%20system" term="version control system" /><category scheme="http:/MAPCP2019U/tags/#project" term="project" /><category scheme="http:/MAPCP2019U/tags/#markdown" term="markdown" /><category scheme="http:/MAPCP2019U/tags/#git%20branch" term="git branch" /><category scheme="http:/MAPCP2019U/tags/#GitHub%20pages" term="GitHub pages" /><category scheme="http:/MAPCP2019U/tags/#webpage" term="webpage" />
   <content type="html">
   
     
@@ -2717,23 +2717,23 @@ MANIPULATION!
 
 
   
-  &lt;p&gt;&lt;a href=&quot;/programming/github-readme-webpage/github-readme-webpage&quot;&gt;Simple GitHub page from README.md file&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http:/MAPCP2019U/programming/github-readme-webpage/github-readme-webpage&quot;&gt;Simple GitHub page from README.md file&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;http:/MAPCP2019U&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Function generators]]></title>
-  <link rel="alternate" type="text/html" href="/programming/function-generators/function-generators"/>
-  <id>/programming/function-generators/function-generators</id>
+  <link rel="alternate" type="text/html" href="http:/MAPCP2019U/programming/function-generators/function-generators"/>
+  <id>http:/MAPCP2019U/programming/function-generators/function-generators</id>
   <published>2019-07-04T00:00:00-05:00</published>
   <updated>2019-07-04T00:00:00-00:00</updated>
   
   <author>
     <name>Amir Shahmoradi</name>
-    <uri></uri>
+    <uri>http:/MAPCP2019U</uri>
     <email>shahmoradi@utexas.edu</email>
   </author>
-  <category scheme="/tags/#MATLAB" term="MATLAB" /><category scheme="/tags/#function" term="function" /><category scheme="/tags/#generator" term="generator" /><category scheme="/tags/#nested%20function" term="nested function" /><category scheme="/tags/#function%20generator" term="function generator" /><category scheme="/tags/#branching" term="branching" /><category scheme="/tags/#switch" term="switch" /><category scheme="/tags/#nargin" term="nargin" />
+  <category scheme="http:/MAPCP2019U/tags/#MATLAB" term="MATLAB" /><category scheme="http:/MAPCP2019U/tags/#function" term="function" /><category scheme="http:/MAPCP2019U/tags/#generator" term="generator" /><category scheme="http:/MAPCP2019U/tags/#nested%20function" term="nested function" /><category scheme="http:/MAPCP2019U/tags/#function%20generator" term="function generator" /><category scheme="http:/MAPCP2019U/tags/#branching" term="branching" /><category scheme="http:/MAPCP2019U/tags/#switch" term="switch" /><category scheme="http:/MAPCP2019U/tags/#nargin" term="nargin" />
   <content type="html">
   
     
@@ -2762,7 +2762,7 @@ MANIPULATION!
     
     &lt;figure&gt;
         &lt;a href=&quot;##solution-MATLAB&quot; id=&quot;#solution-MATLAB&quot;&gt;
-            &lt;img src=&quot;/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
+            &lt;img src=&quot;http:/MAPCP2019U/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
         &lt;/a&gt;
         &lt;figcaption&gt;
             &lt;a href=&quot;https://en.wikipedia.org/wiki/MATLAB&quot; target=&quot;_blank&quot;&gt;
@@ -2776,7 +2776,7 @@ MANIPULATION!
 
 
   
-  &lt;p&gt;&lt;a href=&quot;/programming/function-generators/function-generators&quot;&gt;Function generators&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http:/MAPCP2019U/programming/function-generators/function-generators&quot;&gt;Function generators&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;http:/MAPCP2019U&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
 </entry>
 
 </feed>
