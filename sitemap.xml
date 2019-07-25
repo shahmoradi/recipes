@@ -1,158 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>/MAPCP2019U</loc>
+        <loc>/recipes</loc>
     </url>
     
     
     <url>
-        <loc>/MAPCP2019U/404</loc>
+        <loc>/recipes/404</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/about/index.html</loc>
+        <loc>/recipes/about/index.html</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/categories/index.html</loc>
+        <loc>/recipes/categories/index.html</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/feed.xml</loc>
+        <loc>/recipes/feed.xml</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/filtertags</loc>
+        <loc>/recipes/filtertags</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/highlights/</loc>
+        <loc>/recipes/highlights/</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/</loc>
+        <loc>/recipes/</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/links.jsonp</loc>
+        <loc>/recipes/links.jsonp</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/assets/js/lunr-tags.js</loc>
+        <loc>/recipes/assets/js/lunr-tags.js</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/nojs</loc>
+        <loc>/recipes/nojs</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/search.json</loc>
+        <loc>/recipes/search.json</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/sitemap.xml</loc>
+        <loc>/recipes/sitemap.xml</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/tags/index.html</loc>
+        <loc>/recipes/tags/index.html</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/page2/</loc>
+        <loc>/recipes/page2/</loc>
     </url>
     
 
     
     <url>
-        <loc>/MAPCP2019U/programming/version-control-using-git-github/version-control-using-git-github</loc>
+        <loc>/recipes/programming/version-control-using-git-github/version-control-using-git-github</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/programming/values-variables-types-syntax-error/values-variables-types-syntax-error</loc>
+        <loc>/recipes/programming/values-variables-types-syntax-error/values-variables-types-syntax-error</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/programming/triangle-area/triangle-area</loc>
+        <loc>/recipes/programming/triangle-area/triangle-area</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/programming/time-to-cook-frozen-egg/time-to-cook-frozen-egg</loc>
+        <loc>/recipes/programming/time-to-cook-frozen-egg/time-to-cook-frozen-egg</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/programming/python-variable-aliasing-copying/python-variable-aliasing-copying</loc>
+        <loc>/recipes/programming/python-variable-aliasing-copying/python-variable-aliasing-copying</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/programming/python-single-line-input-string-manipulation/python-single-line-input-string-manipulation</loc>
+        <loc>/recipes/programming/python-single-line-input-string-manipulation/python-single-line-input-string-manipulation</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/programming/python-script-full-of-syntax-errors/python-script-full-of-syntax-errors</loc>
+        <loc>/recipes/programming/python-script-full-of-syntax-errors/python-script-full-of-syntax-errors</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/programming/python-script-full-of-errors/python-script-full-of-errors</loc>
+        <loc>/recipes/programming/python-script-full-of-errors/python-script-full-of-errors</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/programming/python-dictionary-of-class-members/python-dictionary-of-class-members</loc>
+        <loc>/recipes/programming/python-dictionary-of-class-members/python-dictionary-of-class-members</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/programming/python-call-script-from-bash/python-call-script-from-bash</loc>
+        <loc>/recipes/programming/python-call-script-from-bash/python-call-script-from-bash</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/programming/polar-cartesian-coordinates-conversion/polar-cartesian-coordinates-conversion</loc>
+        <loc>/recipes/programming/polar-cartesian-coordinates-conversion/polar-cartesian-coordinates-conversion</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/programming/operator-precedence/operator-precedence</loc>
+        <loc>/recipes/programming/operator-precedence/operator-precedence</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/programming/matrix-initialization/matrix-initialization</loc>
+        <loc>/recipes/programming/matrix-initialization/matrix-initialization</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/programming/matlab-working-directory/matlab-working-directory</loc>
+        <loc>/recipes/programming/matlab-working-directory/matlab-working-directory</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/programming/matlab-script-full-of-errors/matlab-script-full-of-errors</loc>
+        <loc>/recipes/programming/matlab-script-full-of-errors/matlab-script-full-of-errors</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/programming/isprime/isprime</loc>
+        <loc>/recipes/programming/isprime/isprime</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/programming/integer-overflow/integer-overflow</loc>
+        <loc>/recipes/programming/integer-overflow/integer-overflow</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/programming/implementing-gaussian-function/implementing-gaussian-function</loc>
+        <loc>/recipes/programming/implementing-gaussian-function/implementing-gaussian-function</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/programming/github-readme-webpage/github-readme-webpage</loc>
+        <loc>/recipes/programming/github-readme-webpage/github-readme-webpage</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/programming/function-generators/function-generators</loc>
+        <loc>/recipes/programming/function-generators/function-generators</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/programming/fibonacci-sequence-via-recursive-function-calls/fibonacci-sequence-via-recursive-function-calls</loc>
+        <loc>/recipes/programming/fibonacci-sequence-via-recursive-function-calls/fibonacci-sequence-via-recursive-function-calls</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/programming/calculating-directory-size/calculating-directory-size</loc>
+        <loc>/recipes/programming/calculating-directory-size/calculating-directory-size</loc>
     </url>
     
     <url>
-        <loc>/MAPCP2019U/programming/branching-pythonic-way/branching-pythonic-way</loc>
+        <loc>/recipes/programming/branching-pythonic-way/branching-pythonic-way</loc>
     </url>
     
 </urlset>

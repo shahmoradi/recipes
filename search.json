@@ -3,7 +3,7 @@
 		{
 		  "title"      : "Version-control using Git and GitHub",
 		  "category"   : "",
-		  "url"        : "/MAPCP2019U/programming/version-control-using-git-github/version-control-using-git-github",
+		  "url"        : "/recipes/programming/version-control-using-git-github/version-control-using-git-github",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
@@ -11,7 +11,7 @@
 		{
 		  "title"      : "value, variable, type, syntax error",
 		  "category"   : "",
-		  "url"        : "/MAPCP2019U/programming/values-variables-types-syntax-error/values-variables-types-syntax-error",
+		  "url"        : "/recipes/programming/values-variables-types-syntax-error/values-variables-types-syntax-error",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
@@ -19,7 +19,7 @@
 		{
 		  "title"      : "Computing the area of a triangle",
 		  "category"   : "",
-		  "url"        : "/MAPCP2019U/programming/triangle-area/triangle-area",
+		  "url"        : "/recipes/programming/triangle-area/triangle-area",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
@@ -27,7 +27,7 @@
 		{
 		  "title"      : "Time required for cooking a refrigerated egg",
 		  "category"   : "",
-		  "url"        : "/MAPCP2019U/programming/time-to-cook-frozen-egg/time-to-cook-frozen-egg",
+		  "url"        : "/recipes/programming/time-to-cook-frozen-egg/time-to-cook-frozen-egg",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
@@ -35,7 +35,7 @@
 		{
 		  "title"      : "Python aliasing vs. copying variables",
 		  "category"   : "",
-		  "url"        : "/MAPCP2019U/programming/python-variable-aliasing-copying/python-variable-aliasing-copying",
+		  "url"        : "/recipes/programming/python-variable-aliasing-copying/python-variable-aliasing-copying",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
@@ -43,7 +43,7 @@
 		{
 		  "title"      : "Single-line Python input and string manipulation",
 		  "category"   : "",
-		  "url"        : "/MAPCP2019U/programming/python-single-line-input-string-manipulation/python-single-line-input-string-manipulation",
+		  "url"        : "/recipes/programming/python-single-line-input-string-manipulation/python-single-line-input-string-manipulation",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
@@ -51,7 +51,7 @@
 		{
 		  "title"      : "Python script full of syntax errors",
 		  "category"   : "",
-		  "url"        : "/MAPCP2019U/programming/python-script-full-of-syntax-errors/python-script-full-of-syntax-errors",
+		  "url"        : "/recipes/programming/python-script-full-of-syntax-errors/python-script-full-of-syntax-errors",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
@@ -59,7 +59,7 @@
 		{
 		  "title"      : "Python script full of errors",
 		  "category"   : "",
-		  "url"        : "/MAPCP2019U/programming/python-script-full-of-errors/python-script-full-of-errors",
+		  "url"        : "/recipes/programming/python-script-full-of-errors/python-script-full-of-errors",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
@@ -67,7 +67,7 @@
 		{
 		  "title"      : "Python dictionary of class members",
 		  "category"   : "",
-		  "url"        : "/MAPCP2019U/programming/python-dictionary-of-class-members/python-dictionary-of-class-members",
+		  "url"        : "/recipes/programming/python-dictionary-of-class-members/python-dictionary-of-class-members",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
@@ -75,7 +75,7 @@
 		{
 		  "title"      : "Python script call from the Bash command line",
 		  "category"   : "",
-		  "url"        : "/MAPCP2019U/programming/python-call-script-from-bash/python-call-script-from-bash",
+		  "url"        : "/recipes/programming/python-call-script-from-bash/python-call-script-from-bash",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
@@ -83,7 +83,7 @@
 		{
 		  "title"      : "Converting polar and Cartesian vector representations using functions and structures",
 		  "category"   : "",
-		  "url"        : "/MAPCP2019U/programming/polar-cartesian-coordinates-conversion/polar-cartesian-coordinates-conversion",
+		  "url"        : "/recipes/programming/polar-cartesian-coordinates-conversion/polar-cartesian-coordinates-conversion",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
@@ -91,7 +91,7 @@
 		{
 		  "title"      : "Operator precedence",
 		  "category"   : "",
-		  "url"        : "/MAPCP2019U/programming/operator-precedence/operator-precedence",
+		  "url"        : "/recipes/programming/operator-precedence/operator-precedence",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
@@ -99,7 +99,7 @@
 		{
 		  "title"      : "Matrix Initialization",
 		  "category"   : "",
-		  "url"        : "/MAPCP2019U/programming/matrix-initialization/matrix-initialization",
+		  "url"        : "/recipes/programming/matrix-initialization/matrix-initialization",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
@@ -107,7 +107,7 @@
 		{
 		  "title"      : "MATLAB working directory",
 		  "category"   : "",
-		  "url"        : "/MAPCP2019U/programming/matlab-working-directory/matlab-working-directory",
+		  "url"        : "/recipes/programming/matlab-working-directory/matlab-working-directory",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
@@ -115,7 +115,7 @@
 		{
 		  "title"      : "MATLAB script full of errors",
 		  "category"   : "",
-		  "url"        : "/MAPCP2019U/programming/matlab-script-full-of-errors/matlab-script-full-of-errors",
+		  "url"        : "/recipes/programming/matlab-script-full-of-errors/matlab-script-full-of-errors",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
@@ -123,7 +123,7 @@
 		{
 		  "title"      : "Is the input number a prime number?",
 		  "category"   : "",
-		  "url"        : "/MAPCP2019U/programming/isprime/isprime",
+		  "url"        : "/recipes/programming/isprime/isprime",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
@@ -131,7 +131,7 @@
 		{
 		  "title"      : "Integer overflow",
 		  "category"   : "",
-		  "url"        : "/MAPCP2019U/programming/integer-overflow/integer-overflow",
+		  "url"        : "/recipes/programming/integer-overflow/integer-overflow",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
@@ -139,7 +139,7 @@
 		{
 		  "title"      : "Implementing the Bell-shaped (Gaussian) function",
 		  "category"   : "",
-		  "url"        : "/MAPCP2019U/programming/implementing-gaussian-function/implementing-gaussian-function",
+		  "url"        : "/recipes/programming/implementing-gaussian-function/implementing-gaussian-function",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
@@ -147,7 +147,7 @@
 		{
 		  "title"      : "Simple GitHub page from README.md file",
 		  "category"   : "",
-		  "url"        : "/MAPCP2019U/programming/github-readme-webpage/github-readme-webpage",
+		  "url"        : "/recipes/programming/github-readme-webpage/github-readme-webpage",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
@@ -155,7 +155,7 @@
 		{
 		  "title"      : "Function generators",
 		  "category"   : "",
-		  "url"        : "/MAPCP2019U/programming/function-generators/function-generators",
+		  "url"        : "/recipes/programming/function-generators/function-generators",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
@@ -163,7 +163,7 @@
 		{
 		  "title"      : "Computing the Fibonacci sequence via recursive function calls",
 		  "category"   : "",
-		  "url"        : "/MAPCP2019U/programming/fibonacci-sequence-via-recursive-function-calls/fibonacci-sequence-via-recursive-function-calls",
+		  "url"        : "/recipes/programming/fibonacci-sequence-via-recursive-function-calls/fibonacci-sequence-via-recursive-function-calls",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
@@ -171,7 +171,7 @@
 		{
 		  "title"      : "Calculating the size of a directory",
 		  "category"   : "",
-		  "url"        : "/MAPCP2019U/programming/calculating-directory-size/calculating-directory-size",
+		  "url"        : "/recipes/programming/calculating-directory-size/calculating-directory-size",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
@@ -179,7 +179,7 @@
 		{
 		  "title"      : "Branching, the Pythonic way",
 		  "category"   : "",
-		  "url"        : "/MAPCP2019U/programming/branching-pythonic-way/branching-pythonic-way",
+		  "url"        : "/recipes/programming/branching-pythonic-way/branching-pythonic-way",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} 
