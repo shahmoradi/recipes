@@ -61,7 +61,15 @@
         <loc>https://www.cdslab.org/recipes/page2/</loc>
     </url>
     
+    <url>
+        <loc>https://www.cdslab.org/recipes/page3/</loc>
+    </url>
+    
 
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/while-loop-to-for-loop/while-loop-to-for-loop</loc>
+    </url>
     
     <url>
         <loc>https://www.cdslab.org/recipes/programming/version-control-using-git-github/version-control-using-git-github</loc>
@@ -77,6 +85,30 @@
     
     <url>
         <loc>https://www.cdslab.org/recipes/programming/time-to-cook-frozen-egg/time-to-cook-frozen-egg</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/string-concatenation-using-for-loop/string-concatenation-using-for-loop</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/string-concatenation-using-for-loop-i/string-concatenation-using-for-loop-I</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/simulating-monty-hall-game/simulating-monty-hall-game</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/roundoff-error-paradox/roundoff-error-paradox</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/regression-standard-normal-distribution/regression-standard-normal-distribution</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/reading-data-from-web/reading-data-from-web</loc>
     </url>
     
     <url>
@@ -104,11 +136,31 @@
     </url>
     
     <url>
+        <loc>https://www.cdslab.org/recipes/programming/precision-error-paradox/precision-error-paradox</loc>
+    </url>
+    
+    <url>
         <loc>https://www.cdslab.org/recipes/programming/polar-cartesian-coordinates-conversion/polar-cartesian-coordinates-conversion</loc>
     </url>
     
     <url>
         <loc>https://www.cdslab.org/recipes/programming/operator-precedence/operator-precedence</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/object-boundary-detection/object-boundary-detection</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/monte-carlo-sampling-of-distribution-functions/monte-carlo-sampling-of-distribution-functions</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/modifying-loop-index-value/modifying-loop-index-value</loc>
     </url>
     
     <url>
@@ -120,11 +172,19 @@
     </url>
     
     <url>
+        <loc>https://www.cdslab.org/recipes/programming/matlab-subplots/matlab-subplots</loc>
+    </url>
+    
+    <url>
         <loc>https://www.cdslab.org/recipes/programming/matlab-script-full-of-errors/matlab-script-full-of-errors</loc>
     </url>
     
     <url>
-        <loc>https://www.cdslab.org/recipes/programming/isprime/isprime</loc>
+        <loc>https://www.cdslab.org/recipes/programming/largest-prime-number-smaller-than-input/largest-prime-number-smaller-than-input</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/isprime-recursive/isprime-recursive</loc>
     </url>
     
     <url>
@@ -145,6 +205,30 @@
     
     <url>
         <loc>https://www.cdslab.org/recipes/programming/fibonacci-sequence-via-recursive-function-calls/fibonacci-sequence-via-recursive-function-calls</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/fibonacci-sequence-via-for-loop-matlab/fibonacci-sequence-via-for-loop-matlab</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/exception-handling-projectile-motion/exception-handling-projectile-motion</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/exception-handling-derivative/exception-handling-derivative</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/data-transfer-amino-acid/data-transfer-amino-acid</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/command-line-input-arguments-summation/command-line-input-arguments-summation</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/command-line-input-arguments-eval/command-line-input-arguments-eval</loc>
     </url>
     
     <url>

@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "The while-loop implementation of for-loop",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/while-loop-to-for-loop/while-loop-to-for-loop",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
 		  "title"      : "Version-control using Git and GitHub",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/version-control-using-git-github/version-control-using-git-github",
@@ -28,6 +36,54 @@
 		  "title"      : "Time required for cooking a refrigerated egg",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/time-to-cook-frozen-egg/time-to-cook-frozen-egg",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "String concatenation using for-loop",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/string-concatenation-using-for-loop/string-concatenation-using-for-loop",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "String concatenation using for-loop I",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/string-concatenation-using-for-loop-i/string-concatenation-using-for-loop-I",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Simulating the Monty Hall game",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/simulating-monty-hall-game/simulating-monty-hall-game",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Impact of round-off errors on numerical computations",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/roundoff-error-paradox/roundoff-error-paradox",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Regression: obtaining the most likely mean and standard deviation of a set of Standard Normally Distributed Random Variables",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/regression-standard-normal-distribution/regression-standard-normal-distribution",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Reading data from the World Wide Web",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/reading-data-from-web/reading-data-from-web",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
@@ -81,6 +137,14 @@
 		} ,
 	
 		{
+		  "title"      : "Impact of machine precision on numerical computation",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/precision-error-paradox/precision-error-paradox",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
 		  "title"      : "Converting polar and Cartesian vector representations using functions and structures",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/polar-cartesian-coordinates-conversion/polar-cartesian-coordinates-conversion",
@@ -92,6 +156,38 @@
 		  "title"      : "Operator precedence",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/operator-precedence/operator-precedence",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Getting the boundary of objects in images",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/object-boundary-detection/object-boundary-detection",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Monte Carlo sampling of distribution functions",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/monte-carlo-sampling-of-distribution-functions/monte-carlo-sampling-of-distribution-functions",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Monte Carlo approximation of the number Pi",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Modifying the index of a for-loop",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/modifying-loop-index-value/modifying-loop-index-value",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
@@ -113,6 +209,14 @@
 		} ,
 	
 		{
+		  "title"      : "Subplots in MATLAB",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/matlab-subplots/matlab-subplots",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
 		  "title"      : "MATLAB script full of errors",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/matlab-script-full-of-errors/matlab-script-full-of-errors",
@@ -121,9 +225,17 @@
 		} ,
 	
 		{
-		  "title"      : "Is the input number a prime number?",
+		  "title"      : "Getting the largest prime number smaller than the input value",
 		  "category"   : "",
-		  "url"        : "/recipes/programming/isprime/isprime",
+		  "url"        : "/recipes/programming/largest-prime-number-smaller-than-input/largest-prime-number-smaller-than-input",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Checking if an input is a prime number (via recursive function calls)?",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/isprime-recursive/isprime-recursive",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
@@ -164,6 +276,54 @@
 		  "title"      : "Computing the Fibonacci sequence via recursive function calls",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/fibonacci-sequence-via-recursive-function-calls/fibonacci-sequence-via-recursive-function-calls",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Computing the Fibonacci sequence via for-loop",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/fibonacci-sequence-via-for-loop-matlab/fibonacci-sequence-via-for-loop-matlab",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Exception handling in the case of a simple projectile motion",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/exception-handling-projectile-motion/exception-handling-projectile-motion",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Exception handling in the case of division by zero",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/exception-handling-derivative/exception-handling-derivative",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Data transfer: Parsing Amino Acid data file",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/data-transfer-amino-acid/data-transfer-amino-acid",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Command line input arguments summation via sum()",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/command-line-input-arguments-summation/command-line-input-arguments-summation",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Command line input arguments summation via eval()",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/command-line-input-arguments-eval/command-line-input-arguments-eval",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,

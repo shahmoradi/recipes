@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="utf-8">
+<title>DATA TRANSFER: PARSING AMINO ACID DATA FILE &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<meta name="description" content="CDSLab Recipes">
+<meta name="keywords" content="Python, Amino Acid, input, output, IO, command line, argument, exception handling, exception, for-loop, dictionary, map">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/logo.png">
+<meta name="twitter:title" content="Data transfer: Parsing Amino Acid data file">
+<meta name="twitter:description" content="CDSLab Recipes">
+<meta name="twitter:creator" content="@cdslaborg">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Data transfer: Parsing Amino Acid data file">
+<meta property="og:description" content="CDSLab Recipes">
+<meta property="og:url" content="/programming/data-transfer-amino-acid/data-transfer-amino-acid">
+<meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
+<meta property="og:image" content="/images/">
+
+
+
+
+
+<link rel="canonical" href="/programming/data-transfer-amino-acid/data-transfer-amino-acid">
+<!-- <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/assets/css/vendor/font-awesome.min.css">
+<link rel="stylesheet" href="/assets/css/vendor/normalize.css">
+<link rel="stylesheet" href="/assets/css/vendor/nprogress.css">
+<link rel="stylesheet" href="/assets/css/vendor/foundation.min.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/post.css">
+
+<!--Mathjax LaTeX engine-->
+
+<style TYPE="text/css">
+code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+</style>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<!-- Icons -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!--
+<link rel="shortcut icon" href="/favicon.png">
+-->
+
+
+<!-- prism
+<link href="/assets/css/prismCoy.css" rel="stylesheet" />
+<link href="/assets/css/prismDefault.css" rel="stylesheet" />
+<link href="/assets/css/prismTwilight.css" rel="stylesheet" />
+-->
+<link href="/assets/css/prismOkaidia.css" rel="stylesheet" />
+<link href="/assets/css/alert.css" rel="stylesheet" />
+
+<!--header anchor links-->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    
+</head>
+<body class="post-template" itemscope itemtype="https://schema.org/WebPage">
+
+
+
+    <main id="notepad-post-container-simple" class="notepad-post-container-simple" role="main">
+        <header class="notepad-post-header-simple">
+            <div class="notepad-post-menu-header-simple">
+
+                <a class="notepad-blog-logo" href=https://www.cdslab.org target="_blank"><img src="/images/logo.png" alt="cdslab.org" /></a>
+                <div class="notepad-blog-menu">      
+                    <div class="notepad-mobile-menu show-for-small">
+                        <a href="#"><i class="fa fa-bars"></i></a>
+                    </div>
+                    <ul class="notepad-menu">
+                        <li class="notepad-mobile-close-btn show-for-small text-right">
+                            <a href="#"><i class="fa fa-times"></i></a>
+                        </li>
+                        
+                            <li>
+                                
+                                    <a href="/">Home</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/highlights">Highlights</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/tags">Tags</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/about">About</a>
+                                
+                            </li>
+                                    
+                        <li><a href="/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+                    </ul>
+                </div>
+            </div>
+
+                <div class="notepad-post-title-simple row">
+                    <div class="small-12 columns">
+                        <div class="notepad-post-meta-simple">
+                            <h2><a href="/programming/data-transfer-amino-acid/data-transfer-amino-acid">Data transfer: Parsing Amino Acid data file</a></h2>
+                            <p>
+                                by <strong><a href="https://www.cdslab.org/people" target="_blank">Amir Shahmoradi</a></strong>
+                                
+                                    &#8212; Last updated: 
+                                    <strong><time datetime="2019-07-04T00:00:00-05:00">04 July 2019</time></strong>
+                                
+                                <ul class="tag-box inline">
+                                    <span style="margin-right:1rem;">Tags:</span>
+                                    
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#Amino Acid" data-toggle="tooltip" title="Posts tagged with Amino Acid" rel="tag">Amino Acid</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#IO" data-toggle="tooltip" title="Posts tagged with IO" rel="tag">IO</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#argument" data-toggle="tooltip" title="Posts tagged with argument" rel="tag">argument</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#command line" data-toggle="tooltip" title="Posts tagged with command line" rel="tag">command line</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#dictionary" data-toggle="tooltip" title="Posts tagged with dictionary" rel="tag">dictionary</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#exception" data-toggle="tooltip" title="Posts tagged with exception" rel="tag">exception</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#exception handling" data-toggle="tooltip" title="Posts tagged with exception handling" rel="tag">exception handling</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#for-loop" data-toggle="tooltip" title="Posts tagged with for-loop" rel="tag">for-loop</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#input" data-toggle="tooltip" title="Posts tagged with input" rel="tag">input</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#map" data-toggle="tooltip" title="Posts tagged with map" rel="tag">map</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#output" data-toggle="tooltip" title="Posts tagged with output" rel="tag">output</a>
+                                            </li>
+                                            
+                                        
+                                    
+                                </ul>
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <article class="notepad-post-content post tag-simple">
+
+            <div style="text-align:left;">
+                
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem">
+        <h2 id="problem">Problem</h2>
+    </a>
+
+</div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    <figure>
+        <a href="#problem-Python" id="problem-Python">
+            <img src="/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>Consider <a href="1A2T_A.dssp" target="_blank">this data file</a>. It contains information about the amino-acids in <a href="http://www.rcsb.org/pdb/explore.do?structureId=1a2t" target="_blank">a protein</a> called <code class="highlighter-rouge">1A2T</code>. Each amino-acid in the protein is labeled by a single letter. There are 20 amin acid molecules in nature, and each has a total surface area (in units of Angstroms squared) that is given by the following table,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'A': 129.0
+'R': 274.0
+'N': 195.0
+'D': 193.0
+'C': 167.0
+'Q': 225.0
+'E': 223.0
+'G': 104.0
+'H': 224.0
+'I': 197.0
+'L': 201.0
+'K': 236.0
+'M': 224.0
+'F': 240.0
+'P': 159.0
+'S': 155.0
+'T': 172.0
+'W': 285.0
+'Y': 263.0
+'V': 174.0
+</code></pre></div></div>
+
+<p>However, when these amino acids sit next to each other to form a chain protein, they cover parts of each other, such that only parts of their surfaces is exposed, while the rest is hidden from the outside world by other neighboring amino acids. Therefore, one would expect an amino acid that is at the core of a spherical protein would have almost zero exposed surface area.</p>
+
+<p>Now given the above information, write a program that takes in two command-line input arguments, one of which is a string containing the path to the above <a href="1A2T_A.dssp" target="_blank">input file</a> <code class="highlighter-rouge">1A2T_A.dssp</code> which contains the partially exposed surface areas of amino acids in protein <code class="highlighter-rouge">1A2T</code> for each of its amino acids, and a second command-line argument which is the path to the file containing output of the code (e.g., it could be <code class="highlighter-rouge">./readDSSP.out</code>). Then,</p>
+<ol>
+  <li>the code reads the content of this file, and<br />
+<br /></li>
+  <li>extracts the names of the amino acids in this protein from the data column inside the file which has the header <code class="highlighter-rouge">AA</code> (look at the line number 25 inside the input data file, below <code class="highlighter-rouge">AA</code> is the column containing the one-letter names of amino acids in this protein), and<br />
+<br /></li>
+  <li>also extracts the partially exposed surface area information for each of these amino acids which appear in the column with header <code class="highlighter-rouge">ACC</code>, and<br />
+<br /></li>
+  <li>then uses the above table of maximum surface area values to calculate the fractional exposed surface area of each amino acid in this protein (i.e., for each amino acid, fraction_of_exposed_surface = ACC / maximum_surface_area_from_table), and<br />
+<br /></li>
+  <li>finally for each amino acid in this protein, it prints the one-letter name of the amino acid, its corresponding partially exposed surface area (ACC from the input file), and its corresponding fractional exposed surface area (name it RSA) to the output file given by the user on the command line.<br />
+<br /></li>
+  <li>On the first column of the output file, the code should also write the name of the protein (which is basically the name of the input file <code class="highlighter-rouge">1A2T_A</code>) on each line of the output file. <strong>Note that your code should extract the protein name from the input filename</strong> (by removing the file extension and other unnecessary information from the input command line string). <a href="readDSSP.out" target="_blank">Here</a> is an example output of the code.<br />
+<br /></li>
+  <li>Your code should also be able to handle an error resulting from less or more than 2 input command line arguments. That is, if the number of input arguments is 3 or 1, then it should input the following message on screen and stop.</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./readDSSP.py ./1A2T_A.dssp
+
+
+Usage:
+      ./readDSSP.py &lt;input dssp file&gt; &lt;output summary file&gt;
+
+Program aborted.
+</code></pre></div></div>
+
+<p>or,</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./readDSSP.py ./1A2T_A.dssp ./readDSSP.out amir
+
+
+Usage:
+      ./readDSSP.py &lt;input dssp file&gt; &lt;output summary file&gt;
+
+Program aborted.
+</code></pre></div></div>
+
+<p>To achieve the above goal, you will have to create a dictionary from the above table, with amino acid names as the keys, and the maximum surface areas as the corresponding values. Name your code <code class="highlighter-rouge">readDSSP.py</code> and submit it to your repository.</p>
+
+<p><strong>Write your code in such a way that it checks for the existence of the output file</strong>. If it already exists, then it does not remove the content of the file, whereas, it appends new data to the existing file. therwise, if the file does not exist, then it creates a new output file as requested by the user. To do so, you will need to use <code class="highlighter-rouge">os.path.isfile</code> function from module <code class="highlighter-rouge">os</code>.</p>
+
+<p class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Note that in some rows instead of a one-letter amino acid name, there is <code class="highlighter-rouge">!</code>. In such cases, your code should be able to detect the abnormality and skip that row, because that row does not contain amino acid information.</p>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution">
+        <h2 id="solution">Solution</h2>
+    </a>
+
+</div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    <figure>
+        <a href="#solution-Python" id="solution-Python">
+            <img src="/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>An example implementation can be downloaded from <a href="readDSSP.py" target="_blank">here</a>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python
+</span><span class="kn">import</span> <span class="nn">sys</span><span class="p">,</span> <span class="n">os</span>
+
+<span class="n">residue_max_acc</span> <span class="o">=</span> <span class="p">{</span><span class="s">'A'</span><span class="p">:</span> <span class="mf">129.0</span><span class="p">,</span> <span class="s">'R'</span><span class="p">:</span> <span class="mf">274.0</span><span class="p">,</span> <span class="s">'N'</span><span class="p">:</span> <span class="mf">195.0</span><span class="p">,</span> <span class="s">'D'</span><span class="p">:</span> <span class="mf">193.0</span><span class="p">,</span> \
+                   <span class="s">'C'</span><span class="p">:</span> <span class="mf">167.0</span><span class="p">,</span> <span class="s">'Q'</span><span class="p">:</span> <span class="mf">225.0</span><span class="p">,</span> <span class="s">'E'</span><span class="p">:</span> <span class="mf">223.0</span><span class="p">,</span> <span class="s">'G'</span><span class="p">:</span> <span class="mf">104.0</span><span class="p">,</span> \
+                   <span class="s">'H'</span><span class="p">:</span> <span class="mf">224.0</span><span class="p">,</span> <span class="s">'I'</span><span class="p">:</span> <span class="mf">197.0</span><span class="p">,</span> <span class="s">'L'</span><span class="p">:</span> <span class="mf">201.0</span><span class="p">,</span> <span class="s">'K'</span><span class="p">:</span> <span class="mf">236.0</span><span class="p">,</span> \
+                   <span class="s">'M'</span><span class="p">:</span> <span class="mf">224.0</span><span class="p">,</span> <span class="s">'F'</span><span class="p">:</span> <span class="mf">240.0</span><span class="p">,</span> <span class="s">'P'</span><span class="p">:</span> <span class="mf">159.0</span><span class="p">,</span> <span class="s">'S'</span><span class="p">:</span> <span class="mf">155.0</span><span class="p">,</span> \
+                   <span class="s">'T'</span><span class="p">:</span> <span class="mf">172.0</span><span class="p">,</span> <span class="s">'W'</span><span class="p">:</span> <span class="mf">285.0</span><span class="p">,</span> <span class="s">'Y'</span><span class="p">:</span> <span class="mf">263.0</span><span class="p">,</span> <span class="s">'V'</span><span class="p">:</span> <span class="mf">174.0</span><span class="p">}</span>
+    
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span> <span class="p">)</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'''
+ 
+Usage:'''</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"     "</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s">"&lt;input dssp file&gt;"</span><span class="p">,</span> <span class="s">"&lt;output summary file&gt;"</span><span class="p">,</span> <span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="nb">exit</span><span class="p">(</span><span class="s">'Program aborted.</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">dssp_in</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># path for the output dssp file to be read
+</span>        <span class="n">sum_out</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>   <span class="c1"># summary file containing all residue DSSP-property data
+</span>
+    <span class="c1"># Now check if the output summary file already exists. If so, then append data for the new pdb to the data already in the file.
+</span>    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">sum_out</span><span class="p">):</span>
+       <span class="n">sum_out_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">sum_out</span><span class="p">,</span><span class="s">'a'</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+       <span class="n">sum_out_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">sum_out</span><span class="p">,</span><span class="s">'w'</span><span class="p">)</span>
+       <span class="n">sum_out_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">'pdb'</span> <span class="o">+</span> <span class="s">'</span><span class="se">\t</span><span class="s">'</span> <span class="o">+</span> <span class="s">'name'</span> <span class="o">+</span> <span class="s">'</span><span class="se">\t</span><span class="s">'</span> <span class="o">+</span> <span class="s">'ACC'</span> <span class="o">+</span> <span class="s">'</span><span class="se">\t</span><span class="s">'</span> <span class="o">+</span> <span class="s">'RSA'</span> <span class="o">+</span> <span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+    
+    <span class="nb">input</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">dssp_in</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span>
+    <span class="n">fileContents</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>   <span class="c1"># This is a list containing each line of the input file as an element.
+</span>    <span class="n">pdb_name</span> <span class="o">=</span> <span class="n">dssp_in</span><span class="p">[</span><span class="o">-</span><span class="mi">11</span><span class="p">:</span><span class="o">-</span><span class="mi">5</span><span class="p">]</span>
+    
+    <span class="n">resnam</span> <span class="o">=</span> <span class="p">[]</span>     <span class="c1"># A list containing all Residue Names
+</span>    <span class="n">acc</span> <span class="o">=</span> <span class="p">[]</span>        <span class="c1"># A list containing all normalized residue acc values in the pdb file
+</span>    <span class="n">rsa</span> <span class="o">=</span> <span class="p">[]</span>        <span class="c1"># A list containing all normalized residue acc values in the pdb file
+</span>    <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">fileContents</span><span class="p">[</span><span class="mi">25</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">fileContents</span><span class="p">)]:</span>
+        <span class="n">AA</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">AA</span> <span class="o">!=</span> <span class="p">(</span><span class="s">'!'</span> <span class="ow">or</span> <span class="s">'*'</span><span class="p">):</span>
+            <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">resnam</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">AA</span><span class="p">)</span>
+            <span class="n">acc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">record</span><span class="p">[</span><span class="mi">35</span><span class="p">:</span><span class="mi">39</span><span class="p">])</span>
+            <span class="n">rsa</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">record</span><span class="p">[</span><span class="mi">35</span><span class="p">:</span><span class="mi">39</span><span class="p">])</span><span class="o">/</span><span class="n">residue_max_acc</span><span class="p">[</span><span class="n">AA</span><span class="p">])</span>
+            
+    <span class="nb">input</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    
+    <span class="c1"># Now write out (or append to) the ouput file
+</span>    <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">rsa</span><span class="p">):</span>
+        <span class="n">sum_out_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">pdb_name</span> <span class="o">+</span> <span class="s">'</span><span class="se">\t</span><span class="s">'</span> <span class="o">+</span> <span class="n">resnam</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s">'</span><span class="se">\t</span><span class="s">'</span> <span class="o">+</span> <span class="n">acc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s">'</span><span class="se">\t</span><span class="s">'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rsa</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+    
+    <span class="k">return</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div></div>
+
+
+            </div>
+        </article>
+        <div class="cf"></div>
+<div class="row text-center">
+    <section class="notepad-post-share">
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Data transfer: Parsing Amino Acid data file&quot;%20/programming/data-transfer-amino-acid/data-transfer-amino-acid%20via%20&#64;cdslaborg"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+            <i class="fa fa-twitter"></i>
+        </a>
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=/programming/data-transfer-amino-acid/data-transfer-amino-acid"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+            <i class="fa fa-facebook"></i>
+        </a>
+        <a class="google-icon" href="https://plus.google.com/share?url=/programming/data-transfer-amino-acid/data-transfer-amino-acid"
+           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+            <i class="fa fa-google-plus"></i>
+        </a>
+    </section>
+</div>
+        <div class="cf"></div>
+<div class="notepad-author-info">
+    <div class="row">
+        <section class="notepad-post-author small-12 columns">
+            <a href=https://www.shahmoradi.org target="_blank">
+                <img src="/images/AmirShahmoradi.png" class="notepad-post-author-avatar" alt="Amir Shahmoradi's photo">
+            </a>
+            <span class="author-label">Author</span>
+            <h1>Amir Shahmoradi</h1>
+            <p><a href="mailto:shahmoradi@utexas.edu" class="author-website">shahmoradi@utexas.edu</a></p>
+            <p>Genius is 99% perspiration and 1% inspiration</p>
+        </section>
+    </div>
+</div> 
+        <div class="cf"></div>
+
+        <section class="notepad-disqus row">
+            <div class="small-12 columns">
+                <h1 class="notepad-comments-header">Comments</h1>
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'shahmoradi'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+        </section>
+
+        <div class="cf"></div>
+        <footer class="notepad-site-footer">
+    <div class="copyright">
+         <!-- <section>Last updated 2019 / 07 / 27</section></br> -->
+         <section>Last updated Saturday, 27 Jul 2019 at 04:30 PM CST</section></br>
+         <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
+         <section>SEIR 365 | Arlington TX 76010</section></br>
+    </div>
+    <div class="social-icons">
+        
+        <a href="https://twitter.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        
+        
+        <a href="https://github.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="https://facebook.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <div style="color: #000000; float: none; width: 100%; padding-top: 1rem;">
+            <span style="font-size:0.8em">visitor count: 
+                <script type="text/javascript">
+                    var sc_project=12051053; 
+                    var sc_invisible=0; 
+                    var sc_security="e095256f"; 
+                    var sc_text=3; 
+                    var scJsHost = "https://";
+                    document.write("<sc"+"ript type='text/javascript' src='" + scJsHost + 
+                    "statcounter.com/counter/counter.js'></"+"script>");
+                </script>
+            </span>
+        </div>
+        
+    </div>
+    <div class="cf"></div>
+</footer> 
+    </main>
+    <!--dynamic page header-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+  <script src="/assets/js/vendor/modernizr.js"></script>
+  <script src="/assets/js/foundation.min.js"></script>
+  
+  <script src="/assets/js/notepad.js"></script>
+  <script src="/assets/js/scripts.min.js"></script>
+  <script src="/assets/js/vendor/nprogress.js"></script>
+  
+  <script>
+    $(document).foundation();
+  </script>
+  <script type='text/javascript'>console.log("N/A");</script>
+  <script type='text/javascript'>console.log("https://www.cdslab.org/");</script>
+
+<!--header anchor links-->
+<script src="/assets/js/autoAnchorLink.js"></script>
+
+<!-- <script src="/assets/js/prismOkaidia.js"></script>
+<script src="/assets/js/prismTwilight.js"></script>
+<script src="/assets/js/prismDefault.js"></script>
+ -->
+<script src="/assets/js/prismCoy.js"></script> 
+    <!--automatic Table of Content.-->
+    <script src="/assets/js/autoTOC.js"></script>
+</body>
+</html>

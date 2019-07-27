@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="utf-8">
+<title>SIMULATING THE MONTY HALL GAME &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<meta name="description" content="CDSLab Recipes">
+<meta name="keywords" content="MATLAB, Python, visualization, matplotlib, Monte Carlo, simulation, plot, figure, line, random number, probability">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/logo.png">
+<meta name="twitter:title" content="Simulating the Monty Hall game">
+<meta name="twitter:description" content="CDSLab Recipes">
+<meta name="twitter:creator" content="@cdslaborg">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Simulating the Monty Hall game">
+<meta property="og:description" content="CDSLab Recipes">
+<meta property="og:url" content="/programming/simulating-monty-hall-game/simulating-monty-hall-game">
+<meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
+<meta property="og:image" content="/images/">
+
+
+
+
+
+<link rel="canonical" href="/programming/simulating-monty-hall-game/simulating-monty-hall-game">
+<!-- <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/assets/css/vendor/font-awesome.min.css">
+<link rel="stylesheet" href="/assets/css/vendor/normalize.css">
+<link rel="stylesheet" href="/assets/css/vendor/nprogress.css">
+<link rel="stylesheet" href="/assets/css/vendor/foundation.min.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/post.css">
+
+<!--Mathjax LaTeX engine-->
+
+<style TYPE="text/css">
+code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+</style>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<!-- Icons -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!--
+<link rel="shortcut icon" href="/favicon.png">
+-->
+
+
+<!-- prism
+<link href="/assets/css/prismCoy.css" rel="stylesheet" />
+<link href="/assets/css/prismDefault.css" rel="stylesheet" />
+<link href="/assets/css/prismTwilight.css" rel="stylesheet" />
+-->
+<link href="/assets/css/prismOkaidia.css" rel="stylesheet" />
+<link href="/assets/css/alert.css" rel="stylesheet" />
+
+<!--header anchor links-->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    
+</head>
+<body class="post-template" itemscope itemtype="https://schema.org/WebPage">
+
+
+
+    <main id="notepad-post-container-simple" class="notepad-post-container-simple" role="main">
+        <header class="notepad-post-header-simple">
+            <div class="notepad-post-menu-header-simple">
+
+                <a class="notepad-blog-logo" href=https://www.cdslab.org target="_blank"><img src="/images/logo.png" alt="cdslab.org" /></a>
+                <div class="notepad-blog-menu">      
+                    <div class="notepad-mobile-menu show-for-small">
+                        <a href="#"><i class="fa fa-bars"></i></a>
+                    </div>
+                    <ul class="notepad-menu">
+                        <li class="notepad-mobile-close-btn show-for-small text-right">
+                            <a href="#"><i class="fa fa-times"></i></a>
+                        </li>
+                        
+                            <li>
+                                
+                                    <a href="/">Home</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/highlights">Highlights</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/tags">Tags</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/about">About</a>
+                                
+                            </li>
+                                    
+                        <li><a href="/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+                    </ul>
+                </div>
+            </div>
+
+                <div class="notepad-post-title-simple row">
+                    <div class="small-12 columns">
+                        <div class="notepad-post-meta-simple">
+                            <h2><a href="/programming/simulating-monty-hall-game/simulating-monty-hall-game">Simulating the Monty Hall game</a></h2>
+                            <p>
+                                by <strong><a href="https://www.cdslab.org/people" target="_blank">Amir Shahmoradi</a></strong>
+                                
+                                    &#8212; Last updated: 
+                                    <strong><time datetime="2019-07-04T00:00:00-05:00">04 July 2019</time></strong>
+                                
+                                <ul class="tag-box inline">
+                                    <span style="margin-right:1rem;">Tags:</span>
+                                    
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#MATLAB" data-toggle="tooltip" title="Posts tagged with MATLAB" rel="tag">MATLAB</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#Monte Carlo" data-toggle="tooltip" title="Posts tagged with Monte Carlo" rel="tag">Monte Carlo</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#figure" data-toggle="tooltip" title="Posts tagged with figure" rel="tag">figure</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#line" data-toggle="tooltip" title="Posts tagged with line" rel="tag">line</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#matplotlib" data-toggle="tooltip" title="Posts tagged with matplotlib" rel="tag">matplotlib</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#plot" data-toggle="tooltip" title="Posts tagged with plot" rel="tag">plot</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#probability" data-toggle="tooltip" title="Posts tagged with probability" rel="tag">probability</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#random number" data-toggle="tooltip" title="Posts tagged with random number" rel="tag">random number</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#simulation" data-toggle="tooltip" title="Posts tagged with simulation" rel="tag">simulation</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#visualization" data-toggle="tooltip" title="Posts tagged with visualization" rel="tag">visualization</a>
+                                            </li>
+                                            
+                                        
+                                    
+                                </ul>
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <article class="notepad-post-content post tag-simple">
+
+            <div style="text-align:left;">
+                
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem">
+        <h2 id="problem">Problem</h2>
+    </a>
+
+</div>
+
+<p>Suppose you’re on a game show, and you’re given the choice of three doors,</p>
+
+<figure>
+	<img src="Monty_1.png" />
+</figure>
+<p><br /></p>
+
+<p>Behind one door is a car; behind the two others, goats. You pick a door, say No. 1, and the host of the show opens another door, say No. 3, which has a goat.</p>
+
+<figure>
+	<img src="Monty_open_door.png" />
+</figure>
+<p><br /></p>
+
+<p>He then says to you, “Do you want to pick door No. 2?”.</p>
+
+<p><strong>Question: What would you do?</strong></p>
+
+<p>Is it to your advantage to switch your choice from door 1 to door 2? Is it to your advantage, <strong>in the long run, for a large number of game tries</strong>, to switch to the other door?</p>
+
+<p>Now whatever your answer is, I want you to check/prove your answer by a Monte Carlo simulation of this problem. Make a plot of your simulation for $ngames=100000$ repeat of this game, that shows, in the long run, on average, what is the probability of winning this game if you switch your choice, and what is the probability of winning, if you do not switch to the other door.</p>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution">
+        <h2 id="solution">Solution</h2>
+    </a>
+
+</div>
+
+<p>As you see in the figure, although you may initially win by not switching your choice, but in the long run, on average, you will lose, if you don’t switch your choice.</p>
+
+<figure>
+	<img src="MontyGameResult.png" />
+</figure>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    <figure>
+        <a href="#solution-MATLAB" id="solution-MATLAB">
+            <img src="/images/MATLAB.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
+                MATLAB
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>Here is an example MATLAB implementation, <a href="monteGame.m" target="_blank">monteGame.m</a>,</p>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">%rng('shuffle');</span>
+<span class="nb">rng</span><span class="p">(</span><span class="mi">1235</span><span class="p">);</span>
+<span class="n">nExperiments</span><span class="o">=</span><span class="mi">100000</span><span class="p">;</span> <span class="c1">% the number of times the experiment is simulated</span>
+<span class="n">TotalWinsWithoutSwitch</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">TotalWinsWithSwitch</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">AllDoors</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">];</span>
+<span class="n">averageNumberOfWinsWithoutSwitch</span> <span class="o">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="n">nExperiments</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">averageNumberOfWinsWithSwitch</span> <span class="o">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="n">nExperiments</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="k">for</span> <span class="n">iExperiment</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">nExperiments</span>
+        
+    <span class="k">if</span> <span class="nb">mod</span><span class="p">(</span><span class="n">iExperiment</span><span class="p">,</span><span class="mi">10000</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">;</span> <span class="nb">disp</span><span class="p">([</span><span class="s1">'simulating experiment number '</span><span class="p">,</span> <span class="nb">num2str</span><span class="p">(</span><span class="n">iExperiment</span><span class="p">)]);</span> <span class="k">end</span>
+    
+    <span class="n">ContainsCar</span> <span class="o">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> <span class="c1">% first create the three doors, assuming none contains the car, hence all are zero valued.</span>
+    <span class="n">doorWithCar</span> <span class="o">=</span> <span class="nb">randi</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> <span class="c1">% Now put the car behind one of the three doors randomly.</span>
+    <span class="n">myChoice</span> <span class="o">=</span> <span class="nb">randi</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> <span class="c1">% Now make a choice of door randomly.</span>
+    
+    <span class="n">excludedDoor</span> <span class="o">=</span> <span class="n">AllDoors</span><span class="p">(</span><span class="n">AllDoors</span><span class="o">~=</span><span class="n">doorWithCar</span> <span class="o">&amp;</span> <span class="n">AllDoors</span><span class="o">~=</span><span class="n">myChoice</span><span class="p">);</span> <span class="c1">% find which door should be opened by the host</span>
+    <span class="k">if</span> <span class="nb">length</span><span class="p">(</span><span class="n">excludedDoor</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span>
+        <span class="n">excludedDoor</span> <span class="o">=</span> <span class="n">excludedDoor</span><span class="p">(</span><span class="nb">randi</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]));</span> <span class="c1">% pick one of the empty doors randomly</span>
+    <span class="k">end</span>
+    
+    <span class="c1">% find the chance of winning by no door switching</span>
+    <span class="k">if</span> <span class="n">myChoice</span><span class="o">==</span><span class="n">doorWithCar</span>
+        <span class="n">TotalWinsWithoutSwitch</span> <span class="o">=</span> <span class="n">TotalWinsWithoutSwitch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">end</span>
+    
+    <span class="c1">% find the chance of winning by door switching</span>
+    <span class="n">myChoice</span> <span class="o">=</span> <span class="n">AllDoors</span><span class="p">(</span><span class="n">AllDoors</span><span class="o">~=</span><span class="n">myChoice</span> <span class="o">&amp;</span> <span class="n">AllDoors</span><span class="o">~=</span><span class="n">excludedDoor</span><span class="p">);</span> <span class="c1">% update my choice to the alternative door after host's exclusion of one of the doors.</span>
+    <span class="k">if</span> <span class="n">myChoice</span><span class="o">==</span><span class="n">doorWithCar</span>
+        <span class="n">TotalWinsWithSwitch</span> <span class="o">=</span> <span class="n">TotalWinsWithSwitch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">end</span>
+    
+    <span class="n">averageNumberOfWinsWithoutSwitch</span><span class="p">(</span><span class="n">iExperiment</span><span class="p">)</span> <span class="o">=</span> <span class="n">TotalWinsWithoutSwitch</span> <span class="p">/</span> <span class="n">iExperiment</span><span class="p">;</span>
+    <span class="n">averageNumberOfWinsWithSwitch</span><span class="p">(</span><span class="n">iExperiment</span><span class="p">)</span> <span class="o">=</span> <span class="n">TotalWinsWithSwitch</span> <span class="p">/</span> <span class="n">iExperiment</span><span class="p">;</span>
+
+<span class="k">end</span>
+
+<span class="c1">% Now draw and export figures</span>
+
+<span class="nb">figure</span><span class="p">(</span><span class="s1">'visible'</span><span class="p">,</span><span class="s1">'on'</span><span class="p">);</span> <span class="nb">hold</span> <span class="n">on</span><span class="p">;</span> <span class="nb">box</span> <span class="n">on</span><span class="p">;</span>
+<span class="nb">plot</span><span class="p">(</span> <span class="n">averageNumberOfWinsWithoutSwitch</span> <span class="k">...</span>
+    <span class="p">,</span> <span class="s1">'color'</span><span class="p">,</span> <span class="s1">'blue'</span> <span class="k">...</span>
+    <span class="p">,</span> <span class="s1">'linewidth'</span><span class="p">,</span> <span class="mf">1.5</span> <span class="k">...</span>
+    <span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span> <span class="n">averageNumberOfWinsWithSwitch</span> <span class="k">...</span>
+    <span class="p">,</span> <span class="s1">'color'</span><span class="p">,</span> <span class="s1">'red'</span> <span class="k">...</span>
+    <span class="p">,</span> <span class="s1">'linewidth'</span><span class="p">,</span> <span class="mf">1.5</span> <span class="k">...</span>
+    <span class="p">);</span>
+<span class="nb">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">nExperiments</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]);</span>
+<span class="n">line1</span> <span class="o">=</span> <span class="nb">line</span><span class="p">(</span> <span class="p">[</span><span class="mi">1</span> <span class="n">nExperiments</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.66666666</span> <span class="mf">0.66666666</span><span class="p">]</span> <span class="k">...</span>
+            <span class="p">,</span> <span class="s1">'LineStyle'</span><span class="p">,</span> <span class="s1">'--'</span> <span class="k">...</span>
+            <span class="p">,</span> <span class="s1">'color'</span><span class="p">,</span><span class="s1">'green'</span> <span class="k">...</span>
+            <span class="p">,</span> <span class="s1">'LineWidth'</span><span class="p">,</span><span class="mf">1.5</span> <span class="k">...</span>
+            <span class="p">);</span>
+<span class="n">line2</span> <span class="o">=</span> <span class="nb">line</span><span class="p">(</span> <span class="p">[</span><span class="mi">1</span> <span class="n">nExperiments</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.33333333</span> <span class="mf">0.33333333</span><span class="p">]</span> <span class="k">...</span>
+            <span class="p">,</span> <span class="s1">'LineStyle'</span><span class="p">,</span><span class="s1">'--'</span> <span class="k">...</span>
+            <span class="p">,</span> <span class="s1">'color'</span><span class="p">,</span><span class="s1">'green'</span> <span class="k">...</span>
+            <span class="p">,</span> <span class="s1">'LineWidth'</span><span class="p">,</span><span class="mf">1.5</span> <span class="k">...</span>
+            <span class="p">);</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s1">'Experiment Repeat Number'</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s1">'Average Probability of Winning'</span><span class="p">);</span>
+
+<span class="c1">% add legend to figure</span>
+<span class="nb">legend</span><span class="p">(</span> <span class="p">{</span><span class="s1">'No Door Switch'</span><span class="p">,</span><span class="s1">'With Door Switch'</span><span class="p">,</span><span class="s1">'theoretical prediction'</span><span class="p">,</span><span class="s1">'theoretical prediction'</span><span class="p">}</span> <span class="k">...</span>
+      <span class="p">,</span> <span class="s1">'Location'</span><span class="p">,</span> <span class="s1">'southeast'</span> <span class="k">...</span>
+      <span class="p">);</span>
+<span class="nb">uistack</span><span class="p">(</span><span class="n">line1</span><span class="p">,</span><span class="s1">'bottom'</span><span class="p">);</span>
+<span class="nb">uistack</span><span class="p">(</span><span class="n">line2</span><span class="p">,</span><span class="s1">'bottom'</span><span class="p">);</span>
+
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s1">'xscale'</span><span class="p">,</span><span class="s1">'log'</span><span class="p">);</span>
+
+<span class="nb">set</span><span class="p">(</span> <span class="nb">gca</span> <span class="k">...</span>
+   <span class="p">,</span> <span class="s1">'XMinorTick'</span><span class="p">,</span><span class="s1">'on'</span><span class="p">,</span><span class="s1">'YMinorTick'</span><span class="p">,</span><span class="s1">'on'</span> <span class="k">...</span>
+   <span class="p">,</span> <span class="s1">'FontSize'</span><span class="p">,</span> <span class="mi">13</span> <span class="k">...</span>
+   <span class="p">,</span> <span class="s1">'LineWidth'</span><span class="p">,</span> <span class="mf">1.25</span> <span class="k">...</span>
+   <span class="p">);</span>
+
+<span class="nb">saveas</span><span class="p">(</span><span class="nb">gcf</span><span class="p">,</span><span class="s1">'MontyGameResult.png'</span><span class="p">);</span>
+
+<span class="c1">%close(gcf);</span>
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    <figure>
+        <a href="#solution-Python" id="solution-Python">
+            <img src="/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>Here is an example Python implementation, <a href="monteGame.py" target="_blank">monteGame.py</a>,</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python
+</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">ngames</span> <span class="o">=</span> <span class="mi">100000</span>
+
+<span class="n">chance_of_success_by_switching</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">ngames</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
+<span class="n">chance_of_success_by_not_switching</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">ngames</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
+
+<span class="n">options</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ngames</span><span class="p">):</span>
+    <span class="n">door_host_will_open</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">door_with_car</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">door_host_will_open</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">door_with_car</span><span class="p">)</span>
+    <span class="n">door_i_choose</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">door_i_choose</span><span class="o">!=</span><span class="n">door_with_car</span><span class="p">):</span> <span class="n">door_host_will_open</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">door_i_choose</span><span class="p">)</span>
+    
+    <span class="n">door_to_switch</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">door_to_switch</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">door_i_choose</span><span class="p">)</span>
+    <span class="n">door_to_switch</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">door_host_will_open</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    
+    <span class="k">if</span> <span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">door_to_switch</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="n">door_with_car</span><span class="p">):</span>
+            <span class="n">chance_of_success_by_switching</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">chance_of_success_by_not_switching</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">door_to_switch</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="n">door_with_car</span><span class="p">):</span>
+            <span class="n">chance_of_success_by_switching</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">chance_of_success_by_switching</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">chance_of_success_by_not_switching</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">chance_of_success_by_not_switching</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">chance_of_success_by_not_switching</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">chance_of_success_by_not_switching</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">chance_of_success_by_switching</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">chance_of_success_by_switching</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">trials</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">ngames</span><span class="p">,</span><span class="n">ngames</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogx</span><span class="p">(</span><span class="n">trials</span><span class="p">,</span> <span class="n">chance_of_success_by_switching</span><span class="p">,</span> <span class="s">'r-'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hold</span><span class="p">(</span><span class="s">'on'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogx</span><span class="p">(</span><span class="n">trials</span><span class="p">,</span> <span class="n">chance_of_success_by_not_switching</span><span class="p">,</span> <span class="s">'b-'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s">'switch choice'</span> <span class="p">,</span> <span class="s">'not switch choice'</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Game Number'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'Average probability of winnig'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">'{} Monte Hall Games: On average, you win if your switch!'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">ngames</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'MontyGameResult.png'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+
+            </div>
+        </article>
+        <div class="cf"></div>
+<div class="row text-center">
+    <section class="notepad-post-share">
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Simulating the Monty Hall game&quot;%20/programming/simulating-monty-hall-game/simulating-monty-hall-game%20via%20&#64;cdslaborg"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+            <i class="fa fa-twitter"></i>
+        </a>
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=/programming/simulating-monty-hall-game/simulating-monty-hall-game"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+            <i class="fa fa-facebook"></i>
+        </a>
+        <a class="google-icon" href="https://plus.google.com/share?url=/programming/simulating-monty-hall-game/simulating-monty-hall-game"
+           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+            <i class="fa fa-google-plus"></i>
+        </a>
+    </section>
+</div>
+        <div class="cf"></div>
+<div class="notepad-author-info">
+    <div class="row">
+        <section class="notepad-post-author small-12 columns">
+            <a href=https://www.shahmoradi.org target="_blank">
+                <img src="/images/AmirShahmoradi.png" class="notepad-post-author-avatar" alt="Amir Shahmoradi's photo">
+            </a>
+            <span class="author-label">Author</span>
+            <h1>Amir Shahmoradi</h1>
+            <p><a href="mailto:shahmoradi@utexas.edu" class="author-website">shahmoradi@utexas.edu</a></p>
+            <p>Genius is 99% perspiration and 1% inspiration</p>
+        </section>
+    </div>
+</div> 
+        <div class="cf"></div>
+
+        <section class="notepad-disqus row">
+            <div class="small-12 columns">
+                <h1 class="notepad-comments-header">Comments</h1>
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'shahmoradi'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+        </section>
+
+        <div class="cf"></div>
+        <footer class="notepad-site-footer">
+    <div class="copyright">
+         <!-- <section>Last updated 2019 / 07 / 27</section></br> -->
+         <section>Last updated Saturday, 27 Jul 2019 at 04:30 PM CST</section></br>
+         <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
+         <section>SEIR 365 | Arlington TX 76010</section></br>
+    </div>
+    <div class="social-icons">
+        
+        <a href="https://twitter.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        
+        
+        <a href="https://github.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="https://facebook.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <div style="color: #000000; float: none; width: 100%; padding-top: 1rem;">
+            <span style="font-size:0.8em">visitor count: 
+                <script type="text/javascript">
+                    var sc_project=12051053; 
+                    var sc_invisible=0; 
+                    var sc_security="e095256f"; 
+                    var sc_text=3; 
+                    var scJsHost = "https://";
+                    document.write("<sc"+"ript type='text/javascript' src='" + scJsHost + 
+                    "statcounter.com/counter/counter.js'></"+"script>");
+                </script>
+            </span>
+        </div>
+        
+    </div>
+    <div class="cf"></div>
+</footer> 
+    </main>
+    <!--dynamic page header-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+  <script src="/assets/js/vendor/modernizr.js"></script>
+  <script src="/assets/js/foundation.min.js"></script>
+  
+  <script src="/assets/js/notepad.js"></script>
+  <script src="/assets/js/scripts.min.js"></script>
+  <script src="/assets/js/vendor/nprogress.js"></script>
+  
+  <script>
+    $(document).foundation();
+  </script>
+  <script type='text/javascript'>console.log("N/A");</script>
+  <script type='text/javascript'>console.log("https://www.cdslab.org/");</script>
+
+<!--header anchor links-->
+<script src="/assets/js/autoAnchorLink.js"></script>
+
+<!-- <script src="/assets/js/prismOkaidia.js"></script>
+<script src="/assets/js/prismTwilight.js"></script>
+<script src="/assets/js/prismDefault.js"></script>
+ -->
+<script src="/assets/js/prismCoy.js"></script> 
+    <!--automatic Table of Content.-->
+    <script src="/assets/js/autoTOC.js"></script>
+</body>
+</html>

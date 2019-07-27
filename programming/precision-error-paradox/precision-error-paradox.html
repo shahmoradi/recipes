@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="utf-8">
+<title>IMPACT OF MACHINE PRECISION ON NUMERICAL COMPUTATION &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<meta name="description" content="CDSLab Recipes">
+<meta name="keywords" content="MATLAB, Python, roundoff, precision, error, for-loop, loop">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/logo.png">
+<meta name="twitter:title" content="Impact of machine precision on numerical computation">
+<meta name="twitter:description" content="CDSLab Recipes">
+<meta name="twitter:creator" content="@cdslaborg">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Impact of machine precision on numerical computation">
+<meta property="og:description" content="CDSLab Recipes">
+<meta property="og:url" content="/programming/precision-error-paradox/precision-error-paradox">
+<meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
+<meta property="og:image" content="/images/">
+
+
+
+
+
+<link rel="canonical" href="/programming/precision-error-paradox/precision-error-paradox">
+<!-- <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/assets/css/vendor/font-awesome.min.css">
+<link rel="stylesheet" href="/assets/css/vendor/normalize.css">
+<link rel="stylesheet" href="/assets/css/vendor/nprogress.css">
+<link rel="stylesheet" href="/assets/css/vendor/foundation.min.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/post.css">
+
+<!--Mathjax LaTeX engine-->
+
+<style TYPE="text/css">
+code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+</style>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<!-- Icons -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!--
+<link rel="shortcut icon" href="/favicon.png">
+-->
+
+
+<!-- prism
+<link href="/assets/css/prismCoy.css" rel="stylesheet" />
+<link href="/assets/css/prismDefault.css" rel="stylesheet" />
+<link href="/assets/css/prismTwilight.css" rel="stylesheet" />
+-->
+<link href="/assets/css/prismOkaidia.css" rel="stylesheet" />
+<link href="/assets/css/alert.css" rel="stylesheet" />
+
+<!--header anchor links-->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    
+</head>
+<body class="post-template" itemscope itemtype="https://schema.org/WebPage">
+
+
+
+    <main id="notepad-post-container-simple" class="notepad-post-container-simple" role="main">
+        <header class="notepad-post-header-simple">
+            <div class="notepad-post-menu-header-simple">
+
+                <a class="notepad-blog-logo" href=https://www.cdslab.org target="_blank"><img src="/images/logo.png" alt="cdslab.org" /></a>
+                <div class="notepad-blog-menu">      
+                    <div class="notepad-mobile-menu show-for-small">
+                        <a href="#"><i class="fa fa-bars"></i></a>
+                    </div>
+                    <ul class="notepad-menu">
+                        <li class="notepad-mobile-close-btn show-for-small text-right">
+                            <a href="#"><i class="fa fa-times"></i></a>
+                        </li>
+                        
+                            <li>
+                                
+                                    <a href="/">Home</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/highlights">Highlights</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/tags">Tags</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/about">About</a>
+                                
+                            </li>
+                                    
+                        <li><a href="/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+                    </ul>
+                </div>
+            </div>
+
+                <div class="notepad-post-title-simple row">
+                    <div class="small-12 columns">
+                        <div class="notepad-post-meta-simple">
+                            <h2><a href="/programming/precision-error-paradox/precision-error-paradox">Impact of machine precision on numerical computation</a></h2>
+                            <p>
+                                by <strong><a href="https://www.cdslab.org/people" target="_blank">Amir Shahmoradi</a></strong>
+                                
+                                    &#8212; Last updated: 
+                                    <strong><time datetime="2019-07-04T00:00:00-05:00">04 July 2019</time></strong>
+                                
+                                <ul class="tag-box inline">
+                                    <span style="margin-right:1rem;">Tags:</span>
+                                    
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#MATLAB" data-toggle="tooltip" title="Posts tagged with MATLAB" rel="tag">MATLAB</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#error" data-toggle="tooltip" title="Posts tagged with error" rel="tag">error</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#for-loop" data-toggle="tooltip" title="Posts tagged with for-loop" rel="tag">for-loop</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#loop" data-toggle="tooltip" title="Posts tagged with loop" rel="tag">loop</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#precision" data-toggle="tooltip" title="Posts tagged with precision" rel="tag">precision</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/tags/index.html#roundoff" data-toggle="tooltip" title="Posts tagged with roundoff" rel="tag">roundoff</a>
+                                            </li>
+                                            
+                                        
+                                    
+                                </ul>
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <article class="notepad-post-content post tag-simple">
+
+            <div style="text-align:left;">
+                
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem">
+        <h2 id="problem">Problem</h2>
+    </a>
+
+</div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    <figure>
+        <a href="#problem-MATLAB" id="problem-MATLAB">
+            <img src="/images/MATLAB.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
+                MATLAB
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>Consider the following code named <code class="highlighter-rouge">epsError.m</code>,</p>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">eps</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+<span class="k">while</span> <span class="mf">1.0</span> <span class="o">~=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="nb">eps</span>
+    <span class="nb">disp</span><span class="p">(</span><span class="nb">num2str</span><span class="p">(</span><span class="nb">eps</span><span class="p">));</span>
+    <span class="nb">eps</span> <span class="o">=</span> <span class="nb">eps</span> <span class="p">/</span> <span class="mf">2.0</span><span class="p">;</span>
+<span class="k">end</span>
+<span class="nb">disp</span><span class="p">([</span><span class="s1">'final eps:'</span><span class="p">,</span> <span class="nb">num2str</span><span class="p">(</span><span class="nb">eps</span><span class="p">)]);</span>
+</code></pre></div></div>
+
+<p>Explain what the code is doing. Run the code and observe the output. How could <code class="highlighter-rouge">1.0 ~= 1.0 + eps</code> be <code class="highlighter-rouge">false</code>?!</p>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    <figure>
+        <a href="#problem-Python" id="problem-Python">
+            <img src="/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>Consider the following code named <code class="highlighter-rouge">epsError.py</code>,</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">eps</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="k">while</span> <span class="mf">1.0</span> <span class="o">!=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="n">eps</span><span class="p">:</span>
+    <span class="k">print</span> <span class="p">(</span><span class="s">'...............'</span><span class="p">,</span> <span class="n">eps</span><span class="p">)</span>
+    <span class="n">eps</span> <span class="o">/=</span> <span class="mf">2.0</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">'final eps:'</span><span class="p">,</span> <span class="n">eps</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Explain what the code is doing. Run the code and observe the output. How could <code class="highlighter-rouge">1.0 != 1.0 + eps</code> be False?</p>
+
+<p>Here is the output of the code,</p>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution">
+        <h2 id="solution">Solution</h2>
+    </a>
+
+</div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    <figure>
+        <a href="#solution-MATLAB" id="solution-MATLAB">
+            <img src="/images/MATLAB.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
+                MATLAB
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>Here is the output of the code,</p>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">epsError</span>
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eps: 1
+eps: 0.5
+eps: 0.25
+eps: 0.125
+eps: 0.0625
+eps: 0.03125
+eps: 0.015625
+eps: 0.0078125
+eps: 0.0039063
+eps: 0.0019531
+eps: 0.00097656
+eps: 0.00048828
+eps: 0.00024414
+eps: 0.00012207
+eps: 6.1035e-05
+eps: 3.0518e-05
+eps: 1.5259e-05
+eps: 7.6294e-06
+eps: 3.8147e-06
+eps: 1.9073e-06
+eps: 9.5367e-07
+eps: 4.7684e-07
+eps: 2.3842e-07
+eps: 1.1921e-07
+eps: 5.9605e-08
+eps: 2.9802e-08
+eps: 1.4901e-08
+eps: 7.4506e-09
+eps: 3.7253e-09
+eps: 1.8626e-09
+eps: 9.3132e-10
+eps: 4.6566e-10
+eps: 2.3283e-10
+eps: 1.1642e-10
+eps: 5.8208e-11
+eps: 2.9104e-11
+eps: 1.4552e-11
+eps: 7.276e-12
+eps: 3.638e-12
+eps: 1.819e-12
+eps: 9.0949e-13
+eps: 4.5475e-13
+eps: 2.2737e-13
+eps: 1.1369e-13
+eps: 5.6843e-14
+eps: 2.8422e-14
+eps: 1.4211e-14
+eps: 7.1054e-15
+eps: 3.5527e-15
+eps: 1.7764e-15
+eps: 8.8818e-16
+eps: 4.4409e-16
+eps: 2.2204e-16
+final eps:1.1102e-16
+</code></pre></div></div>
+
+<p>What is happening is that after a certain number of divisions performed on the value of <code class="highlighter-rouge">eps</code>, the value goes beyond the highest float precision representable by Python standard ($0.0000000000000001$), and therefore the value of <code class="highlighter-rouge">eps</code> is eventually rounded to exact zero. The nonzero <code class="highlighter-rouge">eps</code> value computed above is called <strong>machine epsilon</strong> or <strong>machine zero</strong> and is an important parameter to know, since it can lead to disasters in your very important complex calculations.</p>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    <figure>
+        <a href="#solution-Python" id="solution-Python">
+            <img src="/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">run</span> <span class="n">epsError</span><span class="o">.</span><span class="n">py</span>
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>............... 1.0
+............... 0.5
+............... 0.25
+............... 0.125
+............... 0.0625
+............... 0.03125
+............... 0.015625
+............... 0.0078125
+............... 0.00390625
+............... 0.001953125
+............... 0.0009765625
+............... 0.00048828125
+............... 0.000244140625
+............... 0.0001220703125
+............... 6.103515625e-05
+............... 3.0517578125e-05
+............... 1.52587890625e-05
+............... 7.62939453125e-06
+............... 3.814697265625e-06
+............... 1.9073486328125e-06
+............... 9.5367431640625e-07
+............... 4.76837158203125e-07
+............... 2.384185791015625e-07
+............... 1.1920928955078125e-07
+............... 5.960464477539063e-08
+............... 2.9802322387695312e-08
+............... 1.4901161193847656e-08
+............... 7.450580596923828e-09
+............... 3.725290298461914e-09
+............... 1.862645149230957e-09
+............... 9.313225746154785e-10
+............... 4.656612873077393e-10
+............... 2.3283064365386963e-10
+............... 1.1641532182693481e-10
+............... 5.820766091346741e-11
+............... 2.9103830456733704e-11
+............... 1.4551915228366852e-11
+............... 7.275957614183426e-12
+............... 3.637978807091713e-12
+............... 1.8189894035458565e-12
+............... 9.094947017729282e-13
+............... 4.547473508864641e-13
+............... 2.2737367544323206e-13
+............... 1.1368683772161603e-13
+............... 5.684341886080802e-14
+............... 2.842170943040401e-14
+............... 1.4210854715202004e-14
+............... 7.105427357601002e-15
+............... 3.552713678800501e-15
+............... 1.7763568394002505e-15
+............... 8.881784197001252e-16
+............... 4.440892098500626e-16
+............... 2.220446049250313e-16
+final eps: 1.1102230246251565e-16
+</code></pre></div></div>
+
+<p>What is happening is that after a certain number of divisions performed on the value of <code class="highlighter-rouge">eps</code>, the value goes beyond the highest float precision representatble by Python standard ($0.0000000000000001$), and therefore the value of <code class="highlighter-rouge">eps</code> is eventually rounded to exact zero. The nonzero eps value computed above is called <strong>machine epsilon</strong> or <strong>machine zero</strong> and is an important parameter to know, since it can lead to disasters in your very important complex calculations.</p>
+
+
+            </div>
+        </article>
+        <div class="cf"></div>
+<div class="row text-center">
+    <section class="notepad-post-share">
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Impact of machine precision on numerical computation&quot;%20/programming/precision-error-paradox/precision-error-paradox%20via%20&#64;cdslaborg"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+            <i class="fa fa-twitter"></i>
+        </a>
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=/programming/precision-error-paradox/precision-error-paradox"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+            <i class="fa fa-facebook"></i>
+        </a>
+        <a class="google-icon" href="https://plus.google.com/share?url=/programming/precision-error-paradox/precision-error-paradox"
+           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+            <i class="fa fa-google-plus"></i>
+        </a>
+    </section>
+</div>
+        <div class="cf"></div>
+<div class="notepad-author-info">
+    <div class="row">
+        <section class="notepad-post-author small-12 columns">
+            <a href=https://www.shahmoradi.org target="_blank">
+                <img src="/images/AmirShahmoradi.png" class="notepad-post-author-avatar" alt="Amir Shahmoradi's photo">
+            </a>
+            <span class="author-label">Author</span>
+            <h1>Amir Shahmoradi</h1>
+            <p><a href="mailto:shahmoradi@utexas.edu" class="author-website">shahmoradi@utexas.edu</a></p>
+            <p>Genius is 99% perspiration and 1% inspiration</p>
+        </section>
+    </div>
+</div> 
+        <div class="cf"></div>
+
+        <section class="notepad-disqus row">
+            <div class="small-12 columns">
+                <h1 class="notepad-comments-header">Comments</h1>
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'shahmoradi'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+        </section>
+
+        <div class="cf"></div>
+        <footer class="notepad-site-footer">
+    <div class="copyright">
+         <!-- <section>Last updated 2019 / 07 / 27</section></br> -->
+         <section>Last updated Saturday, 27 Jul 2019 at 04:30 PM CST</section></br>
+         <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
+         <section>SEIR 365 | Arlington TX 76010</section></br>
+    </div>
+    <div class="social-icons">
+        
+        <a href="https://twitter.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        
+        
+        <a href="https://github.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="https://facebook.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <div style="color: #000000; float: none; width: 100%; padding-top: 1rem;">
+            <span style="font-size:0.8em">visitor count: 
+                <script type="text/javascript">
+                    var sc_project=12051053; 
+                    var sc_invisible=0; 
+                    var sc_security="e095256f"; 
+                    var sc_text=3; 
+                    var scJsHost = "https://";
+                    document.write("<sc"+"ript type='text/javascript' src='" + scJsHost + 
+                    "statcounter.com/counter/counter.js'></"+"script>");
+                </script>
+            </span>
+        </div>
+        
+    </div>
+    <div class="cf"></div>
+</footer> 
+    </main>
+    <!--dynamic page header-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+  <script src="/assets/js/vendor/modernizr.js"></script>
+  <script src="/assets/js/foundation.min.js"></script>
+  
+  <script src="/assets/js/notepad.js"></script>
+  <script src="/assets/js/scripts.min.js"></script>
+  <script src="/assets/js/vendor/nprogress.js"></script>
+  
+  <script>
+    $(document).foundation();
+  </script>
+  <script type='text/javascript'>console.log("N/A");</script>
+  <script type='text/javascript'>console.log("https://www.cdslab.org/");</script>
+
+<!--header anchor links-->
+<script src="/assets/js/autoAnchorLink.js"></script>
+
+<!-- <script src="/assets/js/prismOkaidia.js"></script>
+<script src="/assets/js/prismTwilight.js"></script>
+<script src="/assets/js/prismDefault.js"></script>
+ -->
+<script src="/assets/js/prismCoy.js"></script> 
+    <!--automatic Table of Content.-->
+    <script src="/assets/js/autoTOC.js"></script>
+</body>
+</html>
