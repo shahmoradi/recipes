@@ -259,7 +259,7 @@ var store = [{
   "date": "July 4, 2019",
   "category": null,
   "tags": ["Python","value","variable","type","alias","copy","tuple","list","id","is"],
-  "excerpt": "Run the following python statements and briefly explain why you get the behavior displayed by the print functions. Problem Part..."
+  "excerpt": "Run the following Python statements and briefly explain why you get the behavior displayed by the print functions. Problem Part..."
 },{
   "title": "Single-line Python input and string manipulation",
   "link": "/programming/python-single-line-input-string-manipulation/python-single-line-input-string-manipulation",
@@ -315,7 +315,7 @@ var store = [{
   "date": "July 4, 2019",
   "category": null,
   "tags": ["value","variable","type","operator","precedence","operator precedence","Python","MATLAB"],
-  "excerpt": "Problem Operator Precedence. Think about what the results would be for the following expressions, and then type them in to..."
+  "excerpt": "Problem Operator Precedence. Think about what the results would be for the following expressions, and then type them into the..."
 },{
   "title": "Getting the boundary of objects in images",
   "link": "/programming/object-boundary-detection/object-boundary-detection",
@@ -420,7 +420,7 @@ var store = [{
   "date": "July 4, 2019",
   "category": null,
   "tags": ["MATLAB","Python","Fibonacci sequence","recursive","function","recursive function","branching","isreal","round","str2double","input","string"],
-  "excerpt": "Problem In mathematics, the Fibonacci numbers are the numbers in the following integer sequence, called the Fibonacci sequence, that are..."
+  "excerpt": "Problem In mathematics, the Fibonacci numbers are the numbers in the following integer sequence, called the Fibonacci sequence, that is..."
 },{
   "title": "Computing the Fibonacci sequence via for-loop",
   "link": "/programming/fibonacci-sequence-via-for-loop-matlab/fibonacci-sequence-via-for-loop-matlab",

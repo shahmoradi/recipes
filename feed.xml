@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2019-07-27T16:32:18-05:00</updated>
+<updated>2019-07-27T16:59:46-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -228,7 +228,7 @@ Timing for convertTempFor: 0.03936 seconds.
 Timing for convertTempWhile: 0.18011 seconds.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;It is clear that the while-loop implementation is far slower than the vectorized and for-loop versions.&lt;/p&gt;
+&lt;p&gt;The while-loop implementation is far slower than the vectorized and for-loop versions.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
     
@@ -308,7 +308,7 @@ Timing for convertTempWhile: 0.18011 seconds.
     &lt;/figure&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Guidelines.&lt;/strong&gt; Use the following Markdown language references, or any other reference that you find or prefer, to perform the tasks requested in this quesition.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Guidelines.&lt;/strong&gt; Use the following Markdown language references, or any other reference that you find or prefer, to perform the tasks requested in this question.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;markdown-cheatsheet-online.pdf&quot; target=&quot;_blank&quot;&gt;Markdown language cheat-sheet (pdf)&lt;/a&gt;&lt;/li&gt;
@@ -1186,7 +1186,7 @@ nothing to commit, working tree clean
     &lt;/figure&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Write a function &lt;code class=&quot;highlighter-rouge&quot;&gt;getTriangleArea(vertices)&lt;/code&gt; that returns the area of a triangle whose vertices are specified by the input argument variable &lt;code class=&quot;highlighter-rouge&quot;&gt;vertices&lt;/code&gt;. The type of the input argument is programmer’s choice. For example, it could be cell array, or a matrix.&lt;/p&gt;
+&lt;p&gt;Write a function &lt;code class=&quot;highlighter-rouge&quot;&gt;getTriangleArea(vertices)&lt;/code&gt; that returns the area of a triangle whose vertices are specified by the input argument variable &lt;code class=&quot;highlighter-rouge&quot;&gt;vertices&lt;/code&gt;. The type of the input argument is the programmer’s choice. For example, it could be a cell array or a matrix.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
     
@@ -1309,7 +1309,7 @@ nothing to commit, working tree clean
 
 &lt;/div&gt;
 
-&lt;p&gt;As an egg cooks, the proteins first denature and then coagulate. When the temperature exceeds a critical point, reactions begin and proceed faster as the temperature increases. In the egg white, the proteins start to coagulate for temperatures above $63^\circ\rm{C}$, while in the yolk the proteins start to coagulate for temperatures above $70^\circ\rm{C}$. For a soft boiled egg, the white needs to have been heated long enough to coagulate at a temperature above $63^\circ\rm{C}$, but the yolk should not be heated above $70^\circ\rm{C}$. For a hard boiled egg, the center of the yolk should be allowed to reach $70^\circ\rm{C}$.&lt;/p&gt;
+&lt;p&gt;As an egg cooks, the proteins first denature and then coagulate. When the temperature exceeds a critical point, reactions begin and proceed faster as the temperature increases. In the egg white, the proteins start to coagulate for temperatures above $63^\circ\rm{C}$, while in the yolk the proteins start to coagulate for temperatures above $70^\circ\rm{C}$. For a soft boiled egg, the white needs to have been heated long enough to coagulate at a temperature above $63^\circ\rm{C}$, but the yolk should not be heated above $70^\circ\rm{C}$. For a hard-boiled egg, the center of the yolk should be allowed to reach $70^\circ\rm{C}$.&lt;/p&gt;
 
 &lt;p&gt;The following formula expresses the time $t$ it takes (in seconds) for the center of the yolk to reach the temperature Ty (in Celsius degrees):&lt;/p&gt;
 
@@ -1580,7 +1580,7 @@ disp(concatenatedString)
 
 &lt;div class=&quot;language-matlab highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;extractLetter&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;MATLAB is a strange, but very capable popular programming language.
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;MATLAB is a strange, but a very capable popular programming language.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
@@ -1653,14 +1653,14 @@ disp(concatenatedString)
 &lt;p&gt;Suppose you’re on a game show, and you’re given the choice of three doors,&lt;/p&gt;
 
 &lt;figure&gt;
-	&lt;img src=&quot;Monty_1.png&quot; /&gt;
+    &lt;img src=&quot;Monty_1.png&quot; /&gt;
 &lt;/figure&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;Behind one door is a car; behind the two others, goats. You pick a door, say No. 1, and the host of the show opens another door, say No. 3, which has a goat.&lt;/p&gt;
 
 &lt;figure&gt;
-	&lt;img src=&quot;Monty_open_door.png&quot; /&gt;
+    &lt;img src=&quot;Monty_open_door.png&quot; /&gt;
 &lt;/figure&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -1668,7 +1668,7 @@ disp(concatenatedString)
 
 &lt;p&gt;&lt;strong&gt;Question: What would you do?&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Is it to your advantage to switch your choice from door 1 to door 2? Is it to your advantage, &lt;strong&gt;in the long run, for a large number of game tries&lt;/strong&gt;, to switch to the other door?&lt;/p&gt;
+&lt;p&gt;Is it to your advantage to switch your choice from door 1 to door 2? Is it to your advantage, &lt;strong&gt;in the long run, for a large number of game-tries&lt;/strong&gt;, to switch to the other door?&lt;/p&gt;
 
 &lt;p&gt;Now whatever your answer is, I want you to check/prove your answer by a Monte Carlo simulation of this problem. Make a plot of your simulation for $ngames=100000$ repeat of this game, that shows, in the long run, on average, what is the probability of winning this game if you switch your choice, and what is the probability of winning, if you do not switch to the other door.&lt;/p&gt;
 
@@ -1680,10 +1680,10 @@ disp(concatenatedString)
 
 &lt;/div&gt;
 
-&lt;p&gt;As you see in the figure, although you may initially win by not switching your choice, but in the long run, on average, you will lose, if you don’t switch your choice.&lt;/p&gt;
+&lt;p&gt;As you see in the figure, although you may initially win by not switching your choice, in the long run, on average, you will lose, if you don’t switch your choice.&lt;/p&gt;
 
 &lt;figure&gt;
-	&lt;img src=&quot;MontyGameResult.png&quot; /&gt;
+    &lt;img src=&quot;MontyGameResult.png&quot; /&gt;
 &lt;/figure&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
@@ -1913,7 +1913,7 @@ disp(concatenatedString)
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Explain what this code does. Then run the code, and explain why do you see the behavior observed. In particular, why do you not recover the original value $2.0$ after many repetitions of the same forward and reverse task of taking square root and squaring the result?&lt;/p&gt;
+&lt;p&gt;Explain what this code does. Then run the code, and explain why do you see the behavior observed. In particular, why do you not recover the original value $2.0$ after many repetitions of the same forward and reverse task of taking the square root and squaring the result?&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
     
@@ -2034,7 +2034,7 @@ With 59 sqrt, then 59 times ^2 operations, the number 2.0000000000000000 becomes
 With 60 sqrt, then 60 times ^2 operations, the number 2.0000000000000000 becomes: 1.0000000000000000 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;What is happening is that, 1 is returned for n &amp;gt;= 52 as square root of 2, that is, after 52 times square-root operation, the degree of accuracy required for representing the result goes beyond the degree of accuracy available in a MATLAB double precision number. Consequently, the later squaring operation on 1.00000000000000 will leave the number unchanged and therefore, 2 is not recovered.&lt;/p&gt;
+&lt;p&gt;What is happening is that 1 is returned for n &amp;gt;= 52 as the square root of 2, that is, after 52 times square-root operation, the degree of accuracy required for representing the result goes beyond the degree of accuracy available in a MATLAB double-precision number. Consequently, the later squaring operation on 1.00000000000000 will leave the number unchanged and therefore, 2 is not recovered.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
     
@@ -2116,7 +2116,7 @@ With 58 times sqrt and then 58 times **2, the number 2.0 becomes: 1.000000000000
 With 59 times sqrt and then 59 times **2, the number 2.0 becomes: 1.0000000000000000
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;What is happening is that, 1 is returned for n &amp;gt;= 52 as square root of 2, that is, after 52 times square-root operation, the degree of accuracy required for representing the result goes beyond the degree of accuracy available in a Python float. Consequently, the later squaring operation on 1.00000000000000 will leave the number unchanged and therefore, 2 is not recovered.&lt;/p&gt;
+&lt;p&gt;What is happening is that 1 is returned for n &amp;gt;= 52 as the square root of 2, that is, after 52 times square-root operation, the degree of accuracy required for representing the result goes beyond the degree of accuracy available in a Python float. Consequently, the later squaring operation on 1.00000000000000 will leave the number unchanged and therefore, 2 is not recovered.&lt;/p&gt;
 
 
   
@@ -2154,7 +2154,7 @@ With 59 times sqrt and then 59 times **2, the number 2.0 becomes: 1.000000000000
 &lt;p&gt;Write a script that constructs a mathematical objective function and then use an optimization algorithm of your choice to find the most likely values of the mean and standard deviation of this Gaussian distribution. Here is a best-fit Gaussian distribution using the most likely parameters to the histogram of this dataset.&lt;/p&gt;
 
 &lt;figure&gt;
-	&lt;img src=&quot;histfit.png&quot; /&gt;
+    &lt;img src=&quot;histfit.png&quot; /&gt;
 &lt;/figure&gt;
 
 &lt;p class=&quot;alert alert-success&quot; role=&quot;alert&quot;&gt;&lt;i class=&quot;fa fa-check-square-o&quot;&gt;&lt;/i&gt; &lt;b&gt;Tip:&lt;/b&gt; Our hypothesis is that the data in this histogram comes from a standard Normal distribution with a fixed mean ($\mu$) and standard deviation ($\sigma$). For the moment, let’s assume that we know the values of these two parameters. Then if all of these points, $D$, come from the normal distribution with the given $(\mu,\sigma)$, then the probability of all them coming from the normal distribution with these parameter values can be computed as,&lt;br /&gt;
@@ -2169,7 +2169,7 @@ where the symbol $\pi$ to the left of equality means &lt;strong&gt;probability&l
 &lt;script type=&quot;math/tex&quot;&gt;\log\pi\big(\boldsymbol D\big|\mu,\sigma\big) = \sum^{N=100}_{i=1} - \log\big(2\pi\sigma^2\big) - \bigg[ \frac{\boldsymbol D(i)-\mu}{\sqrt{2}\sigma} \bigg]^2 ~~,&lt;/script&gt;
 &lt;br /&gt;
 &lt;br /&gt;
-Now our goad is to construct this function (let’s name it &lt;code class=&quot;highlighter-rouge&quot;&gt;getLogProbNorm()&lt;/code&gt;) and pass it to an optimizer in order to find the most likely $(\mu,\sigma)$ that leads to the highest likelihood value (the maximum of the above equation).&lt;/p&gt;
+Now our goal is to construct this function (let’s name it &lt;code class=&quot;highlighter-rouge&quot;&gt;getLogProbNorm()&lt;/code&gt;) and pass it to an optimizer to find the most likely $(\mu,\sigma)$ that leads to the highest likelihood value (the maximum of the above equation).&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -2766,7 +2766,7 @@ as soon as you read the data from each file and then finally, you make a scatter
   <content type="html">
   
     
-&lt;p&gt;Run the following python statements and briefly explain why you get the behavior displayed by the &lt;code class=&quot;highlighter-rouge&quot;&gt;print&lt;/code&gt; functions.&lt;/p&gt;
+&lt;p&gt;Run the following Python statements and briefly explain why you get the behavior displayed by the &lt;code class=&quot;highlighter-rouge&quot;&gt;print&lt;/code&gt; functions.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
 
@@ -2873,7 +2873,7 @@ as soon as you read the data from each file and then finally, you make a scatter
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
  
-&lt;span class=&quot;c1&quot;&gt;# We used an assignment, but the value didn't actually change
+&lt;span class=&quot;c1&quot;&gt;# We used an assignment, but the value didn't change
 # So the alias remains unbroken
 &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -2981,7 +2981,7 @@ as soon as you read the data from each file and then finally, you make a scatter
 
 &lt;p&gt;Write a &lt;strong&gt;single-line&lt;/strong&gt; Python code that reads a string containing comma-separated first-name, last-name, and the city in which a person lives from the Python interpreter command line, and simultaneously, in the same line of Python code, removes all white-space characters from the input string, and converts all letters of the input variables to lower-case, and converts the string to a tuple and saves in a tuple &lt;code class=&quot;highlighter-rouge&quot;&gt;(first,last,city)&lt;/code&gt;, such that, for example,&lt;/p&gt;
 
-&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Enter the first name, last name, and the city of the person (comma-separated): Amir, Shahmoradi  ,  Austin
+&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Enter the first name, last name, and the city of the person (comma-separated): Amir, Shahmoradi, Austin
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;would display,&lt;/p&gt;
@@ -2992,7 +2992,7 @@ as soon as you read the data from each file and then finally, you make a scatter
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;Hint:&lt;/strong&gt;&lt;br /&gt;
-Use &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt; function for this purpose. The output of &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt; is a string, which can be manipulated repeatedly on the same line, using multiple string methods that you learned about in the previous lectures.&lt;/p&gt;
+Use the &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt; function for this purpose. The output of &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt; is a string, which can be manipulated repeatedly on the same line, using multiple string methods that you learned about in the previous lectures.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
 
@@ -3085,11 +3085,11 @@ Use &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt; function 
     &lt;/figure&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Download &lt;a href=&quot;python_script_full_of_syntax_errors.py&quot; target=&quot;_blank&quot;&gt;this code&lt;/a&gt;. This code is full syntax errors. Fix the errors and submit the corrected code with name &lt;code class=&quot;highlighter-rouge&quot;&gt;python_script_full_of_syntax_errors_fixed.py&lt;/code&gt; in your hw4 folder of your project. Explain in front of each corrected Python statement, why the error occurred.  On the last line of the script,&lt;/p&gt;
+&lt;p&gt;Download &lt;a href=&quot;python_script_full_of_syntax_errors.py&quot; target=&quot;_blank&quot;&gt;this code&lt;/a&gt;. This code is full syntax errors. Fix the errors and submit the corrected code with the name &lt;code class=&quot;highlighter-rouge&quot;&gt;python_script_full_of_syntax_errors_fixed.py&lt;/code&gt;. Explain in front of each corrected Python statement, why the error occurred.  On the last line of the script,&lt;/p&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fox&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rev&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Persian&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;the statement runs without error. But can you explain what it does? (Hint: For this part you need to understand operation precedence. You may find the Python tutorials &lt;a href=&quot;https://www.cdslab.org/python/index.html&quot; target=&quot;_blank&quot;&gt;available here&lt;/a&gt; useful.&lt;/p&gt;
+&lt;p&gt;the statement runs without error. But can you explain what it does? (Hint: For this part, you need to understand operation precedence. You may find the Python tutorials &lt;a href=&quot;https://www.cdslab.org/python/index.html&quot; target=&quot;_blank&quot;&gt;available here&lt;/a&gt; useful.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
@@ -3162,22 +3162,22 @@ Use &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt; function 
     &lt;/figure&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Download &lt;a href=&quot;python_script_full_of_errors.pi&quot; target=&quot;_blank&quot;&gt;this Python script&lt;/a&gt;. This Python script is full of syntax, runtime, and semantic errors. Please identify and corrent these errors, such that code becomes fully executable and outputs the following message on the screen, when run from the Git Bash command line:&lt;/p&gt;
+&lt;p&gt;Download &lt;a href=&quot;python_script_full_of_errors.pi&quot; target=&quot;_blank&quot;&gt;this Python script&lt;/a&gt;. This Python script is full of syntax, runtime, and semantic errors. Please identify and correct these errors, such that code becomes fully executable and outputs the following message on the screen when running from the Git Bash command line:&lt;/p&gt;
 
 &lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;The life expectancy for the millennials is projected to be 120 years! (But don't believe it...)
 
 
     A recent study published in the journal of Nature, discovered that over the past century,
-    although the life expectancy has significantly increased due to technological advances,
+    although life expectancy has significantly increased due to technological advances,
     the maximum life span of the oldest people in the world has not changed much.
 
 
 Cardano was the first to introduce complex numbers of the form a + sqrt(-b) into algebra, but he had misgivings about it.
-In his solution to an algebra equation he encountered the solution 5 + sqrt(-15) for the unknown, which is now mathematically represented by
+In his solution to an algebra equation, he encountered the solution 5 + sqrt(-15) for the unknown, which is now mathematically represented by
 
        (5+3.872983346207417j)
 
-in Python, which can also be obtained as an addition of real and imaginary numbers in Python like this
+in Python, which can also be obtained as the addition of real and imaginary numbers in Python like this
 
 
       5 + sqrt(-15) = (5+3.872983346207417j),
@@ -3195,12 +3195,12 @@ in Python, which can also be obtained as an addition of real and imaginary numbe
 One final note:
 
         In python the sqrt function from math and cmath modules are different.
-        The sqrt function that returns &quot;float&quot; results is sqrt from math module.
-        Therefore, if using math module, then,
+        The sqrt function that returns &quot;float&quot; results is sqrt from the math module.
+        Therefore, if using the math module, then,
 
                 sqrt(25) = 5.0000,
 
-        which is obviously a float (real number).
+        which is a float (real number).
 
 
 
@@ -3250,7 +3250,7 @@ And division by 0, will give you a runtime exception: 1/0 = NaN
   &lt;li&gt;semantic error example: &lt;br /&gt;
 &lt;br /&gt;
     &lt;ul&gt;
-      &lt;li&gt;line 15, in the wrong script: The purpose is to print the complex number 5+sqrt(-15), but instead 5-15j is printed by the wrong script.&lt;br /&gt;
+      &lt;li&gt;line 15, in the wrong script: The purpose is to print the complex number 5+sqrt(-15), but instead, 5-15j is printed by the wrong script.&lt;br /&gt;
 &lt;br /&gt;&lt;/li&gt;
       &lt;li&gt;line 35, in the wrong script: The purpose is to print float number, but since we used &lt;code class=&quot;highlighter-rouge&quot;&gt;sqrt&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;cmath&lt;/code&gt; module, the output is in complex format, which is not what we intend to obtain and print.&lt;br /&gt;
 &lt;br /&gt;&lt;/li&gt;
@@ -3353,7 +3353,7 @@ Carolina Vedovato
 
 &lt;p&gt;However, the problem is that, except Amir, the instructor, everyone else has a student role in this class. So it would be a very painful process to type all ‘student’ values by hand manually. Now, the goal is to come up with a shortcut method that avoids the aforementioned problem.&lt;/p&gt;
 
-&lt;p&gt;Can you find a way of creating this dictionary, without having to type the value ‘student’ 14 times? Note that in order to achieve this, you don’t need anything beyond what you learned in the lecture notes. (&lt;strong&gt;Hint:&lt;/strong&gt; Have a look at the section for simultaneous assignments in the lecture notes.)&lt;/p&gt;
+&lt;p&gt;Can you find a way of creating this dictionary, without having to type the value ‘student’ 14 times? Note that to achieve this, you don’t need anything beyond what you learned in the lecture notes. (&lt;strong&gt;Hint:&lt;/strong&gt; Have a look at the section for simultaneous assignments in the lecture notes.)&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
@@ -3517,13 +3517,13 @@ MANIPULATION!
 &lt;br /&gt;&lt;/li&gt;
   &lt;li&gt;Import the appropriate module to get the python version command, as we did in class. Use &lt;code class=&quot;highlighter-rouge&quot;&gt;print&lt;/code&gt; function to print the Python version.&lt;br /&gt;
 &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;Define a String variable &lt;code class=&quot;highlighter-rouge&quot;&gt;my_string&lt;/code&gt; which contains the string value “Python is the best language for String manipulation!” ( Of course, you can totally accomplish this question without defining a string variable, by only using the string value itself wherever needed… This is also totally fine at this point in our course, if your prefer this method).&lt;br /&gt;
+  &lt;li&gt;Define a String variable &lt;code class=&quot;highlighter-rouge&quot;&gt;my_string&lt;/code&gt; which contains the string value “Python is the best language for String manipulation!” ( Of course, you can accomplish this question without defining a string variable, by only using the string value itself wherever needed… This is also totally fine at this point in our course if you prefer this method).&lt;br /&gt;
 &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;Then use the appropriate examples and external links provided in the lecture notes, to find the proper &lt;strong&gt;string methods&lt;/strong&gt; that can manipulate this string variable/value in order to generate each of the outputs printed above.&lt;br /&gt;
+  &lt;li&gt;Then use the appropriate examples and external links provided in the lecture notes, to find the proper &lt;strong&gt;string methods&lt;/strong&gt; that can manipulate this string variable/value to generate each of the outputs printed above.&lt;br /&gt;
 &lt;br /&gt;&lt;/li&gt;
   &lt;li&gt;Again, note that for each output, the entire output must result from &lt;strong&gt;one single call&lt;/strong&gt; to function &lt;code class=&quot;highlighter-rouge&quot;&gt;print&lt;/code&gt;.&lt;br /&gt;
 &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;Wherever needed, use the &lt;a href=&quot;https://python-reference.readthedocs.io/en/latest/docs/str/escapes.html&quot; target=&quot;_blank&quot;&gt;escape character&lt;/a&gt; value &lt;code class=&quot;highlighter-rouge&quot;&gt;'\n'&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;print&lt;/code&gt; input arguments, in order to generate a line-break (or new line) in the output.&lt;/li&gt;
+  &lt;li&gt;Wherever needed, use the &lt;a href=&quot;https://python-reference.readthedocs.io/en/latest/docs/str/escapes.html&quot; target=&quot;_blank&quot;&gt;escape character&lt;/a&gt; value &lt;code class=&quot;highlighter-rouge&quot;&gt;'\n'&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;print&lt;/code&gt; input arguments, in order to generate a line-break (or newline) in the output.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
@@ -3720,7 +3720,7 @@ eps: 2.2204e-16
 final eps:1.1102e-16
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;What is happening is that after a certain number of divisions performed on the value of &lt;code class=&quot;highlighter-rouge&quot;&gt;eps&lt;/code&gt;, the value goes beyond the highest float precision representable by Python standard ($0.0000000000000001$), and therefore the value of &lt;code class=&quot;highlighter-rouge&quot;&gt;eps&lt;/code&gt; is eventually rounded to exact zero. The nonzero &lt;code class=&quot;highlighter-rouge&quot;&gt;eps&lt;/code&gt; value computed above is called &lt;strong&gt;machine epsilon&lt;/strong&gt; or &lt;strong&gt;machine zero&lt;/strong&gt; and is an important parameter to know, since it can lead to disasters in your very important complex calculations.&lt;/p&gt;
+&lt;p&gt;What is happening is that after a certain number of divisions performed on the value of &lt;code class=&quot;highlighter-rouge&quot;&gt;eps&lt;/code&gt;, the value goes beyond the highest float precision representable by Python standard ($0.0000000000000001$), and therefore the value of &lt;code class=&quot;highlighter-rouge&quot;&gt;eps&lt;/code&gt; is eventually rounded to exactly zero. The nonzero &lt;code class=&quot;highlighter-rouge&quot;&gt;eps&lt;/code&gt; value computed above is called &lt;strong&gt;machine epsilon&lt;/strong&gt; or &lt;strong&gt;machine zero&lt;/strong&gt; and is an important parameter to know since it can lead to disasters in your very important complex calculations.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
     
@@ -3795,7 +3795,7 @@ final eps:1.1102e-16
 final eps: 1.1102230246251565e-16
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;What is happening is that after a certain number of divisions performed on the value of &lt;code class=&quot;highlighter-rouge&quot;&gt;eps&lt;/code&gt;, the value goes beyond the highest float precision representatble by Python standard ($0.0000000000000001$), and therefore the value of &lt;code class=&quot;highlighter-rouge&quot;&gt;eps&lt;/code&gt; is eventually rounded to exact zero. The nonzero eps value computed above is called &lt;strong&gt;machine epsilon&lt;/strong&gt; or &lt;strong&gt;machine zero&lt;/strong&gt; and is an important parameter to know, since it can lead to disasters in your very important complex calculations.&lt;/p&gt;
+&lt;p&gt;What is happening is that after a certain number of divisions performed on the value of &lt;code class=&quot;highlighter-rouge&quot;&gt;eps&lt;/code&gt;, the value goes beyond the highest float precision representable by Python standard ($0.0000000000000001$), and therefore the value of &lt;code class=&quot;highlighter-rouge&quot;&gt;eps&lt;/code&gt; is eventually rounded to exactly zero. The nonzero eps value computed above is called &lt;strong&gt;machine epsilon&lt;/strong&gt; or &lt;strong&gt;machine zero&lt;/strong&gt; and is an important parameter to know since it can lead to disasters in your very important complex calculations.&lt;/p&gt;
 
 
   
@@ -3831,7 +3831,7 @@ final eps: 1.1102230246251565e-16
 &lt;p&gt;A vector is a mathematical quantity that has both magnitude and direction. A 2-dimensional vector can be represented as a displacement along $x$ and $y$ axes in rectangular (Cartesian) coordinates or, by a distance $r$ and an angle $\phi$ in polar coordinates,&lt;/p&gt;
 
 &lt;figure&gt;
-	&lt;img src=&quot;vector.png&quot; /&gt;
+    &lt;img src=&quot;vector.png&quot; /&gt;
     &lt;figcaption&gt;
         The conversion rule between the Cartesian and Polar representations of a vector.
     &lt;/figcaption&gt;
@@ -3904,7 +3904,7 @@ final eps: 1.1102230246251565e-16
 
 &lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Order_of_operations&quot; target=&quot;blank&quot;&gt;Operator Precedence&lt;/a&gt;.&lt;/strong&gt; Think about what the results would be for the following expressions, and then type them in to the terminal to verify your answers. Briefly explain the results for each one.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Order_of_operations&quot; target=&quot;blank&quot;&gt;Operator Precedence&lt;/a&gt;.&lt;/strong&gt; Think about what the results would be for the following expressions, and then type them into the terminal to verify your answers. Briefly explain the results for each one.&lt;/p&gt;
 
 &lt;div class=&quot;language-matlab highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; 
 &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
