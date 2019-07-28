@@ -45,14 +45,20 @@
 <link rel="stylesheet" href="/recipes/assets/css/post.css">
 
 <!--Mathjax LaTeX engine-->
-
+<script>
+    var MathJax = {"HTML-CSS": {scale: 100}};
+</script>
 <style TYPE="text/css">
-code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+    code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
 </style>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
+        config: ["MMLorHTML.js"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+        jax: ["input/TeX"],
         tex2jax: {
             inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
             skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
         }
     });
@@ -65,18 +71,9 @@ code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inher
 </script>
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
-<!-- Icons -->
+
 <link rel="shortcut icon" href="/recipes/favicon.ico">
-<!--
-<link rel="shortcut icon" href="/recipes/favicon.png">
--->
 
-
-<!-- prism
-<link href="/recipes/assets/css/prismCoy.css" rel="stylesheet" />
-<link href="/recipes/assets/css/prismDefault.css" rel="stylesheet" />
-<link href="/recipes/assets/css/prismTwilight.css" rel="stylesheet" />
--->
 <link href="/recipes/assets/css/prismOkaidia.css" rel="stylesheet" />
 <link href="/recipes/assets/css/alert.css" rel="stylesheet" />
 
@@ -338,7 +335,7 @@ code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inher
         <footer class="notepad-site-footer">
     <div class="copyright">
          <!-- <section>Last updated 2019 / 07 / 28</section></br> -->
-         <section>Last updated Sunday, 28 Jul 2019 at 01:50 PM CST</section></br>
+         <section>Last updated Sunday, 28 Jul 2019 at 02:40 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
