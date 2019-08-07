@@ -3,7 +3,7 @@
 		{
 		  "title"      : "Making and using a Dynamic-Link Library (DLL) from a Fortran procedure using Intel Fortran Compiler on Windows OS: getSquare()",
 		  "category"   : "",
-		  "url"        : "/recipes/programming/fortran-dll-getsquare/fortran-dll-getSquare",
+		  "url"        : "/recipes/programming/fortran-dll-getquare/fortran-dll-getquare",
 		  "date"       : "2019-08-04 00:00:00 -0500",
 		  "shortdate"  : "August 04, 2019"
 		} ,
@@ -11,7 +11,7 @@
 		{
 		  "title"      : "Calling Fortran function from other languages via a Dynamic-Link Library (DLL): getPower()",
 		  "category"   : "",
-		  "url"        : "/recipes/programming/fortran-dll-getpower/fortran-dll-getPower",
+		  "url"        : "/recipes/programming/fortran-dll-getower/fortran-dll-getower",
 		  "date"       : "2019-08-04 00:00:00 -0500",
 		  "shortdate"  : "August 04, 2019"
 		} ,
