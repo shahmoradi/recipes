@@ -123,7 +123,7 @@ callback([
 
   {
     "text": "Making and using a Dynamic-Link Library (DLL) from a Fortran procedure using Intel Fortran Compiler on Windows OS: getSquare()",
-    "href": "/recipes/programming/fortran-dll-getquare/fortran-dll-getquare"
+    "href": "/recipes/programming/fortran-dll-getsquare/fortran-dll-getsquare"
   } ,
 
   {
@@ -223,7 +223,7 @@ callback([
 
   {
     "text": "Calling Fortran function from other languages via a Dynamic-Link Library (DLL): getPower()",
-    "href": "/recipes/programming/fortran-dll-getower/fortran-dll-getower"
+    "href": "/recipes/programming/fortran-dll-getpower/fortran-dll-getpower"
   } ,
 
   {
