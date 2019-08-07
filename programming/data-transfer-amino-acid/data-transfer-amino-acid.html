@@ -227,21 +227,6 @@
 
 </div>
 
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    <figure>
-        <a href="#problem-Python" id="problem-Python">
-            <img src="/recipes/images/Python.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
-                Python
-            </a>
-        </figcaption>
-    </figure>
-</div>
-
 <p>Consider <a href="1A2T_A.dssp" target="_blank">this data file</a>. It contains information about the amino-acids in <a href="http://www.rcsb.org/pdb/explore.do?structureId=1a2t" target="_blank">a protein</a> called <code class="highlighter-rouge">1A2T</code>. Each amino-acid in the protein is labeled by a single letter. There are 20 amin acid molecules in nature, and each has a total surface area (in units of Angstroms squared) that is given by the following table,</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'A': 129.0
@@ -268,22 +253,50 @@
 
 <p>However, when these amino acids sit next to each other to form a chain protein, they cover parts of each other, such that only parts of their surfaces are exposed, while the rest is hidden from the outside world by other neighboring amino acids. Therefore, one would expect an amino acid that is at the core of a spherical protein would have almost zero exposed surface area.</p>
 
-<p>Now given the above information, write a program that takes in two command-line input arguments, one of which is a string containing the path to the above <a href="1A2T_A.dssp" target="_blank">input file</a> <code class="highlighter-rouge">1A2T_A.dssp</code> which contains the partially exposed surface areas of amino acids in protein <code class="highlighter-rouge">1A2T</code> for each of its amino acids and a second command-line argument which is the path to the file containing the output of the code (e.g., it could be <code class="highlighter-rouge">./readDSSP.out</code>). Then,</p>
+<p>Now given the above information, write a program that takes in two command-line input arguments or a function in a language of your choice that takes two input string arguments:</p>
 <ol>
-  <li>the code reads the content of this file, and<br />
+  <li>a string containing the path to the above <a href="1A2T_A.dssp" target="_blank">input file</a> <code class="highlighter-rouge">1A2T_A.dssp</code> which contains the partially exposed surface areas of amino acids in protein <code class="highlighter-rouge">1A2T</code> for each of its amino acids and,</li>
+  <li>a second input string which is the path to the file that will contain the output of the code (e.g., it could be named <code class="highlighter-rouge">./readDSSP.out</code>).</li>
+</ol>
+
+<p>Then, the code does the following tasks,</p>
+
+<ol>
+  <li>reads the content of the input file and,<br />
 <br /></li>
-  <li>extracts the names of the amino acids in this protein from the data column inside the file which has the header <code class="highlighter-rouge">AA</code> (look at the line number 25 inside the input data file, below <code class="highlighter-rouge">AA</code> is the column containing the one-letter names of amino acids in this protein), and<br />
+  <li>extracts the names of the amino acids in this protein from the data column inside the file which has the header <code class="highlighter-rouge">AA</code> (look at the line number 25 inside the input data file, below <code class="highlighter-rouge">AA</code> is the column containing the one-letter names of amino acids in this protein) and,<br />
 <br /></li>
-  <li>also extracts the partially exposed surface area information for each of these amino acids which appear in the column with the header <code class="highlighter-rouge">ACC</code>, and<br />
+  <li>also extracts the partially exposed surface area information for each of these amino acids which appear in the column with the header <code class="highlighter-rouge">ACC</code> and,<br />
 <br /></li>
-  <li>then uses the above table of maximum surface area values to calculate the fractional exposed surface area of each amino acid in this protein (i.e., for each amino acid, fraction_of_exposed_surface = ACC / maximum_surface_area_from_table), and<br />
+  <li>then uses the above table of maximum surface area values to calculate the fractional exposed surface area of each amino acid in this protein (i.e., for each amino acid, fraction_of_exposed_surface = ACC / maximum_surface_area_from_table) and,<br />
 <br /></li>
   <li>finally for each amino acid in this protein, it prints the one-letter name of the amino acid, the corresponding partially exposed surface area (ACC from the input file), and its corresponding fractional exposed surface area (name it RSA) to the output file given by the user on the command line.<br />
 <br /></li>
-  <li>On the first column of the output file, the code should also write the name of the protein (which is basically the name of the input file <code class="highlighter-rouge">1A2T_A</code>) on each line of the output file. <strong>Note that your code should extract the protein name from the input filename</strong> (by removing the file extension and other unnecessary information from the input command line string). <a href="readDSSP.out" target="_blank">Here</a> is an example output of the code.<br />
+  <li>On the first column of the output file, the code should also write the name of the protein (which is the name of the input file <code class="highlighter-rouge">1A2T_A</code>) on each line of the output file. <strong>Note that your code should extract the protein name from the input filename</strong> (by removing the file extension and other unnecessary information from the input command line string). <a href="readDSSP.out" target="_blank">Here</a> is an example output of the code.<br />
 <br /></li>
-  <li>Your code should also be able to handle an error resulting from less or more than 2 input command line arguments. That is, if the number of input arguments is 3 or 1, then it should input the following message on the screen and stop.</li>
 </ol>
+
+<p><strong>Write your code in such a way that it checks for the existence of the output file</strong>. If it already exists, then it does not remove the content of the file, whereas, it appends new data to the existing file. Otherwise, if the file does not exist, then it creates a new output file as requested by the user.</p>
+
+<p class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Note that in some rows instead of a one-letter amino acid name, there is <code class="highlighter-rouge">!</code>. In such cases, your code should be able to detect the abnormality and skip that row, because that row does not contain amino acid information.</p>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#problem-python" id="problem-python">
+            <img src="/recipes/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>Write your Python script in such a way that your code takes the input and output file names as two input command-line arguments to your script at the time of calling the script. Your Python script should also be able to handle an error resulting from less or more than 2 input arguments to your code. For example, if the number of input command-line arguments is something other than two, then it should print the following message on the screen and stop.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./readDSSP.py ./1A2T_A.dssp
 
@@ -305,11 +318,27 @@ Usage:
 Program aborted.
 </code></pre></div></div>
 
-<p>To achieve the above goal, you will have to create a dictionary from the above table, with amino acid names as the keys, and the maximum surface areas as the corresponding values. Name your code <code class="highlighter-rouge">readDSSP.py</code> and submit it to your repository.</p>
+<p>To achieve the above goal, you will have to create a dictionary from the above table, with amino acid names as the keys, and the maximum surface areas as the corresponding values. Name your code <code class="highlighter-rouge">readDSSP.py</code> and submit it to your repository. To check for the existence of the output file, you will need to use <code class="highlighter-rouge">os.path.isfile</code> function from module <code class="highlighter-rouge">os</code> in Python.</p>
 
-<p><strong>Write your code in such a way that it checks for the existence of the output file</strong>. If it already exists, then it does not remove the content of the file, whereas, it appends new data to the existing file. Otherwise, if the file does not exist, then it creates a new output file as requested by the user. To do so, you will need to use <code class="highlighter-rouge">os.path.isfile</code> function from module <code class="highlighter-rouge">os</code>.</p>
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#problem-matlab" id="problem-matlab">
+            <img src="/recipes/images/MATLAB.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
+                MATLAB
+            </a>
+        </figcaption>
+    </figure>
+</div>
 
-<p class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Note that in some rows instead of a one-letter amino acid name, there is <code class="highlighter-rouge">!</code>. In such cases, your code should be able to detect the abnormality and skip that row, because that row does not contain amino acid information.</p>
+<p>Write your code in MATLAB as a function that takes two input string arguments corresponding to the input and output file names.</p>
+
+<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Unlike Python, Dictionaries are not first-class citizens in MATLAB. However, one can use <strong>structures</strong> in MATLAB to effectively mimic the behavior of <strong>Dictionaries</strong> in Python. In this case, the fields of a structure in MATLAB are equivalent to the keys of a Dictionary in Python, and corresponding field values are equivalent to the key values in a Python dictionary.</p>
 
 <div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
 
@@ -322,8 +351,9 @@ Program aborted.
 <div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
     
     
+    
     <figure>
-        <a href="#solution-Python" id="solution-Python">
+        <a href="#solution-python" id="solution-python">
             <img src="/recipes/images/Python.png" width="75px" />
         </a>
         <figcaption>
@@ -391,6 +421,120 @@ Usage:'''</span><span class="p">)</span>
     <span class="n">main</span><span class="p">()</span>
 </code></pre></div></div>
 
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-matlab" id="solution-matlab">
+            <img src="/recipes/images/MATLAB.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
+                MATLAB
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>Here is an implementation of the function in MATLAB,</p>
+
+<pre><code class="language-MATLAB">function readDSSP( inputFileName, outputFileName )
+
+    residue_max_acc.A = 129.0;
+    residue_max_acc.R = 274.0;
+    residue_max_acc.N = 195.0;
+    residue_max_acc.D = 193.0;
+    residue_max_acc.C = 167.0;
+    residue_max_acc.Q = 225.0;
+    residue_max_acc.E = 223.0;
+    residue_max_acc.G = 104.0;
+    residue_max_acc.H = 224.0;
+    residue_max_acc.I = 197.0;
+    residue_max_acc.L = 201.0;
+    residue_max_acc.K = 236.0;
+    residue_max_acc.M = 224.0;
+    residue_max_acc.F = 240.0;
+    residue_max_acc.P = 159.0;
+    residue_max_acc.S = 155.0;
+    residue_max_acc.T = 172.0;
+    residue_max_acc.W = 285.0;
+    residue_max_acc.Y = 263.0;
+    residue_max_acc.V = 174.0;
+
+    File.Input.name = inputFileName; % '1A2T_A.dssp'
+    File.Output.name = outputFileName; % 'readDSSP_output_MATLAB.txt'
+
+    % get the PDB name from the input file's name
+    pdb_name = File.Input.name(1:6);
+
+    % read all of the input file contents as a single string variable
+    File.Input.contents = fileread( File.Input.name );
+
+    % split the single string variable to a cell array each element of which
+    % corresponds to a line in the input file
+    File.Input.Line = strsplit( File.Input.contents, '\n' );
+
+    % first allocate all the arrays to the maximum possible size to save
+    % computational time by avoiding repeated allocation / deallocation of the
+    % same variable
+    File.Output.Result.AA = strings(length(File.Input.Line),1); % array containing the Amino Acid names
+    File.Output.Result.ACC = zeros(length(File.Input.Line),1); % array containing the ACCessible surface areas
+    File.Output.Result.ACC = zeros(length(File.Input.Line),1); % array containing the ACCessible surface areas
+
+    % iterate over the lines of the input file
+    counter = 0;
+    for rowCell = File.Input.Line(26:length(File.Input.Line))
+        row = rowCell{1};
+        if ~isempty(row)
+            if ~strcmp(row(14),'!')
+                counter = counter + 1;
+                File.Output.Result.AA(counter) = row(14);
+                File.Output.Result.ACC(counter) = str2double(row(36:39));
+                % compute the fractional/relative solvent accessible area
+                File.Output.Result.RSA(counter) = File.Output.Result.ACC(counter) / residue_max_acc.(File.Output.Result.AA{counter});
+            end
+        end
+    end
+
+    % Now resize all the arrays to remove empty array elements
+    File.Output.Result.AA = File.Output.Result.AA(1:counter);
+    File.Output.Result.ACC = File.Output.Result.ACC(1:counter);
+    File.Output.Result.RSA = File.Output.Result.RSA(1:counter);
+
+    % now open the output file and check if the file already exists
+    if exist(File.Output.name,'file')
+        % the file already exists, so open it to append new data
+        File.Output.id = fopen( File.Output.name, 'a' );
+    else
+        % the file does not exist, so open it to write new data
+        File.Output.id = fopen( File.Output.name, 'w' );
+    end
+
+    % write the output file as a CSV (comma-separated-variable) file
+    % write the output file's header
+    fprintf( File.Output.id, "pdb,AA,ACC,RSA\n"); % \n stands for the new line character
+    for i = 1:length(File.Output.Result.AA)
+        fprintf ( File.Output.id ...
+                , "%s,%s,%.0f,%.4f\n" ...
+                , pdb_name ...
+                , File.Output.Result.AA(i) ...
+                , File.Output.Result.ACC(i) ...
+                , File.Output.Result.RSA(i) ...
+                );
+    end
+    fclose(File.Output.id);
+
+end
+</code></pre>
+
+<p>Calling this function <a href="readDSSP.m" target="_blank">readDSSP.m</a> on the MATLAB command-line with the following input/output filenames,</p>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">readDSSP</span><span class="p">(</span> <span class="s1">'1A2T_A.dssp'</span> <span class="p">,</span> <span class="s1">'readDSSP_output_MATLAB.txt'</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p>will generate this output file <a href="readDSSP_output_MATLAB.txt" target="_blank">readDSSP_output_MATLAB.txt</a></p>
+
 
             </div>
         </article>
@@ -457,8 +601,8 @@ Usage:'''</span><span class="p">)</span>
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2019 / 07 / 28</section></br> -->
-         <section>Last updated Sunday, 28 Jul 2019 at 02:40 PM CST</section></br>
+         <!-- <section>Last updated 2019 / 08 / 07</section></br> -->
+         <section>Last updated Wednesday, 07 Aug 2019 at 01:50 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

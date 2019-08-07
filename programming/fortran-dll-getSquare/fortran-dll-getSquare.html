@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="utf-8">
+<title>MAKING AND USING A DYNAMIC-LINK LIBRARY (DLL) FROM A FORTRAN PROCEDURE USING INTEL FORTRAN COMPILER ON WINDOWS OS: GETSQUARE() &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<meta name="description" content="CDSLab Recipes">
+<meta name="keywords" content="Fortran, DLL, library, dynamic-link library, interoperation, compiler, Intel, Windows, alias, name mangling, DLLIMPORT, DLLEXPORT, bind, C, function, iso_fortran_env, real64">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/recipes/images/logo.png">
+<meta name="twitter:title" content="Making and using a Dynamic-Link Library (DLL) from a Fortran procedure using Intel Fortran Compiler on Windows OS: getSquare()">
+<meta name="twitter:description" content="CDSLab Recipes">
+<meta name="twitter:creator" content="@cdslaborg">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Making and using a Dynamic-Link Library (DLL) from a Fortran procedure using Intel Fortran Compiler on Windows OS: getSquare()">
+<meta property="og:description" content="CDSLab Recipes">
+<meta property="og:url" content="/recipes/programming/fortran-dll-getsquare/fortran-dll-getSquare">
+<meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
+<meta property="og:image" content="/recipes/images/">
+
+
+
+
+
+<link rel="canonical" href="/recipes/programming/fortran-dll-getsquare/fortran-dll-getSquare">
+<!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/recipes/assets/css/vendor/font-awesome.min.css">
+<link rel="stylesheet" href="/recipes/assets/css/vendor/normalize.css">
+<link rel="stylesheet" href="/recipes/assets/css/vendor/nprogress.css">
+<link rel="stylesheet" href="/recipes/assets/css/vendor/foundation.min.css">
+<link rel="stylesheet" href="/recipes/assets/css/style.css">
+<link rel="stylesheet" href="/recipes/assets/css/post.css">
+
+<!--Mathjax LaTeX engine-->
+<script>
+    var MathJax = {"HTML-CSS": {scale: 100}};
+</script>
+<style TYPE="text/css">
+    code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        config: ["MMLorHTML.js"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+        jax: ["input/TeX"],
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<link rel="shortcut icon" href="/recipes/favicon.ico">
+
+<link href="/recipes/assets/css/prismOkaidia.css" rel="stylesheet" />
+<link href="/recipes/assets/css/alert.css" rel="stylesheet" />
+
+<!--header anchor links-->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    
+</head>
+<body class="post-template" itemscope itemtype="https://schema.org/WebPage">
+
+
+
+    <main id="notepad-post-container-simple" class="notepad-post-container-simple" role="main">
+        <header class="notepad-post-header-simple">
+            <div class="notepad-post-menu-header-simple">
+
+                <a class="notepad-blog-logo" href=https://www.cdslab.org target="_blank"><img src="/recipes/images/logo.png" alt="cdslab.org" /></a>
+                <div class="notepad-blog-menu">      
+                    <div class="notepad-mobile-menu show-for-small">
+                        <a href="#"><i class="fa fa-bars"></i></a>
+                    </div>
+                    <ul class="notepad-menu">
+                        <li class="notepad-mobile-close-btn show-for-small text-right">
+                            <a href="#"><i class="fa fa-times"></i></a>
+                        </li>
+                        
+                            <li>
+                                
+                                    <a href="/recipes/">Home</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/recipes/highlights">Highlights</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/recipes/tags">Tags</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/recipes/about">About</a>
+                                
+                            </li>
+                                    
+                        <li><a href="/recipes/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+                    </ul>
+                </div>
+            </div>
+
+                <div class="notepad-post-title-simple row">
+                    <div class="small-12 columns">
+                        <div class="notepad-post-meta-simple">
+                            <h2><a href="/recipes/programming/fortran-dll-getsquare/fortran-dll-getSquare">Making and using a Dynamic-Link Library (DLL) from a Fortran procedure using Intel Fortran Compiler on Windows OS: getSquare()</a></h2>
+                            <p>
+                                by <strong><a href="https://www.cdslab.org/people" target="_blank">Amir Shahmoradi</a></strong>
+                                
+                                    &#8212; Last updated: 
+                                    <strong><time datetime="2019-07-04T00:00:00-05:00">04 July 2019</time></strong>
+                                
+                                <ul class="tag-box inline">
+                                    <span style="margin-right:1rem;">Tags:</span>
+                                    
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#C" data-toggle="tooltip" title="Posts tagged with C" rel="tag">C</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#DLL" data-toggle="tooltip" title="Posts tagged with DLL" rel="tag">DLL</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#DLLEXPORT" data-toggle="tooltip" title="Posts tagged with DLLEXPORT" rel="tag">DLLEXPORT</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#DLLIMPORT" data-toggle="tooltip" title="Posts tagged with DLLIMPORT" rel="tag">DLLIMPORT</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#Fortran" data-toggle="tooltip" title="Posts tagged with Fortran" rel="tag">Fortran</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#Intel" data-toggle="tooltip" title="Posts tagged with Intel" rel="tag">Intel</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#Windows" data-toggle="tooltip" title="Posts tagged with Windows" rel="tag">Windows</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#alias" data-toggle="tooltip" title="Posts tagged with alias" rel="tag">alias</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#bind" data-toggle="tooltip" title="Posts tagged with bind" rel="tag">bind</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#compiler" data-toggle="tooltip" title="Posts tagged with compiler" rel="tag">compiler</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#dynamic-link library" data-toggle="tooltip" title="Posts tagged with dynamic-link library" rel="tag">dynamic-link library</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#function" data-toggle="tooltip" title="Posts tagged with function" rel="tag">function</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#interoperation" data-toggle="tooltip" title="Posts tagged with interoperation" rel="tag">interoperation</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#iso_fortran_env" data-toggle="tooltip" title="Posts tagged with iso_fortran_env" rel="tag">iso_fortran_env</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#library" data-toggle="tooltip" title="Posts tagged with library" rel="tag">library</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#name mangling" data-toggle="tooltip" title="Posts tagged with name mangling" rel="tag">name mangling</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#real64" data-toggle="tooltip" title="Posts tagged with real64" rel="tag">real64</a>
+                                            </li>
+                                            
+                                        
+                                    
+                                </ul>
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <article class="notepad-post-content post tag-simple">
+
+            <div style="text-align:left;">
+                
+<p>Consider the following example Fortran function contained in Fortran module <code class="highlighter-rouge">Square_mod</code> which takes an input real number of type <code class="highlighter-rouge">real64</code> and returns its square as output,</p>
+
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span><span class="w"> </span><span class="n">Square_mod</span><span class="w">
+    </span><span class="k">implicit</span><span class="w"> </span><span class="k">none</span><span class="w">
+</span><span class="k">contains</span><span class="w">
+    </span><span class="k">function</span><span class="w"> </span><span class="n">getSquare</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="k">result</span><span class="p">(</span><span class="n">valSquared</span><span class="p">)</span><span class="w">
+        </span><span class="k">use</span><span class="p">,</span><span class="w"> </span><span class="k">intrinsic</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">iso_fortran_env</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">RK</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">real64</span><span class="w">
+        </span><span class="kt">real</span><span class="p">(</span><span class="n">RK</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="k">in</span><span class="p">)</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">val</span><span class="w">
+        </span><span class="kt">real</span><span class="p">(</span><span class="n">RK</span><span class="p">)</span><span class="w">             </span><span class="p">::</span><span class="w"> </span><span class="n">valSquared</span><span class="w">
+        </span><span class="n">valSquared</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="k">end</span><span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="n">getSquare</span><span class="w">
+</span><span class="k">end</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="n">Square_mod</span><span class="w">
+</span></code></pre></div></div>
+
+<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Here, <code class="highlighter-rouge">RK</code> is an alias to (or basically, an abbreviation for) the real kind <code class="highlighter-rouge">real64</code> which is imported from the Fortran standard’s intrinsic module <code class="highlighter-rouge">iso_fortran_env</code>. It is then used to declare the kinds of the real input number and the output result.</p>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem-part-1-non-portable-dll">
+        <h2 id="problem-part-1-non-portable-dll">Problem Part 1: non-portable DLL</h2>
+    </a>
+
+</div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#problem-1-non-portable-dll-fortran" id="problem-1-non-portable-dll-fortran">
+            <img src="/recipes/images/Fortran.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Fortran" target="_blank">
+                Fortran
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>Modify this function and provide the Intel Fortran Compiler command <code class="highlighter-rouge">ifort</code> with the required flags to generate Fortran DLL file that can be called from Fortran programs compiled by the same compiler. Then, write a Fortran program that calls this function from the DLL library and computes <code class="highlighter-rouge">getSquare(100._RK)</code>.</p>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution-part-1-non-portable-dll">
+        <h2 id="solution-part-1-non-portable-dll">Solution Part 1: non-portable DLL</h2>
+    </a>
+
+</div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-1-non-portable-dll-fortran" id="solution-1-non-portable-dll-fortran">
+            <img src="/recipes/images/Fortran.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Fortran" target="_blank">
+                Fortran
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>To export a Fortran DLL via Intel Fortran Compiler one needs to add the following comment to the function that has to appear in the line <em>immediately</em> after the function interface.</p>
+
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span><span class="w"> </span><span class="n">Square_mod</span><span class="w">
+    </span><span class="k">implicit</span><span class="w"> </span><span class="k">none</span><span class="w">
+</span><span class="k">contains</span><span class="w">
+    </span><span class="k">function</span><span class="w"> </span><span class="n">getSquare</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="k">result</span><span class="p">(</span><span class="n">valSquared</span><span class="p">)</span><span class="w">
+        </span><span class="c1">!DEC$ ATTRIBUTES DLLEXPORT :: getSquare</span><span class="w">
+        </span><span class="k">use</span><span class="p">,</span><span class="w"> </span><span class="k">intrinsic</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">iso_fortran_env</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">RK</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">real64</span><span class="w">
+        </span><span class="kt">real</span><span class="p">(</span><span class="n">RK</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="k">in</span><span class="p">)</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">val</span><span class="w">
+        </span><span class="kt">real</span><span class="p">(</span><span class="n">RK</span><span class="p">)</span><span class="w">             </span><span class="p">::</span><span class="w"> </span><span class="n">valSquared</span><span class="w">
+        </span><span class="n">valSquared</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="k">end</span><span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="n">getSquare</span><span class="w">
+</span><span class="k">end</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="n">Square_mod</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The exclamation mark in <code class="highlighter-rouge">!DEC$</code> simply converts the entire line to a Fortran comment so that this line can only be parsed by the Fortran compiler when needed. The rest, <code class="highlighter-rouge">DEC$</code> tells the Intel compiler to parse this line and export the function named <code class="highlighter-rouge">getSquare</code> to the DLL file. The name that appears after <code class="highlighter-rouge">ATTRIBUTES DLLEXPORT :: </code> must be the exact name of the function that is being exported.</p>
+
+<p>By default, the DLL export comment line will be ignored by all Fortran compilers, including Intel’s. However, the DLL comment line is recognizable by the Intel Fortran compiler only if the <code class="highlighter-rouge">ifort</code> command is invoked with the following optional flags,</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort /dll Square_mod.f90
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort /dll Square_mod.f90
+Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
+Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
+
+Microsoft (R) Incremental Linker Version 14.22.27905.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+-out:Square_mod.dll
+-dll
+-implib:Square_mod.lib
+Square_mod.obj
+   Creating library Square_mod.lib and object Square_mod.exp
+</code></pre></div></div>
+
+<p>where <code class="highlighter-rouge">Square_mod.f90</code> is the name of the file containing the <code class="highlighter-rouge">Square_mod</code> module. This command creates the following files,</p>
+
+<ol>
+  <li>a DLL file named <code class="highlighter-rouge">Square_mod.dll</code> containing the library’s executable code and,</li>
+  <li>an <strong>import library</strong>, <code class="highlighter-rouge">Square_mod.lib</code> which the linker uses to associate a main program with the DLL, and which one must link with applications that call the DLL.</li>
+</ol>
+
+<p>If you also specify <code class="highlighter-rouge">/exe:filename</code>, the <code class="highlighter-rouge">filename</code> you specify will be used instead of the default DLL name,</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort /dll Square_mod.f90 /exe:Square
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort /dll Square_mod.f90 /exe:Square
+Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
+Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
+
+Microsoft (R) Incremental Linker Version 14.22.27905.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+-out:Square.dll
+-dll
+-implib:Square.lib
+Square_mod.obj
+   Creating library Square.lib and object Square.exp
+</code></pre></div></div>
+
+<p>To see the contents of the generated library file, one can use the Windows command,</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dumpbin <span class="nt">-exports</span> Square.lib
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Microsoft (R) COFF/PE Dumper Version 14.22.27905.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file Square.lib
+
+File Type: LIBRARY
+
+     Exports
+
+       ordinal    name
+
+                  SQUARE_MOD_mp_GETSQUARE
+
+  Summary
+
+          C0 .debug$S
+          14 .idata$2
+          14 .idata$3
+           8 .idata$4
+           8 .idata$5
+           C .idata$6
+</code></pre></div></div>
+
+<p>or,</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dumpbin /symbols Square.exp
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Microsoft (R) COFF/PE Dumper Version 14.22.27905.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file Square.exp
+
+File Type: COFF OBJECT
+
+COFF SYMBOL TABLE
+000 01006D01 ABS    notype       Static       | @comp.id
+001 00000810 ABS    notype       Static       | @feat.00
+002 00000000 SECT1  notype       Static       | .edata
+003 00000000 SECT2  notype       Static       | .debug$S
+004 00000032 SECT1  notype       Static       | szName
+005 00000028 SECT1  notype       Static       | rgpv
+006 0000002C SECT1  notype       Static       | rgszName
+007 00000030 SECT1  notype       Static       | rgwOrd
+008 0000003D SECT1  notype       Static       | $N00001
+009 00000000 UNDEF  notype       External     | SQUARE_MOD_mp_GETSQUARE
+
+String Table Size = 0x1C bytes
+
+  Summary
+
+         151 .debug$S
+          55 .edata
+</code></pre></div></div>
+
+<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> For more information on how to create DLLs with Intel Fortran compiler, see <a href="https://software.intel.com/en-us/node/535308" target="_blank">this page</a>.</p>
+
+<p>Here is an example Fortran program that uses the DLL file,</p>
+
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">program</span><span class="w"> </span><span class="n">Square_prog</span><span class="w">
+    </span><span class="k">use</span><span class="p">,</span><span class="w"> </span><span class="k">intrinsic</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">iso_fortran_env</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">RK</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">real64</span><span class="w">
+    </span><span class="k">use</span><span class="w"> </span><span class="n">Square_mod</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">getSquare</span><span class="w">
+    </span><span class="k">implicit</span><span class="w"> </span><span class="k">none</span><span class="w">
+    </span><span class="kt">real</span><span class="p">(</span><span class="n">RK</span><span class="p">)</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100._RK</span><span class="w">
+    </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s2">"(*(g0.13,:,' '))"</span><span class="p">)</span><span class="w"> </span><span class="s2">"Square of"</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">,</span><span class="w"> </span><span class="s2">"is"</span><span class="p">,</span><span class="w"> </span><span class="n">getSquare</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="w">
+</span><span class="k">end</span><span class="w"> </span><span class="k">program</span><span class="w"> </span><span class="n">Square_prog</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Compile this program <code class="highlighter-rouge">Square_prog.f90</code> with the following Intel <code class="highlighter-rouge">ifort</code> command to get an executable with a default name <code class="highlighter-rouge">Square_prog.exe</code>,</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort Square_prog.f90 Square.lib
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort Square_prog.f90 Square.lib
+Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
+Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
+
+Microsoft (R) Incremental Linker Version 14.22.27905.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+-out:Square_prog.exe
+-subsystem:console
+Square_prog.obj
+Square.lib
+</code></pre></div></div>
+
+<p>Note that <code class="highlighter-rouge">Square.lib</code> has to appear as the last input argument to <code class="highlighter-rouge">ifort</code>. Now running the executable would yield,</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Square_prog.exe
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Square of 100.0000000000 is 10000.00000000
+</code></pre></div></div>
+
+<p>Alternatively, one could rename the executable via <code class="highlighter-rouge">-o filename</code> flag, or on the Windows-systems only, via <code class="highlighter-rouge">/exe:filename</code>, where <code class="highlighter-rouge">filename</code> is the name of the output executable by the <code class="highlighter-rouge">ifort</code> linker,</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort Square_prog.f90 Square.lib <span class="nt">-o</span> main.exe
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort Square_prog.f90 Square.lib -o main.exe
+Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
+Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
+
+Microsoft (R) Incremental Linker Version 14.22.27905.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+-out:main.exe
+-subsystem:console
+Square_prog.obj
+Square.lib
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem-part-2-portable-dll">
+        <h2 id="problem-part-2-portable-dll">Problem Part 2: portable DLL</h2>
+    </a>
+
+</div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#problem-2-portable-dll-fortran" id="problem-2-portable-dll-fortran">
+            <img src="/recipes/images/Fortran.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Fortran" target="_blank">
+                Fortran
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>The approach described above works only within the Intel Fortran compiler environment. That is because of a technique called <a href="https://en.wikipedia.org/wiki/Name_mangling" target="_blank">name mangling</a> that compilers utilize to encode function and variable names into unique names so that linkers can separate common names used within a program or the language. Since each Fortran compiler has its set of rules and conventions for name mangling, the above simplistic approach to DLL generation can be potentially non-portable, that is, not useful for mixed-language or mixed-compiler programming. Fortunately, the Fortran standard provides a method to request the compiler to generate a unique global identifier provided by the user for a function of interest. This can be done via Fortran’s intrinsic <code class="highlighter-rouge">bind(C, name=globalName)</code> in the function/subroutine interface, with <code class="highlighter-rouge">globalName</code> representing the global identifier specified by the user for the Fortran function.</p>
+
+<p>Given this new information, modify the function <code class="highlighter-rouge">getSquare</code> to give it a global identifier <code class="highlighter-rouge">getSq</code> as well as exporting the original name <code class="highlighter-rouge">getSquare</code> via Intel’s <code class="highlighter-rouge">DLLEXPORT</code>. Also, provide the Intel Fortran Compiler command <code class="highlighter-rouge">ifort</code> with the required flags to generate Fortran DLL file that can be called from Fortran programs compiled by the same compiler. Then, write a Fortran program that calls this function from the DLL library in two different ways, one through <code class="highlighter-rouge">use Square_mod, only: getSquare</code> to compute <code class="highlighter-rouge">getSquare(100._RK)</code> and the other, by defining the required explicit function interface and <code class="highlighter-rouge">DLLIMPORT</code> to call the global identifier <code class="highlighter-rouge">getSq</code> directly from within the program to compute <code class="highlighter-rouge">getSq(100._RK)</code>.</p>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution-part-2-portable-dll">
+        <h2 id="solution-part-2-portable-dll">Solution Part 2: portable DLL</h2>
+    </a>
+
+</div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-2-portable-dll-fortran" id="solution-2-portable-dll-fortran">
+            <img src="/recipes/images/Fortran.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Fortran" target="_blank">
+                Fortran
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>To make the generated DLL portable, or simply to call the function inside the DLL file with a different name from the function’s original name, for example <code class="highlighter-rouge">getSq</code> instead of <code class="highlighter-rouge">getSquare</code>, one can use Fortran’s intrinsic <code class="highlighter-rouge">bind()</code> in the function’s interface to define a global identifier for the function,</p>
+
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span><span class="w"> </span><span class="n">Square_mod</span><span class="w">
+    </span><span class="k">implicit</span><span class="w"> </span><span class="k">none</span><span class="w">
+</span><span class="k">contains</span><span class="w">
+    </span><span class="k">function</span><span class="w"> </span><span class="n">getSquare</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="k">result</span><span class="p">(</span><span class="n">valSquared</span><span class="p">)</span><span class="w"> </span><span class="k">bind</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">"getSq"</span><span class="p">)</span><span class="w">
+        </span><span class="c1">!DEC$ ATTRIBUTES DLLEXPORT :: getSquare</span><span class="w">
+        </span><span class="k">use</span><span class="p">,</span><span class="w"> </span><span class="k">intrinsic</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">iso_fortran_env</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">RK</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">real64</span><span class="w">
+        </span><span class="kt">real</span><span class="p">(</span><span class="n">RK</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="k">in</span><span class="p">)</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">val</span><span class="w">
+        </span><span class="kt">real</span><span class="p">(</span><span class="n">RK</span><span class="p">)</span><span class="w">             </span><span class="p">::</span><span class="w"> </span><span class="n">valSquared</span><span class="w">
+        </span><span class="n">valSquared</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="k">end</span><span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="n">getSquare</span><span class="w">
+</span><span class="k">end</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="n">Square_mod</span><span class="w">
+</span></code></pre></div></div>
+
+<p>and call the DLL function either in the old fashion via <code class="highlighter-rouge">use Square_mod, only: getSquare</code> or in the new approach by calling the global identifier <code class="highlighter-rouge">getSq</code> instead in the calling program, for example,</p>
+
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">program</span><span class="w"> </span><span class="n">Square_prog</span><span class="w">
+    </span><span class="k">use</span><span class="p">,</span><span class="w"> </span><span class="k">intrinsic</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">iso_fortran_env</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">RK</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">real64</span><span class="w">
+    </span><span class="k">use</span><span class="w"> </span><span class="n">Square_mod</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">getSquare</span><span class="w">
+    </span><span class="k">implicit</span><span class="w"> </span><span class="k">none</span><span class="w">
+    </span><span class="kt">real</span><span class="p">(</span><span class="n">RK</span><span class="p">)</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100._RK</span><span class="w">
+    </span><span class="k">interface</span><span class="w">
+    </span><span class="k">function</span><span class="w"> </span><span class="n">getSq</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="k">result</span><span class="p">(</span><span class="n">valSquared</span><span class="p">)</span><span class="w">
+        </span><span class="c1">!DEC$ ATTRIBUTES DLLIMPORT, DECORATE, ALIAS: 'getSq' :: getSq</span><span class="w">
+        </span><span class="k">use</span><span class="p">,</span><span class="w"> </span><span class="k">intrinsic</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">iso_fortran_env</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">RK</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">real64</span><span class="w">
+        </span><span class="kt">real</span><span class="p">(</span><span class="n">RK</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="k">in</span><span class="p">)</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">val</span><span class="w">
+        </span><span class="kt">real</span><span class="p">(</span><span class="n">RK</span><span class="p">)</span><span class="w">             </span><span class="p">::</span><span class="w"> </span><span class="n">valSquared</span><span class="w">
+    </span><span class="k">end</span><span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="n">getSq</span><span class="w">
+    </span><span class="k">end</span><span class="w"> </span><span class="k">interface</span><span class="w">
+    </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s2">"(*(g0.13,:,' '))"</span><span class="p">)</span><span class="w"> </span><span class="s2">"getSquare("</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">,</span><span class="w"> </span><span class="s2">") ="</span><span class="p">,</span><span class="w"> </span><span class="n">getSquare</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="w">
+    </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s2">"(*(g0.13,:,' '))"</span><span class="p">)</span><span class="w"> </span><span class="s2">"    getSq("</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">,</span><span class="w"> </span><span class="s2">") ="</span><span class="p">,</span><span class="w"> </span><span class="n">getSq</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="w">
+</span><span class="k">end</span><span class="w"> </span><span class="k">program</span><span class="w"> </span><span class="n">Square_prog</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort /dll PortableSquare_mod.f90 /exe:PortableSquare
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
+Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
+
+Microsoft (R) Incremental Linker Version 14.22.27905.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+-out:PortableSquare.dll
+-dll
+-implib:PortableSquare.lib
+PortableSquare_mod.obj
+   Creating library PortableSquare.lib and object PortableSquare.exp
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort PortableSquare_prog.f90 PortableSquare.lib <span class="nt">-o</span> main.exe
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
+Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
+
+Microsoft (R) Incremental Linker Version 14.22.27905.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+-out:main.exe
+-subsystem:console
+PortableSquare_prog.obj
+PortableSquare.lib
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main.exe
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>getSquare( 100.0000000000 ) = 10000.00000000
+    getSq( 100.0000000000 ) = 10000.00000000
+</code></pre></div></div>
+
+<p>Note, however, that the use of the global identifier from the DLL inside the Fortran main program requires an explicit interface of the original function as defined in the above example.</p>
+
+<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> The Fortran intrinsic attribute <code class="highlighter-rouge">bind(C, name="getSq")</code> in the function interface has nothing to do with DLL generation. It is an interoperation-with-C-language capability that exists in the Fortran standard, which tells the compiler to avoid name-mangling (changing the function name to something else) so that the Fortran code becomes more portable and the code, whether compiler by Intel or any other compiler, generates a DLL that contains a function with the exact global name as specified by <code class="highlighter-rouge">name="getSq"</code> in the function interface.</p>
+
+
+            </div>
+        </article>
+        <div class="cf"></div>
+<div class="row text-center">
+    <section class="notepad-post-share">
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Making and using a Dynamic-Link Library (DLL) from a Fortran procedure using Intel Fortran Compiler on Windows OS: getSquare()&quot;%20/recipes/programming/fortran-dll-getsquare/fortran-dll-getSquare%20via%20&#64;cdslaborg"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+            <i class="fa fa-twitter"></i>
+        </a>
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=/recipes/programming/fortran-dll-getsquare/fortran-dll-getSquare"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+            <i class="fa fa-facebook"></i>
+        </a>
+        <a class="google-icon" href="https://plus.google.com/share?url=/recipes/programming/fortran-dll-getsquare/fortran-dll-getSquare"
+           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+            <i class="fa fa-google-plus"></i>
+        </a>
+    </section>
+</div>
+        <div class="cf"></div>
+<div class="notepad-author-info">
+    <div class="row">
+        <section class="notepad-post-author small-12 columns">
+            <a href=https://www.shahmoradi.org target="_blank">
+                <img src="/recipes/images/AmirShahmoradi.png" class="notepad-post-author-avatar" alt="Amir Shahmoradi's photo">
+            </a>
+            <span class="author-label">Author</span>
+            <h1>Amir Shahmoradi</h1>
+            <p><a href="mailto:shahmoradi@utexas.edu" class="author-website">shahmoradi@utexas.edu</a></p>
+            <p>Genius is 99% perspiration and 1% inspiration</p>
+        </section>
+    </div>
+</div> 
+        <div class="cf"></div>
+
+        <section class="notepad-disqus row">
+            <div class="small-12 columns">
+                <h1 class="notepad-comments-header">Comments</h1>
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'shahmoradi'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+        </section>
+
+        <div class="cf"></div>
+        <footer class="notepad-site-footer">
+    <div class="copyright">
+         <!-- <section>Last updated 2019 / 08 / 07</section></br> -->
+         <section>Last updated Wednesday, 07 Aug 2019 at 01:50 PM CST</section></br>
+         <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
+         <section>SEIR 365 | Arlington TX 76010</section></br>
+    </div>
+    <div class="social-icons">
+        
+        <a href="https://twitter.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        
+        
+        <a href="https://github.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="https://facebook.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <div style="color: #000000; float: none; width: 100%; padding-top: 1rem;">
+            <span style="font-size:0.8em">visitor count: 
+                <script type="text/javascript">
+                    var sc_project=12051053; 
+                    var sc_invisible=0; 
+                    var sc_security="e095256f"; 
+                    var sc_text=3; 
+                    var scJsHost = "https://";
+                    document.write("<sc"+"ript type='text/javascript' src='" + scJsHost + 
+                    "statcounter.com/counter/counter.js'></"+"script>");
+                </script>
+            </span>
+        </div>
+        
+    </div>
+    <div class="cf"></div>
+</footer> 
+    </main>
+    <!--dynamic page header-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/recipes/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+  <script src="/recipes/assets/js/vendor/modernizr.js"></script>
+  <script src="/recipes/assets/js/foundation.min.js"></script>
+  
+  <script src="/recipes/assets/js/notepad.js"></script>
+  <script src="/recipes/assets/js/scripts.min.js"></script>
+  <script src="/recipes/assets/js/vendor/nprogress.js"></script>
+  
+  <script>
+    $(document).foundation();
+  </script>
+  <script type='text/javascript'>console.log("N/A");</script>
+  <script type='text/javascript'>console.log("https://www.cdslab.org/");</script>
+
+<!--header anchor links-->
+<script src="/recipes/assets/js/autoAnchorLink.js"></script>
+
+<!-- <script src="/recipes/assets/js/prismOkaidia.js"></script>
+<script src="/recipes/assets/js/prismTwilight.js"></script>
+<script src="/recipes/assets/js/prismDefault.js"></script>
+ -->
+<script src="/recipes/assets/js/prismCoy.js"></script> 
+    <!--automatic Table of Content.-->
+    <script src="/recipes/assets/js/autoTOC.js"></script>
+</body>
+</html>

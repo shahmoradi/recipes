@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="utf-8">
+<title>PASSING CHARACTERS AND STRINGS FROM C TO FORTRAN AND FROM FORTRAN TO C &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<meta name="description" content="CDSLab Recipes">
+<meta name="keywords" content="interoperation, compiler, Intel, Windows, alias, name mangling, bind, Fortran, C, function, iso_fortran_env, iso_c_binding, char, string">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/recipes/images/logo.png">
+<meta name="twitter:title" content="Passing characters and strings from C to Fortran and from Fortran to C">
+<meta name="twitter:description" content="CDSLab Recipes">
+<meta name="twitter:creator" content="@cdslaborg">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Passing characters and strings from C to Fortran and from Fortran to C">
+<meta property="og:description" content="CDSLab Recipes">
+<meta property="og:url" content="/recipes/programming/fortran-c-interoperation-string/fortran-c-interoperation-string">
+<meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
+<meta property="og:image" content="/recipes/images/">
+
+
+
+
+
+<link rel="canonical" href="/recipes/programming/fortran-c-interoperation-string/fortran-c-interoperation-string">
+<!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/recipes/assets/css/vendor/font-awesome.min.css">
+<link rel="stylesheet" href="/recipes/assets/css/vendor/normalize.css">
+<link rel="stylesheet" href="/recipes/assets/css/vendor/nprogress.css">
+<link rel="stylesheet" href="/recipes/assets/css/vendor/foundation.min.css">
+<link rel="stylesheet" href="/recipes/assets/css/style.css">
+<link rel="stylesheet" href="/recipes/assets/css/post.css">
+
+<!--Mathjax LaTeX engine-->
+<script>
+    var MathJax = {"HTML-CSS": {scale: 100}};
+</script>
+<style TYPE="text/css">
+    code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        config: ["MMLorHTML.js"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+        jax: ["input/TeX"],
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<link rel="shortcut icon" href="/recipes/favicon.ico">
+
+<link href="/recipes/assets/css/prismOkaidia.css" rel="stylesheet" />
+<link href="/recipes/assets/css/alert.css" rel="stylesheet" />
+
+<!--header anchor links-->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    
+</head>
+<body class="post-template" itemscope itemtype="https://schema.org/WebPage">
+
+
+
+    <main id="notepad-post-container-simple" class="notepad-post-container-simple" role="main">
+        <header class="notepad-post-header-simple">
+            <div class="notepad-post-menu-header-simple">
+
+                <a class="notepad-blog-logo" href=https://www.cdslab.org target="_blank"><img src="/recipes/images/logo.png" alt="cdslab.org" /></a>
+                <div class="notepad-blog-menu">      
+                    <div class="notepad-mobile-menu show-for-small">
+                        <a href="#"><i class="fa fa-bars"></i></a>
+                    </div>
+                    <ul class="notepad-menu">
+                        <li class="notepad-mobile-close-btn show-for-small text-right">
+                            <a href="#"><i class="fa fa-times"></i></a>
+                        </li>
+                        
+                            <li>
+                                
+                                    <a href="/recipes/">Home</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/recipes/highlights">Highlights</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/recipes/tags">Tags</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/recipes/about">About</a>
+                                
+                            </li>
+                                    
+                        <li><a href="/recipes/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+                    </ul>
+                </div>
+            </div>
+
+                <div class="notepad-post-title-simple row">
+                    <div class="small-12 columns">
+                        <div class="notepad-post-meta-simple">
+                            <h2><a href="/recipes/programming/fortran-c-interoperation-string/fortran-c-interoperation-string">Passing characters and strings from C to Fortran and from Fortran to C</a></h2>
+                            <p>
+                                by <strong><a href="https://www.cdslab.org/people" target="_blank">Amir Shahmoradi</a></strong>
+                                
+                                    &#8212; Last updated: 
+                                    <strong><time datetime="2019-07-04T00:00:00-05:00">04 July 2019</time></strong>
+                                
+                                <ul class="tag-box inline">
+                                    <span style="margin-right:1rem;">Tags:</span>
+                                    
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#C" data-toggle="tooltip" title="Posts tagged with C" rel="tag">C</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#Fortran" data-toggle="tooltip" title="Posts tagged with Fortran" rel="tag">Fortran</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#Intel" data-toggle="tooltip" title="Posts tagged with Intel" rel="tag">Intel</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#Windows" data-toggle="tooltip" title="Posts tagged with Windows" rel="tag">Windows</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#alias" data-toggle="tooltip" title="Posts tagged with alias" rel="tag">alias</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#bind" data-toggle="tooltip" title="Posts tagged with bind" rel="tag">bind</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#char" data-toggle="tooltip" title="Posts tagged with char" rel="tag">char</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#compiler" data-toggle="tooltip" title="Posts tagged with compiler" rel="tag">compiler</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#function" data-toggle="tooltip" title="Posts tagged with function" rel="tag">function</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#interoperation" data-toggle="tooltip" title="Posts tagged with interoperation" rel="tag">interoperation</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#iso_c_binding" data-toggle="tooltip" title="Posts tagged with iso_c_binding" rel="tag">iso_c_binding</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#iso_fortran_env" data-toggle="tooltip" title="Posts tagged with iso_fortran_env" rel="tag">iso_fortran_env</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#name mangling" data-toggle="tooltip" title="Posts tagged with name mangling" rel="tag">name mangling</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#string" data-toggle="tooltip" title="Posts tagged with string" rel="tag">string</a>
+                                            </li>
+                                            
+                                        
+                                    
+                                </ul>
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <article class="notepad-post-content post tag-simple">
+
+            <div style="text-align:left;">
+                
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+
+    <a href="#problem">
+        <h2 id="problem">Problem</h2>
+    </a>
+
+</div>
+
+<p>Consider the following example Fortran function <code class="highlighter-rouge">getLowerCase</code> which takes a string of arbitrary length as input and converts all of the upper-case letters to lower-case and returns the result as the <code class="highlighter-rouge">output</code> string,</p>
+
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span><span class="w"> </span><span class="n">String_mod</span><span class="w">
+    </span><span class="k">implicit</span><span class="w"> </span><span class="k">none</span><span class="w">
+    </span><span class="k">use</span><span class="p">,</span><span class="w"> </span><span class="k">intrinsic</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">iso_fortran_env</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">IK</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">int32</span><span class="w">
+</span><span class="k">contains</span><span class="w">
+    </span><span class="k">pure</span><span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="n">getLowerCase</span><span class="p">(</span><span class="n">string</span><span class="p">)</span><span class="w"> </span><span class="k">result</span><span class="p">(</span><span class="n">output</span><span class="p">)</span><span class="w">
+        </span><span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="k">in</span><span class="p">)</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">string</span><span class="w">
+        </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">),</span><span class="w"> </span><span class="k">parameter</span><span class="w">   </span><span class="p">::</span><span class="w"> </span><span class="n">duc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">ichar</span><span class="p">(</span><span class="s1">'A'</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">ichar</span><span class="p">(</span><span class="s1">'a'</span><span class="p">)</span><span class="w">
+        </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">string</span><span class="p">))</span><span class="w">   </span><span class="p">::</span><span class="w"> </span><span class="n">output</span><span class="w">
+        </span><span class="kt">character</span><span class="w">                </span><span class="p">::</span><span class="w"> </span><span class="n">ch</span><span class="w">
+        </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">)</span><span class="w">              </span><span class="p">::</span><span class="w"> </span><span class="n">i</span><span class="w">
+        </span><span class="k">do</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">string</span><span class="p">)</span><span class="w">
+            </span><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">string</span><span class="p">(</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="p">)</span><span class="w">
+            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ch</span><span class="o">&gt;=</span><span class="s1">'A'</span><span class="w"> </span><span class="ow">.and.</span><span class="w"> </span><span class="n">ch</span><span class="o">&lt;=</span><span class="s1">'Z'</span><span class="p">)</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">char</span><span class="p">(</span><span class="nb">ichar</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span><span class="o">-</span><span class="n">duc</span><span class="p">)</span><span class="w">
+            </span><span class="n">output</span><span class="p">(</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ch</span><span class="w">
+        </span><span class="k">end</span><span class="w"> </span><span class="k">do</span><span class="w">
+    </span><span class="k">end</span><span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="n">getLowerCase</span><span class="w">
+</span><span class="k">end</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="n">String_mod</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Rewrite this function in such a way that it can be called from the C programming language. Then write a C program that calls this function and print the output of the function on the screen.</p>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution">
+        <h2 id="solution">Solution</h2>
+    </a>
+
+</div>
+
+<p>Fortran handles its string arguments differently from the C language. In Fortran, along with the string, length of the string is also passed as a hidden argument to the called function. Any attempt to make this function interoperable requires two things as usual,</p>
+
+<ol>
+  <li>declaring a global identifier as the function’s name via Fortran’s intrinsic <code class="highlighter-rouge">bind()</code> attribute,</li>
+  <li>redefining the function arguments to make them interoperable with the C language.</li>
+</ol>
+
+<p>Fortunately, Fortran 2018 standard provides formal methods of calling a Fortran function or subroutine that takes string arguments. For example, the following function inside a file named <code class="highlighter-rouge">String_mod.f90</code>,</p>
+
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span><span class="w"> </span><span class="n">String_mod</span><span class="w">
+    </span><span class="k">implicit</span><span class="w"> </span><span class="k">none</span><span class="w">
+</span><span class="k">contains</span><span class="w">
+    </span><span class="k">function</span><span class="w"> </span><span class="n">printString</span><span class="p">(</span><span class="n">string</span><span class="p">)</span><span class="w"> </span><span class="k">result</span><span class="p">(</span><span class="n">success</span><span class="p">)</span><span class="w"> </span><span class="k">bind</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">"printString"</span><span class="p">)</span><span class="w">
+        </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="k">in</span><span class="p">)</span><span class="w">    </span><span class="p">::</span><span class="w"> </span><span class="n">string</span><span class="w">
+        </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="w">                </span><span class="p">::</span><span class="w"> </span><span class="n">success</span><span class="w">
+        </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s2">"(*(g0))"</span><span class="p">)</span><span class="w"> </span><span class="s2">"From Inside Fortran@printString(): string = "</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="w">
+        </span><span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"T"</span><span class="w">
+    </span><span class="k">end</span><span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="n">printString</span><span class="w">
+</span><span class="k">end</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="n">String_mod</span><span class="w">
+</span></code></pre></div></div>
+
+<p>could be called by the following C main code inside a file named <code class="highlighter-rouge">mainPrintString.c</code>,</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include "ISO_Fortran_binding.h"
+#include &lt;string.h&gt;
+</span>
+<span class="c1">// Fortran function printString prototype</span>
+<span class="k">extern</span> <span class="kt">char</span><span class="o">*</span> <span class="nf">printString</span><span class="p">(</span><span class="n">CFI_cdesc_t</span> <span class="o">*</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">StrVec</span> <span class="o">=</span> <span class="s">"This is a C string!"</span><span class="p">;</span>
+
+    <span class="c1">// Initialize the C descriptor as a scalar character nonpointer</span>
+    <span class="n">CFI_cdesc_t</span> <span class="n">StrVec_desc</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">retval</span> <span class="o">=</span> <span class="n">CFI_establish</span>  <span class="p">(</span> <span class="o">&amp;</span><span class="n">StrVec_desc</span>
+                                <span class="p">,</span> <span class="n">StrVec</span>
+                                <span class="p">,</span> <span class="n">CFI_attribute_other</span>
+                                <span class="p">,</span> <span class="n">CFI_type_char</span>
+                                <span class="p">,</span> <span class="n">strlen</span><span class="p">(</span><span class="n">StrVec</span><span class="p">)</span>
+                                <span class="p">,</span> <span class="mi">0</span>
+                                <span class="p">,</span> <span class="nb">NULL</span>
+                                <span class="p">);</span>
+
+    <span class="c1">// Call Fortran function printString</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">success</span> <span class="o">=</span> <span class="n">printString</span><span class="p">(</span><span class="o">&amp;</span><span class="n">StrVec_desc</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">success</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>when compiled with a Fortran-2018 standard complying compiler, such as Intel Visual Fortran and C Compilers &gt;2018,</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort <span class="nt">-c</span> String_mod.f90
+icl <span class="nt">-c</span> mainPrintString.c
+icl String_mod.obj mainPrintString.obj <span class="nt">-o</span> a.exe 
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intel(R) C++ Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
+Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
+
+Microsoft (R) Incremental Linker Version 14.22.27905.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+-out:a.exe
+String_mod.obj
+mainPrintString.obj
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a.exe
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>From Inside Fortran@printString(): string = This is a C string!
+T
+</code></pre></div></div>
+
+<p>Here in the C code, we have established a Fortran descriptor <code class="highlighter-rouge">StrVec_desc</code> via <code class="highlighter-rouge">CFI_establish</code> from <code class="highlighter-rouge">ISO_Fortran_binding.h</code> header file that correctly passes all the information needed about the string <code class="highlighter-rouge">StrVec</code> in C to the Fortran function. This descriptor is then passed to the Fortran function instead of the string itself. This is a highly desirable feature of Fortran 2018 as it does not require <em>any</em> changes to the Fortran function. In other words, the Fortran function <code class="highlighter-rouge">printString()</code> has a single interface for both Fortran and C, although when calling the function from C, one has to now establish a C descriptor. However, that is straightforward as shown above.</p>
+
+<p>Unfortunately, there is still no standardized way, as of Fortran 2018, to return a string output from a Fortran function to C. The Fortran function needs to <strong>allocate</strong> new space for its string result and pass it to C. Until the Fortran standard offers a remedy, a workaround is to rewrite the Fortran function as a subroutine which takes two arguments, one input and the other as the output of the subroutine <code class="highlighter-rouge">getLowerCase</code>. Then, allocate both input and output from the C side and pass them to the Fortran subroutine.</p>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-fortran" id="solution-fortran">
+            <img src="/recipes/images/Fortran.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Fortran" target="_blank">
+                Fortran
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span><span class="w"> </span><span class="n">String_mod</span><span class="w">
+    </span><span class="k">implicit</span><span class="w"> </span><span class="k">none</span><span class="w">
+</span><span class="k">contains</span><span class="w">
+    </span><span class="k">subroutine</span><span class="w"> </span><span class="n">getLowerCase</span><span class="p">(</span><span class="n">StrVec</span><span class="p">,</span><span class="n">StrVecLowerCase</span><span class="p">,</span><span class="n">lenStrVec</span><span class="p">)</span><span class="w"> </span><span class="k">bind</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">"getLowerCase"</span><span class="p">)</span><span class="w">
+        </span><span class="k">use</span><span class="p">,</span><span class="w"> </span><span class="k">intrinsic</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">iso_c_binding</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">c_char</span><span class="p">,</span><span class="w"> </span><span class="n">c_null_char</span><span class="p">,</span><span class="w"> </span><span class="n">c_size_t</span><span class="w">
+        </span><span class="k">use</span><span class="p">,</span><span class="w"> </span><span class="k">intrinsic</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">iso_fortran_env</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">IK</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">int32</span><span class="w">
+        </span><span class="kt">integer</span><span class="p">(</span><span class="n">c_size_t</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="k">in</span><span class="p">),</span><span class="w"> </span><span class="k">value</span><span class="w">        </span><span class="p">::</span><span class="w"> </span><span class="n">lenStrVec</span><span class="w">
+        </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">C_char</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="k">in</span><span class="p">)</span><span class="w">    </span><span class="p">::</span><span class="w"> </span><span class="n">StrVec</span><span class="p">(</span><span class="n">lenStrVec</span><span class="p">)</span><span class="w">
+        </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">C_char</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="k">inout</span><span class="p">)</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">StrVecLowerCase</span><span class="p">(</span><span class="n">lenStrVec</span><span class="p">)</span><span class="w">
+        </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">),</span><span class="w"> </span><span class="k">parameter</span><span class="w">                      </span><span class="p">::</span><span class="w"> </span><span class="n">duc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">ichar</span><span class="p">(</span><span class="s1">'A'</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">ichar</span><span class="p">(</span><span class="s1">'a'</span><span class="p">)</span><span class="w">
+        </span><span class="kt">character</span><span class="w">                                   </span><span class="p">::</span><span class="w"> </span><span class="n">ch</span><span class="w">
+        </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">)</span><span class="w">                                 </span><span class="p">::</span><span class="w"> </span><span class="n">i</span><span class="w">
+        </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s2">"(*(g0))"</span><span class="p">)</span><span class="w"> </span><span class="s2">"From Inside Fortran@getLowerCase(): StrVec = "</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">StrVec</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">lenStrVec</span><span class="p">)</span><span class="w">
+        </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s2">"(*(g0))"</span><span class="p">)</span><span class="w"> </span><span class="s2">"From Inside Fortran@getLowerCase(): lenStrVec = "</span><span class="p">,</span><span class="w"> </span><span class="n">lenStrVec</span><span class="w">
+        </span><span class="k">do</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">lenStrVec</span><span class="w">
+            </span><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StrVec</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w">
+            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ch</span><span class="o">&gt;=</span><span class="s1">'A'</span><span class="w"> </span><span class="ow">.and.</span><span class="w"> </span><span class="n">ch</span><span class="o">&lt;=</span><span class="s1">'Z'</span><span class="p">)</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">char</span><span class="p">(</span><span class="nb">ichar</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span><span class="o">-</span><span class="n">duc</span><span class="p">)</span><span class="w">
+            </span><span class="n">StrVecLowerCase</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ch</span><span class="w">
+        </span><span class="k">end</span><span class="w"> </span><span class="k">do</span><span class="w">
+    </span><span class="k">end</span><span class="w"> </span><span class="k">subroutine</span><span class="w"> </span><span class="n">getLowerCase</span><span class="w">
+</span><span class="k">end</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="n">String_mod</span><span class="w">
+</span></code></pre></div></div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-c" id="solution-c">
+            <img src="/recipes/images/C.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank">
+                C
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+</span>
+<span class="c1">// The Fortran function's prototype</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">getLowerCase</span><span class="p">(</span><span class="kt">char</span> <span class="p">[],</span> <span class="kt">char</span> <span class="p">[],</span> <span class="kt">size_t</span> <span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">StrVec</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"HELLO FORTRAN! YOU ROCK!"</span><span class="p">;</span>
+    <span class="kt">size_t</span> <span class="n">lenStrVec</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">StrVec</span><span class="p">)</span> <span class="o">/</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">StrVec</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+    <span class="kt">char</span> <span class="n">StrVecLowerCase</span><span class="p">[</span> <span class="n">lenStrVec</span> <span class="p">];</span>
+
+    <span class="c1">// Everything is passed by reference to Fortran</span>
+    <span class="n">getLowerCase</span><span class="p">(</span> <span class="n">StrVec</span>
+                <span class="p">,</span> <span class="n">StrVecLowerCase</span>
+                <span class="p">,</span> <span class="n">lenStrVec</span>
+                <span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"From Inside C: %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">StrVecLowerCase</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort <span class="nt">-c</span> String_mod.f90
+icl <span class="nt">-c</span> main.c
+icl String_mod.obj main.obj <span class="nt">-o</span> a.exe 
+a.exe
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>From Inside Fortran@getLowerCase(): StrVec = HELLO FORTRAN! YOU ROCK!
+From Inside Fortran@getLowerCase(): lenStrVec = 25
+From Inside C: hello fortran! you rock!
+</code></pre></div></div>
+
+<p class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> In the above solution, we are defining our string in C as a vector of characters rather than a string, and it is received as a vector of characters on the Fortran side. Because of this, the length of the character vector has to be explicitly passed to the Fortran subroutine, otherwise, Fortran will not know the length of the input and output character vectors. As a result, there is no need for the C null terminating character at the end of the output character vector of the Fortran subroutine. Also, note that the length of the subroutine output character vector is prescribed by the C program before calling the Fortran subroutine. <strong>All allocations happen on the C side</strong>. <br /><br />This is the simplest Fortran-2003-standard approach to string interoperation between C and Fortran. Fortran 2018 provides more convenient ways to pass strings (including allocatable strings) between Fortran and C, some of which require <strong>no change</strong> to the Fortran code and minimal work on the C code via <code class="highlighter-rouge">ISO_Fortran_binding.h</code>. This is a great capability, since it on many occasions, the Fortran code which is often part of a library remains intact with no need for a wrapper.</p>
+
+
+            </div>
+        </article>
+        <div class="cf"></div>
+<div class="row text-center">
+    <section class="notepad-post-share">
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Passing characters and strings from C to Fortran and from Fortran to C&quot;%20/recipes/programming/fortran-c-interoperation-string/fortran-c-interoperation-string%20via%20&#64;cdslaborg"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+            <i class="fa fa-twitter"></i>
+        </a>
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=/recipes/programming/fortran-c-interoperation-string/fortran-c-interoperation-string"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+            <i class="fa fa-facebook"></i>
+        </a>
+        <a class="google-icon" href="https://plus.google.com/share?url=/recipes/programming/fortran-c-interoperation-string/fortran-c-interoperation-string"
+           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+            <i class="fa fa-google-plus"></i>
+        </a>
+    </section>
+</div>
+        <div class="cf"></div>
+<div class="notepad-author-info">
+    <div class="row">
+        <section class="notepad-post-author small-12 columns">
+            <a href=https://www.shahmoradi.org target="_blank">
+                <img src="/recipes/images/AmirShahmoradi.png" class="notepad-post-author-avatar" alt="Amir Shahmoradi's photo">
+            </a>
+            <span class="author-label">Author</span>
+            <h1>Amir Shahmoradi</h1>
+            <p><a href="mailto:shahmoradi@utexas.edu" class="author-website">shahmoradi@utexas.edu</a></p>
+            <p>Genius is 99% perspiration and 1% inspiration</p>
+        </section>
+    </div>
+</div> 
+        <div class="cf"></div>
+
+        <section class="notepad-disqus row">
+            <div class="small-12 columns">
+                <h1 class="notepad-comments-header">Comments</h1>
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'shahmoradi'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+        </section>
+
+        <div class="cf"></div>
+        <footer class="notepad-site-footer">
+    <div class="copyright">
+         <!-- <section>Last updated 2019 / 08 / 07</section></br> -->
+         <section>Last updated Wednesday, 07 Aug 2019 at 01:50 PM CST</section></br>
+         <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
+         <section>SEIR 365 | Arlington TX 76010</section></br>
+    </div>
+    <div class="social-icons">
+        
+        <a href="https://twitter.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        
+        
+        <a href="https://github.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="https://facebook.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <div style="color: #000000; float: none; width: 100%; padding-top: 1rem;">
+            <span style="font-size:0.8em">visitor count: 
+                <script type="text/javascript">
+                    var sc_project=12051053; 
+                    var sc_invisible=0; 
+                    var sc_security="e095256f"; 
+                    var sc_text=3; 
+                    var scJsHost = "https://";
+                    document.write("<sc"+"ript type='text/javascript' src='" + scJsHost + 
+                    "statcounter.com/counter/counter.js'></"+"script>");
+                </script>
+            </span>
+        </div>
+        
+    </div>
+    <div class="cf"></div>
+</footer> 
+    </main>
+    <!--dynamic page header-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/recipes/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+  <script src="/recipes/assets/js/vendor/modernizr.js"></script>
+  <script src="/recipes/assets/js/foundation.min.js"></script>
+  
+  <script src="/recipes/assets/js/notepad.js"></script>
+  <script src="/recipes/assets/js/scripts.min.js"></script>
+  <script src="/recipes/assets/js/vendor/nprogress.js"></script>
+  
+  <script>
+    $(document).foundation();
+  </script>
+  <script type='text/javascript'>console.log("N/A");</script>
+  <script type='text/javascript'>console.log("https://www.cdslab.org/");</script>
+
+<!--header anchor links-->
+<script src="/recipes/assets/js/autoAnchorLink.js"></script>
+
+<!-- <script src="/recipes/assets/js/prismOkaidia.js"></script>
+<script src="/recipes/assets/js/prismTwilight.js"></script>
+<script src="/recipes/assets/js/prismDefault.js"></script>
+ -->
+<script src="/recipes/assets/js/prismCoy.js"></script> 
+    <!--automatic Table of Content.-->
+    <script src="/recipes/assets/js/autoTOC.js"></script>
+</body>
+</html>

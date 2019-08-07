@@ -6,7 +6,7 @@ residue_max_acc = {'A': 129.0, 'R': 274.0, 'N': 195.0, 'D': 193.0, \
                    'H': 224.0, 'I': 197.0, 'L': 201.0, 'K': 236.0, \
                    'M': 224.0, 'F': 240.0, 'P': 159.0, 'S': 155.0, \
                    'T': 172.0, 'W': 285.0, 'Y': 263.0, 'V': 174.0}
-    
+
 def main():
     if len( sys.argv ) != 3:
         print('''
@@ -16,9 +16,8 @@ Usage:''')
         sys.exit('Program aborted.\n')
     else:
         dssp_in = sys.argv[1]  # path for the output dssp file to be read
-        sum_out = sys.argv[2]   # summary file containing all residue DSSP-property data
+        sum_out = sys.argv[2]  # summary file containing all residue DSSP-property data
 
-    # Now check if the output summary file already exists. If so, then append data for the new pdb to the data already in the file.
     if os.path.isfile(sum_out):
        sum_out_file = open(sum_out,'a')
     else:

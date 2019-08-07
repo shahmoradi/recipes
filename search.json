@@ -1,6 +1,38 @@
 [
 	
 		{
+		  "title"      : "Making and using a Dynamic-Link Library (DLL) from a Fortran procedure using Intel Fortran Compiler on Windows OS: getSquare()",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/fortran-dll-getsquare/fortran-dll-getSquare",
+		  "date"       : "2019-08-04 00:00:00 -0500",
+		  "shortdate"  : "August 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Calling Fortran function from other languages via a Dynamic-Link Library (DLL): getPower()",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/fortran-dll-getpower/fortran-dll-getPower",
+		  "date"       : "2019-08-04 00:00:00 -0500",
+		  "shortdate"  : "August 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Passing characters and strings from C to Fortran and from Fortran to C",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/fortran-c-interoperation-string/fortran-c-interoperation-string",
+		  "date"       : "2019-08-04 00:00:00 -0500",
+		  "shortdate"  : "August 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Passing allocatable string from Fortran to C",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/fortran-c-interoperation-passing-allocatable-to-c/fortran-c-interoperation-passing-allocatable-to-c",
+		  "date"       : "2019-08-04 00:00:00 -0500",
+		  "shortdate"  : "August 04, 2019"
+		} ,
+	
+		{
 		  "title"      : "The while-loop implementation of for-loop",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/while-loop-to-for-loop/while-loop-to-for-loop",
