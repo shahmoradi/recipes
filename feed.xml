@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2019-08-07T13:50:17-05:00</updated>
+<updated>2019-08-07T13:51:58-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -22,7 +22,7 @@
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/fortran-dll-getsquare/fortran-dll-getSquare"/>
   <id>https://www.cdslab.org/recipes/programming/fortran-dll-getsquare/fortran-dll-getSquare</id>
   <published>2019-08-04T00:00:00-05:00</published>
-  <updated>2019-07-04T00:00:00-00:00</updated>
+  <updated>2019-08-04T00:00:00-00:00</updated>
   
   <author>
     <name>Amir Shahmoradi</name>
@@ -411,7 +411,7 @@ PortableSquare.lib
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/fortran-dll-getpower/fortran-dll-getPower"/>
   <id>https://www.cdslab.org/recipes/programming/fortran-dll-getpower/fortran-dll-getPower</id>
   <published>2019-08-04T00:00:00-05:00</published>
-  <updated>2019-07-04T00:00:00-00:00</updated>
+  <updated>2019-08-04T00:00:00-00:00</updated>
   
   <author>
     <name>Amir Shahmoradi</name>
@@ -790,7 +790,7 @@ Power_mod.obj
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/fortran-c-interoperation-string/fortran-c-interoperation-string"/>
   <id>https://www.cdslab.org/recipes/programming/fortran-c-interoperation-string/fortran-c-interoperation-string</id>
   <published>2019-08-04T00:00:00-05:00</published>
-  <updated>2019-07-04T00:00:00-00:00</updated>
+  <updated>2019-08-04T00:00:00-00:00</updated>
   
   <author>
     <name>Amir Shahmoradi</name>
@@ -1018,7 +1018,7 @@ From Inside C: hello fortran! you rock!
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/fortran-c-interoperation-passing-allocatable-to-c/fortran-c-interoperation-passing-allocatable-to-c"/>
   <id>https://www.cdslab.org/recipes/programming/fortran-c-interoperation-passing-allocatable-to-c/fortran-c-interoperation-passing-allocatable-to-c</id>
   <published>2019-08-04T00:00:00-05:00</published>
-  <updated>2019-07-04T00:00:00-00:00</updated>
+  <updated>2019-08-04T00:00:00-00:00</updated>
   
   <author>
     <name>Amir Shahmoradi</name>
