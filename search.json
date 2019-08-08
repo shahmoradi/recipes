@@ -33,6 +33,14 @@
 		} ,
 	
 		{
+		  "title"      : "Data transfer: Converting Comma-Separated-Values (CSV) input to formatted output",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/csv-input-to-formatted-output/csv-input-to-formatted-output",
+		  "date"       : "2019-08-04 00:00:00 -0500",
+		  "shortdate"  : "August 04, 2019"
+		} ,
+	
+		{
 		  "title"      : "The while-loop implementation of for-loop",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/while-loop-to-for-loop/while-loop-to-for-loop",
