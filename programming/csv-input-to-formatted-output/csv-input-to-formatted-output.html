@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 <title>DATA TRANSFER: CONVERTING COMMA-SEPARATED-VALUES (CSV) INPUT TO FORMATTED OUTPUT &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="Python, Amino Acid, input, output, IO, command line, argument, exception handling, exception, for-loop, dictionary, map">
+<meta name="keywords" content="MATLAB, Python, input, output, IO, command line, argument, function, exception, for-loop">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
@@ -37,7 +37,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>
+<!--
 <link rel="stylesheet" href="/recipes/assets/css/vendor/font-awesome.min.css">
+-->
 <link rel="stylesheet" href="/recipes/assets/css/vendor/normalize.css">
 <link rel="stylesheet" href="/recipes/assets/css/vendor/nprogress.css">
 <link rel="stylesheet" href="/recipes/assets/css/vendor/foundation.min.css">
@@ -78,7 +80,9 @@
 <link href="/recipes/assets/css/alert.css" rel="stylesheet" />
 
 <!--header anchor links-->
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<!--
+-->
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
     
@@ -145,12 +149,12 @@
                                     
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#Amino Acid" data-toggle="tooltip" title="Posts tagged with Amino Acid" rel="tag">Amino Acid</a>
+                                                <a href="/recipes/tags/index.html#IO" data-toggle="tooltip" title="Posts tagged with IO" rel="tag">IO</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#IO" data-toggle="tooltip" title="Posts tagged with IO" rel="tag">IO</a>
+                                                <a href="/recipes/tags/index.html#MATLAB" data-toggle="tooltip" title="Posts tagged with MATLAB" rel="tag">MATLAB</a>
                                             </li>
                                             
                                         
@@ -170,17 +174,7 @@
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#dictionary" data-toggle="tooltip" title="Posts tagged with dictionary" rel="tag">dictionary</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
                                                 <a href="/recipes/tags/index.html#exception" data-toggle="tooltip" title="Posts tagged with exception" rel="tag">exception</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#exception handling" data-toggle="tooltip" title="Posts tagged with exception handling" rel="tag">exception handling</a>
                                             </li>
                                             
                                         
@@ -190,12 +184,12 @@
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#input" data-toggle="tooltip" title="Posts tagged with input" rel="tag">input</a>
+                                                <a href="/recipes/tags/index.html#function" data-toggle="tooltip" title="Posts tagged with function" rel="tag">function</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#map" data-toggle="tooltip" title="Posts tagged with map" rel="tag">map</a>
+                                                <a href="/recipes/tags/index.html#input" data-toggle="tooltip" title="Posts tagged with input" rel="tag">input</a>
                                             </li>
                                             
                                         
@@ -234,27 +228,6 @@
     
     
     <figure>
-        <a href="#solution-python" id="solution-python">
-            <img src="/recipes/images/Python.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
-                Python
-            </a>
-        </figcaption>
-    </figure>
-</div>
-
-<p>Write your Python script in such a way that it takes the input and output file names from the Bash command line arguments, like the following,</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python csv2formatted.py data.in dataPython.out
-</code></pre></div></div>
-
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
         <a href="#solution-matlab" id="solution-matlab">
             <img src="/recipes/images/MATLAB.png" width="75px" />
         </a>
@@ -269,6 +242,27 @@
 <p>Write your MATLAB script as a function that takes the input and output file names as input arguments to a function named <code class="highlighter-rouge">csv2formatted</code>, so that it can be called like the following from the MATLAB command line.</p>
 
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">csv2formatted</span><span class="p">(</span><span class="s1">'data.in'</span><span class="p">,</span><span class="s1">'dataMATLAB.out'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-python" id="solution-python">
+            <img src="/recipes/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>Write your Python script in such a way that it takes the input and output file names from the Bash command line arguments, like the following,</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python csv2formatted.py data.in dataPython.out
 </code></pre></div></div>
 
 <div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
@@ -402,32 +396,15 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2019 / 08 / 07</section></br> -->
-         <section>Last updated Wednesday, 07 Aug 2019 at 09:58 PM CST</section></br>
+         <!-- <section>Last updated 2019 / 08 / 21</section></br> -->
+         <section>Last updated Wednesday, 21 Aug 2019 at 05:18 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
          <section>SEIR 365 | Arlington TX 76010</section></br>
     </div>
     <div class="social-icons">
-        
-        <a href="https://twitter.com/cdslaborg" target="_blank">
-            <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
-                <i class="fa fa-twitter fa-stack-1x"></i>
-            </span>
-        </a>
-        
-        
-        
-        
-        <a href="https://github.com/cdslaborg" target="_blank">
-            <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
-                <i class="fa fa-github fa-stack-1x"></i>
-            </span>
-        </a>
-        
+
         
         <a href="https://facebook.com/cdslab" target="_blank">
             <span class="fa-stack fa-lg">
@@ -436,6 +413,47 @@
             </span>
         </a>
         
+
+        
+        <a href="https://github.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+        </a>
+        
+
+        
+
+        
+        <a href="https://instagram.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-instagram fa-stack-1x"></i>
+            </span>
+        </a>
+        
+
+        
+        <a href="https://medium.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-medium fa-stack-1x"></i>
+                <!--
+                -->
+            </span>
+        </a>
+        
+
+        
+        <a href="https://twitter.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+        </a>
+        
+
         
         <div style="color: #000000; float: none; width: 100%; padding-top: 1rem;">
             <span style="font-size:0.8em">visitor count: 
@@ -451,6 +469,7 @@
             </span>
         </div>
         
+
     </div>
     <div class="cf"></div>
 </footer> 

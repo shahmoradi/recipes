@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2019-08-07T21:58:59-05:00</updated>
+<updated>2019-08-21T17:18:44-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -1303,7 +1303,7 @@ a.exe
     <uri>https://www.cdslab.org/recipes</uri>
     <email>shahmoradi@utexas.edu</email>
   </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#Amino%20Acid" term="Amino Acid" /><category scheme="https://www.cdslab.org/recipes/tags/#input" term="input" /><category scheme="https://www.cdslab.org/recipes/tags/#output" term="output" /><category scheme="https://www.cdslab.org/recipes/tags/#IO" term="IO" /><category scheme="https://www.cdslab.org/recipes/tags/#command%20line" term="command line" /><category scheme="https://www.cdslab.org/recipes/tags/#argument" term="argument" /><category scheme="https://www.cdslab.org/recipes/tags/#exception%20handling" term="exception handling" /><category scheme="https://www.cdslab.org/recipes/tags/#exception" term="exception" /><category scheme="https://www.cdslab.org/recipes/tags/#for-loop" term="for-loop" /><category scheme="https://www.cdslab.org/recipes/tags/#dictionary" term="dictionary" /><category scheme="https://www.cdslab.org/recipes/tags/#map" term="map" />
+  <category scheme="https://www.cdslab.org/recipes/tags/#MATLAB" term="MATLAB" /><category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#input" term="input" /><category scheme="https://www.cdslab.org/recipes/tags/#output" term="output" /><category scheme="https://www.cdslab.org/recipes/tags/#IO" term="IO" /><category scheme="https://www.cdslab.org/recipes/tags/#command%20line" term="command line" /><category scheme="https://www.cdslab.org/recipes/tags/#argument" term="argument" /><category scheme="https://www.cdslab.org/recipes/tags/#function" term="function" /><category scheme="https://www.cdslab.org/recipes/tags/#exception" term="exception" /><category scheme="https://www.cdslab.org/recipes/tags/#for-loop" term="for-loop" />
   <content type="html">
   
     
@@ -1316,27 +1316,6 @@ a.exe
 &lt;/div&gt;
 
 &lt;p&gt;Consider this comma-separated data file: &lt;a href=&quot;4/data.in&quot; target=&quot;_blank&quot;&gt;data.in&lt;/a&gt;. Write a simple script named &lt;code class=&quot;highlighter-rouge&quot;&gt;csv2formatted&lt;/code&gt; that takes two input arguments representing the input and output file names. Then, the script writes the same input float data to the output file &lt;code class=&quot;highlighter-rouge&quot;&gt;data.out&lt;/code&gt; &lt;strong&gt;in a formatted style&lt;/strong&gt;, like this example output file: &lt;a href=&quot;4/outputter.out&quot; target=&quot;_blank&quot;&gt;example output file&lt;/a&gt;. Note that every numer in the output file has only three significant digits after the decimal point.&lt;/p&gt;
-
-&lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
-    
-    
-    
-    &lt;figure&gt;
-        &lt;a href=&quot;#solution-python&quot; id=&quot;solution-python&quot;&gt;
-            &lt;img src=&quot;https://www.cdslab.org/recipes/images/Python.png&quot; width=&quot;75px&quot; /&gt;
-        &lt;/a&gt;
-        &lt;figcaption&gt;
-            &lt;a href=&quot;https://en.wikipedia.org/wiki/Python_(programming_language)&quot; target=&quot;_blank&quot;&gt;
-                Python
-            &lt;/a&gt;
-        &lt;/figcaption&gt;
-    &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Write your Python script in such a way that it takes the input and output file names from the Bash command line arguments, like the following,&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python csv2formatted.py data.in dataPython.out
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
     
@@ -1357,6 +1336,27 @@ a.exe
 &lt;p&gt;Write your MATLAB script as a function that takes the input and output file names as input arguments to a function named &lt;code class=&quot;highlighter-rouge&quot;&gt;csv2formatted&lt;/code&gt;, so that it can be called like the following from the MATLAB command line.&lt;/p&gt;
 
 &lt;div class=&quot;language-matlab highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;csv2formatted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'data.in'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'dataMATLAB.out'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
+    
+    
+    
+    &lt;figure&gt;
+        &lt;a href=&quot;#solution-python&quot; id=&quot;solution-python&quot;&gt;
+            &lt;img src=&quot;https://www.cdslab.org/recipes/images/Python.png&quot; width=&quot;75px&quot; /&gt;
+        &lt;/a&gt;
+        &lt;figcaption&gt;
+            &lt;a href=&quot;https://en.wikipedia.org/wiki/Python_(programming_language)&quot; target=&quot;_blank&quot;&gt;
+                Python
+            &lt;/a&gt;
+        &lt;/figcaption&gt;
+    &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Write your Python script in such a way that it takes the input and output file names from the Bash command line arguments, like the following,&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python csv2formatted.py data.in dataPython.out
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
