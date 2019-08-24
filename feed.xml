@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2019-08-22T11:26:15-05:00</updated>
+<updated>2019-08-24T13:08:22-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -50,11 +50,13 @@
 &lt;p class=&quot;alert alert-success&quot; role=&quot;alert&quot;&gt;&lt;i class=&quot;fa fa-check-square-o&quot;&gt;&lt;/i&gt; &lt;b&gt;Tip:&lt;/b&gt; Here, &lt;code class=&quot;highlighter-rouge&quot;&gt;RK&lt;/code&gt; is an alias to (or basically, an abbreviation for) the real kind &lt;code class=&quot;highlighter-rouge&quot;&gt;real64&lt;/code&gt; which is imported from the Fortran standard’s intrinsic module &lt;code class=&quot;highlighter-rouge&quot;&gt;iso_fortran_env&lt;/code&gt;. It is then used to declare the kinds of the real input number and the output result.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-1-non-portable-dll&quot;&gt;
-        &lt;h2 id=&quot;problem-part-1-non-portable-dll&quot;&gt;Problem Part 1: non-portable DLL&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-1-non-portable-dll&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-1-non-portable-dll&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part 1: non-portable DLL
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
@@ -77,8 +79,10 @@
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-1-non-portable-dll&quot;&gt;
-        &lt;h2 id=&quot;solution-part-1-non-portable-dll&quot;&gt;Solution Part 1: non-portable DLL&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-1-non-portable-dll&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-1-non-portable-dll&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 1: non-portable DLL
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -274,11 +278,13 @@ Square.lib
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-2-portable-dll&quot;&gt;
-        &lt;h2 id=&quot;problem-part-2-portable-dll&quot;&gt;Problem Part 2: portable DLL&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-2-portable-dll&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-2-portable-dll&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part 2: portable DLL
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
@@ -303,8 +309,10 @@ Square.lib
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-2-portable-dll&quot;&gt;
-        &lt;h2 id=&quot;solution-part-2-portable-dll&quot;&gt;Solution Part 2: portable DLL&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-2-portable-dll&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2-portable-dll&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2: portable DLL
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -448,11 +456,13 @@ PortableSquare.lib
 &lt;p class=&quot;alert alert-warning&quot; role=&quot;alert&quot;&gt;&lt;i class=&quot;fa fa-warning&quot;&gt;&lt;/i&gt; &lt;b&gt;Important:&lt;/b&gt; In Fortran, interoperation with other programming languages is provided via interoperation with the C programming language. In other words, &lt;strong&gt;any language that can interoperate with C, can also interoperate with Fortran&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-1-interoperable-dll&quot;&gt;
-        &lt;h2 id=&quot;problem-part-1-interoperable-dll&quot;&gt;Problem Part 1: interoperable DLL&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-1-interoperable-dll&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-1-interoperable-dll&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part 1: interoperable DLL
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
@@ -475,8 +485,10 @@ PortableSquare.lib
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-1-interoperable-dll&quot;&gt;
-        &lt;h2 id=&quot;solution-part-1-interoperable-dll&quot;&gt;Solution Part 1: interoperable DLL&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-1-interoperable-dll&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-1-interoperable-dll&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 1: interoperable DLL
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -665,11 +677,13 @@ Power.lib
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-2-calling-fortran-dll-from-python&quot;&gt;
-        &lt;h2 id=&quot;problem-part-2-calling-fortran-dll-from-python&quot;&gt;Problem Part 2: calling Fortran DLL from Python&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-2-calling-fortran-dll-from-python&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-2-calling-fortran-dll-from-python&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part 2: calling Fortran DLL from Python
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
@@ -694,8 +708,10 @@ Power.lib
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-2-calling-fortran-dll-from-python&quot;&gt;
-        &lt;h2 id=&quot;solution-part-2-calling-fortran-dll-from-python&quot;&gt;Solution Part 2: calling Fortran DLL from Python&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-2-calling-fortran-dll-from-python&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2-calling-fortran-dll-from-python&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2: calling Fortran DLL from Python
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -802,11 +818,13 @@ Power_mod.obj
   
     
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem&quot;&gt;
-        &lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Consider the following example Fortran function &lt;code class=&quot;highlighter-rouge&quot;&gt;getLowerCase&lt;/code&gt; which takes a string of arbitrary length as input and converts all of the upper-case letters to lower-case and returns the result as the &lt;code class=&quot;highlighter-rouge&quot;&gt;output&lt;/code&gt; string,&lt;/p&gt;
@@ -834,8 +852,10 @@ Power_mod.obj
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution&quot;&gt;
-        &lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+    &lt;a href=&quot;#solution&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution&quot; style=&quot;color:blue;&quot;&gt;
+            Solution
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -1030,11 +1050,13 @@ From Inside C: hello fortran! you rock!
   
     
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem&quot;&gt;
-        &lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Consider the following example Fortran function &lt;code class=&quot;highlighter-rouge&quot;&gt;replaceStr&lt;/code&gt; which takes a &lt;code class=&quot;highlighter-rouge&quot;&gt;string&lt;/code&gt; of arbitrary length as input and &lt;code class=&quot;highlighter-rouge&quot;&gt;search&lt;/code&gt; string. Then it searches for patterns in the input &lt;code class=&quot;highlighter-rouge&quot;&gt;string&lt;/code&gt; that match the &lt;code class=&quot;highlighter-rouge&quot;&gt;search&lt;/code&gt; string and replaces them with the input string &lt;code class=&quot;highlighter-rouge&quot;&gt;substitute&lt;/code&gt; and outputs the resulting string as &lt;code class=&quot;highlighter-rouge&quot;&gt;modifiedString&lt;/code&gt;,&lt;/p&gt;
@@ -1080,8 +1102,10 @@ From Inside C: hello fortran! you rock!
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution&quot;&gt;
-        &lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+    &lt;a href=&quot;#solution&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution&quot; style=&quot;color:blue;&quot;&gt;
+            Solution
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -1308,11 +1332,13 @@ a.exe
   
     
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem&quot;&gt;
-        &lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Consider this comma-separated data file: &lt;a href=&quot;4/data.in&quot; target=&quot;_blank&quot;&gt;data.in&lt;/a&gt;. Write a simple script named &lt;code class=&quot;highlighter-rouge&quot;&gt;csv2formatted&lt;/code&gt; that takes two input arguments representing the input and output file names. Then, the script writes the same input float data to the output file &lt;code class=&quot;highlighter-rouge&quot;&gt;data.out&lt;/code&gt; &lt;strong&gt;in a formatted style&lt;/strong&gt;, like this example output file: &lt;a href=&quot;4/outputter.out&quot; target=&quot;_blank&quot;&gt;example output file&lt;/a&gt;. Note that every numer in the output file has only three significant digits after the decimal point.&lt;/p&gt;
@@ -1361,8 +1387,10 @@ a.exe
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution&quot;&gt;
-        &lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+    &lt;a href=&quot;#solution&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution&quot; style=&quot;color:blue;&quot;&gt;
+            Solution
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -1448,11 +1476,13 @@ a.exe
   
     
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem&quot;&gt;
-        &lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
@@ -1548,8 +1578,10 @@ a.exe
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution&quot;&gt;
-        &lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+    &lt;a href=&quot;#solution&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution&quot; style=&quot;color:blue;&quot;&gt;
+            Solution
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -1750,11 +1782,13 @@ error: Cannot delete branch 'test' checked out at 'C:/Users/Amir/git/foo'
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-1&quot;&gt;
-        &lt;h2 id=&quot;problem-part-1&quot;&gt;Problem Part 1&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-1&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-1&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part 1
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Include the following information with the following format and information in your main directory &lt;code class=&quot;highlighter-rouge&quot;&gt;readme.md&lt;/code&gt; file (note that anything that appears in &amp;lt;&amp;gt; is supposed to be provided by you):&lt;/p&gt;
@@ -1806,8 +1840,10 @@ error: Cannot delete branch 'test' checked out at 'C:/Users/Amir/git/foo'
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-1&quot;&gt;
-        &lt;h2 id=&quot;solution-part-1&quot;&gt;Solution Part 1&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-1&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-1&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 1
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -1855,11 +1891,13 @@ For questions and troubleshooting, please contact:
 &lt;p class=&quot;alert alert-warning&quot; role=&quot;alert&quot;&gt;&lt;i class=&quot;fa fa-warning&quot;&gt;&lt;/i&gt; &lt;b&gt;Important:&lt;/b&gt; You will have to change the relevant information and hyper-references in the above Markdown code to those that match your information in your repository (including your photo).&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-2.a&quot;&gt;
-        &lt;h2 id=&quot;problem-part-2.a&quot;&gt;Problem Part 2.A&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-2.a&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-2.a&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part 2.A
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Create two additional test branches in your project, each of which is branched directly from &lt;em&gt;master&lt;/em&gt;. &lt;strong&gt;For each of the following cases, write the command and the corresponding output message of Git, in Markdown language in a file named &lt;code class=&quot;highlighter-rouge&quot;&gt;readme.md&lt;/code&gt; inside your &lt;code class=&quot;highlighter-rouge&quot;&gt;homework/VCS/&lt;/code&gt; folder in your master branch&lt;/strong&gt;. If you don’t have this folder in your project, then create the folder and then place your initial &lt;code class=&quot;highlighter-rouge&quot;&gt;readme.md&lt;/code&gt; file in this folder with your signature as the content of the file. Then stage and commit this file together with the homework folder to your local repository. Throughout the rest of this homework, you will fill this &lt;code class=&quot;highlighter-rouge&quot;&gt;readme.md&lt;/code&gt; file with your answers.&lt;/p&gt;
@@ -1868,8 +1906,10 @@ For questions and troubleshooting, please contact:
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-2.a&quot;&gt;
-        &lt;h2 id=&quot;solution-part-2.a&quot;&gt;Solution Part 2.A&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-2.a&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.a&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.A
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -1888,19 +1928,23 @@ For questions and troubleshooting, please contact:
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-2.b&quot;&gt;
-        &lt;h2 id=&quot;problem-part-2.b&quot;&gt;Problem Part 2.B&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-2.b&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-2.b&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part 2.B
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Now check out the &lt;em&gt;test1&lt;/em&gt; branch and create a new text file named &lt;code class=&quot;highlighter-rouge&quot;&gt;test.txt&lt;/code&gt; in the &lt;code class=&quot;highlighter-rouge&quot;&gt;homework/VCS/&lt;/code&gt; directory of this branch.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-2.b&quot;&gt;
-        &lt;h2 id=&quot;solution-part-2.b&quot;&gt;Solution Part 2.B&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-2.b&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.b&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.B
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -1922,19 +1966,23 @@ nothing to commit, working tree clean
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-2.c&quot;&gt;
-        &lt;h2 id=&quot;problem-part-2.c&quot;&gt;Problem Part 2.C&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-2.c&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-2.c&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part 2.C
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Inside &lt;code class=&quot;highlighter-rouge&quot;&gt;test.txt&lt;/code&gt; in &lt;em&gt;test1&lt;/em&gt; branch write this message: &lt;em&gt;This is some example text for branch test1&lt;/em&gt;, and save it.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-2.c&quot;&gt;
-        &lt;h2 id=&quot;solution-part-2.c&quot;&gt;Solution Part 2.C&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-2.c&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.c&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.C
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -1942,19 +1990,23 @@ nothing to commit, working tree clean
 &lt;p&gt;Use &lt;code class=&quot;highlighter-rouge&quot;&gt;vim test.txt&lt;/code&gt; to open &lt;em&gt;vim&lt;/em&gt; editor. Press &lt;code class=&quot;highlighter-rouge&quot;&gt;shift + I&lt;/code&gt; to switch to &lt;em&gt;vim insert mode&lt;/em&gt;. write &lt;em&gt;This is some example text for branch test1&lt;/em&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;test.txt&lt;/code&gt; file. Now, Press &lt;code class=&quot;highlighter-rouge&quot;&gt;ESC&lt;/code&gt; key and write &lt;code class=&quot;highlighter-rouge&quot;&gt;:wq&lt;/code&gt; on the &lt;em&gt;vim&lt;/em&gt; command line to save the file and quit &lt;em&gt;vim&lt;/em&gt;.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-2.d&quot;&gt;
-        &lt;h2 id=&quot;problem-part-2.d&quot;&gt;Problem Part 2.D&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-2.d&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-2.d&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part 2.D
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Now stage and commit &lt;code class=&quot;highlighter-rouge&quot;&gt;test.txt&lt;/code&gt; file to branch &lt;em&gt;test1&lt;/em&gt;.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-2.d&quot;&gt;
-        &lt;h2 id=&quot;solution-part-2.d&quot;&gt;Solution Part 2.D&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-2.d&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.d&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.D
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -1983,19 +2035,23 @@ nothing to commit, working tree clean
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-2.e&quot;&gt;
-        &lt;h2 id=&quot;problem-part-2.e&quot;&gt;Problem Part 2.E&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-2.e&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-2.e&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part 2.E
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Checkout the branch &lt;em&gt;test2&lt;/em&gt;. Do you still see &lt;code class=&quot;highlighter-rouge&quot;&gt;test.txt&lt;/code&gt; that you just created in your &lt;code class=&quot;highlighter-rouge&quot;&gt;homework/VCS/&lt;/code&gt; directory? You can search for it by the &lt;em&gt;bash&lt;/em&gt; command &lt;code class=&quot;highlighter-rouge&quot;&gt;ls&lt;/code&gt;. Explain why you see/don’t see the file in your working directory anymore.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-2.e&quot;&gt;
-        &lt;h2 id=&quot;solution-part-2.e&quot;&gt;Solution Part 2.E&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-2.e&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.e&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.E
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -2010,19 +2066,23 @@ Switched to branch &lt;span class=&quot;s1&quot;&gt;'test2'&lt;/span&gt;
 &lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;test.txt&lt;/code&gt; file is not in the project’s working directory since I just checked out a new branch &lt;em&gt;test2&lt;/em&gt; that does not contain any files that were generated and committed in &lt;em&gt;test1&lt;/em&gt; branch.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-2.f&quot;&gt;
-        &lt;h2 id=&quot;problem-part-2.f&quot;&gt;Problem Part 2.F&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-2.f&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-2.f&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part 2.F
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Create a new text file named &lt;code class=&quot;highlighter-rouge&quot;&gt;test.txt&lt;/code&gt; in the &lt;code class=&quot;highlighter-rouge&quot;&gt;homework/VCS/&lt;/code&gt; directory of this branch as well, and add &lt;em&gt;This is some example text for branch test2&lt;/em&gt; to its content.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-2.f&quot;&gt;
-        &lt;h2 id=&quot;solution-part-2.f&quot;&gt;Solution Part 2.F&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-2.f&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.f&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.F
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -2044,19 +2104,23 @@ nothing added to commit but untracked files present &lt;span class=&quot;o&quot;
 &lt;p&gt;The procedure for adding content to the file is very similar to that in part (C) of the problem, explained above.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-2.g&quot;&gt;
-        &lt;h2 id=&quot;problem-part-2.g&quot;&gt;Problem Part 2.G&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-2.g&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-2.g&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part 2.G
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Now try to checkout &lt;em&gt;test1&lt;/em&gt;. What error/warning message do you get? Fix the source of error and then checkout &lt;em&gt;test1&lt;/em&gt; branch.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-2.g&quot;&gt;
-        &lt;h2 id=&quot;solution-part-2.g&quot;&gt;Solution Part 2.G&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-2.g&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.g&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.G
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -2085,19 +2149,23 @@ Switched to branch &lt;span class=&quot;s1&quot;&gt;'test1'&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-2.h&quot;&gt;
-        &lt;h2 id=&quot;problem-part-2.h&quot;&gt;Problem Part 2.H&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-2.h&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-2.h&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part 2.H
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Now merge the content of &lt;em&gt;test1&lt;/em&gt; with &lt;em&gt;master&lt;/em&gt; branch. (Hint: Note from which branch you doing this merge!)&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-2.h&quot;&gt;
-        &lt;h2 id=&quot;solution-part-2.h&quot;&gt;Solution Part 2.H&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-2.h&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.h&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.H
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -2121,19 +2189,23 @@ Fast-forward
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-2.i&quot;&gt;
-        &lt;h2 id=&quot;problem-part-2.i&quot;&gt;Problem Part 2.I&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-2.i&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-2.i&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part 2.I
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Now, what do you see as the content of &lt;em&gt;master&lt;/em&gt; branch? (Hint: Use &lt;code class=&quot;highlighter-rouge&quot;&gt;ls&lt;/code&gt; &lt;em&gt;bash&lt;/em&gt; command, to list the files in the working directory.)&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-2.i&quot;&gt;
-        &lt;h2 id=&quot;solution-part-2.i&quot;&gt;Solution Part 2.I&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-2.i&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.i&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.I
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -2147,19 +2219,23 @@ nothing to commit, working tree clean
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-2.j&quot;&gt;
-        &lt;h2 id=&quot;problem-part-2.j&quot;&gt;Problem Part 2.J&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-2.j&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-2.j&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part 2.J
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Now merge the content of &lt;em&gt;test2&lt;/em&gt; with &lt;em&gt;master&lt;/em&gt; branch. What error/warning message do you get? Why does this error arise?&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-2.j&quot;&gt;
-        &lt;h2 id=&quot;solution-part-2.j&quot;&gt;Solution Part 2.J&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-2.j&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.j&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.J
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -2171,19 +2247,23 @@ Automatic merge failed&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; fix conflic
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-2.k&quot;&gt;
-        &lt;h2 id=&quot;problem-part-2.k&quot;&gt;Problem Part 2.K&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-2.k&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-2.k&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part 2.K
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Now checkout &lt;em&gt;test2&lt;/em&gt;. What error/warning message do you get?&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-2.k&quot;&gt;
-        &lt;h2 id=&quot;solution-part-2.k&quot;&gt;Solution Part 2.K&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-2.k&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.k&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.K
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -2194,19 +2274,23 @@ error: you need to resolve your current index first
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-2.l&quot;&gt;
-        &lt;h2 id=&quot;problem-part-2.l&quot;&gt;Problem Part 2.L&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-2.l&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-2.l&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part 2.L
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Run the Git command &lt;code class=&quot;highlighter-rouge&quot;&gt;git status&lt;/code&gt;. Why does such a conflict exist, as mentioned in &lt;code class=&quot;highlighter-rouge&quot;&gt;git status&lt;/code&gt; output?&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-2.l&quot;&gt;
-        &lt;h2 id=&quot;solution-part-2.l&quot;&gt;Solution Part 2.L&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-2.l&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.l&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.L
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -2214,11 +2298,13 @@ error: you need to resolve your current index first
 &lt;p&gt;Basically, by running &lt;code class=&quot;highlighter-rouge&quot;&gt;git merge test2&lt;/code&gt; command, we attempted to merge the test.txt file of &lt;em&gt;test2&lt;/em&gt; branch with the existing &lt;code class=&quot;highlighter-rouge&quot;&gt;test.txt&lt;/code&gt; file of &lt;em&gt;master&lt;/em&gt; branch. But the content of the two is different.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-2.m&quot;&gt;
-        &lt;h2 id=&quot;problem-part-2.m&quot;&gt;Problem Part 2.M&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-2.m&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-2.m&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part 2.M
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;At this stage, you have two options: Either,&lt;/p&gt;
@@ -2233,8 +2319,10 @@ error: you need to resolve your current index first
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-2.m&quot;&gt;
-        &lt;h2 id=&quot;solution-part-2.m&quot;&gt;Solution Part 2.M&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-2.m&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.m&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.M
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -2248,19 +2336,23 @@ This is some example text from both test1 and test2 branches combined.
 &lt;p&gt;The &lt;em&gt;bash&lt;/em&gt; command &lt;code class=&quot;highlighter-rouge&quot;&gt;cat&lt;/code&gt; shows the content of &lt;code class=&quot;highlighter-rouge&quot;&gt;text.txt&lt;/code&gt; file.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-2.n&quot;&gt;
-        &lt;h2 id=&quot;problem-part-2.n&quot;&gt;Problem Part 2.N&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-2.n&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-2.n&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part 2.N
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Now, run &lt;code class=&quot;highlighter-rouge&quot;&gt;git status&lt;/code&gt;, then stage and commit your conflict-resolved file. Then checkout &lt;em&gt;test2&lt;/em&gt; branch.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-2.n&quot;&gt;
-        &lt;h2 id=&quot;solution-part-2.n&quot;&gt;Solution Part 2.N&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-2.n&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.n&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.N
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -2292,19 +2384,23 @@ Switched to branch &lt;span class=&quot;s1&quot;&gt;'test2'&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-2.o&quot;&gt;
-        &lt;h2 id=&quot;problem-part-2.o&quot;&gt;Problem Part 2.O&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-2.o&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-2.o&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part 2.O
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Now, try deleting branch &lt;em&gt;test1&lt;/em&gt;, while on the branch &lt;em&gt;test2&lt;/em&gt;. What error/warning message do you get?&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-2.o&quot;&gt;
-        &lt;h2 id=&quot;solution-part-2.o&quot;&gt;Solution Part 2.O&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-2.o&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.o&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.O
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -2315,19 +2411,23 @@ If you are sure you want to delete it, run &lt;span class=&quot;s1&quot;&gt;'git
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-2.p&quot;&gt;
-        &lt;h2 id=&quot;problem-part-2.p&quot;&gt;Problem Part 2.P&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-2.p&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-2.p&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part 2.P
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Now, switch back to &lt;em&gt;master&lt;/em&gt; branch. Now, try deleting branch &lt;em&gt;test1&lt;/em&gt;, while on &lt;em&gt;master&lt;/em&gt; branch. What message do you get from Git? List all the existing branches using &lt;code class=&quot;highlighter-rouge&quot;&gt;git branch&lt;/code&gt; command.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-2.p&quot;&gt;
-        &lt;h2 id=&quot;solution-part-2.p&quot;&gt;Solution Part 2.P&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-2.p&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.p&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.P
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -2341,19 +2441,23 @@ Switched to branch &lt;span class=&quot;s1&quot;&gt;'master'&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-2.q&quot;&gt;
-        &lt;h2 id=&quot;problem-part-2.q&quot;&gt;Problem Part 2.Q&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-2.q&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-2.q&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part 2.Q
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Why is there such a difference in Git messages between when you tried deleting &lt;em&gt;test1&lt;/em&gt; branch from &lt;em&gt;test2&lt;/em&gt; branch, and when you tried deleting &lt;em&gt;test1&lt;/em&gt; branch from &lt;em&gt;master&lt;/em&gt; branch?&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-2.q&quot;&gt;
-        &lt;h2 id=&quot;solution-part-2.q&quot;&gt;Solution Part 2.Q&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-2.q&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.q&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.Q
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -2361,19 +2465,23 @@ Switched to branch &lt;span class=&quot;s1&quot;&gt;'master'&lt;/span&gt;
 &lt;p&gt;The difference arises because whichever branch you are in, Git assumes that the content of any other branch should be first merged for the current branch before deleting the other branch. Therefore, in the first case, Git warns that there are unmerged data between &lt;em&gt;test1&lt;/em&gt; and &lt;em&gt;test2&lt;/em&gt; branches. But the delete command from &lt;em&gt;master&lt;/em&gt; branch gives no error since the content of &lt;em&gt;test1&lt;/em&gt; branch has been previously appropriately merged with &lt;em&gt;master&lt;/em&gt; branch.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-2.r&quot;&gt;
-        &lt;h2 id=&quot;problem-part-2.r&quot;&gt;Problem Part 2.R&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-2.r&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-2.r&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part 2.R
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Now checkout &lt;em&gt;test2&lt;/em&gt; branch. While on &lt;em&gt;test2&lt;/em&gt;, try to delete branch &lt;em&gt;test2&lt;/em&gt;. What error/message do you get?&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-2.r&quot;&gt;
-        &lt;h2 id=&quot;solution-part-2.r&quot;&gt;Solution Part 2.R&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-2.r&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.r&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.R
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -2386,19 +2494,23 @@ error: Cannot delete branch &lt;span class=&quot;s1&quot;&gt;'test2'&lt;/span&gt
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-2.s&quot;&gt;
-        &lt;h2 id=&quot;problem-part-2.s&quot;&gt;Problem Part 2.S&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-2.s&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-2.s&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part 2.S
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Switch back to &lt;em&gt;master&lt;/em&gt; and delete &lt;em&gt;test2&lt;/em&gt; branch. List all your project branches by the appropriate Git command.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-2.s&quot;&gt;
-        &lt;h2 id=&quot;solution-part-2.s&quot;&gt;Solution Part 2.S&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-2.s&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.s&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.S
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -2414,19 +2526,23 @@ Deleted branch test2 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;was fce6a94&l
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-2.t&quot;&gt;
-        &lt;h2 id=&quot;problem-part-2.t&quot;&gt;Problem Part 2.T&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-2.t&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-2.t&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part 2.T
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Stage and commit all the changes (including the file &lt;code class=&quot;highlighter-rouge&quot;&gt;test.txt&lt;/code&gt;) to your project’s &lt;em&gt;master&lt;/em&gt; branch. Now push all to the remote repository.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-2.t&quot;&gt;
-        &lt;h2 id=&quot;solution-part-2.t&quot;&gt;Solution Part 2.T&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-2.t&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.t&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.T
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -2464,11 +2580,13 @@ nothing to commit, working tree clean
   
     
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem&quot;&gt;
-        &lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Type the following in the command window and submit the results. Briefly explain what each assignment does.&lt;/p&gt;
@@ -2496,8 +2614,10 @@ nothing to commit, working tree clean
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution&quot;&gt;
-        &lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+    &lt;a href=&quot;#solution&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution&quot; style=&quot;color:blue;&quot;&gt;
+            Solution
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -2581,11 +2701,13 @@ nothing to commit, working tree clean
   
     
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem&quot;&gt;
-        &lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;An arbitrary triangle can be described by the coordinates of its three vertices: $(x1,y1),(x2,y2),(x3,y3)$, numbered in a counterclockwise direction. The area of the triangle is given by the formula,&lt;/p&gt;
@@ -2645,8 +2767,10 @@ nothing to commit, working tree clean
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution&quot;&gt;
-        &lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+    &lt;a href=&quot;#solution&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution&quot; style=&quot;color:blue;&quot;&gt;
+            Solution
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -2727,11 +2851,13 @@ nothing to commit, working tree clean
   
     
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem&quot;&gt;
-        &lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;As an egg cooks, the proteins first denature and then coagulate. When the temperature exceeds a critical point, reactions begin and proceed faster as the temperature increases. In the egg white, the proteins start to coagulate for temperatures above $63^\circ\rm{C}$, while in the yolk the proteins start to coagulate for temperatures above $70^\circ\rm{C}$. For a soft boiled egg, the white needs to have been heated long enough to coagulate at a temperature above $63^\circ\rm{C}$, but the yolk should not be heated above $70^\circ\rm{C}$. For a hard-boiled egg, the center of the yolk should be allowed to reach $70^\circ\rm{C}$.&lt;/p&gt;
@@ -2769,8 +2895,10 @@ nothing to commit, working tree clean
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution&quot;&gt;
-        &lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+    &lt;a href=&quot;#solution&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution&quot; style=&quot;color:blue;&quot;&gt;
+            Solution
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -2835,11 +2963,13 @@ nothing to commit, working tree clean
   
     
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem&quot;&gt;
-        &lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
@@ -2896,8 +3026,10 @@ nothing to commit, working tree clean
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution&quot;&gt;
-        &lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+    &lt;a href=&quot;#solution&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution&quot; style=&quot;color:blue;&quot;&gt;
+            Solution
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -2981,11 +3113,13 @@ disp(concatenatedString)
   
     
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem&quot;&gt;
-        &lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
@@ -3018,8 +3152,10 @@ disp(concatenatedString)
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution&quot;&gt;
-        &lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+    &lt;a href=&quot;#solution&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution&quot; style=&quot;color:blue;&quot;&gt;
+            Solution
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -3077,11 +3213,13 @@ disp(concatenatedString)
   
     
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem&quot;&gt;
-        &lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Suppose you’re on a game show, and you’re given the choice of three doors,&lt;/p&gt;
@@ -3108,8 +3246,10 @@ disp(concatenatedString)
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution&quot;&gt;
-        &lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+    &lt;a href=&quot;#solution&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution&quot; style=&quot;color:blue;&quot;&gt;
+            Solution
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -3311,11 +3451,13 @@ disp(concatenatedString)
   
     
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem&quot;&gt;
-        &lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
@@ -3385,8 +3527,10 @@ disp(concatenatedString)
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution&quot;&gt;
-        &lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+    &lt;a href=&quot;#solution&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution&quot; style=&quot;color:blue;&quot;&gt;
+            Solution
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -3582,11 +3726,13 @@ With 59 times sqrt and then 59 times **2, the number 2.0 becomes: 1.000000000000
   
     
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem&quot;&gt;
-        &lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Consider this dataset, &lt;a href=&quot;Drand.mat&quot; target=&quot;_blank&quot;&gt;Drand.mat&lt;/a&gt;, which contains a set of random numbers. Let’s make a hypothesis with regards to this dataset: We assume that this dataset is well fit by a &lt;a href=&quot;https://en.wikipedia.org/wiki/Normal_distribution&quot; target=&quot;_blank&quot;&gt;Gaussian distribution&lt;/a&gt;. But, we don’t know the values of the two parameters (mean and standard deviation) of this Normal (Gaussian) distribution.&lt;/p&gt;
@@ -3642,8 +3788,10 @@ Now our goal is to construct this function (let’s name it &lt;code class=&quot
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution&quot;&gt;
-        &lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+    &lt;a href=&quot;#solution&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution&quot; style=&quot;color:blue;&quot;&gt;
+            Solution
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -3699,11 +3847,13 @@ Now our goal is to construct this function (let’s name it &lt;code class=&quot
   
     
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-a&quot;&gt;
-        &lt;h2 id=&quot;problem-part-a&quot;&gt;Problem Part A&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-a&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-a&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part A
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Consider the following web-page address &lt;a href=&quot;https://cdslaborg.github.io/DataRepos_SwiftBat/index.html&quot; target=&quot;_blank&quot;&gt;https://cdslaborg.github.io/DataRepos_SwiftBat/index.html&lt;/a&gt;. This is an data table (in HTML language) containing data from the &lt;a href=&quot;https://www.nasa.gov/mission_pages/swift/main&quot; target=&quot;_blank&quot;&gt;NASA Swift satellite&lt;/a&gt;. Each row in this table represents information about a &lt;a href=&quot;https://en.wikipedia.org/wiki/Gamma-ray_burst&quot; target=&quot;_blank&quot;&gt;Gamma-Ray Burst (GRB)&lt;/a&gt; detection that Swift has made in the past years. Now, corresponding to each of the event IDs, there &lt;em&gt;might&lt;/em&gt; exist files that contain some attributes of these events which we wish to plot and understand their behavior against each other.&lt;/p&gt;
@@ -3733,11 +3883,13 @@ Now our goal is to construct this function (let’s name it &lt;code class=&quot
 &lt;p class=&quot;alert alert-success&quot; role=&quot;alert&quot;&gt;&lt;i class=&quot;fa fa-check-square-o&quot;&gt;&lt;/i&gt; &lt;b&gt;Tip:&lt;/b&gt; For this purpose, you will need MATLAB’s built-in function &lt;code class=&quot;highlighter-rouge&quot;&gt;webread()&lt;/code&gt;.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-b&quot;&gt;
-        &lt;h2 id=&quot;problem-part-b&quot;&gt;Problem Part B&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-b&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-b&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part B
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Now, add to your script another set of commands that uses the event IDs stored in this file, to generate the corresponding web addresses like,&lt;/p&gt;
@@ -3771,11 +3923,13 @@ Now our goal is to construct this function (let’s name it &lt;code class=&quot
 your script will have to raise a &lt;code class=&quot;highlighter-rouge&quot;&gt;urllib.request.HTTPError&lt;/code&gt; exception. Write your code such that it can smoothly skip these exceptions. &lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-c&quot;&gt;
-        &lt;h2 id=&quot;problem-part-c&quot;&gt;Problem Part C&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-c&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-c&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part C
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Now write another script named &lt;code class=&quot;highlighter-rouge&quot;&gt;plotDatafromFile&lt;/code&gt;, that reads all of these files in your downloaded set of files one by one and plots the contents of all of them together on a single scatter plot like the following,&lt;/p&gt;
@@ -3875,8 +4029,10 @@ as soon as you read the data from each file and then finally, you make a scatter
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution&quot;&gt;
-        &lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+    &lt;a href=&quot;#solution&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution&quot; style=&quot;color:blue;&quot;&gt;
+            Solution
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -4217,11 +4373,13 @@ as soon as you read the data from each file and then finally, you make a scatter
 &lt;p&gt;Run the following Python statements and briefly explain why you get the behavior displayed by the &lt;code class=&quot;highlighter-rouge&quot;&gt;print&lt;/code&gt; functions.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-a&quot;&gt;
-        &lt;h2 id=&quot;problem-part-a&quot;&gt;Problem Part A&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-a&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-a&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part A
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
@@ -4239,11 +4397,13 @@ as soon as you read the data from each file and then finally, you make a scatter
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-b&quot;&gt;
-        &lt;h2 id=&quot;problem-part-b&quot;&gt;Problem Part B&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-b&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-b&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part B
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
@@ -4256,11 +4416,13 @@ as soon as you read the data from each file and then finally, you make a scatter
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-c&quot;&gt;
-        &lt;h2 id=&quot;problem-part-c&quot;&gt;Problem Part C&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-c&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-c&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part C
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
@@ -4274,11 +4436,13 @@ as soon as you read the data from each file and then finally, you make a scatter
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-d&quot;&gt;
-        &lt;h2 id=&quot;problem-part-d&quot;&gt;Problem Part D&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-d&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-d&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part D
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,)&lt;/span&gt;
@@ -4291,8 +4455,10 @@ as soon as you read the data from each file and then finally, you make a scatter
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-a&quot;&gt;
-        &lt;h2 id=&quot;solution-part-a&quot;&gt;Solution Part A&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-a&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-a&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part A
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -4328,8 +4494,10 @@ as soon as you read the data from each file and then finally, you make a scatter
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-b&quot;&gt;
-        &lt;h2 id=&quot;solution-part-b&quot;&gt;Solution Part B&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-b&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-b&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part B
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -4352,8 +4520,10 @@ as soon as you read the data from each file and then finally, you make a scatter
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-c&quot;&gt;
-        &lt;h2 id=&quot;solution-part-c&quot;&gt;Solution Part C&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-c&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-c&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part C
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -4376,8 +4546,10 @@ as soon as you read the data from each file and then finally, you make a scatter
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-d&quot;&gt;
-        &lt;h2 id=&quot;solution-part-d&quot;&gt;Solution Part D&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-d&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-d&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part D
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -4420,11 +4592,13 @@ as soon as you read the data from each file and then finally, you make a scatter
   
     
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-a&quot;&gt;
-        &lt;h2 id=&quot;problem-part-a&quot;&gt;Problem Part A&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-a&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-a&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part A
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;Write a &lt;strong&gt;single-line&lt;/strong&gt; Python code that reads a string containing comma-separated first-name, last-name, and the city in which a person lives from the Python interpreter command line, and simultaneously, in the same line of Python code, removes all white-space characters from the input string, and converts all letters of the input variables to lower-case, and converts the string to a tuple and saves in a tuple &lt;code class=&quot;highlighter-rouge&quot;&gt;(first,last,city)&lt;/code&gt;, such that, for example,&lt;/p&gt;
@@ -4443,11 +4617,13 @@ as soon as you read the data from each file and then finally, you make a scatter
 Use the &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt; function for this purpose. The output of &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt; is a string, which can be manipulated repeatedly on the same line, using multiple string methods that you learned about in the previous lectures.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem-part-b&quot;&gt;
-        &lt;h2 id=&quot;problem-part-b&quot;&gt;Problem Part B&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem-part-b&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-b&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part B
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;p&gt;The one-line if-expression syntax does not provide a functionality like &lt;code class=&quot;highlighter-rouge&quot;&gt;elif&lt;/code&gt; keyword as in the if-statement syntax. Our goal here is to learn how to convert a Python if-statement containing &lt;code class=&quot;highlighter-rouge&quot;&gt;elif&lt;/code&gt; to a one-line Python expression. Convert the following if-block to a single line if-expression. Modify the if-block inside the following function to one-line if-expression,&lt;/p&gt;
@@ -4465,8 +4641,10 @@ Use the &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt; funct
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-a&quot;&gt;
-        &lt;h2 id=&quot;solution-part-a&quot;&gt;Solution Part A&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-a&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-a&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part A
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -4476,8 +4654,10 @@ Use the &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt; funct
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution-part-b&quot;&gt;
-        &lt;h2 id=&quot;solution-part-b&quot;&gt;Solution Part B&lt;/h2&gt;
+    &lt;a href=&quot;#solution-part-b&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-b&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part B
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -4511,11 +4691,13 @@ Use the &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt; funct
   
     
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem&quot;&gt;
-        &lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
@@ -4542,8 +4724,10 @@ Use the &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt; funct
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution&quot;&gt;
-        &lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+    &lt;a href=&quot;#solution&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution&quot; style=&quot;color:blue;&quot;&gt;
+            Solution
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;
@@ -4590,11 +4774,13 @@ Use the &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt; funct
   
     
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#problem&quot;&gt;
-        &lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
-    &lt;/a&gt;
-
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
 &lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
@@ -4675,8 +4861,10 @@ And division by 0, will give you a runtime exception: 1/0 = NaN
 
 &lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
 
-    &lt;a href=&quot;#solution&quot;&gt;
-        &lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+    &lt;a href=&quot;#solution&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution&quot; style=&quot;color:blue;&quot;&gt;
+            Solution
+        &lt;/h2&gt;
     &lt;/a&gt;
 
 &lt;/div&gt;

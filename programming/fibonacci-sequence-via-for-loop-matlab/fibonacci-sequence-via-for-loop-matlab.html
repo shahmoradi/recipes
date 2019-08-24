@@ -258,11 +258,13 @@
 </div>
 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
-
-    <a href="#problem-part-a">
-        <h2 id="problem-part-a">Problem Part A</h2>
-    </a>
-
+    
+        <a href="#problem-part-a" style="display:inline-block;">
+            <h2 id="problem-part-a" style="color:red;">
+                Problem Part A
+            </h2>
+        </a>
+    
 </div>
 
 <p>Consider the MATLAB function <a href="fib.m" target="_blank">fib()</a>. Modify this function using MATLAB’s built-in <code class="highlighter-rouge">timeit()</code> function such that <code class="highlighter-rouge">fib()</code> also returns the average runtime of the nested function <code class="highlighter-rouge">getFib()</code> inside <code class="highlighter-rouge">fib()</code>, right after giving the requested Fibonacci number. For example, here is an output from such modified code,</p>
@@ -293,31 +295,37 @@ Please enter a non-negative integer or type stop: stop
 <p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> You can use <code class="highlighter-rouge">char(9)</code> at the beginning of your <code class="highlighter-rouge">disp()</code> messages to add the <code class="highlighter-rouge">tab</code> character at the beginning of your message, just like the above example.</p>
 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
-
-    <a href="#problem-part-b">
-        <h2 id="problem-part-b">Problem Part B</h2>
-    </a>
-
+    
+        <a href="#problem-part-b" style="display:inline-block;">
+            <h2 id="problem-part-b" style="color:red;">
+                Problem Part B
+            </h2>
+        </a>
+    
 </div>
 
 <p>Now copy this function to a new MATLAB M-file named <code class="highlighter-rouge">fibLoop.m</code>. Also modify the name of the function <code class="highlighter-rouge">fib()</code> in this file <code class="highlighter-rouge">fibLoop()</code>. Modify the nested function <code class="highlighter-rouge">getFib()</code> inside of <code class="highlighter-rouge">fibLoop()</code> such that instead of recursive function calls, it uses a for-loop to find the requested Fibonacci number.</p>
 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
-
-    <a href="#problem-part-c">
-        <h2 id="problem-part-c">Problem Part C</h2>
-    </a>
-
+    
+        <a href="#problem-part-c" style="display:inline-block;">
+            <h2 id="problem-part-c" style="color:red;">
+                Problem Part C
+            </h2>
+        </a>
+    
 </div>
 
 <p>Now time your new function <code class="highlighter-rouge">fibLoop()</code> for the same input integers as in the above example: $10,15,20,25,30,35$. How do the runtimes for <code class="highlighter-rouge">fibLoop()</code> compare with <code class="highlighter-rouge">fib()</code>. Which function is faster and more efficient: <code class="highlighter-rouge">fib()</code> or <code class="highlighter-rouge">fibLoop()</code>? Why is there such huge difference in the performance of the two functions?</p>
 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
-
-    <a href="#problem-part-d">
-        <h2 id="problem-part-d">Problem Part D</h2>
-    </a>
-
+    
+        <a href="#problem-part-d" style="display:inline-block;">
+            <h2 id="problem-part-d" style="color:red;">
+                Problem Part D
+            </h2>
+        </a>
+    
 </div>
 
 <p>Write two new MATLAB functions <code class="highlighter-rouge">timeFib(n)</code> and <code class="highlighter-rouge">timeFibLoop(n)</code> based on your MATLAB functions <code class="highlighter-rouge">fib()</code> and <code class="highlighter-rouge">fibLoop()</code>, such that both take an integer and output a structure whose fields are,</p>
@@ -358,19 +366,23 @@ The input argument is not a non-negative integer!
 </code></pre></div></div>
 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
-
-    <a href="#problem-part-e">
-        <h2 id="problem-part-e">Problem Part E</h2>
-    </a>
-
+    
+        <a href="#problem-part-e" style="display:inline-block;">
+            <h2 id="problem-part-e" style="color:red;">
+                Problem Part E
+            </h2>
+        </a>
+    
 </div>
 
 <p>Now write a script named <code class="highlighter-rouge">writeFibResult.m</code> that calls these two functions for a range of input $n={10,2,3,\ldots,35}$ values, and then write the output of these two functions in a formatted way in two files like these <a href="fibOutput.txt" target="_blank">fibOutput.txt</a> and <a href="https://www.cdslab.org/homework/4-problems/fibLoopOutput.txt" target="_blank">fibLoopOutput.txt</a>. You can use any of MATLAB IO methods to create the output file with any file extension you prefer: <code class="highlighter-rouge">.txt</code>, <code class="highlighter-rouge">.csv</code>, <code class="highlighter-rouge">.xlsx</code>, <code class="highlighter-rouge">.tab</code>, … .</p>
 
 <div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
 
-    <a href="#solution-part-a,-b,-c">
-        <h2 id="solution-part-a,-b,-c">Solution Part A, B, C</h2>
+    <a href="#solution-part-a,-b,-c" style="display:inline-block;">
+        <h2 id="solution-part-a,-b,-c" style="color:blue;">
+            Solution Part A, B, C
+        </h2>
     </a>
 
 </div>
@@ -479,8 +491,10 @@ Please enter a non-negative integer or type stop: stop
 
 <div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
 
-    <a href="#solution-part-d,-e">
-        <h2 id="solution-part-d,-e">Solution Part D, E</h2>
+    <a href="#solution-part-d,-e" style="display:inline-block;">
+        <h2 id="solution-part-d,-e" style="color:blue;">
+            Solution Part D, E
+        </h2>
     </a>
 
 </div>
@@ -607,8 +621,8 @@ Please enter a non-negative integer or type stop: stop
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2019 / 08 / 22</section></br> -->
-         <section>Last updated Thursday, 22 Aug 2019 at 11:26 AM CST</section></br>
+         <!-- <section>Last updated 2019 / 08 / 24</section></br> -->
+         <section>Last updated Saturday, 24 Aug 2019 at 01:08 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
