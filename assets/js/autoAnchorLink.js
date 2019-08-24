@@ -4,7 +4,7 @@
 //     var $el, icon, id;
 //     $el = $(el);
 //     id = $el.attr('id');
-//     icon = '&nbsp;&nbsp;<i class="fa fa-link"></i>';
+//     icon = '<i class="fa fa-link"></i>';
 //     if (id) {
 //       return $el.append($("<a />").addClass("header-link").attr("href", "#" + id).html(icon));
 //     }
@@ -16,8 +16,9 @@ $(function() {
     var $el, icon, id;
     $el = $(el);
     id = $el.attr('id');
-    icon = '&nbsp;&nbsp;<i class="fa fa-link"></i>';
+    icon = '<i class="fa fa-link"></i>';
     if (id) {
+      $el = $el.prepend($("<a />").addClass("header-link").attr("href", "#" + id).html(icon));
       return $el.append($("<a />").addClass("header-link").attr("href", "#" + id).html(icon));
     }
   });
@@ -28,7 +29,7 @@ $(function() {
     var $el, icon, id;
     $el = $(el);
     id = $el.attr('id');
-    icon = '&nbsp;&nbsp;<i class="fa fa-link"></i><i class="fa fa-link"></i>';
+    icon = '<i class="fa fa-link"></i><i class="fa fa-link"></i>';
     if (id) {
       return $el.append($("<a />").addClass("header-link").attr("href", "#" + id).html(icon));
     }
@@ -40,7 +41,7 @@ $(function() {
     var $el, icon, id;
     $el = $(el);
     id = $el.attr('id');
-    icon = '&nbsp;&nbsp;<i class="fa fa-link"></i><i class="fa fa-link"></i><i class="fa fa-link"></i>';
+    icon = '<i class="fa fa-link"></i><i class="fa fa-link"></i><i class="fa fa-link"></i>';
     if (id) {
       return $el.append($("<a />").addClass("header-link").attr("href", "#" + id).html(icon));
     }
@@ -52,7 +53,7 @@ $(function() {
     var $el, icon, id;
     $el = $(el);
     id = $el.attr('id');
-    icon = '&nbsp;&nbsp;<i class="fa fa-link"></i><i class="fa fa-link"></i><i class="fa fa-link"></i><i class="fa fa-link"></i>';
+    icon = '<i class="fa fa-link"></i><i class="fa fa-link"></i><i class="fa fa-link"></i><i class="fa fa-link"></i>';
     if (id) {
       return $el.append($("<a />").addClass("header-link").attr("href", "#" + id).html(icon));
     }
@@ -64,7 +65,7 @@ $(function() {
     var $el, icon, id;
     $el = $(el);
     id = $el.attr('id');
-    icon = '&nbsp;&nbsp;<i class="fa fa-link"></i><i class="fa fa-link"></i><i class="fa fa-link"></i><i class="fa fa-link"></i><i class="fa fa-link"></i>';
+    icon = '<i class="fa fa-link"></i><i class="fa fa-link"></i><i class="fa fa-link"></i><i class="fa fa-link"></i><i class="fa fa-link"></i>';
     if (id) {
       return $el.append($("<a />").addClass("header-link").attr("href", "#" + id).html(icon));
     }

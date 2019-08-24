@@ -1015,9 +1015,12 @@ blockquote em{
 Styles fot auto anchor-link generation. Adopted from  http://ben.balter.com/2014/03/13/pages-anchor-links/
 */
     .header-link {
-    position: absolute;
-    /* right: -0.5em; */
+    position: relative;
     opacity: 0;
+    padding: 0;
+    /*
+    right: -0.5em;
+    */
     
     \-webkit-transition: opacity 0.2s ease-in-out 0.1s;
     \-moz-transition: opacity 0.2s ease-in-out 0.1s;
