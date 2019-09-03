@@ -253,44 +253,6 @@
 
 <p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> To do so, you need to consider a test mathematical function as input to <code class="highlighter-rouge">Newton</code>. One example could be $f(x)=\cos(x)$ with a starting search value $x=0$. This would result in derivative value $f’(x=0)=-\sin(x=0)=0$, which should lead to a <code class="highlighter-rouge">ZeroDivisionError</code> exception. Now, write a test function <code class="highlighter-rouge">test_Newton_div_by_zero</code> that can explicitly handle this exception by introducing a boolean variable <code class="highlighter-rouge">success</code> that is <code class="highlighter-rouge">True</code> if the exception is raised and otherwise <code class="highlighter-rouge">False</code>*.</p>
 
-<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
-
-    <a href="#solution" style="display:inline-block;">
-        <h2 id="solution" style="color:blue;">
-            Solution
-        </h2>
-    </a>
-
-</div>
-
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#solution-python" id="solution-python">
-            <img src="/recipes/images/Python.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
-                Python
-            </a>
-        </figcaption>
-    </figure>
-</div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">test_Newton_div_by_zero</span><span class="p">():</span>
-    <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span>
-    <span class="n">f</span> <span class="o">=</span> <span class="n">cos</span>
-    <span class="n">dfdx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="n">success</span> <span class="o">=</span> <span class="bp">False</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">x</span><span class="p">,</span> <span class="n">f_x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">Newton</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">dfdx</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1E-4</span><span class="p">,</span> <span class="n">maxit</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="k">except</span> <span class="nb">ZeroDivisionError</span><span class="p">:</span>
-        <span class="n">success</span> <span class="o">=</span> <span class="bp">True</span>
-    <span class="k">assert</span> <span class="n">success</span> <span class="p">,</span> <span class="s">"Test for division-by-zero failed"</span>
-</code></pre></div></div>
-
 
             </div>
         </article>
@@ -354,8 +316,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2019 / 08 / 25</section></br> -->
-         <section>Last updated Sunday, 25 Aug 2019 at 06:34 PM CST</section></br>
+         <!-- <section>Last updated 2019 / 09 / 03</section></br> -->
+         <section>Last updated Tuesday, 03 Sep 2019 at 01:45 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
