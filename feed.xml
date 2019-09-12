@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2019-09-12T18:05:21-05:00</updated>
+<updated>2019-09-12T18:07:37-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -1627,6 +1627,58 @@ error: Cannot delete branch 'test' checked out at 'C:/Users/Amir/git/foo'
 
 &lt;h3 id=&quot;end-of-the-readme-files-content&quot;&gt;&lt;em&gt;End of the README file’s content&lt;/em&gt;&lt;/h3&gt;
 
+&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
+
+    &lt;a href=&quot;#solution-part-1&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-1&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 1
+        &lt;/h2&gt;
+    &lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;Use the following Markdown code in your &lt;code class=&quot;highlighter-rouge&quot;&gt;readme.md&lt;/code&gt; file to get the same behavior as requested above:&lt;/p&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gu&quot;&gt;#### &amp;lt;Project Name&amp;gt; - &amp;lt;Course Name&amp;gt; (&amp;lt;Season&amp;gt; &amp;lt;year&amp;gt;)&lt;/span&gt;
+
+&lt;span class=&quot;gs&quot;&gt;**Name:**&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;first&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;last&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;  
+&lt;span class=&quot;gs&quot;&gt;**School ID:**&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;your&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ID&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;  
+&lt;span class=&quot;gs&quot;&gt;**Email:**&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;your&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;  
+&lt;span class=&quot;gs&quot;&gt;**Department:**&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Department of &amp;lt;your department&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;website address&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
+&lt;span class=&quot;gs&quot;&gt;**University:**&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;The University of &amp;lt;your university&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;website address&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
+&lt;span class=&quot;gs&quot;&gt;**Level:**&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;undergraduate&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;graduate&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; - &lt;span class=&quot;nt&quot;&gt;&amp;lt;Freshman&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;1st&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Sophomore&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;2nd&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Junior&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;3rd&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Senior&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;4th&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Dinosaur&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;5th&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;year&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;above&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;  
+&lt;span class=&quot;gs&quot;&gt;**Position Title:**&lt;/span&gt; Student  
+&lt;span class=&quot;gs&quot;&gt;**Course Webpage:**&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;the&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;course&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;website&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;  
+&lt;span class=&quot;gs&quot;&gt;**Photo (*ATTN: should display your photo, not mine!*):**&lt;/span&gt;  
+
+&lt;span class=&quot;p&quot;&gt;![&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Amir Shahmoradi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;AmirShahmoradi.png&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
+
+&lt;span class=&quot;gu&quot;&gt;#### Description of the project's content  &lt;/span&gt;
+
+This repository contains my homework, quizzes, and virtually every effort that I have made for &lt;span class=&quot;nt&quot;&gt;&amp;lt;course&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;. The structure of the project is the following:
+&lt;span class=&quot;p&quot;&gt;
+*&lt;/span&gt; &lt;span class=&quot;gs&quot;&gt;**[homework](#homework):**&lt;/span&gt; (the homework hyperlink should take the reader to the homework folder)  
+    This directory contains all my homework submissions, each of which is a folder properly named with homework number, containing the homework submission.  
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;br&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;gs&quot;&gt;**[quiz](#quiz):**&lt;/span&gt; (the quiz hyperlink should take the reader to the quizzes folder)  
+    This directory contains all my quiz submissions, each of which is a folder properly named with quiz number, containing the quiz submission.  
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;br&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;gs&quot;&gt;**[exam](#exam):**&lt;/span&gt; (the exam hyperlink should take the reader to the exams folder)  
+    This directory contains all my exam submissions, each of which is a folder properly named with exam name or number, containing the exam submission.  
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;br&amp;gt;&lt;/span&gt;
+
+For questions and troubleshooting, please contact:  
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;your&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;  
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;your&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;  
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;any&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;other&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;contact&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;signature&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;information&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;that&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;you&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;would&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;like&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;gt&quot;&gt;
+&amp;gt;I have not failed. I've just found 10,000 ways that won't work.  &lt;/span&gt;
+&lt;span class=&quot;gt&quot;&gt;&amp;gt;[Thomas A. Edison](https://en.wikipedia.org/wiki/Thomas_Edison){:target=&quot;_blank&quot;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p class=&quot;alert alert-warning&quot; role=&quot;alert&quot;&gt;&lt;i class=&quot;fa fa-warning&quot;&gt;&lt;/i&gt; &lt;b&gt;Important:&lt;/b&gt; You will have to change the relevant information and hyper-references in the above Markdown code to those that match your information in your repository (including your photo).&lt;/p&gt;
+
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
     
         &lt;a href=&quot;#problem-part-2.a&quot; style=&quot;display:inline-block;&quot;&gt;
@@ -1641,6 +1693,29 @@ error: Cannot delete branch 'test' checked out at 'C:/Users/Amir/git/foo'
 
 &lt;p&gt;Create two branches, &lt;strong&gt;both from your &lt;em&gt;master&lt;/em&gt; branch&lt;/strong&gt;, with names &lt;em&gt;test1&lt;/em&gt; and &lt;em&gt;test2&lt;/em&gt;.&lt;/p&gt;
 
+&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
+
+    &lt;a href=&quot;#solution-part-2.a&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.a&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.A
+        &lt;/h2&gt;
+    &lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch
+&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; master
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch test1
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch test2
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch
+&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; master
+  test1
+  test2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
     
         &lt;a href=&quot;#problem-part-2.b&quot; style=&quot;display:inline-block;&quot;&gt;
@@ -1652,6 +1727,32 @@ error: Cannot delete branch 'test' checked out at 'C:/Users/Amir/git/foo'
 &lt;/div&gt;
 
 &lt;p&gt;Now check out the &lt;em&gt;test1&lt;/em&gt; branch and create a new text file named &lt;code class=&quot;highlighter-rouge&quot;&gt;test.txt&lt;/code&gt; in the &lt;code class=&quot;highlighter-rouge&quot;&gt;homework/VCS/&lt;/code&gt; directory of this branch.&lt;/p&gt;
+
+&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
+
+    &lt;a href=&quot;#solution-part-2.b&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.b&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.B
+        &lt;/h2&gt;
+    &lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout test1
+Switched to branch &lt;span class=&quot;s1&quot;&gt;'test1'&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git status
+On branch test1
+nothing to commit, working tree clean
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls
+&lt;/span&gt;readme.md
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;touch &lt;/span&gt;test.txt
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls
+&lt;/span&gt;readme.md  test.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
     
@@ -1665,6 +1766,18 @@ error: Cannot delete branch 'test' checked out at 'C:/Users/Amir/git/foo'
 
 &lt;p&gt;Inside &lt;code class=&quot;highlighter-rouge&quot;&gt;test.txt&lt;/code&gt; in &lt;em&gt;test1&lt;/em&gt; branch write this message: &lt;em&gt;This is some example text for branch test1&lt;/em&gt;, and save it.&lt;/p&gt;
 
+&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
+
+    &lt;a href=&quot;#solution-part-2.c&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.c&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.C
+        &lt;/h2&gt;
+    &lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;Use &lt;code class=&quot;highlighter-rouge&quot;&gt;vim test.txt&lt;/code&gt; to open &lt;em&gt;vim&lt;/em&gt; editor. Press &lt;code class=&quot;highlighter-rouge&quot;&gt;shift + I&lt;/code&gt; to switch to &lt;em&gt;vim insert mode&lt;/em&gt;. write &lt;em&gt;This is some example text for branch test1&lt;/em&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;test.txt&lt;/code&gt; file. Now, Press &lt;code class=&quot;highlighter-rouge&quot;&gt;ESC&lt;/code&gt; key and write &lt;code class=&quot;highlighter-rouge&quot;&gt;:wq&lt;/code&gt; on the &lt;em&gt;vim&lt;/em&gt; command line to save the file and quit &lt;em&gt;vim&lt;/em&gt;.&lt;/p&gt;
+
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
     
         &lt;a href=&quot;#problem-part-2.d&quot; style=&quot;display:inline-block;&quot;&gt;
@@ -1676,6 +1789,39 @@ error: Cannot delete branch 'test' checked out at 'C:/Users/Amir/git/foo'
 &lt;/div&gt;
 
 &lt;p&gt;Now stage and commit &lt;code class=&quot;highlighter-rouge&quot;&gt;test.txt&lt;/code&gt; file to branch &lt;em&gt;test1&lt;/em&gt;.&lt;/p&gt;
+
+&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
+
+    &lt;a href=&quot;#solution-part-2.d&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.d&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.D
+        &lt;/h2&gt;
+    &lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git status
+On branch test1
+Untracked files:
+  &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;s2&quot;&gt;&quot;git add &amp;lt;file&amp;gt;...&quot;&lt;/span&gt; to include &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;what will be committed&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+        test.txt
+
+nothing added to commit but untracked files present &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;s2&quot;&gt;&quot;git add&quot;&lt;/span&gt; to track&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git add &lt;span class=&quot;nt&quot;&gt;--all&lt;/span&gt;
+warning: LF will be replaced by CRLF &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;test.txt.
+The file will have its original line endings &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;your working directory.
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;committing the test.txt file in test1 branch&quot;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;test1 715ca59] committing the test.txt file &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;test1 branch
+1 file changed, 1 insertion&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;+&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+create mode 100644 test.txt
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git status
+On branch test1
+nothing to commit, working tree clean
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
     
@@ -1689,6 +1835,25 @@ error: Cannot delete branch 'test' checked out at 'C:/Users/Amir/git/foo'
 
 &lt;p&gt;Checkout the branch &lt;em&gt;test2&lt;/em&gt;. Do you still see &lt;code class=&quot;highlighter-rouge&quot;&gt;test.txt&lt;/code&gt; that you just created in your &lt;code class=&quot;highlighter-rouge&quot;&gt;homework/VCS/&lt;/code&gt; directory? You can search for it by the &lt;em&gt;bash&lt;/em&gt; command &lt;code class=&quot;highlighter-rouge&quot;&gt;ls&lt;/code&gt;. Explain why you see/don’t see the file in your working directory anymore.&lt;/p&gt;
 
+&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
+
+    &lt;a href=&quot;#solution-part-2.e&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.e&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.E
+        &lt;/h2&gt;
+    &lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout test2
+Switched to branch &lt;span class=&quot;s1&quot;&gt;'test2'&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls
+&lt;/span&gt;readme.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;test.txt&lt;/code&gt; file is not in the project’s working directory since I just checked out a new branch &lt;em&gt;test2&lt;/em&gt; that does not contain any files that were generated and committed in &lt;em&gt;test1&lt;/em&gt; branch.&lt;/p&gt;
+
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
     
         &lt;a href=&quot;#problem-part-2.f&quot; style=&quot;display:inline-block;&quot;&gt;
@@ -1700,6 +1865,32 @@ error: Cannot delete branch 'test' checked out at 'C:/Users/Amir/git/foo'
 &lt;/div&gt;
 
 &lt;p&gt;Create a new text file named &lt;code class=&quot;highlighter-rouge&quot;&gt;test.txt&lt;/code&gt; in the &lt;code class=&quot;highlighter-rouge&quot;&gt;homework/VCS/&lt;/code&gt; directory of this branch as well, and add &lt;em&gt;This is some example text for branch test2&lt;/em&gt; to its content.&lt;/p&gt;
+
+&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
+
+    &lt;a href=&quot;#solution-part-2.f&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.f&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.F
+        &lt;/h2&gt;
+    &lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;touch &lt;/span&gt;test.txt
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;vim test.txt
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git status
+On branch test2
+Untracked files:
+  &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;s2&quot;&gt;&quot;git add &amp;lt;file&amp;gt;...&quot;&lt;/span&gt; to include &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;what will be committed&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+        test.txt
+
+nothing added to commit but untracked files present &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;s2&quot;&gt;&quot;git add&quot;&lt;/span&gt; to track&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The procedure for adding content to the file is very similar to that in part (C) of the problem, explained above.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
     
@@ -1713,6 +1904,39 @@ error: Cannot delete branch 'test' checked out at 'C:/Users/Amir/git/foo'
 
 &lt;p&gt;Now try to checkout &lt;em&gt;test1&lt;/em&gt;. What error/warning message do you get? Fix the source of error and then checkout &lt;em&gt;test1&lt;/em&gt; branch.&lt;/p&gt;
 
+&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
+
+    &lt;a href=&quot;#solution-part-2.g&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.g&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.G
+        &lt;/h2&gt;
+    &lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout test1
+error: The following untracked working tree files would be overwritten by checkout:
+        test.txt
+Please move or remove them before you switch branches.
+Aborting
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git add &lt;span class=&quot;nt&quot;&gt;--all&lt;/span&gt;
+warning: LF will be replaced by CRLF &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;test.txt.
+The file will have its original line endings &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;your working directory.
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;committing the test2 branch changes&quot;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;test2 fce6a94] committing the test2 branch changes
+1 file changed, 1 insertion&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;+&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+create mode 100644 test.txt
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git status
+On branch test2
+nothing to commit, working tree clean
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout test1
+Switched to branch &lt;span class=&quot;s1&quot;&gt;'test1'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
     
         &lt;a href=&quot;#problem-part-2.h&quot; style=&quot;display:inline-block;&quot;&gt;
@@ -1724,6 +1948,34 @@ error: Cannot delete branch 'test' checked out at 'C:/Users/Amir/git/foo'
 &lt;/div&gt;
 
 &lt;p&gt;Now merge the content of &lt;em&gt;test1&lt;/em&gt; with &lt;em&gt;master&lt;/em&gt; branch. (Hint: Note from which branch you doing this merge!)&lt;/p&gt;
+
+&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
+
+    &lt;a href=&quot;#solution-part-2.h&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.h&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.H
+        &lt;/h2&gt;
+    &lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout master
+Switched to branch &lt;span class=&quot;s1&quot;&gt;'master'&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls
+&lt;/span&gt;readme.md
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git status
+On branch master
+nothing to commit, working tree clean
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git merge test1
+Updating a661e87..715ca59
+Fast-forward
+ test.txt | 1 +
+ 1 file changed, 1 insertion&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;+&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+ create mode 100644 test.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
     
@@ -1737,6 +1989,24 @@ error: Cannot delete branch 'test' checked out at 'C:/Users/Amir/git/foo'
 
 &lt;p&gt;Now, what do you see as the content of &lt;em&gt;master&lt;/em&gt; branch? (Hint: Use &lt;code class=&quot;highlighter-rouge&quot;&gt;ls&lt;/code&gt; &lt;em&gt;bash&lt;/em&gt; command, to list the files in the working directory.)&lt;/p&gt;
 
+&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
+
+    &lt;a href=&quot;#solution-part-2.i&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.i&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.I
+        &lt;/h2&gt;
+    &lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls
+&lt;/span&gt;readme.md  test.txt
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git status
+On branch master
+nothing to commit, working tree clean
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
     
         &lt;a href=&quot;#problem-part-2.j&quot; style=&quot;display:inline-block;&quot;&gt;
@@ -1748,6 +2018,22 @@ error: Cannot delete branch 'test' checked out at 'C:/Users/Amir/git/foo'
 &lt;/div&gt;
 
 &lt;p&gt;Now merge the content of &lt;em&gt;test2&lt;/em&gt; with &lt;em&gt;master&lt;/em&gt; branch. What error/warning message do you get? Why does this error arise?&lt;/p&gt;
+
+&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
+
+    &lt;a href=&quot;#solution-part-2.j&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.j&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.J
+        &lt;/h2&gt;
+    &lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git merge test2
+Auto-merging test.txt
+CONFLICT &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;add/add&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: Merge conflict &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;test.txt
+Automatic merge failed&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; fix conflicts and &lt;span class=&quot;k&quot;&gt;then &lt;/span&gt;commit the result.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
     
@@ -1761,6 +2047,21 @@ error: Cannot delete branch 'test' checked out at 'C:/Users/Amir/git/foo'
 
 &lt;p&gt;Now checkout &lt;em&gt;test2&lt;/em&gt;. What error/warning message do you get?&lt;/p&gt;
 
+&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
+
+    &lt;a href=&quot;#solution-part-2.k&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.k&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.K
+        &lt;/h2&gt;
+    &lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout test2
+test.txt: needs merge
+error: you need to resolve your current index first
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
     
         &lt;a href=&quot;#problem-part-2.l&quot; style=&quot;display:inline-block;&quot;&gt;
@@ -1772,6 +2073,18 @@ error: Cannot delete branch 'test' checked out at 'C:/Users/Amir/git/foo'
 &lt;/div&gt;
 
 &lt;p&gt;Run the Git command &lt;code class=&quot;highlighter-rouge&quot;&gt;git status&lt;/code&gt;. Why does such a conflict exist, as mentioned in &lt;code class=&quot;highlighter-rouge&quot;&gt;git status&lt;/code&gt; output?&lt;/p&gt;
+
+&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
+
+    &lt;a href=&quot;#solution-part-2.l&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.l&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.L
+        &lt;/h2&gt;
+    &lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;Basically, by running &lt;code class=&quot;highlighter-rouge&quot;&gt;git merge test2&lt;/code&gt; command, we attempted to merge the test.txt file of &lt;em&gt;test2&lt;/em&gt; branch with the existing &lt;code class=&quot;highlighter-rouge&quot;&gt;test.txt&lt;/code&gt; file of &lt;em&gt;master&lt;/em&gt; branch. But the content of the two is different.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
     
@@ -1793,6 +2106,24 @@ error: Cannot delete branch 'test' checked out at 'C:/Users/Amir/git/foo'
   &lt;/li&gt;
 &lt;/ol&gt;
 
+&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
+
+    &lt;a href=&quot;#solution-part-2.m&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.m&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.M
+        &lt;/h2&gt;
+    &lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;vim test.txt
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;test.txt
+This is some example text from both test1 and test2 branches combined.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;em&gt;bash&lt;/em&gt; command &lt;code class=&quot;highlighter-rouge&quot;&gt;cat&lt;/code&gt; shows the content of &lt;code class=&quot;highlighter-rouge&quot;&gt;text.txt&lt;/code&gt; file.&lt;/p&gt;
+
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
     
         &lt;a href=&quot;#problem-part-2.n&quot; style=&quot;display:inline-block;&quot;&gt;
@@ -1804,6 +2135,42 @@ error: Cannot delete branch 'test' checked out at 'C:/Users/Amir/git/foo'
 &lt;/div&gt;
 
 &lt;p&gt;Now, run &lt;code class=&quot;highlighter-rouge&quot;&gt;git status&lt;/code&gt;, then stage and commit your conflict-resolved file. Then checkout &lt;em&gt;test2&lt;/em&gt; branch.&lt;/p&gt;
+
+&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
+
+    &lt;a href=&quot;#solution-part-2.n&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.n&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.N
+        &lt;/h2&gt;
+    &lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git status
+On branch master
+You have unmerged paths.
+  &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;fix conflicts and run &lt;span class=&quot;s2&quot;&gt;&quot;git commit&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;s2&quot;&gt;&quot;git merge --abort&quot;&lt;/span&gt; to abort the merge&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+Unmerged paths:
+  &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;s2&quot;&gt;&quot;git add &amp;lt;file&amp;gt;...&quot;&lt;/span&gt; to mark resolution&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+        both added:      test.txt
+
+no changes added to commit &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;s2&quot;&gt;&quot;git add&quot;&lt;/span&gt; and/or &lt;span class=&quot;s2&quot;&gt;&quot;git commit -a&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git add test.txt
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;adding the test.txt resolution file&quot;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;master 4c74098] adding the test.txt resolution file
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git status
+On branch master
+nothing to commit, working tree clean
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout test2
+Switched to branch &lt;span class=&quot;s1&quot;&gt;'test2'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
     
@@ -1817,6 +2184,21 @@ error: Cannot delete branch 'test' checked out at 'C:/Users/Amir/git/foo'
 
 &lt;p&gt;Now, try deleting branch &lt;em&gt;test1&lt;/em&gt;, while on the branch &lt;em&gt;test2&lt;/em&gt;. What error/warning message do you get?&lt;/p&gt;
 
+&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
+
+    &lt;a href=&quot;#solution-part-2.o&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.o&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.O
+        &lt;/h2&gt;
+    &lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; test1
+error: The branch &lt;span class=&quot;s1&quot;&gt;'test1'&lt;/span&gt; is not fully merged.
+If you are sure you want to delete it, run &lt;span class=&quot;s1&quot;&gt;'git branch -D test1'&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
     
         &lt;a href=&quot;#problem-part-2.p&quot; style=&quot;display:inline-block;&quot;&gt;
@@ -1828,6 +2210,24 @@ error: Cannot delete branch 'test' checked out at 'C:/Users/Amir/git/foo'
 &lt;/div&gt;
 
 &lt;p&gt;Now, switch back to &lt;em&gt;master&lt;/em&gt; branch. Now, try deleting branch &lt;em&gt;test1&lt;/em&gt;, while on &lt;em&gt;master&lt;/em&gt; branch. What message do you get from Git? List all the existing branches using &lt;code class=&quot;highlighter-rouge&quot;&gt;git branch&lt;/code&gt; command.&lt;/p&gt;
+
+&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
+
+    &lt;a href=&quot;#solution-part-2.p&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.p&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.P
+        &lt;/h2&gt;
+    &lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout master
+Switched to branch &lt;span class=&quot;s1&quot;&gt;'master'&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch
+&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; master
+  test2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
     
@@ -1841,6 +2241,18 @@ error: Cannot delete branch 'test' checked out at 'C:/Users/Amir/git/foo'
 
 &lt;p&gt;Why is there such a difference in Git messages between when you tried deleting &lt;em&gt;test1&lt;/em&gt; branch from &lt;em&gt;test2&lt;/em&gt; branch, and when you tried deleting &lt;em&gt;test1&lt;/em&gt; branch from &lt;em&gt;master&lt;/em&gt; branch?&lt;/p&gt;
 
+&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
+
+    &lt;a href=&quot;#solution-part-2.q&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.q&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.Q
+        &lt;/h2&gt;
+    &lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;The difference arises because whichever branch you are in, Git assumes that the content of any other branch should be first merged for the current branch before deleting the other branch. Therefore, in the first case, Git warns that there are unmerged data between &lt;em&gt;test1&lt;/em&gt; and &lt;em&gt;test2&lt;/em&gt; branches. But the delete command from &lt;em&gt;master&lt;/em&gt; branch gives no error since the content of &lt;em&gt;test1&lt;/em&gt; branch has been previously appropriately merged with &lt;em&gt;master&lt;/em&gt; branch.&lt;/p&gt;
+
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
     
         &lt;a href=&quot;#problem-part-2.r&quot; style=&quot;display:inline-block;&quot;&gt;
@@ -1852,6 +2264,23 @@ error: Cannot delete branch 'test' checked out at 'C:/Users/Amir/git/foo'
 &lt;/div&gt;
 
 &lt;p&gt;Now checkout &lt;em&gt;test2&lt;/em&gt; branch. While on &lt;em&gt;test2&lt;/em&gt;, try to delete branch &lt;em&gt;test2&lt;/em&gt;. What error/message do you get?&lt;/p&gt;
+
+&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
+
+    &lt;a href=&quot;#solution-part-2.r&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.r&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.R
+        &lt;/h2&gt;
+    &lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout test2
+Switched to branch &lt;span class=&quot;s1&quot;&gt;'test2'&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; test2
+error: Cannot delete branch &lt;span class=&quot;s1&quot;&gt;'test2'&lt;/span&gt; checked out at &lt;span class=&quot;s1&quot;&gt;'~/test'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
     
@@ -1865,6 +2294,26 @@ error: Cannot delete branch 'test' checked out at 'C:/Users/Amir/git/foo'
 
 &lt;p&gt;Switch back to &lt;em&gt;master&lt;/em&gt; and delete &lt;em&gt;test2&lt;/em&gt; branch. List all your project branches by the appropriate Git command.&lt;/p&gt;
 
+&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
+
+    &lt;a href=&quot;#solution-part-2.s&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.s&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.S
+        &lt;/h2&gt;
+    &lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout master
+Switched to branch &lt;span class=&quot;s1&quot;&gt;'master'&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; test2
+Deleted branch test2 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;was fce6a94&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch
+&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
     
         &lt;a href=&quot;#problem-part-2.t&quot; style=&quot;display:inline-block;&quot;&gt;
@@ -1876,6 +2325,25 @@ error: Cannot delete branch 'test' checked out at 'C:/Users/Amir/git/foo'
 &lt;/div&gt;
 
 &lt;p&gt;Stage and commit all the changes (including the file &lt;code class=&quot;highlighter-rouge&quot;&gt;test.txt&lt;/code&gt;) to your project’s &lt;em&gt;master&lt;/em&gt; branch. Now push all to the remote repository.&lt;/p&gt;
+
+&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
+
+    &lt;a href=&quot;#solution-part-2.t&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2.t&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2.T
+        &lt;/h2&gt;
+    &lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git add &lt;span class=&quot;nt&quot;&gt;--all&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit
+On branch master
+nothing to commit, working tree clean
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git push &lt;span class=&quot;nt&quot;&gt;--all&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 
   
