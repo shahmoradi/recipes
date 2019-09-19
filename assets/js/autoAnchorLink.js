@@ -4,7 +4,7 @@
 //     var $el, icon, id;
 //     $el = $(el);
 //     id = $el.attr('id');
-//     icon = '<i class="fa fa-anchor"></i>';
+//     icon = '<i class="fa fa-anchor" style="margin-left:1rem; margin-right:1rem"></i>';
 //     if (id) {
 //       return $el.append($("<a />").addClass("header-link").attr("href", "#" + id).html(icon));
 //     }
@@ -17,7 +17,7 @@ $(function() {
     $el = $(el);
     id = $el.attr('id');
     if (id) {
-        icon = '<i class="fa fa-anchor"></i>';
+        icon = '<i class="fa fa-anchor" style="margin-left:1rem; margin-right:1rem"></i>';
         $el = $el.prepend($("<a />").addClass("header-link").attr("href", "#" + id).html(icon));
         return $el.append($("<a />").addClass("header-link").attr("href", "#" + id).html(icon));
     }
@@ -30,8 +30,8 @@ $(function() {
     $el = $(el);
     id = $el.attr('id');
     if (id) {
-        icon =   '<i class="fa fa-anchor"></i>\
-                    <i class="fa fa-anchor"></i>';
+        icon =   '<i class="fa fa-anchor" style="margin-left:1rem; margin-right:1rem"></i>\
+                    <i class="fa fa-anchor" style="margin-left:1rem; margin-right:1rem"></i>';
         $el = $el.prepend($("<a />").addClass("header-link").attr("href", "#" + id).html(icon));
         return $el.append($("<a />").addClass("header-link").attr("href", "#" + id).html(icon));
     }
@@ -44,9 +44,9 @@ $(function() {
     $el = $(el);
     id = $el.attr('id');
     if (id) {
-        icon =   '<i class="fa fa-anchor"></i>\
-                    <i class="fa fa-anchor"></i>\
-                    <i class="fa fa-anchor"></i>';
+        icon =   '<i class="fa fa-anchor" style="margin-left:1rem; margin-right:1rem"></i>\
+                    <i class="fa fa-anchor" style="margin-left:1rem; margin-right:1rem"></i>\
+                    <i class="fa fa-anchor" style="margin-left:1rem; margin-right:1rem"></i>';
         $el = $el.prepend($("<a />").addClass("header-link").attr("href", "#" + id).html(icon));
         return $el.append($("<a />").addClass("header-link").attr("href", "#" + id).html(icon));
     }
@@ -59,10 +59,10 @@ $(function() {
     $el = $(el);
     id = $el.attr('id');
     if (id) {
-        icon =   '<i class="fa fa-anchor"></i>\
-                    <i class="fa fa-anchor"></i>\
-                    <i class="fa fa-anchor"></i>\
-                    <i class="fa fa-anchor"></i>';
+        icon =   '<i class="fa fa-anchor" style="margin-left:1rem; margin-right:1rem"></i>\
+                    <i class="fa fa-anchor" style="margin-left:1rem; margin-right:1rem"></i>\
+                    <i class="fa fa-anchor" style="margin-left:1rem; margin-right:1rem"></i>\
+                    <i class="fa fa-anchor" style="margin-left:1rem; margin-right:1rem"></i>';
         $el = $el.prepend($("<a />").addClass("header-link").attr("href", "#" + id).html(icon));
         return $el.append($("<a />").addClass("header-link").attr("href", "#" + id).html(icon));
     }
@@ -75,11 +75,11 @@ $(function() {
     $el = $(el);
     id = $el.attr('id');
     if (id) {
-        icon =   '<i class="fa fa-anchor"></i>\
-                    <i class="fa fa-anchor"></i>\
-                    <i class="fa fa-anchor"></i>\
-                    <i class="fa fa-anchor"></i>\
-                    <i class="fa fa-anchor"></i>';
+        icon =   '<i class="fa fa-anchor" style="margin-left:1rem; margin-right:1rem"></i>\
+                    <i class="fa fa-anchor" style="margin-left:1rem; margin-right:1rem"></i>\
+                    <i class="fa fa-anchor" style="margin-left:1rem; margin-right:1rem"></i>\
+                    <i class="fa fa-anchor" style="margin-left:1rem; margin-right:1rem"></i>\
+                    <i class="fa fa-anchor" style="margin-left:1rem; margin-right:1rem"></i>';
         $el = $el.prepend($("<a />").addClass("header-link").attr("href", "#" + id).html(icon));
         return $el.append($("<a />").addClass("header-link").attr("href", "#" + id).html(icon));
     }
