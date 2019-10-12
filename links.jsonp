@@ -208,7 +208,7 @@ callback([
 
   {
     "text": "Computing the Fibonacci sequence via for-loop",
-    "href": "/recipes/programming/fibonacci-sequence-via-for-loop-matlab/fibonacci-sequence-via-for-loop-matlab"
+    "href": "/recipes/programming/fibonacci-sequence-via-for-loop/fibonacci-sequence-via-for-loop"
   } ,
 
   {

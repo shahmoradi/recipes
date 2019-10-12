@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 <title>COMPUTING THE FIBONACCI SEQUENCE VIA FOR-LOOP &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="MATLAB, Fibonacci sequence, recursive, function, recursive function, branching, isreal, round, str2double, input, string, for-loop, timeit, performance, tab, disp, char">
+<meta name="keywords" content="MATLAB, Python, Fibonacci sequence, recursive, function, recursive function, branching, isreal, round, str2double, input, string, for-loop, timeit, performance, tab, disp, char">
 
 
 
@@ -14,7 +14,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Computing the Fibonacci sequence via for-loop">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/fibonacci-sequence-via-for-loop-matlab/fibonacci-sequence-via-for-loop-matlab">
+<meta property="og:url" content="/recipes/programming/fibonacci-sequence-via-for-loop/fibonacci-sequence-via-for-loop">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/fibonacci-sequence-via-for-loop-matlab/fibonacci-sequence-via-for-loop-matlab">
+<link rel="canonical" href="/recipes/programming/fibonacci-sequence-via-for-loop/fibonacci-sequence-via-for-loop">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,7 +130,7 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/fibonacci-sequence-via-for-loop-matlab/fibonacci-sequence-via-for-loop-matlab">Computing the Fibonacci sequence via for-loop</a></h2>
+                            <h2><a href="/recipes/programming/fibonacci-sequence-via-for-loop/fibonacci-sequence-via-for-loop">Computing the Fibonacci sequence via for-loop</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
                                 
@@ -148,6 +148,11 @@
                                         
                                             <li>
                                                 <a href="/recipes/tags/index.html#MATLAB" data-toggle="tooltip" title="Posts tagged with MATLAB" rel="tag">MATLAB</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
                                             </li>
                                             
                                         
@@ -259,9 +264,9 @@
 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
     
-        <a href="#problem-part-a" style="display:inline-block;">
-            <h2 id="problem-part-a" style="color:red;">
-                Problem Part A
+        <a href="#problem-part-matlab-a" style="display:inline-block;">
+            <h2 id="problem-part-matlab-a" style="color:red;">
+                Problem Part MATLAB-A
             </h2>
         </a>
     
@@ -296,9 +301,9 @@ Please enter a non-negative integer or type stop: stop
 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
     
-        <a href="#problem-part-b" style="display:inline-block;">
-            <h2 id="problem-part-b" style="color:red;">
-                Problem Part B
+        <a href="#problem-part-matlab-b" style="display:inline-block;">
+            <h2 id="problem-part-matlab-b" style="color:red;">
+                Problem Part MATLAB-B
             </h2>
         </a>
     
@@ -308,9 +313,9 @@ Please enter a non-negative integer or type stop: stop
 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
     
-        <a href="#problem-part-c" style="display:inline-block;">
-            <h2 id="problem-part-c" style="color:red;">
-                Problem Part C
+        <a href="#problem-part-matlab-c" style="display:inline-block;">
+            <h2 id="problem-part-matlab-c" style="color:red;">
+                Problem Part MATLAB-C
             </h2>
         </a>
     
@@ -320,9 +325,9 @@ Please enter a non-negative integer or type stop: stop
 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
     
-        <a href="#problem-part-d" style="display:inline-block;">
-            <h2 id="problem-part-d" style="color:red;">
-                Problem Part D
+        <a href="#problem-part-matlab-d" style="display:inline-block;">
+            <h2 id="problem-part-matlab-d" style="color:red;">
+                Problem Part MATLAB-D
             </h2>
         </a>
     
@@ -367,9 +372,9 @@ The input argument is not a non-negative integer!
 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
     
-        <a href="#problem-part-e" style="display:inline-block;">
-            <h2 id="problem-part-e" style="color:red;">
-                Problem Part E
+        <a href="#problem-part-matlab-e" style="display:inline-block;">
+            <h2 id="problem-part-matlab-e" style="color:red;">
+                Problem Part MATLAB-E
             </h2>
         </a>
     
@@ -377,17 +382,109 @@ The input argument is not a non-negative integer!
 
 <p>Now write a script named <code class="highlighter-rouge">writeFibResult.m</code> that calls these two functions for a range of input $n={10,2,3,\ldots,35}$ values, and then write the output of these two functions in a formatted way in two files like these <a href="fibOutput.txt" target="_blank">fibOutput.txt</a> and <a href="https://www.cdslab.org/homework/4-problems/fibLoopOutput.txt" target="_blank">fibLoopOutput.txt</a>. You can use any of MATLAB IO methods to create the output file with any file extension you prefer: <code class="highlighter-rouge">.txt</code>, <code class="highlighter-rouge">.csv</code>, <code class="highlighter-rouge">.xlsx</code>, <code class="highlighter-rouge">.tab</code>, … .</p>
 
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#python" id="python">
+            <img src="/recipes/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+    
+        <a href="#problem-part-python-a" style="display:inline-block;">
+            <h2 id="problem-part-python-a" style="color:red;">
+                Problem Part Python-A
+            </h2>
+        </a>
+    
+</div>
+
+<p>Consider the Python function <a href="fib.py" target="_blank">fib()</a>. Modify this function using <code class="highlighter-rouge">process_time()</code> from Python’s <code class="highlighter-rouge">time</code> module such that <code class="highlighter-rouge">fib()</code> also returns the average runtime of the nested function <code class="highlighter-rouge">getFib()</code> inside <code class="highlighter-rouge">fib()</code>, right after giving the requested Fibonacci number. For example, here is an output from such modified code,</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fib</span><span class="p">()</span>
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please enter a non-negative integer or type stop: 0
+fib(0) = 0
+average runtime: 0.015625 seconds
+Please enter a non-negative integer or type stop: 1
+fib(1) = 1
+average runtime: 0.03125 seconds
+Please enter a non-negative integer or type stop: 2
+fib(2) = 1
+average runtime: 0.046875 seconds
+Please enter a non-negative integer or type stop: 3
+fib(3) = 2
+average runtime: 0.03125 seconds
+Please enter a non-negative integer or type stop: 4
+fib(4) = 3
+average runtime: 0.03125 seconds
+Please enter a non-negative integer or type stop: 8
+fib(8) = 21
+average runtime: 0.03125 seconds
+Please enter a non-negative integer or type stop: 10
+fib(10) = 55
+average runtime: 0.03125 seconds
+Please enter a non-negative integer or type stop: 15
+fib(15) = 610
+average runtime: 0.03125 seconds
+Please enter a non-negative integer or type stop: 20
+fib(20) = 6765
+average runtime: 0.046875 seconds
+Please enter a non-negative integer or type stop: 25
+fib(25) = 75025
+average runtime: 0.078125 seconds
+Please enter a non-negative integer or type stop: 30
+fib(30) = 832040
+average runtime: 0.484375 seconds
+Please enter a non-negative integer or type stop: 35
+fib(35) = 9227465
+average runtime: 4.703125 seconds
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+    
+        <a href="#problem-part-python-b" style="display:inline-block;">
+            <h2 id="problem-part-python-b" style="color:red;">
+                Problem Part Python-B
+            </h2>
+        </a>
+    
+</div>
+
+<p>Now copy this function to a new Python file named <code class="highlighter-rouge">fibLoop.py</code>. Also modify the name of the function <code class="highlighter-rouge">fib()</code> in this file <code class="highlighter-rouge">fibLoop()</code>. Modify the nested function <code class="highlighter-rouge">getFib()</code> inside of <code class="highlighter-rouge">fibLoop()</code> such that instead of recursive function calls, it uses a for-loop to find the requested Fibonacci number.</p>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+    
+        <a href="#problem-part-python-c" style="display:inline-block;">
+            <h2 id="problem-part-python-c" style="color:red;">
+                Problem Part Python-C
+            </h2>
+        </a>
+    
+</div>
+
+<p>Now time your new function <code class="highlighter-rouge">fibLoop()</code> for the same input integers as in the above example: $10,15,20,25,30,35$. How do the runtimes for <code class="highlighter-rouge">fibLoop()</code> compare with <code class="highlighter-rouge">fib()</code>. Which function is faster and more efficient: <code class="highlighter-rouge">fib()</code> or <code class="highlighter-rouge">fibLoop()</code>? Why is there such huge difference in the performance of the two functions?</p>
+
 
             </div>
         </article>
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Computing the Fibonacci sequence via for-loop&quot;%20https://www.cdslab.org/recipes/programming/fibonacci-sequence-via-for-loop-matlab/fibonacci-sequence-via-for-loop-matlab%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Computing the Fibonacci sequence via for-loop&quot;%20https://www.cdslab.org/recipes/programming/fibonacci-sequence-via-for-loop/fibonacci-sequence-via-for-loop%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/fibonacci-sequence-via-for-loop-matlab/fibonacci-sequence-via-for-loop-matlab"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/fibonacci-sequence-via-for-loop/fibonacci-sequence-via-for-loop"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>
@@ -440,8 +537,8 @@ The input argument is not a non-negative integer!
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2019 / 09 / 19</section></br> -->
-         <section>Last updated Thursday, 19 Sep 2019 at 04:55 PM CST</section></br>
+         <!-- <section>Last updated 2019 / 10 / 12</section></br> -->
+         <section>Last updated Saturday, 12 Oct 2019 at 01:20 AM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
