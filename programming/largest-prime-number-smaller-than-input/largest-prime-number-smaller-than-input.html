@@ -265,25 +265,26 @@
         <span class="n">isPrime</span> <span class="o">=</span> <span class="bp">False</span>
     <span class="k">return</span> <span class="n">isPrime</span>
 
-<span class="k">def</span> <span class="nf">getPrimes</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">getNumPrimes</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">count</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">isPrime</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-            <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
-        <span class="k">return</span> <span class="n">count</span> <span class="o">+</span> <span class="n">getPrimes</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">isPrime</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">getNumPrimes</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">getNumPrimes</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">getPrimes</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">getNumPrimes</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
 </code></pre></div></div>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5
 </code></pre></div></div>
 
-<p><strong>(A)</strong> Now rewrite <code class="highlighter-rouge">getPrimes(n)</code> and the other functions in the above code using for-loop this time. Name the new functions <code class="highlighter-rouge">get_prime_for(n)</code> and <code class="highlighter-rouge">isPrime_for(n)</code>, with <em>for</em> in the names indicating that the functions now use for-loops.</p>
+<p><strong>(A)</strong> Now rewrite <code class="highlighter-rouge">getNumPrimes(n)</code> and the other functions in the above code using for-loop this time. Name the new functions <code class="highlighter-rouge">get_prime_for(n)</code> and <code class="highlighter-rouge">isPrime_for(n)</code>, with <em>for</em> in the names indicating that the functions now use for-loops.</p>
 
-<p><strong>(B)</strong> Now compare the performance of the two functions <code class="highlighter-rouge">getPrimes(n=500)</code> and <code class="highlighter-rouge">getPrimes_for(n500)</code> using Jupyter’s or IPython’s <code class="highlighter-rouge">%timeit</code> magic function. Which one is faster?</p>
+<p><strong>(B)</strong> Now compare the performance of the two functions <code class="highlighter-rouge">getNumPrimes(n=500)</code> and <code class="highlighter-rouge">getNumPrimes_for(n=500)</code> using Jupyter’s or IPython’s <code class="highlighter-rouge">%timeit</code> magic function. Which one is faster?</p>
 
 
             </div>
@@ -348,8 +349,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2019 / 10 / 14</section></br> -->
-         <section>Last updated Monday, 14 Oct 2019 at 02:13 PM CST</section></br>
+         <!-- <section>Last updated 2019 / 10 / 15</section></br> -->
+         <section>Last updated Tuesday, 15 Oct 2019 at 04:10 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
