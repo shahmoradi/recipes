@@ -213,6 +213,47 @@
     <span class="k">print</span> <span class="p">(</span><span class="s">'n={}, del {}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">i</span><span class="p">),</span> <span class="n">numbers</span><span class="p">)</span>
 </code></pre></div></div>
 
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution" style="display:inline-block;">
+        <h2 id="solution" style="color:blue;">
+            Solution
+        </h2>
+    </a>
+
+</div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-python" id="solution-python">
+            <img src="/recipes/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">numbers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+    <span class="k">del</span> <span class="n">numbers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">print</span> <span class="p">(</span><span class="s">'n={}, del {}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">i</span><span class="p">),</span> <span class="n">numbers</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>n=0, del 5 [0, 1, 2, 3, 4, 6, 7, 8, 9]
+n=1, del 4 [0, 1, 2, 3, 6, 7, 8, 9]
+n=2, del 4 [0, 1, 2, 3, 7, 8, 9]
+n=3, del 3 [0, 1, 2, 7, 8, 9]
+n=8, del 3 [0, 1, 2, 8, 9]
+</code></pre></div></div>
+
+<p>What is happening is that the list over which we are looping changes its content because of the modifications during on the list in the for-loop. The message in this exercise is to <strong>never modify a list that you are looping over</strong>. Modification is indeed technically possible, as shown above, but you need to know what you are doing. Otherwise, you will experience very strange program behavior.</p>
+
 
             </div>
         </article>
@@ -276,8 +317,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2019 / 10 / 15</section></br> -->
-         <section>Last updated Tuesday, 15 Oct 2019 at 04:10 PM CST</section></br>
+         <!-- <section>Last updated 2019 / 10 / 18</section></br> -->
+         <section>Last updated Friday, 18 Oct 2019 at 12:10 AM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

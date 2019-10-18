@@ -208,6 +208,80 @@
 
 <p><strong><a href="https://en.wikipedia.org/wiki/Integer_overflow" target="blank">Overflow</a>.</strong> What would happen if you went beyond the range for a particular type? For example, the largest integer that can be stored in <strong>int8</strong> is 127, and the smallest integer is -128, so what would happen if we type cast a larger integer to the type <strong>int8</strong>? Smaller integer? Use the MATLAB built-in functions <code class="highlighter-rouge">intmin</code> and <code class="highlighter-rouge">intmax</code> or Python’s numpy package command <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.iinfo.html" target="blank"><code class="highlighter-rouge">iinfo</code></a> to find the largest and smallest integers that can be stored in <strong>int16</strong> and <strong>int32</strong>.</p>
 
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution" style="display:inline-block;">
+        <h2 id="solution" style="color:blue;">
+            Solution
+        </h2>
+    </a>
+
+</div>
+
+<p>The resulting behavior is language-dependent.</p>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-matlab" id="solution-matlab">
+            <img src="/recipes/images/MATLAB.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
+                MATLAB
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>In MATLAB, the overflow and underflow as of today freeze to the largest or smallest possible values that could be represented by that variable type. Here are the results in MATLAB:</p>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;</span> <span class="nb">int8</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="nb">ans</span> <span class="o">=</span>
+  <span class="nb">int8</span>
+   <span class="mi">127</span>
+<span class="o">&gt;&gt;</span> <span class="nb">int8</span><span class="p">(</span><span class="o">-</span><span class="mi">150</span><span class="p">)</span>
+<span class="nb">ans</span> <span class="o">=</span>
+  <span class="nb">int8</span>
+   <span class="o">-</span><span class="mi">128</span>
+<span class="o">&gt;&gt;</span> <span class="nb">intmax</span><span class="p">(</span><span class="s1">'int16'</span><span class="p">)</span>
+<span class="nb">ans</span> <span class="o">=</span>
+  <span class="nb">int16</span>
+   <span class="mi">32767</span>
+<span class="o">&gt;&gt;</span> <span class="nb">intmin</span><span class="p">(</span><span class="s1">'int16'</span><span class="p">)</span>
+<span class="nb">ans</span> <span class="o">=</span>
+  <span class="nb">int16</span>
+   <span class="o">-</span><span class="mi">32768</span>
+<span class="o">&gt;&gt;</span> <span class="nb">intmax</span><span class="p">(</span><span class="s1">'int32'</span><span class="p">)</span>
+<span class="nb">ans</span> <span class="o">=</span>
+  <span class="nb">int32</span>
+   <span class="mi">2147483647</span>
+<span class="o">&gt;&gt;</span> <span class="nb">intmin</span><span class="p">(</span><span class="s1">'int32'</span><span class="p">)</span>
+<span class="nb">ans</span> <span class="o">=</span>
+  <span class="nb">int32</span>
+   <span class="o">-</span><span class="mi">2147483648</span>
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-python" id="solution-python">
+            <img src="/recipes/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>In python, it leads to rollover or perhaps random value assignments to the variable.</p>
+
 
             </div>
         </article>
@@ -271,8 +345,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2019 / 10 / 15</section></br> -->
-         <section>Last updated Tuesday, 15 Oct 2019 at 04:10 PM CST</section></br>
+         <!-- <section>Last updated 2019 / 10 / 18</section></br> -->
+         <section>Last updated Friday, 18 Oct 2019 at 12:10 AM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
