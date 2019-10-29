@@ -3,18 +3,18 @@
 <head>
     
     <meta charset="utf-8">
-<title>MATLAB WORKING DIRECTORY &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>FINDING THE POSITION OF THE MAXIMUM VALUE OF AN ARRAY VIA RECURSIVE FUNCTION CALLS &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="MATLAB, working directory, directory, script, figure, plot, mkdir, cd, value, variable, type">
+<meta name="keywords" content="Python, maximum, recursive, function, recursive function, branching, list">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MATLAB working directory">
+<meta property="og:title" content="Finding the position of the maximum value of an array via recursive function calls">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/matlab-working-directory/matlab-working-directory">
+<meta property="og:url" content="/recipes/programming/finding-maximum-location-via-recursive-function/finding-maximum-location-via-recursive-function">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/matlab-working-directory/matlab-working-directory">
+<link rel="canonical" href="/recipes/programming/finding-maximum-location-via-recursive-function/finding-maximum-location-via-recursive-function">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,7 +130,7 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/matlab-working-directory/matlab-working-directory">MATLAB working directory</a></h2>
+                            <h2><a href="/recipes/programming/finding-maximum-location-via-recursive-function/finding-maximum-location-via-recursive-function">Finding the position of the maximum value of an array via recursive function calls</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
                                 
@@ -142,57 +142,37 @@
                                     
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#MATLAB" data-toggle="tooltip" title="Posts tagged with MATLAB" rel="tag">MATLAB</a>
+                                                <a href="/recipes/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#cd" data-toggle="tooltip" title="Posts tagged with cd" rel="tag">cd</a>
+                                                <a href="/recipes/tags/index.html#branching" data-toggle="tooltip" title="Posts tagged with branching" rel="tag">branching</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#directory" data-toggle="tooltip" title="Posts tagged with directory" rel="tag">directory</a>
+                                                <a href="/recipes/tags/index.html#function" data-toggle="tooltip" title="Posts tagged with function" rel="tag">function</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#figure" data-toggle="tooltip" title="Posts tagged with figure" rel="tag">figure</a>
+                                                <a href="/recipes/tags/index.html#list" data-toggle="tooltip" title="Posts tagged with list" rel="tag">list</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#mkdir" data-toggle="tooltip" title="Posts tagged with mkdir" rel="tag">mkdir</a>
+                                                <a href="/recipes/tags/index.html#maximum" data-toggle="tooltip" title="Posts tagged with maximum" rel="tag">maximum</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#plot" data-toggle="tooltip" title="Posts tagged with plot" rel="tag">plot</a>
+                                                <a href="/recipes/tags/index.html#recursive" data-toggle="tooltip" title="Posts tagged with recursive" rel="tag">recursive</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#script" data-toggle="tooltip" title="Posts tagged with script" rel="tag">script</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#type" data-toggle="tooltip" title="Posts tagged with type" rel="tag">type</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#value" data-toggle="tooltip" title="Posts tagged with value" rel="tag">value</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#variable" data-toggle="tooltip" title="Posts tagged with variable" rel="tag">variable</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#working directory" data-toggle="tooltip" title="Posts tagged with working directory" rel="tag">working directory</a>
+                                                <a href="/recipes/tags/index.html#recursive function" data-toggle="tooltip" title="Posts tagged with recursive function" rel="tag">recursive function</a>
                                             </li>
                                             
                                         
@@ -213,70 +193,25 @@
                 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
     
-        <a href="#problem-part-1" style="display:inline-block;">
-            <h2 id="problem-part-1" style="color:red;">
-                Problem Part 1
+        <a href="#problem" style="display:inline-block;">
+            <h2 id="problem" style="color:red;">
+                Problem
             </h2>
         </a>
     
 </div>
 
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#problem-part-1-matlab" id="problem-part-1-matlab">
-            <img src="/recipes/images/MATLAB.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
-                MATLAB
-            </a>
-        </figcaption>
-    </figure>
-</div>
+<p>Write a recursive Python function <code class="highlighter-rouge">findMaxValMaxLoc()</code> that takes an input list of numbers and returns, as a tuple, both the maximum value and the position (index) of maximum value in the input list. Your function should return <code class="highlighter-rouge">None</code> if the input array is an empty list. For example,</p>
 
-<p>Use MATLAB help to find out how you can create a new directory named <code class="highlighter-rouge">mynewdir</code> from the MATLAB command line. Then change the working directory the newly-created directory. Then create a MATLAB script in this directory named <code class="highlighter-rouge">myscript.m</code> with the following code in it,</p>
-
-<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">% First create an array from -2*pi to 2:pi</span>
-<span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">:</span><span class="nb">pi</span><span class="p">/</span><span class="mi">20</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">;</span>
-
-<span class="c1">% Calculate |sin(x)|</span>
-<span class="n">y</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">sin</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
-
-<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">findMaxValMaxLoc</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mf">4.5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(4.5, 3)
 </code></pre></div></div>
 
-<p>Now on MATLAB command line, run the script by calling its name. What do you get? Save the output as a figure and submit it as part of your answer.</p>
-
-<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
-    
-        <a href="#problem-part-2" style="display:inline-block;">
-            <h2 id="problem-part-2" style="color:red;">
-                Problem Part 2
-            </h2>
-        </a>
-    
-</div>
-
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#problem-part-2-matlab" id="problem-part-2-matlab">
-            <img src="/recipes/images/MATLAB.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
-                MATLAB
-            </a>
-        </figcaption>
-    </figure>
-</div>
-
-<p>Now change your working directory to the original directory before you created <code class="highlighter-rouge">mynewdir</code> directory. Try to run the script <code class="highlighter-rouge">myscript</code> you had created again, from MATLAB command line. What do you get? and why?</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">findMaxValMaxLoc</span><span class="p">([])</span> <span class="ow">is</span> <span class="bp">None</span>
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
+</code></pre></div></div>
 
 
             </div>
@@ -284,11 +219,11 @@
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;MATLAB working directory&quot;%20https://www.cdslab.org/recipes/programming/matlab-working-directory/matlab-working-directory%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Finding the position of the maximum value of an array via recursive function calls&quot;%20https://www.cdslab.org/recipes/programming/finding-maximum-location-via-recursive-function/finding-maximum-location-via-recursive-function%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/matlab-working-directory/matlab-working-directory"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/finding-maximum-location-via-recursive-function/finding-maximum-location-via-recursive-function"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>

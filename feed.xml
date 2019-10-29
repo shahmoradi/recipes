@@ -7,13 +7,103 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2019-10-18T00:10:16-05:00</updated>
+<updated>2019-10-29T13:11:42-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
   <uri>https://www.cdslab.org/recipes/</uri>
   <email>shahmoradi@utexas.edu</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Finding the maximum value of an array via recursive function calls]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/finding-maximum-value-via-recursive-function/finding-maximum-value-via-recursive-function"/>
+  <id>https://www.cdslab.org/recipes/programming/finding-maximum-value-via-recursive-function/finding-maximum-value-via-recursive-function</id>
+  <published>2019-10-29T00:00:00-05:00</published>
+  <updated>2019-07-04T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#maximum" term="maximum" /><category scheme="https://www.cdslab.org/recipes/tags/#recursive" term="recursive" /><category scheme="https://www.cdslab.org/recipes/tags/#function" term="function" /><category scheme="https://www.cdslab.org/recipes/tags/#recursive%20function" term="recursive function" /><category scheme="https://www.cdslab.org/recipes/tags/#branching" term="branching" /><category scheme="https://www.cdslab.org/recipes/tags/#list" term="list" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Write a recursive Python function &lt;code class=&quot;highlighter-rouge&quot;&gt;findMaxVal()&lt;/code&gt; that takes an input list of numbers and returns the maximum value stored the list. Do not use any &lt;code class=&quot;highlighter-rouge&quot;&gt;max()&lt;/code&gt; function from any Python package. Your code should only contain if blocks and recursive function calls. Your function should return &lt;code class=&quot;highlighter-rouge&quot;&gt;None&lt;/code&gt; if the input array is an empty list. For example,&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;findMaxVal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;4.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;4.5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;findMaxVal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([])&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;True
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/finding-maximum-value-via-recursive-function/finding-maximum-value-via-recursive-function&quot;&gt;Finding the maximum value of an array via recursive function calls&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 29, 2019.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Finding the position of the maximum value of an array via recursive function calls]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/finding-maximum-location-via-recursive-function/finding-maximum-location-via-recursive-function"/>
+  <id>https://www.cdslab.org/recipes/programming/finding-maximum-location-via-recursive-function/finding-maximum-location-via-recursive-function</id>
+  <published>2019-10-29T00:00:00-05:00</published>
+  <updated>2019-07-04T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#maximum" term="maximum" /><category scheme="https://www.cdslab.org/recipes/tags/#recursive" term="recursive" /><category scheme="https://www.cdslab.org/recipes/tags/#function" term="function" /><category scheme="https://www.cdslab.org/recipes/tags/#recursive%20function" term="recursive function" /><category scheme="https://www.cdslab.org/recipes/tags/#branching" term="branching" /><category scheme="https://www.cdslab.org/recipes/tags/#list" term="list" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Write a recursive Python function &lt;code class=&quot;highlighter-rouge&quot;&gt;findMaxValMaxLoc()&lt;/code&gt; that takes an input list of numbers and returns, as a tuple, both the maximum value and the position (index) of maximum value in the input list. Your function should return &lt;code class=&quot;highlighter-rouge&quot;&gt;None&lt;/code&gt; if the input array is an empty list. For example,&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;findMaxValMaxLoc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;4.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(4.5, 3)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;findMaxValMaxLoc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([])&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;True
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/finding-maximum-location-via-recursive-function/finding-maximum-location-via-recursive-function&quot;&gt;Finding the position of the maximum value of an array via recursive function calls&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 29, 2019.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -3643,170 +3733,6 @@ Use the &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt; funct
 
   
   &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/python-single-line-input-string-manipulation/python-single-line-input-string-manipulation&quot;&gt;Single-line Python input and string manipulation&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Python script full of syntax errors]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/python-script-full-of-syntax-errors/python-script-full-of-syntax-errors"/>
-  <id>https://www.cdslab.org/recipes/programming/python-script-full-of-syntax-errors/python-script-full-of-syntax-errors</id>
-  <published>2019-07-04T00:00:00-05:00</published>
-  <updated>2019-07-04T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#value" term="value" /><category scheme="https://www.cdslab.org/recipes/tags/#variable" term="variable" /><category scheme="https://www.cdslab.org/recipes/tags/#type" term="type" /><category scheme="https://www.cdslab.org/recipes/tags/#syntax" term="syntax" /><category scheme="https://www.cdslab.org/recipes/tags/#error" term="error" /><category scheme="https://www.cdslab.org/recipes/tags/#syntax%20error" term="syntax error" /><category scheme="https://www.cdslab.org/recipes/tags/#multiple%20assignment" term="multiple assignment" /><category scheme="https://www.cdslab.org/recipes/tags/#logical" term="logical" /><category scheme="https://www.cdslab.org/recipes/tags/#alias" term="alias" />
-  <content type="html">
-  
-    
-&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-    
-        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
-            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
-                Problem
-            &lt;/h2&gt;
-        &lt;/a&gt;
-    
-&lt;/div&gt;
-
-&lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
-    
-    
-    
-    &lt;figure&gt;
-        &lt;a href=&quot;#problem-python&quot; id=&quot;problem-python&quot;&gt;
-            &lt;img src=&quot;https://www.cdslab.org/recipes/images/Python.png&quot; width=&quot;75px&quot; /&gt;
-        &lt;/a&gt;
-        &lt;figcaption&gt;
-            &lt;a href=&quot;https://en.wikipedia.org/wiki/Python_(programming_language)&quot; target=&quot;_blank&quot;&gt;
-                Python
-            &lt;/a&gt;
-        &lt;/figcaption&gt;
-    &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Download &lt;a href=&quot;python_script_full_of_syntax_errors.py&quot; target=&quot;_blank&quot;&gt;this code&lt;/a&gt;. This code is full syntax errors. Fix the errors and submit the corrected code with the name &lt;code class=&quot;highlighter-rouge&quot;&gt;python_script_full_of_syntax_errors_fixed.py&lt;/code&gt;. Explain in front of each corrected Python statement, why the error occurred.  On the last line of the script,&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fox&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rev&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Persian&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;the statement runs without error. But can you explain what it does? (Hint: For this part, you need to understand operation precedence. You may find the Python tutorials &lt;a href=&quot;https://www.cdslab.org/python/index.html&quot; target=&quot;_blank&quot;&gt;available here&lt;/a&gt; useful.&lt;/p&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/python-script-full-of-syntax-errors/python-script-full-of-syntax-errors&quot;&gt;Python script full of syntax errors&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Python script full of errors]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/python-script-full-of-errors/python-script-full-of-errors"/>
-  <id>https://www.cdslab.org/recipes/programming/python-script-full-of-errors/python-script-full-of-errors</id>
-  <published>2019-07-04T00:00:00-05:00</published>
-  <updated>2019-07-04T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#value" term="value" /><category scheme="https://www.cdslab.org/recipes/tags/#variable" term="variable" /><category scheme="https://www.cdslab.org/recipes/tags/#type" term="type" /><category scheme="https://www.cdslab.org/recipes/tags/#syntax%20error" term="syntax error" /><category scheme="https://www.cdslab.org/recipes/tags/#error" term="error" /><category scheme="https://www.cdslab.org/recipes/tags/#string" term="string" /><category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#value" term="value" /><category scheme="https://www.cdslab.org/recipes/tags/#variable" term="variable" /><category scheme="https://www.cdslab.org/recipes/tags/#type" term="type" />
-  <content type="html">
-  
-    
-&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-    
-        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
-            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
-                Problem
-            &lt;/h2&gt;
-        &lt;/a&gt;
-    
-&lt;/div&gt;
-
-&lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
-    
-    
-    
-    &lt;figure&gt;
-        &lt;a href=&quot;#problem-python&quot; id=&quot;problem-python&quot;&gt;
-            &lt;img src=&quot;https://www.cdslab.org/recipes/images/Python.png&quot; width=&quot;75px&quot; /&gt;
-        &lt;/a&gt;
-        &lt;figcaption&gt;
-            &lt;a href=&quot;https://en.wikipedia.org/wiki/Python_(programming_language)&quot; target=&quot;_blank&quot;&gt;
-                Python
-            &lt;/a&gt;
-        &lt;/figcaption&gt;
-    &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Download &lt;a href=&quot;python_script_full_of_errors.pi&quot; target=&quot;_blank&quot;&gt;this Python script&lt;/a&gt;. This Python script is full of syntax, runtime, and semantic errors. Please identify and correct these errors, such that code becomes fully executable and outputs the following message on the screen when running from the Git Bash command line:&lt;/p&gt;
-
-&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;The life expectancy for the millennials is projected to be 120 years! (But don't believe it...)
-
-
-    A recent study published in the journal of Nature, discovered that over the past century,
-    although life expectancy has significantly increased due to technological advances,
-    the maximum life span of the oldest people in the world has not changed much.
-
-
-Cardano was the first to introduce complex numbers of the form a + sqrt(-b) into algebra, but he had misgivings about it.
-In his solution to an algebra equation, he encountered the solution 5 + sqrt(-15) for the unknown, which is now mathematically represented by
-
-       (5+3.872983346207417j)
-
-in Python, which can also be obtained as the addition of real and imaginary numbers in Python like this
-
-
-      5 + sqrt(-15) = (5+3.872983346207417j),
-
-
-      which can also be manually stated as
-
-
-      (5+3.872983346207417j)
-
-
-
-
-
-One final note:
-
-        In python the sqrt function from math and cmath modules are different.
-        The sqrt function that returns &quot;float&quot; results is sqrt from the math module.
-        Therefore, if using the math module, then,
-
-                sqrt(25) = 5.0000,
-
-        which is a float (real number).
-
-
-
-
-Also note that by convention, 0**0 = 1 in Python.
-And division by 0, will give you a runtime exception: 1/0 = NaN
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Identify at least one example in the code for each of the error types.&lt;/p&gt;
-
-&lt;p&gt;Here are a few hints:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;You need to get familiar with string formatting in &lt;code class=&quot;highlighter-rouge&quot;&gt;print&lt;/code&gt; function. &lt;a href=&quot;https://www.cdslab.org/python/index.html&quot; target=&quot;_blank&quot;&gt;Read the Python tutorials, for example, for more information&lt;/a&gt;.&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;Note that in Python, the interpreter is sensitive to &lt;a href=&quot;https://www.python.org/dev/peps/pep-0008/#indentation&quot; target=&quot;_blank&quot;&gt;indentations&lt;/a&gt; in your codes. All lines must be aligned at the beginning (except for looping and branching, … which we will get to them later on).&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;Become familiar with &lt;a href=&quot;https://python-reference.readthedocs.io/en/latest/docs/str/escapes.html&quot; target=&quot;_blank&quot;&gt;escape characters&lt;/a&gt; in Python, such as &lt;code class=&quot;highlighter-rouge&quot;&gt;'\n'&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;'\t'&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;'\t'&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/python-script-full-of-errors/python-script-full-of-errors&quot;&gt;Python script full of errors&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
 </entry>
 
 </feed>

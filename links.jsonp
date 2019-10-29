@@ -172,6 +172,16 @@ callback([
   } ,
 
   {
+    "text": "Finding the position of the maximum value of an array via recursive function calls",
+    "href": "/recipes/programming/finding-maximum-location-via-recursive-function/finding-maximum-location-via-recursive-function"
+  } ,
+
+  {
+    "text": "Finding the maximum value of an array via recursive function calls",
+    "href": "/recipes/programming/finding-maximum-value-via-recursive-function/finding-maximum-value-via-recursive-function"
+  } ,
+
+  {
     "text": "Exception handling in the case of division by zero",
     "href": "/recipes/programming/exception-handling-derivative/exception-handling-derivative"
   } ,
@@ -224,6 +234,11 @@ callback([
   {
     "text": "Checking if an input is a prime number (via recursive function calls)?",
     "href": "/recipes/programming/isprime-recursive/isprime-recursive"
+  } ,
+
+  {
+    "text": "Check if number is even in one line function definition",
+    "href": "/recipes/programming/one-line-check-even-number/one-line-check-even-number"
   } ,
 
   {

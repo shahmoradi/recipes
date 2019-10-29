@@ -60,6 +60,14 @@
 
     
     <url>
+        <loc>https://www.cdslab.org/recipes/programming/finding-maximum-value-via-recursive-function/finding-maximum-value-via-recursive-function</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/finding-maximum-location-via-recursive-function/finding-maximum-location-via-recursive-function</loc>
+    </url>
+    
+    <url>
         <loc>https://www.cdslab.org/recipes/programming/fortran-dll-getsquare/fortran-dll-getsquare</loc>
     </url>
     
@@ -157,6 +165,10 @@
     
     <url>
         <loc>https://www.cdslab.org/recipes/programming/operator-precedence/operator-precedence</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/one-line-check-even-number/one-line-check-even-number</loc>
     </url>
     
     <url>

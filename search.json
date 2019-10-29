@@ -1,6 +1,22 @@
 [
 	
 		{
+		  "title"      : "Finding the maximum value of an array via recursive function calls",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/finding-maximum-value-via-recursive-function/finding-maximum-value-via-recursive-function",
+		  "date"       : "2019-10-29 00:00:00 -0500",
+		  "shortdate"  : "October 29, 2019"
+		} ,
+	
+		{
+		  "title"      : "Finding the position of the maximum value of an array via recursive function calls",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/finding-maximum-location-via-recursive-function/finding-maximum-location-via-recursive-function",
+		  "date"       : "2019-10-29 00:00:00 -0500",
+		  "shortdate"  : "October 29, 2019"
+		} ,
+	
+		{
 		  "title"      : "Making and using a Dynamic-Link Library (DLL) from a Fortran procedure using Intel Fortran Compiler on Windows OS: getSquare()",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/fortran-dll-getsquare/fortran-dll-getsquare",
@@ -196,6 +212,14 @@
 		  "title"      : "Operator precedence",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/operator-precedence/operator-precedence",
+		  "date"       : "2019-07-04 00:00:00 -0500",
+		  "shortdate"  : "July 04, 2019"
+		} ,
+	
+		{
+		  "title"      : "Check if number is even in one line function definition",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/one-line-check-even-number/one-line-check-even-number",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
