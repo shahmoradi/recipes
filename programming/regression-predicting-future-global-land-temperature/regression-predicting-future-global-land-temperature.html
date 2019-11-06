@@ -3,18 +3,18 @@
 <head>
     
     <meta charset="utf-8">
-<title>SINGLE-LINE PYTHON INPUT AND STRING MANIPULATION &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>REGRESSION: PREDICTING THE GLOBAL LAND TEMPERATURE OF THE EARTH IN 2050 FROM THE PAST DATA &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="Python, branching, print, tuple, input, string">
+<meta name="keywords" content="MATLAB, regression, visualization, plot, line, figure, random number, distribution function, probability density function, PDF, probability, objective function, least squares method">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Single-line Python input and string manipulation">
+<meta property="og:title" content="Regression: Predicting the global land temperature of the Earth in 2050 from the past data">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/python-single-line-input-string-manipulation/python-single-line-input-string-manipulation">
+<meta property="og:url" content="/recipes/programming/regression-predicting-future-global-land-temperature/regression-predicting-future-global-land-temperature">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/python-single-line-input-string-manipulation/python-single-line-input-string-manipulation">
+<link rel="canonical" href="/recipes/programming/regression-predicting-future-global-land-temperature/regression-predicting-future-global-land-temperature">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,44 +130,79 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/python-single-line-input-string-manipulation/python-single-line-input-string-manipulation">Single-line Python input and string manipulation</a></h2>
+                            <h2><a href="/recipes/programming/regression-predicting-future-global-land-temperature/regression-predicting-future-global-land-temperature">Regression: Predicting the global land temperature of the Earth in 2050 from the past data</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
                                 
                                     &#8212; Last updated: 
-                                    <strong><time datetime="2019-07-04T00:00:00-05:00">04 July 2019</time></strong>
+                                    <strong><time datetime="2019-11-01T00:00:00-05:00">01 November 2019</time></strong>
                                 
                                 <ul class="tag-box inline">
                                     <span style="margin-right:1rem;">Tags:</span>
                                     
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
+                                                <a href="/recipes/tags/index.html#MATLAB" data-toggle="tooltip" title="Posts tagged with MATLAB" rel="tag">MATLAB</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#branching" data-toggle="tooltip" title="Posts tagged with branching" rel="tag">branching</a>
+                                                <a href="/recipes/tags/index.html#PDF" data-toggle="tooltip" title="Posts tagged with PDF" rel="tag">PDF</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#input" data-toggle="tooltip" title="Posts tagged with input" rel="tag">input</a>
+                                                <a href="/recipes/tags/index.html#distribution function" data-toggle="tooltip" title="Posts tagged with distribution function" rel="tag">distribution function</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#print" data-toggle="tooltip" title="Posts tagged with print" rel="tag">print</a>
+                                                <a href="/recipes/tags/index.html#figure" data-toggle="tooltip" title="Posts tagged with figure" rel="tag">figure</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#string" data-toggle="tooltip" title="Posts tagged with string" rel="tag">string</a>
+                                                <a href="/recipes/tags/index.html#least squares method" data-toggle="tooltip" title="Posts tagged with least squares method" rel="tag">least squares method</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#tuple" data-toggle="tooltip" title="Posts tagged with tuple" rel="tag">tuple</a>
+                                                <a href="/recipes/tags/index.html#line" data-toggle="tooltip" title="Posts tagged with line" rel="tag">line</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#objective function" data-toggle="tooltip" title="Posts tagged with objective function" rel="tag">objective function</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#plot" data-toggle="tooltip" title="Posts tagged with plot" rel="tag">plot</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#probability" data-toggle="tooltip" title="Posts tagged with probability" rel="tag">probability</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#probability density function" data-toggle="tooltip" title="Posts tagged with probability density function" rel="tag">probability density function</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#random number" data-toggle="tooltip" title="Posts tagged with random number" rel="tag">random number</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#regression" data-toggle="tooltip" title="Posts tagged with regression" rel="tag">regression</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#visualization" data-toggle="tooltip" title="Posts tagged with visualization" rel="tag">visualization</a>
                                             </li>
                                             
                                         
@@ -188,51 +223,36 @@
                 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
     
-        <a href="#problem-part-a" style="display:inline-block;">
-            <h2 id="problem-part-a" style="color:red;">
-                Problem Part A
+        <a href="#problem" style="display:inline-block;">
+            <h2 id="problem" style="color:red;">
+                Problem
             </h2>
         </a>
     
 </div>
 
-<p>Write a <strong>single-line</strong> Python code that reads a string containing comma-separated first-name, last-name, and the city in which a person lives from the Python interpreter command line, and simultaneously, in the same line of Python code, removes all white-space characters from the input string, and converts all letters of the input variables to lower-case, and converts the string to a tuple and saves in a tuple <code class="highlighter-rouge">(first,last,city)</code>, such that, for example,</p>
+<p>Consider this dataset, <a href="usaTemperatureHistory.txt" target="_blank">usaTemperatureHistory.txt</a>, which contains the global land temperature of the earth from 1743 to 2013 at every monthly resolution. As stated in the file, temperatures are in Celsius and reported as anomalies relative to the 
+average global land temperature of the Earth between Jan 1951 to Dec 1980.</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enter the first name, last name, and the city of the person (comma-separated): Amir, Shahmoradi, Austin
-</code></pre></div></div>
+<p>First, plot the data contained in the third column of this file (the <strong>Monthly Anomaly</strong> column starting with $-1.131$) against the year and month of the corresponding row in the file. Note that the year and month of the temperature anomaly are given separately in the first two columns. Therefore, to include all of the months of a given year correctly and consistently on a single plot, you will need to define a new value for the x-axis of the plot, where $x$ represents the year plus the month of the record times $1/13$,</p>
 
-<p>would display,</p>
+<script type="math/tex; mode=display">x = \rm{year} + \rm{month} / 13 ~~,</script>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">first</span><span class="p">,</span><span class="n">last</span><span class="p">,</span><span class="n">city</span><span class="p">)</span>
-</code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>('amir', 'shahmoradi', 'austin')
-</code></pre></div></div>
+<p>Note that you will have to write your code in such a way to remove the first 70 lines of text in the file to reach to the data section. The resulting plot should look something like the following,</p>
 
-<p><strong>Hint:</strong><br />
-Use the <code class="highlighter-rouge">input</code> function for this purpose. The output of <code class="highlighter-rouge">input</code> is a string, which can be manipulated repeatedly on the same line, using multiple string methods that you learned about in the previous lectures.</p>
+<figure>
+    <img src="GlobalLandTemperatureAnomaly.png" />
+</figure>
 
-<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
-    
-        <a href="#problem-part-b" style="display:inline-block;">
-            <h2 id="problem-part-b" style="color:red;">
-                Problem Part B
-            </h2>
-        </a>
-    
-</div>
+<p>Clearly, one can see that the global land temperature of the Earth was relatively constant up until around 1880. Afterwards, the global temperature starts to increase consistently over the entire 20th century and beyond (actually, if you look closely, you will notice a bump in the global temperature at around 1950, which can be attributed to the slow-down of the world’s economy during the second world-war). The around 1970, it seems like the pace of global temperature-increase significantly accelerated compared to the past.</p>
 
-<p>The one-line if-expression syntax does not provide a functionality like <code class="highlighter-rouge">elif</code> keyword as in the if-statement syntax. Our goal here is to learn how to convert a Python if-statement containing <code class="highlighter-rouge">elif</code> to a one-line Python expression. Convert the following if-block to a single line if-expression. Modify the if-block inside the following function to one-line if-expression,</p>
+<p>Knowing this, we want to use the data after 1970, up until the most recent recorded temperature in 2013 in this file, to predict what the temperature anomaly of the Earth in the year 2050 will be. By looking at the above plot, it seems plausible that a simple linear regression will give us a good first approximation of the temperature anomaly in 2050. Write a script that fits a line to the temperature data used above from the year 1970 to 2013 and find the parameters of this fit. Then use this fitted line to predict the temperature anomaly of the Earth in 2050. The result of the fitting should be something like the following,</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">dummy</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
-        <span class="n">j</span><span class="o">=</span><span class="mi">0</span>
-    <span class="k">elif</span> <span class="n">i</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
-        <span class="n">j</span><span class="o">=</span><span class="mi">1</span>
-    <span class="k">elif</span> <span class="n">i</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span>
-        <span class="n">j</span><span class="o">=</span><span class="mi">2</span>
-    <span class="k">else</span><span class="p">:</span> <span class="n">j</span> <span class="o">=</span> <span class="s">'j is not in [0,1,2]'</span> 
-    <span class="k">return</span> <span class="n">j</span>
-</code></pre></div></div>
+<figure>
+    <img src="GlobalLandTemperatureAnomaly2050.png" />
+</figure>
+
+<p>where the red line represents the linear-fit to the temperature anomaly data from 1970-2013, and then extrapolates to the temperature anomaly to the year 2050. Interestingly, the predicted temperature-anomaly at year 2050 ($1.9158$) is very close to what the climate scientists have been talking about, for a long time.</p>
 
 
             </div>
@@ -240,11 +260,11 @@ Use the <code class="highlighter-rouge">input</code> function for this purpose. 
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Single-line Python input and string manipulation&quot;%20https://www.cdslab.org/recipes/programming/python-single-line-input-string-manipulation/python-single-line-input-string-manipulation%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Regression: Predicting the global land temperature of the Earth in 2050 from the past data&quot;%20https://www.cdslab.org/recipes/programming/regression-predicting-future-global-land-temperature/regression-predicting-future-global-land-temperature%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/python-single-line-input-string-manipulation/python-single-line-input-string-manipulation"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/regression-predicting-future-global-land-temperature/regression-predicting-future-global-land-temperature"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>

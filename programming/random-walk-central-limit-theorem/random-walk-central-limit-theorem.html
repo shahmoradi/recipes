@@ -3,18 +3,18 @@
 <head>
     
     <meta charset="utf-8">
-<title>SINGLE-LINE PYTHON INPUT AND STRING MANIPULATION &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>UNDERSTANDING THE CENTRAL LIMIT THEOREM VIA RANDOM WALK &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="Python, branching, print, tuple, input, string">
+<meta name="keywords" content="Python, MATLAB, probability, Central Limit Theorem, CLT, histogram, random walk, random, Gaussian, normal, Monte Carlo">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Single-line Python input and string manipulation">
+<meta property="og:title" content="Understanding the Central Limit Theorem via random walk">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/python-single-line-input-string-manipulation/python-single-line-input-string-manipulation">
+<meta property="og:url" content="/recipes/programming/random-walk-central-limit-theorem/random-walk-central-limit-theorem">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/python-single-line-input-string-manipulation/python-single-line-input-string-manipulation">
+<link rel="canonical" href="/recipes/programming/random-walk-central-limit-theorem/random-walk-central-limit-theorem">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,7 +130,7 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/python-single-line-input-string-manipulation/python-single-line-input-string-manipulation">Single-line Python input and string manipulation</a></h2>
+                            <h2><a href="/recipes/programming/random-walk-central-limit-theorem/random-walk-central-limit-theorem">Understanding the Central Limit Theorem via random walk</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
                                 
@@ -142,32 +142,57 @@
                                     
                                         
                                             <li>
+                                                <a href="/recipes/tags/index.html#CLT" data-toggle="tooltip" title="Posts tagged with CLT" rel="tag">CLT</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#Central Limit Theorem" data-toggle="tooltip" title="Posts tagged with Central Limit Theorem" rel="tag">Central Limit Theorem</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#Gaussian" data-toggle="tooltip" title="Posts tagged with Gaussian" rel="tag">Gaussian</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#MATLAB" data-toggle="tooltip" title="Posts tagged with MATLAB" rel="tag">MATLAB</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#Monte Carlo" data-toggle="tooltip" title="Posts tagged with Monte Carlo" rel="tag">Monte Carlo</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
                                                 <a href="/recipes/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#branching" data-toggle="tooltip" title="Posts tagged with branching" rel="tag">branching</a>
+                                                <a href="/recipes/tags/index.html#histogram" data-toggle="tooltip" title="Posts tagged with histogram" rel="tag">histogram</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#input" data-toggle="tooltip" title="Posts tagged with input" rel="tag">input</a>
+                                                <a href="/recipes/tags/index.html#normal" data-toggle="tooltip" title="Posts tagged with normal" rel="tag">normal</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#print" data-toggle="tooltip" title="Posts tagged with print" rel="tag">print</a>
+                                                <a href="/recipes/tags/index.html#probability" data-toggle="tooltip" title="Posts tagged with probability" rel="tag">probability</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#string" data-toggle="tooltip" title="Posts tagged with string" rel="tag">string</a>
+                                                <a href="/recipes/tags/index.html#random" data-toggle="tooltip" title="Posts tagged with random" rel="tag">random</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#tuple" data-toggle="tooltip" title="Posts tagged with tuple" rel="tag">tuple</a>
+                                                <a href="/recipes/tags/index.html#random walk" data-toggle="tooltip" title="Posts tagged with random walk" rel="tag">random walk</a>
                                             </li>
                                             
                                         
@@ -186,6 +211,10 @@
 
             <div style="text-align:left;">
                 
+<p>In probability theory, the central limit theorem (CLT) establishes that, when independent random variables are added together, their properly normalized sum tends toward a normal distribution (informally a “bell curve”) even if the original variables themselves are not normally distributed. To understand this theorem, suppose you generate 100 uniform random numbers and sum them to get a single number. Then you repeat this procedure 1000 times to get 1000 of these sums of 100 uniform random numbers. The CLT theorem implies that if you plot a histogram of the values of these 1000 sums, then the resulting distribution looks very much like the Gaussian bell-shaped function. The larger the number of these sums (for example, 100000 instead of 1000 sums), the more the resulting distribution will look like a Gaussian. Here we want to see this theorem in action.</p>
+
+<p>Consider a random walker, who takes a random step of a <strong>uniformly-distributed random-size</strong> between $[0,1]$, in positive or negative directions on a single staright line. The random walker can repeat these steps for <code class="highlighter-rouge">nstep</code> times, starting from an arbitrary initial starting point.</p>
+
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
     
         <a href="#problem-part-a" style="display:inline-block;">
@@ -196,20 +225,7 @@
     
 </div>
 
-<p>Write a <strong>single-line</strong> Python code that reads a string containing comma-separated first-name, last-name, and the city in which a person lives from the Python interpreter command line, and simultaneously, in the same line of Python code, removes all white-space characters from the input string, and converts all letters of the input variables to lower-case, and converts the string to a tuple and saves in a tuple <code class="highlighter-rouge">(first,last,city)</code>, such that, for example,</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enter the first name, last name, and the city of the person (comma-separated): Amir, Shahmoradi, Austin
-</code></pre></div></div>
-
-<p>would display,</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">first</span><span class="p">,</span><span class="n">last</span><span class="p">,</span><span class="n">city</span><span class="p">)</span>
-</code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>('amir', 'shahmoradi', 'austin')
-</code></pre></div></div>
-
-<p><strong>Hint:</strong><br />
-Use the <code class="highlighter-rouge">input</code> function for this purpose. The output of <code class="highlighter-rouge">input</code> is a string, which can be manipulated repeatedly on the same line, using multiple string methods that you learned about in the previous lectures.</p>
+<p>Write a function with the interface <code class="highlighter-rouge">doRandomWalk(nstep,startPosition)</code>, that takes the number of steps <code class="highlighter-rouge">nstep</code> for a random walk and the <code class="highlighter-rouge">startPosition</code> of the random walk on a straight line, and returns the location of the final step of the random walker.</p>
 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
     
@@ -221,18 +237,35 @@ Use the <code class="highlighter-rouge">input</code> function for this purpose. 
     
 </div>
 
-<p>The one-line if-expression syntax does not provide a functionality like <code class="highlighter-rouge">elif</code> keyword as in the if-statement syntax. Our goal here is to learn how to convert a Python if-statement containing <code class="highlighter-rouge">elif</code> to a one-line Python expression. Convert the following if-block to a single line if-expression. Modify the if-block inside the following function to one-line if-expression,</p>
+<p>Now, write another function with the interface <code class="highlighter-rouge">simulateRandomWalk(nsim,nstep,startPosition)</code> that simulates <code class="highlighter-rouge">nsim</code> number of random-walks, each of which contains <code class="highlighter-rouge">nstep</code> steps and starts at <code class="highlighter-rouge">startPosition</code>. Then, this function calls <code class="highlighter-rouge">doRandomWalk()</code> repeatedly for <code class="highlighter-rouge">nsim</code> times and finally returns a vector of size <code class="highlighter-rouge">nsim</code> containing final locations of all of the <code class="highlighter-rouge">nsim</code> simulated random-walks.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">dummy</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
-        <span class="n">j</span><span class="o">=</span><span class="mi">0</span>
-    <span class="k">elif</span> <span class="n">i</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
-        <span class="n">j</span><span class="o">=</span><span class="mi">1</span>
-    <span class="k">elif</span> <span class="n">i</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span>
-        <span class="n">j</span><span class="o">=</span><span class="mi">2</span>
-    <span class="k">else</span><span class="p">:</span> <span class="n">j</span> <span class="o">=</span> <span class="s">'j is not in [0,1,2]'</span> 
-    <span class="k">return</span> <span class="n">j</span>
-</code></pre></div></div>
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+    
+        <a href="#problem-part-c" style="display:inline-block;">
+            <h2 id="problem-part-c" style="color:red;">
+                Problem Part C
+            </h2>
+        </a>
+    
+</div>
+
+<p>Now write a script that plots the output of <code class="highlighter-rouge">simulateRandomWalk()</code> for</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\rm{nsim}           &=& 10000 \\
+\rm{nstep}          &=& 10 \\
+\rm{startPosition}  &=& -10
+\end{align} %]]></script>
+
+<p>The resulting plot should look like the following,</p>
+
+<figure>
+    <img src="randomWalk1D.png" width="900" />  
+</figure>
+<p><br /></p>
+
+<p>How do you interpret this result? How can uniformly-distributed random final steps end up having a Gaussian bell-shape distribution.</p>
 
 
             </div>
@@ -240,11 +273,11 @@ Use the <code class="highlighter-rouge">input</code> function for this purpose. 
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Single-line Python input and string manipulation&quot;%20https://www.cdslab.org/recipes/programming/python-single-line-input-string-manipulation/python-single-line-input-string-manipulation%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Understanding the Central Limit Theorem via random walk&quot;%20https://www.cdslab.org/recipes/programming/random-walk-central-limit-theorem/random-walk-central-limit-theorem%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/python-single-line-input-string-manipulation/python-single-line-input-string-manipulation"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/random-walk-central-limit-theorem/random-walk-central-limit-theorem"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>

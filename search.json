@@ -1,6 +1,22 @@
 [
 	
 		{
+		  "title"      : "Regression: Predicting the global land temperature of the Earth in 2050 from the past data",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/regression-predicting-future-global-land-temperature/regression-predicting-future-global-land-temperature",
+		  "date"       : "2019-11-01 00:00:00 -0500",
+		  "shortdate"  : "November 01, 2019"
+		} ,
+	
+		{
+		  "title"      : "Understanding the Central Limit Theorem via random walk",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/random-walk-central-limit-theorem/random-walk-central-limit-theorem",
+		  "date"       : "2019-11-01 00:00:00 -0500",
+		  "shortdate"  : "November 01, 2019"
+		} ,
+	
+		{
 		  "title"      : "Finding the maximum value of an array via recursive function calls",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/finding-maximum-value-via-recursive-function/finding-maximum-value-via-recursive-function",

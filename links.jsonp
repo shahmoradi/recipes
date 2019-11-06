@@ -12,6 +12,11 @@ callback([
   } ,
 
   {
+    "text": "Understanding the Central Limit Theorem via random walk",
+    "href": "/recipes/programming/random-walk-central-limit-theorem/random-walk-central-limit-theorem"
+  } ,
+
+  {
     "text": "Time required for cooking a refrigerated egg",
     "href": "/recipes/programming/time-to-cook-frozen-egg/time-to-cook-frozen-egg"
   } ,
@@ -54,6 +59,11 @@ callback([
   {
     "text": "Regression: obtaining the most likely mean and standard deviation of a set of Standard Normally Distributed Random Variables",
     "href": "/recipes/programming/regression-standard-normal-distribution/regression-standard-normal-distribution"
+  } ,
+
+  {
+    "text": "Regression: Predicting the global land temperature of the Earth in 2050 from the past data",
+    "href": "/recipes/programming/regression-predicting-future-global-land-temperature/regression-predicting-future-global-land-temperature"
   } ,
 
   {
