@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2019-11-21T00:25:44-06:00</updated>
+<updated>2019-11-21T00:29:44-06:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -96,7 +96,7 @@
     <uri>https://www.cdslab.org/recipes</uri>
     <email>shahmoradi@utexas.edu</email>
   </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#numpy" term="numpy" /><category scheme="https://www.cdslab.org/recipes/tags/#matplotlib" term="matplotlib" /><category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#Monte%20Carlo" term="Monte Carlo" /><category scheme="https://www.cdslab.org/recipes/tags/#simulation" term="simulation" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#line" term="line" /><category scheme="https://www.cdslab.org/recipes/tags/#figure" term="figure" /><category scheme="https://www.cdslab.org/recipes/tags/#random%20number" term="random number" /><category scheme="https://www.cdslab.org/recipes/tags/#distribution%20function" term="distribution function" /><category scheme="https://www.cdslab.org/recipes/tags/#probability%20density%20function" term="probability density function" /><category scheme="https://www.cdslab.org/recipes/tags/#PDF" term="PDF" /><category scheme="https://www.cdslab.org/recipes/tags/#probability" term="probability" /><category scheme="https://www.cdslab.org/recipes/tags/#Gaussian" term="Gaussian" />
+  <category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#numpy" term="numpy" /><category scheme="https://www.cdslab.org/recipes/tags/#matplotlib" term="matplotlib" /><category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#scikit-learn" term="scikit-learn" /><category scheme="https://www.cdslab.org/recipes/tags/#clustering" term="clustering" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#scatter%20plot" term="scatter plot" /><category scheme="https://www.cdslab.org/recipes/tags/#kmeans" term="kmeans" /><category scheme="https://www.cdslab.org/recipes/tags/#kmeans++" term="kmeans++" /><category scheme="https://www.cdslab.org/recipes/tags/#figure" term="figure" /><category scheme="https://www.cdslab.org/recipes/tags/#random%20number" term="random number" /><category scheme="https://www.cdslab.org/recipes/tags/#pandas" term="pandas" /><category scheme="https://www.cdslab.org/recipes/tags/#read_csv" term="read_csv" />
   <content type="html">
   
     
