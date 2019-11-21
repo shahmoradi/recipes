@@ -152,6 +152,11 @@ callback([
   } ,
 
   {
+    "text": "Kmeans clustering",
+    "href": "/recipes/programming/clustering-kmeans/clustering-kmeans"
+  } ,
+
+  {
     "text": "Integer overflow",
     "href": "/recipes/programming/integer-overflow/integer-overflow"
   } ,

@@ -9,6 +9,14 @@
 		} ,
 	
 		{
+		  "title"      : "Kmeans clustering",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/clustering-kmeans/clustering-kmeans",
+		  "date"       : "2019-11-21 00:00:00 -0600",
+		  "shortdate"  : "November 21, 2019"
+		} ,
+	
+		{
 		  "title"      : "Regression: Predicting the global land temperature of the Earth in 2050 from the past data",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/regression-predicting-future-global-land-temperature/regression-predicting-future-global-land-temperature",
