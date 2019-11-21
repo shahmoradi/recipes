@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2019-11-21T00:29:44-06:00</updated>
+<updated>2019-11-21T14:22:32-06:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -55,7 +55,7 @@
 \frac{1}{\sigma_1\sqrt{2\pi}}\exp\bigg( -\frac{(x-\mu_1)^2}{2\sigma_1^2} \bigg) + 
 \frac{1}{\sigma_2\sqrt{2\pi}}\exp\bigg( -\frac{(x-\mu_2)^2}{2\sigma_2^2} \bigg) ~,&lt;/script&gt;
 
-&lt;p&gt;with the means of the two Gaussian distributions being $[\mu_1,\mu_2]=[-2, 2]$, and standard deviations being $[\mu_1,\mu_2]=[1, 2]$. Now, one way of doing this is to draw a box around this curve, such that the box encompasses the entire curve.&lt;/p&gt;
+&lt;p&gt;with the means of the two Gaussian distributions being $[\mu_1,\mu_2]=[-2, 2]$, and standard deviations being $[\sigma_1,\sigma_2]=[1, 2]$. Now, one way of doing this is to draw a box around this curve, such that the box encompasses the entire curve.&lt;/p&gt;
 
 &lt;figure&gt;
     &lt;img src=&quot;normSumWithRec_2.gif&quot; /&gt;
