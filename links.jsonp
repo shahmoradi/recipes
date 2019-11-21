@@ -112,6 +112,11 @@ callback([
   } ,
 
   {
+    "text": "Monte Carlo sampling of the sum of two Gaussian distributions",
+    "href": "/recipes/programming/monte-carlo-sampling-of-bimodal-gaussian/monte-carlo-sampling-of-bimodal-gaussian"
+  } ,
+
+  {
     "text": "Monte Carlo sampling of distribution functions",
     "href": "/recipes/programming/monte-carlo-sampling-of-distribution-functions/monte-carlo-sampling-of-distribution-functions"
   } ,

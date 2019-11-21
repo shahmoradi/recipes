@@ -7,13 +7,80 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2019-11-14T13:18:40-06:00</updated>
+<updated>2019-11-20T22:39:32-06:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
   <uri>https://www.cdslab.org/recipes/</uri>
   <email>shahmoradi@utexas.edu</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Monte Carlo sampling of the sum of two Gaussian distributions]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/monte-carlo-sampling-of-bimodal-gaussian/monte-carlo-sampling-of-bimodal-gaussian"/>
+  <id>https://www.cdslab.org/recipes/programming/monte-carlo-sampling-of-bimodal-gaussian/monte-carlo-sampling-of-bimodal-gaussian</id>
+  <published>2019-11-21T00:00:00-06:00</published>
+  <updated>2019-11-21T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#numpy" term="numpy" /><category scheme="https://www.cdslab.org/recipes/tags/#matplotlib" term="matplotlib" /><category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#Monte%20Carlo" term="Monte Carlo" /><category scheme="https://www.cdslab.org/recipes/tags/#simulation" term="simulation" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#line" term="line" /><category scheme="https://www.cdslab.org/recipes/tags/#figure" term="figure" /><category scheme="https://www.cdslab.org/recipes/tags/#random%20number" term="random number" /><category scheme="https://www.cdslab.org/recipes/tags/#distribution%20function" term="distribution function" /><category scheme="https://www.cdslab.org/recipes/tags/#probability%20density%20function" term="probability density function" /><category scheme="https://www.cdslab.org/recipes/tags/#PDF" term="PDF" /><category scheme="https://www.cdslab.org/recipes/tags/#probability" term="probability" /><category scheme="https://www.cdslab.org/recipes/tags/#Gaussian" term="Gaussian" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Suppose that you wanted to generate points whose distribution follows the blue curve in the following curve, whose mathematical formulation is known (in the case here, the function is just the sum of two Gaussian distributions),&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;normSum.gif&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The equation describing the above curve is the following,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x|\mu_1,\mu_2,\sigma_1,\sigma_2) = 
+\frac{1}{\sigma_1\sqrt{2\pi}}\exp\bigg( -\frac{(x-\mu_1)^2}{2\sigma_1^2} \bigg) + 
+\frac{1}{\sigma_2\sqrt{2\pi}}\exp\bigg( -\frac{(x-\mu_2)^2}{2\sigma_2^2} \bigg) ~,&lt;/script&gt;
+
+&lt;p&gt;with the means of the two Gaussian distributions being $[\mu_1,\mu_2]=[-2, 2]$, and standard deviations being $[\mu_1,\mu_2]=[1, 2]$. Now, one way of doing this is to draw a box around this curve, such that the box encompasses the entire curve.&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;normSumWithRec_2.gif&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Then, we draw random points from this square and keep only those points that fall beneath this blue curve, like the red points in the following animation.&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;RejSamForever.gif&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;As you see, the base of this square has a width of 20, and its height is 0.5.&lt;/p&gt;
+
+&lt;p&gt;Now, if you plot the histogram of these points, you will see that the distribution of the red points follows closely the blue curve that we wanted to sample.&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;rejSamHistForever.gif&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Now, given the above description, write a script or function that performs this Monte Carlo rejection sampling and computes the area under the two Gaussian distributions. What do you think the result of this integration should be asymptotically?&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/monte-carlo-sampling-of-bimodal-gaussian/monte-carlo-sampling-of-bimodal-gaussian&quot;&gt;Monte Carlo sampling of the sum of two Gaussian distributions&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on November 21, 2019.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -3372,210 +3439,6 @@ Now our goal is to construct this function (let’s name it &lt;code class=&quot
 
   
   &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/regression-standard-normal-distribution/regression-standard-normal-distribution&quot;&gt;Regression: obtaining the most likely mean and standard deviation of a set of Standard Normally Distributed Random Variables&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Reading data from the World Wide Web]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/reading-data-from-web/reading-data-from-web"/>
-  <id>https://www.cdslab.org/recipes/programming/reading-data-from-web/reading-data-from-web</id>
-  <published>2019-07-04T00:00:00-05:00</published>
-  <updated>2019-07-04T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#MATLAB" term="MATLAB" /><category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#web" term="web" /><category scheme="https://www.cdslab.org/recipes/tags/#data%20transfer" term="data transfer" /><category scheme="https://www.cdslab.org/recipes/tags/#IO" term="IO" /><category scheme="https://www.cdslab.org/recipes/tags/#input" term="input" /><category scheme="https://www.cdslab.org/recipes/tags/#output" term="output" /><category scheme="https://www.cdslab.org/recipes/tags/#string" term="string" /><category scheme="https://www.cdslab.org/recipes/tags/#exception" term="exception" /><category scheme="https://www.cdslab.org/recipes/tags/#exception%20handling" term="exception handling" /><category scheme="https://www.cdslab.org/recipes/tags/#raise" term="raise" /><category scheme="https://www.cdslab.org/recipes/tags/#try-catch" term="try-catch" /><category scheme="https://www.cdslab.org/recipes/tags/#try-except" term="try-except" /><category scheme="https://www.cdslab.org/recipes/tags/#scatter%20plot" term="scatter plot" /><category scheme="https://www.cdslab.org/recipes/tags/#urllib" term="urllib" /><category scheme="https://www.cdslab.org/recipes/tags/#HTTPError" term="HTTPError" /><category scheme="https://www.cdslab.org/recipes/tags/#matplotlib" term="matplotlib" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#figure" term="figure" />
-  <content type="html">
-  
-    
-&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-    
-        &lt;a href=&quot;#problem-part-a&quot; style=&quot;display:inline-block;&quot;&gt;
-            &lt;h2 id=&quot;problem-part-a&quot; style=&quot;color:red;&quot;&gt;
-                Problem Part A
-            &lt;/h2&gt;
-        &lt;/a&gt;
-    
-&lt;/div&gt;
-
-&lt;p&gt;Consider the following web-page address &lt;a href=&quot;https://cdslaborg.github.io/DataRepos_SwiftBat/index.html&quot; target=&quot;_blank&quot;&gt;https://cdslaborg.github.io/DataRepos_SwiftBat/index.html&lt;/a&gt;. This is an data table (in HTML language) containing data from the &lt;a href=&quot;https://www.nasa.gov/mission_pages/swift/main&quot; target=&quot;_blank&quot;&gt;NASA Swift satellite&lt;/a&gt;. Each row in this table represents information about a &lt;a href=&quot;https://en.wikipedia.org/wiki/Gamma-ray_burst&quot; target=&quot;_blank&quot;&gt;Gamma-Ray Burst (GRB)&lt;/a&gt; detection that Swift has made in the past years. Now, corresponding to each of the event IDs, there &lt;em&gt;might&lt;/em&gt; exist files that contain some attributes of these events which we wish to plot and understand their behavior against each other.&lt;/p&gt;
-
-&lt;p&gt;For example, for the first event in this table, &lt;code class=&quot;highlighter-rouge&quot;&gt;GRB170406x (00745966)&lt;/code&gt;, there is a data file which is hidden in a directory on &lt;a href=&quot;https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/GRB00745966_ep_flu.txt&quot; target=&quot;_blank&quot;&gt;https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/GRB00745966_ep_flu.txt&lt;/a&gt;. Notice how the event ID (inside paratheses) is inserted into the web address. Now, for each event in the GRB event table, there might exist one such text file hidden on the web directory beginning with &lt;a href=&quot;https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/&quot; target=&quot;_blank&quot;&gt;https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/&lt;/a&gt; (followed by the GRB’s ID) and &lt;code class=&quot;highlighter-rouge&quot;&gt;.txt&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Our goal here is to fetch all these files from the website and save them locally on our computer. Then read their contents one by one and plot the two columns of data in all of these files together on a single plot.&lt;/p&gt;
-
-&lt;p&gt;Write a script named &lt;code class=&quot;highlighter-rouge&quot;&gt;fetchDataFromWeb&lt;/code&gt; in the language of your own choice that uses this web address: &lt;code class=&quot;highlighter-rouge&quot;&gt;https://www.cdslab.org/ICP2017F/homework/5-problems/triggers.txt&lt;/code&gt; to read a list of all GRB events and then writes the entire table of &lt;code class=&quot;highlighter-rouge&quot;&gt;triggers.txt&lt;/code&gt; to a local file with the same name on your device.&lt;/p&gt;
-
-&lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
-    
-    
-    
-    &lt;figure&gt;
-        &lt;a href=&quot;#hint-1-matlab&quot; id=&quot;hint-1-matlab&quot;&gt;
-            &lt;img src=&quot;https://www.cdslab.org/recipes/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
-        &lt;/a&gt;
-        &lt;figcaption&gt;
-            &lt;a href=&quot;https://en.wikipedia.org/wiki/MATLAB&quot; target=&quot;_blank&quot;&gt;
-                MATLAB
-            &lt;/a&gt;
-        &lt;/figcaption&gt;
-    &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p class=&quot;alert alert-success&quot; role=&quot;alert&quot;&gt;&lt;i class=&quot;fa fa-check-square-o&quot;&gt;&lt;/i&gt; &lt;b&gt;Tip:&lt;/b&gt; For this purpose, you will need MATLAB’s built-in function &lt;code class=&quot;highlighter-rouge&quot;&gt;webread()&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-    
-        &lt;a href=&quot;#problem-part-b&quot; style=&quot;display:inline-block;&quot;&gt;
-            &lt;h2 id=&quot;problem-part-b&quot; style=&quot;color:red;&quot;&gt;
-                Problem Part B
-            &lt;/h2&gt;
-        &lt;/a&gt;
-    
-&lt;/div&gt;
-
-&lt;p&gt;Now, add to your script another set of commands that uses the event IDs stored in this file, to generate the corresponding web addresses like,&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/GRB00745966_ep_flu.txt&quot; target=&quot;_blank&quot;&gt;https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/GRB00745966_ep_flu.txt&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Then it uses the generated web address to read the content of the page and store it in a local file on your device with the same name as it is stored on the web page (for example, for the given web page, the filename would be &lt;code class=&quot;highlighter-rouge&quot;&gt;GRB00745966_ep_flu.txt&lt;/code&gt;).&lt;/p&gt;
-
-&lt;p class=&quot;alert alert-danger&quot; role=&quot;alert&quot;&gt;&lt;i class=&quot;fa fa-exclamation-circle&quot;&gt;&lt;/i&gt; &lt;b&gt;Warning:&lt;/b&gt; Some of the web addresses for the given event IDs do not exist. Therefore, you should exception handling constructs to avoid runtime errors in your code that could break your code prematurely.&lt;/p&gt;
-
-&lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
-    
-    
-    
-    &lt;figure&gt;
-        &lt;a href=&quot;#hint-1-python&quot; id=&quot;hint-1-python&quot;&gt;
-            &lt;img src=&quot;https://www.cdslab.org/recipes/images/Python.png&quot; width=&quot;75px&quot; /&gt;
-        &lt;/a&gt;
-        &lt;figcaption&gt;
-            &lt;a href=&quot;https://en.wikipedia.org/wiki/Python_(programming_language)&quot; target=&quot;_blank&quot;&gt;
-                Python
-            &lt;/a&gt;
-        &lt;/figcaption&gt;
-    &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p class=&quot;alert alert-success&quot; role=&quot;alert&quot;&gt;&lt;i class=&quot;fa fa-check-square-o&quot;&gt;&lt;/i&gt; &lt;b&gt;Tip:&lt;/b&gt; For the events for which the web address might not exist, for example,
-&lt;br /&gt;
-&lt;a href=&quot;https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/GRB00680331_ep_flu.txt&quot;&gt;https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/GRB00680331_ep_flu.txt&lt;/a&gt;,
-&lt;br /&gt;
-your script will have to raise a &lt;code class=&quot;highlighter-rouge&quot;&gt;urllib.request.HTTPError&lt;/code&gt; exception. Write your code such that it can smoothly skip these exceptions. &lt;/p&gt;
-
-&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-    
-        &lt;a href=&quot;#problem-part-c&quot; style=&quot;display:inline-block;&quot;&gt;
-            &lt;h2 id=&quot;problem-part-c&quot; style=&quot;color:red;&quot;&gt;
-                Problem Part C
-            &lt;/h2&gt;
-        &lt;/a&gt;
-    
-&lt;/div&gt;
-
-&lt;p&gt;Now write another script named &lt;code class=&quot;highlighter-rouge&quot;&gt;plotDatafromFile&lt;/code&gt;, that reads all of these files in your downloaded set of files one by one and plots the contents of all of them together on a single scatter plot like the following,&lt;/p&gt;
-
-&lt;figure&gt;
-    &lt;img src=&quot;SwiftDataPlot.png&quot; width=&quot;900&quot; /&gt;  
-&lt;/figure&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p class=&quot;alert alert-danger&quot; role=&quot;alert&quot;&gt;&lt;i class=&quot;fa fa-exclamation-circle&quot;&gt;&lt;/i&gt; &lt;b&gt;Warning:&lt;/b&gt; Remember that some of the data files stored on your computer might be empty and some others might have useless data if the data in the second column of the file is larger than $0$ (data in such files have a different scientific meaning than the other ones. The meaning of that goes beyond the scope of what we are trying to do here, but the important point is that we can simply ignore such files if any data value in the second column is larger than $0$). Therefore, you will have to write your script in such a way that it checks for non-emptiness of the files. In other words, you have to make sure that the file does indeed contain some numerical data. Also, your script must check for the negativity of the values in the column of data in each file. Once you have done all of these checks, you will have to do one final manipulation of the data. Note that the values on the second column of the data files are the log of data in natural Neperian base. Therefore, you will have to transform the values in the second column of the files to the original non-log values via the mathematical function &lt;code class=&quot;highlighter-rouge&quot;&gt;exp()&lt;/code&gt; before plotting them (Note that the plot in the figure above is a &lt;strong&gt;log-log plot&lt;/strong&gt; and we want to exactly regenerate it). Also, in order to find out how many files you have plotted in the figure, you will have to define a variable counter which increases by one unit, each time a new non-empty negative-second-column data file is read and plotted (you will have to ignore those files that have positive values in the second columns as well as those files that empty). In the end, you will have to set a title for your plot and label the axes of the plot, and save it to an output file, for example, named &lt;code class=&quot;highlighter-rouge&quot;&gt;SwiftDataPlot.png&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
-    
-    
-    
-    &lt;figure&gt;
-        &lt;a href=&quot;#hint-2-matlab&quot; id=&quot;hint-2-matlab&quot;&gt;
-            &lt;img src=&quot;https://www.cdslab.org/recipes/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
-        &lt;/a&gt;
-        &lt;figcaption&gt;
-            &lt;a href=&quot;https://en.wikipedia.org/wiki/MATLAB&quot; target=&quot;_blank&quot;&gt;
-                MATLAB
-            &lt;/a&gt;
-        &lt;/figcaption&gt;
-    &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p class=&quot;alert alert-success&quot; role=&quot;alert&quot;&gt;&lt;i class=&quot;fa fa-check-square-o&quot;&gt;&lt;/i&gt; &lt;b&gt;Tip:&lt;/b&gt; To read the individual files, you can use MATLAB’s built-in function &lt;code class=&quot;highlighter-rouge&quot;&gt;readtable()&lt;/code&gt;. To make the figure, you can use MATLAB’s built-in function &lt;code class=&quot;highlighter-rouge&quot;&gt;scatter()&lt;/code&gt; or other functions. Use &lt;code class=&quot;highlighter-rouge&quot;&gt;hold on&lt;/code&gt; command to keep the figure open and the same for all individual data reads and plottings. Check for the negativity of the values in the second column of the data files via MATLAB’s built-in function &lt;code class=&quot;highlighter-rouge&quot;&gt;all&lt;/code&gt; in similar manner to the following &lt;code class=&quot;highlighter-rouge&quot;&gt;all(data[:,1]&amp;lt;0.0)&lt;/code&gt; assuming that &lt;code class=&quot;highlighter-rouge&quot;&gt;data&lt;/code&gt; is the variable containing the information that has been read from the file already. To transform the logarithmic data in the second columns of the files, simply use,&lt;br /&gt;&lt;br /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;matlab
-data[:,2] = exp(data[:,2]);
-&lt;/code&gt;
-&lt;br /&gt;&lt;br /&gt;
-as soon as you read the data from each file and then finally, you make a scatter plot of all data using MATLAB &lt;code class=&quot;highlighter-rouge&quot;&gt;scatter()&lt;/code&gt; function. You can use MATLAB’s built-in function &lt;code class=&quot;highlighter-rouge&quot;&gt;saveas()&lt;/code&gt; to save the final figure to an external file.&lt;/p&gt;
-
-&lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
-    
-    
-    
-    &lt;figure&gt;
-        &lt;a href=&quot;#hint-2-python&quot; id=&quot;hint-2-python&quot;&gt;
-            &lt;img src=&quot;https://www.cdslab.org/recipes/images/Python.png&quot; width=&quot;75px&quot; /&gt;
-        &lt;/a&gt;
-        &lt;figcaption&gt;
-            &lt;a href=&quot;https://en.wikipedia.org/wiki/Python_(programming_language)&quot; target=&quot;_blank&quot;&gt;
-                Python
-            &lt;/a&gt;
-        &lt;/figcaption&gt;
-    &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;To achieve this goal, your function should start like the following,&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;plotBatFiles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;figFile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;
-    &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;
-    &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;ax&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gca&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# generate a plot handle
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;ax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set_xlabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Fluence [ ergs/cm^2 ]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# set X axis title
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;ax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set_ylabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Epeak [ keV ]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# set Y axis title
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;ax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0e-8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0e-1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0e4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# set axix limits [xmin, xmax, ymin, ymax]
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'on'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# add all data files to the same plot
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;counter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;# counts the number of events
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;where &lt;code class=&quot;highlighter-rouge&quot;&gt;inPath&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;figFile&lt;/code&gt; are the paths to the directory containing the files, and the name and path to the output figure file. You will have to use &lt;code class=&quot;highlighter-rouge&quot;&gt;os.listdir(inPath)&lt;/code&gt; to get a list of all files in your input directory. Then loop over this list of files, and use only those that end with &lt;code class=&quot;highlighter-rouge&quot;&gt;ep_flu.txt&lt;/code&gt; because that’s how you saved those files, e.g.,&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;file&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;listdir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endswith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ep_flu.txt&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;# rest of your code ... 
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;But now, you have to also make sure that your input data does indeed contain some numerical data because some files do contain anything, although they exist, like &lt;a href=&quot;https://www.cdslab.org/homework/9/GRB00559075_ep_flu.txt&quot; target=&quot;_blank&quot;&gt;this file: ``&lt;/a&gt;. To do so, you will have to perform a test on the content of the file, once you read it as numpy array, like the following,&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loadtxt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;skiprows&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# then plot data
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;the condition &lt;code class=&quot;highlighter-rouge&quot;&gt;all(data[:,1]&amp;lt;0.0)&lt;/code&gt; is rather technical. It makes sure that all values are positive in the second column. Once you have done all these checks, you have to do one final manipulation of data, that is, the data in these files on the second column is the log of data, so have to get the &lt;code class=&quot;highlighter-rouge&quot;&gt;exp()&lt;/code&gt; value to plot it (because the plot is log-log). To do so you can use,&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;and then finally,&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scatter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alpha&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.05&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'r'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;edgecolors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'none'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;which will add the data for the current file to the plot. In the end, you will have to set a title for your plot as well, and save your plot,&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set_title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Plot of Epeak vs. Fluence for {} Swift GRB events'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;savefig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;figFile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Note that the variable &lt;code class=&quot;highlighter-rouge&quot;&gt;counter&lt;/code&gt; contains the total number of events for which the text files exists on the website, &lt;strong&gt;and&lt;/strong&gt; the file contained some data (i.e., was not empty).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Question:&lt;/strong&gt; What does &lt;code class=&quot;highlighter-rouge&quot;&gt;alpha=0.05&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;s=1&lt;/code&gt; do in the following scatter plot command? (Vary their values to see what happens)&lt;/p&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/reading-data-from-web/reading-data-from-web&quot;&gt;Reading data from the World Wide Web&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
 </entry>
 
 </feed>
