@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/regression-simple-least-squares-method/regression-simple-least-squares-method",
+		  "date"       : "2019-12-05 00:00:00 -0600",
+		  "shortdate"  : "December 05, 2019"
+		} ,
+	
+		{
 		  "title"      : "Monte Carlo sampling of the sum of two Gaussian distributions",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/monte-carlo-sampling-of-bimodal-gaussian/monte-carlo-sampling-of-bimodal-gaussian",
@@ -163,7 +171,7 @@
 		{
 		  "title"      : "Regression: obtaining the most likely mean and standard deviation of a set of Standard Normally Distributed Random Variables",
 		  "category"   : "",
-		  "url"        : "/recipes/programming/regression-standard-normal-distribution/regression-standard-normal-distribution",
+		  "url"        : "/recipes/programming/regression-standard-normal-distribution/regression-standard-normal-distribution-Copy",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,

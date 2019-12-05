@@ -57,8 +57,13 @@ callback([
   } ,
 
   {
+    "text": "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables",
+    "href": "/recipes/programming/regression-simple-least-squares-method/regression-simple-least-squares-method"
+  } ,
+
+  {
     "text": "Regression: obtaining the most likely mean and standard deviation of a set of Standard Normally Distributed Random Variables",
-    "href": "/recipes/programming/regression-standard-normal-distribution/regression-standard-normal-distribution"
+    "href": "/recipes/programming/regression-standard-normal-distribution/regression-standard-normal-distribution-Copy"
   } ,
 
   {
