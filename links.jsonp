@@ -162,6 +162,11 @@ callback([
   } ,
 
   {
+    "text": "Intel Parallel Studio installation on Windows Operating Systems",
+    "href": "/recipes/programming/intel-parallel-studio-windows-installation/intel-parallel-studio-windows-installation"
+  } ,
+
+  {
     "text": "Integer overflow",
     "href": "/recipes/programming/integer-overflow/integer-overflow"
   } ,

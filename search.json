@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "Intel Parallel Studio installation on Windows Operating Systems",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/intel-parallel-studio-windows-installation/intel-parallel-studio-windows-installation",
+		  "date"       : "2020-01-01 00:00:00 -0600",
+		  "shortdate"  : "January 01, 2020"
+		} ,
+	
+		{
 		  "title"      : "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/regression-simple-least-squares-method/regression-simple-least-squares-method",
