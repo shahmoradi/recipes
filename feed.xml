@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2020-01-03T03:11:26-06:00</updated>
+<updated>2020-02-16T01:03:22-06:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -74,7 +74,7 @@
     &lt;p&gt;&lt;strong&gt;Download Intel Parallel Studio&lt;/strong&gt; from its &lt;a href=&quot;https://software.intel.com/en-us/parallel-studio-xe/choose-download&quot; target=&quot;_blank&quot;&gt;dedicated website&lt;/a&gt;. But &lt;strong&gt;do not install it yet&lt;/strong&gt;. You will have to first install a recent version of Microsoft Visual Studio.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Download&lt;/strong&gt; the recent version of &lt;strong&gt;Microsoft Visual Studio (MSVS) Community edition&lt;/strong&gt; installer from its [dedicated website](https://visualstudio.microsoft.com/vs/community/](https://software.intel.com/en-us/parallel-studio-xe/choose-download){:target=”_blank”}. The good news is that Microsoft has recently made the community edition of its Visual Studio available to the public, free of charge.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Download&lt;/strong&gt; the recent version of &lt;strong&gt;Microsoft Visual Studio (MSVS) Community edition&lt;/strong&gt; installer from its &lt;a href=&quot;https://visualstudio.microsoft.com/vs/community/&quot; target=&quot;_blank&quot;&gt;dedicated website&lt;/a&gt;. The good news is that Microsoft has recently made the community edition of its Visual Studio available to the public, free of charge.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Run the Microsoft Visual Studio installer&lt;/strong&gt;. Once you see the following prmot window, make sure you &lt;strong&gt;select at least the C++ components to install on your system&lt;/strong&gt; (if you do not want all of the components). This component selection is essential for successful installation of Intel Parallel C++/Fortran compilers,
     &lt;figure&gt;
@@ -89,7 +89,7 @@
      &lt;img src=&quot;intelCMD.png&quot; /&gt;
  &lt;/figure&gt;
   &lt;/li&gt;
-  &lt;li&gt;You can test whether the Intel compilers have been correctly installed by typing &lt;code class=&quot;highlighter-rouge&quot;&gt;ifort&lt;/code&gt; to invoke the Intel Fortran compiler or &lt;code class=&quot;highlighter-rouge&quot;&gt;icpc&lt;/code&gt; to invoke the Intel C++ compiler, as shown in the following screenshot,
+  &lt;li&gt;You can test whether the Intel compilers have been correctly installed by typing &lt;code class=&quot;highlighter-rouge&quot;&gt;ifort&lt;/code&gt; to invoke the Intel Fortran compiler or &lt;code class=&quot;highlighter-rouge&quot;&gt;icl&lt;/code&gt; to invoke the Intel C++ compiler, as shown in the following screenshot,
     &lt;figure&gt;
      &lt;img src=&quot;compilerTest.png&quot; /&gt;
  &lt;/figure&gt;
