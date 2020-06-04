@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2020-02-16T01:03:22-06:00</updated>
+<updated>2020-06-04T03:27:47-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -60,7 +60,7 @@
 &lt;p&gt;Here are the &lt;strong&gt;steps required to take to properly install Intel Parallel Studio on Windows&lt;/strong&gt;:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;First you need to &lt;strong&gt;make sure that you can obtain a valid license from Intel&lt;/strong&gt; to download, install, and successfully use the parallel studio for eternity. Failure to obtain a license means that the software would be accessible for only 30 days of trial usage after the installation. Fortunately, &lt;strong&gt;a valid license can be obtained&lt;/strong&gt; for Intel Parallel Studio in its entirety, &lt;strong&gt;completely free of charge&lt;/strong&gt;, if you belong to one of the following professional groups:&lt;br /&gt;
+  &lt;li&gt;First, you need to &lt;strong&gt;make sure that you can obtain a valid license from Intel&lt;/strong&gt; to download, install, and successfully use the parallel studio for at least one year or perhaps, for eternity. Failure to obtain a license means that the software would be accessible for only 30 days of trial usage after the installation. Fortunately, &lt;strong&gt;a valid license can be obtained&lt;/strong&gt; for Intel Parallel Studio in its entirety, &lt;strong&gt;completely free of charge&lt;/strong&gt;, if you belong to one of the following professional groups:&lt;br /&gt;
  &lt;br /&gt;
     &lt;ol&gt;
       &lt;li&gt;&lt;strong&gt;students&lt;/strong&gt;,&lt;/li&gt;
@@ -76,7 +76,7 @@
   &lt;li&gt;
     &lt;p&gt;&lt;strong&gt;Download&lt;/strong&gt; the recent version of &lt;strong&gt;Microsoft Visual Studio (MSVS) Community edition&lt;/strong&gt; installer from its &lt;a href=&quot;https://visualstudio.microsoft.com/vs/community/&quot; target=&quot;_blank&quot;&gt;dedicated website&lt;/a&gt;. The good news is that Microsoft has recently made the community edition of its Visual Studio available to the public, free of charge.&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Run the Microsoft Visual Studio installer&lt;/strong&gt;. Once you see the following prmot window, make sure you &lt;strong&gt;select at least the C++ components to install on your system&lt;/strong&gt; (if you do not want all of the components). This component selection is essential for successful installation of Intel Parallel C++/Fortran compilers,
+  &lt;li&gt;&lt;strong&gt;Run the Microsoft Visual Studio installer&lt;/strong&gt;. Once you see the following prompt window, make sure you &lt;strong&gt;select at least the C++ components to install on your system&lt;/strong&gt; (if you do not want all of the components). This component selection is essential for successful installation of Intel Parallel C++/Fortran compilers,
     &lt;figure&gt;
      &lt;img src=&quot;community-page-installer.png&quot; /&gt;
  &lt;/figure&gt;
@@ -84,7 +84,7 @@
   &lt;li&gt;
     &lt;p&gt;Once the MSVS has been installed on your system (your system may need a reboot), &lt;strong&gt;run Intel Parallel Studio installer&lt;/strong&gt; and &lt;strong&gt;choose all of the components that you need&lt;/strong&gt;/want to install from Intel Parallel Studio installer window. I recommend installing all of the components as you will often need and use them in the future.&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Your installation is complete&lt;/strong&gt; (you may need a reboot again). You can now access intel compilers and tools from the MSVS application. However, I strongly recommend you to &lt;strong&gt;use Intel’s provided Windows command line environment (CMD)&lt;/strong&gt; that comes with all the Intel tools and their paths predefined in it &lt;strong&gt;to help build your applications on the command line, much like a Linux environment&lt;/strong&gt;. In the long run, you will likely find it more comfortable than the GUI-based MSMV application. You can access this specially-designed Windows CMD from Windows’ Start Menu as shown below,
+  &lt;li&gt;&lt;strong&gt;Your installation is complete&lt;/strong&gt; (you may need a reboot again). You can now access intel compilers and tools from the MSVS application. However, I strongly recommend you to &lt;strong&gt;use Intel’s provided Windows command-line environment (CMD)&lt;/strong&gt; that comes with all the Intel tools and their paths predefined in it &lt;strong&gt;to help build your applications on the command line, much like a Linux environment&lt;/strong&gt;. In the long run, you will likely find it more comfortable than the GUI-based MSMV application. You can access this specially-designed Windows CMD from Windows’ Start Menu as shown below,
     &lt;figure&gt;
      &lt;img src=&quot;intelCMD.png&quot; /&gt;
  &lt;/figure&gt;
