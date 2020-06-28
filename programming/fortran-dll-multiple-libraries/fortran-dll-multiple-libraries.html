@@ -272,7 +272,7 @@
     </figure>
 </div>
 
-<p>Write a main Fortran program that uses the <code class="highlighter-rouge">String_mod</code> compiled as an external DLL library file. The program calls the <code class="highlighter-rouge">replaceStr()</code> function in <code class="highlighter-rouge">String_mod</code> to replace <code class="highlighter-rouge">"FORTRAN"</code> with <code class="highlighter-rouge">"Fortran"</code> in the following sentence,</p>
+<p>Write a main Fortran program that uses the <code class="highlighter-rouge">String_mod</code> compiled as an external DLL library file named <code class="highlighter-rouge">string</code>. The program calls the <code class="highlighter-rouge">replaceStr()</code> function in <code class="highlighter-rouge">String_mod</code> to replace <code class="highlighter-rouge">"FORTRAN"</code> with <code class="highlighter-rouge">"Fortran"</code> in the following sentence,</p>
 
 <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sentence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"FORTRAN is a highly flexible expressive natively-parallel programming language for numerical computing."</span><span class="w">
 </span></code></pre></div></div>
@@ -427,7 +427,7 @@ string.lib
     </figure>
 </div>
 
-<p>Now, write a main Fortran program which calls the <code class="highlighter-rouge">getDistanceSq()</code> function of <code class="highlighter-rouge">Math_mod</code> from the <code class="highlighter-rouge">Math_mod</code> DLL (that you will have to build). Note that this Math_mod will depend on the <code class="highlighter-rouge">string</code> DLL file from the previous problem in the above.</p>
+<p>Now, write a main Fortran program which calls the <code class="highlighter-rouge">getDistanceSq()</code> function of <code class="highlighter-rouge">Math_mod</code> from the <code class="highlighter-rouge">math</code> DLL (that you will have to build). Note that this Math_mod will depend on the <code class="highlighter-rouge">string</code> DLL file from the previous problem in the above.</p>
 
 <div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
 
@@ -622,7 +622,7 @@ math.lib
         <footer class="notepad-site-footer">
     <div class="copyright">
          <!-- <section>Last updated 2020 / 06 / 28</section></br> -->
-         <section>Last updated Sunday, 28 Jun 2020 at 04:42 PM CST</section></br>
+         <section>Last updated Sunday, 28 Jun 2020 at 04:43 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
