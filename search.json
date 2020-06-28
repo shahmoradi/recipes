@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "Making and using multiple Dynamic-Link Libraries (DLL) from within a single executable using the Intel Fortran Compiler on Windows OS",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/fortran-dll-multiple-libraries/fortran-dll-multiple-libraries",
+		  "date"       : "2020-06-28 00:00:00 -0500",
+		  "shortdate"  : "June 28, 2020"
+		} ,
+	
+		{
 		  "title"      : "Intel Parallel Studio installation on Windows Operating Systems",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/intel-parallel-studio-installation-windows/intel-parallel-studio-installation-windows",

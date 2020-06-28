@@ -7,13 +7,363 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2020-06-23T16:20:01-05:00</updated>
+<updated>2020-06-28T16:14:49-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
   <uri>https://www.cdslab.org/recipes/</uri>
   <email>shahmoradi@utexas.edu</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Making and using multiple Dynamic-Link Libraries (DLL) from within a single executable using the Intel Fortran Compiler on Windows OS]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/fortran-dll-multiple-libraries/fortran-dll-multiple-libraries"/>
+  <id>https://www.cdslab.org/recipes/programming/fortran-dll-multiple-libraries/fortran-dll-multiple-libraries</id>
+  <published>2020-06-28T00:00:00-05:00</published>
+  <updated>2020-06-28T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#Fortran" term="Fortran" /><category scheme="https://www.cdslab.org/recipes/tags/#DLL" term="DLL" /><category scheme="https://www.cdslab.org/recipes/tags/#library" term="library" /><category scheme="https://www.cdslab.org/recipes/tags/#dynamic-link%20library" term="dynamic-link library" /><category scheme="https://www.cdslab.org/recipes/tags/#compiler" term="compiler" /><category scheme="https://www.cdslab.org/recipes/tags/#Intel" term="Intel" /><category scheme="https://www.cdslab.org/recipes/tags/#Windows" term="Windows" /><category scheme="https://www.cdslab.org/recipes/tags/#alias" term="alias" /><category scheme="https://www.cdslab.org/recipes/tags/#name%20mangling" term="name mangling" /><category scheme="https://www.cdslab.org/recipes/tags/#DLLIMPORT" term="DLLIMPORT" /><category scheme="https://www.cdslab.org/recipes/tags/#DLLEXPORT" term="DLLEXPORT" /><category scheme="https://www.cdslab.org/recipes/tags/#function" term="function" /><category scheme="https://www.cdslab.org/recipes/tags/#iso_fortran_env" term="iso_fortran_env" /><category scheme="https://www.cdslab.org/recipes/tags/#real64" term="real64" /><category scheme="https://www.cdslab.org/recipes/tags/#int32" term="int32" />
+  <content type="html">
+  
+    
+&lt;p&gt;Consider the following set of Fortran module files:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;Constants_mod.f90&quot;&gt;Constants_mod.f90&lt;/a&gt;,&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;JaggedArray_mod.f90&quot;&gt;JaggedArray_mod.f90&lt;/a&gt;,&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;String_mod.f90&quot;&gt;String_mod.f90&lt;/a&gt;,&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;Math_mod.f90&quot;&gt;Math_mod.f90&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(These files are actually part of the &lt;a href=&quot;https://www.cdslab.org/paramonte&quot; target=&quot;_blank&quot;&gt;ParaMonte library&lt;/a&gt;). These modules depend on each other:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Math_mod&lt;/code&gt; uses &lt;code class=&quot;highlighter-rouge&quot;&gt;Constants_mod&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;String_mod&lt;/code&gt;,&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;String_mod&lt;/code&gt; uses &lt;code class=&quot;highlighter-rouge&quot;&gt;Constants_mod&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;JaggedArray_mod&lt;/code&gt;,&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;JaggedArray_mod&lt;/code&gt; uses &lt;code class=&quot;highlighter-rouge&quot;&gt;Constants_mod&lt;/code&gt;,&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem-part-1-calling-the-string_mod-as-a-dll&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-1-calling-the-string_mod-as-a-dll&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part 1: calling the String_mod as a DLL
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+&lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
+    
+    
+    
+    &lt;figure&gt;
+        &lt;a href=&quot;#1-calling-the-string_mod-as-a-dll-fortran&quot; id=&quot;1-calling-the-string_mod-as-a-dll-fortran&quot;&gt;
+            &lt;img src=&quot;https://www.cdslab.org/recipes/images/Fortran.png&quot; width=&quot;75px&quot; /&gt;
+        &lt;/a&gt;
+        &lt;figcaption&gt;
+            &lt;a href=&quot;https://en.wikipedia.org/wiki/Fortran&quot; target=&quot;_blank&quot;&gt;
+                Fortran
+            &lt;/a&gt;
+        &lt;/figcaption&gt;
+    &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Write a main Fortran program that uses the &lt;code class=&quot;highlighter-rouge&quot;&gt;String_mod&lt;/code&gt; compiled as an external DLL library file. The program calls the &lt;code class=&quot;highlighter-rouge&quot;&gt;replaceStr()&lt;/code&gt; function in &lt;code class=&quot;highlighter-rouge&quot;&gt;String_mod&lt;/code&gt; to replace &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;FORTRAN&quot;&lt;/code&gt; with &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;Fortran&quot;&lt;/code&gt; in the following sentence,&lt;/p&gt;
+
+&lt;div class=&quot;language-fortran highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;FORTRAN is a highly flexible expressive natively-parallel programming language for numerical computing.&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;such that the output of the main program is the following,&lt;/p&gt;
+
+&lt;div class=&quot;language-batch highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;D&lt;/span&gt;:\Dropbox\auxil\codes\Fortran\makeDLL&amp;gt; &lt;span class=&quot;kd&quot;&gt;mainCallString&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.exe&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;Fortran&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;FORTRAN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;highly&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;flexible&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;expressive&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;natively&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;-parallel &lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;programming&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;language&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;numerical&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;computing&lt;/span&gt;.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
+
+    &lt;a href=&quot;#solution-part-1-calling-the-string_mod-as-a-dll&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-1-calling-the-string_mod-as-a-dll&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 1: calling the String_mod as a DLL
+        &lt;/h2&gt;
+    &lt;/a&gt;
+
+&lt;/div&gt;
+&lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
+    
+    
+    
+    &lt;figure&gt;
+        &lt;a href=&quot;#1-calling-the-string_mod-as-a-dll-fortran&quot; id=&quot;1-calling-the-string_mod-as-a-dll-fortran&quot;&gt;
+            &lt;img src=&quot;https://www.cdslab.org/recipes/images/Fortran.png&quot; width=&quot;75px&quot; /&gt;
+        &lt;/a&gt;
+        &lt;figcaption&gt;
+            &lt;a href=&quot;https://en.wikipedia.org/wiki/Fortran&quot; target=&quot;_blank&quot;&gt;
+                Fortran
+            &lt;/a&gt;
+        &lt;/figcaption&gt;
+    &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Here is &lt;a href=&quot;mainCallString.f90&quot; target=&quot;_blank&quot;&gt;an implementation of this Fortran main program&lt;/a&gt;,&lt;/p&gt;
+
+&lt;div class=&quot;language-fortran highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;program&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mainCallString&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;intrinsic&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iso_fortran_env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;only&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;output_unit&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String_mod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;only&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;replaceStr&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;implicit&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;character&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;allocatable&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentenceModified&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;FORTRAN is a highly flexible expressive natively-parallel programming language for numerical computing.&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentenceModified&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;replaceStr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;FORTRAN&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;substitute&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Fortran, not FORTRAN,&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; 
+
+    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;output_unit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;(A)&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentenceModified&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;program&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mainCallString&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;and &lt;a href=&quot;mainCallString.bat&quot; target=&quot;_blank&quot;&gt;here is a Windows Batch script&lt;/a&gt; to compile and link and generate the executable for this program&lt;/p&gt;
+&lt;div class=&quot;language-batch highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;:: silence cmd output&lt;/span&gt;
+@echo &lt;span class=&quot;na&quot;&gt;off&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;setlocal&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;EnableDelayedExpansion&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;REM del *.mod *.obj *.pdb *.ilk *.smod *.lib&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;:: set up the compiler flags&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;REM compiler flags to generate code in debug mode&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;REM SET OPTIMIZATION_FLAGS=/debug:full /CB /Od /standard-semantics /Qinit:snan /Qdiag-error-limit:10 /debug-parameters:all /warn:all,nounused /warn:interfaces /traceback /check:all /check:stack /libs:dll /threads /dbglibs&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;REM compiler flags to generate fast code&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;OPTIMIZATION_FLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;/O&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;/Qipo /fpe&lt;/span&gt;:0 &lt;span class=&quot;na&quot;&gt;/standard-semantics
+
+&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;REM define the preprocessor flag to include the Intel specific directives to export the procedure names&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;FPP_FLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;/fpp /define&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;:DLL&lt;/span&gt;_ENABLED
+
+&lt;span class=&quot;c&quot;&gt;REM DLL library flags&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;LIB_FLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;/libs&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;:dll&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;/threads
+
+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt;.
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt;. &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;Build&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;Script&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;         &lt;span class=&quot;kd&quot;&gt;optimization&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;flags&lt;/span&gt;: &lt;span class=&quot;kd&quot;&gt;OPTIMIZATION_FLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;!OPTIMIZATION_FLAGS!&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt;. &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;Build&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;Script&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;Fortran&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;preprocessor&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;flags&lt;/span&gt;:          &lt;span class=&quot;kd&quot;&gt;FPP_FLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;!FPP_FLAGS!&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt;. &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;Build&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;Script&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;      &lt;span class=&quot;kd&quot;&gt;Fortran&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;flags&lt;/span&gt;:          &lt;span class=&quot;kd&quot;&gt;LIB_FLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;!LIB_FLAGS!&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt;.
+
+&lt;span class=&quot;c&quot;&gt;::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;:: generate executable that used the Math module, which uses the String module&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;REM generate the string dynamic (DLL) library&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;ifort&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;/dll &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;!LIB_FLAGS!&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;!OPTIMIZATION_FLAGS!&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;!FPP_FLAGS!&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;Constants_mod&lt;/span&gt;.f90 &lt;span class=&quot;kd&quot;&gt;JaggedArray_mod&lt;/span&gt;.f90 &lt;span class=&quot;kd&quot;&gt;String_mod&lt;/span&gt;.f90 &lt;span class=&quot;na&quot;&gt;/exe&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;:string&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;REM it is essential to pass the same compiler and library flags as the ones used for compiling the DLL&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;ifort&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;!LIB_FLAGS!&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;!OPTIMIZATION_FLAGS!&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;mainCallString&lt;/span&gt;.f90 &lt;span class=&quot;kd&quot;&gt;string&lt;/span&gt;.lib &lt;span class=&quot;na&quot;&gt;/exe&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;:mainCallString&lt;/span&gt;.exe
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Running this Batch script file on the Windows Intel command prompt, will create an executable named &lt;code class=&quot;highlighter-rouge&quot;&gt;mainCallString.exe&lt;/code&gt; which can be called to print the requested message,&lt;/p&gt;
+
+&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mainCallString.bat
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; -- Build Script -         optimization flags: OPTIMIZATION_FLAGS=/O3 /Qipo /fpe:0 /standard-semantics
+ -- Build Script - Fortran preprocessor flags:          FPP_FLAGS=/fpp /define:DLL_ENABLED
+ -- Build Script -      Fortran library flags:          LIB_FLAGS=/libs:dll /threads
+
+Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
+Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
+
+Microsoft (R) Incremental Linker Version 14.24.28314.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+-out:string.dll
+-dll
+-implib:string.lib
+C:\Users\shahmoradia\AppData\Local\Temp\ipo_3816428.obj
+   Creating library string.lib and object string.exp
+Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
+Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
+
+Microsoft (R) Incremental Linker Version 14.24.28314.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+-out:mainCallString.exe
+-subsystem:console
+C:\Users\shahmoradia\AppData\Local\Temp\ipo_1472013.obj
+string.lib
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mainCallString.exe
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Fortran, not FORTRAN, is a highly flexible expressive natively-parallel programming language for numerical computing.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem-part-2-calling-the-matho_mod-dll-which-depends-on-string_mod-dll&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem-part-2-calling-the-matho_mod-dll-which-depends-on-string_mod-dll&quot; style=&quot;color:red;&quot;&gt;
+                Problem Part 2: calling the Matho_mod DLL which depends on String_mod DLL
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+&lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
+    
+    
+    
+    &lt;figure&gt;
+        &lt;a href=&quot;#problem-2-calling-the-matho_mod-dll-which-depends-on-string_mod-dll-fortran&quot; id=&quot;problem-2-calling-the-matho_mod-dll-which-depends-on-string_mod-dll-fortran&quot;&gt;
+            &lt;img src=&quot;https://www.cdslab.org/recipes/images/Fortran.png&quot; width=&quot;75px&quot; /&gt;
+        &lt;/a&gt;
+        &lt;figcaption&gt;
+            &lt;a href=&quot;https://en.wikipedia.org/wiki/Fortran&quot; target=&quot;_blank&quot;&gt;
+                Fortran
+            &lt;/a&gt;
+        &lt;/figcaption&gt;
+    &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now, write a main Fortran program which calls the &lt;code class=&quot;highlighter-rouge&quot;&gt;getDistanceSq()&lt;/code&gt; function of &lt;code class=&quot;highlighter-rouge&quot;&gt;Math_mod&lt;/code&gt; from the &lt;code class=&quot;highlighter-rouge&quot;&gt;Math_mod&lt;/code&gt; DLL (that you will have to build). Note that this Math_mod will depend on the &lt;code class=&quot;highlighter-rouge&quot;&gt;string&lt;/code&gt; DLL file from the previous problem in the above.&lt;/p&gt;
+
+&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
+
+    &lt;a href=&quot;#solution-part-2-calling-the-matho_mod-dll-which-depends-on-string_mod-dll&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution-part-2-calling-the-matho_mod-dll-which-depends-on-string_mod-dll&quot; style=&quot;color:blue;&quot;&gt;
+            Solution Part 2: calling the Matho_mod DLL which depends on String_mod DLL
+        &lt;/h2&gt;
+    &lt;/a&gt;
+
+&lt;/div&gt;
+&lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
+    
+    
+    
+    &lt;figure&gt;
+        &lt;a href=&quot;#solution-2-calling-the-matho_mod-dll-which-depends-on-string_mod-dll-fortran&quot; id=&quot;solution-2-calling-the-matho_mod-dll-which-depends-on-string_mod-dll-fortran&quot;&gt;
+            &lt;img src=&quot;https://www.cdslab.org/recipes/images/Fortran.png&quot; width=&quot;75px&quot; /&gt;
+        &lt;/a&gt;
+        &lt;figcaption&gt;
+            &lt;a href=&quot;https://en.wikipedia.org/wiki/Fortran&quot; target=&quot;_blank&quot;&gt;
+                Fortran
+            &lt;/a&gt;
+        &lt;/figcaption&gt;
+    &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Here is &lt;a href=&quot;mainCallMath.f90&quot; target=&quot;_blank&quot;&gt;an implementation of this Fortran main program&lt;/a&gt;,&lt;/p&gt;
+
+&lt;div class=&quot;language-fortran highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;program&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mainCallMath&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;intrinsic&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iso_fortran_env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;only&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;output_unit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IK&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;int32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RK&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;real64&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Math_mod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;only&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getDistanceSq&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;implicit&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;integer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IK&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ndim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;real&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RK&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;allocatable&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;point1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;point2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;character&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;allocatable&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentenceModified&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;real&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RK&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distanceSq&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ndim&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3_IK&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;point1&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0_IK&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ndim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;point2&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ndim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! call Math module from the DLL string&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distanceSq&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getDistanceSq&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nd&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ndim&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;point1&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;point1&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;point2&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;point2&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;program&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mainCallMath&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;and &lt;a href=&quot;mainCallMath.bat&quot; target=&quot;_blank&quot;&gt;here is a Windows Batch script&lt;/a&gt; to compile and link and generate the executable for this program&lt;/p&gt;
+&lt;div class=&quot;language-batch highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;:: silence cmd output&lt;/span&gt;
+@echo &lt;span class=&quot;na&quot;&gt;off&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;setlocal&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;EnableDelayedExpansion&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;REM del *.mod *.obj *.pdb *.ilk *.smod *.lib&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;:: set up the compiler flags&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;REM compiler flags to generate code in debug mode&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;REM SET OPTIMIZATION_FLAGS=/debug:full /CB /Od /standard-semantics /Qinit:snan /Qdiag-error-limit:10 /debug-parameters:all /warn:all,nounused /warn:interfaces /traceback /check:all /check:stack /libs:dll /threads /dbglibs&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;REM compiler flags to generate fast code&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;OPTIMIZATION_FLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;/O&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;/Qipo /fpe&lt;/span&gt;:0 &lt;span class=&quot;na&quot;&gt;/standard-semantics
+
+&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;REM define the preprocessor flag to include the Intel specific directives to export the procedure names&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;FPP_FLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;/fpp /define&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;:DLL&lt;/span&gt;_ENABLED
+
+&lt;span class=&quot;c&quot;&gt;REM DLL library flags&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;LIB_FLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;/libs&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;:dll&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;/threads
+
+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt;.
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt;. &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;Build&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;Script&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;         &lt;span class=&quot;kd&quot;&gt;optimization&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;flags&lt;/span&gt;: &lt;span class=&quot;kd&quot;&gt;OPTIMIZATION_FLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;!OPTIMIZATION_FLAGS!&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt;. &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;Build&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;Script&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;Fortran&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;preprocessor&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;flags&lt;/span&gt;:          &lt;span class=&quot;kd&quot;&gt;FPP_FLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;!FPP_FLAGS!&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt;. &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;Build&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;Script&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;      &lt;span class=&quot;kd&quot;&gt;Fortran&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;flags&lt;/span&gt;:          &lt;span class=&quot;kd&quot;&gt;LIB_FLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;!LIB_FLAGS!&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt;.
+
+&lt;span class=&quot;c&quot;&gt;::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;:: generate executable that used the Math module, which uses the String module&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;REM generate the string dynamic (DLL) library&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;ifort&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;/dll &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;!LIB_FLAGS!&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;!OPTIMIZATION_FLAGS!&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;!FPP_FLAGS!&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;Constants_mod&lt;/span&gt;.f90 &lt;span class=&quot;kd&quot;&gt;Math_mod&lt;/span&gt;.f90 &lt;span class=&quot;kd&quot;&gt;string&lt;/span&gt;.lib &lt;span class=&quot;na&quot;&gt;/exe&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;:math&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;REM it is essential to pass the same compiler and library flags as the ones used for compiling the DLL&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;ifort&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;!LIB_FLAGS!&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;!OPTIMIZATION_FLAGS!&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;mainCallMath&lt;/span&gt;.f90 &lt;span class=&quot;kd&quot;&gt;math&lt;/span&gt;.lib &lt;span class=&quot;na&quot;&gt;/exe&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;:mainCallMath&lt;/span&gt;.exe
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Running this Batch script file on the Windows Intel command prompt, will create an executable named &lt;code class=&quot;highlighter-rouge&quot;&gt;mainCallMath.exe&lt;/code&gt; which can be called to print the requested message,&lt;/p&gt;
+
+&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mainCallMath.bat
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; -- Build Script -         optimization flags: OPTIMIZATION_FLAGS=/O3 /Qipo /fpe:0 /standard-semantics
+ -- Build Script - Fortran preprocessor flags:          FPP_FLAGS=/fpp /define:DLL_ENABLED
+ -- Build Script -      Fortran library flags:          LIB_FLAGS=/libs:dll /threads
+
+Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
+Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
+
+Microsoft (R) Incremental Linker Version 14.24.28314.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+-out:math.dll
+-dll
+-implib:math.lib
+C:\Users\shahmoradia\AppData\Local\Temp\ipo_2920424.obj
+string.lib
+   Creating library math.lib and object math.exp
+Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
+Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
+
+Microsoft (R) Incremental Linker Version 14.24.28314.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+-out:mainCallMath.exe
+-subsystem:console
+C:\Users\shahmoradia\AppData\Local\Temp\ipo_1954413.obj
+math.lib
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mainCallMath.exe
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;The distance between the two 3-dimensional points is 14.00000000000000
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/fortran-dll-multiple-libraries/fortran-dll-multiple-libraries&quot;&gt;Making and using multiple Dynamic-Link Libraries (DLL) from within a single executable using the Intel Fortran Compiler on Windows OS&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on June 28, 2020.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -3491,67 +3841,6 @@ nothing to commit, working tree clean
 
   
   &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/string-concatenation-using-for-loop/string-concatenation-using-for-loop&quot;&gt;String concatenation using for-loop&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[String concatenation using for-loop I]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/string-concatenation-using-for-loop-i/string-concatenation-using-for-loop-I"/>
-  <id>https://www.cdslab.org/recipes/programming/string-concatenation-using-for-loop-i/string-concatenation-using-for-loop-I</id>
-  <published>2019-07-04T00:00:00-05:00</published>
-  <updated>2019-07-04T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#MATLAB" term="MATLAB" /><category scheme="https://www.cdslab.org/recipes/tags/#string" term="string" /><category scheme="https://www.cdslab.org/recipes/tags/#concatenation" term="concatenation" /><category scheme="https://www.cdslab.org/recipes/tags/#for-loop" term="for-loop" /><category scheme="https://www.cdslab.org/recipes/tags/#loop" term="loop" /><category scheme="https://www.cdslab.org/recipes/tags/#cell%20array" term="cell array" /><category scheme="https://www.cdslab.org/recipes/tags/#list" term="list" />
-  <content type="html">
-  
-    
-&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-    
-        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
-            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
-                Problem
-            &lt;/h2&gt;
-        &lt;/a&gt;
-    
-&lt;/div&gt;
-
-&lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
-    
-    
-    
-    &lt;figure&gt;
-        &lt;a href=&quot;#problem-matlab&quot; id=&quot;problem-matlab&quot;&gt;
-            &lt;img src=&quot;https://www.cdslab.org/recipes/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
-        &lt;/a&gt;
-        &lt;figcaption&gt;
-            &lt;a href=&quot;https://en.wikipedia.org/wiki/MATLAB&quot; target=&quot;_blank&quot;&gt;
-                MATLAB
-            &lt;/a&gt;
-        &lt;/figcaption&gt;
-    &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Consider the following nested cell vector,&lt;/p&gt;
-
-&lt;div class=&quot;language-matlab highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'M'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'A'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'T'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'L'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'A'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'B'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'i'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'s'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'s'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'t'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'r'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'n'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'g'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'e'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;', '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'b'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'u'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'t'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'p'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'o'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'p'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'u'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'l'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'r'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'p'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'r'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'o'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'g'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'r'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'m'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'m'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'i'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'n'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'g'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'l'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'n'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'g'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'u'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'g'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'e'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Write a MATLAB script &lt;code class=&quot;highlighter-rouge&quot;&gt;extractLetter.m&lt;/code&gt; that uses for-loop to extract all the letters in the variable list and finally prints them all as a single string like the following,&lt;/p&gt;
-
-&lt;div class=&quot;language-matlab highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;extractLetter&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;MATLAB is a strange, but a very capable popular programming language.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/string-concatenation-using-for-loop-i/string-concatenation-using-for-loop-I&quot;&gt;String concatenation using for-loop I&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
 </entry>
 
 </feed>

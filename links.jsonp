@@ -142,6 +142,11 @@ callback([
   } ,
 
   {
+    "text": "Making and using multiple Dynamic-Link Libraries (DLL) from within a single executable using the Intel Fortran Compiler on Windows OS",
+    "href": "/recipes/programming/fortran-dll-multiple-libraries/fortran-dll-multiple-libraries"
+  } ,
+
+  {
     "text": "Making and using a Dynamic-Link Library (DLL) from a Fortran procedure using Intel Fortran Compiler on Windows OS: getSquare()",
     "href": "/recipes/programming/fortran-dll-getsquare/fortran-dll-getsquare"
   } ,
