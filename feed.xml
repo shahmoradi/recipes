@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2020-06-28T16:14:49-05:00</updated>
+<updated>2020-06-28T16:42:27-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -81,7 +81,7 @@
 
 &lt;p&gt;such that the output of the main program is the following,&lt;/p&gt;
 
-&lt;div class=&quot;language-batch highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;D&lt;/span&gt;:\Dropbox\auxil\codes\Fortran\makeDLL&amp;gt; &lt;span class=&quot;kd&quot;&gt;mainCallString&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.exe&lt;/span&gt;
+&lt;div class=&quot;language-batch highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;mainCallString&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.exe&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;Fortran&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;FORTRAN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;highly&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;flexible&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;expressive&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;natively&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;-parallel &lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;programming&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;language&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;numerical&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;computing&lt;/span&gt;.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
