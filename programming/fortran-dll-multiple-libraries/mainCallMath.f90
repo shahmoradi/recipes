@@ -5,14 +5,13 @@ program mainCallMath
     implicit none
     integer(IK) :: ndim, i
     real(RK), allocatable :: point1(:), point2(:)
-    character(:), allocatable :: sentence, sentenceModified
     real(RK) :: distanceSq
 
     ndim = 3_IK
     point1 = [ (0_IK, i = 1, ndim)]
     point2 = [ (i, i = 1, ndim)]
 
-    ! call Math module from the DLL string
+    ! call Math module from the math DLL library 
 
     distanceSq = getDistanceSq  ( nd = ndim &
                                 , point1 = point1 &

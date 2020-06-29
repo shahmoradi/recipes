@@ -357,13 +357,15 @@
 <span class="nb">echo</span>.
 
 <span class="c">::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::</span>
-<span class="c">:: generate executable that used the Math module, which uses the String module</span>
+<span class="c">:: generate executable that uses the String module</span>
 <span class="c">::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::</span>
 
 <span class="c">REM generate the string dynamic (DLL) library</span>
+
 <span class="kd">ifort</span> <span class="na">/dll </span><span class="nv">!LIB_FLAGS!</span> <span class="nv">!OPTIMIZATION_FLAGS!</span> <span class="nv">!FPP_FLAGS!</span> <span class="kd">Constants_mod</span>.f90 <span class="kd">JaggedArray_mod</span>.f90 <span class="kd">String_mod</span>.f90 <span class="na">/exe</span><span class="nl">:string</span>
 
 <span class="c">REM it is essential to pass the same compiler and library flags as the ones used for compiling the DLL</span>
+
 <span class="kd">ifort</span> <span class="nv">!LIB_FLAGS!</span> <span class="nv">!OPTIMIZATION_FLAGS!</span> <span class="kd">mainCallString</span>.f90 <span class="kd">string</span>.lib <span class="na">/exe</span><span class="nl">:mainCallString</span>.exe
 </code></pre></div></div>
 
@@ -464,14 +466,13 @@ string.lib
     </span><span class="k">implicit</span><span class="w"> </span><span class="k">none</span><span class="w">
     </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">)</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">ndim</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w">
     </span><span class="kt">real</span><span class="p">(</span><span class="n">RK</span><span class="p">),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">point1</span><span class="p">(:),</span><span class="w"> </span><span class="n">point2</span><span class="p">(:)</span><span class="w">
-    </span><span class="kt">character</span><span class="p">(:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">sentence</span><span class="p">,</span><span class="w"> </span><span class="n">sentenceModified</span><span class="w">
     </span><span class="kt">real</span><span class="p">(</span><span class="n">RK</span><span class="p">)</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">distanceSq</span><span class="w">
 
     </span><span class="n">ndim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3_IK</span><span class="w">
     </span><span class="n">point1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">(</span><span class="mi">0_IK</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">ndim</span><span class="p">)]</span><span class="w">
     </span><span class="n">point2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">ndim</span><span class="p">)]</span><span class="w">
 
-    </span><span class="c1">! call Math module from the DLL string</span><span class="w">
+    </span><span class="c1">! call Math module from the math DLL library </span><span class="w">
 
     </span><span class="n">distanceSq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getDistanceSq</span><span class="w">  </span><span class="p">(</span><span class="w"> </span><span class="n">nd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ndim</span><span class="w"> </span><span class="p">&amp;</span><span class="w">
                                 </span><span class="p">,</span><span class="w"> </span><span class="n">point1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">point1</span><span class="w"> </span><span class="p">&amp;</span><span class="w">
@@ -512,13 +513,15 @@ string.lib
 <span class="nb">echo</span>.
 
 <span class="c">::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::</span>
-<span class="c">:: generate executable that used the Math module, which uses the String module</span>
+<span class="c">:: generate executable that uses the Math module, which uses the String module</span>
 <span class="c">::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::</span>
 
-<span class="c">REM generate the string dynamic (DLL) library</span>
+<span class="c">REM generate the math dynamic (DLL) library</span>
+
 <span class="kd">ifort</span> <span class="na">/dll </span><span class="nv">!LIB_FLAGS!</span> <span class="nv">!OPTIMIZATION_FLAGS!</span> <span class="nv">!FPP_FLAGS!</span> <span class="kd">Constants_mod</span>.f90 <span class="kd">Math_mod</span>.f90 <span class="kd">string</span>.lib <span class="na">/exe</span><span class="nl">:math</span>
 
 <span class="c">REM it is essential to pass the same compiler and library flags as the ones used for compiling the DLL</span>
+
 <span class="kd">ifort</span> <span class="nv">!LIB_FLAGS!</span> <span class="nv">!OPTIMIZATION_FLAGS!</span> <span class="kd">mainCallMath</span>.f90 <span class="kd">math</span>.lib <span class="na">/exe</span><span class="nl">:mainCallMath</span>.exe
 </code></pre></div></div>
 
@@ -623,7 +626,7 @@ math.lib
         <footer class="notepad-site-footer">
     <div class="copyright">
          <!-- <section>Last updated 2020 / 06 / 28</section></br> -->
-         <section>Last updated Sunday, 28 Jun 2020 at 04:47 PM CST</section></br>
+         <section>Last updated Sunday, 28 Jun 2020 at 09:49 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

@@ -28,11 +28,13 @@ echo. -- Build Script -      Fortran library flags:          LIB_FLAGS=!LIB_FLAG
 echo.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-:: generate executable that used the Math module, which uses the String module
+:: generate executable that uses the String module
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 REM generate the string dynamic (DLL) library
+
 ifort /dll !LIB_FLAGS! !OPTIMIZATION_FLAGS! !FPP_FLAGS! Constants_mod.f90 JaggedArray_mod.f90 String_mod.f90 /exe:string
 
 REM it is essential to pass the same compiler and library flags as the ones used for compiling the DLL
+
 ifort !LIB_FLAGS! !OPTIMIZATION_FLAGS! mainCallString.f90 string.lib /exe:mainCallString.exe

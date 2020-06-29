@@ -46,7 +46,7 @@ module Constants_mod
 
     implicit none
 
-    ! Constants for comutational accuracy
+    ! Constants for computational accuracy
 
     integer     , parameter :: SPR = real32                                             ! single precision real kind
     integer     , parameter :: DPR = real64                                             ! double precision real kind
@@ -102,24 +102,6 @@ module Constants_mod
   
     type(NullType), protected :: NullVal
 
-    ! Physical constants
-
-    real(RK), parameter :: ERG2KEV = 6.241509125883258e8_RK                     ! 1 (erg) = ERG2KEV (keV)
-    real(RK), parameter :: KEV2ERG = 1.60217662080000e-9_RK                     ! 1 (keV) = KEV2ERG (erg)
-    real(RK), parameter :: LOG_ERG2KEV = log(ERG2KEV)                           ! 1 (erg) = ERG2KEV (keV)
-    real(RK), parameter :: LOG_KEV2ERG = log(KEV2ERG)                           ! 1 (keV) = KEV2ERG (erg)
-
-    ! Cosmological constants
-
-    !real(RK), parameter :: LIGHT_SPEED = 3.e5_RK                                ! LIGHT_SPEED is the speed of light (Km/s).
-    !real(RK), parameter :: HUBBLE_TIME_GYRS = 13.8_RK		                     ! hubble time (liddle 2003, page 57) in units of gyrs
-    !real(RK), parameter :: HUBBLE_CONST = 7.1e1_RK                              ! HUBBLE_CONST is the Hubble constant in units of km/s/MPc.
-    !real(RK), parameter :: LS2HC = LIGHT_SPEED / HUBBLE_CONST                   ! the speed of light in units of km/s divided by the Hubble constant.
-    !real(RK), parameter :: MPC2CM = 3.09e24_RK                                  ! 1 Mega Parsec = MPC2CM centimeters.
-    !real(RK), parameter :: LOG10MPC2CMSQ4PI = log10(4._RK*PI) + 2*log10(MPC2CM) ! Log10(MPC2CM centimeters.
-    !real(RK), parameter :: OMEGA_DE = 0.7_RK                                    ! Dark Energy density.
-    !real(RK), parameter :: OMEGA_DM = 0.3_RK                                    ! Dark Matter density.
-
     character(len=1), parameter :: CARRIAGE_RETURN = achar(13)
     character(len=1), parameter :: ESCAPE = achar(27)
     character(len=1), parameter :: CLOCK_TICK(4) = [ "|" , "/" , "-" , "\" ]
@@ -154,20 +136,6 @@ module Constants_mod
 
     type(FileExt_type)  , parameter :: FILE_EXT = FileExt_type()
     type(FileType_type) , parameter :: FILE_TYPE = FileType_type()
-
-!***********************************************************************************************************************************
-! ParaMonte methods
-!***********************************************************************************************************************************
-
-    type, private       :: ParaMonteSamplingMethod_type
-        integer(IK)     :: count = 4_IK
-        character(8)    :: ParaDRAM = "ParaDRAM"
-        character(8)    :: ParaHDMC = "ParaHDMC"
-        character(8)    :: ParaTemp = "ParaTemp"
-        character(8)    :: ParaNest = "ParaNest"
-    end type ParaMonteSamplingMethod_type
-
-    type(ParaMonteSamplingMethod_type), parameter :: PMSM = ParaMonteSamplingMethod_type()
 
 !***********************************************************************************************************************************
 !***********************************************************************************************************************************

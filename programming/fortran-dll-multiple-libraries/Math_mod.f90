@@ -69,7 +69,6 @@ contains
 !***********************************************************************************************************************************
 !***********************************************************************************************************************************
 
-    ! returns the correlation coefficient (-1<corCoef<1) corresponding to the input Fisher z-transformation.
     function getDistanceSq(nd,Point1,Point2) result(distanceSq)
 #if defined DLL_ENABLED && !defined CFI_ENABLED
         !DEC$ ATTRIBUTES DLLEXPORT :: getDistanceSq

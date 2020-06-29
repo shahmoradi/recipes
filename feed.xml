@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2020-06-28T16:47:55-05:00</updated>
+<updated>2020-06-28T21:49:26-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -159,13 +159,15 @@
 &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt;.
 
 &lt;span class=&quot;c&quot;&gt;::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;:: generate executable that used the Math module, which uses the String module&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;:: generate executable that uses the String module&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::&lt;/span&gt;
 
 &lt;span class=&quot;c&quot;&gt;REM generate the string dynamic (DLL) library&lt;/span&gt;
+
 &lt;span class=&quot;kd&quot;&gt;ifort&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;/dll &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;!LIB_FLAGS!&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;!OPTIMIZATION_FLAGS!&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;!FPP_FLAGS!&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;Constants_mod&lt;/span&gt;.f90 &lt;span class=&quot;kd&quot;&gt;JaggedArray_mod&lt;/span&gt;.f90 &lt;span class=&quot;kd&quot;&gt;String_mod&lt;/span&gt;.f90 &lt;span class=&quot;na&quot;&gt;/exe&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;:string&lt;/span&gt;
 
 &lt;span class=&quot;c&quot;&gt;REM it is essential to pass the same compiler and library flags as the ones used for compiling the DLL&lt;/span&gt;
+
 &lt;span class=&quot;kd&quot;&gt;ifort&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;!LIB_FLAGS!&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;!OPTIMIZATION_FLAGS!&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;mainCallString&lt;/span&gt;.f90 &lt;span class=&quot;kd&quot;&gt;string&lt;/span&gt;.lib &lt;span class=&quot;na&quot;&gt;/exe&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;:mainCallString&lt;/span&gt;.exe
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -266,14 +268,13 @@ string.lib
     &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;implicit&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
     &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;integer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IK&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ndim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
     &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;real&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RK&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;allocatable&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;point1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;point2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;character&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;allocatable&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentenceModified&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
     &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;real&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RK&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distanceSq&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 
     &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ndim&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3_IK&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
     &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;point1&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0_IK&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ndim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
     &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;point2&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ndim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 
-    &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! call Math module from the DLL string&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! call Math module from the math DLL library &lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 
     &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distanceSq&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getDistanceSq&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nd&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ndim&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
                                 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;point1&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;point1&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
@@ -314,13 +315,15 @@ string.lib
 &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt;.
 
 &lt;span class=&quot;c&quot;&gt;::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;:: generate executable that used the Math module, which uses the String module&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;:: generate executable that uses the Math module, which uses the String module&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::&lt;/span&gt;
 
-&lt;span class=&quot;c&quot;&gt;REM generate the string dynamic (DLL) library&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;REM generate the math dynamic (DLL) library&lt;/span&gt;
+
 &lt;span class=&quot;kd&quot;&gt;ifort&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;/dll &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;!LIB_FLAGS!&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;!OPTIMIZATION_FLAGS!&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;!FPP_FLAGS!&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;Constants_mod&lt;/span&gt;.f90 &lt;span class=&quot;kd&quot;&gt;Math_mod&lt;/span&gt;.f90 &lt;span class=&quot;kd&quot;&gt;string&lt;/span&gt;.lib &lt;span class=&quot;na&quot;&gt;/exe&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;:math&lt;/span&gt;
 
 &lt;span class=&quot;c&quot;&gt;REM it is essential to pass the same compiler and library flags as the ones used for compiling the DLL&lt;/span&gt;
+
 &lt;span class=&quot;kd&quot;&gt;ifort&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;!LIB_FLAGS!&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;!OPTIMIZATION_FLAGS!&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;mainCallMath&lt;/span&gt;.f90 &lt;span class=&quot;kd&quot;&gt;math&lt;/span&gt;.lib &lt;span class=&quot;na&quot;&gt;/exe&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;:mainCallMath&lt;/span&gt;.exe
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
