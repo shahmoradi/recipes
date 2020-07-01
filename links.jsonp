@@ -182,6 +182,11 @@ callback([
   } ,
 
   {
+    "text": "Implementing an integration problem via an integrand object",
+    "href": "/recipes/programming/oop-integration-simpson/oop-integration-simpson"
+  } ,
+
+  {
     "text": "Impact of round-off errors on numerical computations",
     "href": "/recipes/programming/roundoff-error-paradox/roundoff-error-paradox"
   } ,

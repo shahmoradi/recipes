@@ -268,11 +268,11 @@
 
 <p>Consider the following web-page address <a href="https://cdslaborg.github.io/DataRepos_SwiftBat/index.html" target="_blank">https://cdslaborg.github.io/DataRepos_SwiftBat/index.html</a>. This is an data table (in HTML language) containing data from the <a href="https://www.nasa.gov/mission_pages/swift/main" target="_blank">NASA Swift satellite</a>. Each row in this table represents information about a <a href="https://en.wikipedia.org/wiki/Gamma-ray_burst" target="_blank">Gamma-Ray Burst (GRB)</a> detection that Swift has made in the past years. Now, corresponding to each of the event IDs, there <em>might</em> exist files that contain some attributes of these events which we wish to plot and understand their behavior against each other.</p>
 
-<p>For example, for the first event in this table, <code class="highlighter-rouge">GRB170406x (00745966)</code>, there is a data file which is hidden in a directory on <a href="https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/GRB00745966_ep_flu.txt" target="_blank">https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/GRB00745966_ep_flu.txt</a>. Notice how the event ID (inside paratheses) is inserted into the web address. Now, for each event in the GRB event table, there might exist one such text file hidden on the web directory beginning with <a href="https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/" target="_blank">https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/</a> (followed by the GRB’s ID) and <code class="highlighter-rouge">.txt</code>.</p>
+<p>For example, for the first event in this table, <code class="highlighter-rouge">GRB170406x (00745966)</code>, there is a data file which is hidden in a directory on <a href="https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/GRB00745966_ep_flu.txt" target="_blank">https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/GRB00745966_ep_flu.txt</a>. Notice how the event ID (inside paratheses) is inserted into the web address. Now, for each event in the GRB event table, there might exist one such text file hidden on the web directory beginning with <code class="highlighter-rouge">https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/</code> (followed by the GRB’s ID) and <code class="highlighter-rouge">.txt</code>.</p>
 
 <p>Our goal here is to fetch all these files from the website and save them locally on our computer. Then read their contents one by one and plot the two columns of data in all of these files together on a single plot.</p>
 
-<p>Write a script named <code class="highlighter-rouge">fetchDataFromWeb</code> in the language of your own choice that uses this web address: <code class="highlighter-rouge">https://www.cdslab.org/ICP2017F/homework/5-problems/triggers.txt</code> to read a list of all GRB events and then writes the entire table of <code class="highlighter-rouge">triggers.txt</code> to a local file with the same name on your device.</p>
+<p>Write a script named <code class="highlighter-rouge">fetchDataFromWeb</code> in the language of your own choice that uses this web address: <code class="highlighter-rouge">https://raw.githubusercontent.com/cdslaborg/DataRepos_SwiftBat/master/triggers.txt</code> to read a list of all GRB events and then writes the entire table of <code class="highlighter-rouge">triggers.txt</code> to a local file with the same name on your device.</p>
 
 <div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
     
@@ -500,8 +500,8 @@ as soon as you read the data from each file and then finally, you make a scatter
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2020 / 06 / 30</section></br> -->
-         <section>Last updated Tuesday, 30 Jun 2020 at 01:26 PM CST</section></br>
+         <!-- <section>Last updated 2020 / 07 / 01</section></br> -->
+         <section>Last updated Wednesday, 01 Jul 2020 at 12:16 AM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

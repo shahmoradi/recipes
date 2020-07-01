@@ -3,18 +3,18 @@
 <head>
     
     <meta charset="utf-8">
-<title>IMPACT OF MACHINE PRECISION ON NUMERICAL COMPUTATION &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>IMPLEMENTING AN INTEGRATION PROBLEM VIA AN INTEGRAND OBJECT &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="MATLAB, Python, roundoff, precision, error, for-loop, loop">
+<meta name="keywords" content="Python, OOP, object, class, instantiation, integration, midpoint, Simpson">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Impact of machine precision on numerical computation">
+<meta property="og:title" content="Implementing an integration problem via an integrand object">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/precision-error-paradox/precision-error-paradox">
+<meta property="og:url" content="/recipes/programming/oop-integration-simpson/oop-integration-simpson">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/precision-error-paradox/precision-error-paradox">
+<link rel="canonical" href="/recipes/programming/oop-integration-simpson/oop-integration-simpson">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,19 +130,19 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/precision-error-paradox/precision-error-paradox">Impact of machine precision on numerical computation</a></h2>
+                            <h2><a href="/recipes/programming/oop-integration-simpson/oop-integration-simpson">Implementing an integration problem via an integrand object</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
                                 
                                     &#8212; Last updated: 
-                                    <strong><time datetime="2019-07-04T00:00:00-05:00">04 July 2019</time></strong>
+                                    <strong><time datetime="2020-06-30T00:00:00-05:00">30 June 2020</time></strong>
                                 
                                 <ul class="tag-box inline">
                                     <span style="margin-right:1rem;">Tags:</span>
                                     
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#MATLAB" data-toggle="tooltip" title="Posts tagged with MATLAB" rel="tag">MATLAB</a>
+                                                <a href="/recipes/tags/index.html#OOP" data-toggle="tooltip" title="Posts tagged with OOP" rel="tag">OOP</a>
                                             </li>
                                             
                                         
@@ -152,27 +152,32 @@
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#error" data-toggle="tooltip" title="Posts tagged with error" rel="tag">error</a>
+                                                <a href="/recipes/tags/index.html#Simpson" data-toggle="tooltip" title="Posts tagged with Simpson" rel="tag">Simpson</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#for-loop" data-toggle="tooltip" title="Posts tagged with for-loop" rel="tag">for-loop</a>
+                                                <a href="/recipes/tags/index.html#class" data-toggle="tooltip" title="Posts tagged with class" rel="tag">class</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#loop" data-toggle="tooltip" title="Posts tagged with loop" rel="tag">loop</a>
+                                                <a href="/recipes/tags/index.html#instantiation" data-toggle="tooltip" title="Posts tagged with instantiation" rel="tag">instantiation</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#precision" data-toggle="tooltip" title="Posts tagged with precision" rel="tag">precision</a>
+                                                <a href="/recipes/tags/index.html#integration" data-toggle="tooltip" title="Posts tagged with integration" rel="tag">integration</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#roundoff" data-toggle="tooltip" title="Posts tagged with roundoff" rel="tag">roundoff</a>
+                                                <a href="/recipes/tags/index.html#midpoint" data-toggle="tooltip" title="Posts tagged with midpoint" rel="tag">midpoint</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#object" data-toggle="tooltip" title="Posts tagged with object" rel="tag">object</a>
                                             </li>
                                             
                                         
@@ -201,226 +206,33 @@
     
 </div>
 
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#problem-matlab" id="problem-matlab">
-            <img src="/recipes/images/MATLAB.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
-                MATLAB
-            </a>
-        </figcaption>
-    </figure>
-</div>
+<p><strong>Integration by midpoint rule</strong>: The idea of the Midpoint rule for integration is to divide the area under a curve $f(x)$ into $n$ equal-sized rectangles. The height of the rectangle is determined by the value of $f$ at the midpoint of the rectangle. The figure below illustrates the idea,</p>
 
-<p>Consider the following code named <code class="highlighter-rouge">epsError.m</code>,</p>
+<figure>
+    <img src="midpnt.gif" width="500" />  
+</figure>
 
-<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">eps</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
-<span class="k">while</span> <span class="mf">1.0</span> <span class="o">~=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="nb">eps</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="nb">num2str</span><span class="p">(</span><span class="nb">eps</span><span class="p">));</span>
-    <span class="nb">eps</span> <span class="o">=</span> <span class="nb">eps</span> <span class="p">/</span> <span class="mf">2.0</span><span class="p">;</span>
-<span class="k">end</span>
-<span class="nb">disp</span><span class="p">([</span><span class="s1">'final eps:'</span><span class="p">,</span> <span class="nb">num2str</span><span class="p">(</span><span class="nb">eps</span><span class="p">)]);</span>
+<p>To implement the midpointrule, one has to compute the area of each rectangle, sum them up, just as in the formula for the Midpoint rule,</p>
+
+<script type="math/tex; mode=display">\int^b_a f(x) dx \approx h\sum^{n-1}_{i=0} f(a+ih+0.5h) ~,</script>
+
+<p>where $h=(b-a)/n$ is the width of each rectangle. Implement this formula as a Python function with this interface <code class="highlighter-rouge">integrate(evalIntegrand, lowerLimit, upperLimit, numBin)</code> where <code class="highlighter-rouge">numBin</code> represents $n$ in the above equation. Test the integrator with the following example input mathematical function,</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="n">integrate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-1.743934249004316e-17  
 </code></pre></div></div>
 
-<p>Explain what the code is doing. Run the code and observe the output. How could <code class="highlighter-rouge">1.0 ~= 1.0 + eps</code> be <code class="highlighter-rouge">false</code>?!</p>
+<p>Now, suppose you want to implement a projectile motion described via the physical equation $v = v_0 -g\times t^2$ where $v_0$ represents the initial velocity of the projectile, $g$ is the gravity constant, and $t$ is time starting from zero. Integrating this function from $t=0$ to $t=1$ would give us the total distance traveled by the projectile during this time period. Now, create a class implementation of this projectile motion such that the following code works and compute the total distance traveled by this projectile in the first second of the projectile motion.</p>
 
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#problem-python" id="problem-python">
-            <img src="/recipes/images/Python.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
-                Python
-            </a>
-        </figcaption>
-    </figure>
-</div>
-
-<p>Consider the following code named <code class="highlighter-rouge">epsError.py</code>,</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">eps</span> <span class="o">=</span> <span class="mf">1.0</span>
-<span class="k">while</span> <span class="mf">1.0</span> <span class="o">!=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="n">eps</span><span class="p">:</span>
-    <span class="k">print</span> <span class="p">(</span><span class="s">'...............'</span><span class="p">,</span> <span class="n">eps</span><span class="p">)</span>
-    <span class="n">eps</span> <span class="o">/=</span> <span class="mf">2.0</span>
-<span class="k">print</span> <span class="p">(</span><span class="s">'final eps:'</span><span class="p">,</span> <span class="n">eps</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">projectile</span> <span class="o">=</span> <span class="n">Projectile</span><span class="p">(</span><span class="n">initVelocity</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span> <span class="s">"v(time=1) ="</span><span class="p">,</span> <span class="n">projectile</span><span class="o">.</span><span class="n">getVelocity</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
+<span class="k">print</span><span class="p">(</span> <span class="s">"Total distance traveled after 1 second: {} meters"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">integrate</span><span class="p">(</span><span class="n">projectile</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span>
 </code></pre></div></div>
-
-<p>Explain what the code is doing. Run the code and observe the output. How could <code class="highlighter-rouge">1.0 != 1.0 + eps</code> be False?</p>
-
-<p>Here is the output of the code,</p>
-
-<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
-
-    <a href="#solution" style="display:inline-block;">
-        <h2 id="solution" style="color:blue;">
-            Solution
-        </h2>
-    </a>
-
-</div>
-
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#solution-matlab" id="solution-matlab">
-            <img src="/recipes/images/MATLAB.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
-                MATLAB
-            </a>
-        </figcaption>
-    </figure>
-</div>
-
-<p>Here is the output of the code,</p>
-
-<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">epsError</span>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>v(time=1) = 0.1899999999999995  
+Total distance traveled after 1 second: 6.730000817499997 meters  
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eps: 1
-eps: 0.5
-eps: 0.25
-eps: 0.125
-eps: 0.0625
-eps: 0.03125
-eps: 0.015625
-eps: 0.0078125
-eps: 0.0039063
-eps: 0.0019531
-eps: 0.00097656
-eps: 0.00048828
-eps: 0.00024414
-eps: 0.00012207
-eps: 6.1035e-05
-eps: 3.0518e-05
-eps: 1.5259e-05
-eps: 7.6294e-06
-eps: 3.8147e-06
-eps: 1.9073e-06
-eps: 9.5367e-07
-eps: 4.7684e-07
-eps: 2.3842e-07
-eps: 1.1921e-07
-eps: 5.9605e-08
-eps: 2.9802e-08
-eps: 1.4901e-08
-eps: 7.4506e-09
-eps: 3.7253e-09
-eps: 1.8626e-09
-eps: 9.3132e-10
-eps: 4.6566e-10
-eps: 2.3283e-10
-eps: 1.1642e-10
-eps: 5.8208e-11
-eps: 2.9104e-11
-eps: 1.4552e-11
-eps: 7.276e-12
-eps: 3.638e-12
-eps: 1.819e-12
-eps: 9.0949e-13
-eps: 4.5475e-13
-eps: 2.2737e-13
-eps: 1.1369e-13
-eps: 5.6843e-14
-eps: 2.8422e-14
-eps: 1.4211e-14
-eps: 7.1054e-15
-eps: 3.5527e-15
-eps: 1.7764e-15
-eps: 8.8818e-16
-eps: 4.4409e-16
-eps: 2.2204e-16
-final eps:1.1102e-16
-</code></pre></div></div>
-
-<p>What is happening is that after a certain number of divisions performed on the value of <code class="highlighter-rouge">eps</code>, the value goes beyond the highest float precision representable by Python standard ($0.0000000000000001$), and therefore the value of <code class="highlighter-rouge">eps</code> is eventually rounded to exactly zero. The nonzero <code class="highlighter-rouge">eps</code> value computed above is called <strong>machine epsilon</strong> or <strong>machine zero</strong> and is an important parameter to know since it can lead to disasters in your very important complex calculations.</p>
-
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#solution-python" id="solution-python">
-            <img src="/recipes/images/Python.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
-                Python
-            </a>
-        </figcaption>
-    </figure>
-</div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">run</span> <span class="n">epsError</span><span class="o">.</span><span class="n">py</span>
-</code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>............... 1.0
-............... 0.5
-............... 0.25
-............... 0.125
-............... 0.0625
-............... 0.03125
-............... 0.015625
-............... 0.0078125
-............... 0.00390625
-............... 0.001953125
-............... 0.0009765625
-............... 0.00048828125
-............... 0.000244140625
-............... 0.0001220703125
-............... 6.103515625e-05
-............... 3.0517578125e-05
-............... 1.52587890625e-05
-............... 7.62939453125e-06
-............... 3.814697265625e-06
-............... 1.9073486328125e-06
-............... 9.5367431640625e-07
-............... 4.76837158203125e-07
-............... 2.384185791015625e-07
-............... 1.1920928955078125e-07
-............... 5.960464477539063e-08
-............... 2.9802322387695312e-08
-............... 1.4901161193847656e-08
-............... 7.450580596923828e-09
-............... 3.725290298461914e-09
-............... 1.862645149230957e-09
-............... 9.313225746154785e-10
-............... 4.656612873077393e-10
-............... 2.3283064365386963e-10
-............... 1.1641532182693481e-10
-............... 5.820766091346741e-11
-............... 2.9103830456733704e-11
-............... 1.4551915228366852e-11
-............... 7.275957614183426e-12
-............... 3.637978807091713e-12
-............... 1.8189894035458565e-12
-............... 9.094947017729282e-13
-............... 4.547473508864641e-13
-............... 2.2737367544323206e-13
-............... 1.1368683772161603e-13
-............... 5.684341886080802e-14
-............... 2.842170943040401e-14
-............... 1.4210854715202004e-14
-............... 7.105427357601002e-15
-............... 3.552713678800501e-15
-............... 1.7763568394002505e-15
-............... 8.881784197001252e-16
-............... 4.440892098500626e-16
-............... 2.220446049250313e-16
-final eps: 1.1102230246251565e-16
-</code></pre></div></div>
-
-<p>What is happening is that after a certain number of divisions performed on the value of <code class="highlighter-rouge">eps</code>, the value goes beyond the highest float precision representable by Python standard ($0.0000000000000001$), and therefore the value of <code class="highlighter-rouge">eps</code> is eventually rounded to exactly zero. The nonzero eps value computed above is called <strong>machine epsilon</strong> or <strong>machine zero</strong> and is an important parameter to know since it can lead to disasters in your very important complex calculations.</p>
 
 
             </div>
@@ -428,11 +240,11 @@ final eps: 1.1102230246251565e-16
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Impact of machine precision on numerical computation&quot;%20https://www.cdslab.org/recipes/programming/precision-error-paradox/precision-error-paradox%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Implementing an integration problem via an integrand object&quot;%20https://www.cdslab.org/recipes/programming/oop-integration-simpson/oop-integration-simpson%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/precision-error-paradox/precision-error-paradox"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/oop-integration-simpson/oop-integration-simpson"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>

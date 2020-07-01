@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "Implementing an integration problem via an integrand object",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/oop-integration-simpson/oop-integration-simpson",
+		  "date"       : "2020-06-30 00:00:00 -0500",
+		  "shortdate"  : "June 30, 2020"
+		} ,
+	
+		{
 		  "title"      : "Making and using multiple Dynamic-Link Libraries (DLL) from within a single executable using the Intel Fortran Compiler on Windows OS",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/fortran-dll-multiple-libraries/fortran-dll-multiple-libraries",
