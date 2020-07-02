@@ -212,11 +212,11 @@
     <img src="midpnt.gif" width="500" />  
 </figure>
 
-<p>To implement the midpointrule, one has to compute the area of each rectangle, sum them up, just as in the formula for the Midpoint rule,</p>
+<p>To implement the midpoint rule, one has to compute the area of each rectangle, sum them up, just as in the formula for the Midpoint rule,</p>
 
-<script type="math/tex; mode=display">\int^b_a f(x) dx \approx h\sum^{n-1}_{i=0} f(a+ih+0.5h) ~,</script>
+<script type="math/tex; mode=display">\int^b_a f(x) dx \approx h\sum^{n-1}_{i=0} f(a + i\times h + 0.5h) ~,</script>
 
-<p>where $h=(b-a)/n$ is the width of each rectangle. Implement this formula as a Python function with this interface <code class="highlighter-rouge">integrate(evalIntegrand, lowerLimit, upperLimit, numBin)</code> where <code class="highlighter-rouge">numBin</code> represents $n$ in the above equation. Test the integrator with the following example input mathematical function,</p>
+<p>where $h=(b-a)/n$ is the width of each rectangle. Implement this formula as a Python function with this interface <code class="highlighter-rouge">integrate(evalIntegrand, lowerLimit, upperLimit, numBin = 1000)</code> where <code class="highlighter-rouge">numBin</code> represents $n$ in the above equation. Test the integrator with the following example input mathematical function,</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
 <span class="n">integrate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
@@ -297,8 +297,8 @@ Total distance traveled after 1 second: 6.730000817499997 meters
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2020 / 07 / 01</section></br> -->
-         <section>Last updated Wednesday, 01 Jul 2020 at 12:16 AM CST</section></br>
+         <!-- <section>Last updated 2020 / 07 / 02</section></br> -->
+         <section>Last updated Thursday, 02 Jul 2020 at 03:01 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
