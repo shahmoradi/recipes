@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "Coordinates transformation for better visualization",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/coordinates-transformation/coordinates-transformation",
+		  "date"       : "2020-07-02 00:00:00 -0500",
+		  "shortdate"  : "July 02, 2020"
+		} ,
+	
+		{
 		  "title"      : "Implementing an integration problem via an integrand object",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/oop-integration-simpson/oop-integration-simpson",

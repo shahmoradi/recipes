@@ -7,13 +7,66 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2020-07-02T15:01:58-05:00</updated>
+<updated>2020-07-02T15:29:13-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
   <uri>https://www.cdslab.org/recipes/</uri>
   <email>shahmoradi@utexas.edu</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Coordinates transformation for better visualization]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/coordinates-transformation/coordinates-transformation"/>
+  <id>https://www.cdslab.org/recipes/programming/coordinates-transformation/coordinates-transformation</id>
+  <published>2020-07-02T00:00:00-05:00</published>
+  <updated>2019-07-04T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#transformation" term="transformation" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Consider the following plot. Explain the types of $x-$ and $y-$ axes of this plot. What type of mathematical function would best describe the initial phases of the three blue, yellow, and red curves in this plot? What would best describe the second phase?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;coordinatesTransformation.png&quot; alt=&quot;coordinates transformation&quot; /&gt;&lt;/p&gt;
+
+&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
+
+    &lt;a href=&quot;#solution&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution&quot; style=&quot;color:blue;&quot;&gt;
+            Solution
+        &lt;/h2&gt;
+    &lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;This is semi-logarithmic plot and y-axis being plotted logarithmically. The initial phases of the three curves are linear on this semi-log plot. Therefore, $\log y = x$, which implies&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;y = \lambda \exp( x )&lt;/script&gt;
+
+&lt;p&gt;This means that the initial phases of the three curves is best described by an exponential function on a regular-axis plot. The second phases of the curves resembles that of a saturation behavior, meaning that the curves start to flatten and remain constant.&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/coordinates-transformation/coordinates-transformation&quot;&gt;Coordinates transformation for better visualization&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 02, 2020.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -3755,72 +3808,6 @@ nothing to commit, working tree clean
 
   
   &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/triangle-area/triangle-area&quot;&gt;Computing the area of a triangle&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Time required for cooking a refrigerated egg]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/time-to-cook-frozen-egg/time-to-cook-frozen-egg"/>
-  <id>https://www.cdslab.org/recipes/programming/time-to-cook-frozen-egg/time-to-cook-frozen-egg</id>
-  <published>2019-07-04T00:00:00-05:00</published>
-  <updated>2019-07-04T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#MATLAB" term="MATLAB" /><category scheme="https://www.cdslab.org/recipes/tags/#value" term="value" /><category scheme="https://www.cdslab.org/recipes/tags/#variable" term="variable" /><category scheme="https://www.cdslab.org/recipes/tags/#type" term="type" /><category scheme="https://www.cdslab.org/recipes/tags/#script" term="script" /><category scheme="https://www.cdslab.org/recipes/tags/#physics" term="physics" /><category scheme="https://www.cdslab.org/recipes/tags/#heat%20capacity" term="heat capacity" /><category scheme="https://www.cdslab.org/recipes/tags/#egg" term="egg" />
-  <content type="html">
-  
-    
-&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-    
-        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
-            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
-                Problem
-            &lt;/h2&gt;
-        &lt;/a&gt;
-    
-&lt;/div&gt;
-
-&lt;p&gt;As an egg cooks, the proteins first denature and then coagulate. When the temperature exceeds a critical point, reactions begin and proceed faster as the temperature increases. In the egg white, the proteins start to coagulate for temperatures above $63^\circ\rm{C}$, while in the yolk the proteins start to coagulate for temperatures above $70^\circ\rm{C}$. For a soft boiled egg, the white needs to have been heated long enough to coagulate at a temperature above $63^\circ\rm{C}$, but the yolk should not be heated above $70^\circ\rm{C}$. For a hard-boiled egg, the center of the yolk should be allowed to reach $70^\circ\rm{C}$.&lt;/p&gt;
-
-&lt;p&gt;The following formula expresses the time $t$ it takes (in seconds) for the center of the yolk to reach the temperature Ty (in Celsius degrees):&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;t = \frac
-{ M^{2/3} ~ c ~ \rho^{1/3} }
-{ K\pi^2 ~ (4\pi/3)^{2/3} }
-~\ln
-\bigg[
-0.76 \frac{T_0 - T_w}{T_y-T_w}
-\bigg]&lt;/script&gt;
-
-&lt;p&gt;where $M$ is the mass of egg, $\rho$ is the density, $c$ is the specific heat capacity, and $K$ is thermal conductivity. Relevant values are $M=47~[g]$ for a small egg and $M=67~[g]$ for a large egg, $\rho=1.038 ~[g~cm^{-3}]$, $c = 3.7 ~[J~g^{-1}~K^{-1}]$, and $K = 5.4\times10^{-3} ~[Wcm^{-1}K^{-1}]$. Furthermore, $T_w$ is the temperature
-(in C degrees) of the boiling water, and $T_0$ is the original temperature (in C degrees) of the egg before being put in the water. Implement the formula in a Python/MATLAB program, set $T_w = 100^\circ C$ and $T_y = 70^\circ C$, and compute $t$ for a large egg taken from the fridge ($T_0 = 4^\circ C$) and from room temperature ($T_0 = 20^\circ C$).&lt;/p&gt;
-
-&lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
-    
-    
-    
-    &lt;figure&gt;
-        &lt;a href=&quot;#hint-python&quot; id=&quot;hint-python&quot;&gt;
-            &lt;img src=&quot;https://www.cdslab.org/recipes/images/Python.png&quot; width=&quot;75px&quot; /&gt;
-        &lt;/a&gt;
-        &lt;figcaption&gt;
-            &lt;a href=&quot;https://en.wikipedia.org/wiki/Python_(programming_language)&quot; target=&quot;_blank&quot;&gt;
-                Python
-            &lt;/a&gt;
-        &lt;/figcaption&gt;
-    &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Hint&lt;/strong&gt;: Note that for this problem you will need to import &lt;code class=&quot;highlighter-rouge&quot;&gt;log, pi&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;math&lt;/code&gt; module in Python, although these are intrinsic in MATLAB.&lt;/p&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/time-to-cook-frozen-egg/time-to-cook-frozen-egg&quot;&gt;Time required for cooking a refrigerated egg&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on July 04, 2019.&lt;/p&gt;</content>
 </entry>
 
 </feed>

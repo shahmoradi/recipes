@@ -242,6 +242,11 @@ callback([
   } ,
 
   {
+    "text": "Coordinates transformation for better visualization",
+    "href": "/recipes/programming/coordinates-transformation/coordinates-transformation"
+  } ,
+
+  {
     "text": "Converting polar and Cartesian vector representations using functions and structures",
     "href": "/recipes/programming/polar-cartesian-coordinates-conversion/polar-cartesian-coordinates-conversion"
   } ,
