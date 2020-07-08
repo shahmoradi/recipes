@@ -3,18 +3,18 @@
 <head>
     
     <meta charset="utf-8">
-<title>CHECKING IF AN INPUT IS A PRIME NUMBER (VIA RECURSIVE FUNCTION CALLS)? &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>THE DIFFERENT FACES OF BINNED DATA VIA DIFFERENT TRANSFORMATIONS &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="function, nested function, recursive, branching, logical, prime number, isprime, MATLAB, Python">
+<meta name="keywords" content="visualization, transformation, histogram, binning, pandas, io">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Checking if an input is a prime number (via recursive function calls)?">
+<meta property="og:title" content="The different faces of binned data via different transformations">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/isprime-recursive/isprime-recursive">
+<meta property="og:url" content="/recipes/programming/histogram-different-transformations/histogram-different-transformations">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/isprime-recursive/isprime-recursive">
+<link rel="canonical" href="/recipes/programming/histogram-different-transformations/histogram-different-transformations">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,7 +130,7 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/isprime-recursive/isprime-recursive">Checking if an input is a prime number (via recursive function calls)?</a></h2>
+                            <h2><a href="/recipes/programming/histogram-different-transformations/histogram-different-transformations">The different faces of binned data via different transformations</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
                                 
@@ -142,47 +142,32 @@
                                     
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#MATLAB" data-toggle="tooltip" title="Posts tagged with MATLAB" rel="tag">MATLAB</a>
+                                                <a href="/recipes/tags/index.html#binning" data-toggle="tooltip" title="Posts tagged with binning" rel="tag">binning</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
+                                                <a href="/recipes/tags/index.html#histogram" data-toggle="tooltip" title="Posts tagged with histogram" rel="tag">histogram</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#branching" data-toggle="tooltip" title="Posts tagged with branching" rel="tag">branching</a>
+                                                <a href="/recipes/tags/index.html#io" data-toggle="tooltip" title="Posts tagged with io" rel="tag">io</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#function" data-toggle="tooltip" title="Posts tagged with function" rel="tag">function</a>
+                                                <a href="/recipes/tags/index.html#pandas" data-toggle="tooltip" title="Posts tagged with pandas" rel="tag">pandas</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#isprime" data-toggle="tooltip" title="Posts tagged with isprime" rel="tag">isprime</a>
+                                                <a href="/recipes/tags/index.html#transformation" data-toggle="tooltip" title="Posts tagged with transformation" rel="tag">transformation</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#logical" data-toggle="tooltip" title="Posts tagged with logical" rel="tag">logical</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#nested function" data-toggle="tooltip" title="Posts tagged with nested function" rel="tag">nested function</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#prime number" data-toggle="tooltip" title="Posts tagged with prime number" rel="tag">prime number</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#recursive" data-toggle="tooltip" title="Posts tagged with recursive" rel="tag">recursive</a>
+                                                <a href="/recipes/tags/index.html#visualization" data-toggle="tooltip" title="Posts tagged with visualization" rel="tag">visualization</a>
                                             </li>
                                             
                                         
@@ -211,118 +196,12 @@
     
 </div>
 
-<p>Write a logical (boolean) function named <code class="highlighter-rouge">isPrime(n)</code> that takes in an integer number <code class="highlighter-rouge">n</code>, and finds whether it is a <a href="https://en.wikipedia.org/wiki/Prime_number" target="_blank">Prime number</a> or not. Example output is the following,</p>
+<p>Consider this <a href="batse.csv">CSV dataset</a> containing the durations of a set of astrophysical events (<code class="highlighter-rouge">T50</code> and <code class="highlighter-rouge">T90</code>), their corresponding 1-sigma uncertainties (<code class="highlighter-rouge">T590err</code>, <code class="highlighter-rouge">T90err</code>), the event IDs (<code class="highlighter-rouge">Trigger</code>) and the starting time of the events (<code class="highlighter-rouge">T90Start</code>) with respect to some reference time point. Read this data and make histograms of the duration distributions as measured by the column <code class="highlighter-rouge">T90</code>, which is reported in seconds, like the following plots. Explain the differences between the plots?</p>
 
-<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">isPrime</span><span class="p">(</span><span class="mi">23</span><span class="p">)</span>
-</code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
-</code></pre></div></div>
-
-<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">isPrime</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
-</code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>False
-</code></pre></div></div>
-
-<p>Note that you do not need and don’t have to use a <code class="highlighter-rouge">for-loop</code> for this problem (we have not yet discussed loops in our class!). All of it can be done using <strong>recursive function</strong> concept.</p>
-
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#hint-matlab" id="hint-matlab">
-            <img src="/recipes/images/MATLAB.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
-                MATLAB
-            </a>
-        </figcaption>
-    </figure>
-</div>
-
-<p><strong>Hint:</strong> You can verify the accuracy of your MATLAB script via by checking its output against MATLAB’s built-in function <code class="highlighter-rouge">isprime()</code>.</p>
-
-<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
-
-    <a href="#solution" style="display:inline-block;">
-        <h2 id="solution" style="color:blue;">
-            Solution
-        </h2>
-    </a>
-
-</div>
-
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#solution-matlab" id="solution-matlab">
-            <img src="/recipes/images/MATLAB.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
-                MATLAB
-            </a>
-        </figcaption>
-    </figure>
-</div>
-
-<p>Here is an example implementation of <a href="isPrime.m" target="_blank">isPrime.m</a>,</p>
-
-<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="n">outLogical</span> <span class="o">=</span> <span class="n">isPrime</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-
-    <span class="n">divisor</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-    <span class="n">outLogical</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-    <span class="n">sqrt_n</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">));</span>
-    <span class="n">outLogical</span> <span class="o">=</span> <span class="n">isDivisible</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">sqrt_n</span><span class="p">,</span><span class="n">divisor</span><span class="p">);</span>
-
-    <span class="k">function</span> <span class="n">output</span> <span class="o">=</span> <span class="n">isDivisible</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">sqrt_n</span><span class="p">,</span><span class="n">divisor</span><span class="p">)</span>
-        <span class="k">if</span> <span class="nb">mod</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">divisor</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
-            <span class="n">output</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-        <span class="k">elseif</span> <span class="n">sqrt_n</span><span class="o">&lt;</span><span class="n">divisor</span>
-            <span class="n">output</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-            <span class="k">return</span>
-        <span class="k">else</span>
-            <span class="n">divisor</span> <span class="o">=</span> <span class="n">divisor</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-            <span class="n">output</span> <span class="o">=</span> <span class="n">isDivisible</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">sqrt_n</span><span class="p">,</span><span class="n">divisor</span><span class="p">);</span>
-        <span class="k">end</span>
-    <span class="k">end</span>
-
-<span class="k">end</span>
-</code></pre></div></div>
-
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#solution-python" id="solution-python">
-            <img src="/recipes/images/Python.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
-                Python
-            </a>
-        </figcaption>
-    </figure>
-</div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">isPrime</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    
-    <span class="n">isPrime</span> <span class="o">=</span> <span class="bp">True</span>
-    
-    <span class="k">def</span> <span class="nf">is_divisible</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">divisor</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">n</span><span class="o">&lt;</span><span class="p">(</span><span class="n">divisor</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">divisor</span><span class="p">:</span> <span class="k">return</span> <span class="bp">False</span>
-        <span class="k">if</span> <span class="n">n</span><span class="o">%</span><span class="n">divisor</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="bp">True</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">divisor</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="k">return</span> <span class="n">is_divisible</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">divisor</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">is_divisible</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">divisor</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span> <span class="n">isPrime</span><span class="o">=</span><span class="bp">False</span>
-    <span class="k">return</span> <span class="n">isPrime</span>
-</code></pre></div></div>
+<p><img src="batse.t90.linear.linear.png" alt="batse.t90.linear.linear.png" style="width:80%" /><br /><br />
+<img src="batse.logt90.log.linear.png" alt="batse.logt90.log.linear.png" style="width:80%" /><br /><br />
+<img src="batse.logt90.log.log.png" alt="batse.logt90.log.log.png" style="width:80%" /><br /><br />
+<img src="batse.t90.log.log.png" alt="batse.t90.log.log.png" style="width:80%" /><br /><br /></p>
 
 
             </div>
@@ -330,11 +209,11 @@
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Checking if an input is a prime number (via recursive function calls)?&quot;%20https://www.cdslab.org/recipes/programming/isprime-recursive/isprime-recursive%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;The different faces of binned data via different transformations&quot;%20https://www.cdslab.org/recipes/programming/histogram-different-transformations/histogram-different-transformations%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/isprime-recursive/isprime-recursive"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/histogram-different-transformations/histogram-different-transformations"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>

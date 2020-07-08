@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "The different faces of binned data via different transformations",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/histogram-different-transformations/histogram-different-transformations",
+		  "date"       : "2020-07-07 00:00:00 -0500",
+		  "shortdate"  : "July 07, 2020"
+		} ,
+	
+		{
 		  "title"      : "Coordinates transformation for better visualization",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/coordinates-transformation/coordinates-transformation",

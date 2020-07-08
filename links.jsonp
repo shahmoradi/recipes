@@ -27,6 +27,11 @@ callback([
   } ,
 
   {
+    "text": "The different faces of binned data via different transformations",
+    "href": "/recipes/programming/histogram-different-transformations/histogram-different-transformations"
+  } ,
+
+  {
     "text": "Subplots in MATLAB",
     "href": "/recipes/programming/matlab-subplots/matlab-subplots"
   } ,
