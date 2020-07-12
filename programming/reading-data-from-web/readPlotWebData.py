@@ -1,140 +1,77 @@
-#!/usr/bin/env python
-
+import os
+import numpy as np
+import pandas as pd
 import urllib.request
+from pathlib import Path
+import matplotlib.pyplot as plt
 
-def parseTable(html):
-    #Each "row" of the HTML table will be a list, and the items
-    #in that list will be the TD data items.
-    ourTable = []
+###############################################################################
 
-    #We keep these set to NONE when not actively building a
-    #row of data or a data item.
-    ourTD = None    #Stores one table data item
-    ourTR = None    #List to store each of the TD items in.
+def download(url,filePath):
+    import urllib.request
+    import shutil
+    with urllib.request.urlopen(url) as response, open(filePath, 'wb') as out_file:
+        shutil.copyfileobj(response, out_file)
+    return None
 
+###############################################################################
 
-    #State we keep track of
-    inTable = False
-    inTR = False
-    inTD = False
+def fetchTriggersFromWeb( filePath = "./triggers.txt"
+                        , url = "https://raw.githubusercontent.com/cdslaborg/DataRepos_SwiftBat/master/triggers.txt"
+                        ):
+    download(url,filePath)
+    return filePath
+    #triggerList = pd.read_csv(url)
+    #triggerList.to_csv('trigger.txt')
 
-    #Start looking for a start tag at the beginning!
-    tagStart = html.find("<", 0)
+###############################################################################
 
-    while( tagStart != -1):
-        tagEnd = html.find(">", tagStart)
+def readTriggers(filePath = "./triggers.txt"): 
+    return pd.read_csv(filePath,header=None,dtype="str")
 
-        if tagEnd == -1:    #We are done, return the data!
-            return ourTable
+###############################################################################
 
-        tagText = html[tagStart+1:tagEnd]
+def fetchGrbDataFromWeb(df, url = "https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/"):
 
-        #only look at the text immediately following the <
-        tagList = tagText.split()
-        tag = tagList[0]
-        tag = tag.lower()
+    rootPath = os. getcwd() # os.path.dirname(os.path.abspath(__file__))
+    outDir = os.path.join(rootPath,"data")
 
-        #Watch out for TABLE (start/stop) tags!
-        if tag == "table":      #We entered the table!
-            inTable = True
-        if tag == "/table":     #We exited a table.
-            inTable = False
+    print("generating the data download directory on your system: " + outDir)
+    if os.path.exists(outDir):
+        print("the data download directory already exists on your system. skipping...")
+    else:
+        print("generating the data download directory: " + outDir)
+        os.mkdir(outDir)
 
-        #Detect/Handle Table Rows (TR's)
-        if tag == "tr":
-            inTR = True
-            ourTR = []      #Started a new Table Row!
-
-        #If we are at the end of a row, add the data we collected
-        #so far to the main list of table data.
-        if tag == "/tr":
-            inTR = False
-            ourTable.append(ourTR)
-            ourTR = None
-
-        #We are starting a Data item!
-        if tag== "td":
-            inTD = True
-            ourTD = ""      #Start with an empty item!
-            
-        #We are ending a data item!
-        if tag == "/td":
-            inTD = False
-            if ourTD != None and ourTR != None:
-                cleanedTD = ourTD.strip()   #Remove extra spaces
-                ourTR.append( ourTD.strip() )
-            ourTD = None
-            
-
-        #Look for the NEXT start tag. Anything between the current
-        #end tag and the next Start Tag is potential data!
-        tagStart = html.find("<", tagEnd+1)
-        
-        #If we are in a Table, and in a Row and also in a TD,
-        # Save anything that's not a tag! (between tags)
-        #
-        #Note that this may happen multiple times if the table
-        #data has tags inside of it!
-        #e.g. <td>some <b>bold</b> text</td>
-        #
-        #Because of this, we need to be sure to put a space between each
-        #item that may have tags separating them. We remove any extra
-        #spaces (above) before we append the ourTD data to the ourTR list.
-        if inTable and inTR and inTD:
-            ourTD = ourTD + html[tagEnd+1:tagStart] + " "
-            #print("td:", ourTD)   #for debugging
-
-
-    #If we end the while loop looking for the next start tag, we
-    #are done, return ourTable of data.
-    return(ourTable)
-        
-def fetchHtmlTable(link,outPath):
-    response = urllib.request.urlopen(link)
-    html_bytes = response.read()
-    html = html_bytes.decode()
-    with open(outPath+link.split('/')[-1] , 'w') as fout:
-        fout.write(html)
-    
-    dataTable = parseTable(html)
-    with open(outPath+link.split('/')[-1]+'.tab' , 'w') as fout:
-        for row in dataTable:
-            for item in row:
-                fout.write('{:>30}'.format(item))
-            fout.write('\n')
-    return dataTable
-    
-def fetchBatFiles(dataTable,outPath,fileName = 'ep_flu.txt'):  # fetch individual files in Swift repository
-    root = 'https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/' + fileName
     counter = 0
     missing = 0
-    for row in dataTable:
-        grb_id = row[0].split('(')[-1][:-1]
-        #print(grb_id)
+    for index, row in df.iterrows():
+        counter += 1
+        trigger = row[0]
+        fileName = "GRB" + trigger + "_ep_flu.txt"
+        weblink = url + fileName
+        filePath = os.path.join(outDir,fileName)
         try:
-            counter += 1
-            link = root.replace('$grb_id$',grb_id)
-            response = urllib.request.urlopen(link)
-            webFile_bytes = response.read()
-            webFile = webFile_bytes.decode()
-            with open(outPath+'/GRB'+grb_id+'_'+fileName , 'w') as fout: fout.write(webFile)
+            if os.path.exists(filePath):
+                print(filePath + " already exists on your system. skipping the download...")
+            else:
+                download(weblink,filePath)
         except urllib.request.HTTPError:
             missing += 1
-            print('\nurl: {} does not exist.'.format(link))
-            print('file for GRB ID: {} is missing. {} files missing out of {} event so far.\n'.format(grb_id,missing,counter))
-    
+            print('\nurl: {} does not exist.'.format(weblink))
+            print('file for GRB ID: {} is missing. {} files missing out of {} event so far.'.format(trigger,missing,counter))
 
-def plotBatFiles(inPath,figFile):
-    import os
-    import numpy as np, os
-    import matplotlib.pyplot as plt
+    print('\nmission accomplished. total downloads: {}, missing files: {}\n'.format(counter,missing))
+
+###############################################################################
+
+def plotBatFiles(inPath = "data",figFile = "SwiftDataPlot.png"):
     ax = plt.gca()
-    ax.set_xlabel('Fluence [ ergs/cm^2 ]')
-    ax.set_ylabel('Epeak [ keV ]')
+    ax.set_xlabel(r"Fluence [ ergs/cm$^2$ ]")
+    ax.set_ylabel(r"Epeak [ keV ]")
     ax.axis([1.0e-8, 1.0e-1, 1.0, 1.0e4]) # [xmin, xmax, ymin, ymax]
     ax.set_yscale('log')
     ax.set_xscale('log')
-    plt.hold('on')
     counter = 0
     for file in os.listdir(inPath):
         if file.endswith("ep_flu.txt"):
@@ -149,19 +86,14 @@ def plotBatFiles(inPath,figFile):
     plt.savefig(figFile)
     plt.show()
 
+###############################################################################
+
 def main():
-    import sys
-    if len(sys.argv)!=3:
-        print("""
-        USAGE:
-              ./readPlotWebData.py <web address: https://cdslaborg.github.io/DataRepos_SwiftBat/index.html> <path to output files, e,g,: ./>
-              """)
-    else:
-        link = sys.argv[1]
-        outPath = sys.argv[2]
-        #fetchBatFiles( fetchHtmlTable(link,outPath) , outPath , fileName = 'ep_flu.txt')
-        figFile = 'SwiftDataPlot.png'
-        plotBatFiles(outPath,figFile)
+
+    fetchTriggersFromWeb()
+    df = readTriggers()
+    fetchGrbDataFromWeb(df)
+    plotBatFiles()
 
 if __name__ == "__main__":
    main()
