@@ -59,7 +59,7 @@ def fetchGrbDataFromWeb(df, url = "https://cdslaborg.github.io/DataRepos_SwiftBa
         except urllib.request.HTTPError:
             missing += 1
             print('\nurl: {} does not exist.'.format(weblink))
-            print('file for GRB ID: {} is missing. {} files missing out of {} event so far.'.format(trigger,missing,counter))
+            print('file for GRB ID: {} is missing. {} files missing out of {} events so far.'.format(trigger,missing,counter))
 
     print('\nmission accomplished. total downloads: {}, missing files: {}\n'.format(counter,missing))
 
