@@ -304,6 +304,11 @@ callback([
   {
     "text": "Branching, the Pythonic way",
     "href": "/recipes/programming/branching-pythonic-way/branching-pythonic-way"
+  } ,
+
+  {
+    "text": "Best visualization coloring",
+    "href": "/recipes/programming/visualization-coloring/visualization-coloring"
   } 
 
 ])

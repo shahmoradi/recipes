@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "Best visualization coloring",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/visualization-coloring/visualization-coloring",
+		  "date"       : "2020-07-23 00:00:00 -0500",
+		  "shortdate"  : "July 23, 2020"
+		} ,
+	
+		{
 		  "title"      : "The different faces of binned data via different transformations",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/histogram-different-transformations/histogram-different-transformations",
