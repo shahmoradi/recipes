@@ -57,6 +57,14 @@
 		} ,
 	
 		{
+		  "title"      : "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables via the least absolute deviations method",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-squares-method",
+		  "date"       : "2019-12-05 00:00:00 -0600",
+		  "shortdate"  : "December 05, 2019"
+		} ,
+	
+		{
 		  "title"      : "Monte Carlo sampling of the sum of two Gaussian distributions",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/monte-carlo-sampling-of-bimodal-gaussian/monte-carlo-sampling-of-bimodal-gaussian",

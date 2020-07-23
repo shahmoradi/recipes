@@ -62,6 +62,11 @@ callback([
   } ,
 
   {
+    "text": "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables via the least absolute deviations method",
+    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-squares-method"
+  } ,
+
+  {
     "text": "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables",
     "href": "/recipes/programming/regression-simple-least-squares-method/regression-simple-least-squares-method"
   } ,
