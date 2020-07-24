@@ -9,6 +9,22 @@
 		} ,
 	
 		{
+		  "title"      : "Regression: Predicting the global land temperature of the Earth in 2050 from the past data via the maximum likelihood approach",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/regression-predicting-future-global-land-temperature-maxlikelihood/regression-predicting-future-global-land-temperature-maxlikelihood",
+		  "date"       : "2020-07-23 00:00:00 -0500",
+		  "shortdate"  : "July 23, 2020"
+		} ,
+	
+		{
+		  "title"      : "Regression: Predicting the global land temperature of the Earth in 2050 from the past data: linear vs. exponential temperature increase",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/regression-predicting-future-global-land-temperature-exp/regression-predicting-future-global-land-temperature-exp",
+		  "date"       : "2020-07-23 00:00:00 -0500",
+		  "shortdate"  : "July 23, 2020"
+		} ,
+	
+		{
 		  "title"      : "The different faces of binned data via different transformations",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/histogram-different-transformations/histogram-different-transformations",
@@ -227,7 +243,7 @@
 		{
 		  "title"      : "Regression: obtaining the most likely mean and standard deviation of a set of Standard Normally Distributed Random Variables",
 		  "category"   : "",
-		  "url"        : "/recipes/programming/regression-standard-normal-distribution/regression-standard-normal-distribution-Copy",
+		  "url"        : "/recipes/programming/regression-standard-normal-distribution/regression-standard-normal-distribution",
 		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,

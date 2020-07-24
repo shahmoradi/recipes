@@ -68,6 +68,14 @@
     </url>
     
     <url>
+        <loc>https://www.cdslab.org/recipes/programming/regression-predicting-future-global-land-temperature-maxlikelihood/regression-predicting-future-global-land-temperature-maxlikelihood</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/regression-predicting-future-global-land-temperature-exp/regression-predicting-future-global-land-temperature-exp</loc>
+    </url>
+    
+    <url>
         <loc>https://www.cdslab.org/recipes/programming/histogram-different-transformations/histogram-different-transformations</loc>
     </url>
     
@@ -176,7 +184,7 @@
     </url>
     
     <url>
-        <loc>https://www.cdslab.org/recipes/programming/regression-standard-normal-distribution/regression-standard-normal-distribution-Copy</loc>
+        <loc>https://www.cdslab.org/recipes/programming/regression-standard-normal-distribution/regression-standard-normal-distribution</loc>
     </url>
     
     <url>
