@@ -320,6 +320,116 @@ mean = -0.08200050180312446, standard-deviation = 1.0043358235352169
 
 <p>Start your parameter search via <code class="highlighter-rouge">fmin()</code> with the following values: $[\mu,\sigma] = [1,10]$.</p>
 
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution" style="display:inline-block;">
+        <h2 id="solution" style="color:blue;">
+            Solution
+        </h2>
+    </a>
+
+</div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-matlab" id="solution-matlab">
+            <img src="/recipes/images/MATLAB.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
+                MATLAB
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>Here is an implementation of this code: <a href="findBestFitParameters.m" target="_blank">findBestFitParameters.m</a>,</p>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">clear</span> <span class="nb">all</span><span class="p">;</span>
+<span class="nb">close</span> <span class="nb">all</span><span class="p">;</span>
+<span class="nb">load</span><span class="p">(</span><span class="s1">'Drand.mat'</span><span class="p">);</span>
+<span class="k">global</span> <span class="n">data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">Drand</span><span class="p">;</span>
+<span class="n">Parameters</span> <span class="o">=</span> <span class="nb">fminsearch</span><span class="p">(</span><span class="o">@</span><span class="n">getLogProbNorm</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">]);</span>
+<span class="nb">disp</span><span class="p">(</span> <span class="p">[</span><span class="s1">'mu: '</span><span class="p">,</span> <span class="nb">num2str</span><span class="p">(</span><span class="n">Parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)),</span> <span class="s1">' , sigma: '</span><span class="p">,</span> <span class="nb">num2str</span><span class="p">(</span><span class="n">Parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">))]</span> <span class="p">);</span>
+</code></pre></div></div>
+
+<p>and here is an implementation of the function: <a href="getLogProbNorm.m" target="_blank">getLogProbNorm.m</a>,</p>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="n">logProbNorm</span> <span class="o">=</span> <span class="n">getLogProbNorm</span><span class="p">(</span><span class="n">Param</span><span class="p">)</span>
+    <span class="k">global</span> <span class="n">data</span>
+    <span class="n">mu</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">sigma</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+    <span class="n">logProbNorm</span> <span class="o">=</span> <span class="o">-</span> <span class="nb">sum</span><span class="p">(</span> <span class="nb">log</span><span class="p">(</span> <span class="n">normpdf</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">sigma</span><span class="p">)</span> <span class="p">)</span> <span class="p">);</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-python" id="solution-python">
+            <img src="/recipes/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>Here is an implementation of this code: <a href="findBestFitParameters.py" target="_blank">findBestFitParameters.py</a>,</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!python
+#!/usr/bin/env python
+</span><span class="kn">from</span> <span class="nn">scipy.io</span> <span class="kn">import</span> <span class="n">loadmat</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fmin</span>
+
+
+<span class="c1"># load MATLAB data file
+</span><span class="n">Drand</span> <span class="o">=</span> <span class="n">loadmat</span><span class="p">(</span><span class="s">"Drand.mat"</span><span class="p">)</span>
+<span class="n">Data</span>  <span class="o">=</span> <span class="n">Drand</span><span class="p">[</span><span class="s">"Drand"</span><span class="p">]</span>
+
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span> \
+                <span class="p">,</span> <span class="n">dpi</span><span class="o">=</span> <span class="mi">300</span> \
+                <span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s">'w'</span> \
+                <span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">'w'</span> \
+                <span class="p">)</span> <span class="c1"># create figure object
+</span><span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Get the axes instance
+</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">Data</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># find the parameters of Gaussian distribution
+</span>
+<span class="k">def</span> <span class="nf">getNegLogProbNorm</span><span class="p">(</span><span class="n">Param</span><span class="p">):</span>
+    <span class="n">avg</span> <span class="o">=</span> <span class="n">Param</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="n">std</span> <span class="o">=</span> <span class="n">Param</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+    <span class="n">getNegLogProbNorm</span> <span class="o">=</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="nb">sum</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Data</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="n">avg</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">std</span><span class="p">)</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="k">return</span> <span class="n">getNegLogProbNorm</span>
+
+<span class="n">Parameters</span> <span class="o">=</span> <span class="n">fmin</span>   <span class="p">(</span> <span class="n">func</span> <span class="o">=</span> <span class="n">getNegLogProbNorm</span>  \
+                    <span class="p">,</span> <span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>     \
+                    <span class="p">)</span>
+<span class="k">print</span><span class="p">(</span> <span class="s">"mean = {}, standard-deviation = {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">Parameters</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">Parameters</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="p">)</span>
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Optimization terminated successfully.
+     Current function value: 142.326191
+     Iterations: 50
+     Function evaluations: 98
+mean = -0.08200050180312446, standard-deviation = 1.0043358235352169
+</code></pre></div></div>
+
 
             </div>
         </article>
@@ -383,8 +493,8 @@ mean = -0.08200050180312446, standard-deviation = 1.0043358235352169
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2020 / 07 / 23</section></br> -->
-         <section>Last updated Thursday, 23 Jul 2020 at 11:13 PM CST</section></br>
+         <!-- <section>Last updated 2020 / 08 / 10</section></br> -->
+         <section>Last updated Monday, 10 Aug 2020 at 11:16 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

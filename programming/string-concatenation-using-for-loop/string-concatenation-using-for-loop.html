@@ -258,6 +258,71 @@
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>abcdefgh
 </code></pre></div></div>
 
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution" style="display:inline-block;">
+        <h2 id="solution" style="color:blue;">
+            Solution
+        </h2>
+    </a>
+
+</div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-matlab" id="solution-matlab">
+            <img src="/recipes/images/MATLAB.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
+                MATLAB
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<pre><code class="language-MATLAB">q = {{'a', 'b', 'c'}, {'d', 'e', 'f'}, {'g', 'h'}};
+concatenatedString = '';
+for cellElement = q
+    for nestedCellElement = cellElement{1}
+        concatenatedString = [ concatenatedString , nestedCellElement{1} ];
+    end
+end
+disp(concatenatedString)
+</code></pre>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>abcdefgh
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-python" id="solution-python">
+            <img src="/recipes/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">q</span> <span class="o">=</span> <span class="p">[[</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">],</span> <span class="p">[</span><span class="s">'d'</span><span class="p">,</span> <span class="s">'e'</span><span class="p">,</span> <span class="s">'f'</span><span class="p">],</span> <span class="p">[</span><span class="s">'g'</span><span class="p">,</span> <span class="s">'h'</span><span class="p">]]</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s">''</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">q</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">i</span><span class="p">)):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">i</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>abcdefgh
+</code></pre></div></div>
+
 
             </div>
         </article>
@@ -321,8 +386,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2020 / 07 / 23</section></br> -->
-         <section>Last updated Thursday, 23 Jul 2020 at 11:13 PM CST</section></br>
+         <!-- <section>Last updated 2020 / 08 / 10</section></br> -->
+         <section>Last updated Monday, 10 Aug 2020 at 11:16 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
