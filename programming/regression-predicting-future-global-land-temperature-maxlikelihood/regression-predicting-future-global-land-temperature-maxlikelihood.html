@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 <title>REGRESSION: PREDICTING THE GLOBAL LAND TEMPERATURE OF THE EARTH IN 2050 FROM THE PAST DATA VIA THE MAXIMUM LIKELIHOOD APPROACH &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="MATLAB, Python, regression, visualization, plot, line, figure, random number, distribution function, probability density function, PDF, probability, objective function, maximum likelihood method, Monte Carlo, Markov Chain, MCMC, ParaMonte">
+<meta name="keywords" content="MATLAB, Python, linear, regression, visualization, plot, line, figure, random number, distribution function, probability density function, PDF, probability, objective function, maximum likelihood method, Monte Carlo, Markov Chain, MCMC, ParaMonte, ParaDRAM, uncertainty quantification">
 
 
 
@@ -167,6 +167,11 @@
                                             
                                         
                                             <li>
+                                                <a href="/recipes/tags/index.html#ParaDRAM" data-toggle="tooltip" title="Posts tagged with ParaDRAM" rel="tag">ParaDRAM</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
                                                 <a href="/recipes/tags/index.html#ParaMonte" data-toggle="tooltip" title="Posts tagged with ParaMonte" rel="tag">ParaMonte</a>
                                             </li>
                                             
@@ -188,6 +193,11 @@
                                         
                                             <li>
                                                 <a href="/recipes/tags/index.html#line" data-toggle="tooltip" title="Posts tagged with line" rel="tag">line</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#linear" data-toggle="tooltip" title="Posts tagged with linear" rel="tag">linear</a>
                                             </li>
                                             
                                         
@@ -223,6 +233,11 @@
                                         
                                             <li>
                                                 <a href="/recipes/tags/index.html#regression" data-toggle="tooltip" title="Posts tagged with regression" rel="tag">regression</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#uncertainty quantification" data-toggle="tooltip" title="Posts tagged with uncertainty quantification" rel="tag">uncertainty quantification</a>
                                             </li>
                                             
                                         
@@ -364,7 +379,7 @@ You can use the <a href="https://www.cdslab.org/paramonte/" target="_blank">Para
     </figure>
 </div>
 
-<p>Here is an implementation of this code in Python:</p>
+<p><strong>(a)</strong> Here is an implementation of this code in Python:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
@@ -522,6 +537,102 @@ You can use the <a href="https://www.cdslab.org/paramonte/" target="_blank">Para
 
 <p>As you can see, the two parameters <code class="highlighter-rouge">slope</code> and <code class="highlighter-rouge">intercept</code> are highly negatively correlated with each other.</p>
 
+<p><strong>(b)</strong> Now, in order to estimate the uncertainty in the temperature of the earth in the year 2050, we need to not only use the most likely set of parameters to estimate the temperature anomaly, but also the full range of all possible parameter values sampled by the ParaMonte-ParaDRAM Markov chain Monte Carlo sampler. Therefore, we will use the contents of the simulation output sample file and will pass each set of sampled parameters to our linear regression model to predict the temperature anomaly in 2050 <strong>according to those set of parameters</strong>. In the end, we will have a distribution of the predicted temperature anomalies for the year 2050, which we can use to infer the $1\sigma$ uncertainty in it.</p>
+
+<p>Here is an implementation of this code in Python:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="nb">set</span><span class="p">()</span>
+
+<span class="c1"># read again the contents of the output sample file
+</span>
+<span class="n">pmpd</span><span class="o">.</span><span class="n">readSample</span><span class="p">()</span> <span class="c1"># this will generate the new component pmpd.sampleList[0].df
+</span>
+<span class="c1"># make plot of all predicted lines
+</span>
+<span class="n">dates_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1750</span><span class="p">,</span><span class="mi">2051</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># range of the linear regression line
+</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span><span class="n">anomalies</span><span class="p">)</span> <span class="c1"># plot the observational data
+</span>
+<span class="c1"># loop over all parameters
+</span>
+<span class="n">predictedAnomalies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">pmpd</span><span class="o">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">pmpd</span><span class="o">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+
+    <span class="c1"># assign the sampled parameters to the model
+</span>    <span class="n">anomaly</span><span class="o">.</span><span class="n">param</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+
+    <span class="c1"># add the line to the plot
+</span>    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dates_range</span><span class="p">,</span><span class="n">anomaly</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">dates_range</span><span class="p">),</span><span class="s">"r"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">)</span>
+
+    <span class="c1"># predict the anomaly corresponding to the current parameter
+</span>    <span class="n">predictedAnomalies</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">anomaly</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="mi">2050</span><span class="p">)</span>
+
+<span class="c1"># add the rest of the properties to the plot
+</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">"Year"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">"Temperature Anomaly (Celsius)"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Global Land Temperature Anomaly vs. 1951-1980 Average"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">"lineRainbow.png"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># plot the distribution of the predicted anomalies
+</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">predictedAnomalies</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">"Predicted Anomaly in 2050 (Celsius)"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">"Count"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">"anomalyHist.png"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span> <span class="s">"The 1-sigma uncertainty in the temperature Anomaly of 2050 is "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">predictedAnomalies</span><span class="p">))</span> <span class="p">)</span>
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ParaDRAM - WARNING: delimiter is neither given as input nor set as a ParaDRAM object property.
+ParaDRAM - WARNING: This information is essential for successful reading of the requested sample file(s).
+ParaDRAM - WARNING: Proceeding with the default assumption of comma-delimited sample file contents...
+
+ParaDRAM - NOTE: 1 files detected matching the pattern: "C:\Users\shahmoradia\ryantestfromlecture\ParaDRAM_run_20200813_004932_194*_sample.txt"
+ParaDRAM - NOTE: processing file: C:\Users\shahmoradia\ryantestfromlecture\ParaDRAM_run_20200813_004932_194_process_1_sample.txt
+ParaDRAM - NOTE: reading file contents... done in 0.026927 seconds.
+ParaDRAM - NOTE: parsing file contents... done in 0.000998 seconds.
+ParaDRAM - NOTE: computing sample correlation matrix... done in 0.005035 seconds.
+ParaDRAM - NOTE: computing sample covariance matrix... done in 0.003987 seconds.
+ParaDRAM - NOTE: computing autocorrelations... done in 0.029939 seconds.
+ParaDRAM - NOTE: adding graphics tools... done in 0.0 seconds.
+
+ParaDRAM - NOTE: The processed sample file(s) are now stored as a Python list in 
+ParaDRAM - NOTE: the new component "sampleList" of the ParaDRAM-instance object.
+ParaDRAM - NOTE: For example, to access the contents of the first (or the only) sample file, try:
+ParaDRAM - NOTE: 
+ParaDRAM - NOTE:     pmpd.sampleList[0].df
+ParaDRAM - NOTE: 
+ParaDRAM - NOTE: To access plots, try:
+ParaDRAM - NOTE: 
+ParaDRAM - NOTE:     pmpd.sampleList[0].plot.&lt;PRESS TAB TO SEE THE LIST OF PLOTS&gt;
+ParaDRAM - NOTE: 
+ParaDRAM - NOTE: Replace 'pmpd' with the name you are using for your ParaDRAM object.
+ParaDRAM - NOTE: For more information and examples on the usage, visit:
+ParaDRAM - NOTE: 
+ParaDRAM - NOTE:     https://www.cdslab.org/paramonte/
+
+The 1-sigma uncertainty in the temperature Anomaly of 2050 is 0.06404443460202353
+</code></pre></div></div>
+
+<p>This code will generate the following plots,</p>
+
+<figure>
+    <img src="lineRainbow.png" />
+</figure>
+
+<figure>
+    <img src="anomalyHist.png" />
+</figure>
+
+<p>As evident from the figures, the uncertainty in the predicted temperature anomaly in 2050 (under the hypothesis of linear model) is relatively small!</p>
+
 
             </div>
         </article>
@@ -586,7 +697,7 @@ You can use the <a href="https://www.cdslab.org/paramonte/" target="_blank">Para
         <footer class="notepad-site-footer">
     <div class="copyright">
          <!-- <section>Last updated 2020 / 08 / 13</section></br> -->
-         <section>Last updated Thursday, 13 Aug 2020 at 12:57 AM CST</section></br>
+         <section>Last updated Thursday, 13 Aug 2020 at 11:43 AM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

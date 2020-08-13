@@ -1,6 +1,22 @@
 [
 	
 		{
+		  "title"      : "Regression: Predicting the bivariate distribution of the a dataset subjected to censorship (sample incompleteness)",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/regression-censored-mvn-data/regression-censored-mvn-data",
+		  "date"       : "2020-08-12 00:00:00 -0500",
+		  "shortdate"  : "August 12, 2020"
+		} ,
+	
+		{
+		  "title"      : "Regression: Predicting the bivariate distribution of the a dataset subjected to censorship (sample incompleteness)",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/regression-censored-gaussian-data/regression-censored-gaussian-data",
+		  "date"       : "2020-08-12 00:00:00 -0500",
+		  "shortdate"  : "August 12, 2020"
+		} ,
+	
+		{
 		  "title"      : "Best visualization coloring",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/visualization-coloring/visualization-coloring",

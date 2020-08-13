@@ -64,6 +64,14 @@
 
     
     <url>
+        <loc>https://www.cdslab.org/recipes/programming/regression-censored-mvn-data/regression-censored-mvn-data</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/regression-censored-gaussian-data/regression-censored-gaussian-data</loc>
+    </url>
+    
+    <url>
         <loc>https://www.cdslab.org/recipes/programming/visualization-coloring/visualization-coloring</loc>
     </url>
     

@@ -92,6 +92,16 @@ callback([
   } ,
 
   {
+    "text": "Regression: Predicting the bivariate distribution of the a dataset subjected to censorship (sample incompleteness)",
+    "href": "/recipes/programming/regression-censored-mvn-data/regression-censored-mvn-data"
+  } ,
+
+  {
+    "text": "Regression: Predicting the bivariate distribution of the a dataset subjected to censorship (sample incompleteness)",
+    "href": "/recipes/programming/regression-censored-gaussian-data/regression-censored-gaussian-data"
+  } ,
+
+  {
     "text": "Reading data from the World Wide Web",
     "href": "/recipes/programming/reading-data-from-web/reading-data-from-web"
   } ,
