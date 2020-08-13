@@ -364,7 +364,7 @@ You can use the <a href="https://www.cdslab.org/paramonte/" target="_blank">Para
     </figure>
 </div>
 
-<p>Here is an implementation of this code in Python: <a href="findBestFitParameters.py" target="_blank">findBestFitParameters.py</a>,</p>
+<p>Here is an implementation of this code in Python:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
@@ -398,46 +398,129 @@ You can use the <a href="https://www.cdslab.org/paramonte/" target="_blank">Para
         <span class="n">dates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">year</span> <span class="o">+</span> <span class="n">month</span><span class="o">/</span><span class="mi">13</span> <span class="p">)</span>
         <span class="n">anomalies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tempDiff</span><span class="p">)</span>
 
-<span class="c1"># generate the plot
+<span class="c1"># do MCMC simulation to estimate parameters based on the maximum likelihood approach
 </span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span><span class="n">anomalies</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">"Year"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">"Temperature (Celsius)"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Global Land Temperature Anomaly vs. 1951-1980 Average"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">"GlobalLandTemperatureAnomalyPython.png"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="c1"># do linear fitting
-</span>
-<span class="k">class</span> <span class="nc">Anomaly</span><span class="p">():</span>
-    <span class="n">coef</span> <span class="o">=</span> <span class="bp">None</span>
-    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">dates</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">coef</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">dates</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">coef</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-
-<span class="n">anomaly</span> <span class="o">=</span> <span class="n">Anomaly</span><span class="p">()</span>
-
 <span class="n">startRow</span> <span class="o">=</span> <span class="mi">2700</span><span class="p">;</span> <span class="c1"># corresponding to year 1970
-</span><span class="n">anomaly</span><span class="o">.</span><span class="n">coef</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span> <span class="p">(</span> <span class="n">x</span> <span class="o">=</span> <span class="n">dates</span><span class="p">[</span><span class="n">startRow</span><span class="p">:]</span>
-                          <span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">anomalies</span><span class="p">[</span><span class="n">startRow</span><span class="p">:]</span>
-                          <span class="p">,</span> <span class="n">deg</span> <span class="o">=</span> <span class="mi">1</span>
-                          <span class="p">)</span>
+</span><span class="k">class</span> <span class="nc">Anomaly</span><span class="p">():</span>
+    <span class="n">param</span> <span class="o">=</span> <span class="bp">None</span> <span class="c1"># intercept, slope, sigma
+</span>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">dates</span><span class="p">,</span><span class="n">anomalies</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">(</span><span class="n">dates</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">anomalies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">(</span><span class="n">anomalies</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">dates</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">dates</span>
+    <span class="k">def</span> <span class="nf">getLogProb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">dates</span><span class="p">,</span><span class="n">anomalies</span><span class="p">):</span>
+        <span class="k">return</span>  <span class="o">-</span> <span class="mf">0.9189385332046727</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> \
+                <span class="o">-</span> <span class="mf">.5</span> <span class="o">*</span> <span class="p">(</span> <span class="p">(</span><span class="n">anomalies</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">dates</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">def</span> <span class="nf">getLogLike</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">param</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">param</span> <span class="o">=</span> <span class="n">param</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">getLogProb</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dates</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">anomalies</span><span class="p">))</span>
+    <span class="k">def</span> <span class="nf">getNegLogLike</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">param</span><span class="p">):</span>
+        <span class="k">return</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">getLogLike</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
 
-<span class="n">dates_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1750</span><span class="p">,</span><span class="mi">2051</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
-
-<span class="c1"># make figure
+<span class="c1">#########################
 </span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span><span class="n">anomalies</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dates_range</span><span class="p">,</span><span class="n">anomaly</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">dates_range</span><span class="p">),</span><span class="s">"r"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">"Year"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">"Temperature (Celsius)"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Global Land Temperature Anomaly vs. 1951-1980 Average"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">"GlobalLandTemperatureAnomaly2050Python.png"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="kn">import</span> <span class="nn">paramonte</span> <span class="k">as</span> <span class="n">pm</span>
+<span class="c1">#pm.verify()
+</span>
+<span class="c1">#########################
+</span>
+<span class="n">anomaly</span> <span class="o">=</span> <span class="n">Anomaly</span><span class="p">(</span> <span class="n">dates</span> <span class="o">=</span> <span class="n">dates</span><span class="p">[</span><span class="n">startRow</span><span class="p">:]</span>
+                 <span class="p">,</span> <span class="n">anomalies</span> <span class="o">=</span> <span class="n">anomalies</span><span class="p">[</span><span class="n">startRow</span><span class="p">:]</span>
+                 <span class="p">)</span>
+<span class="n">pmpd</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">ParaDRAM</span><span class="p">()</span>
+<span class="n">pmpd</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">chainSize</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">pmpd</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">scaleFactor</span> <span class="o">=</span> <span class="s">"0.1*gelman"</span>
+<span class="c1">#pmpd.spec.outputFileName = "mcmcMaxLikelihood"
+</span><span class="n">pmpd</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">variableNameList</span> <span class="o">=</span> <span class="p">[</span><span class="s">"intercept"</span><span class="p">,</span> <span class="s">"slope"</span><span class="p">,</span> <span class="s">"logSigma"</span><span class="p">]</span>
+<span class="n">pmpd</span><span class="o">.</span><span class="n">runSampler</span><span class="p">(</span> <span class="n">ndim</span> <span class="o">=</span> <span class="mi">3</span>
+               <span class="p">,</span> <span class="n">getLogFunc</span> <span class="o">=</span> <span class="n">anomaly</span><span class="o">.</span><span class="n">getLogLike</span>
+               <span class="p">)</span>
+
+<span class="c1">#########################
+</span>
+<span class="c1">#pmpd.readMarkovChain()
+#mpd.markovChainList[0].plot.hist.columns = 'slope'
+#pmpd.markovChainList[0].plot.hist()
+#pmpd.markovChainList[0].plot.line()
+</span>
+<span class="c1">#########################
+</span>
+<span class="n">pmpd</span><span class="o">.</span><span class="n">readSample</span><span class="p">()</span>
+
+<span class="c1"># plot slope distribution and traceplot
+</span>
+<span class="n">pmpd</span><span class="o">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="s">"slope"</span>
+<span class="n">pmpd</span><span class="o">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="o">.</span><span class="n">outputFile</span> <span class="o">=</span> <span class="s">"slopeDistribution.png"</span>
+<span class="n">pmpd</span><span class="o">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+
+<span class="n">pmpd</span><span class="o">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="o">.</span><span class="n">ycolumns</span> <span class="o">=</span> <span class="s">"slope"</span>
+<span class="n">pmpd</span><span class="o">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="o">.</span><span class="n">outputFile</span> <span class="o">=</span> <span class="s">"slopeTracePlot.png"</span>
+<span class="n">pmpd</span><span class="o">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">()</span>
+
+<span class="c1"># plot intercept distribution and traceplot
+</span>
+<span class="n">pmpd</span><span class="o">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="s">"intercept"</span>
+<span class="n">pmpd</span><span class="o">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="o">.</span><span class="n">outputFile</span> <span class="o">=</span> <span class="s">"interceptDistribution.png"</span>
+<span class="n">pmpd</span><span class="o">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+
+<span class="n">pmpd</span><span class="o">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="o">.</span><span class="n">ycolumns</span> <span class="o">=</span> <span class="s">"intercept"</span>
+<span class="n">pmpd</span><span class="o">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="o">.</span><span class="n">outputFile</span> <span class="o">=</span> <span class="s">"interceptTracePlot.png"</span>
+<span class="n">pmpd</span><span class="o">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">()</span>
+
+<span class="c1"># plot logSigma distribution and traceplot
+</span>
+<span class="n">pmpd</span><span class="o">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="s">"logSigma"</span>
+<span class="n">pmpd</span><span class="o">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="o">.</span><span class="n">outputFile</span> <span class="o">=</span> <span class="s">"logSigmaDistribution.png"</span>
+<span class="n">pmpd</span><span class="o">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+
+<span class="n">pmpd</span><span class="o">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="o">.</span><span class="n">ycolumns</span> <span class="o">=</span> <span class="s">"logSigma"</span>
+<span class="n">pmpd</span><span class="o">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="o">.</span><span class="n">outputFile</span> <span class="o">=</span> <span class="s">"logSigmaTracePlot.png"</span>
+<span class="n">pmpd</span><span class="o">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">()</span>
+
+<span class="c1"># plot the joint distribution of the variables
+</span>
+<span class="n">pmpd</span><span class="o">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">kdecorner</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">pmpd</span><span class="o">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">outputFile</span> <span class="o">=</span> <span class="s">"gridPlot.png"</span>
+<span class="n">pmpd</span><span class="o">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 </code></pre></div></div>
+
+<p>The above code will perform a Monte Carlo simulation to estimate the parameters of the linear regression model. The maximum likelihood parameters are reported in the ParaDRAM MCMC simulation output file that is suffixed with <code class="highlighter-rouge">*_report.txt</code>. The distribution of the parameters of the model is given in the simulation output file named <code class="highlighter-rouge">_sample.txt</code>. For example, here is the histogram of the slope parameter of the model sampled by the ParaDRAM MCMC sampler,</p>
+
+<figure>
+    <img src="slopeDistribution.png" />
+</figure>
+
+<p>and here is the trace plot of the sampled slopes,</p>
+
+<figure>
+    <img src="slopeTracePlot.png" />
+</figure>
+
+<p>Note that there are also two other parameters in the model, the intercept of the linear regression and standard deviation $\sigma$ of the Gaussian scatter of the data around the regression line. Note that we sampled the natural logarithm of this standard deviation via the MCMC sampler. So when using it, keep in mind to revert it to the natural standard deviation by exponentiating it.</p>
+
+<figure>
+    <img src="interceptDistribution.png" />
+</figure>
+
+<figure>
+    <img src="interceptTracePlot.png" />
+</figure>
+
+<figure>
+    <img src="logSigmaDistribution.png" />
+</figure>
+
+<figure>
+    <img src="logSigmaTracePlot.png" />
+</figure>
+
+<p>and here is the joint distribution of the variables against each other,</p>
+
+<figure>
+    <img src="gridPlot.png" />
+</figure>
+
+<p>As you can see, the two parameters <code class="highlighter-rouge">slope</code> and <code class="highlighter-rouge">intercept</code> are highly negatively correlated with each other.</p>
 
 
             </div>
@@ -502,8 +585,8 @@ You can use the <a href="https://www.cdslab.org/paramonte/" target="_blank">Para
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2020 / 08 / 11</section></br> -->
-         <section>Last updated Tuesday, 11 Aug 2020 at 10:23 AM CST</section></br>
+         <!-- <section>Last updated 2020 / 08 / 13</section></br> -->
+         <section>Last updated Thursday, 13 Aug 2020 at 12:57 AM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
