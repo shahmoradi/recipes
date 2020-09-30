@@ -12,6 +12,11 @@ callback([
   } ,
 
   {
+    "text": "Venn diagram representation of Boolean expressions",
+    "href": "/recipes/programming/logic-boolean-algebra-venn-diagram/logic/logic-boolean-algebra-venn-diagram"
+  } ,
+
+  {
     "text": "Understanding the Central Limit Theorem via random walk",
     "href": "/recipes/programming/random-walk-central-limit-theorem/random-walk-central-limit-theorem"
   } ,
@@ -24,6 +29,11 @@ callback([
   {
     "text": "The while-loop implementation of for-loop",
     "href": "/recipes/programming/while-loop-to-for-loop/while-loop-to-for-loop"
+  } ,
+
+  {
+    "text": "The two types of scientific reasoning",
+    "href": "/recipes/programming/logic-two-types-of-scientific-reasoning/logic/logic-two-types-of-scientific-reasoning"
   } ,
 
   {
@@ -129,6 +139,11 @@ callback([
   {
     "text": "Python aliasing vs. copying variables",
     "href": "/recipes/programming/python-variable-aliasing-copying/python-variable-aliasing-copying"
+  } ,
+
+  {
+    "text": "Policeman, jewelry, and burglar",
+    "href": "/recipes/programming/logic-policeman-jewelry-burglar/logic/logic-policeman-jewelry-burglar"
   } ,
 
   {

@@ -1,6 +1,30 @@
 [
 	
 		{
+		  "title"      : "The two types of scientific reasoning",
+		  "category"   : "logic",
+		  "url"        : "/recipes/programming/logic-two-types-of-scientific-reasoning/logic/logic-two-types-of-scientific-reasoning",
+		  "date"       : "2020-09-30 00:00:00 -0500",
+		  "shortdate"  : "September 30, 2020"
+		} ,
+	
+		{
+		  "title"      : "Policeman, jewelry, and burglar",
+		  "category"   : "logic",
+		  "url"        : "/recipes/programming/logic-policeman-jewelry-burglar/logic/logic-policeman-jewelry-burglar",
+		  "date"       : "2020-09-30 00:00:00 -0500",
+		  "shortdate"  : "September 30, 2020"
+		} ,
+	
+		{
+		  "title"      : "Venn diagram representation of Boolean expressions",
+		  "category"   : "logic",
+		  "url"        : "/recipes/programming/logic-boolean-algebra-venn-diagram/logic/logic-boolean-algebra-venn-diagram",
+		  "date"       : "2020-09-30 00:00:00 -0500",
+		  "shortdate"  : "September 30, 2020"
+		} ,
+	
+		{
 		  "title"      : "Regression: Predicting the bivariate distribution of the a dataset subjected to censorship (sample incompleteness)",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/regression-censored-mvn-data/regression-censored-mvn-data",
