@@ -147,6 +147,11 @@ callback([
   } ,
 
   {
+    "text": "Policeman, jewelry, and burglar",
+    "href": "/recipes/programming/logic-implication/logic/logic-implication"
+  } ,
+
+  {
     "text": "Passing characters and strings from C to Fortran and from Fortran to C",
     "href": "/recipes/programming/fortran-c-interoperation-string/fortran-c-interoperation-string"
   } ,
@@ -204,6 +209,11 @@ callback([
   {
     "text": "MATLAB script full of errors",
     "href": "/recipes/programming/matlab-script-full-of-errors/matlab-script-full-of-errors"
+  } ,
+
+  {
+    "text": "Logical product denial",
+    "href": "/recipes/programming/logic-product-denial/logic/logic-product-denial"
   } ,
 
   {

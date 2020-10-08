@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2020-09-30T15:55:04-05:00</updated>
+<updated>2020-10-08T12:22:49-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -42,6 +42,31 @@
 
 
 <entry>
+  <title type="html"><![CDATA[Logical product denial]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/logic-product-denial/logic/logic-product-denial"/>
+  <id>https://www.cdslab.org/recipes/programming/logic-product-denial/logic/logic-product-denial</id>
+  <published>2020-09-30T00:00:00-05:00</published>
+  <updated>2020-09-30T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#plausibility" term="plausibility" /><category scheme="https://www.cdslab.org/recipes/tags/#deduction" term="deduction" /><category scheme="https://www.cdslab.org/recipes/tags/#reasoning" term="reasoning" /><category scheme="https://www.cdslab.org/recipes/tags/#logic" term="logic" /><category scheme="https://www.cdslab.org/recipes/tags/#boolean" term="boolean" />
+  <content type="html">
+  
+    
+&lt;p&gt;Show via Venn diagrams that the negation of a &lt;strong&gt;logical product&lt;/strong&gt; ($\bar{AB}$) is equivalent to the &lt;strong&gt;logical sum of the negations&lt;/strong&gt; ($\bar{A}+\bar{B}$).&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/logic-product-denial/logic/logic-product-denial&quot;&gt;Logical product denial&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on September 30, 2020.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
   <title type="html"><![CDATA[Policeman, jewelry, and burglar]]></title>
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/logic-policeman-jewelry-burglar/logic/logic-policeman-jewelry-burglar"/>
@@ -63,6 +88,37 @@
 
   
   &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/logic-policeman-jewelry-burglar/logic/logic-policeman-jewelry-burglar&quot;&gt;Policeman, jewelry, and burglar&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on September 30, 2020.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Policeman, jewelry, and burglar]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/logic-implication/logic/logic-implication"/>
+  <id>https://www.cdslab.org/recipes/programming/logic-implication/logic/logic-implication</id>
+  <published>2020-09-30T00:00:00-05:00</published>
+  <updated>2020-09-30T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#plausibility" term="plausibility" /><category scheme="https://www.cdslab.org/recipes/tags/#deduction" term="deduction" /><category scheme="https://www.cdslab.org/recipes/tags/#reasoning" term="reasoning" /><category scheme="https://www.cdslab.org/recipes/tags/#logic" term="logic" /><category scheme="https://www.cdslab.org/recipes/tags/#boolean" term="boolean" />
+  <content type="html">
+  
+    
+&lt;p&gt;Show via Venn diagrams that the &lt;strong&gt;logical implication&lt;/strong&gt; ($A\Rightarrow B$) is equivalent to the following expressions,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;A\bar{B} ~ \text{is false} ~,&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;A + B ~ \text{is true} ~,&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;A = AB ~,&lt;/script&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/logic-implication/logic/logic-implication&quot;&gt;Policeman, jewelry, and burglar&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on September 30, 2020.&lt;/p&gt;</content>
 </entry>
 
 
@@ -2637,241 +2693,6 @@ average global land temperature of the Earth between Jan 1951 to Dec 1980.&lt;/p
 
   
   &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/regression-predicting-future-global-land-temperature/regression-predicting-future-global-land-temperature&quot;&gt;Regression: Predicting the global land temperature of the Earth in 2050 from the past data&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on November 01, 2019.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Understanding the Central Limit Theorem via random walk]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/random-walk-central-limit-theorem/random-walk-central-limit-theorem"/>
-  <id>https://www.cdslab.org/recipes/programming/random-walk-central-limit-theorem/random-walk-central-limit-theorem</id>
-  <published>2019-11-01T00:00:00-05:00</published>
-  <updated>2019-07-04T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#MATLAB" term="MATLAB" /><category scheme="https://www.cdslab.org/recipes/tags/#probability" term="probability" /><category scheme="https://www.cdslab.org/recipes/tags/#Central%20Limit%20Theorem" term="Central Limit Theorem" /><category scheme="https://www.cdslab.org/recipes/tags/#CLT" term="CLT" /><category scheme="https://www.cdslab.org/recipes/tags/#histogram" term="histogram" /><category scheme="https://www.cdslab.org/recipes/tags/#random%20walk" term="random walk" /><category scheme="https://www.cdslab.org/recipes/tags/#random" term="random" /><category scheme="https://www.cdslab.org/recipes/tags/#Gaussian" term="Gaussian" /><category scheme="https://www.cdslab.org/recipes/tags/#normal" term="normal" /><category scheme="https://www.cdslab.org/recipes/tags/#Monte%20Carlo" term="Monte Carlo" />
-  <content type="html">
-  
-    
-&lt;p&gt;In probability theory, the central limit theorem (CLT) establishes that, when independent random variables are added together, their properly normalized sum tends toward a normal distribution (informally a “bell curve”) even if the original variables themselves are not normally distributed. To understand this theorem, suppose you generate 100 uniform random numbers and sum them to get a single number. Then you repeat this procedure 1000 times to get 1000 of these sums of 100 uniform random numbers. The CLT theorem implies that if you plot a histogram of the values of these 1000 sums, then the resulting distribution looks very much like the Gaussian bell-shaped function. The larger the number of these sums (for example, 100000 instead of 1000 sums), the more the resulting distribution will look like a Gaussian. Here we want to see this theorem in action.&lt;/p&gt;
-
-&lt;p&gt;Consider a random walker, who takes a random step of a &lt;strong&gt;uniformly-distributed random-size&lt;/strong&gt; between $[0,1]$, in positive or negative directions on a single staright line. The random walker can repeat these steps for &lt;code class=&quot;highlighter-rouge&quot;&gt;nstep&lt;/code&gt; times, starting from an arbitrary initial starting point.&lt;/p&gt;
-
-&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-    
-        &lt;a href=&quot;#problem-part-a&quot; style=&quot;display:inline-block;&quot;&gt;
-            &lt;h2 id=&quot;problem-part-a&quot; style=&quot;color:red;&quot;&gt;
-                Problem Part A
-            &lt;/h2&gt;
-        &lt;/a&gt;
-    
-&lt;/div&gt;
-
-&lt;p&gt;Write a function with the interface &lt;code class=&quot;highlighter-rouge&quot;&gt;doRandomWalk(nstep,startPosition)&lt;/code&gt;, that takes the number of steps &lt;code class=&quot;highlighter-rouge&quot;&gt;nstep&lt;/code&gt; for a random walk and the &lt;code class=&quot;highlighter-rouge&quot;&gt;startPosition&lt;/code&gt; of the random walk on a straight line, and returns the location of the final step of the random walker.&lt;/p&gt;
-
-&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-    
-        &lt;a href=&quot;#problem-part-b&quot; style=&quot;display:inline-block;&quot;&gt;
-            &lt;h2 id=&quot;problem-part-b&quot; style=&quot;color:red;&quot;&gt;
-                Problem Part B
-            &lt;/h2&gt;
-        &lt;/a&gt;
-    
-&lt;/div&gt;
-
-&lt;p&gt;Now, write another function with the interface &lt;code class=&quot;highlighter-rouge&quot;&gt;simulateRandomWalk(nsim,nstep,startPosition)&lt;/code&gt; that simulates &lt;code class=&quot;highlighter-rouge&quot;&gt;nsim&lt;/code&gt; number of random-walks, each of which contains &lt;code class=&quot;highlighter-rouge&quot;&gt;nstep&lt;/code&gt; steps and starts at &lt;code class=&quot;highlighter-rouge&quot;&gt;startPosition&lt;/code&gt;. Then, this function calls &lt;code class=&quot;highlighter-rouge&quot;&gt;doRandomWalk()&lt;/code&gt; repeatedly for &lt;code class=&quot;highlighter-rouge&quot;&gt;nsim&lt;/code&gt; times and finally returns a vector of size &lt;code class=&quot;highlighter-rouge&quot;&gt;nsim&lt;/code&gt; containing final locations of all of the &lt;code class=&quot;highlighter-rouge&quot;&gt;nsim&lt;/code&gt; simulated random-walks.&lt;/p&gt;
-
-&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-    
-        &lt;a href=&quot;#problem-part-c&quot; style=&quot;display:inline-block;&quot;&gt;
-            &lt;h2 id=&quot;problem-part-c&quot; style=&quot;color:red;&quot;&gt;
-                Problem Part C
-            &lt;/h2&gt;
-        &lt;/a&gt;
-    
-&lt;/div&gt;
-
-&lt;p&gt;Now write a script that plots the output of &lt;code class=&quot;highlighter-rouge&quot;&gt;simulateRandomWalk()&lt;/code&gt; for&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align}
-\rm{nsim}           &amp;=&amp; 10000 \\
-\rm{nstep}          &amp;=&amp; 10 \\
-\rm{startPosition}  &amp;=&amp; -10
-\end{align} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;The resulting plot should look like the following,&lt;/p&gt;
-
-&lt;figure&gt;
-    &lt;img src=&quot;randomWalk1D.png&quot; width=&quot;900&quot; /&gt;  
-&lt;/figure&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;How do you interpret this result? How can uniformly-distributed random final steps end up having a Gaussian bell-shape distribution.&lt;/p&gt;
-
-&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#solution&quot; style=&quot;display:inline-block;&quot;&gt;
-        &lt;h2 id=&quot;solution&quot; style=&quot;color:blue;&quot;&gt;
-            Solution
-        &lt;/h2&gt;
-    &lt;/a&gt;
-
-&lt;/div&gt;
-
-&lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
-    
-    
-    
-    &lt;figure&gt;
-        &lt;a href=&quot;#solution-python&quot; id=&quot;solution-python&quot;&gt;
-            &lt;img src=&quot;https://www.cdslab.org/recipes/images/Python.png&quot; width=&quot;75px&quot; /&gt;
-        &lt;/a&gt;
-        &lt;figcaption&gt;
-            &lt;a href=&quot;https://en.wikipedia.org/wiki/Python_(programming_language)&quot; target=&quot;_blank&quot;&gt;
-                Python
-            &lt;/a&gt;
-        &lt;/figcaption&gt;
-    &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The reason for the resulting Gaussian-looking distribution function is that the positions of the final steps are the results of additions of a fixed number of identically-distributed random-variables (i.e., the 10 random steps in each random-walk). Therefore, by the CLT, the resulting distribution of the final steps should resemble the Gaussian distribution.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doRandomWalk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nstep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;startPosition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-    Returns the final location of nstep random-walk steps on a straight line.
-    &quot;&quot;&quot;&lt;/span&gt;
-    &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
-    &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy.random&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rnd&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;lastStepPosition&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;startPosition&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rnd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nstep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lastStepPosition&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;simulateRandomWalk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nsim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nstep&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;startPosition&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;LastStepVec&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nsim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nsim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;LastStepVec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;doRandomWalk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nstep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;startPosition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LastStepVec&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;fig&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;figure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;figsize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; \
-                &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dpi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;300&lt;/span&gt; \
-                &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;facecolor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'w'&lt;/span&gt; \
-                &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;edgecolor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'w'&lt;/span&gt; \
-                &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# create figure object
-&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ax&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fig&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_subplot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Get the axes instance
-&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;nsim&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;nstep&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;startPosition&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;ax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hist&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;simulateRandomWalk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nsim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nsim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nstep&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nstep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;startPosition&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;startPosition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; \
-        &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alpha&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt; \
-        &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;ax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set_xlabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Last-Step Position'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set_ylabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Count'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set_title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Histogram of last steps in {} Random Walk Simulations of {} Steps Starting at {}'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nsim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nstep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;startPosition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;fig&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;savefig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'randomWalk1D.png'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dpi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# save the figure to an external file
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# display the figure
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/random-walk-central-limit-theorem/random-walk-central-limit-theorem&quot;&gt;Understanding the Central Limit Theorem via random walk&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on November 01, 2019.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Finding the maximum value of an array via recursive function calls]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/finding-maximum-value-via-recursive-function/finding-maximum-value-via-recursive-function"/>
-  <id>https://www.cdslab.org/recipes/programming/finding-maximum-value-via-recursive-function/finding-maximum-value-via-recursive-function</id>
-  <published>2019-10-29T00:00:00-05:00</published>
-  <updated>2019-07-04T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#maximum" term="maximum" /><category scheme="https://www.cdslab.org/recipes/tags/#recursive" term="recursive" /><category scheme="https://www.cdslab.org/recipes/tags/#function" term="function" /><category scheme="https://www.cdslab.org/recipes/tags/#recursive%20function" term="recursive function" /><category scheme="https://www.cdslab.org/recipes/tags/#branching" term="branching" /><category scheme="https://www.cdslab.org/recipes/tags/#list" term="list" />
-  <content type="html">
-  
-    
-&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-    
-        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
-            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
-                Problem
-            &lt;/h2&gt;
-        &lt;/a&gt;
-    
-&lt;/div&gt;
-
-&lt;p&gt;Write a recursive Python function &lt;code class=&quot;highlighter-rouge&quot;&gt;findMaxVal()&lt;/code&gt; that takes an input list of numbers and returns the maximum value stored the list. Do not use any &lt;code class=&quot;highlighter-rouge&quot;&gt;max()&lt;/code&gt; function from any Python package. Your code should only contain if blocks and recursive function calls. Your function should return &lt;code class=&quot;highlighter-rouge&quot;&gt;None&lt;/code&gt; if the input array is an empty list. For example,&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;findMaxVal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;4.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;4.5
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;findMaxVal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([])&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;True
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#solution&quot; style=&quot;display:inline-block;&quot;&gt;
-        &lt;h2 id=&quot;solution&quot; style=&quot;color:blue;&quot;&gt;
-            Solution
-        &lt;/h2&gt;
-    &lt;/a&gt;
-
-&lt;/div&gt;
-
-&lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
-    
-    
-    
-    &lt;figure&gt;
-        &lt;a href=&quot;#solution-python&quot; id=&quot;solution-python&quot;&gt;
-            &lt;img src=&quot;https://www.cdslab.org/recipes/images/Python.png&quot; width=&quot;75px&quot; /&gt;
-        &lt;/a&gt;
-        &lt;figcaption&gt;
-            &lt;a href=&quot;https://en.wikipedia.org/wiki/Python_(programming_language)&quot; target=&quot;_blank&quot;&gt;
-                Python
-            &lt;/a&gt;
-        &lt;/figcaption&gt;
-    &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findMaxVal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;lenArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lenArray&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;maxVal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findMaxVal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:])&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;maxVal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;maxVal&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lenArray&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# lenArray &amp;lt; 1
-&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/finding-maximum-value-via-recursive-function/finding-maximum-value-via-recursive-function&quot;&gt;Finding the maximum value of an array via recursive function calls&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 29, 2019.&lt;/p&gt;</content>
 </entry>
 
 </feed>

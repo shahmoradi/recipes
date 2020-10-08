@@ -9,9 +9,25 @@
 		} ,
 	
 		{
+		  "title"      : "Logical product denial",
+		  "category"   : "logic",
+		  "url"        : "/recipes/programming/logic-product-denial/logic/logic-product-denial",
+		  "date"       : "2020-09-30 00:00:00 -0500",
+		  "shortdate"  : "September 30, 2020"
+		} ,
+	
+		{
 		  "title"      : "Policeman, jewelry, and burglar",
 		  "category"   : "logic",
 		  "url"        : "/recipes/programming/logic-policeman-jewelry-burglar/logic/logic-policeman-jewelry-burglar",
+		  "date"       : "2020-09-30 00:00:00 -0500",
+		  "shortdate"  : "September 30, 2020"
+		} ,
+	
+		{
+		  "title"      : "Policeman, jewelry, and burglar",
+		  "category"   : "logic",
+		  "url"        : "/recipes/programming/logic-implication/logic/logic-implication",
 		  "date"       : "2020-09-30 00:00:00 -0500",
 		  "shortdate"  : "September 30, 2020"
 		} ,
