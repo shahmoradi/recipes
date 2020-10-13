@@ -305,7 +305,7 @@ var store = [{
   "date": "September 30, 2020",
   "category": "logic",
   "tags": ["plausibility","deduction","reasoning","logic","boolean"],
-  "excerpt": "Show via Venn diagrams that the negation of a logical product ($\\bar{AB}$) is equivalent to the logical sum of the..."
+  "excerpt": "Show via Venn diagrams that the negation of a logical product ($\\overline{AB}$) is equivalent to the logical sum of the..."
 },{
   "title": "Policeman, jewelry, and burglar",
   "link": "/programming/logic-policeman-jewelry-burglar/logic/logic-policeman-jewelry-burglar",

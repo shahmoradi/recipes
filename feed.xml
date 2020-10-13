@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2020-10-11T00:02:36-05:00</updated>
+<updated>2020-10-12T23:44:51-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -58,7 +58,7 @@
   <content type="html">
   
     
-&lt;p&gt;Show via Venn diagrams that the negation of a &lt;strong&gt;logical product&lt;/strong&gt; ($\bar{AB}$) is equivalent to the &lt;strong&gt;logical sum of the negations&lt;/strong&gt; ($\bar{A}+\bar{B}$).&lt;/p&gt;
+&lt;p&gt;Show via Venn diagrams that the negation of a &lt;strong&gt;logical product&lt;/strong&gt; ($\overline{AB}$) is equivalent to the &lt;strong&gt;logical sum of the negations&lt;/strong&gt; ($\bar{A}+\bar{B}$).&lt;/p&gt;
 
 
   
@@ -112,7 +112,7 @@
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;A\bar{B} ~ \text{is false} ~,&lt;/script&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;A + B ~ \text{is true} ~,&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\bar{A} + B ~ \text{is true} ~,&lt;/script&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;A = AB ~,&lt;/script&gt;
 
