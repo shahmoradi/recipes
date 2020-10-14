@@ -3,18 +3,18 @@
 <head>
     
     <meta charset="utf-8">
-<title>LOGICAL PRODUCT DENIAL &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>LOGIC IMPLICATION, DENIAL, EQUIVALENCE &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="plausibility, deduction, reasoning, logic, boolean">
+<meta name="keywords" content="plausibility, deduction, reasoning, logic, boolean, implication">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Logical product denial">
+<meta property="og:title" content="Logic implication, denial, equivalence">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/logic-product-denial/logic/logic-product-denial">
+<meta property="og:url" content="/recipes/programming/logic-implication-denial-equivalence/logic/logic-implication-denial-equivalence">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/logic-product-denial/logic/logic-product-denial">
+<link rel="canonical" href="/recipes/programming/logic-implication-denial-equivalence/logic/logic-implication-denial-equivalence">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,7 +130,7 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/logic-product-denial/logic/logic-product-denial">Logical product denial</a></h2>
+                            <h2><a href="/recipes/programming/logic-implication-denial-equivalence/logic/logic-implication-denial-equivalence">Logic implication, denial, equivalence</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
                                 
@@ -148,6 +148,11 @@
                                         
                                             <li>
                                                 <a href="/recipes/tags/index.html#deduction" data-toggle="tooltip" title="Posts tagged with deduction" rel="tag">deduction</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#implication" data-toggle="tooltip" title="Posts tagged with implication" rel="tag">implication</a>
                                             </li>
                                             
                                         
@@ -181,7 +186,23 @@
 
             <div style="text-align:left;">
                 
-<p>Show via Venn diagrams that the negation of a <strong>logical product</strong> ($\overline{AB}$) is equivalent to the <strong>logical sum of the negations</strong> ($\bar{A}+\bar{B}$).</p>
+<p>We have learned that the <strong>logical implication</strong> ($C\Rightarrow D$) is equivalent to the following expressions,</p>
+
+<script type="math/tex; mode=display">C\bar{D} ~ \text{is false} ~,</script>
+
+<script type="math/tex; mode=display">\bar{C} + D ~ \text{is true} ~,</script>
+
+<script type="math/tex; mode=display">C = CD ~,</script>
+
+<p>Now, using the above expressions, show that if,</p>
+
+<script type="math/tex; mode=display">(B\Rightarrow \overline{A}) ~,</script>
+
+<p>is <code class="highlighter-rouge">True</code> then,</p>
+
+<script type="math/tex; mode=display">(A+\overline{B}) ~ (\overline{A}+A\overline{B}) ~+~ \overline{A}B ~ (A+B) ~,</script>
+
+<p>is also <code class="highlighter-rouge">True</code>. In other words, the above two expressions are equivalent to each other.</p>
 
 
             </div>
@@ -189,11 +210,11 @@
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Logical product denial&quot;%20https://www.cdslab.org/recipes/programming/logic-product-denial/logic/logic-product-denial%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Logic implication, denial, equivalence&quot;%20https://www.cdslab.org/recipes/programming/logic-implication-denial-equivalence/logic/logic-implication-denial-equivalence%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/logic-product-denial/logic/logic-product-denial"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/logic-implication-denial-equivalence/logic/logic-implication-denial-equivalence"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>

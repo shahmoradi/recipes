@@ -33,6 +33,14 @@
 		} ,
 	
 		{
+		  "title"      : "Logic implication, denial, equivalence",
+		  "category"   : "logic",
+		  "url"        : "/recipes/programming/logic-implication-denial-equivalence/logic/logic-implication-denial-equivalence",
+		  "date"       : "2020-09-30 00:00:00 -0500",
+		  "shortdate"  : "September 30, 2020"
+		} ,
+	
+		{
 		  "title"      : "Venn diagram representation of Boolean expressions",
 		  "category"   : "logic",
 		  "url"        : "/recipes/programming/logic-boolean-algebra-venn-diagram/logic/logic-boolean-algebra-venn-diagram",
