@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2020-10-14T16:15:54-05:00</updated>
+<updated>2020-10-16T18:23:46-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -35,6 +35,15 @@
     
 &lt;p&gt;Name the two types of scientific reasoning and give an example argument for each one.&lt;/p&gt;
 
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Deductive reasoning&lt;/strong&gt;&lt;br /&gt;
+For example, if A is true, then B is true.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Plausible reasoning&lt;/strong&gt;&lt;br /&gt;
+For example, if A is true, then B is more plausible to be true.&lt;/li&gt;
+&lt;/ol&gt;
+
 
   
   &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/logic-two-types-of-scientific-reasoning/logic/logic-two-types-of-scientific-reasoning&quot;&gt;The two types of scientific reasoning&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on September 30, 2020.&lt;/p&gt;</content>
@@ -60,6 +69,8 @@
     
 &lt;p&gt;Show via Venn diagrams that the negation of a &lt;strong&gt;logical product&lt;/strong&gt; ($\overline{AB}$) is equivalent to the &lt;strong&gt;logical sum of the negations&lt;/strong&gt; ($\bar{A}+\bar{B}$).&lt;/p&gt;
 
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt;&lt;/p&gt;
+
 
   
   &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/logic-product-denial/logic/logic-product-denial&quot;&gt;Logical product denial&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on September 30, 2020.&lt;/p&gt;</content>
@@ -84,6 +95,14 @@
   
     
 &lt;p&gt;Suppose some dark night a policemanwalks down a street, apparently deserted. Suddenly he hears a burglar alarm, looks across the street, and sees a jewelry store with a broken window. Then a gentleman wearing a mask comes crawling out through the broken window, carrying a bag which turns out to be full of expensive jewelry. The policeman doesn’t hesitate at all in deciding that this gentleman is dishonest. But by what reasoning process does he arrive at this conclusion? Express it in terms of simple propositions like &lt;strong&gt;if A is true, then B…&lt;/strong&gt; .&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A ≡ A burglar alarm goes off.&lt;br /&gt;
+B ≡ A gentleman is wearing a mask while crawling out of broken window with a bag full of expensive jewelry.&lt;br /&gt;
+C ≡ Burglary has happened.&lt;/p&gt;
+
+&lt;p&gt;If A is true, and B is true, then C is highly plausible.&lt;/p&gt;
 
 
   
@@ -115,6 +134,8 @@
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\bar{A} + B ~ \text{is true} ~,&lt;/script&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;A = AB ~,&lt;/script&gt;
+
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt;&lt;/p&gt;
 
 
   
@@ -156,6 +177,20 @@
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;(A+\overline{B}) ~ (\overline{A}+A\overline{B}) ~+~ \overline{A}B ~ (A+B) ~,&lt;/script&gt;
 
 &lt;p&gt;is also &lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt;. In other words, the above two expressions are equivalent to each other.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Answer&lt;/strong&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{eqnarray}
+    &amp;&amp;  (A+\overline{B}) ~ (\overline{A}+A\overline{B}) ~+~ \overline{A}B ~ (A+B) \\
+    &amp;=&amp; A\overline{A} + AA\overline{B} + \overline{B}A\overline{B} + BA + B \\
+    &amp;=&amp; False + A\overline{B} + \overline{A}\overline{B} + A\overline{B} + BA + B \\
+    &amp;=&amp; A\overline{B} + \overline{A}\overline{B} + BA + B \\
+    &amp;=&amp; (A+\overline{A})\overline{B} + BA + B \\
+    &amp;=&amp; True~\overline{B} + BA + B \\
+    &amp;=&amp; True~(\overline{B}+B) + BA \\
+    &amp;=&amp; True
+\end{eqnarray} %]]&gt;&lt;/script&gt;
 
 
   

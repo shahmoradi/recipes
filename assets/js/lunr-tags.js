@@ -302,7 +302,7 @@ var store = [{
   "date": "September 30, 2020",
   "category": "logic",
   "tags": ["plausibility","deduction","reasoning","logic","boolean"],
-  "excerpt": "\nName the two types of scientific reasoning and give an example argument for each one.\n\n"
+  "excerpt": "Name the two types of scientific reasoning and give an example argument for each one. Answer: Deductive reasoning For example,..."
 },{
   "title": "Logical product denial",
   "link": "/programming/logic-product-denial/logic/logic-product-denial",
@@ -323,7 +323,7 @@ var store = [{
   "date": "September 30, 2020",
   "category": "logic",
   "tags": ["plausibility","deduction","reasoning","logic","boolean","implication"],
-  "excerpt": "\nShow via Venn diagrams that the logical implication ($A\\Rightarrow B$) is equivalent to the following expressions,\n\n\n\n\n\n\n\n"
+  "excerpt": "\nShow via Venn diagrams that the logical implication ($A\\Rightarrow B$) is equivalent to the following expressions,\n\n\n\n\n\n\n\nAnswer:\n\n"
 },{
   "title": "Logic implication, denial, equivalence",
   "link": "/programming/logic-implication-denial-equivalence/logic/logic-implication-denial-equivalence",
