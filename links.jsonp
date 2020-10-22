@@ -42,13 +42,13 @@ callback([
   } ,
 
   {
-    "text": "The fundamental logical operators",
-    "href": "/recipes/programming/logic-fundamental-operations/logic-fundamental-operations"
+    "text": "The major schools of thought in Probability Theory",
+    "href": "/recipes/programming/probability-schools-of-thought/probability-schools-of-thought"
   } ,
 
   {
-    "text": "The fundamental desiderata of Probability Theory",
-    "href": "/recipes/programming/probability-schools-of-thought/probability-schools-of-thought"
+    "text": "The fundamental logical operators",
+    "href": "/recipes/programming/logic-fundamental-operations/logic-fundamental-operations"
   } ,
 
   {
