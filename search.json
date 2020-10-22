@@ -1,6 +1,70 @@
 [
 	
 		{
+		  "title"      : "The fundamental desiderata of Probability Theory",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/probability-schools-of-thought/probability-schools-of-thought",
+		  "date"       : "2020-10-21 00:00:00 -0500",
+		  "shortdate"  : "October 21, 2020"
+		} ,
+	
+		{
+		  "title"      : "The fundamental desiderata of Probability Theory",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/probability-desiderata/probability-desiderata",
+		  "date"       : "2020-10-21 00:00:00 -0500",
+		  "shortdate"  : "October 21, 2020"
+		} ,
+	
+		{
+		  "title"      : "Probability Theory: correspondence with commonsense",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/probability-correspondence-with-common-sense/probability-correspondence-with-common-sense",
+		  "date"       : "2020-10-21 00:00:00 -0500",
+		  "shortdate"  : "October 21, 2020"
+		} ,
+	
+		{
+		  "title"      : "The proof of Bayes&#39; Rule via Venn diagram",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/probability-bayes-rule-proof-venn-disgram/probability-bayes-rule-proof-venn-disgram",
+		  "date"       : "2020-10-21 00:00:00 -0500",
+		  "shortdate"  : "October 21, 2020"
+		} ,
+	
+		{
+		  "title"      : "The fundamental logical operators",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/logic-fundamental-operations/logic-fundamental-operations",
+		  "date"       : "2020-10-21 00:00:00 -0500",
+		  "shortdate"  : "October 21, 2020"
+		} ,
+	
+		{
+		  "title"      : "Logic functions in terms of logic functions",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/logic-functions-operations/logic-functions-operations",
+		  "date"       : "2020-10-21 00:00:00 -0500",
+		  "shortdate"  : "October 21, 2020"
+		} ,
+	
+		{
+		  "title"      : "Logic functions with 2 input",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/logic-functions-2d/logic-functions-2d",
+		  "date"       : "2020-10-21 00:00:00 -0500",
+		  "shortdate"  : "October 21, 2020"
+		} ,
+	
+		{
+		  "title"      : "Logic functions with 1 input",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/logic-functions-1d/logic-functions-1d",
+		  "date"       : "2020-10-21 00:00:00 -0500",
+		  "shortdate"  : "October 21, 2020"
+		} ,
+	
+		{
 		  "title"      : "The two types of scientific reasoning",
 		  "category"   : "logic",
 		  "url"        : "/recipes/programming/logic-two-types-of-scientific-reasoning/logic/logic-two-types-of-scientific-reasoning",

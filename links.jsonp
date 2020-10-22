@@ -37,6 +37,26 @@ callback([
   } ,
 
   {
+    "text": "The proof of Bayes' Rule via Venn diagram",
+    "href": "/recipes/programming/probability-bayes-rule-proof-venn-disgram/probability-bayes-rule-proof-venn-disgram"
+  } ,
+
+  {
+    "text": "The fundamental logical operators",
+    "href": "/recipes/programming/logic-fundamental-operations/logic-fundamental-operations"
+  } ,
+
+  {
+    "text": "The fundamental desiderata of Probability Theory",
+    "href": "/recipes/programming/probability-schools-of-thought/probability-schools-of-thought"
+  } ,
+
+  {
+    "text": "The fundamental desiderata of Probability Theory",
+    "href": "/recipes/programming/probability-desiderata/probability-desiderata"
+  } ,
+
+  {
     "text": "The different faces of binned data via different transformations",
     "href": "/recipes/programming/histogram-different-transformations/histogram-different-transformations"
   } ,
@@ -142,6 +162,11 @@ callback([
   } ,
 
   {
+    "text": "Probability Theory: correspondence with commonsense",
+    "href": "/recipes/programming/probability-correspondence-with-common-sense/probability-correspondence-with-common-sense"
+  } ,
+
+  {
     "text": "Policeman, jewelry, and burglar",
     "href": "/recipes/programming/logic-policeman-jewelry-burglar/logic/logic-policeman-jewelry-burglar"
   } ,
@@ -219,6 +244,21 @@ callback([
   {
     "text": "Logic implication, denial, equivalence",
     "href": "/recipes/programming/logic-implication-denial-equivalence/logic/logic-implication-denial-equivalence"
+  } ,
+
+  {
+    "text": "Logic functions with 2 input",
+    "href": "/recipes/programming/logic-functions-2d/logic-functions-2d"
+  } ,
+
+  {
+    "text": "Logic functions with 1 input",
+    "href": "/recipes/programming/logic-functions-1d/logic-functions-1d"
+  } ,
+
+  {
+    "text": "Logic functions in terms of logic functions",
+    "href": "/recipes/programming/logic-functions-operations/logic-functions-operations"
   } ,
 
   {
