@@ -338,7 +338,7 @@ var store = [{
   "date": "November 1, 2020",
   "category": "logic",
   "tags": ["plausibility","deduction","reasoning","logic","boolean","implication"],
-  "excerpt": "\nWe have learned that,\n\n\n\nNow, using the above expressions, show that,\n\n\n\n"
+  "excerpt": "\nWe have learned that,\n\n\n\nNow, using the above expressions, show that,\n\n\n\nAnswer\n\n\n\n"
 },{
   "title": "The major schools of thought in Probability Theory",
   "link": "/programming/probability-schools-of-thought/probability-schools-of-thought",
