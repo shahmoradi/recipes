@@ -457,7 +457,7 @@ var store = [{
   "date": "July 23, 2020",
   "category": null,
   "tags": ["MATLAB","regression","visualization","plot","line","figure","random number","distribution function","probability density function","PDF","probability","objective function","least squares method"],
-  "excerpt": "Problem Consider the following color palettes. Which one is more appropriate for effective visualization communications with humans? Solution The purple-green..."
+  "excerpt": "\n\n    \n        \n            \n                Problem\n            \n        \n    \n\n\nConsider the following color palettes. Which one is more appropriate for effective visualization communications with humans?\n\n\n    \n\n\n\n    \n\n\n"
 },{
   "title": "Regression: Predicting the global land temperature of the Earth in 2050 from the past data via the maximum likelihood approach",
   "link": "/programming/regression-predicting-future-global-land-temperature-maxlikelihood/regression-predicting-future-global-land-temperature-maxlikelihood",
