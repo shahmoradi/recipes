@@ -345,14 +345,14 @@ var store = [{
   "date": "October 21, 2020",
   "category": null,
   "tags": ["plausibility","schools","bayesian","frequentist"],
-  "excerpt": "\nName four major schools of Probability Theory.\n\n"
+  "excerpt": "Name four major schools of Probability Theory. Answer: Classic Probability Theory. Bayesian Probability Theory. Frequentist Probability Theory. Propensity Probability Theory...."
 },{
   "title": "The fundamental desiderata of Probability Theory",
   "link": "/programming/probability-desiderata/probability-desiderata",
   "date": "October 21, 2020",
   "category": null,
   "tags": ["plausibility","deduction","reasoning","logic","boolean","implication"],
-  "excerpt": "\nName the three fundamental desiderata of Probability Theory.\n\n"
+  "excerpt": "Name the three fundamental desiderata of Probability Theory. Answer: Degrees of plausibility are represented by real numbers. Qualitative correspondence with..."
 },{
   "title": "Probability Theory: correspondence with commonsense",
   "link": "/programming/probability-correspondence-with-common-sense/probability-correspondence-with-common-sense",
@@ -366,7 +366,7 @@ var store = [{
   "date": "October 21, 2020",
   "category": null,
   "tags": ["plausibility","deduction","reasoning","logic","boolean","implication"],
-  "excerpt": "\nProve the Bayes’s rule via Venn diagrams,\n\n\n\n"
+  "excerpt": "\nProve the Bayes’s rule via Venn diagrams,\n\n\n\nAnswer:\n\n\n\n\n"
 },{
   "title": "The fundamental logical operators",
   "link": "/programming/logic-fundamental-operations/logic-fundamental-operations",
@@ -380,7 +380,7 @@ var store = [{
   "date": "October 21, 2020",
   "category": null,
   "tags": ["plausibility","deduction","reasoning","logic","boolean","implication"],
-  "excerpt": "\nShow that the following functions,\n\n\n\ncan be written as,\n\n\n\nwhere the basis logic functions have the following truth table,\n\n\n\n"
+  "excerpt": "Show that the following functions, can be written as, where the basis logic functions have the following truth table, Answer:..."
 },{
   "title": "Logic functions with 2 input",
   "link": "/programming/logic-functions-2d/logic-functions-2d",
@@ -422,7 +422,7 @@ var store = [{
   "date": "September 30, 2020",
   "category": "logic",
   "tags": ["plausibility","deduction","reasoning","logic","boolean","implication"],
-  "excerpt": "\nShow via Venn diagrams that the logical implication ($A\\Rightarrow B$) is equivalent to the following expressions,\n\n\n\n\n\n\n\nAnswer:\n\n"
+  "excerpt": "\nShow via Venn diagrams that the logical implication ($A\\Rightarrow B$) is equivalent to the following expressions,\n\n\n\n\n\n\n\nAnswer:\n\n\n\n"
 },{
   "title": "Logic implication, denial, equivalence",
   "link": "/programming/logic-implication-denial-equivalence/logic/logic-implication-denial-equivalence",
@@ -457,7 +457,7 @@ var store = [{
   "date": "July 23, 2020",
   "category": null,
   "tags": ["MATLAB","regression","visualization","plot","line","figure","random number","distribution function","probability density function","PDF","probability","objective function","least squares method"],
-  "excerpt": "\n\n    \n        \n            \n                Problem\n            \n        \n    \n\n\nConsider the following color palettes. Which one is more appropriate for effective visualization communications with humans?\n\n\n    \n\n\n\n    \n\n\n"
+  "excerpt": "Problem Consider the following color palettes. Which one is more appropriate for effective visualization communications with humans? Solution The purple-green..."
 },{
   "title": "Regression: Predicting the global land temperature of the Earth in 2050 from the past data via the maximum likelihood approach",
   "link": "/programming/regression-predicting-future-global-land-temperature-maxlikelihood/regression-predicting-future-global-land-temperature-maxlikelihood",
