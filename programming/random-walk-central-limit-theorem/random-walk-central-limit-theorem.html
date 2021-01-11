@@ -213,7 +213,7 @@
                 
 <p>In probability theory, the central limit theorem (CLT) establishes that, when independent random variables are added together, their properly normalized sum tends toward a normal distribution (informally a “bell curve”) even if the original variables themselves are not normally distributed. To understand this theorem, suppose you generate 100 uniform random numbers and sum them to get a single number. Then you repeat this procedure 1000 times to get 1000 of these sums of 100 uniform random numbers. The CLT theorem implies that if you plot a histogram of the values of these 1000 sums, then the resulting distribution looks very much like the Gaussian bell-shaped function. The larger the number of these sums (for example, 100000 instead of 1000 sums), the more the resulting distribution will look like a Gaussian. Here we want to see this theorem in action.</p>
 
-<p>Consider a random walker, who takes a random step of a <strong>uniformly-distributed random-size</strong> between $[0,1]$, in positive or negative directions on a single staright line. The random walker can repeat these steps for <code class="highlighter-rouge">nstep</code> times, starting from an arbitrary initial starting point.</p>
+<p>Consider a random walker, who takes a random step of a <strong>uniformly-distributed random-size</strong> between $[0,1]$, in positive or negative directions on a single staright line. The random walker can repeat these steps for <code class="language-plaintext highlighter-rouge">nstep</code> times, starting from an arbitrary initial starting point.</p>
 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
     
@@ -225,7 +225,7 @@
     
 </div>
 
-<p>Write a function with the interface <code class="highlighter-rouge">doRandomWalk(nstep,startPosition)</code>, that takes the number of steps <code class="highlighter-rouge">nstep</code> for a random walk and the <code class="highlighter-rouge">startPosition</code> of the random walk on a straight line, and returns the location of the final step of the random walker.</p>
+<p>Write a function with the interface <code class="language-plaintext highlighter-rouge">doRandomWalk(nstep,startPosition)</code>, that takes the number of steps <code class="language-plaintext highlighter-rouge">nstep</code> for a random walk and the <code class="language-plaintext highlighter-rouge">startPosition</code> of the random walk on a straight line, and returns the location of the final step of the random walker.</p>
 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
     
@@ -237,7 +237,7 @@
     
 </div>
 
-<p>Now, write another function with the interface <code class="highlighter-rouge">simulateRandomWalk(nsim,nstep,startPosition)</code> that simulates <code class="highlighter-rouge">nsim</code> number of random-walks, each of which contains <code class="highlighter-rouge">nstep</code> steps and starts at <code class="highlighter-rouge">startPosition</code>. Then, this function calls <code class="highlighter-rouge">doRandomWalk()</code> repeatedly for <code class="highlighter-rouge">nsim</code> times and finally returns a vector of size <code class="highlighter-rouge">nsim</code> containing final locations of all of the <code class="highlighter-rouge">nsim</code> simulated random-walks.</p>
+<p>Now, write another function with the interface <code class="language-plaintext highlighter-rouge">simulateRandomWalk(nsim,nstep,startPosition)</code> that simulates <code class="language-plaintext highlighter-rouge">nsim</code> number of random-walks, each of which contains <code class="language-plaintext highlighter-rouge">nstep</code> steps and starts at <code class="language-plaintext highlighter-rouge">startPosition</code>. Then, this function calls <code class="language-plaintext highlighter-rouge">doRandomWalk()</code> repeatedly for <code class="language-plaintext highlighter-rouge">nsim</code> times and finally returns a vector of size <code class="language-plaintext highlighter-rouge">nsim</code> containing final locations of all of the <code class="language-plaintext highlighter-rouge">nsim</code> simulated random-walks.</p>
 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
     
@@ -249,14 +249,13 @@
     
 </div>
 
-<p>Now write a script that plots the output of <code class="highlighter-rouge">simulateRandomWalk()</code> for</p>
+<p>Now write a script that plots the output of <code class="language-plaintext highlighter-rouge">simulateRandomWalk()</code> for</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\rm{nsim}           &=& 10000 \\
-\rm{nstep}          &=& 10 \\
-\rm{startPosition}  &=& -10
-\end{align} %]]></script>
+\[\begin{align}
+\rm{nsim}           &amp;=&amp; 10000 \\
+\rm{nstep}          &amp;=&amp; 10 \\
+\rm{startPosition}  &amp;=&amp; -10
+\end{align}\]
 
 <p>The resulting plot should look like the following,</p>
 
@@ -301,39 +300,39 @@
     """</span>
     <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
     <span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="n">rnd</span>
-    <span class="n">lastStepPosition</span> <span class="o">=</span> <span class="n">startPosition</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="nb">sum</span><span class="p">(</span> <span class="p">(</span> <span class="n">rnd</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">nstep</span><span class="p">)</span> <span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span>
+    <span class="n">lastStepPosition</span> <span class="o">=</span> <span class="n">startPosition</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span> <span class="p">(</span> <span class="n">rnd</span><span class="p">.</span><span class="n">random</span><span class="p">(</span><span class="n">nstep</span><span class="p">)</span> <span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span>
     <span class="k">return</span> <span class="n">lastStepPosition</span>
 
 <span class="k">def</span> <span class="nf">simulateRandomWalk</span><span class="p">(</span><span class="n">nsim</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span><span class="n">nstep</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">startPosition</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
     <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-    <span class="n">LastStepVec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsim</span><span class="p">)</span>
+    <span class="n">LastStepVec</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsim</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nsim</span><span class="p">):</span>
         <span class="n">LastStepVec</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">doRandomWalk</span><span class="p">(</span><span class="n">nstep</span><span class="p">,</span><span class="n">startPosition</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">LastStepVec</span>
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> \
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> \
                 <span class="p">,</span> <span class="n">dpi</span><span class="o">=</span> <span class="mi">300</span> \
                 <span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s">'w'</span> \
                 <span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">'w'</span> \
                 <span class="p">)</span> <span class="c1"># create figure object
 </span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Get the axes instance
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Get the axes instance
 </span>
 <span class="n">nsim</span> <span class="o">=</span> <span class="mi">10000</span>
 <span class="n">nstep</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">startPosition</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">hist</span> <span class="p">(</span> <span class="n">simulateRandomWalk</span><span class="p">(</span><span class="n">nsim</span><span class="o">=</span><span class="n">nsim</span><span class="p">,</span><span class="n">nstep</span><span class="o">=</span><span class="n">nstep</span><span class="p">,</span><span class="n">startPosition</span><span class="o">=</span><span class="n">startPosition</span><span class="p">)</span> \
+<span class="n">ax</span><span class="p">.</span><span class="n">hist</span> <span class="p">(</span> <span class="n">simulateRandomWalk</span><span class="p">(</span><span class="n">nsim</span><span class="o">=</span><span class="n">nsim</span><span class="p">,</span><span class="n">nstep</span><span class="o">=</span><span class="n">nstep</span><span class="p">,</span><span class="n">startPosition</span><span class="o">=</span><span class="n">startPosition</span><span class="p">)</span> \
         <span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span> \
         <span class="p">)</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">'Last-Step Position'</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">'Count'</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">'Histogram of last steps in {} Random Walk Simulations of {} Steps Starting at {}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">nsim</span><span class="p">,</span><span class="n">nstep</span><span class="p">,</span><span class="n">startPosition</span><span class="p">))</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'randomWalk1D.png'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># save the figure to an external file
-</span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># display the figure
+<span class="n">ax</span><span class="p">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">'Last-Step Position'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">'Count'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">'Histogram of last steps in {} Random Walk Simulations of {} Steps Starting at {}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">nsim</span><span class="p">,</span><span class="n">nstep</span><span class="p">,</span><span class="n">startPosition</span><span class="p">))</span>
+<span class="n">fig</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'randomWalk1D.png'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># save the figure to an external file
+</span><span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># display the figure
 </span></code></pre></div></div>
 
 
@@ -399,8 +398,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2020 / 12 / 08</section></br> -->
-         <section>Last updated Tuesday, 08 Dec 2020 at 02:10 AM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 11</section></br> -->
+         <section>Last updated Monday, 11 Jan 2021 at 03:21 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

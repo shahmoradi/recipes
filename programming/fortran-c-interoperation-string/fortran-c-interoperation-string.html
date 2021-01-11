@@ -236,7 +236,7 @@
     
 </div>
 
-<p>Consider the following example Fortran function <code class="highlighter-rouge">getLowerCase</code> which takes a string of arbitrary length as input and converts all of the upper-case letters to lower-case and returns the result as the <code class="highlighter-rouge">output</code> string,</p>
+<p>Consider the following example Fortran function <code class="language-plaintext highlighter-rouge">getLowerCase</code> which takes a string of arbitrary length as input and converts all of the upper-case letters to lower-case and returns the result as the <code class="language-plaintext highlighter-rouge">output</code> string,</p>
 
 <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span><span class="w"> </span><span class="n">String_mod</span><span class="w">
     </span><span class="k">implicit</span><span class="w"> </span><span class="k">none</span><span class="w">
@@ -272,11 +272,11 @@
 <p>Fortran handles its string arguments differently from the C language. In Fortran, along with the string, length of the string is also passed as a hidden argument to the called function. Any attempt to make this function interoperable requires two things as usual,</p>
 
 <ol>
-  <li>declaring a global identifier as the function’s name via Fortran’s intrinsic <code class="highlighter-rouge">bind()</code> attribute,</li>
+  <li>declaring a global identifier as the function’s name via Fortran’s intrinsic <code class="language-plaintext highlighter-rouge">bind()</code> attribute,</li>
   <li>redefining the function arguments to make them interoperable with the C language.</li>
 </ol>
 
-<p>Fortunately, Fortran 2018 standard provides formal methods of calling a Fortran function or subroutine that takes string arguments. For example, the following function inside a file named <code class="highlighter-rouge">String_mod.f90</code>,</p>
+<p>Fortunately, Fortran 2018 standard provides formal methods of calling a Fortran function or subroutine that takes string arguments. For example, the following function inside a file named <code class="language-plaintext highlighter-rouge">String_mod.f90</code>,</p>
 
 <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span><span class="w"> </span><span class="n">String_mod</span><span class="w">
     </span><span class="k">implicit</span><span class="w"> </span><span class="k">none</span><span class="w">
@@ -290,7 +290,7 @@
 </span><span class="k">end</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="n">String_mod</span><span class="w">
 </span></code></pre></div></div>
 
-<p>could be called by the following C main code inside a file named <code class="highlighter-rouge">mainPrintString.c</code>,</p>
+<p>could be called by the following C main code inside a file named <code class="language-plaintext highlighter-rouge">mainPrintString.c</code>,</p>
 
 <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include "ISO_Fortran_binding.h"
 #include &lt;string.h&gt;
@@ -326,7 +326,7 @@
 icl <span class="nt">-c</span> mainPrintString.c
 icl String_mod.obj mainPrintString.obj <span class="nt">-o</span> a.exe 
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intel(R) C++ Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intel(R) C++ Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
 Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
 
 Microsoft (R) Incremental Linker Version 14.22.27905.0
@@ -339,13 +339,13 @@ mainPrintString.obj
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a.exe
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>From Inside Fortran@printString(): string = This is a C string!
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>From Inside Fortran@printString(): string = This is a C string!
 T
 </code></pre></div></div>
 
-<p>Here in the C code, we have established a Fortran descriptor <code class="highlighter-rouge">StrVec_desc</code> via <code class="highlighter-rouge">CFI_establish</code> from <code class="highlighter-rouge">ISO_Fortran_binding.h</code> header file that correctly passes all the information needed about the string <code class="highlighter-rouge">StrVec</code> in C to the Fortran function. This descriptor is then passed to the Fortran function instead of the string itself. This is a highly desirable feature of Fortran 2018 as it does not require <em>any</em> changes to the Fortran function. In other words, the Fortran function <code class="highlighter-rouge">printString()</code> has a single interface for both Fortran and C, although when calling the function from C, one has to now establish a C descriptor. However, that is straightforward as shown above.</p>
+<p>Here in the C code, we have established a Fortran descriptor <code class="language-plaintext highlighter-rouge">StrVec_desc</code> via <code class="language-plaintext highlighter-rouge">CFI_establish</code> from <code class="language-plaintext highlighter-rouge">ISO_Fortran_binding.h</code> header file that correctly passes all the information needed about the string <code class="language-plaintext highlighter-rouge">StrVec</code> in C to the Fortran function. This descriptor is then passed to the Fortran function instead of the string itself. This is a highly desirable feature of Fortran 2018 as it does not require <em>any</em> changes to the Fortran function. In other words, the Fortran function <code class="language-plaintext highlighter-rouge">printString()</code> has a single interface for both Fortran and C, although when calling the function from C, one has to now establish a C descriptor. However, that is straightforward as shown above.</p>
 
-<p>Unfortunately, there is still no standardized way, as of Fortran 2018, to return a string output from a Fortran function to C. The Fortran function needs to <strong>allocate</strong> new space for its string result and pass it to C. Until the Fortran standard offers a remedy, a workaround is to rewrite the Fortran function as a subroutine which takes two arguments, one input and the other as the output of the subroutine <code class="highlighter-rouge">getLowerCase</code>. Then, allocate both input and output from the C side and pass them to the Fortran subroutine.</p>
+<p>Unfortunately, there is still no standardized way, as of Fortran 2018, to return a string output from a Fortran function to C. The Fortran function needs to <strong>allocate</strong> new space for its string result and pass it to C. Until the Fortran standard offers a remedy, a workaround is to rewrite the Fortran function as a subroutine which takes two arguments, one input and the other as the output of the subroutine <code class="language-plaintext highlighter-rouge">getLowerCase</code>. Then, allocate both input and output from the C side and pass them to the Fortran subroutine.</p>
 
 <div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
     
@@ -428,12 +428,12 @@ icl <span class="nt">-c</span> main.c
 icl String_mod.obj main.obj <span class="nt">-o</span> a.exe 
 a.exe
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>From Inside Fortran@getLowerCase(): StrVec = HELLO FORTRAN! YOU ROCK!
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>From Inside Fortran@getLowerCase(): StrVec = HELLO FORTRAN! YOU ROCK!
 From Inside Fortran@getLowerCase(): lenStrVec = 25
 From Inside C: hello fortran! you rock!
 </code></pre></div></div>
 
-<p class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> In the above solution, we are defining our string in C as a vector of characters rather than a string, and it is received as a vector of characters on the Fortran side. Because of this, the length of the character vector has to be explicitly passed to the Fortran subroutine, otherwise, Fortran will not know the length of the input and output character vectors. As a result, there is no need for the C null terminating character at the end of the output character vector of the Fortran subroutine. Also, note that the length of the subroutine output character vector is prescribed by the C program before calling the Fortran subroutine. <strong>All allocations happen on the C side</strong>. <br /><br />This is the simplest Fortran-2003-standard approach to string interoperation between C and Fortran. Fortran 2018 provides more convenient ways to pass strings (including allocatable strings) between Fortran and C, some of which require <strong>no change</strong> to the Fortran code and minimal work on the C code via <code class="highlighter-rouge">ISO_Fortran_binding.h</code>. This is a great capability, since it on many occasions, the Fortran code which is often part of a library remains intact with no need for a wrapper.</p>
+<p class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> In the above solution, we are defining our string in C as a vector of characters rather than a string, and it is received as a vector of characters on the Fortran side. Because of this, the length of the character vector has to be explicitly passed to the Fortran subroutine, otherwise, Fortran will not know the length of the input and output character vectors. As a result, there is no need for the C null terminating character at the end of the output character vector of the Fortran subroutine. Also, note that the length of the subroutine output character vector is prescribed by the C program before calling the Fortran subroutine. <strong>All allocations happen on the C side</strong>. <br /><br />This is the simplest Fortran-2003-standard approach to string interoperation between C and Fortran. Fortran 2018 provides more convenient ways to pass strings (including allocatable strings) between Fortran and C, some of which require <strong>no change</strong> to the Fortran code and minimal work on the C code via <code class="language-plaintext highlighter-rouge">ISO_Fortran_binding.h</code>. This is a great capability, since it on many occasions, the Fortran code which is often part of a library remains intact with no need for a wrapper.</p>
 
 
             </div>
@@ -498,8 +498,8 @@ From Inside C: hello fortran! you rock!
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2020 / 12 / 08</section></br> -->
-         <section>Last updated Tuesday, 08 Dec 2020 at 02:10 AM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 11</section></br> -->
+         <section>Last updated Monday, 11 Jan 2021 at 03:21 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

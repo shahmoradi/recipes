@@ -217,13 +217,13 @@
     </figure>
 </div>
 
-<p>Write a simple program named <code class="highlighter-rouge">sum_via_eval.py</code> that takes in an arbitrary-size list of input numbers from the command-line, and prints out the sum of them on the terminal which is computed using Python’s <code class="highlighter-rouge">eval()</code> function. The program output should look like the following,</p>
+<p>Write a simple program named <code class="language-plaintext highlighter-rouge">sum_via_eval.py</code> that takes in an arbitrary-size list of input numbers from the command-line, and prints out the sum of them on the terminal which is computed using Python’s <code class="language-plaintext highlighter-rouge">eval()</code> function. The program output should look like the following,</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python sum.py 1 2 1 23
 The <span class="nb">sum </span>of 1 2 1 23 is 27
 </code></pre></div></div>
 
-<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Think of how to add + operator between the input arguments from the command line and then, evaluating the whole string via Python’s <code class="highlighter-rouge">eval()</code> function.</p>
+<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Think of how to add + operator between the input arguments from the command line and then, evaluating the whole string via Python’s <code class="language-plaintext highlighter-rouge">eval()</code> function.</p>
 
 <div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
 
@@ -252,7 +252,7 @@ The <span class="nb">sum </span>of 1 2 1 23 is 27
 </div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sys</span>
-<span class="k">print</span><span class="p">(</span> <span class="s">'The sum of {} is {}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span> <span class="s">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="p">,</span> <span class="nb">eval</span><span class="p">(</span><span class="s">'+'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
+<span class="k">print</span><span class="p">(</span> <span class="s">'The sum of {} is {}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span> <span class="s">' '</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="p">,</span> <span class="nb">eval</span><span class="p">(</span><span class="s">'+'</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
 </code></pre></div></div>
 
 <p>Here is the Bash output,</p>
@@ -323,8 +323,8 @@ The <span class="nb">sum </span>of 1 2 1 23 is 27
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2020 / 12 / 08</section></br> -->
-         <section>Last updated Tuesday, 08 Dec 2020 at 02:10 AM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 11</section></br> -->
+         <section>Last updated Monday, 11 Jan 2021 at 03:21 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

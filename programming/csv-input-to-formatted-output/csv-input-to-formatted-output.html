@@ -216,7 +216,7 @@
     
 </div>
 
-<p>Consider this comma-separated data file: <a href="4/data.in" target="_blank">data.in</a>. Write a simple script named <code class="highlighter-rouge">csv2formatted</code> that takes two input arguments representing the input and output file names. Then, the script writes the same input float data to the output file <code class="highlighter-rouge">data.out</code> <strong>in a formatted style</strong>, like this example output file: <a href="4/outputter.out" target="_blank">example output file</a>. Note that every numer in the output file has only three significant digits after the decimal point.</p>
+<p>Consider this comma-separated data file: <a href="4/data.in" target="_blank">data.in</a>. Write a simple script named <code class="language-plaintext highlighter-rouge">csv2formatted</code> that takes two input arguments representing the input and output file names. Then, the script writes the same input float data to the output file <code class="language-plaintext highlighter-rouge">data.out</code> <strong>in a formatted style</strong>, like this example output file: <a href="4/outputter.out" target="_blank">example output file</a>. Note that every numer in the output file has only three significant digits after the decimal point.</p>
 
 <div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
     
@@ -234,7 +234,7 @@
     </figure>
 </div>
 
-<p>Write your MATLAB script as a function that takes the input and output file names as input arguments to a function named <code class="highlighter-rouge">csv2formatted</code>, so that it can be called like the following from the MATLAB command line.</p>
+<p>Write your MATLAB script as a function that takes the input and output file names as input arguments to a function named <code class="language-plaintext highlighter-rouge">csv2formatted</code>, so that it can be called like the following from the MATLAB command line.</p>
 
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">csv2formatted</span><span class="p">(</span><span class="s1">'data.in'</span><span class="p">,</span><span class="s1">'dataMATLAB.out'</span><span class="p">)</span>
 </code></pre></div></div>
@@ -318,13 +318,13 @@
 <p>Here is an example implementation in Python.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s">'w'</span><span class="p">)</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+<span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s">'w'</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">','</span><span class="p">):</span>
-            <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="s">'{:14.3f}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">column</span><span class="p">))</span> <span class="p">)</span>
-        <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-    <span class="n">outfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">row</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">','</span><span class="p">):</span>
+            <span class="n">outfile</span><span class="p">.</span><span class="n">write</span><span class="p">(</span> <span class="s">'{:14.3f}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">column</span><span class="p">))</span> <span class="p">)</span>
+        <span class="n">outfile</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+    <span class="n">outfile</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div></div>
 
 
@@ -390,8 +390,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2020 / 12 / 08</section></br> -->
-         <section>Last updated Tuesday, 08 Dec 2020 at 02:10 AM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 11</section></br> -->
+         <section>Last updated Monday, 11 Jan 2021 at 03:21 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

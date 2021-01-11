@@ -222,11 +222,11 @@
     </figure>
 </div>
 
-<p>Suppose you want to find the largest prime number that is smaller than a given input value by the user. Write a function named <code class="highlighter-rouge">getLargestPrime</code> that does so, using for-loop, break, and MATLAB’s intrinsic function <code class="highlighter-rouge">isprime()</code>. Here is a test,</p>
+<p>Suppose you want to find the largest prime number that is smaller than a given input value by the user. Write a function named <code class="language-plaintext highlighter-rouge">getLargestPrime</code> that does so, using for-loop, break, and MATLAB’s intrinsic function <code class="language-plaintext highlighter-rouge">isprime()</code>. Here is a test,</p>
 
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">getLargestPrime</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ans =
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ans =
    113
 </code></pre></div></div>
 
@@ -274,12 +274,12 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">getNumPrimes</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5
 </code></pre></div></div>
 
-<p><strong>(A)</strong> Now rewrite <code class="highlighter-rouge">getNumPrimes(n)</code> and the other functions in the above code using for-loop this time. Name the new functions <code class="highlighter-rouge">get_prime_for(n)</code> and <code class="highlighter-rouge">isPrime_for(n)</code>, with <em>for</em> in the names indicating that the functions now use for-loops.</p>
+<p><strong>(A)</strong> Now rewrite <code class="language-plaintext highlighter-rouge">getNumPrimes(n)</code> and the other functions in the above code using for-loop this time. Name the new functions <code class="language-plaintext highlighter-rouge">get_prime_for(n)</code> and <code class="language-plaintext highlighter-rouge">isPrime_for(n)</code>, with <em>for</em> in the names indicating that the functions now use for-loops.</p>
 
-<p><strong>(B)</strong> Now compare the performance of the two functions <code class="highlighter-rouge">getNumPrimes(n=500)</code> and <code class="highlighter-rouge">getNumPrimes_for(n=500)</code> using Jupyter’s or IPython’s <code class="highlighter-rouge">%timeit</code> magic function. Which one is faster?</p>
+<p><strong>(B)</strong> Now compare the performance of the two functions <code class="language-plaintext highlighter-rouge">getNumPrimes(n=500)</code> and <code class="language-plaintext highlighter-rouge">getNumPrimes_for(n=500)</code> using Jupyter’s or IPython’s <code class="language-plaintext highlighter-rouge">%timeit</code> magic function. Which one is faster?</p>
 
 <div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
 
@@ -360,19 +360,19 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">getNumPrimes_for</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5
 </code></pre></div></div>
 
 <p><strong>(B)</strong></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">timeit</span> <span class="n">getNumPrimes</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1000 loops, best of 3: 1.32 ms per loop
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1000 loops, best of 3: 1.32 ms per loop
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">timeit</span> <span class="n">getNumPrimes_for</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1000 loops, best of 3: 1.69 ms per loop  
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1000 loops, best of 3: 1.69 ms per loop  
 </code></pre></div></div>
 
 <p>Interesting, recursive functions seem to be faster than Python for-loops!</p>
@@ -440,8 +440,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2020 / 12 / 08</section></br> -->
-         <section>Last updated Tuesday, 08 Dec 2020 at 02:10 AM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 11</section></br> -->
+         <section>Last updated Monday, 11 Jan 2021 at 03:21 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

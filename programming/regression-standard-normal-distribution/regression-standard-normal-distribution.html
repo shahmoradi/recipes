@@ -247,16 +247,16 @@
 <p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Our hypothesis is that the data in this histogram comes from a standard Normal distribution with a fixed mean ($\mu$) and standard deviation ($\sigma$). For the moment, let’s assume that we know the values of these two parameters. Then if all of these points, $D$, come from the normal distribution with the given $(\mu,\sigma)$, then the probability of all them coming from the normal distribution with these parameter values can be computed as,<br />
 
 <br />
-<script type="math/tex">\pi\big(\boldsymbol D\big|\mu,\sigma\big) = \prod^{N=100}_{i=1} \frac{1}{2\pi\sigma^2}\exp\bigg( -\bigg[ \frac{\boldsymbol D(i)-\mu}{\sqrt{2}\sigma} \bigg]^2 \bigg) ~~,</script>
+\(\pi\big(\boldsymbol D\big|\mu,\sigma\big) = \prod^{N=100}_{i=1} \frac{1}{2\pi\sigma^2}\exp\bigg( -\bigg[ \frac{\boldsymbol D(i)-\mu}{\sqrt{2}\sigma} \bigg]^2 \bigg) ~~,\)
 <br />
 <br />
-where the symbol $\pi$ to the left of equality means <strong>probability</strong> (but note that $\pi$ on the right hand side of the euqation stands for the number $\pi=3.14\ldots$, and $D(i)$ refers to the $i$th point in the sample of points. Since probabilities are always extremely small numbers, it is always good to work with their <code class="highlighter-rouge">log()</code> values instead of their raw values (can you guess why?). Therefore, we could take the log of the above equation to write it as,<br />
+where the symbol $\pi$ to the left of equality means <strong>probability</strong> (but note that $\pi$ on the right hand side of the euqation stands for the number $\pi=3.14\ldots$, and $D(i)$ refers to the $i$th point in the sample of points. Since probabilities are always extremely small numbers, it is always good to work with their <code class="language-plaintext highlighter-rouge">log()</code> values instead of their raw values (can you guess why?). Therefore, we could take the log of the above equation to write it as,<br />
 
 <br />
-<script type="math/tex">\log\pi\big(\boldsymbol D\big|\mu,\sigma\big) = \sum^{N=100}_{i=1} - \log\big(2\pi\sigma^2\big) - \bigg[ \frac{\boldsymbol D(i)-\mu}{\sqrt{2}\sigma} \bigg]^2 ~~,</script>
+\(\log\pi\big(\boldsymbol D\big|\mu,\sigma\big) = \sum^{N=100}_{i=1} - \log\big(2\pi\sigma^2\big) - \bigg[ \frac{\boldsymbol D(i)-\mu}{\sqrt{2}\sigma} \bigg]^2 ~~,\)
 <br />
 <br />
-Now our goal is to construct this function (let’s name it <code class="highlighter-rouge">getLogProbNorm()</code>) and pass it to an optimizer to find the most likely $(\mu,\sigma)$ that leads to the highest likelihood value (the maximum of the above equation).</p>
+Now our goal is to construct this function (let’s name it <code class="language-plaintext highlighter-rouge">getLogProbNorm()</code>) and pass it to an optimizer to find the most likely $(\mu,\sigma)$ that leads to the highest likelihood value (the maximum of the above equation).</p>
 
 <p><br /></p>
 
@@ -276,16 +276,16 @@ Now our goal is to construct this function (let’s name it <code class="highlig
     </figure>
 </div>
 
-<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> For optimization tasks in MATLAB, you can use MATLAB’s built-in function, <code class="highlighter-rouge">fminsearch()</code>. Note that <code class="highlighter-rouge">fminsearch()</code> minimizes functions, but here we want to maximize <code class="highlighter-rouge">getLogProbNorm()</code>, instead of minimizing it. What change could you make to this function to make it work with <code class="highlighter-rouge">fminsearch()</code>?</p>
+<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> For optimization tasks in MATLAB, you can use MATLAB’s built-in function, <code class="language-plaintext highlighter-rouge">fminsearch()</code>. Note that <code class="language-plaintext highlighter-rouge">fminsearch()</code> minimizes functions, but here we want to maximize <code class="language-plaintext highlighter-rouge">getLogProbNorm()</code>, instead of minimizing it. What change could you make to this function to make it work with <code class="language-plaintext highlighter-rouge">fminsearch()</code>?</p>
 
-<p>Name your main script <code class="highlighter-rouge">findBestFitParameters.m</code>. Now when you run your script it should call <code class="highlighter-rouge">fminsearch()</code> and then output the best-fit parameters like the following,</p>
+<p>Name your main script <code class="language-plaintext highlighter-rouge">findBestFitParameters.m</code>. Now when you run your script it should call <code class="language-plaintext highlighter-rouge">fminsearch()</code> and then output the best-fit parameters like the following,</p>
 
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;</span> <span class="n">findBestFitParameters</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mu: -0.082001 , sigma: 1.0043
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mu: -0.082001 , sigma: 1.0043
 </code></pre></div></div>
 
-<p>Start your parameter search via <code class="highlighter-rouge">fminsearch()</code> with the following values: $[\mu,\sigma] = [1,10]$.</p>
+<p>Start your parameter search via <code class="language-plaintext highlighter-rouge">fminsearch()</code> with the following values: $[\mu,\sigma] = [1,10]$.</p>
 
 <div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
     
@@ -304,21 +304,21 @@ Now our goal is to construct this function (let’s name it <code class="highlig
 </div>
 
 <p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> 
-For optimization tasks in Python, you can use <code class="highlighter-rouge">fmin()</code> function from Python’s package <strong>scipy</strong>: <code class="highlighter-rouge">from scipy.optimize import fmin</code>. To read MATLAB binary files (<code class="highlighter-rouge">*.mat</code>) in Python, you will have to use Scipy’s <code class="highlighter-rouge">loadmat()</code> function (<code class="highlighter-rouge">from scipy.io import loadmat</code>).
+For optimization tasks in Python, you can use <code class="language-plaintext highlighter-rouge">fmin()</code> function from Python’s package <strong>scipy</strong>: <code class="language-plaintext highlighter-rouge">from scipy.optimize import fmin</code>. To read MATLAB binary files (<code class="language-plaintext highlighter-rouge">*.mat</code>) in Python, you will have to use Scipy’s <code class="language-plaintext highlighter-rouge">loadmat()</code> function (<code class="language-plaintext highlighter-rouge">from scipy.io import loadmat</code>).
 </p>
 
-<p>Name your main script <code class="highlighter-rouge">findBestFitParameters.py</code>. Here is an example expected output of such script,</p>
+<p>Name your main script <code class="language-plaintext highlighter-rouge">findBestFitParameters.py</code>. Here is an example expected output of such script,</p>
 
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">findBestFitParameters</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Optimization terminated successfully.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Optimization terminated successfully.
      Current function value: 142.326191
      Iterations: 50
      Function evaluations: 98
 mean = -0.08200050180312446, standard-deviation = 1.0043358235352169
 </code></pre></div></div>
 
-<p>Start your parameter search via <code class="highlighter-rouge">fmin()</code> with the following values: $[\mu,\sigma] = [1,10]$.</p>
+<p>Start your parameter search via <code class="language-plaintext highlighter-rouge">fmin()</code> with the following values: $[\mu,\sigma] = [1,10]$.</p>
 
 <div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
 
@@ -399,31 +399,31 @@ mean = -0.08200050180312446, standard-deviation = 1.0043358235352169
 
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span> \
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span> \
                 <span class="p">,</span> <span class="n">dpi</span><span class="o">=</span> <span class="mi">300</span> \
                 <span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s">'w'</span> \
                 <span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">'w'</span> \
                 <span class="p">)</span> <span class="c1"># create figure object
-</span><span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Get the axes instance
+</span><span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Get the axes instance
 </span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">Data</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">Data</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="c1"># find the parameters of Gaussian distribution
 </span>
 <span class="k">def</span> <span class="nf">getNegLogProbNorm</span><span class="p">(</span><span class="n">Param</span><span class="p">):</span>
     <span class="n">avg</span> <span class="o">=</span> <span class="n">Param</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
     <span class="n">std</span> <span class="o">=</span> <span class="n">Param</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
-    <span class="n">getNegLogProbNorm</span> <span class="o">=</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="nb">sum</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Data</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="n">avg</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">std</span><span class="p">)</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="n">getNegLogProbNorm</span> <span class="o">=</span> <span class="o">-</span> <span class="n">np</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span> <span class="n">np</span><span class="p">.</span><span class="n">log</span><span class="p">(</span> <span class="n">norm</span><span class="p">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Data</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="n">avg</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">std</span><span class="p">)</span> <span class="p">)</span> <span class="p">);</span>
     <span class="k">return</span> <span class="n">getNegLogProbNorm</span>
 
 <span class="n">Parameters</span> <span class="o">=</span> <span class="n">fmin</span>   <span class="p">(</span> <span class="n">func</span> <span class="o">=</span> <span class="n">getNegLogProbNorm</span>  \
-                    <span class="p">,</span> <span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>     \
+                    <span class="p">,</span> <span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>     \
                     <span class="p">)</span>
-<span class="k">print</span><span class="p">(</span> <span class="s">"mean = {}, standard-deviation = {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">Parameters</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">Parameters</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="p">)</span>
+<span class="k">print</span><span class="p">(</span> <span class="s">"mean = {}, standard-deviation = {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">Parameters</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">Parameters</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="p">)</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Optimization terminated successfully.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Optimization terminated successfully.
      Current function value: 142.326191
      Iterations: 50
      Function evaluations: 98
@@ -493,8 +493,8 @@ mean = -0.08200050180312446, standard-deviation = 1.0043358235352169
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2020 / 12 / 08</section></br> -->
-         <section>Last updated Tuesday, 08 Dec 2020 at 02:10 AM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 11</section></br> -->
+         <section>Last updated Monday, 11 Jan 2021 at 03:21 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

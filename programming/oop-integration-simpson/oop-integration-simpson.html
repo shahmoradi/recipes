@@ -214,23 +214,23 @@
 
 <p>To implement the midpoint rule, one has to compute the area of each rectangle, sum them up, just as in the formula for the Midpoint rule,</p>
 
-<script type="math/tex; mode=display">\int^b_a f(x) dx \approx h\sum^{n-1}_{i=0} f(a + i\times h + 0.5h) ~,</script>
+\[\int^b_a f(x) dx \approx h\sum^{n-1}_{i=0} f(a + i\times h + 0.5h) ~,\]
 
-<p>where $h=(b-a)/n$ is the width of each rectangle. Implement this formula as a Python function with this interface <code class="highlighter-rouge">integrate(evalIntegrand, lowerLimit, upperLimit, numBin = 1000)</code> where <code class="highlighter-rouge">numBin</code> represents $n$ in the above equation. Test the integrator with the following example input mathematical function,</p>
+<p>where $h=(b-a)/n$ is the width of each rectangle. Implement this formula as a Python function with this interface <code class="language-plaintext highlighter-rouge">integrate(evalIntegrand, lowerLimit, upperLimit, numBin = 1000)</code> where <code class="language-plaintext highlighter-rouge">numBin</code> represents $n$ in the above equation. Test the integrator with the following example input mathematical function,</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="n">integrate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">integrate</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">sin</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-1.743934249004316e-17  
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-1.743934249004316e-17  
 </code></pre></div></div>
 
 <p>Note that this number could be slightly different on your system depending on your Python version and computer architecture, however, the number should be of the same order as the number in the above. Now, suppose you want to implement a projectile motion described via the physical equation $v = v_0 -g\times t$ where $v_0$ represents the initial velocity of the projectile, $g$ is the gravity constant, and $t$ is time starting from zero. Integrating this function from $t=0$ to $t=1$ would give us the total distance traveled by the projectile during this time period. Now, create a class implementation of this projectile motion such that the following code works and compute the total distance traveled by this projectile in the first second of the projectile motion.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">projectile</span> <span class="o">=</span> <span class="n">Projectile</span><span class="p">(</span><span class="n">initVelocity</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span> <span class="s">"v(time=1) ="</span><span class="p">,</span> <span class="n">projectile</span><span class="o">.</span><span class="n">getVelocity</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
-<span class="k">print</span><span class="p">(</span> <span class="s">"Total distance traveled after 1 second: {} meters"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">integrate</span><span class="p">(</span><span class="n">projectile</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span> <span class="s">"v(time=1) ="</span><span class="p">,</span> <span class="n">projectile</span><span class="p">.</span><span class="n">getVelocity</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
+<span class="k">print</span><span class="p">(</span> <span class="s">"Total distance traveled after 1 second: {} meters"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">integrate</span><span class="p">(</span><span class="n">projectile</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>v(time=1) = 0.1899999999999995  
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>v(time=1) = 0.1899999999999995  
 Total distance traveled after 1 second: 5.095000000000001 meters  
 </code></pre></div></div>
 
@@ -259,7 +259,7 @@ Total distance traveled after 1 second: 5.095000000000001 meters
     </figure>
 </div>
 
-<p>Here is an implementation of the <code class="highlighter-rouge">integrate()</code> function,</p>
+<p>Here is an implementation of the <code class="language-plaintext highlighter-rouge">integrate()</code> function,</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">integrate</span><span class="p">(</span><span class="n">evalIntegrand</span><span class="p">,</span> <span class="n">lowerLimit</span><span class="p">,</span> <span class="n">upperLimit</span><span class="p">,</span> <span class="n">numBin</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">):</span>
     <span class="n">integral</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">binWidth</span> <span class="o">=</span> <span class="p">(</span><span class="n">upperLimit</span> <span class="o">-</span> <span class="n">lowerLimit</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">numBin</span><span class="p">)</span>
@@ -269,15 +269,15 @@ Total distance traveled after 1 second: 5.095000000000001 meters
     <span class="k">return</span> <span class="n">integral</span>
 </code></pre></div></div>
 
-<p>Here is an implementation of the <code class="highlighter-rouge">Projectile()</code> function,</p>
+<p>Here is an implementation of the <code class="language-plaintext highlighter-rouge">Projectile()</code> function,</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Projectile</span><span class="p">():</span> 
     <span class="n">gravityConstant</span> <span class="o">=</span> <span class="mf">9.81</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">initVelocity</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">initVelocity</span> <span class="o">=</span> <span class="n">initVelocity</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">initVelocity</span> <span class="o">=</span> <span class="n">initVelocity</span>
     <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getVelocity</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">getVelocity</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">getVelocity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">time</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">initVelocity</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">gravityConstant</span> <span class="o">*</span> <span class="n">time</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">initVelocity</span> <span class="o">-</span> <span class="bp">self</span><span class="p">.</span><span class="n">gravityConstant</span> <span class="o">*</span> <span class="n">time</span>
 </code></pre></div></div>
 
 
@@ -343,8 +343,8 @@ Total distance traveled after 1 second: 5.095000000000001 meters
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2020 / 12 / 08</section></br> -->
-         <section>Last updated Tuesday, 08 Dec 2020 at 02:10 AM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 11</section></br> -->
+         <section>Last updated Monday, 11 Jan 2021 at 03:21 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

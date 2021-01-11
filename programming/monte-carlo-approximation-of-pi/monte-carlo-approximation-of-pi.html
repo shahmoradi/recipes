@@ -230,19 +230,19 @@
 
 <p>Now the generated random point $P$ has the coordinate $(x,y)$, so we can calculate its distance from the coordinate origin. Now suppose we also draw a quarter-circle inside of this square whose radius is unit and is centered at the origin $(0,0)$. The ratio of the area of this quarter-circle, $S_C$ to the area of the square enclosing it, $S_S$ is,</p>
 
-<script type="math/tex; mode=display">\frac{S_C}{S_S} = \frac{\frac{1}{4}\pi r^2}{r^2} = \frac{1}{4}\pi</script>
+\[\frac{S_C}{S_S} = \frac{\frac{1}{4}\pi r^2}{r^2} = \frac{1}{4}\pi\]
 
 <p>This is because the area of the square of unit-length sides is just 1. Therefore, if we can somehow measure the area of the quarter $S_C$, then we can use the following equation, to get an estimate of $\pi$,</p>
 
-<script type="math/tex; mode=display">\pi = 4S_C</script>
+\[\pi = 4S_C\]
 
 <p>To obtain, $S_C$, we are going to throw random points in the square, just as described above, and then find the fraction of points, $f=n_C/n_{\rm total}$, that fall inside this quarter-circle. This fraction is related to the area of the circle and square by the following equation,</p>
 
-<script type="math/tex; mode=display">f=\frac{n_C}{n_{\rm total}} = \frac{S_C}{S_S}</script>
+\[f=\frac{n_C}{n_{\rm total}} = \frac{S_C}{S_S}\]
 
 <p>Therefore, one can obtain an estimate of $\pi$ using this fraction,</p>
 
-<script type="math/tex; mode=display">\pi \approx 4\frac{n_C}{n_{\rm total}}</script>
+\[\pi \approx 4\frac{n_C}{n_{\rm total}}\]
 
 <p>Now, write a MATLAB script, that takes in the number of points to be simulated, and then calculates an approximate value for $\pi$ based on the Monte Carlo algorithm described above.  Write a second function that plot the estimate of $\pi$ versus the number of points stimulated, like the following,</p>
 
@@ -334,26 +334,26 @@
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 
 <span class="k">def</span> <span class="nf">estimatePi</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">100000</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">dtype</span><span class="p">)</span>
     <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">rnd</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># generate two uniform random numbers
-</span>        <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">nlg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,:],</span> <span class="nb">ord</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">rnd</span><span class="p">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># generate two uniform random numbers
+</span>        <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">nlg</span><span class="p">.</span><span class="n">norm</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,:],</span> <span class="nb">ord</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">&lt;=</span><span class="mf">1.0</span><span class="p">):</span> <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mf">4.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mf">4.0</span><span class="o">*</span><span class="n">np</span><span class="p">.</span><span class="n">double</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="p">.</span><span class="n">double</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">x</span> <span class="c1"># the running approximate of pi is returned as a vector in the fourth column of x
 </span>
 <span class="k">def</span> <span class="nf">plotPi</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">estimatePi</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">semilogx</span><span class="p">(</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> \
+    <span class="n">plt</span><span class="p">.</span><span class="n">semilogx</span><span class="p">(</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> \
                 <span class="p">,</span> <span class="n">x</span><span class="p">[:,</span><span class="mi">3</span><span class="p">]</span> \
                 <span class="p">)</span> <span class="c1"># plot with color red, as line
-</span>    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Number of simulated points'</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'Approximate value of Pi'</span><span class="p">)</span>
+</span>    <span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Number of simulated points'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'Approximate value of Pi'</span><span class="p">)</span>
     <span class="c1">#plt.axis([1, n , 0.1, 4.0]) # [xmin, xmax, ymin, ymax]
-</span>    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">'Estimating Pi by Monte Carlo simulation'</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'approximatePi_{}.png'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span>    <span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'Estimating Pi by Monte Carlo simulation'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'approximatePi_{}.png'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="n">plotPi</span><span class="p">()</span>
 </code></pre></div></div>
@@ -421,8 +421,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2020 / 12 / 08</section></br> -->
-         <section>Last updated Tuesday, 08 Dec 2020 at 02:10 AM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 11</section></br> -->
+         <section>Last updated Monday, 11 Jan 2021 at 03:21 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

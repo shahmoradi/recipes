@@ -249,9 +249,9 @@
 
 <p>The equation describing the above curve is the following,</p>
 
-<script type="math/tex; mode=display">f(x|\mu_1,\mu_2,\sigma_1,\sigma_2) = 
+\[f(x|\mu_1,\mu_2,\sigma_1,\sigma_2) = 
 \frac{1}{\sigma_1\sqrt{2\pi}}\exp\bigg( -\frac{(x-\mu_1)^2}{2\sigma_1^2} \bigg) + 
-\frac{1}{\sigma_2\sqrt{2\pi}}\exp\bigg( -\frac{(x-\mu_2)^2}{2\sigma_2^2} \bigg) ~,</script>
+\frac{1}{\sigma_2\sqrt{2\pi}}\exp\bigg( -\frac{(x-\mu_2)^2}{2\sigma_2^2} \bigg) ~,\]
 
 <p>with the means of the two Gaussian distributions being $[\mu_1,\mu_2]=[-2, 2]$, and standard deviations being $[\sigma_1,\sigma_2]=[1, 2]$. Now, one way of doing this is to draw a box around this curve, such that the box encompasses the entire curve.</p>
 
@@ -311,32 +311,32 @@
     <span class="n">rectangleHeight</span> <span class="o">=</span> <span class="mf">0.5</span>
     <span class="n">X</span> <span class="o">=</span> <span class="p">(</span><span class="n">unifrnd</span><span class="p">(</span><span class="n">nsim</span><span class="p">)</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">rectangleWidth</span>
     <span class="n">Y</span> <span class="o">=</span> <span class="n">rectangleHeight</span> <span class="o">*</span> <span class="n">unifrnd</span><span class="p">(</span><span class="n">nsim</span><span class="p">)</span>
-    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">rectangleWidth</span> <span class="o">*</span> <span class="n">rectangleHeight</span> <span class="o">*</span> <span class="nb">sum</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">less_equal</span><span class="p">(</span> <span class="n">Y</span> <span class="p">,</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span> <span class="o">/</span> <span class="n">nsim</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">rectangleWidth</span> <span class="o">*</span> <span class="n">rectangleHeight</span> <span class="o">*</span> <span class="nb">sum</span><span class="p">(</span> <span class="n">np</span><span class="p">.</span><span class="n">less_equal</span><span class="p">(</span> <span class="n">Y</span> <span class="p">,</span> <span class="n">norm</span><span class="p">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">norm</span><span class="p">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span> <span class="o">/</span> <span class="n">nsim</span>
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">integrateStdNormPDF</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2.2
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2.2
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">integrateStdNormPDF</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2.05
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2.05
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">integrateStdNormPDF</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2.097
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2.097
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">integrateStdNormPDF</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2.009
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2.009
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">integrateStdNormPDF</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2.001
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2.001
 </code></pre></div></div>
 
 <p>The number is approaching 2 as it should be, since the two Gaussian distributions are probability density functions each with an area of 1.</p>
@@ -404,8 +404,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2020 / 12 / 08</section></br> -->
-         <section>Last updated Tuesday, 08 Dec 2020 at 02:10 AM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 11</section></br> -->
+         <section>Last updated Monday, 11 Jan 2021 at 03:21 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

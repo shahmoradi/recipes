@@ -212,13 +212,13 @@
     </figure>
 </div>
 
-<p>Write a simple program named <code class="highlighter-rouge">sum.py</code>, that takes in an arbitrary-size list of input floats from the command-line, and prints out the sum of them on the terminal with the following message,</p>
+<p>Write a simple program named <code class="language-plaintext highlighter-rouge">sum.py</code>, that takes in an arbitrary-size list of input floats from the command-line, and prints out the sum of them on the terminal with the following message,</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python sum.py 1 2 1 23
 The <span class="nb">sum </span>of 1 2 1 23 is 27.0
 </code></pre></div></div>
 
-<p class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> You will need to use Python’s built-in function <code class="highlighter-rouge">sum()</code>.</p>
+<p class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> You will need to use Python’s built-in function <code class="language-plaintext highlighter-rouge">sum()</code>.</p>
 
 <div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
 
@@ -247,7 +247,7 @@ The <span class="nb">sum </span>of 1 2 1 23 is 27.0
 </div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sys</span>
-<span class="k">print</span><span class="p">(</span> <span class="s">'The sum of {} is {}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span> <span class="s">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="p">,</span> <span class="nb">sum</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]])</span> <span class="p">)</span>
+<span class="k">print</span><span class="p">(</span> <span class="s">'The sum of {} is {}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span> <span class="s">' '</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="p">,</span> <span class="nb">sum</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">sys</span><span class="p">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]])</span> <span class="p">)</span>
 </code></pre></div></div>
 
 <p>Here is the Bash output,</p>
@@ -319,8 +319,8 @@ The <span class="nb">sum </span>of 1 2 1 23 is 27.0
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2020 / 12 / 08</section></br> -->
-         <section>Last updated Tuesday, 08 Dec 2020 at 02:10 AM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 11</section></br> -->
+         <section>Last updated Monday, 11 Jan 2021 at 03:21 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

@@ -236,7 +236,7 @@
     
 </div>
 
-<p>Consider the following example Fortran function <code class="highlighter-rouge">replaceStr</code> which takes a <code class="highlighter-rouge">string</code> of arbitrary length as input and <code class="highlighter-rouge">search</code> string. Then it searches for patterns in the input <code class="highlighter-rouge">string</code> that match the <code class="highlighter-rouge">search</code> string and replaces them with the input string <code class="highlighter-rouge">substitute</code> and outputs the resulting string as <code class="highlighter-rouge">modifiedString</code>,</p>
+<p>Consider the following example Fortran function <code class="language-plaintext highlighter-rouge">replaceStr</code> which takes a <code class="language-plaintext highlighter-rouge">string</code> of arbitrary length as input and <code class="language-plaintext highlighter-rouge">search</code> string. Then it searches for patterns in the input <code class="language-plaintext highlighter-rouge">string</code> that match the <code class="language-plaintext highlighter-rouge">search</code> string and replaces them with the input string <code class="language-plaintext highlighter-rouge">substitute</code> and outputs the resulting string as <code class="language-plaintext highlighter-rouge">modifiedString</code>,</p>
 
 <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span><span class="w"> </span><span class="n">String_mod</span><span class="w">
     </span><span class="k">implicit</span><span class="w"> </span><span class="k">none</span><span class="w">
@@ -303,7 +303,7 @@
     </figure>
 </div>
 
-<p>In this specific case, a simple solution is to keep the original <code class="highlighter-rouge">replaceStr</code> function intact and intead, write a Fortran subroutine wrapper that takes arguments from C and returns allocatable string to C.</p>
+<p>In this specific case, a simple solution is to keep the original <code class="language-plaintext highlighter-rouge">replaceStr</code> function intact and intead, write a Fortran subroutine wrapper that takes arguments from C and returns allocatable string to C.</p>
 
 <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span><span class="w"> </span><span class="n">String_mod</span><span class="w">
     </span><span class="k">implicit</span><span class="w"> </span><span class="k">none</span><span class="w">
@@ -476,7 +476,7 @@ icl <span class="nt">-c</span> mainReplaceStr.c
 icl String_mod.obj mainReplaceStr.obj <span class="nt">-o</span> a.exe 
 a.exe
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@C@main(): string pass to Fortran = This is a C string
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@C@main(): string pass to Fortran = This is a C string
 @Fortran@replaceStrC(): string received from C = This is a C string
 @Fortran@replaceStrC(): modified string by replaceStr() = ThisisaCstring
 @Fortran@replaceStrC(): modified allocatable string passed to C = ThisisaCstring
@@ -548,8 +548,8 @@ a.exe
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2020 / 12 / 08</section></br> -->
-         <section>Last updated Tuesday, 08 Dec 2020 at 02:10 AM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 11</section></br> -->
+         <section>Last updated Monday, 11 Jan 2021 at 03:21 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

@@ -272,11 +272,11 @@
     
 </div>
 
-<p>Consider the MATLAB function <a href="fib.m" target="_blank">fib()</a>. Modify this function using MATLAB’s built-in <code class="highlighter-rouge">timeit()</code> function such that <code class="highlighter-rouge">fib()</code> also returns the average runtime of the nested function <code class="highlighter-rouge">getFib()</code> inside <code class="highlighter-rouge">fib()</code>, right after giving the requested Fibonacci number. For example, here is an output from such modified code,</p>
+<p>Consider the MATLAB function <a href="fib.m" target="_blank">fib()</a>. Modify this function using MATLAB’s built-in <code class="language-plaintext highlighter-rouge">timeit()</code> function such that <code class="language-plaintext highlighter-rouge">fib()</code> also returns the average runtime of the nested function <code class="language-plaintext highlighter-rouge">getFib()</code> inside <code class="language-plaintext highlighter-rouge">fib()</code>, right after giving the requested Fibonacci number. For example, here is an output from such modified code,</p>
 
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fib</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please enter a non-negative integer or type stop: 10
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please enter a non-negative integer or type stop: 10
     fib(10) = 55
     average runtime: 1.0083e-05 seconds
 Please enter a non-negative integer or type stop: 15
@@ -297,7 +297,7 @@ Please enter a non-negative integer or type stop: 35
 Please enter a non-negative integer or type stop: stop
 </code></pre></div></div>
 
-<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> You can use <code class="highlighter-rouge">char(9)</code> at the beginning of your <code class="highlighter-rouge">disp()</code> messages to add the <code class="highlighter-rouge">tab</code> character at the beginning of your message, just like the above example.</p>
+<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> You can use <code class="language-plaintext highlighter-rouge">char(9)</code> at the beginning of your <code class="language-plaintext highlighter-rouge">disp()</code> messages to add the <code class="language-plaintext highlighter-rouge">tab</code> character at the beginning of your message, just like the above example.</p>
 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
     
@@ -309,7 +309,7 @@ Please enter a non-negative integer or type stop: stop
     
 </div>
 
-<p>Now copy this function to a new MATLAB M-file named <code class="highlighter-rouge">fibLoop.m</code>. Also modify the name of the function <code class="highlighter-rouge">fib()</code> in this file <code class="highlighter-rouge">fibLoop()</code>. Modify the nested function <code class="highlighter-rouge">getFib()</code> inside of <code class="highlighter-rouge">fibLoop()</code> such that instead of recursive function calls, it uses a for-loop to find the requested Fibonacci number.</p>
+<p>Now copy this function to a new MATLAB M-file named <code class="language-plaintext highlighter-rouge">fibLoop.m</code>. Also modify the name of the function <code class="language-plaintext highlighter-rouge">fib()</code> in this file <code class="language-plaintext highlighter-rouge">fibLoop()</code>. Modify the nested function <code class="language-plaintext highlighter-rouge">getFib()</code> inside of <code class="language-plaintext highlighter-rouge">fibLoop()</code> such that instead of recursive function calls, it uses a for-loop to find the requested Fibonacci number.</p>
 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
     
@@ -321,7 +321,7 @@ Please enter a non-negative integer or type stop: stop
     
 </div>
 
-<p>Now time your new function <code class="highlighter-rouge">fibLoop()</code> for the same input integers as in the above example: $10,15,20,25,30,35$. How do the runtimes for <code class="highlighter-rouge">fibLoop()</code> compare with <code class="highlighter-rouge">fib()</code>. Which function is faster and more efficient: <code class="highlighter-rouge">fib()</code> or <code class="highlighter-rouge">fibLoop()</code>? Why is there such huge difference in the performance of the two functions?</p>
+<p>Now time your new function <code class="language-plaintext highlighter-rouge">fibLoop()</code> for the same input integers as in the above example: $10,15,20,25,30,35$. How do the runtimes for <code class="language-plaintext highlighter-rouge">fibLoop()</code> compare with <code class="language-plaintext highlighter-rouge">fib()</code>. Which function is faster and more efficient: <code class="language-plaintext highlighter-rouge">fib()</code> or <code class="language-plaintext highlighter-rouge">fibLoop()</code>? Why is there such huge difference in the performance of the two functions?</p>
 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
     
@@ -333,18 +333,18 @@ Please enter a non-negative integer or type stop: stop
     
 </div>
 
-<p>Write two new MATLAB functions <code class="highlighter-rouge">timeFib(n)</code> and <code class="highlighter-rouge">timeFibLoop(n)</code> based on your MATLAB functions <code class="highlighter-rouge">fib()</code> and <code class="highlighter-rouge">fibLoop()</code>, such that both take an integer and output a structure whose fields are,</p>
+<p>Write two new MATLAB functions <code class="language-plaintext highlighter-rouge">timeFib(n)</code> and <code class="language-plaintext highlighter-rouge">timeFibLoop(n)</code> based on your MATLAB functions <code class="language-plaintext highlighter-rouge">fib()</code> and <code class="language-plaintext highlighter-rouge">fibLoop()</code>, such that both take an integer and output a structure whose fields are,</p>
 
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">output</span><span class="o">.</span><span class="n">n</span>
 <span class="n">output</span><span class="o">.</span><span class="n">fib</span>
 <span class="n">output</span><span class="o">.</span><span class="n">runtime</span>
 </code></pre></div></div>
 
-<p>Note that the function should take as input only an integer variable, so you need to modify your old codes to only check whether the input <code class="highlighter-rouge">~ischar()</code>, and <code class="highlighter-rouge">isreal()</code> and <code class="highlighter-rouge">n&gt;=0</code> and <code class="highlighter-rouge">round(n)==n</code>. Here is an example output from the two functions,</p>
+<p>Note that the function should take as input only an integer variable, so you need to modify your old codes to only check whether the input <code class="language-plaintext highlighter-rouge">~ischar()</code>, and <code class="language-plaintext highlighter-rouge">isreal()</code> and <code class="language-plaintext highlighter-rouge">n&gt;=0</code> and <code class="language-plaintext highlighter-rouge">round(n)==n</code>. Here is an example output from the two functions,</p>
 
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">timeFib</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ans = 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ans = 
           n: 20
         fib: 6765
     runtime: 9.6568e-04
@@ -352,13 +352,13 @@ Please enter a non-negative integer or type stop: stop
 
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">timeFib</span><span class="p">(</span><span class="s1">'amir'</span><span class="p">)</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error using timeFib (line 8)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error using timeFib (line 8)
 The input argument is not a non-negative integer! 
 </code></pre></div></div>
 
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">timeFibLoop</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ans = 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ans = 
           n: 20
         fib: 6765
     runtime: 4.4076e-06
@@ -366,7 +366,7 @@ The input argument is not a non-negative integer!
 
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">timeFibLoop</span><span class="p">(</span><span class="s1">'amir'</span><span class="p">)</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error using timeFibLoop (line 8)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error using timeFibLoop (line 8)
 The input argument is not a non-negative integer! 
 </code></pre></div></div>
 
@@ -380,7 +380,7 @@ The input argument is not a non-negative integer!
     
 </div>
 
-<p>Now write a script named <code class="highlighter-rouge">writeFibResult.m</code> that calls these two functions for a range of input $n={10,2,3,\ldots,35}$ values, and then write the output of these two functions in a formatted way in two files like these <a href="fibOutput.txt" target="_blank">fibOutput.txt</a> and <a href="https://www.cdslab.org/homework/4-problems/fibLoopOutput.txt" target="_blank">fibLoopOutput.txt</a>. You can use any of MATLAB IO methods to create the output file with any file extension you prefer: <code class="highlighter-rouge">.txt</code>, <code class="highlighter-rouge">.csv</code>, <code class="highlighter-rouge">.xlsx</code>, <code class="highlighter-rouge">.tab</code>, … .</p>
+<p>Now write a script named <code class="language-plaintext highlighter-rouge">writeFibResult.m</code> that calls these two functions for a range of input $n={10,2,3,\ldots,35}$ values, and then write the output of these two functions in a formatted way in two files like these <a href="fibOutput.txt" target="_blank">fibOutput.txt</a> and <a href="https://www.cdslab.org/homework/4-problems/fibLoopOutput.txt" target="_blank">fibLoopOutput.txt</a>. You can use any of MATLAB IO methods to create the output file with any file extension you prefer: <code class="language-plaintext highlighter-rouge">.txt</code>, <code class="language-plaintext highlighter-rouge">.csv</code>, <code class="language-plaintext highlighter-rouge">.xlsx</code>, <code class="language-plaintext highlighter-rouge">.tab</code>, … .</p>
 
 <div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
 
@@ -468,7 +468,7 @@ The input argument is not a non-negative integer!
 
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fibLoop</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please enter a non-negative integer or type stop: 12
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please enter a non-negative integer or type stop: 12
     fib(12) = 144
     average runtime: 4.3496e-06 seconds
 Please enter a non-negative integer or type stop: 10
@@ -492,7 +492,7 @@ Please enter a non-negative integer or type stop: 35
 Please enter a non-negative integer or type stop: stop
 </code></pre></div></div>
 
-<p>As you see, the for-loop version of the function <code class="highlighter-rouge">fibLoop()</code> is far faster than the recursive function version <code class="highlighter-rouge">fib()</code>. The reason is that the recursive version is not well written and does a lot of redundant calculations. Ask me directly to explain to you why there is such a huge redundancy in this function calculations.</p>
+<p>As you see, the for-loop version of the function <code class="language-plaintext highlighter-rouge">fibLoop()</code> is far faster than the recursive function version <code class="language-plaintext highlighter-rouge">fib()</code>. The reason is that the recursive version is not well written and does a lot of redundant calculations. Ask me directly to explain to you why there is such a huge redundancy in this function calculations.</p>
 
 <div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
 
@@ -586,11 +586,11 @@ Please enter a non-negative integer or type stop: stop
     
 </div>
 
-<p>Consider the Python function <a href="fib.py" target="_blank">fib()</a>. Modify this function using <code class="highlighter-rouge">process_time()</code> from Python’s <code class="highlighter-rouge">time</code> module such that <code class="highlighter-rouge">fib()</code> also returns the average runtime of the nested function <code class="highlighter-rouge">getFib()</code> inside <code class="highlighter-rouge">fib()</code>, right after giving the requested Fibonacci number. For example, here is an output from such modified code,</p>
+<p>Consider the Python function <a href="fib.py" target="_blank">fib()</a>. Modify this function using <code class="language-plaintext highlighter-rouge">process_time()</code> from Python’s <code class="language-plaintext highlighter-rouge">time</code> module such that <code class="language-plaintext highlighter-rouge">fib()</code> also returns the average runtime of the nested function <code class="language-plaintext highlighter-rouge">getFib()</code> inside <code class="language-plaintext highlighter-rouge">fib()</code>, right after giving the requested Fibonacci number. For example, here is an output from such modified code,</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fib</span><span class="p">()</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please enter a non-negative integer or type stop: 0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please enter a non-negative integer or type stop: 0
 fib(0) = 0
 average runtime: 0.015625 seconds
 Please enter a non-negative integer or type stop: 1
@@ -638,7 +638,7 @@ average runtime: 4.703125 seconds
     
 </div>
 
-<p>Now copy this function to a new Python file named <code class="highlighter-rouge">fibLoop.py</code>. Also modify the name of the function <code class="highlighter-rouge">fib()</code> in this file <code class="highlighter-rouge">fibLoop()</code>. Modify the nested function <code class="highlighter-rouge">getFib()</code> inside of <code class="highlighter-rouge">fibLoop()</code> such that instead of recursive function calls, it uses a for-loop to find the requested Fibonacci number.</p>
+<p>Now copy this function to a new Python file named <code class="language-plaintext highlighter-rouge">fibLoop.py</code>. Also modify the name of the function <code class="language-plaintext highlighter-rouge">fib()</code> in this file <code class="language-plaintext highlighter-rouge">fibLoop()</code>. Modify the nested function <code class="language-plaintext highlighter-rouge">getFib()</code> inside of <code class="language-plaintext highlighter-rouge">fibLoop()</code> such that instead of recursive function calls, it uses a for-loop to find the requested Fibonacci number.</p>
 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
     
@@ -650,7 +650,7 @@ average runtime: 4.703125 seconds
     
 </div>
 
-<p>Now time your new function <code class="highlighter-rouge">fibLoop()</code> for the same input integers as in the above example: $10,15,20,25,30,35$. How do the runtimes for <code class="highlighter-rouge">fibLoop()</code> compare with <code class="highlighter-rouge">fib()</code>. Which function is faster and more efficient: <code class="highlighter-rouge">fib()</code> or <code class="highlighter-rouge">fibLoop()</code>? Why is there such huge difference in the performance of the two functions?</p>
+<p>Now time your new function <code class="language-plaintext highlighter-rouge">fibLoop()</code> for the same input integers as in the above example: $10,15,20,25,30,35$. How do the runtimes for <code class="language-plaintext highlighter-rouge">fibLoop()</code> compare with <code class="language-plaintext highlighter-rouge">fib()</code>. Which function is faster and more efficient: <code class="language-plaintext highlighter-rouge">fib()</code> or <code class="language-plaintext highlighter-rouge">fibLoop()</code>? Why is there such huge difference in the performance of the two functions?</p>
 
 <div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
 
@@ -682,10 +682,10 @@ average runtime: 4.703125 seconds
         <span class="k">return</span> <span class="bp">None</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
-        <span class="n">tstart</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span>
-        <span class="k">print</span><span class="p">(</span> <span class="s">"fib({}) = {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">getFib</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="p">);</span>
-        <span class="n">tend</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span>
-        <span class="k">print</span><span class="p">(</span> <span class="s">"average runtime: {} seconds"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">tend</span><span class="o">-</span><span class="n">tstart</span><span class="p">)</span> <span class="p">);</span>
+        <span class="n">tstart</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">process_time</span><span class="p">()</span>
+        <span class="k">print</span><span class="p">(</span> <span class="s">"fib({}) = {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">getFib</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="p">);</span>
+        <span class="n">tend</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">process_time</span><span class="p">()</span>
+        <span class="k">print</span><span class="p">(</span> <span class="s">"average runtime: {} seconds"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">tend</span><span class="o">-</span><span class="n">tstart</span><span class="p">)</span> <span class="p">);</span>
         <span class="n">fib</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">None</span>
 </code></pre></div></div>
@@ -697,7 +697,7 @@ average runtime: 4.703125 seconds
 
     <span class="k">def</span> <span class="nf">getFib</span><span class="p">(</span><span class="n">n_int</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">n_int</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">FibSeq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_int</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">FibSeq</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_int</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
             <span class="n">FibSeq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
             <span class="n">FibSeq</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
             <span class="k">for</span> <span class="n">iseq</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n_int</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
@@ -714,17 +714,17 @@ average runtime: 4.703125 seconds
         <span class="k">return</span> <span class="bp">None</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
-        <span class="n">tstart</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span>
-        <span class="k">print</span><span class="p">(</span> <span class="s">"fib({}) = {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">getFib</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="p">);</span>
-        <span class="n">tend</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span>
-        <span class="k">print</span><span class="p">(</span> <span class="s">"average runtime: {} seconds"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">tend</span><span class="o">-</span><span class="n">tstart</span><span class="p">)</span> <span class="p">);</span>
+        <span class="n">tstart</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">process_time</span><span class="p">()</span>
+        <span class="k">print</span><span class="p">(</span> <span class="s">"fib({}) = {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">getFib</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="p">);</span>
+        <span class="n">tend</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">process_time</span><span class="p">()</span>
+        <span class="k">print</span><span class="p">(</span> <span class="s">"average runtime: {} seconds"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">tend</span><span class="o">-</span><span class="n">tstart</span><span class="p">)</span> <span class="p">);</span>
         <span class="n">fibLoop</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">None</span>
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fibLoop</span><span class="p">()</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please enter a non-negative integer or type stop: 0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please enter a non-negative integer or type stop: 0
 fib(0) = 0
 average runtime: 0.03125 seconds
 Please enter a non-negative integer or type stop: 1
@@ -763,7 +763,7 @@ average runtime: 0.03125 seconds
 Please enter a non-negative integer or type stop: stop
 </code></pre></div></div>
 
-<p>As you see, the for-loop version of the function <code class="highlighter-rouge">fibLoop()</code> is significantly faster than the recursive function version <code class="highlighter-rouge">fib()</code>. The reason is that the recursive version is not well written and does a lot of redundant calculations (for example, the two Fibonacci function calls inside the function <code class="highlighter-rouge">fib()</code> have a lot of duplicate computations that are avoided in the loop version of the function.</p>
+<p>As you see, the for-loop version of the function <code class="language-plaintext highlighter-rouge">fibLoop()</code> is significantly faster than the recursive function version <code class="language-plaintext highlighter-rouge">fib()</code>. The reason is that the recursive version is not well written and does a lot of redundant calculations (for example, the two Fibonacci function calls inside the function <code class="language-plaintext highlighter-rouge">fib()</code> have a lot of duplicate computations that are avoided in the loop version of the function.</p>
 
 
             </div>
@@ -828,8 +828,8 @@ Please enter a non-negative integer or type stop: stop
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2020 / 12 / 08</section></br> -->
-         <section>Last updated Tuesday, 08 Dec 2020 at 02:10 AM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 11</section></br> -->
+         <section>Last updated Monday, 11 Jan 2021 at 03:21 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

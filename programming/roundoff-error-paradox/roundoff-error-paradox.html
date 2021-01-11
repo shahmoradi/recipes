@@ -223,10 +223,10 @@
 <span class="k">for</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="mi">60</span>
     <span class="n">r_original</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">;</span>
     <span class="n">r</span> <span class="o">=</span> <span class="n">r_original</span><span class="p">;</span>
-    <span class="k">for</span> <span class="nb">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">n</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">n</span>
         <span class="n">r</span> <span class="o">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="n">r</span><span class="p">);</span>
     <span class="k">end</span>
-    <span class="k">for</span> <span class="nb">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">n</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">n</span>
         <span class="n">r</span> <span class="o">=</span> <span class="n">r</span><span class="o">^</span><span class="mi">2</span><span class="p">;</span>
     <span class="k">end</span>
     <span class="nb">fprintf</span><span class="p">(</span><span class="n">formatSpec</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">r_original</span><span class="p">,</span><span class="n">r</span><span class="p">);</span>
@@ -261,7 +261,7 @@
         <span class="n">r</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
         <span class="n">r</span> <span class="o">=</span> <span class="n">r</span> <span class="o">**</span> <span class="mi">2</span>
-    <span class="k">print</span> <span class="p">(</span><span class="s">'With {} times sqrt and then {} times **2, the number {} becomes: {:.16f}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">r_org</span><span class="p">,</span><span class="n">r</span><span class="p">))</span>
+    <span class="k">print</span> <span class="p">(</span><span class="s">'With {} times sqrt and then {} times **2, the number {} becomes: {:.16f}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">r_org</span><span class="p">,</span><span class="n">r</span><span class="p">))</span>
 </code></pre></div></div>
 
 <p>Explain what this code does. Then run the code, and explain why do you the behavior observed. In particular, why do you not recover the original value $2$ after many repetitions of the same forward and reverse task?</p>
@@ -292,11 +292,11 @@
     </figure>
 </div>
 
-<p>This code (<code class="highlighter-rouge">roundoff.m</code>) will yield the following output,</p>
+<p>This code (<code class="language-plaintext highlighter-rouge">roundoff.m</code>) will yield the following output,</p>
 
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">roundoff</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>With 1 sqrt, then 1 times ^2 operations, the number 2.0000000000000000 becomes: 2.0000000000000004 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>With 1 sqrt, then 1 times ^2 operations, the number 2.0000000000000000 becomes: 2.0000000000000004 
 With 2 sqrt, then 2 times ^2 operations, the number 2.0000000000000000 becomes: 1.9999999999999996 
 With 3 sqrt, then 3 times ^2 operations, the number 2.0000000000000000 becomes: 1.9999999999999996 
 With 4 sqrt, then 4 times ^2 operations, the number 2.0000000000000000 becomes: 1.9999999999999964 
@@ -376,11 +376,11 @@ With 60 sqrt, then 60 times ^2 operations, the number 2.0000000000000000 becomes
     </figure>
 </div>
 
-<p>This code (<code class="highlighter-rouge">roundoff.py</code>) will yield the following output,</p>
+<p>This code (<code class="language-plaintext highlighter-rouge">roundoff.py</code>) will yield the following output,</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">roundoff</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>With 1 times sqrt and then 1 times **2, the number 2.0 becomes: 2.0000000000000004
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>With 1 times sqrt and then 1 times **2, the number 2.0 becomes: 2.0000000000000004
 With 2 times sqrt and then 2 times **2, the number 2.0 becomes: 1.9999999999999996
 With 3 times sqrt and then 3 times **2, the number 2.0 becomes: 1.9999999999999996
 With 4 times sqrt and then 4 times **2, the number 2.0 becomes: 1.9999999999999964
@@ -506,8 +506,8 @@ With 59 times sqrt and then 59 times **2, the number 2.0 becomes: 1.000000000000
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2020 / 12 / 08</section></br> -->
-         <section>Last updated Tuesday, 08 Dec 2020 at 02:10 AM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 11</section></br> -->
+         <section>Last updated Monday, 11 Jan 2021 at 03:21 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

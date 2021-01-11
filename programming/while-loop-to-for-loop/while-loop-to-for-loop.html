@@ -248,11 +248,11 @@
 <span class="n">Fdegrees</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>
 </code></pre></div></div>
 <p><br />
-(A) Write a function that takes an input vector of temperatures, and a string which is either <code class="highlighter-rouge">'F2C'</code> or <code class="highlighter-rouge">C2F</code>. Then, converts the input temperature vector from Fahrenheit to Celsius if the input string is <code class="highlighter-rouge">'F2C'</code>, otherwise converts the input temperature vector from Celsius to Fahrenheit if the input string is <code class="highlighter-rouge">'C2F'</code>, otherwise outputs an error message and aborts the program.</p>
+(A) Write a function that takes an input vector of temperatures, and a string which is either <code class="language-plaintext highlighter-rouge">'F2C'</code> or <code class="language-plaintext highlighter-rouge">C2F</code>. Then, converts the input temperature vector from Fahrenheit to Celsius if the input string is <code class="language-plaintext highlighter-rouge">'F2C'</code>, otherwise converts the input temperature vector from Celsius to Fahrenheit if the input string is <code class="language-plaintext highlighter-rouge">'C2F'</code>, otherwise outputs an error message and aborts the program.</p>
 
-<p><strong>(A)</strong> Write this function using while-loop construct (you can name the function <code class="highlighter-rouge">convertTempFor.m</code>).<br />
-<strong>(B)</strong> Write this function using for-loop construct (you can name the function <code class="highlighter-rouge">convertTempWhile.m</code>).<br />
-<strong>(C)</strong> Write this function using vectorization concept (you can name the function <code class="highlighter-rouge">convertTempVec.m</code>).<br />
+<p><strong>(A)</strong> Write this function using while-loop construct (you can name the function <code class="language-plaintext highlighter-rouge">convertTempFor.m</code>).<br />
+<strong>(B)</strong> Write this function using for-loop construct (you can name the function <code class="language-plaintext highlighter-rouge">convertTempWhile.m</code>).<br />
+<strong>(C)</strong> Write this function using vectorization concept (you can name the function <code class="language-plaintext highlighter-rouge">convertTempVec.m</code>).<br />
 <strong>(D)</strong> Use MATLAB built-in timing functions to measure the performance of the three functions in the above.</p>
 
 <p>Here are some example calls to these functions,</p>
@@ -260,13 +260,13 @@
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">InVec</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">40</span><span class="p">];</span>
 <span class="n">convertTempFor</span><span class="p">(</span><span class="n">InVec</span><span class="p">,</span><span class="s1">'C2F'</span><span class="p">)</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ans =
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ans =
     -4     5    14    23    32    41    50    59    68    77    86    95   104
 </code></pre></div></div>
 
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">convertTempWhile</span><span class="p">(</span><span class="n">InVec</span><span class="p">,</span><span class="s1">'C2F'</span><span class="p">)</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ans =
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ans =
     -4     5    14    23    32    41    50    59    68    77    86    95   104
 </code></pre></div></div>
 
@@ -297,9 +297,9 @@
 <span class="k">print</span> <span class="p">(</span><span class="s">'    C     F'</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">C</span> <span class="ow">in</span> <span class="n">Cdegrees</span><span class="p">:</span>
     <span class="n">F</span> <span class="o">=</span> <span class="p">(</span><span class="mf">9.0</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span>
-<span class="k">print</span> <span class="p">(</span><span class="s">'</span><span class="si">%5</span><span class="s">d </span><span class="si">%5.1</span><span class="s">f'</span> <span class="o">%</span> <span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">'%5d %5.1f'</span> <span class="o">%</span> <span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">))</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    C     F
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    C     F
   -20  -4.0
   -15   5.0
   -10  14.0
@@ -351,12 +351,12 @@
     <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="n">OutVec</span> <span class="o">=</span> <span class="n">convertTempFor</span><span class="p">(</span><span class="n">InVec</span><span class="p">,</span><span class="n">str</span><span class="p">)</span>
   <span class="n">OutVec</span> <span class="o">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">InVec</span><span class="p">));</span>
   <span class="k">if</span> <span class="nb">strcmp</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="s1">'C2F'</span><span class="p">)</span>
-      <span class="k">for</span> <span class="nb">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">InVec</span><span class="p">)</span>
-          <span class="n">OutVec</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mf">9.0</span><span class="p">/</span><span class="mf">5.0</span><span class="p">)</span><span class="o">*</span><span class="n">InVec</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="o">+</span> <span class="mf">32.0</span><span class="p">;</span>
+      <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">InVec</span><span class="p">)</span>
+          <span class="n">OutVec</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mf">9.0</span><span class="p">/</span><span class="mf">5.0</span><span class="p">)</span><span class="o">*</span><span class="n">InVec</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="mf">32.0</span><span class="p">;</span>
       <span class="k">end</span>
   <span class="k">elseif</span> <span class="nb">strcmp</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="s1">'F2C'</span><span class="p">)</span>
-      <span class="k">for</span> <span class="nb">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">InVec</span><span class="p">)</span>
-          <span class="n">OutVec</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mf">5.0</span><span class="p">/</span><span class="mf">9.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">InVec</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="o">-</span> <span class="mf">32.0</span><span class="p">);</span>
+      <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">InVec</span><span class="p">)</span>
+          <span class="n">OutVec</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mf">5.0</span><span class="p">/</span><span class="mf">9.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">InVec</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">-</span> <span class="mf">32.0</span><span class="p">);</span>
       <span class="k">end</span>
   <span class="k">else</span>
       <span class="nb">error</span><span class="p">([</span><span class="s1">'the requested conversion '</span><span class="p">,</span><span class="n">str</span><span class="p">,</span><span class="s1">' is not supported. Program aborted.'</span><span class="p">]);</span>
@@ -368,17 +368,17 @@
   <li><strong>(B)</strong> <a href="convertTempWhile.m" target="_blank">convertTempWhile.m</a>,<br />
 <br />
     <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="n">OutVec</span> <span class="o">=</span> <span class="n">convertTempWhile</span><span class="p">(</span><span class="n">InVec</span><span class="p">,</span><span class="n">str</span><span class="p">)</span>
-  <span class="nb">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
   <span class="n">OutVec</span> <span class="o">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">InVec</span><span class="p">));</span>
   <span class="k">if</span> <span class="nb">strcmp</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="s1">'C2F'</span><span class="p">)</span>
-      <span class="k">while</span> <span class="nb">i</span> <span class="o">&lt;=</span> <span class="nb">length</span><span class="p">(</span><span class="n">InVec</span><span class="p">)</span>
-          <span class="n">OutVec</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mf">9.0</span><span class="p">/</span><span class="mf">5.0</span><span class="p">)</span><span class="o">*</span><span class="n">InVec</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="o">+</span> <span class="mf">32.0</span><span class="p">;</span>
-          <span class="nb">i</span> <span class="o">=</span> <span class="nb">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="nb">length</span><span class="p">(</span><span class="n">InVec</span><span class="p">)</span>
+          <span class="n">OutVec</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mf">9.0</span><span class="p">/</span><span class="mf">5.0</span><span class="p">)</span><span class="o">*</span><span class="n">InVec</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="mf">32.0</span><span class="p">;</span>
+          <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
       <span class="k">end</span>
   <span class="k">elseif</span> <span class="nb">strcmp</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="s1">'F2C'</span><span class="p">)</span>
-      <span class="k">while</span> <span class="nb">i</span> <span class="o">&lt;=</span> <span class="nb">length</span><span class="p">(</span><span class="n">InVec</span><span class="p">)</span>
-          <span class="n">OutVec</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mf">5.0</span><span class="p">/</span><span class="mf">9.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">InVec</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="o">-</span> <span class="mf">32.0</span><span class="p">);</span>
-          <span class="nb">i</span> <span class="o">=</span> <span class="nb">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="nb">length</span><span class="p">(</span><span class="n">InVec</span><span class="p">)</span>
+          <span class="n">OutVec</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mf">5.0</span><span class="p">/</span><span class="mf">9.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">InVec</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">-</span> <span class="mf">32.0</span><span class="p">);</span>
+          <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
       <span class="k">end</span>
   <span class="k">else</span>
       <span class="nb">error</span><span class="p">([</span><span class="s1">'the requested conversion '</span><span class="p">,</span><span class="n">str</span><span class="p">,</span><span class="s1">' is not supported. Program aborted.'</span><span class="p">]);</span>
@@ -413,7 +413,7 @@
 Here is a test result,</p>
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">timing</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Timing for convertTempVec: 0.038723 seconds.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Timing for convertTempVec: 0.038723 seconds.
 Timing for convertTempFor: 0.03936 seconds.
 Timing for convertTempWhile: 0.18011 seconds.
 </code></pre></div></div>
@@ -442,10 +442,10 @@ Timing for convertTempWhile: 0.18011 seconds.
 <span class="k">while</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">Cdegrees</span><span class="p">):</span>
     <span class="n">C</span> <span class="o">=</span> <span class="n">Cdegrees</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
     <span class="n">F</span> <span class="o">=</span> <span class="p">(</span><span class="mf">9.0</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="si">%5</span><span class="s">d </span><span class="si">%5.1</span><span class="s">f'</span> <span class="o">%</span> <span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'%5d %5.1f'</span> <span class="o">%</span> <span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">))</span>
     <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    C     F
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    C     F
   -20  -4.0
   -15   5.0
   -10  14.0
@@ -524,8 +524,8 @@ Timing for convertTempWhile: 0.18011 seconds.
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2020 / 12 / 08</section></br> -->
-         <section>Last updated Tuesday, 08 Dec 2020 at 02:10 AM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 11</section></br> -->
+         <section>Last updated Monday, 11 Jan 2021 at 03:21 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

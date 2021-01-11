@@ -338,7 +338,7 @@ var store = [{
   "date": "November 1, 2020",
   "category": "logic",
   "tags": ["plausibility","deduction","reasoning","logic","boolean","implication"],
-  "excerpt": "\nWe have learned that,\n\n\n\nNow, using the above expressions, show that,\n\n\n\nAnswer\n\n\n\n"
+  "excerpt": "We have learned that, \\[\\begin{eqnarray} \\bar{A} &amp;=&amp; A \\uparrow A ~, \\nonumber \\\\ AB &amp;=&amp; (A \\uparrow B) \\uparrow (A..."
 },{
   "title": "The major schools of thought in Probability Theory",
   "link": "/programming/probability-schools-of-thought/probability-schools-of-thought",
@@ -366,7 +366,7 @@ var store = [{
   "date": "October 21, 2020",
   "category": null,
   "tags": ["plausibility","deduction","reasoning","logic","boolean","implication"],
-  "excerpt": "\nProve the Bayes’s rule via Venn diagrams,\n\n\n\nAnswer:\n\n\n\n\n"
+  "excerpt": "\nProve the Bayes’s rule via Venn diagrams,\n\n\\[\\pi(B|A) = \\frac{ \\pi(A|B) ~ \\pi(B) } { \\pi(A) } ~.\\]\n\nAnswer:\n\n\n\n\n"
 },{
   "title": "The fundamental logical operators",
   "link": "/programming/logic-fundamental-operations/logic-fundamental-operations",
@@ -394,7 +394,7 @@ var store = [{
   "date": "October 21, 2020",
   "category": null,
   "tags": ["plausibility","deduction","reasoning","logic","boolean","implication"],
-  "excerpt": "Consider a set of logic functions that take a proposition () as input which is either True or False. These..."
+  "excerpt": "Consider a set of logic functions \\(\\{ f_1(A), f_2(A), f_3(A), f_4(A)\\}\\) that take a proposition (\\(A\\)) as input which is..."
 },{
   "title": "The two types of scientific reasoning",
   "link": "/programming/logic-two-types-of-scientific-reasoning/logic/logic-two-types-of-scientific-reasoning",
@@ -422,14 +422,14 @@ var store = [{
   "date": "September 30, 2020",
   "category": "logic",
   "tags": ["plausibility","deduction","reasoning","logic","boolean","implication"],
-  "excerpt": "\nShow via Venn diagrams that the logical implication ($A\\Rightarrow B$) is equivalent to the following expressions,\n\n\n\n\n\n\n\nAnswer:\n\n\n\n"
+  "excerpt": "Show via Venn diagrams that the logical implication ($A\\Rightarrow B$) is equivalent to the following expressions, \\[A\\bar{B} ~ \\text{is false}..."
 },{
   "title": "Logic implication, denial, equivalence",
   "link": "/programming/logic-implication-denial-equivalence/logic/logic-implication-denial-equivalence",
   "date": "September 30, 2020",
   "category": "logic",
   "tags": ["plausibility","deduction","reasoning","logic","boolean","implication"],
-  "excerpt": "We have learned that the logical implication ($C\\Rightarrow D$) is equivalent to the following expressions, Now, using the above expressions,..."
+  "excerpt": "We have learned that the logical implication ($C\\Rightarrow D$) is equivalent to the following expressions, \\[C\\bar{D} ~ \\text{is false} ~,\\]..."
 },{
   "title": "Venn diagram representation of Boolean expressions",
   "link": "/programming/logic-boolean-algebra-venn-diagram/logic/logic-boolean-algebra-venn-diagram",
@@ -828,7 +828,7 @@ var store = [{
   "date": "July 4, 2019",
   "category": null,
   "tags": ["Python","MATLAB","Gaussian","bell-shaped","pi","value","variable","type"],
-  "excerpt": "Problem The bell-shaped Gaussian probability density function, is one of the most widely used functions in science and technology. The..."
+  "excerpt": "Problem The bell-shaped Gaussian probability density function, \\[f(x)=\\frac{1}{\\sqrt{2\\pi}\\sigma}\\exp\\bigg[ -\\frac{1}{2}\\bigg( \\frac{x-\\mu}{\\sigma} \\bigg)^2 \\bigg]\\] is one of the most widely used functions..."
 },{
   "title": "Simple GitHub page from README.md file",
   "link": "/programming/github-readme-webpage/github-readme-webpage",

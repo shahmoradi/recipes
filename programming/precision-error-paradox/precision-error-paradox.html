@@ -217,7 +217,7 @@
     </figure>
 </div>
 
-<p>Consider the following code named <code class="highlighter-rouge">epsError.m</code>,</p>
+<p>Consider the following code named <code class="language-plaintext highlighter-rouge">epsError.m</code>,</p>
 
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">eps</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
 <span class="k">while</span> <span class="mf">1.0</span> <span class="o">~=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="nb">eps</span>
@@ -227,7 +227,7 @@
 <span class="nb">disp</span><span class="p">([</span><span class="s1">'final eps:'</span><span class="p">,</span> <span class="nb">num2str</span><span class="p">(</span><span class="nb">eps</span><span class="p">)]);</span>
 </code></pre></div></div>
 
-<p>Explain what the code is doing. Run the code and observe the output. How could <code class="highlighter-rouge">1.0 ~= 1.0 + eps</code> be <code class="highlighter-rouge">false</code>?!</p>
+<p>Explain what the code is doing. Run the code and observe the output. How could <code class="language-plaintext highlighter-rouge">1.0 ~= 1.0 + eps</code> be <code class="language-plaintext highlighter-rouge">false</code>?!</p>
 
 <div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
     
@@ -245,7 +245,7 @@
     </figure>
 </div>
 
-<p>Consider the following code named <code class="highlighter-rouge">epsError.py</code>,</p>
+<p>Consider the following code named <code class="language-plaintext highlighter-rouge">epsError.py</code>,</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">eps</span> <span class="o">=</span> <span class="mf">1.0</span>
 <span class="k">while</span> <span class="mf">1.0</span> <span class="o">!=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="n">eps</span><span class="p">:</span>
@@ -254,7 +254,7 @@
 <span class="k">print</span> <span class="p">(</span><span class="s">'final eps:'</span><span class="p">,</span> <span class="n">eps</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Explain what the code is doing. Run the code and observe the output. How could <code class="highlighter-rouge">1.0 != 1.0 + eps</code> be False?</p>
+<p>Explain what the code is doing. Run the code and observe the output. How could <code class="language-plaintext highlighter-rouge">1.0 != 1.0 + eps</code> be False?</p>
 
 <p>Here is the output of the code,</p>
 
@@ -288,7 +288,7 @@
 
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">epsError</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eps: 1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eps: 1
 eps: 0.5
 eps: 0.25
 eps: 0.125
@@ -344,7 +344,7 @@ eps: 2.2204e-16
 final eps:1.1102e-16
 </code></pre></div></div>
 
-<p>What is happening is that after a certain number of divisions performed on the value of <code class="highlighter-rouge">eps</code>, the value goes beyond the highest float precision representable by Python standard ($0.0000000000000001$), and therefore the value of <code class="highlighter-rouge">eps</code> is eventually rounded to exactly zero. The nonzero <code class="highlighter-rouge">eps</code> value computed above is called <strong>machine epsilon</strong> or <strong>machine zero</strong> and is an important parameter to know since it can lead to disasters in your very important complex calculations.</p>
+<p>What is happening is that after a certain number of divisions performed on the value of <code class="language-plaintext highlighter-rouge">eps</code>, the value goes beyond the highest float precision representable by Python standard ($0.0000000000000001$), and therefore the value of <code class="language-plaintext highlighter-rouge">eps</code> is eventually rounded to exactly zero. The nonzero <code class="language-plaintext highlighter-rouge">eps</code> value computed above is called <strong>machine epsilon</strong> or <strong>machine zero</strong> and is an important parameter to know since it can lead to disasters in your very important complex calculations.</p>
 
 <div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
     
@@ -362,9 +362,9 @@ final eps:1.1102e-16
     </figure>
 </div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">run</span> <span class="n">epsError</span><span class="o">.</span><span class="n">py</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">run</span> <span class="n">epsError</span><span class="p">.</span><span class="n">py</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>............... 1.0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>............... 1.0
 ............... 0.5
 ............... 0.25
 ............... 0.125
@@ -420,7 +420,7 @@ final eps:1.1102e-16
 final eps: 1.1102230246251565e-16
 </code></pre></div></div>
 
-<p>What is happening is that after a certain number of divisions performed on the value of <code class="highlighter-rouge">eps</code>, the value goes beyond the highest float precision representable by Python standard ($0.0000000000000001$), and therefore the value of <code class="highlighter-rouge">eps</code> is eventually rounded to exactly zero. The nonzero eps value computed above is called <strong>machine epsilon</strong> or <strong>machine zero</strong> and is an important parameter to know since it can lead to disasters in your very important complex calculations.</p>
+<p>What is happening is that after a certain number of divisions performed on the value of <code class="language-plaintext highlighter-rouge">eps</code>, the value goes beyond the highest float precision representable by Python standard ($0.0000000000000001$), and therefore the value of <code class="language-plaintext highlighter-rouge">eps</code> is eventually rounded to exactly zero. The nonzero eps value computed above is called <strong>machine epsilon</strong> or <strong>machine zero</strong> and is an important parameter to know since it can lead to disasters in your very important complex calculations.</p>
 
 
             </div>
@@ -485,8 +485,8 @@ final eps: 1.1102230246251565e-16
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2020 / 12 / 08</section></br> -->
-         <section>Last updated Tuesday, 08 Dec 2020 at 02:10 AM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 11</section></br> -->
+         <section>Last updated Monday, 11 Jan 2021 at 03:21 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

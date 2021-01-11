@@ -241,7 +241,7 @@
 
             <div style="text-align:left;">
                 
-<p>Consider the following example Fortran function contained in Fortran module <code class="highlighter-rouge">Square_mod</code> which takes an input real number of type <code class="highlighter-rouge">real64</code> and returns its square as output,</p>
+<p>Consider the following example Fortran function contained in Fortran module <code class="language-plaintext highlighter-rouge">Square_mod</code> which takes an input real number of type <code class="language-plaintext highlighter-rouge">real64</code> and returns its square as output,</p>
 
 <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span><span class="w"> </span><span class="n">Square_mod</span><span class="w">
     </span><span class="k">implicit</span><span class="w"> </span><span class="k">none</span><span class="w">
@@ -255,7 +255,7 @@
 </span><span class="k">end</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="n">Square_mod</span><span class="w">
 </span></code></pre></div></div>
 
-<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Here, <code class="highlighter-rouge">RK</code> is an alias to (or basically, an abbreviation for) the real kind <code class="highlighter-rouge">real64</code> which is imported from the Fortran standard’s intrinsic module <code class="highlighter-rouge">iso_fortran_env</code>. It is then used to declare the kinds of the real input number and the output result.</p>
+<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Here, <code class="language-plaintext highlighter-rouge">RK</code> is an alias to (or basically, an abbreviation for) the real kind <code class="language-plaintext highlighter-rouge">real64</code> which is imported from the Fortran standard’s intrinsic module <code class="language-plaintext highlighter-rouge">iso_fortran_env</code>. It is then used to declare the kinds of the real input number and the output result.</p>
 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
     
@@ -283,7 +283,7 @@
     </figure>
 </div>
 
-<p>Modify this function and provide the Intel Fortran Compiler command <code class="highlighter-rouge">ifort</code> with the required flags to generate Fortran DLL file that can be called from Fortran programs compiled by the same compiler. Then, write a Fortran program that calls this function from the DLL library and computes <code class="highlighter-rouge">getSquare(100._RK)</code>.</p>
+<p>Modify this function and provide the Intel Fortran Compiler command <code class="language-plaintext highlighter-rouge">ifort</code> with the required flags to generate Fortran DLL file that can be called from Fortran programs compiled by the same compiler. Then, write a Fortran program that calls this function from the DLL library and computes <code class="language-plaintext highlighter-rouge">getSquare(100._RK)</code>.</p>
 
 <div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
 
@@ -326,13 +326,13 @@
 </span><span class="k">end</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="n">Square_mod</span><span class="w">
 </span></code></pre></div></div>
 
-<p>The exclamation mark in <code class="highlighter-rouge">!DEC$</code> simply converts the entire line to a Fortran comment so that this line can only be parsed by the Fortran compiler when needed. The rest, <code class="highlighter-rouge">DEC$</code> tells the Intel compiler to parse this line and export the function named <code class="highlighter-rouge">getSquare</code> to the DLL file. The name that appears after <code class="highlighter-rouge">ATTRIBUTES DLLEXPORT :: </code> must be the exact name of the function that is being exported.</p>
+<p>The exclamation mark in <code class="language-plaintext highlighter-rouge">!DEC$</code> simply converts the entire line to a Fortran comment so that this line can only be parsed by the Fortran compiler when needed. The rest, <code class="language-plaintext highlighter-rouge">DEC$</code> tells the Intel compiler to parse this line and export the function named <code class="language-plaintext highlighter-rouge">getSquare</code> to the DLL file. The name that appears after <code class="language-plaintext highlighter-rouge">ATTRIBUTES DLLEXPORT :: </code> must be the exact name of the function that is being exported.</p>
 
-<p>By default, the DLL export comment line will be ignored by all Fortran compilers, including Intel’s. However, the DLL comment line is recognizable by the Intel Fortran compiler only if the <code class="highlighter-rouge">ifort</code> command is invoked with the following optional flags,</p>
+<p>By default, the DLL export comment line will be ignored by all Fortran compilers, including Intel’s. However, the DLL comment line is recognizable by the Intel Fortran compiler only if the <code class="language-plaintext highlighter-rouge">ifort</code> command is invoked with the following optional flags,</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort /dll Square_mod.f90
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort /dll Square_mod.f90
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort /dll Square_mod.f90
 Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
 Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
 
@@ -346,18 +346,18 @@ Square_mod.obj
    Creating library Square_mod.lib and object Square_mod.exp
 </code></pre></div></div>
 
-<p>where <code class="highlighter-rouge">Square_mod.f90</code> is the name of the file containing the <code class="highlighter-rouge">Square_mod</code> module. This command creates the following files,</p>
+<p>where <code class="language-plaintext highlighter-rouge">Square_mod.f90</code> is the name of the file containing the <code class="language-plaintext highlighter-rouge">Square_mod</code> module. This command creates the following files,</p>
 
 <ol>
-  <li>a DLL file named <code class="highlighter-rouge">Square_mod.dll</code> containing the library’s executable code and,</li>
-  <li>an <strong>import library</strong>, <code class="highlighter-rouge">Square_mod.lib</code> which the linker uses to associate a main program with the DLL, and which one must link with applications that call the DLL.</li>
+  <li>a DLL file named <code class="language-plaintext highlighter-rouge">Square_mod.dll</code> containing the library’s executable code and,</li>
+  <li>an <strong>import library</strong>, <code class="language-plaintext highlighter-rouge">Square_mod.lib</code> which the linker uses to associate a main program with the DLL, and which one must link with applications that call the DLL.</li>
 </ol>
 
-<p>If you also specify <code class="highlighter-rouge">/exe:filename</code>, the <code class="highlighter-rouge">filename</code> you specify will be used instead of the default DLL name,</p>
+<p>If you also specify <code class="language-plaintext highlighter-rouge">/exe:filename</code>, the <code class="language-plaintext highlighter-rouge">filename</code> you specify will be used instead of the default DLL name,</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort /dll Square_mod.f90 /exe:Square
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort /dll Square_mod.f90 /exe:Square
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort /dll Square_mod.f90 /exe:Square
 Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
 Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
 
@@ -375,7 +375,7 @@ Square_mod.obj
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dumpbin <span class="nt">-exports</span> Square.lib
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Microsoft (R) COFF/PE Dumper Version 14.22.27905.0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Microsoft (R) COFF/PE Dumper Version 14.22.27905.0
 Copyright (C) Microsoft Corporation.  All rights reserved.
 
 
@@ -403,7 +403,7 @@ File Type: LIBRARY
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dumpbin /symbols Square.exp
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Microsoft (R) COFF/PE Dumper Version 14.22.27905.0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Microsoft (R) COFF/PE Dumper Version 14.22.27905.0
 Copyright (C) Microsoft Corporation.  All rights reserved.
 
 
@@ -444,11 +444,11 @@ String Table Size = 0x1C bytes
 </span><span class="k">end</span><span class="w"> </span><span class="k">program</span><span class="w"> </span><span class="n">Square_prog</span><span class="w">
 </span></code></pre></div></div>
 
-<p>Compile this program <code class="highlighter-rouge">Square_prog.f90</code> with the following Intel <code class="highlighter-rouge">ifort</code> command to get an executable with a default name <code class="highlighter-rouge">Square_prog.exe</code>,</p>
+<p>Compile this program <code class="language-plaintext highlighter-rouge">Square_prog.f90</code> with the following Intel <code class="language-plaintext highlighter-rouge">ifort</code> command to get an executable with a default name <code class="language-plaintext highlighter-rouge">Square_prog.exe</code>,</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort Square_prog.f90 Square.lib
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort Square_prog.f90 Square.lib
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort Square_prog.f90 Square.lib
 Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
 Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
 
@@ -461,18 +461,18 @@ Square_prog.obj
 Square.lib
 </code></pre></div></div>
 
-<p>Note that <code class="highlighter-rouge">Square.lib</code> has to appear as the last input argument to <code class="highlighter-rouge">ifort</code>. Now running the executable would yield,</p>
+<p>Note that <code class="language-plaintext highlighter-rouge">Square.lib</code> has to appear as the last input argument to <code class="language-plaintext highlighter-rouge">ifort</code>. Now running the executable would yield,</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Square_prog.exe
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Square of 100.0000000000 is 10000.00000000
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Square of 100.0000000000 is 10000.00000000
 </code></pre></div></div>
 
-<p>Alternatively, one could rename the executable via <code class="highlighter-rouge">-o filename</code> flag, or on the Windows-systems only, via <code class="highlighter-rouge">/exe:filename</code>, where <code class="highlighter-rouge">filename</code> is the name of the output executable by the <code class="highlighter-rouge">ifort</code> linker,</p>
+<p>Alternatively, one could rename the executable via <code class="language-plaintext highlighter-rouge">-o filename</code> flag, or on the Windows-systems only, via <code class="language-plaintext highlighter-rouge">/exe:filename</code>, where <code class="language-plaintext highlighter-rouge">filename</code> is the name of the output executable by the <code class="language-plaintext highlighter-rouge">ifort</code> linker,</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort Square_prog.f90 Square.lib <span class="nt">-o</span> main.exe
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort Square_prog.f90 Square.lib -o main.exe
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort Square_prog.f90 Square.lib -o main.exe
 Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
 Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
 
@@ -511,9 +511,9 @@ Square.lib
     </figure>
 </div>
 
-<p>The approach described above works only within the Intel Fortran compiler environment. That is because of a technique called <a href="https://en.wikipedia.org/wiki/Name_mangling" target="_blank">name mangling</a> that compilers utilize to encode function and variable names into unique names so that linkers can separate common names used within a program or the language. Since each Fortran compiler has its set of rules and conventions for name mangling, the above simplistic approach to DLL generation can be potentially non-portable, that is, not useful for mixed-language or mixed-compiler programming. Fortunately, the Fortran standard provides a method to request the compiler to generate a unique global identifier provided by the user for a function of interest. This can be done via Fortran’s intrinsic <code class="highlighter-rouge">bind(C, name=globalName)</code> in the function/subroutine interface, with <code class="highlighter-rouge">globalName</code> representing the global identifier specified by the user for the Fortran function.</p>
+<p>The approach described above works only within the Intel Fortran compiler environment. That is because of a technique called <a href="https://en.wikipedia.org/wiki/Name_mangling" target="_blank">name mangling</a> that compilers utilize to encode function and variable names into unique names so that linkers can separate common names used within a program or the language. Since each Fortran compiler has its set of rules and conventions for name mangling, the above simplistic approach to DLL generation can be potentially non-portable, that is, not useful for mixed-language or mixed-compiler programming. Fortunately, the Fortran standard provides a method to request the compiler to generate a unique global identifier provided by the user for a function of interest. This can be done via Fortran’s intrinsic <code class="language-plaintext highlighter-rouge">bind(C, name=globalName)</code> in the function/subroutine interface, with <code class="language-plaintext highlighter-rouge">globalName</code> representing the global identifier specified by the user for the Fortran function.</p>
 
-<p>Given this new information, modify the function <code class="highlighter-rouge">getSquare</code> to give it a global identifier <code class="highlighter-rouge">getSq</code> as well as exporting the original name <code class="highlighter-rouge">getSquare</code> via Intel’s <code class="highlighter-rouge">DLLEXPORT</code>. Also, provide the Intel Fortran Compiler command <code class="highlighter-rouge">ifort</code> with the required flags to generate Fortran DLL file that can be called from Fortran programs compiled by the same compiler. Then, write a Fortran program that calls this function from the DLL library in two different ways, one through <code class="highlighter-rouge">use Square_mod, only: getSquare</code> to compute <code class="highlighter-rouge">getSquare(100._RK)</code> and the other, by defining the required explicit function interface and <code class="highlighter-rouge">DLLIMPORT</code> to call the global identifier <code class="highlighter-rouge">getSq</code> directly from within the program to compute <code class="highlighter-rouge">getSq(100._RK)</code>.</p>
+<p>Given this new information, modify the function <code class="language-plaintext highlighter-rouge">getSquare</code> to give it a global identifier <code class="language-plaintext highlighter-rouge">getSq</code> as well as exporting the original name <code class="language-plaintext highlighter-rouge">getSquare</code> via Intel’s <code class="language-plaintext highlighter-rouge">DLLEXPORT</code>. Also, provide the Intel Fortran Compiler command <code class="language-plaintext highlighter-rouge">ifort</code> with the required flags to generate Fortran DLL file that can be called from Fortran programs compiled by the same compiler. Then, write a Fortran program that calls this function from the DLL library in two different ways, one through <code class="language-plaintext highlighter-rouge">use Square_mod, only: getSquare</code> to compute <code class="language-plaintext highlighter-rouge">getSquare(100._RK)</code> and the other, by defining the required explicit function interface and <code class="language-plaintext highlighter-rouge">DLLIMPORT</code> to call the global identifier <code class="language-plaintext highlighter-rouge">getSq</code> directly from within the program to compute <code class="language-plaintext highlighter-rouge">getSq(100._RK)</code>.</p>
 
 <div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
 
@@ -541,7 +541,7 @@ Square.lib
     </figure>
 </div>
 
-<p>To make the generated DLL portable, or simply to call the function inside the DLL file with a different name from the function’s original name, for example <code class="highlighter-rouge">getSq</code> instead of <code class="highlighter-rouge">getSquare</code>, one can use Fortran’s intrinsic <code class="highlighter-rouge">bind()</code> in the function’s interface to define a global identifier for the function,</p>
+<p>To make the generated DLL portable, or simply to call the function inside the DLL file with a different name from the function’s original name, for example <code class="language-plaintext highlighter-rouge">getSq</code> instead of <code class="language-plaintext highlighter-rouge">getSquare</code>, one can use Fortran’s intrinsic <code class="language-plaintext highlighter-rouge">bind()</code> in the function’s interface to define a global identifier for the function,</p>
 
 <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span><span class="w"> </span><span class="n">Square_mod</span><span class="w">
     </span><span class="k">implicit</span><span class="w"> </span><span class="k">none</span><span class="w">
@@ -556,7 +556,7 @@ Square.lib
 </span><span class="k">end</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="n">Square_mod</span><span class="w">
 </span></code></pre></div></div>
 
-<p>and call the DLL function either in the old fashion via <code class="highlighter-rouge">use Square_mod, only: getSquare</code> or in the new approach by calling the global identifier <code class="highlighter-rouge">getSq</code> instead in the calling program, for example,</p>
+<p>and call the DLL function either in the old fashion via <code class="language-plaintext highlighter-rouge">use Square_mod, only: getSquare</code> or in the new approach by calling the global identifier <code class="language-plaintext highlighter-rouge">getSq</code> instead in the calling program, for example,</p>
 
 <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">program</span><span class="w"> </span><span class="n">Square_prog</span><span class="w">
     </span><span class="k">use</span><span class="p">,</span><span class="w"> </span><span class="k">intrinsic</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">iso_fortran_env</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">RK</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">real64</span><span class="w">
@@ -578,7 +578,7 @@ Square.lib
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort /dll PortableSquare_mod.f90 /exe:PortableSquare
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
 Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
 
 Microsoft (R) Incremental Linker Version 14.22.27905.0
@@ -593,7 +593,7 @@ PortableSquare_mod.obj
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort PortableSquare_prog.f90 PortableSquare.lib <span class="nt">-o</span> main.exe
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
 Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
 
 Microsoft (R) Incremental Linker Version 14.22.27905.0
@@ -607,13 +607,13 @@ PortableSquare.lib
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main.exe
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>getSquare( 100.0000000000 ) = 10000.00000000
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>getSquare( 100.0000000000 ) = 10000.00000000
     getSq( 100.0000000000 ) = 10000.00000000
 </code></pre></div></div>
 
 <p>Note, however, that the use of the global identifier from the DLL inside the Fortran main program requires an explicit interface of the original function as defined in the above example.</p>
 
-<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> The Fortran intrinsic attribute <code class="highlighter-rouge">bind(C, name="getSq")</code> in the function interface has nothing to do with DLL generation. It is an interoperation-with-C-language capability that exists in the Fortran standard, which tells the compiler to avoid name-mangling (changing the function name to something else) so that the Fortran code becomes more portable and the code, whether compiler by Intel or any other compiler, generates a DLL that contains a function with the exact global name as specified by <code class="highlighter-rouge">name="getSq"</code> in the function interface.</p>
+<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> The Fortran intrinsic attribute <code class="language-plaintext highlighter-rouge">bind(C, name="getSq")</code> in the function interface has nothing to do with DLL generation. It is an interoperation-with-C-language capability that exists in the Fortran standard, which tells the compiler to avoid name-mangling (changing the function name to something else) so that the Fortran code becomes more portable and the code, whether compiler by Intel or any other compiler, generates a DLL that contains a function with the exact global name as specified by <code class="language-plaintext highlighter-rouge">name="getSq"</code> in the function interface.</p>
 
 
             </div>
@@ -678,8 +678,8 @@ PortableSquare.lib
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2020 / 12 / 08</section></br> -->
-         <section>Last updated Tuesday, 08 Dec 2020 at 02:10 AM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 11</section></br> -->
+         <section>Last updated Monday, 11 Jan 2021 at 03:21 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

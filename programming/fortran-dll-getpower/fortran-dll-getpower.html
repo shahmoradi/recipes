@@ -261,7 +261,7 @@
 
             <div style="text-align:left;">
                 
-<p>Consider the following example Fortran function contained in Fortran module <code class="highlighter-rouge">Power_mod</code> which takes an input real number <code class="highlighter-rouge">base</code> of type <code class="highlighter-rouge">real64</code> and an integer variable <code class="highlighter-rouge">expo</code> of type <code class="highlighter-rouge">int32</code> and returns $\mathrm{base}^{\mathrm{expo}}$ as output,</p>
+<p>Consider the following example Fortran function contained in Fortran module <code class="language-plaintext highlighter-rouge">Power_mod</code> which takes an input real number <code class="language-plaintext highlighter-rouge">base</code> of type <code class="language-plaintext highlighter-rouge">real64</code> and an integer variable <code class="language-plaintext highlighter-rouge">expo</code> of type <code class="language-plaintext highlighter-rouge">int32</code> and returns $\mathrm{base}^{\mathrm{expo}}$ as output,</p>
 
 <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span><span class="w"> </span><span class="n">Power_mod</span><span class="w">
     </span><span class="k">implicit</span><span class="w"> </span><span class="k">none</span><span class="w">
@@ -276,11 +276,11 @@
 </span><span class="k">end</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="n">Power_mod</span><span class="w">
 </span></code></pre></div></div>
 
-<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Here, <code class="highlighter-rouge">RK</code> is an alias to (or basically, an abbreviation for) the real kind <code class="highlighter-rouge">real64</code> which is imported from the Fortran standard’s intrinsic module <code class="highlighter-rouge">iso_fortran_env</code>. It is then used to declare the kinds of the real input number and the output result. The same is true for <code class="highlighter-rouge">IK</code> and <code class="highlighter-rouge">int32</code>.</p>
+<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Here, <code class="language-plaintext highlighter-rouge">RK</code> is an alias to (or basically, an abbreviation for) the real kind <code class="language-plaintext highlighter-rouge">real64</code> which is imported from the Fortran standard’s intrinsic module <code class="language-plaintext highlighter-rouge">iso_fortran_env</code>. It is then used to declare the kinds of the real input number and the output result. The same is true for <code class="language-plaintext highlighter-rouge">IK</code> and <code class="language-plaintext highlighter-rouge">int32</code>.</p>
 
 <p>Making this Fortran function callable form other languages requires two major revisions in the code,</p>
 <ol>
-  <li>telling the Fortran compiler to not perform name mangling for this function, leaving its name to <code class="highlighter-rouge">getPower()</code> or some other global identifier specified within the program,</li>
+  <li>telling the Fortran compiler to not perform name mangling for this function, leaving its name to <code class="language-plaintext highlighter-rouge">getPower()</code> or some other global identifier specified within the program,</li>
   <li>making the function interface consistent with its interface in the other languages.</li>
 </ol>
 
@@ -356,13 +356,13 @@
 </span><span class="k">end</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="n">Power_mod</span><span class="w">
 </span></code></pre></div></div>
 
-<p>The exclamation mark in <code class="highlighter-rouge">!DEC$</code> simply converts the entire line to a Fortran comment so that this line can only be parsed by the Fortran compiler when needed. The rest, <code class="highlighter-rouge">DEC$</code> tells the Intel compiler to parse this line and export the function named <code class="highlighter-rouge">getPower</code> to the DLL file. The name that appears after <code class="highlighter-rouge">ATTRIBUTES DLLEXPORT :: </code> must be the exact name of the function that is being exported.</p>
+<p>The exclamation mark in <code class="language-plaintext highlighter-rouge">!DEC$</code> simply converts the entire line to a Fortran comment so that this line can only be parsed by the Fortran compiler when needed. The rest, <code class="language-plaintext highlighter-rouge">DEC$</code> tells the Intel compiler to parse this line and export the function named <code class="language-plaintext highlighter-rouge">getPower</code> to the DLL file. The name that appears after <code class="language-plaintext highlighter-rouge">ATTRIBUTES DLLEXPORT :: </code> must be the exact name of the function that is being exported.</p>
 
-<p>By default, the DLL export comment line will be ignored by all Fortran compilers, including Intel’s. However, the DLL comment line is recognizable by the Intel Fortran compiler only if the <code class="highlighter-rouge">ifort</code> command is invoked with the following optional flags,</p>
+<p>By default, the DLL export comment line will be ignored by all Fortran compilers, including Intel’s. However, the DLL comment line is recognizable by the Intel Fortran compiler only if the <code class="language-plaintext highlighter-rouge">ifort</code> command is invoked with the following optional flags,</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort /dll Power_mod.f90
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
 Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
 
 Microsoft (R) Incremental Linker Version 14.22.27905.0
@@ -375,18 +375,18 @@ Power_mod.obj
    Creating library Power_mod.lib and object Power_mod.exp
 </code></pre></div></div>
 
-<p>where <code class="highlighter-rouge">Power_mod.f90</code> is the name of the file containing the <code class="highlighter-rouge">Power_mod</code> module. This command creates the following files,</p>
+<p>where <code class="language-plaintext highlighter-rouge">Power_mod.f90</code> is the name of the file containing the <code class="language-plaintext highlighter-rouge">Power_mod</code> module. This command creates the following files,</p>
 
 <ol>
-  <li>a DLL file named <code class="highlighter-rouge">Power_mod.dll</code> containing the library’s executable code and,</li>
-  <li>an <strong>import library</strong>, <code class="highlighter-rouge">Power_mod.lib</code> which the linker uses to associate a main program with the DLL, and which one must link with applications that call the DLL.</li>
+  <li>a DLL file named <code class="language-plaintext highlighter-rouge">Power_mod.dll</code> containing the library’s executable code and,</li>
+  <li>an <strong>import library</strong>, <code class="language-plaintext highlighter-rouge">Power_mod.lib</code> which the linker uses to associate a main program with the DLL, and which one must link with applications that call the DLL.</li>
 </ol>
 
-<p>If you also specify <code class="highlighter-rouge">/exe:filename</code>, the <code class="highlighter-rouge">filename</code> you specify will be used instead of the default DLL name,</p>
+<p>If you also specify <code class="language-plaintext highlighter-rouge">/exe:filename</code>, the <code class="language-plaintext highlighter-rouge">filename</code> you specify will be used instead of the default DLL name,</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort /dll Power_mod.f90 /exe:Power
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
 Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
 
 Microsoft (R) Incremental Linker Version 14.22.27905.0
@@ -403,7 +403,7 @@ Power_mod.obj
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dumpbin <span class="nt">-exports</span> Power.lib
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Microsoft (R) COFF/PE Dumper Version 14.22.27905.0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Microsoft (R) COFF/PE Dumper Version 14.22.27905.0
 Copyright (C) Microsoft Corporation.  All rights reserved.
 
 
@@ -431,7 +431,7 @@ File Type: LIBRARY
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dumpbin /symbols Power.exp
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Microsoft (R) COFF/PE Dumper Version 14.22.27905.0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Microsoft (R) COFF/PE Dumper Version 14.22.27905.0
 Copyright (C) Microsoft Corporation.  All rights reserved.
 
 
@@ -483,11 +483,11 @@ String Table Size = 0x0 bytes
 </span><span class="k">end</span><span class="w"> </span><span class="k">program</span><span class="w"> </span><span class="n">Power_prog</span><span class="w">
 </span></code></pre></div></div>
 
-<p>Compile this program <code class="highlighter-rouge">Pow_prog.f90</code> with the following Intel <code class="highlighter-rouge">ifort</code> command to get an executable with a default name <code class="highlighter-rouge">Pow_prog.exe</code>,</p>
+<p>Compile this program <code class="language-plaintext highlighter-rouge">Pow_prog.f90</code> with the following Intel <code class="language-plaintext highlighter-rouge">ifort</code> command to get an executable with a default name <code class="language-plaintext highlighter-rouge">Pow_prog.exe</code>,</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort Power_prog.f90 Power.lib <span class="nt">-o</span> main.exe
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
 Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
 
 Microsoft (R) Incremental Linker Version 14.22.27905.0
@@ -499,11 +499,11 @@ Power_prog.obj
 Power.lib
 </code></pre></div></div>
 
-<p>Note that <code class="highlighter-rouge">Power.lib</code> has to appear as the last input argument to <code class="highlighter-rouge">ifort</code>. Now running the executable yields,</p>
+<p>Note that <code class="language-plaintext highlighter-rouge">Power.lib</code> has to appear as the last input argument to <code class="language-plaintext highlighter-rouge">ifort</code>. Now running the executable yields,</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main.exe
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>getPower( 100.0000000000 , 3 ) = 1000000.000000
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>getPower( 100.0000000000 , 3 ) = 1000000.000000
   getPow( 100.0000000000 , 3 ) = 1000000.000000
 </code></pre></div></div>
 
@@ -533,9 +533,9 @@ Power.lib
     </figure>
 </div>
 
-<p>Write a Python main program that calls the Fortran DLL’s function and computes $100.0^3$. Use <code class="highlighter-rouge">ctypes</code> module in Python for this purpose.</p>
+<p>Write a Python main program that calls the Fortran DLL’s function and computes $100.0^3$. Use <code class="language-plaintext highlighter-rouge">ctypes</code> module in Python for this purpose.</p>
 
-<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Since C passes arguments to functions always by value, the <code class="highlighter-rouge">value</code> attribute will have to be added to the interface variable declarations in the Fortran function. Alternatively, one could keep the Fortran function’s argument list intact, but ensure that all the input values to function at the time of call, are <strong>passed by reference</strong>.</p>
+<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Since C passes arguments to functions always by value, the <code class="language-plaintext highlighter-rouge">value</code> attribute will have to be added to the interface variable declarations in the Fortran function. Alternatively, one could keep the Fortran function’s argument list intact, but ensure that all the input values to function at the time of call, are <strong>passed by reference</strong>.</p>
 
 <div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
 
@@ -582,7 +582,7 @@ Power.lib
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort /dll Power_mod.f90
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
 Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
 
 Microsoft (R) Incremental Linker Version 14.22.27905.0
@@ -600,30 +600,30 @@ Power_mod.obj
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
 
 <span class="c1"># import the dll
-</span><span class="n">flib</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">CDLL</span><span class="p">(</span><span class="s">'Power.dll'</span><span class="p">)</span>
+</span><span class="n">flib</span> <span class="o">=</span> <span class="n">ct</span><span class="p">.</span><span class="n">CDLL</span><span class="p">(</span><span class="s">'Power.dll'</span><span class="p">)</span>
 
 <span class="c1"># define input variables with the correct types
-</span><span class="n">base</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">c_double</span><span class="p">(</span><span class="mf">100.0</span><span class="p">)</span>
-<span class="n">expo</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">c_int32</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span><span class="n">base</span> <span class="o">=</span> <span class="n">ct</span><span class="p">.</span><span class="n">c_double</span><span class="p">(</span><span class="mf">100.0</span><span class="p">)</span>
+<span class="n">expo</span> <span class="o">=</span> <span class="n">ct</span><span class="p">.</span><span class="n">c_int32</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 
 <span class="c1"># declare the DLL function's result type
-</span><span class="n">flib</span><span class="o">.</span><span class="n">getPow</span><span class="o">.</span><span class="n">restype</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">c_double</span>
+</span><span class="n">flib</span><span class="p">.</span><span class="n">getPow</span><span class="p">.</span><span class="n">restype</span> <span class="o">=</span> <span class="n">ct</span><span class="p">.</span><span class="n">c_double</span>
 
 <span class="c1"># declare DLL function's argument types to avoid wrong input arguments to the function
-</span><span class="n">flib</span><span class="o">.</span><span class="n">getPow</span><span class="o">.</span><span class="n">argtypes</span> <span class="o">=</span> <span class="p">(</span> <span class="n">ct</span><span class="o">.</span><span class="n">POINTER</span><span class="p">(</span><span class="n">ct</span><span class="o">.</span><span class="n">c_double</span><span class="p">)</span> <span class="p">,</span> <span class="n">ct</span><span class="o">.</span><span class="n">POINTER</span><span class="p">(</span><span class="n">ct</span><span class="o">.</span><span class="n">c_int32</span><span class="p">)</span> <span class="p">)</span>
+</span><span class="n">flib</span><span class="p">.</span><span class="n">getPow</span><span class="p">.</span><span class="n">argtypes</span> <span class="o">=</span> <span class="p">(</span> <span class="n">ct</span><span class="p">.</span><span class="n">POINTER</span><span class="p">(</span><span class="n">ct</span><span class="p">.</span><span class="n">c_double</span><span class="p">)</span> <span class="p">,</span> <span class="n">ct</span><span class="p">.</span><span class="n">POINTER</span><span class="p">(</span><span class="n">ct</span><span class="p">.</span><span class="n">c_int32</span><span class="p">)</span> <span class="p">)</span>
 
 <span class="c1"># call the DLL function
-</span><span class="n">result</span> <span class="o">=</span> <span class="n">flib</span><span class="o">.</span><span class="n">getPow</span><span class="p">(</span> <span class="n">ct</span><span class="o">.</span><span class="n">byref</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
-                    <span class="p">,</span> <span class="n">ct</span><span class="o">.</span><span class="n">byref</span><span class="p">(</span><span class="n">expo</span><span class="p">)</span>
+</span><span class="n">result</span> <span class="o">=</span> <span class="n">flib</span><span class="p">.</span><span class="n">getPow</span><span class="p">(</span> <span class="n">ct</span><span class="p">.</span><span class="n">byref</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+                    <span class="p">,</span> <span class="n">ct</span><span class="p">.</span><span class="n">byref</span><span class="p">(</span><span class="n">expo</span><span class="p">)</span>
                     <span class="p">)</span>
-<span class="k">print</span><span class="p">(</span> <span class="s">"getPow({},{}) = {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">base</span><span class="p">,</span><span class="n">expo</span><span class="p">,</span><span class="n">result</span><span class="p">)</span> <span class="p">)</span>
+<span class="k">print</span><span class="p">(</span> <span class="s">"getPow({},{}) = {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">base</span><span class="p">,</span><span class="n">expo</span><span class="p">,</span><span class="n">result</span><span class="p">)</span> <span class="p">)</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>getPow(c_double(100.0),c_long(3)) = 1000000.0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>getPow(c_double(100.0),c_long(3)) = 1000000.0
 </code></pre></div></div>
 
-<p class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Note that the presence of the <code class="highlighter-rouge">DLLEXPORT</code> comment line in the Fortran module is essential for successful export of the function to the DLL file in Windows Operating System via Intel Fortran compiler. Also, notice that the binding name is the global identifier for the function.</p>
+<p class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Note that the presence of the <code class="language-plaintext highlighter-rouge">DLLEXPORT</code> comment line in the Fortran module is essential for successful export of the function to the DLL file in Windows Operating System via Intel Fortran compiler. Also, notice that the binding name is the global identifier for the function.</p>
 
-<p class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Notice that the function prototype in Python uses <code class="highlighter-rouge">ct.POINTER</code> (<em>with POINTER all in upper-case</em>) to declare the input arguments as pointer, and then the arguments are passed as pointers via <code class="highlighter-rouge">ct.byref</code>. This could have also been done via <code class="highlighter-rouge">ct.pointer</code>. However, <code class="highlighter-rouge">ct.pointer</code> does a lot more than simply creating a reference for the purpose of communication and therefore, can be significantly slower than <code class="highlighter-rouge">ct.byref</code>.</p>
+<p class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Notice that the function prototype in Python uses <code class="language-plaintext highlighter-rouge">ct.POINTER</code> (<em>with POINTER all in upper-case</em>) to declare the input arguments as pointer, and then the arguments are passed as pointers via <code class="language-plaintext highlighter-rouge">ct.byref</code>. This could have also been done via <code class="language-plaintext highlighter-rouge">ct.pointer</code>. However, <code class="language-plaintext highlighter-rouge">ct.pointer</code> does a lot more than simply creating a reference for the purpose of communication and therefore, can be significantly slower than <code class="language-plaintext highlighter-rouge">ct.byref</code>.</p>
 
 
             </div>
@@ -688,8 +688,8 @@ Power_mod.obj
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2020 / 12 / 08</section></br> -->
-         <section>Last updated Tuesday, 08 Dec 2020 at 02:10 AM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 11</section></br> -->
+         <section>Last updated Monday, 11 Jan 2021 at 03:21 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
