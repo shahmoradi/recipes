@@ -292,11 +292,11 @@
     </figure>
 </div>
 
-<p>This code (<code class="language-plaintext highlighter-rouge">roundoff.m</code>) will yield the following output,</p>
+<p>This code (<code>roundoff.m</code>) will yield the following output,</p>
 
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">roundoff</span>
 </code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>With 1 sqrt, then 1 times ^2 operations, the number 2.0000000000000000 becomes: 2.0000000000000004 
+<pre><code>With 1 sqrt, then 1 times ^2 operations, the number 2.0000000000000000 becomes: 2.0000000000000004 
 With 2 sqrt, then 2 times ^2 operations, the number 2.0000000000000000 becomes: 1.9999999999999996 
 With 3 sqrt, then 3 times ^2 operations, the number 2.0000000000000000 becomes: 1.9999999999999996 
 With 4 sqrt, then 4 times ^2 operations, the number 2.0000000000000000 becomes: 1.9999999999999964 
@@ -356,7 +356,7 @@ With 57 sqrt, then 57 times ^2 operations, the number 2.0000000000000000 becomes
 With 58 sqrt, then 58 times ^2 operations, the number 2.0000000000000000 becomes: 1.0000000000000000 
 With 59 sqrt, then 59 times ^2 operations, the number 2.0000000000000000 becomes: 1.0000000000000000 
 With 60 sqrt, then 60 times ^2 operations, the number 2.0000000000000000 becomes: 1.0000000000000000 
-</code></pre></div></div>
+</code></pre>
 
 <p>What is happening is that 1 is returned for n &gt;= 52 as the square root of 2, that is, after 52 times square-root operation, the degree of accuracy required for representing the result goes beyond the degree of accuracy available in a MATLAB double-precision number. Consequently, the later squaring operation on 1.00000000000000 will leave the number unchanged and therefore, 2 is not recovered.</p>
 
@@ -376,11 +376,11 @@ With 60 sqrt, then 60 times ^2 operations, the number 2.0000000000000000 becomes
     </figure>
 </div>
 
-<p>This code (<code class="language-plaintext highlighter-rouge">roundoff.py</code>) will yield the following output,</p>
+<p>This code (<code>roundoff.py</code>) will yield the following output,</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">roundoff</span>
 </code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>With 1 times sqrt and then 1 times **2, the number 2.0 becomes: 2.0000000000000004
+<pre><code>With 1 times sqrt and then 1 times **2, the number 2.0 becomes: 2.0000000000000004
 With 2 times sqrt and then 2 times **2, the number 2.0 becomes: 1.9999999999999996
 With 3 times sqrt and then 3 times **2, the number 2.0 becomes: 1.9999999999999996
 With 4 times sqrt and then 4 times **2, the number 2.0 becomes: 1.9999999999999964
@@ -439,7 +439,7 @@ With 56 times sqrt and then 56 times **2, the number 2.0 becomes: 1.000000000000
 With 57 times sqrt and then 57 times **2, the number 2.0 becomes: 1.0000000000000000
 With 58 times sqrt and then 58 times **2, the number 2.0 becomes: 1.0000000000000000
 With 59 times sqrt and then 59 times **2, the number 2.0 becomes: 1.0000000000000000
-</code></pre></div></div>
+</code></pre>
 
 <p>What is happening is that 1 is returned for n &gt;= 52 as the square root of 2, that is, after 52 times square-root operation, the degree of accuracy required for representing the result goes beyond the degree of accuracy available in a Python float. Consequently, the later squaring operation on 1.00000000000000 will leave the number unchanged and therefore, 2 is not recovered.</p>
 
@@ -506,8 +506,8 @@ With 59 times sqrt and then 59 times **2, the number 2.0 becomes: 1.000000000000
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2021 / 01 / 20</section></br> -->
-         <section>Last updated Wednesday, 20 Jan 2021 at 02:39 PM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 26</section></br> -->
+         <section>Last updated Tuesday, 26 Jan 2021 at 08:15 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

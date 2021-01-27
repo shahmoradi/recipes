@@ -296,7 +296,7 @@
     
 </div>
 
-<p>Supposed we have observed a dataset comprised of $15027$ events with one attribute <code class="language-plaintext highlighter-rouge">variable</code> in this file: <a href="data.csv" target="_blank">data.csv</a>. Plotting these points would yield a red-colored histogram like the following plot,</p>
+<p>Supposed we have observed a dataset comprised of $15027$ events with one attribute <code>variable</code> in this file: <a href="data.csv" target="_blank">data.csv</a>. Plotting these points would yield a red-colored histogram like the following plot,</p>
 
 <figure>
     <img src="data.png" width="900" />
@@ -327,16 +327,16 @@
     <p>First read the data using Pandas library, then log-transform data to make it look like a Normal distribution.</p>
   </li>
   <li>
-    <p>Write a class that takes the log-data as input and has two methods, <code class="language-plaintext highlighter-rouge">getLogProb(data,avg,std,cutoff)</code> and <code class="language-plaintext highlighter-rouge">getLogLike(param)</code>. The former computes the log-probability of observing the input dataset <code class="language-plaintext highlighter-rouge">data</code> given the parameters of the model (the Normal average <code class="language-plaintext highlighter-rouge">avg</code>, the Normal standard deviation <code class="language-plaintext highlighter-rouge">std</code>, and the vetical cutoff on the distribution <code class="language-plaintext highlighter-rouge">cutoff</code>). The latter method takes a set of parameters as a vector containing the average of the Normal distribution (<code class="language-plaintext highlighter-rouge">avg</code>), the natural-logarithm of the standard deviation of the Normal distribution <code class="language-plaintext highlighter-rouge">log(std)</code>, and the value of the hard-cutoff on the data. Given these three parameters, <code class="language-plaintext highlighter-rouge">getLogLike(param)</code> sums over the log-probabilities returned by <code class="language-plaintext highlighter-rouge">getLogProb(data,avg,std,cutoff)</code> to compute the log-likelihood and returns it as the output.</p>
+    <p>Write a class that takes the log-data as input and has two methods, <code>getLogProb(data,avg,std,cutoff)</code> and <code>getLogLike(param)</code>. The former computes the log-probability of observing the input dataset <code>data</code> given the parameters of the model (the Normal average <code>avg</code>, the Normal standard deviation <code>std</code>, and the vetical cutoff on the distribution <code>cutoff</code>). The latter method takes a set of parameters as a vector containing the average of the Normal distribution (<code>avg</code>), the natural-logarithm of the standard deviation of the Normal distribution <code>log(std)</code>, and the value of the hard-cutoff on the data. Given these three parameters, <code>getLogLike(param)</code> sums over the log-probabilities returned by <code>getLogProb(data,avg,std,cutoff)</code> to compute the log-likelihood and returns it as the output.</p>
   </li>
   <li>
-    <p>Think about this problem: If any of the observed data points has a value that is larger than a given hard-cutoff, could that set of parameters with that hard-cutoff be possible at all? In other words, if the maximum of your data is larger than the given input <code class="language-plaintext highlighter-rouge">cutoff</code> value (which is <code class="language-plaintext highlighter-rouge">param[2]</code> in <code class="language-plaintext highlighter-rouge">getLogLike()</code>), then that set of input parameters to <code class="language-plaintext highlighter-rouge">getLogLike()</code> is impossible. Therefore, the log-likelihood corresponding to that set of parameters must be negative-infinity to indicate the impossibility of that set of parameters. However, given the computer’s limited float range, the log-likelihood must be set to the largest negative number (e.g., <code class="language-plaintext highlighter-rouge">-1.e300</code> is good enough) and returned. Otherwise, if all data values are smaller than the input cutoff, then the log-likelihood value is computed by summing over all probabilities returned by <code class="language-plaintext highlighter-rouge">getLogProb()</code>.</p>
+    <p>Think about this problem: If any of the observed data points has a value that is larger than a given hard-cutoff, could that set of parameters with that hard-cutoff be possible at all? In other words, if the maximum of your data is larger than the given input <code>cutoff</code> value (which is <code>param[2]</code> in <code>getLogLike()</code>), then that set of input parameters to <code>getLogLike()</code> is impossible. Therefore, the log-likelihood corresponding to that set of parameters must be negative-infinity to indicate the impossibility of that set of parameters. However, given the computer’s limited float range, the log-likelihood must be set to the largest negative number (e.g., <code>-1.e300</code> is good enough) and returned. Otherwise, if all data values are smaller than the input cutoff, then the log-likelihood value is computed by summing over all probabilities returned by <code>getLogProb()</code>.</p>
   </li>
   <li>
-    <p>In the latter case when you call <code class="language-plaintext highlighter-rouge">getLogProb()</code>, keep in mind that you will have to normalize the log-Gaussian probabilities, that you would normally compute, by the incomplete area created by the hard cutoff on the distribution. This is the area to the left of the hard cutoff on the distribution and can be computed via the Gaussian Cumulative Distribution Function (CDF). You will have to subtract the natural logarithm of this area from the log-probabilities of all data.</p>
+    <p>In the latter case when you call <code>getLogProb()</code>, keep in mind that you will have to normalize the log-Gaussian probabilities, that you would normally compute, by the incomplete area created by the hard cutoff on the distribution. This is the area to the left of the hard cutoff on the distribution and can be computed via the Gaussian Cumulative Distribution Function (CDF). You will have to subtract the natural logarithm of this area from the log-probabilities of all data.</p>
   </li>
   <li>
-    <p>You can use the <a href="https://www.cdslab.org/paramonte/" target="_blank">ParaMonte library</a> in Python or in MATLAB to explore the resulting log-likelihood function. In such case, make sure you start your MCMC exploration by a good set of initial parameter values, such that the MCMC sampler can correctly explore the parameter-space without getting lost. This means making sure that you set the initial starting cutoff value to something larger than the maximum value of your data, for example, <code class="language-plaintext highlighter-rouge">cutoff_init = 2 * np.max(logdata)</code>. Here is the full syntax on how to call the <code class="language-plaintext highlighter-rouge">ParaDRAM()</code> sampler of the <code class="language-plaintext highlighter-rouge">paramonte</code> library,</p>
+    <p>You can use the <a href="https://www.cdslab.org/paramonte/" target="_blank">ParaMonte library</a> in Python or in MATLAB to explore the resulting log-likelihood function. In such case, make sure you start your MCMC exploration by a good set of initial parameter values, such that the MCMC sampler can correctly explore the parameter-space without getting lost. This means making sure that you set the initial starting cutoff value to something larger than the maximum value of your data, for example, <code>cutoff_init = 2 * np.max(logdata)</code>. Here is the full syntax on how to call the <code>ParaDRAM()</code> sampler of the <code>paramonte</code> library,</p>
   </li>
 </ol>
 
@@ -354,7 +354,7 @@
                <span class="p">,</span> <span class="n">getLogFunc</span> <span class="o">=</span> <span class="n">normal</span><span class="p">.</span><span class="n">getLogLike</span>
                <span class="p">)</span>
 </code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ParaDRAM - NOTE: Running the ParaDRAM sampler in serial mode...
+<pre><code>ParaDRAM - NOTE: Running the ParaDRAM sampler in serial mode...
 ParaDRAM - NOTE: To run the ParaDRAM sampler in parallel mode visit: cdslab.org/pm
 ParaDRAM - NOTE: If you are using Jupyter notebook, check the Jupyter's terminal window
 ParaDRAM - NOTE: for realtime simulation progress and report.
@@ -370,19 +370,19 @@ ParaDRAM - NOTE: Replace 'pmpd' with the name you are using for your ParaDRAM ob
 ParaDRAM - NOTE: For more information and examples on the usage, visit:
 ParaDRAM - NOTE: 
 ParaDRAM - NOTE:     https://www.cdslab.org/paramonte/
-</code></pre></div></div>
+</code></pre>
 
-<p>where <code class="language-plaintext highlighter-rouge">normal.maxdata</code> represents the maximum of the data, and <code class="language-plaintext highlighter-rouge">normal.getLogLike(param)</code> returns the log-likelihood value given the input <code class="language-plaintext highlighter-rouge">param</code> which is the average and log-standard-deviation of the Normal distribution and the cutoff, corresponding to <code class="language-plaintext highlighter-rouge">param[0]</code>, <code class="language-plaintext highlighter-rouge">param[1]</code>, <code class="language-plaintext highlighter-rouge">param[2]</code>.</p>
+<p>where <code>normal.maxdata</code> represents the maximum of the data, and <code>normal.getLogLike(param)</code> returns the log-likelihood value given the input <code>param</code> which is the average and log-standard-deviation of the Normal distribution and the cutoff, corresponding to <code>param[0]</code>, <code>param[1]</code>, <code>param[2]</code>.</p>
 
 <p>Here is the resulting maximum-likelihood parameters inferred from the paramonte-ParaDRAM MCMC sampler as is done below in Python:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">df</span><span class="p">.</span><span class="n">mean</span><span class="p">()</span>
 </code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SampleLogFunc          -38794.057165
+<pre><code>SampleLogFunc          -38794.057165
 Average                    -0.018469
 LogStandardDeviation       -0.011038
 Cutoff                      0.693154
-</code></pre></div></div>
+</code></pre>
 
 <p>Once you are done with sampling, you can draw and save the parameter traceplots and histograms like the following (in Python),</p>
 
@@ -616,8 +616,8 @@ Cutoff                      0.693154
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2021 / 01 / 20</section></br> -->
-         <section>Last updated Wednesday, 20 Jan 2021 at 02:39 PM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 26</section></br> -->
+         <section>Last updated Tuesday, 26 Jan 2021 at 08:15 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

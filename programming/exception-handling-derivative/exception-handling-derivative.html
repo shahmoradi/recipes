@@ -232,7 +232,7 @@
     </figure>
 </div>
 
-<p>Consider the function <code class="language-plaintext highlighter-rouge">Newton()</code>,</p>
+<p>Consider the function <code>Newton()</code>,</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">Newton</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">dfdx</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1E-7</span><span class="p">,</span> <span class="n">maxit</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">callable</span><span class="p">(</span><span class="n">f</span><span class="p">):</span> <span class="k">raise</span> <span class="nb">TypeError</span><span class="p">(</span> <span class="s">'f is %s, should be function or class with __call__'</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="p">)</span>
@@ -249,9 +249,9 @@
     <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">n</span>
 </code></pre></div></div>
 
-<p>This function is supposed to be able to handle exceptions such as divergent iterations (which we discussed in the lecture), and division-by-zero. The latter error happens when <code class="language-plaintext highlighter-rouge">dfdx(x)=0</code> in the above code, which represents a zero-valued derivative of the function $f(x)$. Write a test code that ensures the above code can correctly identify a division-by-zero exception and raise the correct assertionError.</p>
+<p>This function is supposed to be able to handle exceptions such as divergent iterations (which we discussed in the lecture), and division-by-zero. The latter error happens when <code>dfdx(x)=0</code> in the above code, which represents a zero-valued derivative of the function $f(x)$. Write a test code that ensures the above code can correctly identify a division-by-zero exception and raise the correct assertionError.</p>
 
-<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> To do so, you need to consider a test mathematical function as input to <code class="language-plaintext highlighter-rouge">Newton</code>. One example could be $f(x)=\cos(x)$ with a starting search value $x=0$. This would result in derivative value $f’(x=0)=-\sin(x=0)=0$, which should lead to a <code class="language-plaintext highlighter-rouge">ZeroDivisionError</code> exception. Now, write a test function <code class="language-plaintext highlighter-rouge">test_Newton_div_by_zero</code> that can explicitly handle this exception by introducing a boolean variable <code class="language-plaintext highlighter-rouge">success</code> that is <code class="language-plaintext highlighter-rouge">True</code> if the exception is raised and otherwise <code class="language-plaintext highlighter-rouge">False</code>*.</p>
+<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> To do so, you need to consider a test mathematical function as input to <code>Newton</code>. One example could be $f(x)=\cos(x)$ with a starting search value $x=0$. This would result in derivative value $f’(x=0)=-\sin(x=0)=0$, which should lead to a <code>ZeroDivisionError</code> exception. Now, write a test function <code>test_Newton_div_by_zero</code> that can explicitly handle this exception by introducing a boolean variable <code>success</code> that is <code>True</code> if the exception is raised and otherwise <code>False</code>*.</p>
 
 <div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
 
@@ -354,8 +354,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2021 / 01 / 20</section></br> -->
-         <section>Last updated Wednesday, 20 Jan 2021 at 02:39 PM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 26</section></br> -->
+         <section>Last updated Tuesday, 26 Jan 2021 at 08:15 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

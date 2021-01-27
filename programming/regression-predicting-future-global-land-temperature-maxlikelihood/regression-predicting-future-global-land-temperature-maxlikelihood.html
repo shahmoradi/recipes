@@ -499,7 +499,7 @@ You can use the <a href="https://www.cdslab.org/paramonte/" target="_blank">Para
 <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">grid</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p>The above code will perform a Monte Carlo simulation to estimate the parameters of the linear regression model. The maximum likelihood parameters are reported in the ParaDRAM MCMC simulation output file that is suffixed with <code class="language-plaintext highlighter-rouge">*_report.txt</code>. The distribution of the parameters of the model is given in the simulation output file named <code class="language-plaintext highlighter-rouge">_sample.txt</code>. For example, here is the histogram of the slope parameter of the model sampled by the ParaDRAM MCMC sampler,</p>
+<p>The above code will perform a Monte Carlo simulation to estimate the parameters of the linear regression model. The maximum likelihood parameters are reported in the ParaDRAM MCMC simulation output file that is suffixed with <code>*_report.txt</code>. The distribution of the parameters of the model is given in the simulation output file named <code>_sample.txt</code>. For example, here is the histogram of the slope parameter of the model sampled by the ParaDRAM MCMC sampler,</p>
 
 <figure>
     <img src="slopeDistribution.png" />
@@ -535,7 +535,7 @@ You can use the <a href="https://www.cdslab.org/paramonte/" target="_blank">Para
     <img src="gridPlot.png" />
 </figure>
 
-<p>As you can see, the two parameters <code class="language-plaintext highlighter-rouge">slope</code> and <code class="language-plaintext highlighter-rouge">intercept</code> are highly negatively correlated with each other.</p>
+<p>As you can see, the two parameters <code>slope</code> and <code>intercept</code> are highly negatively correlated with each other.</p>
 
 <p><strong>(b)</strong> Now, in order to estimate the uncertainty in the temperature of the earth in the year 2050, we need to not only use the most likely set of parameters to estimate the temperature anomaly, but also the full range of all possible parameter values sampled by the ParaMonte-ParaDRAM Markov chain Monte Carlo sampler. Therefore, we will use the contents of the simulation output sample file and will pass each set of sampled parameters to our linear regression model to predict the temperature anomaly in 2050 <strong>according to those set of parameters</strong>. In the end, we will have a distribution of the predicted temperature anomalies for the year 2050, which we can use to infer the $1\sigma$ uncertainty in it.</p>
 
@@ -590,7 +590,7 @@ You can use the <a href="https://www.cdslab.org/paramonte/" target="_blank">Para
 
 <span class="k">print</span><span class="p">(</span> <span class="s">"The 1-sigma uncertainty in the temperature Anomaly of 2050 is "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">std</span><span class="p">(</span><span class="n">predictedAnomalies</span><span class="p">))</span> <span class="p">)</span>
 </code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ParaDRAM - WARNING: delimiter is neither given as input nor set as a ParaDRAM object property.
+<pre><code>ParaDRAM - WARNING: delimiter is neither given as input nor set as a ParaDRAM object property.
 ParaDRAM - WARNING: This information is essential for successful reading of the requested sample file(s).
 ParaDRAM - WARNING: Proceeding with the default assumption of comma-delimited sample file contents...
 
@@ -619,7 +619,7 @@ ParaDRAM - NOTE:
 ParaDRAM - NOTE:     https://www.cdslab.org/paramonte/
 
 The 1-sigma uncertainty in the temperature Anomaly of 2050 is 0.06404443460202353
-</code></pre></div></div>
+</code></pre>
 
 <p>This code will generate the following plots,</p>
 
@@ -696,8 +696,8 @@ The 1-sigma uncertainty in the temperature Anomaly of 2050 is 0.0640444346020235
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2021 / 01 / 20</section></br> -->
-         <section>Last updated Wednesday, 20 Jan 2021 at 02:39 PM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 26</section></br> -->
+         <section>Last updated Tuesday, 26 Jan 2021 at 08:15 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

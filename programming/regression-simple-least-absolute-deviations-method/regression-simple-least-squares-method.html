@@ -266,14 +266,14 @@
 </div>
 
 <p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> 
-For optimization tasks in Python, you can use <code class="language-plaintext highlighter-rouge">fmin()</code> function from Python’s package <strong>scipy</strong>: <code class="language-plaintext highlighter-rouge">from scipy.optimize import fmin</code>. To read MATLAB binary files (<code class="language-plaintext highlighter-rouge">*.mat</code>) in Python, you will have to use Scipy’s <code class="language-plaintext highlighter-rouge">loadmat()</code> function (<code class="language-plaintext highlighter-rouge">from scipy.io import loadmat</code>).
+For optimization tasks in Python, you can use <code>fmin()</code> function from Python’s package <strong>scipy</strong>: <code>from scipy.optimize import fmin</code>. To read MATLAB binary files (<code>*.mat</code>) in Python, you will have to use Scipy’s <code>loadmat()</code> function (<code>from scipy.io import loadmat</code>).
 </p>
 
-<p>Name your main script <code class="language-plaintext highlighter-rouge">findBestFitParameters.py</code>. Here is an example expected output of such script,</p>
+<p>Name your main script <code>findBestFitParameters.py</code>. Here is an example expected output of such script,</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">findBestFitParameters</span><span class="p">.</span><span class="n">py</span>
 </code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Optimization terminated successfully.
+<pre><code>Optimization terminated successfully.
          Current function value: 100.868424
          Iterations: 21
          Function evaluations: 42
@@ -281,9 +281,9 @@ For optimization tasks in Python, you can use <code class="language-plaintext hi
 Least-Squares mean = -0.08197021484375
 simple average formula = -0.08197189633971344
 relative difference = 2.0513289127509662e-05
-</code></pre></div></div>
+</code></pre>
 
-<p>Start your parameter search via <code class="language-plaintext highlighter-rouge">fmin()</code> with the following value: $\mu = 10$.</p>
+<p>Start your parameter search via <code>fmin()</code> with the following value: $\mu = 10$.</p>
 
 <div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
 
@@ -360,14 +360,14 @@ simple average formula = {}
           <span class="p">)</span>
      <span class="p">)</span>
 </code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Optimization terminated successfully.  
+<pre><code>Optimization terminated successfully.  
      Current function value: 81.133610  
      Iterations: 14  
      Function evaluations: 32  
 
 average via Sum of Least-Absolute Deviations = 0.0077500000000000025  
 simple average formula = -0.08197189633971344  
-</code></pre></div></div>
+</code></pre>
 
 <p>Comparing this with the Least-Sum-of-Squared-Distances method, you will notice that the two methods yield almost identical results.</p>
 
@@ -434,8 +434,8 @@ simple average formula = -0.08197189633971344
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2021 / 01 / 20</section></br> -->
-         <section>Last updated Wednesday, 20 Jan 2021 at 02:39 PM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 26</section></br> -->
+         <section>Last updated Tuesday, 26 Jan 2021 at 08:15 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

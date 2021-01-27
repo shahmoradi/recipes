@@ -238,7 +238,7 @@
      Fib(1) &amp;=&amp; 1 ~.
 \end{eqnarray}\]
 
-<p>Write a function named <code class="language-plaintext highlighter-rouge">fib</code> that takes in an input argument which should be integer number <code class="language-plaintext highlighter-rouge">n</code>, and then calculates the $n$th number in the Fibonacci sequence and outputs it on the screen. Also, if the input argument is not a non-negative integer, it prints an error message on the screen and asks the user to re-enter a non-negative integer number. Also, when it is done with finding the requested Fibonacci number, it asks again the user to either input a new non-negative integer, or enter ‘stop’ to end the function, like the following,</p>
+<p>Write a function named <code>fib</code> that takes in an input argument which should be integer number <code>n</code>, and then calculates the $n$th number in the Fibonacci sequence and outputs it on the screen. Also, if the input argument is not a non-negative integer, it prints an error message on the screen and asks the user to re-enter a non-negative integer number. Also, when it is done with finding the requested Fibonacci number, it asks again the user to either input a new non-negative integer, or enter ‘stop’ to end the function, like the following,</p>
 
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fib</span>
 <span class="n">Please</span> <span class="n">enter</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">integer</span> <span class="nb">or</span> <span class="nb">type</span> <span class="nb">stop</span><span class="p">:</span> <span class="o">-</span><span class="mi">123</span>
@@ -304,9 +304,9 @@
 <p><strong>Hint:</strong></p>
 
 <ol>
-  <li>First write a function <code class="language-plaintext highlighter-rouge">getFib(n_int)</code> that finds the requested Fibonacci number for you, given a <em>strictly</em> non-negative integer input (for example, name it <code class="language-plaintext highlighter-rouge">n_int</code>).<br />
+  <li>First write a function <code>getFib(n_int)</code> that finds the requested Fibonacci number for you, given a <em>strictly</em> non-negative integer input (for example, name it <code>n_int</code>).<br />
 <br /></li>
-  <li>Then put this function <strong>inside another MATLAB function <code class="language-plaintext highlighter-rouge">fib()</code></strong> that asks the user to input a number (which could be potentially anything: a string, a real number, a complex number, or an integer). You can do this using MATLAB’s builtin function <code class="language-plaintext highlighter-rouge">input()</code>. Read the input value as a <code class="language-plaintext highlighter-rouge">string</code> using this MATLAB function. Then check if the user’s input string is equivalent to <strong>‘stop’</strong> or not. If it is ‘stop’, then the program must return, otherwise, use <code class="language-plaintext highlighter-rouge">str2double()</code> to convert this string to MATLAB numeric type. Then check is the numeric-converted input value is a real number (as opposed to complex number) via MATLAB’s function <code class="language-plaintext highlighter-rouge">isreal()</code>. If the value is real, then check if it is a non-negative real number. Also, check if it is an <strong>integer</strong> by comparing the value with its rounded value using MATLAB’s function <code class="language-plaintext highlighter-rouge">round()</code>. Thus is the user-input number is really a non-negative integer, then your code should display the result message as given in the above output (by calling your nested function <code class="language-plaintext highlighter-rouge">getFib(n_int)</code>), and then call this function <code class="language-plaintext highlighter-rouge">fib</code> to ask the user to input another number again, to repeat this procedure. If the user-input number is not a non-negative integer, then your code should display the requested message above, and call the function <code class="language-plaintext highlighter-rouge">fib</code> again to ask the user for another input.</li>
+  <li>Then put this function <strong>inside another MATLAB function <code>fib()</code></strong> that asks the user to input a number (which could be potentially anything: a string, a real number, a complex number, or an integer). You can do this using MATLAB’s builtin function <code>input()</code>. Read the input value as a <code>string</code> using this MATLAB function. Then check if the user’s input string is equivalent to <strong>‘stop’</strong> or not. If it is ‘stop’, then the program must return, otherwise, use <code>str2double()</code> to convert this string to MATLAB numeric type. Then check is the numeric-converted input value is a real number (as opposed to complex number) via MATLAB’s function <code>isreal()</code>. If the value is real, then check if it is a non-negative real number. Also, check if it is an <strong>integer</strong> by comparing the value with its rounded value using MATLAB’s function <code>round()</code>. Thus is the user-input number is really a non-negative integer, then your code should display the result message as given in the above output (by calling your nested function <code>getFib(n_int)</code>), and then call this function <code>fib</code> to ask the user to input another number again, to repeat this procedure. If the user-input number is not a non-negative integer, then your code should display the requested message above, and call the function <code>fib</code> again to ask the user for another input.</li>
 </ol>
 
 <div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
@@ -328,21 +328,21 @@
 <p><strong>Hint:</strong></p>
 
 <ol>
-  <li>First write a function <code class="language-plaintext highlighter-rouge">fibo(n_int)</code> that finds the requested Fibonacci number for you, given a non-negative integer input (for example, name it <code class="language-plaintext highlighter-rouge">n_int</code>).</li>
-  <li>Then put this function <strong>inside another Python function <code class="language-plaintext highlighter-rouge">fib(n)</code></strong> that checks the type of the input argument <code class="language-plaintext highlighter-rouge">n</code> and prints the appropriate error message as in the above and then asks the user to enter another number (and then again checks for its type to be an integer).</li>
-  <li>Then if this number is an integer, this function <code class="language-plaintext highlighter-rouge">fib(n)</code> passes the integer number <code class="language-plaintext highlighter-rouge">n</code> to the function <code class="language-plaintext highlighter-rouge">fibo(n_int)</code> which is inside of itself (it is a <strong>nested function</strong>), to get the requested Fibonacci number.</li>
-  <li>Finally, once the requested Fibonacci number is obtained, it prints the number value with the requested format as in the above example AND then asks again the user to input a new non-negative integer, or simply type <code class="language-plaintext highlighter-rouge">stop</code> to stop the function.</li>
+  <li>First write a function <code>fibo(n_int)</code> that finds the requested Fibonacci number for you, given a non-negative integer input (for example, name it <code>n_int</code>).</li>
+  <li>Then put this function <strong>inside another Python function <code>fib(n)</code></strong> that checks the type of the input argument <code>n</code> and prints the appropriate error message as in the above and then asks the user to enter another number (and then again checks for its type to be an integer).</li>
+  <li>Then if this number is an integer, this function <code>fib(n)</code> passes the integer number <code>n</code> to the function <code>fibo(n_int)</code> which is inside of itself (it is a <strong>nested function</strong>), to get the requested Fibonacci number.</li>
+  <li>Finally, once the requested Fibonacci number is obtained, it prints the number value with the requested format as in the above example AND then asks again the user to input a new non-negative integer, or simply type <code>stop</code> to stop the function.</li>
 </ol>
 
-<p>Note that, if you call the function as <code class="language-plaintext highlighter-rouge">fib('stop')</code> in the Python interpreter, it should return nothing to you, just like the following example,</p>
+<p>Note that, if you call the function as <code>fib('stop')</code> in the Python interpreter, it should return nothing to you, just like the following example,</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fib</span><span class="p">(</span><span class="s">'stop'</span><span class="p">)</span>
 
 </code></pre></div></div>
 
-<p>I highly recommend you to write your function in Jupyter notebook, test it there, and then get the results for the same input arguments as in the above example (a string, negative integer, float, and n=1,…,12, and also ‘stop’) and download all of the notebook as a Markdown file, and present this file as your final solution. Name the notebook, <code class="language-plaintext highlighter-rouge">fib.md</code>.</p>
+<p>I highly recommend you to write your function in Jupyter notebook, test it there, and then get the results for the same input arguments as in the above example (a string, negative integer, float, and n=1,…,12, and also ‘stop’) and download all of the notebook as a Markdown file, and present this file as your final solution. Name the notebook, <code>fib.md</code>.</p>
 
-<p class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> You don’t need to know or use anything beyond Python function syntax, Python built-in functions and methods (like <code class="language-plaintext highlighter-rouge">input</code>, <code class="language-plaintext highlighter-rouge">isdigit()</code>, <code class="language-plaintext highlighter-rouge">print</code>, <code class="language-plaintext highlighter-rouge">str()</code>, <code class="language-plaintext highlighter-rouge">int()</code>, …), and Python if-blocks.</p>
+<p class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> You don’t need to know or use anything beyond Python function syntax, Python built-in functions and methods (like <code>input</code>, <code>isdigit()</code>, <code>print</code>, <code>str()</code>, <code>int()</code>, …), and Python if-blocks.</p>
 
 <p class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> I recommend you to use Jupyter notebook on your device, since the online version of the notebook, can be interrupted repeatedly because of internet connection.</p>
 
@@ -505,8 +505,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2021 / 01 / 20</section></br> -->
-         <section>Last updated Wednesday, 20 Jan 2021 at 02:39 PM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 26</section></br> -->
+         <section>Last updated Tuesday, 26 Jan 2021 at 08:15 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

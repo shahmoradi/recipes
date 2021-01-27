@@ -226,9 +226,9 @@
     
 </div>
 
-<p>Consider <a href="1A2T_A.dssp" target="_blank">this data file</a>. It contains information about the amino-acids in <a href="http://www.rcsb.org/pdb/explore.do?structureId=1a2t" target="_blank">a protein</a> called <code class="language-plaintext highlighter-rouge">1A2T</code>. Each amino-acid in the protein is labeled by a single letter. There are 20 amin acid molecules in nature, and each has a total surface area (in units of Angstroms squared) that is given by the following table,</p>
+<p>Consider <a href="1A2T_A.dssp" target="_blank">this data file</a>. It contains information about the amino-acids in <a href="http://www.rcsb.org/pdb/explore.do?structureId=1a2t" target="_blank">a protein</a> called <code>1A2T</code>. Each amino-acid in the protein is labeled by a single letter. There are 20 amin acid molecules in nature, and each has a total surface area (in units of Angstroms squared) that is given by the following table,</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'A': 129.0
+<pre><code>'A': 129.0
 'R': 274.0
 'N': 195.0
 'D': 193.0
@@ -248,14 +248,14 @@
 'W': 285.0
 'Y': 263.0
 'V': 174.0
-</code></pre></div></div>
+</code></pre>
 
 <p>However, when these amino acids sit next to each other to form a chain protein, they cover parts of each other, such that only parts of their surfaces are exposed, while the rest is hidden from the outside world by other neighboring amino acids. Therefore, one would expect an amino acid that is at the core of a spherical protein would have almost zero exposed surface area.</p>
 
 <p>Now given the above information, write a program that takes in two command-line input arguments or a function in a language of your choice that takes two input string arguments:</p>
 <ol>
-  <li>a string containing the path to the above <a href="1A2T_A.dssp" target="_blank">input file</a> <code class="language-plaintext highlighter-rouge">1A2T_A.dssp</code> which contains the partially exposed surface areas of amino acids in protein <code class="language-plaintext highlighter-rouge">1A2T</code> for each of its amino acids and,</li>
-  <li>a second input string which is the path to the file that will contain the output of the code (e.g., it could be named <code class="language-plaintext highlighter-rouge">./readDSSP.out</code>).</li>
+  <li>a string containing the path to the above <a href="1A2T_A.dssp" target="_blank">input file</a> <code>1A2T_A.dssp</code> which contains the partially exposed surface areas of amino acids in protein <code>1A2T</code> for each of its amino acids and,</li>
+  <li>a second input string which is the path to the file that will contain the output of the code (e.g., it could be named <code>./readDSSP.out</code>).</li>
 </ol>
 
 <p>Then, the code does the following tasks,</p>
@@ -263,21 +263,21 @@
 <ol>
   <li>reads the content of the input file and,<br />
 <br /></li>
-  <li>extracts the names of the amino acids in this protein from the data column inside the file which has the header <code class="language-plaintext highlighter-rouge">AA</code> (look at the line number 25 inside the input data file, below <code class="language-plaintext highlighter-rouge">AA</code> is the column containing the one-letter names of amino acids in this protein) and,<br />
+  <li>extracts the names of the amino acids in this protein from the data column inside the file which has the header <code>AA</code> (look at the line number 25 inside the input data file, below <code>AA</code> is the column containing the one-letter names of amino acids in this protein) and,<br />
 <br /></li>
-  <li>also extracts the partially exposed surface area information for each of these amino acids which appear in the column with the header <code class="language-plaintext highlighter-rouge">ACC</code> and,<br />
+  <li>also extracts the partially exposed surface area information for each of these amino acids which appear in the column with the header <code>ACC</code> and,<br />
 <br /></li>
   <li>then uses the above table of maximum surface area values to calculate the fractional exposed surface area of each amino acid in this protein (i.e., for each amino acid, fraction_of_exposed_surface = ACC / maximum_surface_area_from_table) and,<br />
 <br /></li>
   <li>finally for each amino acid in this protein, it prints the one-letter name of the amino acid, the corresponding partially exposed surface area (ACC from the input file), and its corresponding fractional exposed surface area (name it RSA) to the output file given by the user on the command line.<br />
 <br /></li>
-  <li>On the first column of the output file, the code should also write the name of the protein (which is the name of the input file <code class="language-plaintext highlighter-rouge">1A2T_A</code>) on each line of the output file. <strong>Note that your code should extract the protein name from the input filename</strong> (by removing the file extension and other unnecessary information from the input command line string). <a href="readDSSP.out" target="_blank">Here</a> is an example output of the code.<br />
+  <li>On the first column of the output file, the code should also write the name of the protein (which is the name of the input file <code>1A2T_A</code>) on each line of the output file. <strong>Note that your code should extract the protein name from the input filename</strong> (by removing the file extension and other unnecessary information from the input command line string). <a href="readDSSP.out" target="_blank">Here</a> is an example output of the code.<br />
 <br /></li>
 </ol>
 
 <p><strong>Write your code in such a way that it checks for the existence of the output file</strong>. If it already exists, then it does not remove the content of the file, whereas, it appends new data to the existing file. Otherwise, if the file does not exist, then it creates a new output file as requested by the user.</p>
 
-<p class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Note that in some rows instead of a one-letter amino acid name, there is <code class="language-plaintext highlighter-rouge">!</code>. In such cases, your code should be able to detect the abnormality and skip that row, because that row does not contain amino acid information.</p>
+<p class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Note that in some rows instead of a one-letter amino acid name, there is <code>!</code>. In such cases, your code should be able to detect the abnormality and skip that row, because that row does not contain amino acid information.</p>
 
 <div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
     
@@ -317,7 +317,7 @@ Usage:
 Program aborted.
 </code></pre></div></div>
 
-<p>To achieve the above goal, you will have to create a dictionary from the above table, with amino acid names as the keys, and the maximum surface areas as the corresponding values. Name your code <code class="language-plaintext highlighter-rouge">readDSSP.py</code> and submit it to your repository. To check for the existence of the output file, you will need to use <code class="language-plaintext highlighter-rouge">os.path.isfile</code> function from module <code class="language-plaintext highlighter-rouge">os</code> in Python.</p>
+<p>To achieve the above goal, you will have to create a dictionary from the above table, with amino acid names as the keys, and the maximum surface areas as the corresponding values. Name your code <code>readDSSP.py</code> and submit it to your repository. To check for the existence of the output file, you will need to use <code>os.path.isfile</code> function from module <code>os</code> in Python.</p>
 
 <div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
     
@@ -599,8 +599,8 @@ end
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2021 / 01 / 20</section></br> -->
-         <section>Last updated Wednesday, 20 Jan 2021 at 02:39 PM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 26</section></br> -->
+         <section>Last updated Tuesday, 26 Jan 2021 at 08:15 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

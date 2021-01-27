@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2021-01-20T14:39:10-06:00</updated>
+<updated>2021-01-26T20:15:39-06:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -502,11 +502,11 @@ C ≡ Burglary has happened.&lt;/p&gt;
 
 \[(B\Rightarrow \overline{A}) ~,\]
 
-&lt;p&gt;is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;True&lt;/code&gt; then,&lt;/p&gt;
+&lt;p&gt;is &lt;code&gt;True&lt;/code&gt; then,&lt;/p&gt;
 
 \[(A+\overline{B}) ~ (\overline{A}+A\overline{B}) ~+~ \overline{A}B ~ (A+B) ~,\]
 
-&lt;p&gt;is also &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;True&lt;/code&gt;. In other words, the above two expressions are equivalent to each other.&lt;/p&gt;
+&lt;p&gt;is also &lt;code&gt;True&lt;/code&gt;. In other words, the above two expressions are equivalent to each other.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Answer&lt;/strong&gt;&lt;/p&gt;
 
@@ -579,7 +579,7 @@ C ≡ Burglary has happened.&lt;/p&gt;
     
 &lt;/div&gt;
 
-&lt;p&gt;Supposed we have observed a dataset comprised of $4975$ events with two attributes &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;variable1&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;variable2&lt;/code&gt; points in this file: &lt;a href=&quot;data.csv&quot; target=&quot;_blank&quot;&gt;data.csv&lt;/a&gt;. Plotting these points would yield a scatter plot like the red points in the following plot,&lt;/p&gt;
+&lt;p&gt;Supposed we have observed a dataset comprised of $4975$ events with two attributes &lt;code&gt;variable1&lt;/code&gt; and &lt;code&gt;variable2&lt;/code&gt; points in this file: &lt;a href=&quot;data.csv&quot; target=&quot;_blank&quot;&gt;data.csv&lt;/a&gt;. Plotting these points would yield a scatter plot like the red points in the following plot,&lt;/p&gt;
 
 &lt;figure&gt;
     &lt;img src=&quot;data.png&quot; width=&quot;900&quot; /&gt;
@@ -666,7 +666,7 @@ C ≡ Burglary has happened.&lt;/p&gt;
     
 &lt;/div&gt;
 
-&lt;p&gt;Supposed we have observed a dataset comprised of $15027$ events with one attribute &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;variable&lt;/code&gt; in this file: &lt;a href=&quot;data.csv&quot; target=&quot;_blank&quot;&gt;data.csv&lt;/a&gt;. Plotting these points would yield a red-colored histogram like the following plot,&lt;/p&gt;
+&lt;p&gt;Supposed we have observed a dataset comprised of $15027$ events with one attribute &lt;code&gt;variable&lt;/code&gt; in this file: &lt;a href=&quot;data.csv&quot; target=&quot;_blank&quot;&gt;data.csv&lt;/a&gt;. Plotting these points would yield a red-colored histogram like the following plot,&lt;/p&gt;
 
 &lt;figure&gt;
     &lt;img src=&quot;data.png&quot; width=&quot;900&quot; /&gt;
@@ -697,16 +697,16 @@ C ≡ Burglary has happened.&lt;/p&gt;
     &lt;p&gt;First read the data using Pandas library, then log-transform data to make it look like a Normal distribution.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Write a class that takes the log-data as input and has two methods, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getLogProb(data,avg,std,cutoff)&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getLogLike(param)&lt;/code&gt;. The former computes the log-probability of observing the input dataset &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;data&lt;/code&gt; given the parameters of the model (the Normal average &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;avg&lt;/code&gt;, the Normal standard deviation &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;std&lt;/code&gt;, and the vetical cutoff on the distribution &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cutoff&lt;/code&gt;). The latter method takes a set of parameters as a vector containing the average of the Normal distribution (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;avg&lt;/code&gt;), the natural-logarithm of the standard deviation of the Normal distribution &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;log(std)&lt;/code&gt;, and the value of the hard-cutoff on the data. Given these three parameters, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getLogLike(param)&lt;/code&gt; sums over the log-probabilities returned by &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getLogProb(data,avg,std,cutoff)&lt;/code&gt; to compute the log-likelihood and returns it as the output.&lt;/p&gt;
+    &lt;p&gt;Write a class that takes the log-data as input and has two methods, &lt;code&gt;getLogProb(data,avg,std,cutoff)&lt;/code&gt; and &lt;code&gt;getLogLike(param)&lt;/code&gt;. The former computes the log-probability of observing the input dataset &lt;code&gt;data&lt;/code&gt; given the parameters of the model (the Normal average &lt;code&gt;avg&lt;/code&gt;, the Normal standard deviation &lt;code&gt;std&lt;/code&gt;, and the vetical cutoff on the distribution &lt;code&gt;cutoff&lt;/code&gt;). The latter method takes a set of parameters as a vector containing the average of the Normal distribution (&lt;code&gt;avg&lt;/code&gt;), the natural-logarithm of the standard deviation of the Normal distribution &lt;code&gt;log(std)&lt;/code&gt;, and the value of the hard-cutoff on the data. Given these three parameters, &lt;code&gt;getLogLike(param)&lt;/code&gt; sums over the log-probabilities returned by &lt;code&gt;getLogProb(data,avg,std,cutoff)&lt;/code&gt; to compute the log-likelihood and returns it as the output.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Think about this problem: If any of the observed data points has a value that is larger than a given hard-cutoff, could that set of parameters with that hard-cutoff be possible at all? In other words, if the maximum of your data is larger than the given input &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cutoff&lt;/code&gt; value (which is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;param[2]&lt;/code&gt; in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getLogLike()&lt;/code&gt;), then that set of input parameters to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getLogLike()&lt;/code&gt; is impossible. Therefore, the log-likelihood corresponding to that set of parameters must be negative-infinity to indicate the impossibility of that set of parameters. However, given the computer’s limited float range, the log-likelihood must be set to the largest negative number (e.g., &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-1.e300&lt;/code&gt; is good enough) and returned. Otherwise, if all data values are smaller than the input cutoff, then the log-likelihood value is computed by summing over all probabilities returned by &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getLogProb()&lt;/code&gt;.&lt;/p&gt;
+    &lt;p&gt;Think about this problem: If any of the observed data points has a value that is larger than a given hard-cutoff, could that set of parameters with that hard-cutoff be possible at all? In other words, if the maximum of your data is larger than the given input &lt;code&gt;cutoff&lt;/code&gt; value (which is &lt;code&gt;param[2]&lt;/code&gt; in &lt;code&gt;getLogLike()&lt;/code&gt;), then that set of input parameters to &lt;code&gt;getLogLike()&lt;/code&gt; is impossible. Therefore, the log-likelihood corresponding to that set of parameters must be negative-infinity to indicate the impossibility of that set of parameters. However, given the computer’s limited float range, the log-likelihood must be set to the largest negative number (e.g., &lt;code&gt;-1.e300&lt;/code&gt; is good enough) and returned. Otherwise, if all data values are smaller than the input cutoff, then the log-likelihood value is computed by summing over all probabilities returned by &lt;code&gt;getLogProb()&lt;/code&gt;.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;In the latter case when you call &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getLogProb()&lt;/code&gt;, keep in mind that you will have to normalize the log-Gaussian probabilities, that you would normally compute, by the incomplete area created by the hard cutoff on the distribution. This is the area to the left of the hard cutoff on the distribution and can be computed via the Gaussian Cumulative Distribution Function (CDF). You will have to subtract the natural logarithm of this area from the log-probabilities of all data.&lt;/p&gt;
+    &lt;p&gt;In the latter case when you call &lt;code&gt;getLogProb()&lt;/code&gt;, keep in mind that you will have to normalize the log-Gaussian probabilities, that you would normally compute, by the incomplete area created by the hard cutoff on the distribution. This is the area to the left of the hard cutoff on the distribution and can be computed via the Gaussian Cumulative Distribution Function (CDF). You will have to subtract the natural logarithm of this area from the log-probabilities of all data.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;You can use the &lt;a href=&quot;https://www.cdslab.org/paramonte/&quot; target=&quot;_blank&quot;&gt;ParaMonte library&lt;/a&gt; in Python or in MATLAB to explore the resulting log-likelihood function. In such case, make sure you start your MCMC exploration by a good set of initial parameter values, such that the MCMC sampler can correctly explore the parameter-space without getting lost. This means making sure that you set the initial starting cutoff value to something larger than the maximum value of your data, for example, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cutoff_init = 2 * np.max(logdata)&lt;/code&gt;. Here is the full syntax on how to call the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ParaDRAM()&lt;/code&gt; sampler of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;paramonte&lt;/code&gt; library,&lt;/p&gt;
+    &lt;p&gt;You can use the &lt;a href=&quot;https://www.cdslab.org/paramonte/&quot; target=&quot;_blank&quot;&gt;ParaMonte library&lt;/a&gt; in Python or in MATLAB to explore the resulting log-likelihood function. In such case, make sure you start your MCMC exploration by a good set of initial parameter values, such that the MCMC sampler can correctly explore the parameter-space without getting lost. This means making sure that you set the initial starting cutoff value to something larger than the maximum value of your data, for example, &lt;code&gt;cutoff_init = 2 * np.max(logdata)&lt;/code&gt;. Here is the full syntax on how to call the &lt;code&gt;ParaDRAM()&lt;/code&gt; sampler of the &lt;code&gt;paramonte&lt;/code&gt; library,&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
@@ -724,7 +724,7 @@ C ≡ Burglary has happened.&lt;/p&gt;
                &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getLogFunc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;normal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getLogLike&lt;/span&gt;
                &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ParaDRAM - NOTE: Running the ParaDRAM sampler in serial mode...
+&lt;pre&gt;&lt;code&gt;ParaDRAM - NOTE: Running the ParaDRAM sampler in serial mode...
 ParaDRAM - NOTE: To run the ParaDRAM sampler in parallel mode visit: cdslab.org/pm
 ParaDRAM - NOTE: If you are using Jupyter notebook, check the Jupyter's terminal window
 ParaDRAM - NOTE: for realtime simulation progress and report.
@@ -740,19 +740,19 @@ ParaDRAM - NOTE: Replace 'pmpd' with the name you are using for your ParaDRAM ob
 ParaDRAM - NOTE: For more information and examples on the usage, visit:
 ParaDRAM - NOTE: 
 ParaDRAM - NOTE:     https://www.cdslab.org/paramonte/
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;normal.maxdata&lt;/code&gt; represents the maximum of the data, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;normal.getLogLike(param)&lt;/code&gt; returns the log-likelihood value given the input &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;param&lt;/code&gt; which is the average and log-standard-deviation of the Normal distribution and the cutoff, corresponding to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;param[0]&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;param[1]&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;param[2]&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;where &lt;code&gt;normal.maxdata&lt;/code&gt; represents the maximum of the data, and &lt;code&gt;normal.getLogLike(param)&lt;/code&gt; returns the log-likelihood value given the input &lt;code&gt;param&lt;/code&gt; which is the average and log-standard-deviation of the Normal distribution and the cutoff, corresponding to &lt;code&gt;param[0]&lt;/code&gt;, &lt;code&gt;param[1]&lt;/code&gt;, &lt;code&gt;param[2]&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Here is the resulting maximum-likelihood parameters inferred from the paramonte-ParaDRAM MCMC sampler as is done below in Python:&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;pmpd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sampleList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SampleLogFunc          -38794.057165
+&lt;pre&gt;&lt;code&gt;SampleLogFunc          -38794.057165
 Average                    -0.018469
 LogStandardDeviation       -0.011038
 Cutoff                      0.693154
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Once you are done with sampling, you can draw and save the parameter traceplots and histograms like the following (in Python),&lt;/p&gt;
 
@@ -1239,7 +1239,7 @@ You can use the &lt;a href=&quot;https://www.cdslab.org/paramonte/&quot; target=
 &lt;span class=&quot;n&quot;&gt;pmpd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sampleList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;The above code will perform a Monte Carlo simulation to estimate the parameters of the linear regression model. The maximum likelihood parameters are reported in the ParaDRAM MCMC simulation output file that is suffixed with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*_report.txt&lt;/code&gt;. The distribution of the parameters of the model is given in the simulation output file named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_sample.txt&lt;/code&gt;. For example, here is the histogram of the slope parameter of the model sampled by the ParaDRAM MCMC sampler,&lt;/p&gt;
+&lt;p&gt;The above code will perform a Monte Carlo simulation to estimate the parameters of the linear regression model. The maximum likelihood parameters are reported in the ParaDRAM MCMC simulation output file that is suffixed with &lt;code&gt;*_report.txt&lt;/code&gt;. The distribution of the parameters of the model is given in the simulation output file named &lt;code&gt;_sample.txt&lt;/code&gt;. For example, here is the histogram of the slope parameter of the model sampled by the ParaDRAM MCMC sampler,&lt;/p&gt;
 
 &lt;figure&gt;
     &lt;img src=&quot;slopeDistribution.png&quot; /&gt;
@@ -1275,7 +1275,7 @@ You can use the &lt;a href=&quot;https://www.cdslab.org/paramonte/&quot; target=
     &lt;img src=&quot;gridPlot.png&quot; /&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;As you can see, the two parameters &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;slope&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;intercept&lt;/code&gt; are highly negatively correlated with each other.&lt;/p&gt;
+&lt;p&gt;As you can see, the two parameters &lt;code&gt;slope&lt;/code&gt; and &lt;code&gt;intercept&lt;/code&gt; are highly negatively correlated with each other.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; Now, in order to estimate the uncertainty in the temperature of the earth in the year 2050, we need to not only use the most likely set of parameters to estimate the temperature anomaly, but also the full range of all possible parameter values sampled by the ParaMonte-ParaDRAM Markov chain Monte Carlo sampler. Therefore, we will use the contents of the simulation output sample file and will pass each set of sampled parameters to our linear regression model to predict the temperature anomaly in 2050 &lt;strong&gt;according to those set of parameters&lt;/strong&gt;. In the end, we will have a distribution of the predicted temperature anomalies for the year 2050, which we can use to infer the $1\sigma$ uncertainty in it.&lt;/p&gt;
 
@@ -1330,7 +1330,7 @@ You can use the &lt;a href=&quot;https://www.cdslab.org/paramonte/&quot; target=
 
 &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;The 1-sigma uncertainty in the temperature Anomaly of 2050 is &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predictedAnomalies&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ParaDRAM - WARNING: delimiter is neither given as input nor set as a ParaDRAM object property.
+&lt;pre&gt;&lt;code&gt;ParaDRAM - WARNING: delimiter is neither given as input nor set as a ParaDRAM object property.
 ParaDRAM - WARNING: This information is essential for successful reading of the requested sample file(s).
 ParaDRAM - WARNING: Proceeding with the default assumption of comma-delimited sample file contents...
 
@@ -1359,7 +1359,7 @@ ParaDRAM - NOTE:
 ParaDRAM - NOTE:     https://www.cdslab.org/paramonte/
 
 The 1-sigma uncertainty in the temperature Anomaly of 2050 is 0.06404443460202353
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;This code will generate the following plots,&lt;/p&gt;
 

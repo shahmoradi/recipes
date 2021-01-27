@@ -213,7 +213,7 @@
                 
 <p>In probability theory, the central limit theorem (CLT) establishes that, when independent random variables are added together, their properly normalized sum tends toward a normal distribution (informally a “bell curve”) even if the original variables themselves are not normally distributed. To understand this theorem, suppose you generate 100 uniform random numbers and sum them to get a single number. Then you repeat this procedure 1000 times to get 1000 of these sums of 100 uniform random numbers. The CLT theorem implies that if you plot a histogram of the values of these 1000 sums, then the resulting distribution looks very much like the Gaussian bell-shaped function. The larger the number of these sums (for example, 100000 instead of 1000 sums), the more the resulting distribution will look like a Gaussian. Here we want to see this theorem in action.</p>
 
-<p>Consider a random walker, who takes a random step of a <strong>uniformly-distributed random-size</strong> between $[0,1]$, in positive or negative directions on a single staright line. The random walker can repeat these steps for <code class="language-plaintext highlighter-rouge">nstep</code> times, starting from an arbitrary initial starting point.</p>
+<p>Consider a random walker, who takes a random step of a <strong>uniformly-distributed random-size</strong> between $[0,1]$, in positive or negative directions on a single staright line. The random walker can repeat these steps for <code>nstep</code> times, starting from an arbitrary initial starting point.</p>
 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
     
@@ -225,7 +225,7 @@
     
 </div>
 
-<p>Write a function with the interface <code class="language-plaintext highlighter-rouge">doRandomWalk(nstep,startPosition)</code>, that takes the number of steps <code class="language-plaintext highlighter-rouge">nstep</code> for a random walk and the <code class="language-plaintext highlighter-rouge">startPosition</code> of the random walk on a straight line, and returns the location of the final step of the random walker.</p>
+<p>Write a function with the interface <code>doRandomWalk(nstep,startPosition)</code>, that takes the number of steps <code>nstep</code> for a random walk and the <code>startPosition</code> of the random walk on a straight line, and returns the location of the final step of the random walker.</p>
 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
     
@@ -237,7 +237,7 @@
     
 </div>
 
-<p>Now, write another function with the interface <code class="language-plaintext highlighter-rouge">simulateRandomWalk(nsim,nstep,startPosition)</code> that simulates <code class="language-plaintext highlighter-rouge">nsim</code> number of random-walks, each of which contains <code class="language-plaintext highlighter-rouge">nstep</code> steps and starts at <code class="language-plaintext highlighter-rouge">startPosition</code>. Then, this function calls <code class="language-plaintext highlighter-rouge">doRandomWalk()</code> repeatedly for <code class="language-plaintext highlighter-rouge">nsim</code> times and finally returns a vector of size <code class="language-plaintext highlighter-rouge">nsim</code> containing final locations of all of the <code class="language-plaintext highlighter-rouge">nsim</code> simulated random-walks.</p>
+<p>Now, write another function with the interface <code>simulateRandomWalk(nsim,nstep,startPosition)</code> that simulates <code>nsim</code> number of random-walks, each of which contains <code>nstep</code> steps and starts at <code>startPosition</code>. Then, this function calls <code>doRandomWalk()</code> repeatedly for <code>nsim</code> times and finally returns a vector of size <code>nsim</code> containing final locations of all of the <code>nsim</code> simulated random-walks.</p>
 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
     
@@ -249,7 +249,7 @@
     
 </div>
 
-<p>Now write a script that plots the output of <code class="language-plaintext highlighter-rouge">simulateRandomWalk()</code> for</p>
+<p>Now write a script that plots the output of <code>simulateRandomWalk()</code> for</p>
 
 \[\begin{align}
 \rm{nsim}           &amp;=&amp; 10000 \\
@@ -398,8 +398,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2021 / 01 / 20</section></br> -->
-         <section>Last updated Wednesday, 20 Jan 2021 at 02:39 PM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 26</section></br> -->
+         <section>Last updated Tuesday, 26 Jan 2021 at 08:15 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

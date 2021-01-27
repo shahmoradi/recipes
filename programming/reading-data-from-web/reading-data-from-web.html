@@ -268,11 +268,11 @@
 
 <p>Consider the following web-page address <a href="https://cdslaborg.github.io/DataRepos_SwiftBat/index.html" target="_blank">https://cdslaborg.github.io/DataRepos_SwiftBat/index.html</a>. This is an data table (in HTML language) containing data from the <a href="https://www.nasa.gov/mission_pages/swift/main" target="_blank">NASA Swift satellite</a>. Each row in this table represents information about a <a href="https://en.wikipedia.org/wiki/Gamma-ray_burst" target="_blank">Gamma-Ray Burst (GRB)</a> detection that Swift has made in the past years. Now, corresponding to each of the event IDs, there <em>might</em> exist files that contain some attributes of these events which we wish to plot and understand their behavior against each other.</p>
 
-<p>For example, for the first event in this table, <code class="language-plaintext highlighter-rouge">GRB170406x (00745966)</code>, there is a data file which is hidden in a directory on <a href="https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/GRB00745966_ep_flu.txt" target="_blank">https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/GRB00745966_ep_flu.txt</a>. Notice how the event ID (inside paratheses) is inserted into the web address. Now, for each event in the GRB event table, there might exist one such text file hidden on the web directory beginning with <code class="language-plaintext highlighter-rouge">https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/</code> (followed by the GRB’s ID) and <code class="language-plaintext highlighter-rouge">.txt</code>.</p>
+<p>For example, for the first event in this table, <code>GRB170406x (00745966)</code>, there is a data file which is hidden in a directory on <a href="https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/GRB00745966_ep_flu.txt" target="_blank">https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/GRB00745966_ep_flu.txt</a>. Notice how the event ID (inside paratheses) is inserted into the web address. Now, for each event in the GRB event table, there might exist one such text file hidden on the web directory beginning with <code>https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/</code> (followed by the GRB’s ID) and <code>.txt</code>.</p>
 
 <p>Our goal here is to fetch all these files from the website and save them locally on our computer. Then read their contents one by one and plot the two columns of data in all of these files together on a single plot.</p>
 
-<p>Write a script named <code class="language-plaintext highlighter-rouge">fetchDataFromWeb</code> in the language of your own choice that uses this web address: <code class="language-plaintext highlighter-rouge">https://raw.githubusercontent.com/cdslaborg/DataRepos_SwiftBat/master/triggers.txt</code> to read a list of all GRB events and then writes the entire table of <code class="language-plaintext highlighter-rouge">triggers.txt</code> to a local file with the same name on your device.</p>
+<p>Write a script named <code>fetchDataFromWeb</code> in the language of your own choice that uses this web address: <code>https://raw.githubusercontent.com/cdslaborg/DataRepos_SwiftBat/master/triggers.txt</code> to read a list of all GRB events and then writes the entire table of <code>triggers.txt</code> to a local file with the same name on your device.</p>
 
 <div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
     
@@ -290,7 +290,7 @@
     </figure>
 </div>
 
-<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> For this purpose, you will need MATLAB’s built-in function <code class="language-plaintext highlighter-rouge">webread()</code>.</p>
+<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> For this purpose, you will need MATLAB’s built-in function <code>webread()</code>.</p>
 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
     
@@ -306,7 +306,7 @@
 
 <p><a href="https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/GRB00745966_ep_flu.txt" target="_blank">https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/GRB00745966_ep_flu.txt</a>.</p>
 
-<p>Then it uses the generated web address to read the content of the page and store it in a local file on your device with the same name as it is stored on the web page (for example, for the given web page, the filename would be <code class="language-plaintext highlighter-rouge">GRB00745966_ep_flu.txt</code>).</p>
+<p>Then it uses the generated web address to read the content of the page and store it in a local file on your device with the same name as it is stored on the web page (for example, for the given web page, the filename would be <code>GRB00745966_ep_flu.txt</code>).</p>
 
 <p class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Some of the web addresses for the given event IDs do not exist. Therefore, you should exception handling constructs to avoid runtime errors in your code that could break your code prematurely.</p>
 
@@ -330,7 +330,7 @@
 <br />
 <a href="https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/GRB00680331_ep_flu.txt">https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/GRB00680331_ep_flu.txt</a>,
 <br />
-your script will have to raise a <code class="language-plaintext highlighter-rouge">urllib.request.HTTPError</code> exception. Write your code such that it can smoothly skip these exceptions. </p>
+your script will have to raise a <code>urllib.request.HTTPError</code> exception. Write your code such that it can smoothly skip these exceptions. </p>
 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
     
@@ -342,14 +342,14 @@ your script will have to raise a <code class="language-plaintext highlighter-rou
     
 </div>
 
-<p>Now write another script named <code class="language-plaintext highlighter-rouge">plotDatafromFile</code>, that reads all of these files in your downloaded set of files one by one and plots the contents of all of them together on a single scatter plot like the following,</p>
+<p>Now write another script named <code>plotDatafromFile</code>, that reads all of these files in your downloaded set of files one by one and plots the contents of all of them together on a single scatter plot like the following,</p>
 
 <figure>
     <img src="SwiftDataPlot.png" width="900" />  
 </figure>
 <p><br /></p>
 
-<p class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Remember that some of the data files stored on your computer might be empty and some others might have useless data if the data in the second column of the file is larger than $0$ (data in such files have a different scientific meaning than the other ones. The meaning of that goes beyond the scope of what we are trying to do here, but the important point is that we can simply ignore such files if any data value in the second column is larger than $0$). Therefore, you will have to write your script in such a way that it checks for non-emptiness of the files. In other words, you have to make sure that the file does indeed contain some numerical data. Also, your script must check for the negativity of the values in the column of data in each file. Once you have done all of these checks, you will have to do one final manipulation of the data. Note that the values on the second column of the data files are the log of data in natural Neperian base. Therefore, you will have to transform the values in the second column of the files to the original non-log values via the mathematical function <code class="language-plaintext highlighter-rouge">exp()</code> before plotting them (Note that the plot in the figure above is a <strong>log-log plot</strong> and we want to exactly regenerate it). Also, in order to find out how many files you have plotted in the figure, you will have to define a variable counter which increases by one unit, each time a new non-empty negative-second-column data file is read and plotted (you will have to ignore those files that have positive values in the second columns as well as those files that empty). In the end, you will have to set a title for your plot and label the axes of the plot, and save it to an output file, for example, named <code class="language-plaintext highlighter-rouge">SwiftDataPlot.png</code>.</p>
+<p class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Remember that some of the data files stored on your computer might be empty and some others might have useless data if the data in the second column of the file is larger than $0$ (data in such files have a different scientific meaning than the other ones. The meaning of that goes beyond the scope of what we are trying to do here, but the important point is that we can simply ignore such files if any data value in the second column is larger than $0$). Therefore, you will have to write your script in such a way that it checks for non-emptiness of the files. In other words, you have to make sure that the file does indeed contain some numerical data. Also, your script must check for the negativity of the values in the column of data in each file. Once you have done all of these checks, you will have to do one final manipulation of the data. Note that the values on the second column of the data files are the log of data in natural Neperian base. Therefore, you will have to transform the values in the second column of the files to the original non-log values via the mathematical function <code>exp()</code> before plotting them (Note that the plot in the figure above is a <strong>log-log plot</strong> and we want to exactly regenerate it). Also, in order to find out how many files you have plotted in the figure, you will have to define a variable counter which increases by one unit, each time a new non-empty negative-second-column data file is read and plotted (you will have to ignore those files that have positive values in the second columns as well as those files that empty). In the end, you will have to set a title for your plot and label the axes of the plot, and save it to an output file, for example, named <code>SwiftDataPlot.png</code>.</p>
 
 <div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
     
@@ -367,12 +367,12 @@ your script will have to raise a <code class="language-plaintext highlighter-rou
     </figure>
 </div>
 
-<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> To read the individual files, you can use MATLAB’s built-in function <code class="language-plaintext highlighter-rouge">readtable()</code>. To make the figure, you can use MATLAB’s built-in function <code class="language-plaintext highlighter-rouge">scatter()</code> or other functions. Use <code class="language-plaintext highlighter-rouge">hold on</code> command to keep the figure open and the same for all individual data reads and plottings. Check for the negativity of the values in the second column of the data files via MATLAB’s built-in function <code class="language-plaintext highlighter-rouge">all</code> in similar manner to the following <code class="language-plaintext highlighter-rouge">all(data[:,1]&lt;0.0)</code> assuming that <code class="language-plaintext highlighter-rouge">data</code> is the variable containing the information that has been read from the file already. To transform the logarithmic data in the second columns of the files, simply use,<br /><br />
-<code class="language-plaintext highlighter-rouge">matlab
+<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> To read the individual files, you can use MATLAB’s built-in function <code>readtable()</code>. To make the figure, you can use MATLAB’s built-in function <code>scatter()</code> or other functions. Use <code>hold on</code> command to keep the figure open and the same for all individual data reads and plottings. Check for the negativity of the values in the second column of the data files via MATLAB’s built-in function <code>all</code> in similar manner to the following <code>all(data[:,1]&lt;0.0)</code> assuming that <code>data</code> is the variable containing the information that has been read from the file already. To transform the logarithmic data in the second columns of the files, simply use,<br /><br />
+<code>matlab
 data[:,2] = exp(data[:,2]);
 </code>
 <br /><br />
-as soon as you read the data from each file and then finally, you make a scatter plot of all data using MATLAB <code class="language-plaintext highlighter-rouge">scatter()</code> function. You can use MATLAB’s built-in function <code class="language-plaintext highlighter-rouge">saveas()</code> to save the final figure to an external file.</p>
+as soon as you read the data from each file and then finally, you make a scatter plot of all data using MATLAB <code>scatter()</code> function. You can use MATLAB’s built-in function <code>saveas()</code> to save the final figure to an external file.</p>
 
 <div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
     
@@ -404,7 +404,7 @@ as soon as you read the data from each file and then finally, you make a scatter
 </span>    <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>     <span class="c1"># counts the number of events
 </span></code></pre></div></div>
 
-<p>where <code class="language-plaintext highlighter-rouge">inPath</code> and <code class="language-plaintext highlighter-rouge">figFile</code> are the paths to the directory containing the files, and the name and path to the output figure file. You will have to use <code class="language-plaintext highlighter-rouge">os.listdir(inPath)</code> to get a list of all files in your input directory. Then loop over this list of files, and use only those that end with <code class="language-plaintext highlighter-rouge">ep_flu.txt</code> because that’s how you saved those files, e.g.,</p>
+<p>where <code>inPath</code> and <code>figFile</code> are the paths to the directory containing the files, and the name and path to the output figure file. You will have to use <code>os.listdir(inPath)</code> to get a list of all files in your input directory. Then loop over this list of files, and use only those that end with <code>ep_flu.txt</code> because that’s how you saved those files, e.g.,</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">os</span><span class="p">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">inPath</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">file</span><span class="p">.</span><span class="n">endswith</span><span class="p">(</span><span class="s">"ep_flu.txt"</span><span class="p">):</span>
@@ -417,7 +417,7 @@ as soon as you read the data from each file and then finally, you make a scatter
     <span class="c1"># then plot data
 </span></code></pre></div></div>
 
-<p>the condition <code class="language-plaintext highlighter-rouge">all(data[:,1]&lt;0.0)</code> is rather technical. It makes sure that all values are positive in the second column. Once you have done all these checks, you have to do one final manipulation of data, that is, the data in these files on the second column is the log of data, so have to get the <code class="language-plaintext highlighter-rouge">exp()</code> value to plot it (because the plot is log-log). To do so you can use,</p>
+<p>the condition <code>all(data[:,1]&lt;0.0)</code> is rather technical. It makes sure that all values are positive in the second column. Once you have done all these checks, you have to do one final manipulation of data, that is, the data in these files on the second column is the log of data, so have to get the <code>exp()</code> value to plot it (because the plot is log-log). To do so you can use,</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">exp</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
 </code></pre></div></div>
@@ -433,9 +433,9 @@ as soon as you read the data from each file and then finally, you make a scatter
 <span class="n">plt</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">figFile</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Note that the variable <code class="language-plaintext highlighter-rouge">counter</code> contains the total number of events for which the text files exists on the website, <strong>and</strong> the file contained some data (i.e., was not empty).</p>
+<p>Note that the variable <code>counter</code> contains the total number of events for which the text files exists on the website, <strong>and</strong> the file contained some data (i.e., was not empty).</p>
 
-<p><strong>Question:</strong> What does <code class="language-plaintext highlighter-rouge">alpha=0.05</code> and <code class="language-plaintext highlighter-rouge">s=1</code> do in the following scatter plot command? (Vary their values to see what happens)</p>
+<p><strong>Question:</strong> What does <code>alpha=0.05</code> and <code>s=1</code> do in the following scatter plot command? (Vary their values to see what happens)</p>
 
 <div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
 
@@ -820,8 +820,8 @@ as soon as you read the data from each file and then finally, you make a scatter
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2021 / 01 / 20</section></br> -->
-         <section>Last updated Wednesday, 20 Jan 2021 at 02:39 PM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 26</section></br> -->
+         <section>Last updated Tuesday, 26 Jan 2021 at 08:15 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

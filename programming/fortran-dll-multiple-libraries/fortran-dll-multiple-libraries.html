@@ -242,9 +242,9 @@
 <p>(These files are actually part of the <a href="https://www.cdslab.org/paramonte" target="_blank">ParaMonte library</a>). These modules depend on each other:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">Math_mod</code> uses <code class="language-plaintext highlighter-rouge">Constants_mod</code> and <code class="language-plaintext highlighter-rouge">String_mod</code>,</li>
-  <li><code class="language-plaintext highlighter-rouge">String_mod</code> uses <code class="language-plaintext highlighter-rouge">Constants_mod</code> and <code class="language-plaintext highlighter-rouge">JaggedArray_mod</code>,</li>
-  <li><code class="language-plaintext highlighter-rouge">JaggedArray_mod</code> uses <code class="language-plaintext highlighter-rouge">Constants_mod</code>,</li>
+  <li><code>Math_mod</code> uses <code>Constants_mod</code> and <code>String_mod</code>,</li>
+  <li><code>String_mod</code> uses <code>Constants_mod</code> and <code>JaggedArray_mod</code>,</li>
+  <li><code>JaggedArray_mod</code> uses <code>Constants_mod</code>,</li>
 </ul>
 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
@@ -272,7 +272,7 @@
     </figure>
 </div>
 
-<p>Write a main Fortran program that uses the <code class="language-plaintext highlighter-rouge">String_mod</code> compiled as an external DLL library file named <code class="language-plaintext highlighter-rouge">string</code>. The program calls the <code class="language-plaintext highlighter-rouge">replaceStr()</code> function in <code class="language-plaintext highlighter-rouge">String_mod</code> to replace <code class="language-plaintext highlighter-rouge">"FORTRAN"</code> with <code class="language-plaintext highlighter-rouge">"Fortran"</code> in the following sentence,</p>
+<p>Write a main Fortran program that uses the <code>String_mod</code> compiled as an external DLL library file named <code>string</code>. The program calls the <code>replaceStr()</code> function in <code>String_mod</code> to replace <code>"FORTRAN"</code> with <code>"Fortran"</code> in the following sentence,</p>
 
 <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sentence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"FORTRAN is a highly flexible expressive natively-parallel programming language for numerical computing."</span><span class="w">
 </span></code></pre></div></div>
@@ -281,8 +281,8 @@
 
 <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">mainCallString</span><span class="err">.exe</span>
 </code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Fortran, not FORTRAN, is a highly flexible expressive natively-parallel programming language for numerical computing.
-</code></pre></div></div>
+<pre><code>Fortran, not FORTRAN, is a highly flexible expressive natively-parallel programming language for numerical computing.
+</code></pre>
 
 <div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
 
@@ -369,11 +369,11 @@
 <span class="kd">ifort</span> <span class="nv">!LIB_FLAGS!</span> <span class="nv">!OPTIMIZATION_FLAGS!</span> <span class="kd">mainCallString</span>.f90 <span class="kd">string</span>.lib <span class="na">/exe</span><span class="nl">:mainCallString</span>.exe
 </code></pre></div></div>
 
-<p>Running this Batch script file on the Windows Intel command prompt, will create an executable named <code class="language-plaintext highlighter-rouge">mainCallString.exe</code> which can be called to print the requested message,</p>
+<p>Running this Batch script file on the Windows Intel command prompt, will create an executable named <code>mainCallString.exe</code> which can be called to print the requested message,</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mainCallString.bat
 </code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> -- Build Script -         optimization flags: OPTIMIZATION_FLAGS=/O3 /Qipo /fpe:0 /standard-semantics
+<pre><code> -- Build Script -         optimization flags: OPTIMIZATION_FLAGS=/O3 /Qipo /fpe:0 /standard-semantics
  -- Build Script - Fortran preprocessor flags:          FPP_FLAGS=/fpp /define:DLL_ENABLED
  -- Build Script -      Fortran library flags:          LIB_FLAGS=/libs:dll /threads
 
@@ -398,12 +398,12 @@ Copyright (C) Microsoft Corporation.  All rights reserved.
 -subsystem:console
 C:\Users\shahmoradia\AppData\Local\Temp\ipo_1472013.obj
 string.lib
-</code></pre></div></div>
+</code></pre>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mainCallString.exe
 </code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Fortran, not FORTRAN, is a highly flexible expressive natively-parallel programming language for numerical computing.
-</code></pre></div></div>
+<pre><code>Fortran, not FORTRAN, is a highly flexible expressive natively-parallel programming language for numerical computing.
+</code></pre>
 
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
     
@@ -430,7 +430,7 @@ string.lib
     </figure>
 </div>
 
-<p>Now, write a main Fortran program which calls the <code class="language-plaintext highlighter-rouge">getDistanceSq()</code> function of <code class="language-plaintext highlighter-rouge">Math_mod</code> from the <code class="language-plaintext highlighter-rouge">math</code> DLL (that you will have to build). Note that this Math_mod will depend on the <code class="language-plaintext highlighter-rouge">string</code> DLL file from the previous problem in the above.</p>
+<p>Now, write a main Fortran program which calls the <code>getDistanceSq()</code> function of <code>Math_mod</code> from the <code>math</code> DLL (that you will have to build). Note that this Math_mod will depend on the <code>string</code> DLL file from the previous problem in the above.</p>
 
 <div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
 
@@ -525,11 +525,11 @@ string.lib
 <span class="kd">ifort</span> <span class="nv">!LIB_FLAGS!</span> <span class="nv">!OPTIMIZATION_FLAGS!</span> <span class="kd">mainCallMath</span>.f90 <span class="kd">math</span>.lib <span class="na">/exe</span><span class="nl">:mainCallMath</span>.exe
 </code></pre></div></div>
 
-<p>Running this Batch script file on the Windows Intel command prompt, will create an executable named <code class="language-plaintext highlighter-rouge">mainCallMath.exe</code> which can be called to print the requested message,</p>
+<p>Running this Batch script file on the Windows Intel command prompt, will create an executable named <code>mainCallMath.exe</code> which can be called to print the requested message,</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mainCallMath.bat
 </code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> -- Build Script -         optimization flags: OPTIMIZATION_FLAGS=/O3 /Qipo /fpe:0 /standard-semantics
+<pre><code> -- Build Script -         optimization flags: OPTIMIZATION_FLAGS=/O3 /Qipo /fpe:0 /standard-semantics
  -- Build Script - Fortran preprocessor flags:          FPP_FLAGS=/fpp /define:DLL_ENABLED
  -- Build Script -      Fortran library flags:          LIB_FLAGS=/libs:dll /threads
 
@@ -555,12 +555,12 @@ Copyright (C) Microsoft Corporation.  All rights reserved.
 -subsystem:console
 C:\Users\shahmoradia\AppData\Local\Temp\ipo_1954413.obj
 math.lib
-</code></pre></div></div>
+</code></pre>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mainCallMath.exe
 </code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The distance between the two 3-dimensional points is 14.00000000000000
-</code></pre></div></div>
+<pre><code>The distance between the two 3-dimensional points is 14.00000000000000
+</code></pre>
 
 
             </div>
@@ -625,8 +625,8 @@ math.lib
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2021 / 01 / 20</section></br> -->
-         <section>Last updated Wednesday, 20 Jan 2021 at 02:39 PM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 26</section></br> -->
+         <section>Last updated Tuesday, 26 Jan 2021 at 08:15 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

@@ -250,13 +250,13 @@
 \(\pi\big(\boldsymbol D\big|\mu,\sigma\big) = \prod^{N=100}_{i=1} \frac{1}{2\pi\sigma^2}\exp\bigg( -\bigg[ \frac{\boldsymbol D(i)-\mu}{\sqrt{2}\sigma} \bigg]^2 \bigg) ~~,\)
 <br />
 <br />
-where the symbol $\pi$ to the left of equality means <strong>probability</strong> (but note that $\pi$ on the right hand side of the euqation stands for the number $\pi=3.14\ldots$, and $D(i)$ refers to the $i$th point in the sample of points. Since probabilities are always extremely small numbers, it is always good to work with their <code class="language-plaintext highlighter-rouge">log()</code> values instead of their raw values (can you guess why?). Therefore, we could take the log of the above equation to write it as,<br />
+where the symbol $\pi$ to the left of equality means <strong>probability</strong> (but note that $\pi$ on the right hand side of the euqation stands for the number $\pi=3.14\ldots$, and $D(i)$ refers to the $i$th point in the sample of points. Since probabilities are always extremely small numbers, it is always good to work with their <code>log()</code> values instead of their raw values (can you guess why?). Therefore, we could take the log of the above equation to write it as,<br />
 
 <br />
 \(\log\pi\big(\boldsymbol D\big|\mu,\sigma\big) = \sum^{N=100}_{i=1} - \log\big(2\pi\sigma^2\big) - \bigg[ \frac{\boldsymbol D(i)-\mu}{\sqrt{2}\sigma} \bigg]^2 ~~,\)
 <br />
 <br />
-Now our goal is to construct this function (let’s name it <code class="language-plaintext highlighter-rouge">getLogProbNorm()</code>) and pass it to an optimizer to find the most likely $(\mu,\sigma)$ that leads to the highest likelihood value (the maximum of the above equation).</p>
+Now our goal is to construct this function (let’s name it <code>getLogProbNorm()</code>) and pass it to an optimizer to find the most likely $(\mu,\sigma)$ that leads to the highest likelihood value (the maximum of the above equation).</p>
 
 <p><br /></p>
 
@@ -276,16 +276,16 @@ Now our goal is to construct this function (let’s name it <code class="languag
     </figure>
 </div>
 
-<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> For optimization tasks in MATLAB, you can use MATLAB’s built-in function, <code class="language-plaintext highlighter-rouge">fminsearch()</code>. Note that <code class="language-plaintext highlighter-rouge">fminsearch()</code> minimizes functions, but here we want to maximize <code class="language-plaintext highlighter-rouge">getLogProbNorm()</code>, instead of minimizing it. What change could you make to this function to make it work with <code class="language-plaintext highlighter-rouge">fminsearch()</code>?</p>
+<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> For optimization tasks in MATLAB, you can use MATLAB’s built-in function, <code>fminsearch()</code>. Note that <code>fminsearch()</code> minimizes functions, but here we want to maximize <code>getLogProbNorm()</code>, instead of minimizing it. What change could you make to this function to make it work with <code>fminsearch()</code>?</p>
 
-<p>Name your main script <code class="language-plaintext highlighter-rouge">findBestFitParameters.m</code>. Now when you run your script it should call <code class="language-plaintext highlighter-rouge">fminsearch()</code> and then output the best-fit parameters like the following,</p>
+<p>Name your main script <code>findBestFitParameters.m</code>. Now when you run your script it should call <code>fminsearch()</code> and then output the best-fit parameters like the following,</p>
 
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;</span> <span class="n">findBestFitParameters</span>
 </code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mu: -0.082001 , sigma: 1.0043
-</code></pre></div></div>
+<pre><code>mu: -0.082001 , sigma: 1.0043
+</code></pre>
 
-<p>Start your parameter search via <code class="language-plaintext highlighter-rouge">fminsearch()</code> with the following values: $[\mu,\sigma] = [1,10]$.</p>
+<p>Start your parameter search via <code>fminsearch()</code> with the following values: $[\mu,\sigma] = [1,10]$.</p>
 
 <div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
     
@@ -304,21 +304,21 @@ Now our goal is to construct this function (let’s name it <code class="languag
 </div>
 
 <p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> 
-For optimization tasks in Python, you can use <code class="language-plaintext highlighter-rouge">fmin()</code> function from Python’s package <strong>scipy</strong>: <code class="language-plaintext highlighter-rouge">from scipy.optimize import fmin</code>. To read MATLAB binary files (<code class="language-plaintext highlighter-rouge">*.mat</code>) in Python, you will have to use Scipy’s <code class="language-plaintext highlighter-rouge">loadmat()</code> function (<code class="language-plaintext highlighter-rouge">from scipy.io import loadmat</code>).
+For optimization tasks in Python, you can use <code>fmin()</code> function from Python’s package <strong>scipy</strong>: <code>from scipy.optimize import fmin</code>. To read MATLAB binary files (<code>*.mat</code>) in Python, you will have to use Scipy’s <code>loadmat()</code> function (<code>from scipy.io import loadmat</code>).
 </p>
 
-<p>Name your main script <code class="language-plaintext highlighter-rouge">findBestFitParameters.py</code>. Here is an example expected output of such script,</p>
+<p>Name your main script <code>findBestFitParameters.py</code>. Here is an example expected output of such script,</p>
 
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">findBestFitParameters</span>
 </code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Optimization terminated successfully.
+<pre><code>Optimization terminated successfully.
      Current function value: 142.326191
      Iterations: 50
      Function evaluations: 98
 mean = -0.08200050180312446, standard-deviation = 1.0043358235352169
-</code></pre></div></div>
+</code></pre>
 
-<p>Start your parameter search via <code class="language-plaintext highlighter-rouge">fmin()</code> with the following values: $[\mu,\sigma] = [1,10]$.</p>
+<p>Start your parameter search via <code>fmin()</code> with the following values: $[\mu,\sigma] = [1,10]$.</p>
 
 <div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
 
@@ -423,12 +423,12 @@ mean = -0.08200050180312446, standard-deviation = 1.0043358235352169
                     <span class="p">)</span>
 <span class="k">print</span><span class="p">(</span> <span class="s">"mean = {}, standard-deviation = {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">Parameters</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">Parameters</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="p">)</span>
 </code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Optimization terminated successfully.
+<pre><code>Optimization terminated successfully.
      Current function value: 142.326191
      Iterations: 50
      Function evaluations: 98
 mean = -0.08200050180312446, standard-deviation = 1.0043358235352169
-</code></pre></div></div>
+</code></pre>
 
 
             </div>
@@ -493,8 +493,8 @@ mean = -0.08200050180312446, standard-deviation = 1.0043358235352169
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2021 / 01 / 20</section></br> -->
-         <section>Last updated Wednesday, 20 Jan 2021 at 02:39 PM CST</section></br>
+         <!-- <section>Last updated 2021 / 01 / 26</section></br> -->
+         <section>Last updated Tuesday, 26 Jan 2021 at 08:15 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
