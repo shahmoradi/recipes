@@ -244,93 +244,6 @@
 
 <p>Now write another script that applies Kmeans clustering technique to this data set with an input number of clusters equal to 3.</p>
 
-<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
-
-    <a href="#solution" style="display:inline-block;">
-        <h2 id="solution" style="color:blue;">
-            Solution
-        </h2>
-    </a>
-
-</div>
-
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#solution-python" id="solution-python">
-            <img src="/recipes/images/Python.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
-                Python
-            </a>
-        </figcaption>
-    </figure>
-</div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">notebook</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
-
-<span class="c1"># read data
-</span><span class="n">Data</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"points.txt"</span><span class="p">)</span>
-
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">4.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> \
-                <span class="p">,</span> <span class="n">dpi</span><span class="o">=</span> <span class="mi">200</span> \
-                <span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s">'w'</span> \
-                <span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">'w'</span> \
-                <span class="p">)</span> <span class="c1"># create figure object
-</span><span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Get the axes instance
-</span>
-<span class="n">ax</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">Data</span><span class="p">.</span><span class="n">x</span> \
-       <span class="p">,</span> <span class="n">Data</span><span class="p">.</span><span class="n">y</span> \
-       <span class="p">,</span> <span class="s">'r.'</span> \
-       <span class="p">,</span> <span class="n">markersize</span> <span class="o">=</span> <span class="mi">1</span> \
-       <span class="p">)</span> <span class="c1"># plot with color red, as points
-</span>
-<span class="n">ax</span><span class="p">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">'X'</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">'Y'</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'points.png'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span> <span class="c1"># save the figure to an external file
-</span><span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># display the figure
-</span></code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">notebook</span>
-
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
-<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
-
-<span class="c1"># read data
-</span><span class="n">Data</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"points.txt"</span><span class="p">)</span>
-<span class="n">Point</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">transpose</span><span class="p">([</span><span class="n">Data</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="n">Data</span><span class="p">.</span><span class="n">y</span><span class="p">]))</span>
-
-<span class="n">PointClusterID</span> <span class="o">=</span> <span class="n">KMeans</span> <span class="p">(</span> <span class="n">n_clusters</span> <span class="o">=</span> <span class="mi">3</span> \
-                        <span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">344</span> \
-                        <span class="p">,</span> <span class="n">init</span> <span class="o">=</span> <span class="s">"k-means++"</span> \
-                        <span class="p">,</span> <span class="n">n_init</span> <span class="o">=</span> <span class="mi">100</span> \
-                        <span class="p">,</span> <span class="n">max_iter</span> <span class="o">=</span> <span class="mi">300</span> \
-                        <span class="p">,</span> <span class="n">tol</span> <span class="o">=</span> <span class="mf">0.001</span> \
-                        <span class="p">).</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">Point</span><span class="p">)</span>
-
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Get the axes instance
-</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">scatter</span> <span class="p">(</span> <span class="n">Point</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> \
-            <span class="p">,</span> <span class="n">Point</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> \
-            <span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">PointClusterID</span> \
-            <span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">1</span> \
-            <span class="p">)</span>
-
-<span class="n">fig</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'clusters3.png'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span> <span class="c1"># save the figure to an external file
-</span></code></pre></div></div>
-
-<figure>
-    <img src="clusters3.png" />
-</figure>
-
 
             </div>
         </article>
@@ -395,7 +308,7 @@
         <footer class="notepad-site-footer">
     <div class="copyright">
          <!-- <section>Last updated 2021 / 02 / 10</section></br> -->
-         <section>Last updated Wednesday, 10 Feb 2021 at 02:20 PM CST</section></br>
+         <section>Last updated Wednesday, 10 Feb 2021 at 02:27 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

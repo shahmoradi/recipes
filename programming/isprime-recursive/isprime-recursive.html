@@ -243,87 +243,6 @@
 
 <p><strong>Hint:</strong> You can verify the accuracy of your MATLAB script via by checking its output against MATLAB’s built-in function <code>isprime()</code>.</p>
 
-<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
-
-    <a href="#solution" style="display:inline-block;">
-        <h2 id="solution" style="color:blue;">
-            Solution
-        </h2>
-    </a>
-
-</div>
-
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#solution-matlab" id="solution-matlab">
-            <img src="/recipes/images/MATLAB.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
-                MATLAB
-            </a>
-        </figcaption>
-    </figure>
-</div>
-
-<p>Here is an example implementation of <a href="isPrime.m" target="_blank">isPrime.m</a>,</p>
-
-<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="n">outLogical</span> <span class="o">=</span> <span class="n">isPrime</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-
-    <span class="n">divisor</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-    <span class="n">outLogical</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-    <span class="n">sqrt_n</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">));</span>
-    <span class="n">outLogical</span> <span class="o">=</span> <span class="n">isDivisible</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">sqrt_n</span><span class="p">,</span><span class="n">divisor</span><span class="p">);</span>
-
-    <span class="k">function</span> <span class="n">output</span> <span class="o">=</span> <span class="n">isDivisible</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">sqrt_n</span><span class="p">,</span><span class="n">divisor</span><span class="p">)</span>
-        <span class="k">if</span> <span class="nb">mod</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">divisor</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
-            <span class="n">output</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-        <span class="k">elseif</span> <span class="n">sqrt_n</span><span class="o">&lt;</span><span class="n">divisor</span>
-            <span class="n">output</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-            <span class="k">return</span>
-        <span class="k">else</span>
-            <span class="n">divisor</span> <span class="o">=</span> <span class="n">divisor</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-            <span class="n">output</span> <span class="o">=</span> <span class="n">isDivisible</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">sqrt_n</span><span class="p">,</span><span class="n">divisor</span><span class="p">);</span>
-        <span class="k">end</span>
-    <span class="k">end</span>
-
-<span class="k">end</span>
-</code></pre></div></div>
-
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#solution-python" id="solution-python">
-            <img src="/recipes/images/Python.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
-                Python
-            </a>
-        </figcaption>
-    </figure>
-</div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">isPrime</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    
-    <span class="n">isPrime</span> <span class="o">=</span> <span class="bp">True</span>
-    
-    <span class="k">def</span> <span class="nf">is_divisible</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">divisor</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">n</span><span class="o">&lt;</span><span class="p">(</span><span class="n">divisor</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">divisor</span><span class="p">:</span> <span class="k">return</span> <span class="bp">False</span>
-        <span class="k">if</span> <span class="n">n</span><span class="o">%</span><span class="n">divisor</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="bp">True</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">divisor</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="k">return</span> <span class="n">is_divisible</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">divisor</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">is_divisible</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">divisor</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span> <span class="n">isPrime</span><span class="o">=</span><span class="bp">False</span>
-    <span class="k">return</span> <span class="n">isPrime</span>
-</code></pre></div></div>
-
 
             </div>
         </article>
@@ -388,7 +307,7 @@
         <footer class="notepad-site-footer">
     <div class="copyright">
          <!-- <section>Last updated 2021 / 02 / 10</section></br> -->
-         <section>Last updated Wednesday, 10 Feb 2021 at 02:20 PM CST</section></br>
+         <section>Last updated Wednesday, 10 Feb 2021 at 02:27 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

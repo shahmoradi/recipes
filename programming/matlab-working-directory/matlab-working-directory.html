@@ -250,44 +250,6 @@
 
 <p>Now on MATLAB command line, run the script by calling its name. What do you get? Save the output as a figure and submit it as part of your answer.</p>
 
-<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
-
-    <a href="#solution-part-1" style="display:inline-block;">
-        <h2 id="solution-part-1" style="color:blue;">
-            Solution Part 1
-        </h2>
-    </a>
-
-</div>
-
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#solution-part-1-matlab" id="solution-part-1-matlab">
-            <img src="/recipes/images/MATLAB.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
-                MATLAB
-            </a>
-        </figcaption>
-    </figure>
-</div>
-
-<p>You can create a new directory and switch the current directory to it using the following commands,</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;</span> <span class="nb">mkdir </span>mynewdir
-<span class="o">&gt;&gt;</span> <span class="nb">cd </span>mynewdir
-</code></pre></div></div>
-
-<p>The script <code>myscript</code> generates a plot of $y$ versus $x$ where $y = |sin(x)|$. In doing so, MATLAB opens a new window called <strong>plot window</strong> that contains the plot of y as a function of x. Here is the resulting figure,</p>
-
-<figure>
-    <img src="plot.png" />
-</figure>
-
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
     
         <a href="#problem-part-2" style="display:inline-block;">
@@ -315,43 +277,6 @@
 </div>
 
 <p>Now change your working directory to the original directory before you created <code>mynewdir</code> directory. Try to run the script <code>myscript</code> you had created again, from MATLAB command line. What do you get? and why?</p>
-
-<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
-
-    <a href="#solution-part-2" style="display:inline-block;">
-        <h2 id="solution-part-2" style="color:blue;">
-            Solution Part 2
-        </h2>
-    </a>
-
-</div>
-
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#solution-part-2-matlab" id="solution-part-2-matlab">
-            <img src="/recipes/images/MATLAB.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
-                MATLAB
-            </a>
-        </figcaption>
-    </figure>
-</div>
-
-<p>You get an error message like the following on the MATLAB command line,</p>
-
-<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;</span> <span class="nb">cd</span> <span class="n">mynewdir</span><span class="p">\</span>
-<span class="o">&gt;&gt;</span> <span class="n">myscript</span>
-<span class="o">&gt;&gt;</span> <span class="nb">cd</span> <span class="o">..</span>
-<span class="o">&gt;&gt;</span> <span class="n">myscript</span>
-<span class="n">Undefined</span> <span class="k">function</span> <span class="nb">or</span> <span class="n">variable</span> <span class="s1">'myscript'</span><span class="o">.</span>
-</code></pre></div></div>
-
-<p>And this happens because the script we are trying to run is neither in MATLAB’s working directory nor in any of MATLAB’s search paths. Therefore, MATLAB gives an error, as it cannot find the requested file.</p>
 
 
             </div>
@@ -417,7 +342,7 @@
         <footer class="notepad-site-footer">
     <div class="copyright">
          <!-- <section>Last updated 2021 / 02 / 10</section></br> -->
-         <section>Last updated Wednesday, 10 Feb 2021 at 02:20 PM CST</section></br>
+         <section>Last updated Wednesday, 10 Feb 2021 at 02:27 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
