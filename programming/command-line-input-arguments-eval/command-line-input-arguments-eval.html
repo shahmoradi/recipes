@@ -225,6 +225,41 @@ The <span class="nb">sum </span>of 1 2 1 23 is 27
 
 <p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Think of how to add + operator between the input arguments from the command line and then, evaluating the whole string via Python’s <code>eval()</code> function.</p>
 
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution" style="display:inline-block;">
+        <h2 id="solution" style="color:blue;">
+            Solution
+        </h2>
+    </a>
+
+</div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-python" id="solution-python">
+            <img src="/recipes/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sys</span>
+<span class="k">print</span><span class="p">(</span> <span class="s">'The sum of {} is {}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span> <span class="s">' '</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="p">,</span> <span class="nb">eval</span><span class="p">(</span><span class="s">'+'</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p>Here is the Bash output,</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python sum.py 1 2 1 23
+The <span class="nb">sum </span>of 1 2 1 23 is 27
+</code></pre></div></div>
+
 
             </div>
         </article>
@@ -289,7 +324,7 @@ The <span class="nb">sum </span>of 1 2 1 23 is 27
         <footer class="notepad-site-footer">
     <div class="copyright">
          <!-- <section>Last updated 2021 / 02 / 10</section></br> -->
-         <section>Last updated Wednesday, 10 Feb 2021 at 02:27 PM CST</section></br>
+         <section>Last updated Wednesday, 10 Feb 2021 at 10:44 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

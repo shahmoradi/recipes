@@ -339,6 +339,203 @@ Program aborted.
 
 <p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Unlike Python, Dictionaries are not first-class citizens in MATLAB. However, one can use <strong>structures</strong> in MATLAB to effectively mimic the behavior of <strong>Dictionaries</strong> in Python. In this case, the fields of a structure in MATLAB are equivalent to the keys of a Dictionary in Python, and corresponding field values are equivalent to the key values in a Python dictionary.</p>
 
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution" style="display:inline-block;">
+        <h2 id="solution" style="color:blue;">
+            Solution
+        </h2>
+    </a>
+
+</div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-python" id="solution-python">
+            <img src="/recipes/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>An example implementation can be downloaded from <a href="readDSSP.py" target="_blank">here</a>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python
+</span><span class="kn">import</span> <span class="nn">sys</span><span class="p">,</span> <span class="n">os</span>
+
+<span class="n">residue_max_acc</span> <span class="o">=</span> <span class="p">{</span><span class="s">'A'</span><span class="p">:</span> <span class="mf">129.0</span><span class="p">,</span> <span class="s">'R'</span><span class="p">:</span> <span class="mf">274.0</span><span class="p">,</span> <span class="s">'N'</span><span class="p">:</span> <span class="mf">195.0</span><span class="p">,</span> <span class="s">'D'</span><span class="p">:</span> <span class="mf">193.0</span><span class="p">,</span> \
+                   <span class="s">'C'</span><span class="p">:</span> <span class="mf">167.0</span><span class="p">,</span> <span class="s">'Q'</span><span class="p">:</span> <span class="mf">225.0</span><span class="p">,</span> <span class="s">'E'</span><span class="p">:</span> <span class="mf">223.0</span><span class="p">,</span> <span class="s">'G'</span><span class="p">:</span> <span class="mf">104.0</span><span class="p">,</span> \
+                   <span class="s">'H'</span><span class="p">:</span> <span class="mf">224.0</span><span class="p">,</span> <span class="s">'I'</span><span class="p">:</span> <span class="mf">197.0</span><span class="p">,</span> <span class="s">'L'</span><span class="p">:</span> <span class="mf">201.0</span><span class="p">,</span> <span class="s">'K'</span><span class="p">:</span> <span class="mf">236.0</span><span class="p">,</span> \
+                   <span class="s">'M'</span><span class="p">:</span> <span class="mf">224.0</span><span class="p">,</span> <span class="s">'F'</span><span class="p">:</span> <span class="mf">240.0</span><span class="p">,</span> <span class="s">'P'</span><span class="p">:</span> <span class="mf">159.0</span><span class="p">,</span> <span class="s">'S'</span><span class="p">:</span> <span class="mf">155.0</span><span class="p">,</span> \
+                   <span class="s">'T'</span><span class="p">:</span> <span class="mf">172.0</span><span class="p">,</span> <span class="s">'W'</span><span class="p">:</span> <span class="mf">285.0</span><span class="p">,</span> <span class="s">'Y'</span><span class="p">:</span> <span class="mf">263.0</span><span class="p">,</span> <span class="s">'V'</span><span class="p">:</span> <span class="mf">174.0</span><span class="p">}</span>
+    
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span> <span class="n">sys</span><span class="p">.</span><span class="n">argv</span> <span class="p">)</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'''
+ 
+Usage:'''</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"     "</span><span class="p">,</span> <span class="n">sys</span><span class="p">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s">"&lt;input dssp file&gt;"</span><span class="p">,</span> <span class="s">"&lt;output summary file&gt;"</span><span class="p">,</span> <span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+        <span class="n">sys</span><span class="p">.</span><span class="nb">exit</span><span class="p">(</span><span class="s">'Program aborted.</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">dssp_in</span> <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># path for the output dssp file to be read
+</span>        <span class="n">sum_out</span> <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>   <span class="c1"># summary file containing all residue DSSP-property data
+</span>
+    <span class="c1"># Now check if the output summary file already exists. If so, then append data for the new pdb to the data already in the file.
+</span>    <span class="k">if</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">sum_out</span><span class="p">):</span>
+       <span class="n">sum_out_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">sum_out</span><span class="p">,</span><span class="s">'a'</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+       <span class="n">sum_out_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">sum_out</span><span class="p">,</span><span class="s">'w'</span><span class="p">)</span>
+       <span class="n">sum_out_file</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="s">'pdb'</span> <span class="o">+</span> <span class="s">'</span><span class="se">\t</span><span class="s">'</span> <span class="o">+</span> <span class="s">'name'</span> <span class="o">+</span> <span class="s">'</span><span class="se">\t</span><span class="s">'</span> <span class="o">+</span> <span class="s">'ACC'</span> <span class="o">+</span> <span class="s">'</span><span class="se">\t</span><span class="s">'</span> <span class="o">+</span> <span class="s">'RSA'</span> <span class="o">+</span> <span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+    
+    <span class="nb">input</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">dssp_in</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span>
+    <span class="n">fileContents</span> <span class="o">=</span> <span class="nb">input</span><span class="p">.</span><span class="n">readlines</span><span class="p">()</span>   <span class="c1"># This is a list containing each line of the input file as an element.
+</span>    <span class="n">pdb_name</span> <span class="o">=</span> <span class="n">dssp_in</span><span class="p">[</span><span class="o">-</span><span class="mi">11</span><span class="p">:</span><span class="o">-</span><span class="mi">5</span><span class="p">]</span>
+    
+    <span class="n">resnam</span> <span class="o">=</span> <span class="p">[]</span>     <span class="c1"># A list containing all Residue Names
+</span>    <span class="n">acc</span> <span class="o">=</span> <span class="p">[]</span>        <span class="c1"># A list containing all normalized residue acc values in the pdb file
+</span>    <span class="n">rsa</span> <span class="o">=</span> <span class="p">[]</span>        <span class="c1"># A list containing all normalized residue acc values in the pdb file
+</span>    <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">fileContents</span><span class="p">[</span><span class="mi">25</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">fileContents</span><span class="p">)]:</span>
+        <span class="n">AA</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">AA</span> <span class="o">!=</span> <span class="p">(</span><span class="s">'!'</span> <span class="ow">or</span> <span class="s">'*'</span><span class="p">):</span>
+            <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">resnam</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">AA</span><span class="p">)</span>
+            <span class="n">acc</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">record</span><span class="p">[</span><span class="mi">35</span><span class="p">:</span><span class="mi">39</span><span class="p">])</span>
+            <span class="n">rsa</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">record</span><span class="p">[</span><span class="mi">35</span><span class="p">:</span><span class="mi">39</span><span class="p">])</span><span class="o">/</span><span class="n">residue_max_acc</span><span class="p">[</span><span class="n">AA</span><span class="p">])</span>
+            
+    <span class="nb">input</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+    
+    <span class="c1"># Now write out (or append to) the ouput file
+</span>    <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">rsa</span><span class="p">):</span>
+        <span class="n">sum_out_file</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">pdb_name</span> <span class="o">+</span> <span class="s">'</span><span class="se">\t</span><span class="s">'</span> <span class="o">+</span> <span class="n">resnam</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s">'</span><span class="se">\t</span><span class="s">'</span> <span class="o">+</span> <span class="n">acc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s">'</span><span class="se">\t</span><span class="s">'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rsa</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+    
+    <span class="k">return</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-matlab" id="solution-matlab">
+            <img src="/recipes/images/MATLAB.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
+                MATLAB
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>Here is an implementation of the function in MATLAB,</p>
+
+<pre><code class="language-MATLAB">function readDSSP( inputFileName, outputFileName )
+
+    residue_max_acc.A = 129.0;
+    residue_max_acc.R = 274.0;
+    residue_max_acc.N = 195.0;
+    residue_max_acc.D = 193.0;
+    residue_max_acc.C = 167.0;
+    residue_max_acc.Q = 225.0;
+    residue_max_acc.E = 223.0;
+    residue_max_acc.G = 104.0;
+    residue_max_acc.H = 224.0;
+    residue_max_acc.I = 197.0;
+    residue_max_acc.L = 201.0;
+    residue_max_acc.K = 236.0;
+    residue_max_acc.M = 224.0;
+    residue_max_acc.F = 240.0;
+    residue_max_acc.P = 159.0;
+    residue_max_acc.S = 155.0;
+    residue_max_acc.T = 172.0;
+    residue_max_acc.W = 285.0;
+    residue_max_acc.Y = 263.0;
+    residue_max_acc.V = 174.0;
+
+    File.Input.name = inputFileName; % '1A2T_A.dssp'
+    File.Output.name = outputFileName; % 'readDSSP_output_MATLAB.txt'
+
+    % get the PDB name from the input file's name
+    pdb_name = File.Input.name(1:6);
+
+    % read all of the input file contents as a single string variable
+    File.Input.contents = fileread( File.Input.name );
+
+    % split the single string variable to a cell array each element of which
+    % corresponds to a line in the input file
+    File.Input.Line = strsplit( File.Input.contents, '\n' );
+
+    % first allocate all the arrays to the maximum possible size to save
+    % computational time by avoiding repeated allocation / deallocation of the
+    % same variable
+    File.Output.Result.AA = strings(length(File.Input.Line),1); % array containing the Amino Acid names
+    File.Output.Result.ACC = zeros(length(File.Input.Line),1); % array containing the ACCessible surface areas
+    File.Output.Result.ACC = zeros(length(File.Input.Line),1); % array containing the ACCessible surface areas
+
+    % iterate over the lines of the input file
+    counter = 0;
+    for rowCell = File.Input.Line(26:length(File.Input.Line))
+        row = rowCell{1};
+        if ~isempty(row)
+            if ~strcmp(row(14),'!')
+                counter = counter + 1;
+                File.Output.Result.AA(counter) = row(14);
+                File.Output.Result.ACC(counter) = str2double(row(36:39));
+                % compute the fractional/relative solvent accessible area
+                File.Output.Result.RSA(counter) = File.Output.Result.ACC(counter) / residue_max_acc.(File.Output.Result.AA{counter});
+            end
+        end
+    end
+
+    % Now resize all the arrays to remove empty array elements
+    File.Output.Result.AA = File.Output.Result.AA(1:counter);
+    File.Output.Result.ACC = File.Output.Result.ACC(1:counter);
+    File.Output.Result.RSA = File.Output.Result.RSA(1:counter);
+
+    % now open the output file and check if the file already exists
+    if exist(File.Output.name,'file')
+        % the file already exists, so open it to append new data
+        File.Output.id = fopen( File.Output.name, 'a' );
+    else
+        % the file does not exist, so open it to write new data
+        File.Output.id = fopen( File.Output.name, 'w' );
+    end
+
+    % write the output file as a CSV (comma-separated-variable) file
+    % write the output file's header
+    fprintf( File.Output.id, "pdb,AA,ACC,RSA\n"); % \n stands for the new line character
+    for i = 1:length(File.Output.Result.AA)
+        fprintf ( File.Output.id ...
+                , "%s,%s,%.0f,%.4f\n" ...
+                , pdb_name ...
+                , File.Output.Result.AA(i) ...
+                , File.Output.Result.ACC(i) ...
+                , File.Output.Result.RSA(i) ...
+                );
+    end
+    fclose(File.Output.id);
+
+end
+</code></pre>
+
+<p>Calling this function <a href="readDSSP.m" target="_blank">readDSSP.m</a> on the MATLAB command-line with the following input/output filenames,</p>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">readDSSP</span><span class="p">(</span> <span class="s1">'1A2T_A.dssp'</span> <span class="p">,</span> <span class="s1">'readDSSP_output_MATLAB.txt'</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p>will generate this output file <a href="readDSSP_output_MATLAB.txt" target="_blank">readDSSP_output_MATLAB.txt</a></p>
+
 
             </div>
         </article>
@@ -403,7 +600,7 @@ Program aborted.
         <footer class="notepad-site-footer">
     <div class="copyright">
          <!-- <section>Last updated 2021 / 02 / 10</section></br> -->
-         <section>Last updated Wednesday, 10 Feb 2021 at 02:27 PM CST</section></br>
+         <section>Last updated Wednesday, 10 Feb 2021 at 10:44 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

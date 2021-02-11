@@ -250,6 +250,114 @@
     <img src="approximatePI.png" />
 </figure>
 
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution" style="display:inline-block;">
+        <h2 id="solution" style="color:blue;">
+            Solution
+        </h2>
+    </a>
+
+</div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-matlab" id="solution-matlab">
+            <img src="/recipes/images/MATLAB.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
+                MATLAB
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>Here is an example MATLAB script that estimates $\pi$: <a href="estimatePi.m" target="_blank">estimatePi.m</a>,</p>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nsample</span> <span class="o">=</span> <span class="mi">1000000</span><span class="p">;</span>
+<span class="n">X</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="n">nsample</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">InsideCircle</span> <span class="o">=</span> <span class="p">(</span> <span class="n">X</span><span class="p">(:,</span><span class="mi">1</span><span class="p">)</span><span class="o">.^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">X</span><span class="p">(:,</span><span class="mi">2</span><span class="p">)</span><span class="o">.^</span><span class="mi">2</span> <span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">ApproximatePI</span> <span class="o">=</span> <span class="nb">zeros</span><span class="p">(</span> <span class="nb">size</span><span class="p">(</span><span class="n">InsideCircle</span><span class="p">)</span> <span class="p">);</span>
+<span class="n">sumInsideCircle</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="k">for</span> <span class="n">isample</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">nsample</span>
+    <span class="n">sumInsideCircle</span> <span class="o">=</span> <span class="n">sumInsideCircle</span> <span class="o">+</span> <span class="n">InsideCircle</span><span class="p">(</span><span class="n">isample</span><span class="p">)</span> <span class="p">;</span>
+    <span class="n">ApproximatePI</span><span class="p">(</span><span class="n">isample</span><span class="p">)</span> <span class="o">=</span> <span class="mf">4.0</span> <span class="o">*</span> <span class="n">sumInsideCircle</span> <span class="p">/</span> <span class="n">isample</span> <span class="p">;</span>
+<span class="k">end</span>
+<span class="nb">disp</span><span class="p">(</span> <span class="p">[</span> <span class="s1">'Approximate value of PI for '</span><span class="k">...</span>
+        <span class="p">,</span> <span class="nb">num2str</span><span class="p">(</span><span class="n">nsample</span><span class="p">)</span> <span class="k">...</span>
+        <span class="p">,</span> <span class="s1">' samples: '</span> <span class="k">...</span>
+        <span class="p">,</span> <span class="nb">num2str</span><span class="p">(</span><span class="n">ApproximatePI</span><span class="p">(</span><span class="k">end</span><span class="p">))</span> <span class="k">...</span>
+      <span class="p">]</span> <span class="k">...</span>
+    <span class="p">);</span>
+<span class="nb">figure</span><span class="p">();</span> <span class="nb">hold</span> <span class="n">on</span><span class="p">;</span> <span class="nb">box</span> <span class="n">on</span><span class="p">;</span>
+<span class="nb">line</span><span class="p">(</span> <span class="p">[</span> <span class="mi">1</span> <span class="n">nsample</span> <span class="p">]</span> <span class="k">...</span>
+    <span class="p">,</span> <span class="p">[</span> <span class="nb">pi</span> <span class="nb">pi</span> <span class="p">]</span> <span class="k">...</span>
+    <span class="p">,</span> <span class="s1">'linestyle'</span> <span class="p">,</span> <span class="s1">'--'</span> <span class="k">...</span>
+    <span class="p">,</span> <span class="s1">'linewidth'</span> <span class="p">,</span> <span class="mi">3</span> <span class="k">...</span>
+    <span class="p">,</span> <span class="s1">'color'</span> <span class="p">,</span> <span class="s1">'black'</span> <span class="k">...</span>
+    <span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span> <span class="n">ApproximatePI</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="k">end</span><span class="p">)</span> <span class="k">...</span>
+    <span class="p">,</span> <span class="s1">'linewidth'</span> <span class="p">,</span> <span class="mi">2</span> <span class="k">...</span>
+    <span class="p">,</span> <span class="s1">'color'</span> <span class="p">,</span> <span class="s1">'red'</span> <span class="k">...</span>
+    <span class="p">);</span>
+<span class="nb">xlabel</span><span class="p">(</span> <span class="s1">'Number of Sampled Points'</span> <span class="p">)</span> <span class="p">;</span>
+<span class="nb">ylabel</span><span class="p">(</span> <span class="s1">'Approximate Value of Pi'</span> <span class="p">)</span> <span class="p">;</span>
+<span class="nb">set</span><span class="p">(</span> <span class="nb">gca</span> <span class="p">,</span> <span class="s1">'XScale'</span> <span class="p">,</span> <span class="s1">'log'</span> <span class="p">);</span>
+<span class="nb">saveas</span><span class="p">(</span> <span class="nb">gcf</span><span class="p">,</span> <span class="s1">'approximatePI.png'</span> <span class="p">);</span>
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-python" id="solution-python">
+            <img src="/recipes/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>Here is an example Python code that estimates $\pi$,</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="n">rnd</span>
+<span class="kn">import</span> <span class="nn">numpy.linalg</span> <span class="k">as</span> <span class="n">nlg</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="k">def</span> <span class="nf">estimatePi</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">100000</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">dtype</span><span class="p">)</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">rnd</span><span class="p">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># generate two uniform random numbers
+</span>        <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">nlg</span><span class="p">.</span><span class="n">norm</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,:],</span> <span class="nb">ord</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">&lt;=</span><span class="mf">1.0</span><span class="p">):</span> <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mf">4.0</span><span class="o">*</span><span class="n">np</span><span class="p">.</span><span class="n">double</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="p">.</span><span class="n">double</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="c1"># the running approximate of pi is returned as a vector in the fourth column of x
+</span>
+<span class="k">def</span> <span class="nf">plotPi</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">estimatePi</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">semilogx</span><span class="p">(</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> \
+                <span class="p">,</span> <span class="n">x</span><span class="p">[:,</span><span class="mi">3</span><span class="p">]</span> \
+                <span class="p">)</span> <span class="c1"># plot with color red, as line
+</span>    <span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Number of simulated points'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'Approximate value of Pi'</span><span class="p">)</span>
+    <span class="c1">#plt.axis([1, n , 0.1, 4.0]) # [xmin, xmax, ymin, ymax]
+</span>    <span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'Estimating Pi by Monte Carlo simulation'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'approximatePi_{}.png'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plotPi</span><span class="p">()</span>
+</code></pre></div></div>
+
 
             </div>
         </article>
@@ -314,7 +422,7 @@
         <footer class="notepad-site-footer">
     <div class="copyright">
          <!-- <section>Last updated 2021 / 02 / 10</section></br> -->
-         <section>Last updated Wednesday, 10 Feb 2021 at 02:27 PM CST</section></br>
+         <section>Last updated Wednesday, 10 Feb 2021 at 10:44 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
