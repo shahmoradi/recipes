@@ -223,7 +223,13 @@
 <pre><code>False
 </code></pre>
 
-<p>Note that you do not need and don’t have to use a <code>for-loop</code> for this problem (we have not yet discussed loops in our class!). All of it can be done using <strong>recursive function</strong> concept.</p>
+<p>Note that you do not need and must not use a <code>for-loop</code> for this problem (we have not yet discussed loops in our class!). All of it can be done using <strong>recursive function</strong> concept.</p>
+
+<p><strong>Hint:</strong> To check if a number is a prime number, you would need to check if the number is divisible by any number smaller than itself. However, there is no need to check the divisibility for all numbers smaller than the target number. This divisibility checking can be done only up to a certain number. You may think that this checking should be done up to half the target number. But you can in fact end your search much sooner than reaching the half value. For example, consider the following checks for the number <code>n = 100</code>. When we test all possible divisors up to <code>n/2</code>, we will discover some factors twice. To observe this, rewrite the list of divisors as a list of products, each equal to 100:</p>
+
+\[2 \times 50,   4 \times 25,   5 \times 20,   10 \times 10,   20 \times 5,   25 \times 4,   50 \times 2\]
+
+<p>Notice that products past $10 \times 10$ merely repeat numbers which appeared in earlier products. Use this example to find the optimal threshold in your search for primality.</p>
 
 <div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
     
@@ -306,8 +312,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2021 / 03 / 10</section></br> -->
-         <section>Last updated Wednesday, 10 Mar 2021 at 04:39 PM CST</section></br>
+         <!-- <section>Last updated 2021 / 03 / 26</section></br> -->
+         <section>Last updated Friday, 26 Mar 2021 at 01:04 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
