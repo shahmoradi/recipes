@@ -3,18 +3,18 @@
 <head>
     
     <meta charset="utf-8">
-<title>PYTHON SCRIPT CALL FROM THE BASH COMMAND LINE &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>PYTHON MODULES AND PACKAGING &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="Python, working directory, directory, script, run, mkdir, cd, string, print, escape character, value, variable, type">
+<meta name="keywords" content="MATLAB, Python, Fibonacci sequence, recursive, function, recursive function, branching, isreal, round, str2double, input, string">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python script call from the Bash command line">
+<meta property="og:title" content="Python modules and packaging">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/python-call-script-from-bash/python-call-script-from-bash">
+<meta property="og:url" content="/recipes/programming/python-packaging/python-packaging">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/python-call-script-from-bash/python-call-script-from-bash">
+<link rel="canonical" href="/recipes/programming/python-packaging/python-packaging">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,16 +130,26 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/python-call-script-from-bash/python-call-script-from-bash">Python script call from the Bash command line</a></h2>
+                            <h2><a href="/recipes/programming/python-packaging/python-packaging">Python modules and packaging</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
                                 
                                     &#8212; Last updated: 
-                                    <strong><time datetime="2019-07-04T00:00:00-05:00">04 July 2019</time></strong>
+                                    <strong><time datetime="2021-03-31T00:00:00-05:00">31 March 2021</time></strong>
                                 
                                 <ul class="tag-box inline">
                                     <span style="margin-right:1rem;">Tags:</span>
                                     
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#Fibonacci sequence" data-toggle="tooltip" title="Posts tagged with Fibonacci sequence" rel="tag">Fibonacci sequence</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#MATLAB" data-toggle="tooltip" title="Posts tagged with MATLAB" rel="tag">MATLAB</a>
+                                            </li>
+                                            
                                         
                                             <li>
                                                 <a href="/recipes/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
@@ -147,62 +157,47 @@
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#cd" data-toggle="tooltip" title="Posts tagged with cd" rel="tag">cd</a>
+                                                <a href="/recipes/tags/index.html#branching" data-toggle="tooltip" title="Posts tagged with branching" rel="tag">branching</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#directory" data-toggle="tooltip" title="Posts tagged with directory" rel="tag">directory</a>
+                                                <a href="/recipes/tags/index.html#function" data-toggle="tooltip" title="Posts tagged with function" rel="tag">function</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#escape character" data-toggle="tooltip" title="Posts tagged with escape character" rel="tag">escape character</a>
+                                                <a href="/recipes/tags/index.html#input" data-toggle="tooltip" title="Posts tagged with input" rel="tag">input</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#mkdir" data-toggle="tooltip" title="Posts tagged with mkdir" rel="tag">mkdir</a>
+                                                <a href="/recipes/tags/index.html#isreal" data-toggle="tooltip" title="Posts tagged with isreal" rel="tag">isreal</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#print" data-toggle="tooltip" title="Posts tagged with print" rel="tag">print</a>
+                                                <a href="/recipes/tags/index.html#recursive" data-toggle="tooltip" title="Posts tagged with recursive" rel="tag">recursive</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#run" data-toggle="tooltip" title="Posts tagged with run" rel="tag">run</a>
+                                                <a href="/recipes/tags/index.html#recursive function" data-toggle="tooltip" title="Posts tagged with recursive function" rel="tag">recursive function</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#script" data-toggle="tooltip" title="Posts tagged with script" rel="tag">script</a>
+                                                <a href="/recipes/tags/index.html#round" data-toggle="tooltip" title="Posts tagged with round" rel="tag">round</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#str2double" data-toggle="tooltip" title="Posts tagged with str2double" rel="tag">str2double</a>
                                             </li>
                                             
                                         
                                             <li>
                                                 <a href="/recipes/tags/index.html#string" data-toggle="tooltip" title="Posts tagged with string" rel="tag">string</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#type" data-toggle="tooltip" title="Posts tagged with type" rel="tag">type</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#value" data-toggle="tooltip" title="Posts tagged with value" rel="tag">value</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#variable" data-toggle="tooltip" title="Posts tagged with variable" rel="tag">variable</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#working directory" data-toggle="tooltip" title="Posts tagged with working directory" rel="tag">working directory</a>
                                             </li>
                                             
                                         
@@ -231,74 +226,12 @@
     
 </div>
 
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#problem-python" id="problem-python">
-            <img src="/recipes/images/Python.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
-                Python
-            </a>
-        </figcaption>
-    </figure>
-</div>
+<p>Consider the following codes that compute the Fibonacci sequence using two different methods: <a href="fib_recursive.py" target="_blank">fib_recursive.py</a> and <a href="fib_loop.py" target="_blank">fib_loop.py</a>.</p>
 
-<p>Write a Python script that is directly executable from the Git Bash command line, without any need to invoke <code>python</code> interpreter. The script should produce <strong>exactly</strong> the following output, including line breaks and separations. Each part of the output (separated by a line-break, or a new-line character <code>'\n'</code> from the rest) is generated by <strong>only and only one call</strong> to print function.</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is Python version 3.5.2 
-
-Python is the best language for String manipulation!
-
-!noitalupinam gnirtS rof egaugnal tseb eht si nohtyP
-
-!otlpnmgit o gunlte h inhy
-
-pYTHON IS THE BEST LANGUAGE FOR sTRING MANIPULATION!
-
-
-The sentence 'Python is the best language for String manipulation!' contains 
-4 'a' letters, and
-0 'A' letters!
-
-Python
-is
-the
-best
-language
-for
-String
-manipulation!
-
-PYTHON
-IS
-THE
-BEST
-LANGUAGE
-FOR
-STRING
-MANIPULATION!
-</code></pre></div></div>
-<p><br /></p>
-
-<p>Here are some hints (all the information you need to answer this question can be found in the lecture notes):</p>
-
-<ul>
-  <li>To make the script executable, add the appropriate shebang to the script’s file.<br />
-<br /></li>
-  <li>Import the appropriate module to get the python version command, as we did in class. Use <code>print</code> function to print the Python version.<br />
-<br /></li>
-  <li>Define a String variable <code>my_string</code> which contains the string value “Python is the best language for String manipulation!” ( Of course, you can accomplish this question without defining a string variable, by only using the string value itself wherever needed… This is also totally fine at this point in our course if you prefer this method).<br />
-<br /></li>
-  <li>Then use the appropriate examples and external links provided in the lecture notes, to find the proper <strong>string methods</strong> that can manipulate this string variable/value to generate each of the outputs printed above.<br />
-<br /></li>
-  <li>Again, note that for each output, the entire output must result from <strong>one single call</strong> to function <code>print</code>.<br />
-<br /></li>
-  <li>Wherever needed, use the <a href="https://python-reference.readthedocs.io/en/latest/docs/str/escapes.html" target="_blank">escape character</a> value <code>'\n'</code> in <code>print</code> input arguments, in order to generate a line-break (or newline) in the output.</li>
-</ul>
+<ol>
+  <li>Put these two functions in a folder named <code>fib</code> such that they can be imported as a Python package to your Python environment.</li>
+  <li>Rewrite these scripts such that they are imported as Python packages without being executed, while the functions are called if the scripts are executed as standalone Python code.</li>
+</ol>
 
 
             </div>
@@ -306,11 +239,11 @@ MANIPULATION!
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Python script call from the Bash command line&quot;%20https://www.cdslab.org/recipes/programming/python-call-script-from-bash/python-call-script-from-bash%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Python modules and packaging&quot;%20https://www.cdslab.org/recipes/programming/python-packaging/python-packaging%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/python-call-script-from-bash/python-call-script-from-bash"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/python-packaging/python-packaging"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>

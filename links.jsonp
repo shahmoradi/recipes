@@ -152,6 +152,11 @@ callback([
   } ,
 
   {
+    "text": "Python modules and packaging",
+    "href": "/recipes/programming/python-packaging/python-packaging"
+  } ,
+
+  {
     "text": "Python dictionary of class members",
     "href": "/recipes/programming/python-dictionary-of-class-members/python-dictionary-of-class-members"
   } ,

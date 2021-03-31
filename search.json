@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "Python modules and packaging",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/python-packaging/python-packaging",
+		  "date"       : "2021-03-31 00:00:00 -0500",
+		  "shortdate"  : "March 31, 2021"
+		} ,
+	
+		{
 		  "title"      : "Logic NAND equivalence",
 		  "category"   : "logic",
 		  "url"        : "/recipes/programming/logic-a-nand-equivalence/logic/logic-a-nand-equivalence",
