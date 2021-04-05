@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "Command line input option-value pairs",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/command-line-input-option-value/command-line-input-option-value",
+		  "date"       : "2021-04-05 00:00:00 -0500",
+		  "shortdate"  : "April 05, 2021"
+		} ,
+	
+		{
 		  "title"      : "Python modules and packaging",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/python-packaging/python-packaging",

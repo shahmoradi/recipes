@@ -3,18 +3,18 @@
 <head>
     
     <meta charset="utf-8">
-<title>LOGIC IMPLICATION, DENIAL, EQUIVALENCE &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>COMMAND LINE INPUT OPTION-VALUE PAIRS &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="plausibility, deduction, reasoning, logic, boolean, implication">
+<meta name="keywords" content="Python, input, IO, command-line, physics, gravity, free-fall">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Logic implication, denial, equivalence">
+<meta property="og:title" content="Command line input option-value pairs">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/logic-implication-denial-equivalence/logic/logic-implication-denial-equivalence">
+<meta property="og:url" content="/recipes/programming/command-line-input-option-value/command-line-input-option-value">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/logic-implication-denial-equivalence/logic/logic-implication-denial-equivalence">
+<link rel="canonical" href="/recipes/programming/command-line-input-option-value/command-line-input-option-value">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,44 +130,49 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/logic-implication-denial-equivalence/logic/logic-implication-denial-equivalence">Logic implication, denial, equivalence</a></h2>
+                            <h2><a href="/recipes/programming/command-line-input-option-value/command-line-input-option-value">Command line input option-value pairs</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
                                 
                                     &#8212; Last updated: 
-                                    <strong><time datetime="2020-09-30T00:00:00-05:00">30 September 2020</time></strong>
+                                    <strong><time datetime="2021-04-05T00:00:00-05:00">05 April 2021</time></strong>
                                 
                                 <ul class="tag-box inline">
                                     <span style="margin-right:1rem;">Tags:</span>
                                     
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#boolean" data-toggle="tooltip" title="Posts tagged with boolean" rel="tag">boolean</a>
+                                                <a href="/recipes/tags/index.html#IO" data-toggle="tooltip" title="Posts tagged with IO" rel="tag">IO</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#deduction" data-toggle="tooltip" title="Posts tagged with deduction" rel="tag">deduction</a>
+                                                <a href="/recipes/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#implication" data-toggle="tooltip" title="Posts tagged with implication" rel="tag">implication</a>
+                                                <a href="/recipes/tags/index.html#command-line" data-toggle="tooltip" title="Posts tagged with command-line" rel="tag">command-line</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#logic" data-toggle="tooltip" title="Posts tagged with logic" rel="tag">logic</a>
+                                                <a href="/recipes/tags/index.html#free-fall" data-toggle="tooltip" title="Posts tagged with free-fall" rel="tag">free-fall</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#plausibility" data-toggle="tooltip" title="Posts tagged with plausibility" rel="tag">plausibility</a>
+                                                <a href="/recipes/tags/index.html#gravity" data-toggle="tooltip" title="Posts tagged with gravity" rel="tag">gravity</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#reasoning" data-toggle="tooltip" title="Posts tagged with reasoning" rel="tag">reasoning</a>
+                                                <a href="/recipes/tags/index.html#input" data-toggle="tooltip" title="Posts tagged with input" rel="tag">input</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#physics" data-toggle="tooltip" title="Posts tagged with physics" rel="tag">physics</a>
                                             </li>
                                             
                                         
@@ -186,36 +191,47 @@
 
             <div style="text-align:left;">
                 
-<p>We have learned that the <strong>logical implication</strong> ($C\Rightarrow D$) is equivalent to the following expressions,</p>
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+    
+        <a href="#problem" style="display:inline-block;">
+            <h2 id="problem" style="color:red;">
+                Problem
+            </h2>
+        </a>
+    
+</div>
 
-\[C\bar{D} ~ \text{is false} ~,\]
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#problem-python" id="problem-python">
+            <img src="/recipes/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
 
-\[\bar{C} + D ~ \text{is true} ~,\]
+<p>Suppose we want to write a program that takes in three input parameters: the initial height ($y_0$) <code>initHeight</code>, the initial velocity ($v_0$) <code>initVelocity</code>, the time after which we want to know how much a projectile has moved in the vertical direction from the initial height ($y_0$), and the gravity constant ($g$) <code>gravityConstant</code>. Write the program such that it takes these three parameters as pairs of option (keyword) and values plus an additional option <code>unit</code> which can have either <code>SI</code> or <code>English</code> values. Then it computes and prints the final height <code>finalHeight</code> via the following equation,</p>
 
-\[C = CD ~,\]
+\[y(t) = y_0 + v_0\times t + g\times t^2 ~~,\]
 
-<p>Now, using the above expressions, show that if,</p>
+<p>or in scripting terms,</p>
 
-\[(B\Rightarrow \overline{A}) ~,\]
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">finalHeight</span> <span class="o">=</span> <span class="n">initHeight</span> <span class="o">+</span> <span class="n">initVelocity</span> <span class="o">*</span> <span class="n">time</span> <span class="o">+</span> <span class="n">gravityConstant</span> <span class="o">*</span> <span class="n">time</span><span class="o">**</span><span class="mi">2</span>
+</code></pre></div></div>
 
-<p>is <code>True</code> then,</p>
+<p>Write your code such that it works with the following example input option-value pair,</p>
 
-\[(A+\overline{B}) ~ (\overline{A}+A\overline{B}) ~+~ \overline{A}B ~ (A+B) ~,\]
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>getHeight.py unit SI initHeight 0 initVelocity 0 <span class="nb">time </span>3 gravityConstant 10
+</code></pre></div></div>
 
-<p>is also <code>True</code>. In other words, the above two expressions are equivalent to each other.</p>
-
-<p><strong>Answer</strong></p>
-
-\[\begin{eqnarray}
-    &amp;&amp;  (A+\overline{B}) ~ (\overline{A}+A\overline{B}) ~+~ \overline{A}B ~ (A+B) \\
-    &amp;=&amp; A\overline{A} + AA\overline{B} + \overline{B}A\overline{B} + BA + B \\
-    &amp;=&amp; False + A\overline{B} + \overline{A}\overline{B} + A\overline{B} + BA + B \\
-    &amp;=&amp; A\overline{B} + \overline{A}\overline{B} + BA + B \\
-    &amp;=&amp; (A+\overline{A})\overline{B} + BA + B \\
-    &amp;=&amp; True~\overline{B} + BA + B \\
-    &amp;=&amp; True~(\overline{B}+B) + BA \\
-    &amp;=&amp; True
-\end{eqnarray}\]
+<p>Compute the height for the same input values as in the above, but for the gravity constant of the Moon $g \sim 1.62 ms^{-2}$. How does it compare to Earth?</p>
 
 
             </div>
@@ -223,11 +239,11 @@
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Logic implication, denial, equivalence&quot;%20https://www.cdslab.org/recipes/programming/logic-implication-denial-equivalence/logic/logic-implication-denial-equivalence%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Command line input option-value pairs&quot;%20https://www.cdslab.org/recipes/programming/command-line-input-option-value/command-line-input-option-value%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/logic-implication-denial-equivalence/logic/logic-implication-denial-equivalence"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/command-line-input-option-value/command-line-input-option-value"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>

@@ -377,6 +377,11 @@ callback([
   } ,
 
   {
+    "text": "Command line input option-value pairs",
+    "href": "/recipes/programming/command-line-input-option-value/command-line-input-option-value"
+  } ,
+
+  {
     "text": "Command line input arguments summation via sum()",
     "href": "/recipes/programming/command-line-input-arguments-summation/command-line-input-arguments-summation"
   } ,
