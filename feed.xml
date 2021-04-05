@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2021-04-05T14:29:03-05:00</updated>
+<updated>2021-04-05T15:09:22-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -68,12 +68,27 @@
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;finalHeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initHeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initVelocity&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gravityConstant&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Write your code such that it works with the following example input option-value pair,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;(A)&lt;/strong&gt; Write your code such that it works with the following example input option-value pair,&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;getHeight.py unit SI initHeight 0 initVelocity 0 &lt;span class=&quot;nb&quot;&gt;time &lt;/span&gt;3 gravityConstant 10
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;getHeight.py unit SI initHeight 0 initVelocity 0 &lt;span class=&quot;nb&quot;&gt;time &lt;/span&gt;3 gravityConstant &lt;span class=&quot;nt&quot;&gt;-10&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Compute the height for the same input values as in the above, but for the gravity constant of the Moon $g \sim 1.62 ms^{-2}$. How does it compare to Earth?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(B)&lt;/strong&gt; Rewrite your program such that the missing option value pairs from the input are assigned proper values. For example, if &lt;code&gt;initHeight&lt;/code&gt; is missing, it should be assigned a value of &lt;code&gt;0&lt;/code&gt;. If &lt;code&gt;initVelocity&lt;/code&gt; is missing, it should be assigned a value of &lt;code&gt;0&lt;/code&gt;. If &lt;code&gt;gravityConstant&lt;/code&gt; is missing, it should be assigned a value of &lt;code&gt;-10&lt;/code&gt; if the input &lt;code&gt;unit&lt;/code&gt; is &lt;code&gt;SI&lt;/code&gt;, otherwise it should be assigned &lt;code&gt;32.17405&lt;/code&gt; $ft/s^2$. If the &lt;code&gt;unit&lt;/code&gt; is missing, it should be assigned &lt;code&gt;SI&lt;/code&gt; as the default value.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(B)&lt;/strong&gt; Now rewrite your program such that the missing option value pairs would be read from an input file, if the &lt;code&gt;file path_to_file&lt;/code&gt; is given as option value pair. For example, the following file contents should be readable by your code.&lt;/p&gt;
+
+&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;unit SI initHeight 0 initVelocity 0 time 3 gravityConstant -10
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;or&lt;/p&gt;
+
+&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;unit SI 
+initHeight 
+0 initVelocity 0 time 
+3 gravityConstant -10
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 
   

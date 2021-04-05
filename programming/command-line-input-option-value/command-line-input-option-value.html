@@ -226,12 +226,27 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">finalHeight</span> <span class="o">=</span> <span class="n">initHeight</span> <span class="o">+</span> <span class="n">initVelocity</span> <span class="o">*</span> <span class="n">time</span> <span class="o">+</span> <span class="n">gravityConstant</span> <span class="o">*</span> <span class="n">time</span><span class="o">**</span><span class="mi">2</span>
 </code></pre></div></div>
 
-<p>Write your code such that it works with the following example input option-value pair,</p>
+<p><strong>(A)</strong> Write your code such that it works with the following example input option-value pair,</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>getHeight.py unit SI initHeight 0 initVelocity 0 <span class="nb">time </span>3 gravityConstant 10
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>getHeight.py unit SI initHeight 0 initVelocity 0 <span class="nb">time </span>3 gravityConstant <span class="nt">-10</span>
 </code></pre></div></div>
 
 <p>Compute the height for the same input values as in the above, but for the gravity constant of the Moon $g \sim 1.62 ms^{-2}$. How does it compare to Earth?</p>
+
+<p><strong>(B)</strong> Rewrite your program such that the missing option value pairs from the input are assigned proper values. For example, if <code>initHeight</code> is missing, it should be assigned a value of <code>0</code>. If <code>initVelocity</code> is missing, it should be assigned a value of <code>0</code>. If <code>gravityConstant</code> is missing, it should be assigned a value of <code>-10</code> if the input <code>unit</code> is <code>SI</code>, otherwise it should be assigned <code>32.17405</code> $ft/s^2$. If the <code>unit</code> is missing, it should be assigned <code>SI</code> as the default value.</p>
+
+<p><strong>(B)</strong> Now rewrite your program such that the missing option value pairs would be read from an input file, if the <code>file path_to_file</code> is given as option value pair. For example, the following file contents should be readable by your code.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>unit SI initHeight 0 initVelocity 0 time 3 gravityConstant -10
+</code></pre></div></div>
+
+<p>or</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>unit SI 
+initHeight 
+0 initVelocity 0 time 
+3 gravityConstant -10
+</code></pre></div></div>
 
 
             </div>
@@ -297,7 +312,7 @@
         <footer class="notepad-site-footer">
     <div class="copyright">
          <!-- <section>Last updated 2021 / 04 / 05</section></br> -->
-         <section>Last updated Monday, 05 Apr 2021 at 02:29 PM CST</section></br>
+         <section>Last updated Monday, 05 Apr 2021 at 03:09 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
