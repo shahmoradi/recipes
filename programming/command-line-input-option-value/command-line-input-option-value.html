@@ -219,7 +219,7 @@
 
 <p>Suppose we want to write a program that takes in three input parameters: the initial height ($y_0$) <code>initHeight</code>, the initial velocity ($v_0$) <code>initVelocity</code>, the time after which we want to know how much a projectile has moved in the vertical direction from the initial height ($y_0$), and the gravity constant ($g$) <code>gravityConstant</code>. Write the program such that it takes these three parameters as pairs of option (keyword) and values plus an additional option <code>unit</code> which can have either <code>SI</code> or <code>English</code> values. Then it computes and prints the final height <code>finalHeight</code> via the following equation,</p>
 
-\[y(t) = y_0 + v_0\times t + g\times t^2 ~~,\]
+\[y(t) = y_0 + v_0\times t + \frac{1}{2}g\times t^2 ~~,\]
 
 <p>or in scripting terms,</p>
 
@@ -228,25 +228,19 @@
 
 <p><strong>(A)</strong> Write your code such that it works with the following example input option-value pair,</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>getHeight.py unit SI initHeight 0 initVelocity 0 <span class="nb">time </span>3 gravityConstant <span class="nt">-10</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python getHeight.py unit SI initHeight 0 initVelocity 0 <span class="nb">time </span>3 gravityConstant <span class="nt">-10</span>
 </code></pre></div></div>
 
 <p>Compute the height for the same input values as in the above, but for the gravity constant of the Moon $g \sim 1.62 ms^{-2}$. How does it compare to Earth?</p>
 
-<p><strong>(B)</strong> Rewrite your program such that the missing option value pairs from the input are assigned proper values. For example, if <code>initHeight</code> is missing, it should be assigned a value of <code>0</code>. If <code>initVelocity</code> is missing, it should be assigned a value of <code>0</code>. If <code>gravityConstant</code> is missing, it should be assigned a value of <code>-10</code> if the input <code>unit</code> is <code>SI</code>, otherwise it should be assigned <code>32.17405</code> $ft/s^2$. If the <code>unit</code> is missing, it should be assigned <code>SI</code> as the default value.</p>
+<p><strong>(B)</strong> Rewrite your program such that the missing option value pairs from the input are assigned proper values. For example, if <code>initHeight</code> is missing, it should be assigned a value of <code>0</code>. If <code>initVelocity</code> is missing, it should be assigned a value of <code>0</code>. If <code>gravityConstant</code> is missing, it should be assigned a value of <code>-10</code> $m/s^2$ if the input <code>unit</code> is <code>SI</code>, otherwise it should be assigned <code>-32.17405</code> $ft/s^2$. If the <code>unit</code> is missing, it should be assigned <code>SI</code> as the default value.</p>
 
-<p><strong>(B)</strong> Now rewrite your program such that the missing option value pairs would be read from an input file, if the <code>file path_to_file</code> is given as option value pair. For example, the following file contents should be readable by your code.</p>
+<p><strong>(C)</strong> Now rewrite your program such that the missing option value pairs would be read from an input file, if the <code>file path_to_file</code> is given as option value pair. For example, your code should be able to parse the contents of these two example input files: <a href="input.1.txt" target="_blank">input.1.txt</a> or <a href="input.2.txt" target="_blank">input.2.txt</a>, when called with the <code>file</code> command-line option (and it should ignore any other input command-line option other than <code>file</code> and its value.</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>unit SI initHeight 0 initVelocity 0 time 3 gravityConstant -10
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python getHeight.py file <span class="s2">"input.1.txt"</span>
 </code></pre></div></div>
-
-<p>or</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>unit SI 
-initHeight 
-0 initVelocity 0 time 
-3 gravityConstant -10
-</code></pre></div></div>
+<pre><code>Final Height = -45.0 in SI units.
+</code></pre>
 
 
             </div>
@@ -312,7 +306,7 @@ initHeight
         <footer class="notepad-site-footer">
     <div class="copyright">
          <!-- <section>Last updated 2021 / 04 / 05</section></br> -->
-         <section>Last updated Monday, 05 Apr 2021 at 03:09 PM CST</section></br>
+         <section>Last updated Monday, 05 Apr 2021 at 05:04 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

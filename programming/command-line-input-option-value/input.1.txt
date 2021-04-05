@@ -1,0 +1,1 @@
+gravityConstant -10 initHeight 0 initVelocity 0 time 3
