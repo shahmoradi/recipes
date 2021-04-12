@@ -68,6 +68,14 @@
 
     
     <url>
+        <loc>https://www.cdslab.org/recipes/programming/parsing-data-from-web/parsing-data-from-web</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/formatted-input-to-csv-output/formatted-input-to-csv-output</loc>
+    </url>
+    
+    <url>
         <loc>https://www.cdslab.org/recipes/programming/command-line-input-option-value/command-line-input-option-value</loc>
     </url>
     

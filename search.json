@@ -1,6 +1,22 @@
 [
 	
 		{
+		  "title"      : "Parsing data from the World Wide Web",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/parsing-data-from-web/parsing-data-from-web",
+		  "date"       : "2021-04-12 00:00:00 -0500",
+		  "shortdate"  : "April 12, 2021"
+		} ,
+	
+		{
+		  "title"      : "Data transfer: Converting formatted input to Comma-Separated-Values (CSV) output",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/formatted-input-to-csv-output/formatted-input-to-csv-output",
+		  "date"       : "2021-04-12 00:00:00 -0500",
+		  "shortdate"  : "April 12, 2021"
+		} ,
+	
+		{
 		  "title"      : "Command line input option-value pairs",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/command-line-input-option-value/command-line-input-option-value",

@@ -187,6 +187,11 @@ callback([
   } ,
 
   {
+    "text": "Parsing data from the World Wide Web",
+    "href": "/recipes/programming/parsing-data-from-web/parsing-data-from-web"
+  } ,
+
+  {
     "text": "Operator precedence",
     "href": "/recipes/programming/operator-precedence/operator-precedence"
   } ,
@@ -344,6 +349,11 @@ callback([
   {
     "text": "Data transfer: Parsing Amino Acid data file",
     "href": "/recipes/programming/data-transfer-amino-acid/data-transfer-amino-acid"
+  } ,
+
+  {
+    "text": "Data transfer: Converting formatted input to Comma-Separated-Values (CSV) output",
+    "href": "/recipes/programming/formatted-input-to-csv-output/formatted-input-to-csv-output"
   } ,
 
   {
