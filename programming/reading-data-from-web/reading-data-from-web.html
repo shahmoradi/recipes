@@ -274,24 +274,6 @@
 
 <p>Write a script named <code>fetchDataFromWeb</code> in the language of your own choice that uses this web address: <code>https://raw.githubusercontent.com/cdslaborg/DataRepos_SwiftBat/master/triggers.txt</code> to read a list of all GRB events and then writes the entire table of <code>triggers.txt</code> to a local file with the same name on your device.</p>
 
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#hint-1-matlab" id="hint-1-matlab">
-            <img src="/recipes/images/MATLAB.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
-                MATLAB
-            </a>
-        </figcaption>
-    </figure>
-</div>
-
-<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> For this purpose, you will need MATLAB’s built-in function <code>webread()</code>.</p>
-
 <div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
     
         <a href="#problem-part-b" style="display:inline-block;">
@@ -351,91 +333,31 @@ your script will have to raise a <code>urllib.request.HTTPError</code> exception
 
 <p class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Remember that some of the data files stored on your computer might be empty and some others might have useless data if the data in the second column of the file is larger than $0$ (data in such files have a different scientific meaning than the other ones. The meaning of that goes beyond the scope of what we are trying to do here, but the important point is that we can simply ignore such files if any data value in the second column is larger than $0$). Therefore, you will have to write your script in such a way that it checks for non-emptiness of the files. In other words, you have to make sure that the file does indeed contain some numerical data. Also, your script must check for the negativity of the values in the column of data in each file. Once you have done all of these checks, you will have to do one final manipulation of the data. Note that the values on the second column of the data files are the log of data in natural Neperian base. Therefore, you will have to transform the values in the second column of the files to the original non-log values via the mathematical function <code>exp()</code> before plotting them (Note that the plot in the figure above is a <strong>log-log plot</strong> and we want to exactly regenerate it). Also, in order to find out how many files you have plotted in the figure, you will have to define a variable counter which increases by one unit, each time a new non-empty negative-second-column data file is read and plotted (you will have to ignore those files that have positive values in the second columns as well as those files that empty). In the end, you will have to set a title for your plot and label the axes of the plot, and save it to an output file, for example, named <code>SwiftDataPlot.png</code>.</p>
 
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
     
-    
-    
-    <figure>
-        <a href="#hint-2-matlab" id="hint-2-matlab">
-            <img src="/recipes/images/MATLAB.png" width="75px" />
+        <a href="#problem-part-d" style="display:inline-block;">
+            <h2 id="problem-part-d" style="color:red;">
+                Problem Part D
+            </h2>
         </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
-                MATLAB
-            </a>
-        </figcaption>
-    </figure>
+    
 </div>
 
-<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> To read the individual files, you can use MATLAB’s built-in function <code>readtable()</code>. To make the figure, you can use MATLAB’s built-in function <code>scatter()</code> or other functions. Use <code>hold on</code> command to keep the figure open and the same for all individual data reads and plottings. Check for the negativity of the values in the second column of the data files via MATLAB’s built-in function <code>all</code> in similar manner to the following <code>all(data[:,1]&lt;0.0)</code> assuming that <code>data</code> is the variable containing the information that has been read from the file already. To transform the logarithmic data in the second columns of the files, simply use,<br /><br />
-<code>matlab
-data[:,2] = exp(data[:,2]);
-</code>
-<br /><br />
-as soon as you read the data from each file and then finally, you make a scatter plot of all data using MATLAB <code>scatter()</code> function. You can use MATLAB’s built-in function <code>saveas()</code> to save the final figure to an external file.</p>
+<p>Write a script that performs a linear fit to this data that you have plotted and report the best fit slope and intercept that you obtain.</p>
 
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
     
-    
-    
-    <figure>
-        <a href="#hint-2-python" id="hint-2-python">
-            <img src="/recipes/images/Python.png" width="75px" />
+        <a href="#problem-part-e" style="display:inline-block;">
+            <h2 id="problem-part-e" style="color:red;">
+                Problem Part E
+            </h2>
         </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
-                Python
-            </a>
-        </figcaption>
-    </figure>
+    
 </div>
 
-<p>To achieve this goal, your function should start like the following,</p>
+<p>(<strong>Extra credit</strong>) Use the <a href="" target="_blank">ParaMonte</a> or any other Monte Carlo sampling package that you want to also compute the uncertainties associated with the slope and intercept of the linear fit to the data.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">plotBatFiles</span><span class="p">(</span><span class="n">inPath</span><span class="p">,</span><span class="n">figFile</span><span class="p">):</span>
-    <span class="kn">import</span> <span class="nn">os</span>
-    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span><span class="p">,</span> <span class="n">os</span>
-    <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">gca</span><span class="p">()</span>  <span class="c1"># generate a plot handle
-</span>    <span class="n">ax</span><span class="p">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">'Fluence [ ergs/cm^2 ]'</span><span class="p">)</span> <span class="c1"># set X axis title
-</span>    <span class="n">ax</span><span class="p">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">'Epeak [ keV ]'</span><span class="p">)</span>  <span class="c1"># set Y axis title
-</span>    <span class="n">ax</span><span class="p">.</span><span class="n">axis</span><span class="p">([</span><span class="mf">1.0e-8</span><span class="p">,</span> <span class="mf">1.0e-1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0e4</span><span class="p">])</span> <span class="c1"># set axix limits [xmin, xmax, ymin, ymax]
-</span>    <span class="c1">#plt.hold('on')  # add all data files to the same plot
-</span>    <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>     <span class="c1"># counts the number of events
-</span></code></pre></div></div>
-
-<p>where <code>inPath</code> and <code>figFile</code> are the paths to the directory containing the files, and the name and path to the output figure file. You will have to use <code>os.listdir(inPath)</code> to get a list of all files in your input directory. Then loop over this list of files, and use only those that end with <code>ep_flu.txt</code> because that’s how you saved those files, e.g.,</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">os</span><span class="p">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">inPath</span><span class="p">):</span>
-    <span class="k">if</span> <span class="nb">file</span><span class="p">.</span><span class="n">endswith</span><span class="p">(</span><span class="s">"ep_flu.txt"</span><span class="p">):</span>
-        <span class="c1"># rest of your code ... 
-</span></code></pre></div></div>
-
-<p>But now, you have to also make sure that your input data does indeed contain some numerical data because some files do contain anything, although they exist, like <a href="https://www.cdslab.org/homework/9/GRB00559075_ep_flu.txt" target="_blank">this file: ``</a>. To do so, you will have to perform a test on the content of the file, once you read it as numpy array, like the following,</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">inPath</span><span class="p">,</span> <span class="nb">file</span><span class="p">),</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">data</span><span class="p">.</span><span class="n">size</span><span class="o">!=</span><span class="mi">0</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">&lt;</span><span class="mf">0.0</span><span class="p">):</span>
-    <span class="c1"># then plot data
-</span></code></pre></div></div>
-
-<p>the condition <code>all(data[:,1]&lt;0.0)</code> is rather technical. It makes sure that all values are positive in the second column. Once you have done all these checks, you have to do one final manipulation of data, that is, the data in these files on the second column is the log of data, so have to get the <code>exp()</code> value to plot it (because the plot is log-log). To do so you can use,</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">exp</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
-</code></pre></div></div>
-
-<p>and then finally,</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ax</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s">'r'</span><span class="p">,</span><span class="n">edgecolors</span><span class="o">=</span><span class="s">'none'</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>which will add the data for the current file to the plot. In the end, you will have to set a title for your plot as well, and save your plot,</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ax</span><span class="p">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">'Plot of Epeak vs. Fluence for {} Swift GRB events'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">counter</span><span class="p">))</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">figFile</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>Note that the variable <code>counter</code> contains the total number of events for which the text files exists on the website, <strong>and</strong> the file contained some data (i.e., was not empty).</p>
-
-<p><strong>Question:</strong> What does <code>alpha=0.05</code> and <code>s=1</code> do in the following scatter plot command? (Vary their values to see what happens)</p>
+<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> For this part, you can get help from the instructor during the lectures to explain the concepts to you.</p>
 
 
             </div>
@@ -500,8 +422,8 @@ as soon as you read the data from each file and then finally, you make a scatter
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2021 / 04 / 12</section></br> -->
-         <section>Last updated Monday, 12 Apr 2021 at 02:17 PM CST</section></br>
+         <!-- <section>Last updated 2021 / 04 / 14</section></br> -->
+         <section>Last updated Wednesday, 14 Apr 2021 at 02:28 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

@@ -8,7 +8,8 @@ import sys
 for i in range(1, len(sys.argv[1:])+1, 2):
     if sys.argv[i] == "file":
         if os.path.isfile(sys.argv[i+1]):
-            with open(sys.argv[i+1],"r") as inputFile: inputList = inputFile.read().replace("\n"," ").split(" ")
+            with open(sys.argv[i+1],"r") as inputFile:
+                inputList = inputFile.read().replace("\n"," ").split(" ")
             while("" in inputList): inputList.remove("")
             print(inputList)
             break
