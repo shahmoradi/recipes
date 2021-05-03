@@ -3,18 +3,18 @@
 <head>
     
     <meta charset="utf-8">
-<title>MATLAB SCRIPT FULL OF ERRORS &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>MONTE CARLO APPROXIMATION OF THE AREA OF HEART &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="value, variable, type, syntax error, error, string, MATLAB">
+<meta name="keywords" content="MATLAB, Python, numpy, matplotlib, visualization, Monte Carlo, simulation, plot, line, figure, random number, probability">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MATLAB script full of errors">
+<meta property="og:title" content="Monte Carlo approximation of the area of heart">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/matlab-script-full-of-errors/matlab-script-full-of-errors">
+<meta property="og:url" content="/recipes/programming/monte-carlo-approximation-of-heart-area/monte-carlo-approximation-of-heart-area">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/matlab-script-full-of-errors/matlab-script-full-of-errors">
+<link rel="canonical" href="/recipes/programming/monte-carlo-approximation-of-heart-area/monte-carlo-approximation-of-heart-area">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,12 +130,12 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/matlab-script-full-of-errors/matlab-script-full-of-errors">MATLAB script full of errors</a></h2>
+                            <h2><a href="/recipes/programming/monte-carlo-approximation-of-heart-area/monte-carlo-approximation-of-heart-area">Monte Carlo approximation of the area of heart</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
                                 
                                     &#8212; Last updated: 
-                                    <strong><time datetime="2019-07-04T00:00:00-05:00">04 July 2019</time></strong>
+                                    <strong><time datetime="2021-05-03T00:00:00-05:00">03 May 2021</time></strong>
                                 
                                 <ul class="tag-box inline">
                                     <span style="margin-right:1rem;">Tags:</span>
@@ -147,32 +147,57 @@
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#error" data-toggle="tooltip" title="Posts tagged with error" rel="tag">error</a>
+                                                <a href="/recipes/tags/index.html#Monte Carlo" data-toggle="tooltip" title="Posts tagged with Monte Carlo" rel="tag">Monte Carlo</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#string" data-toggle="tooltip" title="Posts tagged with string" rel="tag">string</a>
+                                                <a href="/recipes/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#syntax error" data-toggle="tooltip" title="Posts tagged with syntax error" rel="tag">syntax error</a>
+                                                <a href="/recipes/tags/index.html#figure" data-toggle="tooltip" title="Posts tagged with figure" rel="tag">figure</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#type" data-toggle="tooltip" title="Posts tagged with type" rel="tag">type</a>
+                                                <a href="/recipes/tags/index.html#line" data-toggle="tooltip" title="Posts tagged with line" rel="tag">line</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#value" data-toggle="tooltip" title="Posts tagged with value" rel="tag">value</a>
+                                                <a href="/recipes/tags/index.html#matplotlib" data-toggle="tooltip" title="Posts tagged with matplotlib" rel="tag">matplotlib</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#variable" data-toggle="tooltip" title="Posts tagged with variable" rel="tag">variable</a>
+                                                <a href="/recipes/tags/index.html#numpy" data-toggle="tooltip" title="Posts tagged with numpy" rel="tag">numpy</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#plot" data-toggle="tooltip" title="Posts tagged with plot" rel="tag">plot</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#probability" data-toggle="tooltip" title="Posts tagged with probability" rel="tag">probability</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#random number" data-toggle="tooltip" title="Posts tagged with random number" rel="tag">random number</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#simulation" data-toggle="tooltip" title="Posts tagged with simulation" rel="tag">simulation</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#visualization" data-toggle="tooltip" title="Posts tagged with visualization" rel="tag">visualization</a>
                                             </li>
                                             
                                         
@@ -201,38 +226,15 @@
     
 </div>
 
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#problem-matlab" id="problem-matlab">
-            <img src="/recipes/images/MATLAB.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
-                MATLAB
-            </a>
-        </figcaption>
-    </figure>
-</div>
+<p>A popular mathematical equation for 2D heart is the following,</p>
 
-<p>Download this <a href="matlab_script_full_of_errors.m" target="_blank">code</a>. This code is full syntax errors. Fix the errors and submit the corrected code with name <code>matlab_script_full_of_errors_fixed.m</code> in your folder for this HW. Explain in front of each corrected MATLAB statement, why the error occurred. Modify the last two variables so that they display,</p>
+\[f(x,y) = (x^2 + y^2 - 1)^3 - x^2 y^3 = 0\]
 
-<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;</span> <span class="n">Persian</span>
-<span class="n">Persian</span> <span class="o">=</span>
-<span class="n">Persian</span> <span class="n">is</span> <span class="n">a</span> <span class="n">human</span> <span class="n">language</span>
-<span class="o">&gt;&gt;</span> <span class="n">Spanish</span>
-<span class="n">Spanish</span> <span class="o">=</span> 
-    <span class="s1">'Spanish '</span>    <span class="s1">'is '</span>    <span class="s1">' another'</span>    <span class="s1">'language'</span>
-</code></pre></div></div>
+<p>Any $(x,y)$ values that result in $f(x,y) &lt; 0$ represent the coordinates of a point that falls inside the heart shape. Write a script that generates a heart shape via a set of random points uniformly distributed inside the heart shape. Estimate the area of the heart by drawing an appropriate box around the heart and sampling points randomly uniformly from this box and counting those that fall inside the heart. Here is a plot of the heart,</p>
 
-<p>Modify the last line such that for the last line the code displays,</p>
-
-<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Persian</span> <span class="n">is</span> <span class="nb">not</span> <span class="n">the</span> <span class="n">same</span> <span class="n">as</span> <span class="n">Spanish</span>
-</code></pre></div></div>
-
-<p>Explain these results.</p>
+<figure>
+    <img src="heart.png" />
+</figure>
 
 
             </div>
@@ -240,11 +242,11 @@
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;MATLAB script full of errors&quot;%20https://www.cdslab.org/recipes/programming/matlab-script-full-of-errors/matlab-script-full-of-errors%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Monte Carlo approximation of the area of heart&quot;%20https://www.cdslab.org/recipes/programming/monte-carlo-approximation-of-heart-area/monte-carlo-approximation-of-heart-area%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/matlab-script-full-of-errors/matlab-script-full-of-errors"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/monte-carlo-approximation-of-heart-area/monte-carlo-approximation-of-heart-area"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>

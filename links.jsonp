@@ -207,8 +207,18 @@ callback([
   } ,
 
   {
+    "text": "Monte Carlo approximation of the number Pi using a full circle",
+    "href": "/recipes/programming/monte-carlo-approximation-of-pi-full-circle/monte-carlo-approximation-of-pi-full-circle"
+  } ,
+
+  {
     "text": "Monte Carlo approximation of the number Pi",
     "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
+  } ,
+
+  {
+    "text": "Monte Carlo approximation of the area of heart",
+    "href": "/recipes/programming/monte-carlo-approximation-of-heart-area/monte-carlo-approximation-of-heart-area"
   } ,
 
   {

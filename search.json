@@ -1,6 +1,22 @@
 [
 	
 		{
+		  "title"      : "Monte Carlo approximation of the number Pi using a full circle",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/monte-carlo-approximation-of-pi-full-circle/monte-carlo-approximation-of-pi-full-circle",
+		  "date"       : "2021-05-03 00:00:00 -0500",
+		  "shortdate"  : "May 03, 2021"
+		} ,
+	
+		{
+		  "title"      : "Monte Carlo approximation of the area of heart",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/monte-carlo-approximation-of-heart-area/monte-carlo-approximation-of-heart-area",
+		  "date"       : "2021-05-03 00:00:00 -0500",
+		  "shortdate"  : "May 03, 2021"
+		} ,
+	
+		{
 		  "title"      : "Parsing data from the World Wide Web",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/parsing-data-from-web/parsing-data-from-web",

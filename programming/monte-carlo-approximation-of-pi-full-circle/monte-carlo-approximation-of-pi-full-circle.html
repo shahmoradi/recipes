@@ -3,18 +3,18 @@
 <head>
     
     <meta charset="utf-8">
-<title>MATLAB SCRIPT FULL OF ERRORS &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>MONTE CARLO APPROXIMATION OF THE NUMBER PI USING A FULL CIRCLE &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="value, variable, type, syntax error, error, string, MATLAB">
+<meta name="keywords" content="MATLAB, Python, numpy, matplotlib, visualization, Monte Carlo, simulation, plot, line, figure, random number, probability">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MATLAB script full of errors">
+<meta property="og:title" content="Monte Carlo approximation of the number Pi using a full circle">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/matlab-script-full-of-errors/matlab-script-full-of-errors">
+<meta property="og:url" content="/recipes/programming/monte-carlo-approximation-of-pi-full-circle/monte-carlo-approximation-of-pi-full-circle">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/matlab-script-full-of-errors/matlab-script-full-of-errors">
+<link rel="canonical" href="/recipes/programming/monte-carlo-approximation-of-pi-full-circle/monte-carlo-approximation-of-pi-full-circle">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,12 +130,12 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/matlab-script-full-of-errors/matlab-script-full-of-errors">MATLAB script full of errors</a></h2>
+                            <h2><a href="/recipes/programming/monte-carlo-approximation-of-pi-full-circle/monte-carlo-approximation-of-pi-full-circle">Monte Carlo approximation of the number Pi using a full circle</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
                                 
                                     &#8212; Last updated: 
-                                    <strong><time datetime="2019-07-04T00:00:00-05:00">04 July 2019</time></strong>
+                                    <strong><time datetime="2021-05-03T00:00:00-05:00">03 May 2021</time></strong>
                                 
                                 <ul class="tag-box inline">
                                     <span style="margin-right:1rem;">Tags:</span>
@@ -147,32 +147,57 @@
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#error" data-toggle="tooltip" title="Posts tagged with error" rel="tag">error</a>
+                                                <a href="/recipes/tags/index.html#Monte Carlo" data-toggle="tooltip" title="Posts tagged with Monte Carlo" rel="tag">Monte Carlo</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#string" data-toggle="tooltip" title="Posts tagged with string" rel="tag">string</a>
+                                                <a href="/recipes/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#syntax error" data-toggle="tooltip" title="Posts tagged with syntax error" rel="tag">syntax error</a>
+                                                <a href="/recipes/tags/index.html#figure" data-toggle="tooltip" title="Posts tagged with figure" rel="tag">figure</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#type" data-toggle="tooltip" title="Posts tagged with type" rel="tag">type</a>
+                                                <a href="/recipes/tags/index.html#line" data-toggle="tooltip" title="Posts tagged with line" rel="tag">line</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#value" data-toggle="tooltip" title="Posts tagged with value" rel="tag">value</a>
+                                                <a href="/recipes/tags/index.html#matplotlib" data-toggle="tooltip" title="Posts tagged with matplotlib" rel="tag">matplotlib</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#variable" data-toggle="tooltip" title="Posts tagged with variable" rel="tag">variable</a>
+                                                <a href="/recipes/tags/index.html#numpy" data-toggle="tooltip" title="Posts tagged with numpy" rel="tag">numpy</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#plot" data-toggle="tooltip" title="Posts tagged with plot" rel="tag">plot</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#probability" data-toggle="tooltip" title="Posts tagged with probability" rel="tag">probability</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#random number" data-toggle="tooltip" title="Posts tagged with random number" rel="tag">random number</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#simulation" data-toggle="tooltip" title="Posts tagged with simulation" rel="tag">simulation</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#visualization" data-toggle="tooltip" title="Posts tagged with visualization" rel="tag">visualization</a>
                                             </li>
                                             
                                         
@@ -201,38 +226,29 @@
     
 </div>
 
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#problem-matlab" id="problem-matlab">
-            <img src="/recipes/images/MATLAB.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
-                MATLAB
-            </a>
-        </figcaption>
-    </figure>
-</div>
+<p>Suppose we did not know the value of $\pi$ and we wanted to estimate its value using Monte Carlo methods. One practical approach is to draw a square sides equal to $a = 2$, with its diagonal opposite corners extending from the coordinates origin $(-1,-1)$ to $(1,1)$. Now we try to simulate uniform random points from inside of this square by generating uniform random points along the $X$ and $Y$ axes, i.e., by generating two random uniform numbers (x,y) from the range $[-1,1]$.</p>
 
-<p>Download this <a href="matlab_script_full_of_errors.m" target="_blank">code</a>. This code is full syntax errors. Fix the errors and submit the corrected code with name <code>matlab_script_full_of_errors_fixed.m</code> in your folder for this HW. Explain in front of each corrected MATLAB statement, why the error occurred. Modify the last two variables so that they display,</p>
+<p>The generated random point $P$ has the coordinate $(x,y)$, so we can calculate its distance from the coordinate origin. Now, suppose we also draw a unit-radius ($r = 1$) inside of this square with its center at the origin $(0,0)$. The ratio of the area of this circle, $S_C$ to the area of the square enclosing it, $S_S$ is,</p>
 
-<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;</span> <span class="n">Persian</span>
-<span class="n">Persian</span> <span class="o">=</span>
-<span class="n">Persian</span> <span class="n">is</span> <span class="n">a</span> <span class="n">human</span> <span class="n">language</span>
-<span class="o">&gt;&gt;</span> <span class="n">Spanish</span>
-<span class="n">Spanish</span> <span class="o">=</span> 
-    <span class="s1">'Spanish '</span>    <span class="s1">'is '</span>    <span class="s1">' another'</span>    <span class="s1">'language'</span>
-</code></pre></div></div>
+\[\frac{S_C}{S_S} = \frac{\pi r^2}{a^2} = \frac{1}{4}\pi\]
 
-<p>Modify the last line such that for the last line the code displays,</p>
+<p>This is because the area of the square of unit-length sides is just 1. Therefore, if we can somehow measure the area of the circle $S_C$, then we can use the following equation, to get an estimate of $\pi$,</p>
 
-<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Persian</span> <span class="n">is</span> <span class="nb">not</span> <span class="n">the</span> <span class="n">same</span> <span class="n">as</span> <span class="n">Spanish</span>
-</code></pre></div></div>
+\[\pi = 4S_C\]
 
-<p>Explain these results.</p>
+<p>To obtain, $S_C$, we are going to throw random points in the square, just as described above, and then find the fraction of points, $f=n_C/n_{\rm total}$, that fall inside this circle. This fraction is related to the area of the circle and square by the following equation,</p>
+
+\[f=\frac{n_C}{n_{\rm total}} = \frac{S_C}{S_S}\]
+
+<p>Therefore, one can obtain an estimate of $\pi$ using this fraction,</p>
+
+\[\pi \approx 4\frac{n_C}{n_{\rm total}}\]
+
+<p>Now, write a script that takes in the number of points to be simulated, and then calculates an approximate value for $\pi$ based on the Monte Carlo algorithm described above.  Write a second function that plot the estimate of $\pi$ versus the number of points stimulated, like the following,</p>
+
+<figure>
+    <img src="approximatePI.png" />
+</figure>
 
 
             </div>
@@ -240,11 +256,11 @@
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;MATLAB script full of errors&quot;%20https://www.cdslab.org/recipes/programming/matlab-script-full-of-errors/matlab-script-full-of-errors%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Monte Carlo approximation of the number Pi using a full circle&quot;%20https://www.cdslab.org/recipes/programming/monte-carlo-approximation-of-pi-full-circle/monte-carlo-approximation-of-pi-full-circle%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/matlab-script-full-of-errors/matlab-script-full-of-errors"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/monte-carlo-approximation-of-pi-full-circle/monte-carlo-approximation-of-pi-full-circle"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>
