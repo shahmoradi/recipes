@@ -234,6 +234,52 @@
 Total distance traveled after 1 second: 5.095000000000001 meters  
 </code></pre>
 
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution" style="display:inline-block;">
+        <h2 id="solution" style="color:blue;">
+            Solution
+        </h2>
+    </a>
+
+</div>
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-python" id="solution-python">
+            <img src="/recipes/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>Here is an implementation of the <code>integrate()</code> function,</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">integrate</span><span class="p">(</span><span class="n">evalIntegrand</span><span class="p">,</span> <span class="n">lowerLimit</span><span class="p">,</span> <span class="n">upperLimit</span><span class="p">,</span> <span class="n">numBin</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">):</span>
+    <span class="n">integral</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">binWidth</span> <span class="o">=</span> <span class="p">(</span><span class="n">upperLimit</span> <span class="o">-</span> <span class="n">lowerLimit</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">numBin</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">numBin</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">integral</span> <span class="o">+=</span> <span class="n">evalIntegrand</span><span class="p">(</span><span class="n">lowerLimit</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">binWidth</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">binWidth</span><span class="p">)</span>
+    <span class="n">integral</span> <span class="o">*=</span> <span class="n">binWidth</span>
+    <span class="k">return</span> <span class="n">integral</span>
+</code></pre></div></div>
+
+<p>Here is an implementation of the <code>Projectile()</code> function,</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Projectile</span><span class="p">():</span> 
+    <span class="n">gravityConstant</span> <span class="o">=</span> <span class="mf">9.81</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">initVelocity</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">initVelocity</span> <span class="o">=</span> <span class="n">initVelocity</span>
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">getVelocity</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">getVelocity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">time</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">initVelocity</span> <span class="o">-</span> <span class="bp">self</span><span class="p">.</span><span class="n">gravityConstant</span> <span class="o">*</span> <span class="n">time</span>
+</code></pre></div></div>
+
 
             </div>
         </article>
@@ -297,8 +343,8 @@ Total distance traveled after 1 second: 5.095000000000001 meters
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2021 / 05 / 03</section></br> -->
-         <section>Last updated Monday, 03 May 2021 at 03:02 PM CST</section></br>
+         <!-- <section>Last updated 2021 / 05 / 06</section></br> -->
+         <section>Last updated Thursday, 06 May 2021 at 02:07 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

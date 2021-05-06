@@ -425,6 +425,134 @@ Cutoff                      0.693154
 <figure><img src="histogram_Cutoff.png" width="900" /></figure>
 <p><br /></p>
 
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution" style="display:inline-block;">
+        <h2 id="solution" style="color:blue;">
+            Solution
+        </h2>
+    </a>
+
+</div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-python" id="solution-python">
+            <img src="/recipes/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># make interactive plotting possible in Jupyter Notebook
+</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="o">%</span><span class="n">matplotlib</span> <span class="n">notebook</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="c1"># import visualization and data libraries
+</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="n">sns</span><span class="p">.</span><span class="nb">set</span><span class="p">()</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"https://www.cdslab.org/recipes/programming/regression-censored-gaussian-data/data.csv"</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<span class="n">df</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="c1"># log-transform data so that it can be fit by a Normal distribution
+</span>
+<span class="n">logx</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">double</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="c1"># plot histogram of log(data)
+</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="n">ax</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">logx</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">"Log( X )"</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">"Count"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># generate the Normal class containing the log-likelihood function
+</span>
+<span class="k">class</span> <span class="nc">Normal</span><span class="p">():</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">normData</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">normData</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">ndata</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">maxdata</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">getLogProb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">avg</span><span class="p">,</span> <span class="n">logStd</span><span class="p">,</span> <span class="n">cutoff</span><span class="p">):</span>
+        <span class="s">"""
+        Return the logarithm of the probability density of an input set of x values, 
+        given the input parameters (avg,logStd,cutoff) for the Gaussian PDF.
+        """</span>
+        <span class="n">std</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">exp</span><span class="p">(</span><span class="n">logStd</span><span class="p">)</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mf">0.9189385332</span> <span class="o">-</span> <span class="n">logStd</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span> <span class="p">(</span><span class="n">data</span><span class="o">-</span><span class="n">avg</span><span class="p">)</span> <span class="o">/</span> <span class="n">std</span> <span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">np</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">norm</span><span class="p">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">cutoff</span><span class="p">,</span> <span class="n">avg</span><span class="p">,</span> <span class="n">std</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">getLogLike</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">param</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">param</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="p">.</span><span class="n">maxdata</span><span class="p">:</span>
+            <span class="c1"># data cannot be larger than the threshold, 
+</span>            <span class="c1"># so such parameter set for the Gaussian is impossible
+</span>            <span class="c1"># therefore return negative infinity as the value of the logLikelihood
+</span>            <span class="k">return</span> <span class="o">-</span><span class="mf">1.e300</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span> <span class="bp">self</span><span class="p">.</span><span class="n">getLogProb</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">data</span><span class="p">,</span> <span class="n">param</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">param</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">param</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="p">)</span>
+
+<span class="n">normal</span> <span class="o">=</span> <span class="n">Normal</span><span class="p">(</span><span class="n">normData</span> <span class="o">=</span> <span class="n">logx</span><span class="p">)</span>
+
+<span class="c1"># sample the log-likelihood function via the ParaDRAM MCMC sampler
+</span>
+<span class="kn">import</span> <span class="nn">paramonte</span> <span class="k">as</span> <span class="n">pm</span>
+<span class="n">pmpd</span> <span class="o">=</span> <span class="n">pm</span><span class="p">.</span><span class="n">ParaDRAM</span><span class="p">()</span> <span class="c1"># create a ParaDRAM sampler object
+</span><span class="n">pmpd</span><span class="p">.</span><span class="n">spec</span><span class="p">.</span><span class="n">chainSize</span> <span class="o">=</span> <span class="mi">20000</span> <span class="c1"># change the number of sampled points from default 100,000 to 30,000
+</span><span class="n">pmpd</span><span class="p">.</span><span class="n">spec</span><span class="p">.</span><span class="n">variableNameList</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Average"</span><span class="p">,</span><span class="s">"LogStandardDeviation"</span><span class="p">,</span><span class="s">"Cutoff"</span><span class="p">]</span>
+<span class="n">pmpd</span><span class="p">.</span><span class="n">spec</span><span class="p">.</span><span class="n">startPointVec</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">normal</span><span class="p">.</span><span class="n">maxdata</span><span class="p">]</span> <span class="c1"># ensure the initial starting point of the search for cutoff is good.
+</span><span class="n">pmpd</span><span class="p">.</span><span class="n">spec</span><span class="p">.</span><span class="n">targetAcceptanceRate</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.3</span><span class="p">]</span> <span class="c1"># ensure the MCMC sampling efficiency does not become too large or too small.
+</span>
+<span class="c1"># call the MCMC sampler
+</span>
+<span class="n">pmpd</span><span class="p">.</span><span class="n">runSampler</span><span class="p">(</span> <span class="n">ndim</span> <span class="o">=</span> <span class="mi">3</span>
+               <span class="p">,</span> <span class="n">getLogFunc</span> <span class="o">=</span> <span class="n">normal</span><span class="p">.</span><span class="n">getLogLike</span>
+               <span class="p">)</span>
+
+<span class="c1"># read the resulting sample
+</span>
+<span class="n">pmpd</span><span class="p">.</span><span class="n">readSample</span><span class="p">()</span>
+
+<span class="c1"># plot the sampled variables
+</span>
+<span class="k">for</span> <span class="n">colname</span> <span class="ow">in</span> <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">df</span><span class="p">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">.</span><span class="n">ycolumns</span> <span class="o">=</span> <span class="n">colname</span>
+    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">()</span>
+    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">.</span><span class="n">currentFig</span><span class="p">.</span><span class="n">axes</span><span class="p">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">"MCMC Count"</span><span class="p">)</span>
+    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">.</span><span class="n">currentFig</span><span class="p">.</span><span class="n">axes</span><span class="p">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">colname</span><span class="p">)</span>
+    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span> <span class="n">fname</span> <span class="o">=</span> <span class="s">"traceplot_"</span> <span class="o">+</span> <span class="n">colname</span> <span class="p">)</span>
+
+<span class="c1"># plot the histograms of the sampled parameters
+</span>
+<span class="k">for</span> <span class="n">colname</span> <span class="ow">in</span> <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">df</span><span class="p">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">xcolumns</span> <span class="o">=</span> <span class="n">colname</span><span class="p">)</span>
+    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">histplot</span><span class="p">.</span><span class="n">currentFig</span><span class="p">.</span><span class="n">axes</span><span class="p">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">colname</span><span class="p">)</span>
+    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">histplot</span><span class="p">.</span><span class="n">currentFig</span><span class="p">.</span><span class="n">axes</span><span class="p">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">"MCMC Count"</span><span class="p">)</span>
+    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">histplot</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span> <span class="n">fname</span> <span class="o">=</span> <span class="s">"histogram_"</span> <span class="o">+</span> <span class="n">colname</span> <span class="p">)</span>
+
+<span class="c1"># report the average parameters
+</span>
+<span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">df</span><span class="p">.</span><span class="n">mean</span><span class="p">()</span>
+</code></pre></div></div>
+
 
             </div>
         </article>
@@ -488,8 +616,8 @@ Cutoff                      0.693154
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2021 / 05 / 03</section></br> -->
-         <section>Last updated Monday, 03 May 2021 at 03:02 PM CST</section></br>
+         <!-- <section>Last updated 2021 / 05 / 06</section></br> -->
+         <section>Last updated Thursday, 06 May 2021 at 02:07 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

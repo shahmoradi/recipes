@@ -239,6 +239,69 @@
 
 <p>to write a single-line Python statement that only uses <code>print</code> and tuple or list notations, to perform the same task as the original print and if-block statement.</p>
 
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution-part-a" style="display:inline-block;">
+        <h2 id="solution-part-a" style="color:blue;">
+            Solution Part A
+        </h2>
+    </a>
+
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python
+</span>
+<span class="n">abbr</span> <span class="o">=</span> <span class="nb">input</span> <span class="p">(</span><span class="s">"What is the three-letter abbreviation of this course? "</span><span class="p">)</span>
+
+<span class="n">answer_status</span> <span class="o">=</span> <span class="s">'correct'</span> <span class="k">if</span> <span class="n">abbr</span> <span class="o">==</span> <span class="s">'DSP'</span> <span class="k">else</span> <span class="s">'wrong'</span>
+
+<span class="k">if</span> <span class="n">answer_status</span><span class="o">==</span><span class="s">'correct'</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'You answer is correct!'</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"wrong buddy...try again"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution-part-b" style="display:inline-block;">
+        <h2 id="solution-part-b" style="color:blue;">
+            Solution Part B
+        </h2>
+    </a>
+
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python
+</span>
+<span class="n">abbr</span> <span class="o">=</span> <span class="nb">input</span> <span class="p">(</span><span class="s">"What is the three-letter abbreviation of this course? "</span><span class="p">)</span>
+
+<span class="n">answer_status</span> <span class="o">=</span> <span class="p">(</span><span class="s">'wrong'</span><span class="p">,</span><span class="s">'correct'</span><span class="p">)[</span><span class="n">abbr</span><span class="o">==</span><span class="s">'DSP'</span><span class="p">]</span>
+
+<span class="k">if</span> <span class="n">answer_status</span><span class="o">==</span><span class="s">'correct'</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'You answer is correct!'</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"wrong buddy...try again"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution-part-c" style="display:inline-block;">
+        <h2 id="solution-part-c" style="color:blue;">
+            Solution Part C
+        </h2>
+    </a>
+
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python
+</span>
+<span class="n">abbr</span> <span class="o">=</span> <span class="nb">input</span> <span class="p">(</span><span class="s">"What is the three-letter abbreviation of this course? "</span><span class="p">)</span>
+
+<span class="n">answer_status</span> <span class="o">=</span> <span class="p">(</span><span class="s">'wrong'</span><span class="p">,</span><span class="s">'correct'</span><span class="p">)[</span><span class="n">abbr</span><span class="o">==</span><span class="s">'DSP'</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span> <span class="p">(</span><span class="s">'wrong buddy...try again'</span><span class="p">,</span><span class="s">'You answer is correct!'</span><span class="p">)[</span><span class="n">answer_status</span><span class="o">==</span><span class="s">'correct'</span><span class="p">]</span> <span class="p">)</span>
+</code></pre></div></div>
+
 
             </div>
         </article>
@@ -302,8 +365,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2021 / 05 / 03</section></br> -->
-         <section>Last updated Monday, 03 May 2021 at 03:02 PM CST</section></br>
+         <!-- <section>Last updated 2021 / 05 / 06</section></br> -->
+         <section>Last updated Thursday, 06 May 2021 at 02:07 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
