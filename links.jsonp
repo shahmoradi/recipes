@@ -213,6 +213,11 @@ callback([
 
   {
     "text": "Monte Carlo approximation of the number Pi",
+    "href": "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
+  } ,
+
+  {
+    "text": "Monte Carlo approximation of the number Pi",
     "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
   } ,
 

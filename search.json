@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "Monte Carlo approximation of the number Pi",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling",
+		  "date"       : "2021-07-06 00:00:00 -0500",
+		  "shortdate"  : "July 06, 2021"
+		} ,
+	
+		{
 		  "title"      : "Monte Carlo approximation of the number Pi using a full circle",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/monte-carlo-approximation-of-pi-full-circle/monte-carlo-approximation-of-pi-full-circle",

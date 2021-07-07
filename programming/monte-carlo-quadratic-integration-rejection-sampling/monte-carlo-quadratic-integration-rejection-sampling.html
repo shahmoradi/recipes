@@ -3,18 +3,18 @@
 <head>
     
     <meta charset="utf-8">
-<title>CHECK IF NUMBER IS EVEN IN ONE LINE FUNCTION DEFINITION &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>MONTE CARLO APPROXIMATION OF THE NUMBER PI &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="logical, Python, function, modulus, even, modulo">
+<meta name="keywords" content="Python, numpy, matplotlib, visualization, Monte Carlo, rejection sampling, integration, quadratic, simulation, plot, line, figure, random number, probability">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Check if number is even in one line function definition">
+<meta property="og:title" content="Monte Carlo approximation of the number Pi">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/one-line-check-even-number/one-line-check-even-number">
+<meta property="og:url" content="/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/one-line-check-even-number/one-line-check-even-number">
+<link rel="canonical" href="/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,7 +130,7 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/one-line-check-even-number/one-line-check-even-number">Check if number is even in one line function definition</a></h2>
+                            <h2><a href="/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling">Monte Carlo approximation of the number Pi</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
                                 
@@ -142,32 +142,72 @@
                                     
                                         
                                             <li>
+                                                <a href="/recipes/tags/index.html#Monte Carlo" data-toggle="tooltip" title="Posts tagged with Monte Carlo" rel="tag">Monte Carlo</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
                                                 <a href="/recipes/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#even" data-toggle="tooltip" title="Posts tagged with even" rel="tag">even</a>
+                                                <a href="/recipes/tags/index.html#figure" data-toggle="tooltip" title="Posts tagged with figure" rel="tag">figure</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#function" data-toggle="tooltip" title="Posts tagged with function" rel="tag">function</a>
+                                                <a href="/recipes/tags/index.html#integration" data-toggle="tooltip" title="Posts tagged with integration" rel="tag">integration</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#logical" data-toggle="tooltip" title="Posts tagged with logical" rel="tag">logical</a>
+                                                <a href="/recipes/tags/index.html#line" data-toggle="tooltip" title="Posts tagged with line" rel="tag">line</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#modulo" data-toggle="tooltip" title="Posts tagged with modulo" rel="tag">modulo</a>
+                                                <a href="/recipes/tags/index.html#matplotlib" data-toggle="tooltip" title="Posts tagged with matplotlib" rel="tag">matplotlib</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#modulus" data-toggle="tooltip" title="Posts tagged with modulus" rel="tag">modulus</a>
+                                                <a href="/recipes/tags/index.html#numpy" data-toggle="tooltip" title="Posts tagged with numpy" rel="tag">numpy</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#plot" data-toggle="tooltip" title="Posts tagged with plot" rel="tag">plot</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#probability" data-toggle="tooltip" title="Posts tagged with probability" rel="tag">probability</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#quadratic" data-toggle="tooltip" title="Posts tagged with quadratic" rel="tag">quadratic</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#random number" data-toggle="tooltip" title="Posts tagged with random number" rel="tag">random number</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#rejection sampling" data-toggle="tooltip" title="Posts tagged with rejection sampling" rel="tag">rejection sampling</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#simulation" data-toggle="tooltip" title="Posts tagged with simulation" rel="tag">simulation</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#visualization" data-toggle="tooltip" title="Posts tagged with visualization" rel="tag">visualization</a>
                                             </li>
                                             
                                         
@@ -196,12 +236,11 @@
     
 </div>
 
-<p>Write a one-line function <code>is_even()</code> that returns <code>True</code> is the input value to the function is an even number, and <code>False</code> otherwise. For example,</p>
+<p>Compute the following 10-dimensional integral via Monte Carlo Rejection sampling method,</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">is_even</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</code></pre></div></div>
-<pre><code>False
-</code></pre>
+\[I = \int_{x_1 = 0}^{x_1 = 1} dx_1 \cdots \int_{x_{10} = 0}^{x_{10} = 1} dx_{10} \bigg(\sum_{i=1}^{i=10} ~ x_i ~  \bigg) ~,\]
+
+<p>Ensure the accuracy of your integration result is better than $0.00001$ by progressively comparing the integral with actual integration result $I = 155 / 6$.</p>
 
 <div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
 
@@ -229,8 +268,55 @@
     </figure>
 </div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">is_even</span><span class="p">(</span><span class="n">num</span><span class="p">):</span> <span class="k">return</span> <span class="n">num</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
+<p>Here is an example Python script that computes the above integral: <a href="main.py" target="_blank">main.py</a>,</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">ndim</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">xmin</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">xmax</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">getFunc</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">point</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">point</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">maxHeightFunc</span> <span class="o">=</span> <span class="n">getFunc</span><span class="p">(</span><span class="n">ndim</span><span class="o">*</span><span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">)])</span>
+<span class="n">boxVolume</span> <span class="o">=</span> <span class="n">maxHeightFunc</span>
+<span class="n">numAcceptedRejected</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">numAccepted</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">truth</span> <span class="o">=</span> <span class="mi">155</span><span class="o">/</span><span class="mf">6.</span>
+<span class="n">integral</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+
+    <span class="n">numAcceptedRejected</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">maxHeightFunc</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="n">getFunc</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="n">ndim</span><span class="p">)):</span> <span class="n">numAccepted</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">integral</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">boxVolume</span> <span class="o">*</span> <span class="n">numAccepted</span> <span class="o">/</span> <span class="n">numAcceptedRejected</span><span class="p">)</span>
+
+    <span class="n">delta</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nb">abs</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">integral</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">truth</span><span class="p">)</span>
+    <span class="c1">#if numAcceptedRejected%100 == 0: print(numAccepted, numAcceptedRejected, delta, integral[-1])
+</span>    <span class="k">if</span> <span class="n">numAcceptedRejected</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">delta</span> <span class="o">&lt;=</span> <span class="mf">0.00001</span><span class="p">:</span>
+        <span class="c1">#print(np.abs((integral[-1] - integral[-2]) / integral[-1]))
+</span>        <span class="k">break</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"integral = {}, relative accuracy = {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">integral</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">np</span><span class="p">.</span><span class="n">double</span><span class="p">(</span><span class="n">delta</span><span class="p">)))</span>
+
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="n">sns</span><span class="p">.</span><span class="nb">set</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">plot</span>   <span class="p">(</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">integral</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+                <span class="p">,</span> <span class="n">integral</span>
+                <span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xscale</span><span class="p">(</span><span class="s">"log"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"integral = {},</span><span class="se">\n</span><span class="s"> relative accuracy = {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">integral</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">np</span><span class="p">.</span><span class="n">double</span><span class="p">(</span><span class="n">delta</span><span class="p">)))</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"log10( Number of Monte Carlo Rejection Sampling Steps )"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Integral Result"</span><span class="p">)</span>
 </code></pre></div></div>
+
+<p>Here is a plot of the integral progression,</p>
+
+<figure>
+    <img src="integral.png" />
+</figure>
 
 
             </div>
@@ -238,11 +324,11 @@
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Check if number is even in one line function definition&quot;%20https://www.cdslab.org/recipes/programming/one-line-check-even-number/one-line-check-even-number%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Monte Carlo approximation of the number Pi&quot;%20https://www.cdslab.org/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/one-line-check-even-number/one-line-check-even-number"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>
