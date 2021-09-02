@@ -203,60 +203,6 @@
 
 <p>How can I install Intel Parallel Studio on Windows?</p>
 
-<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
-
-    <a href="#solution" style="display:inline-block;">
-        <h2 id="solution" style="color:blue;">
-            Solution
-        </h2>
-    </a>
-
-</div>
-
-<p>The Intel Parallel Studio provides a wide variety of High-Performance numerical libraries and tools, most importantly, the Intel Fortran and C/C++ compilers. However, its installation on Windows systems, in particular, its Fortran compiler can be a bit tricky.</p>
-
-<p>Here are the <strong>steps required to take to properly install Intel Parallel Studio on Windows</strong>:</p>
-
-<ol>
-  <li>First, you need to <strong>make sure that you can obtain a valid license from Intel</strong> to download, install, and successfully use the parallel studio for at least one year or perhaps, for eternity. Failure to obtain a license means that the software would be accessible for only 30 days of trial usage after the installation. Fortunately, <strong>a valid license can be obtained</strong> for Intel Parallel Studio in its entirety, <strong>completely free of charge</strong>, if you belong to one of the following professional groups:<br />
- <br />
-    <ol>
-      <li><strong>students</strong>,</li>
-      <li><strong>open-source developers</strong>,</li>
-      <li><strong>educators (teachers/professors)</strong>.<br />
- <br />
- These communities together, in my opinion, already cover a large fraction of programmers and primary users of Intel Parallel Studio (excluding corporations, which are wealthy enough to afford the high price tag of Intel Parallel Studio).
- <br /><br />
- <strong>UPDATE Jan 1, 2021: Intel recently announced the release of a brand new version of Intel Parallel Studio, known as the Intel oneAPI, which is now freely available to the entire public community. Everyone can now freely use the Intel compilers and HPC libraries. What a great news!</strong>
- <br /><br /></li>
-    </ol>
-  </li>
-  <li>
-    <p><strong>Download Intel Parallel Studio</strong> from its <a href="https://software.intel.com/en-us/parallel-studio-xe/choose-download" target="_blank">dedicated website</a>. But <strong>do not install it yet</strong>. You will have to first install a recent version of Microsoft Visual Studio.</p>
-  </li>
-  <li>
-    <p><strong>Download</strong> the recent version of <strong>Microsoft Visual Studio (MSVS) Community edition</strong> installer from its <a href="https://visualstudio.microsoft.com/vs/community/" target="_blank">dedicated website</a>. The good news is that Microsoft has recently made the community edition of its Visual Studio available to the public, free of charge.</p>
-  </li>
-  <li><strong>Run the Microsoft Visual Studio installer</strong>. Once you see the following prompt window, make sure you <strong>select at least the C++ components to install on your system</strong> (if you do not want all of the components). This component selection is essential for successful installation of Intel Parallel C++/Fortran compilers,
-    <figure>
-     <img src="community-page-installer.png" />
- </figure>
-  </li>
-  <li>
-    <p>Once the MSVS has been installed on your system (your system may need a reboot), <strong>run Intel Parallel Studio installer</strong> and <strong>choose all of the components that you need</strong>/want to install from Intel Parallel Studio installer window. I recommend installing all of the components as you will often need and use them in the future.</p>
-  </li>
-  <li><strong>Your installation is complete</strong> (you may need a reboot again). You can now access intel compilers and tools from the MSVS application. However, I strongly recommend you to <strong>use Intel’s provided Windows command-line environment (CMD)</strong> that comes with all the Intel tools and their paths predefined in it <strong>to help build your applications on the command line, much like a Linux environment</strong>. In the long run, you will likely find it more comfortable than the GUI-based MSMV application. You can access this specially-designed Windows CMD from Windows’ Start Menu as shown below,
-    <figure>
-     <img src="intelCMD.png" />
- </figure>
-  </li>
-  <li>You can test whether the Intel compilers have been correctly installed by typing <code>ifort</code> to invoke the Intel Fortran compiler or <code>icl</code> to invoke the Intel C++ compiler, as shown in the following screenshot,
-    <figure>
-     <img src="compilerTest.png" />
- </figure>
-  </li>
-</ol>
-
 
             </div>
         </article>
@@ -320,8 +266,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2021 / 07 / 06</section></br> -->
-         <section>Last updated Tuesday, 06 Jul 2021 at 11:03 PM CST</section></br>
+         <!-- <section>Last updated 2021 / 09 / 02</section></br> -->
+         <section>Last updated Thursday, 02 Sep 2021 at 01:14 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

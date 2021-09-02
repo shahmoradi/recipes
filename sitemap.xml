@@ -204,6 +204,10 @@
     </url>
     
     <url>
+        <loc>https://www.cdslab.org/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-absolute-deviations-method</loc>
+    </url>
+    
+    <url>
         <loc>https://www.cdslab.org/recipes/programming/monte-carlo-sampling-of-bimodal-gaussian/monte-carlo-sampling-of-bimodal-gaussian</loc>
     </url>
     
@@ -252,7 +256,11 @@
     </url>
     
     <url>
-        <loc>https://www.cdslab.org/recipes/programming/version-control-using-git-github/version-control-using-git-github</loc>
+        <loc>https://www.cdslab.org/recipes/programming/vcs-using-git-github/vcs-using-git-github</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/vcs-github-readme-webpage/vcs-github-readme-webpage</loc>
     </url>
     
     <url>
@@ -377,10 +385,6 @@
     
     <url>
         <loc>https://www.cdslab.org/recipes/programming/implementing-gaussian-function/implementing-gaussian-function</loc>
-    </url>
-    
-    <url>
-        <loc>https://www.cdslab.org/recipes/programming/github-readme-webpage/github-readme-webpage</loc>
     </url>
     
     <url>
