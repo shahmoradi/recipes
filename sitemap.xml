@@ -68,6 +68,14 @@
 
     
     <url>
+        <loc>https://www.cdslab.org/recipes/programming/stat-sample-mean-variance-skewness-kurtosis/stat-sample-mean-variance-skewness-kurtosis</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/stat-sample-chebyshev-inequality/stat-sample-chebyshev-inequality</loc>
+    </url>
+    
+    <url>
         <loc>https://www.cdslab.org/recipes/programming/stat-mean-weighted/stat-mean-weighted</loc>
     </url>
     

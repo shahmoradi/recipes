@@ -1,6 +1,22 @@
 [
 	
 		{
+		  "title"      : "Computing the first four moments of a sample",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/stat-sample-mean-variance-skewness-kurtosis/stat-sample-mean-variance-skewness-kurtosis",
+		  "date"       : "2021-09-03 00:00:00 -0500",
+		  "shortdate"  : "September 03, 2021"
+		} ,
+	
+		{
+		  "title"      : "An experimental proof of Chebyshev&#39;s inequality",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/stat-sample-chebyshev-inequality/stat-sample-chebyshev-inequality",
+		  "date"       : "2021-09-03 00:00:00 -0500",
+		  "shortdate"  : "September 03, 2021"
+		} ,
+	
+		{
 		  "title"      : "Computing the mean of a weighted data",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/stat-mean-weighted/stat-mean-weighted",

@@ -7,13 +7,83 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2021-09-04T12:33:43-05:00</updated>
+<updated>2021-09-07T15:16:09-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
   <uri>https://www.cdslab.org/recipes/</uri>
   <email>shahmoradi@utexas.edu</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Computing the first four moments of a sample]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/stat-sample-mean-variance-skewness-kurtosis/stat-sample-mean-variance-skewness-kurtosis"/>
+  <id>https://www.cdslab.org/recipes/programming/stat-sample-mean-variance-skewness-kurtosis/stat-sample-mean-variance-skewness-kurtosis</id>
+  <published>2021-09-03T00:00:00-05:00</published>
+  <updated>2021-09-07T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#statistics" term="statistics" /><category scheme="https://www.cdslab.org/recipes/tags/#sample" term="sample" /><category scheme="https://www.cdslab.org/recipes/tags/#moments" term="moments" /><category scheme="https://www.cdslab.org/recipes/tags/#mean" term="mean" /><category scheme="https://www.cdslab.org/recipes/tags/#variance" term="variance" /><category scheme="https://www.cdslab.org/recipes/tags/#skewness" term="skewness" /><category scheme="https://www.cdslab.org/recipes/tags/#kurtosis" term="kurtosis" /><category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Consider &lt;a href=&quot;gamrnd.txt&quot; target=&quot;blank&quot;&gt;this dataset&lt;/a&gt; comprised of $1000$ observations (tuples). Compute the first four standardized moments of this sample (mean, standard deviation, skewness, kurtosis).&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/stat-sample-mean-variance-skewness-kurtosis/stat-sample-mean-variance-skewness-kurtosis&quot;&gt;Computing the first four moments of a sample&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on September 03, 2021.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[An experimental proof of Chebyshev's inequality]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/stat-sample-chebyshev-inequality/stat-sample-chebyshev-inequality"/>
+  <id>https://www.cdslab.org/recipes/programming/stat-sample-chebyshev-inequality/stat-sample-chebyshev-inequality</id>
+  <published>2021-09-03T00:00:00-05:00</published>
+  <updated>2021-09-07T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#statistics" term="statistics" /><category scheme="https://www.cdslab.org/recipes/tags/#sample" term="sample" /><category scheme="https://www.cdslab.org/recipes/tags/#moments" term="moments" /><category scheme="https://www.cdslab.org/recipes/tags/#mean" term="mean" /><category scheme="https://www.cdslab.org/recipes/tags/#variance" term="variance" /><category scheme="https://www.cdslab.org/recipes/tags/#Chebyshev" term="Chebyshev" /><category scheme="https://www.cdslab.org/recipes/tags/#inequality" term="inequality" /><category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;The Chebyshev Inequality states that no more than $1/k^2$ of an attribute values of a given sample can be $k$ or more standard deviations away from the attribute mean. Provide an experimental proof of this theorem by generating a sample of 10000 uniformly-distributed random numbers between 0 and 1 and computing the fractions of points that lie at larger distances than $[1\sigma, 1.5\sigma, 2\sigma, 2.5\sigma, 3\sigma, 3.5\sigma, 4\sigma]$ is less than or equal to $[1, 1/1.5^2, 1/2^2, 1/2.5^2, 1/3^2, 1/3.5^2, 1/4^2]$.&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/stat-sample-chebyshev-inequality/stat-sample-chebyshev-inequality&quot;&gt;An experimental proof of Chebyshev's inequality&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on September 03, 2021.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -43,7 +113,7 @@
     
 &lt;/div&gt;
 
-&lt;p&gt;Consider &lt;a href=&quot;weightedDataMVN.txt&quot; target=&quot;blank&quot;&gt;this weighted dataset&lt;/a&gt; comprised of $500$ observations (tuples) each of each is described by $5$ attributes. Note that the last column of data is the weight of each tuple. Compute the weighted mean of this sample.&lt;/p&gt;
+&lt;p&gt;Consider &lt;a href=&quot;weightedDataMVN.txt&quot; target=&quot;blank&quot;&gt;this weighted dataset&lt;/a&gt; comprised of $500$ observations (tuples) each of which is described by $5$ attributes. Note that the last column of data is the weight of each tuple. Compute the weighted mean of this sample.&lt;/p&gt;
 
 
   
@@ -709,56 +779,6 @@
 
   
   &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/logic-two-types-of-scientific-reasoning/logic/logic-two-types-of-scientific-reasoning&quot;&gt;The two types of scientific reasoning&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on September 30, 2020.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Logical product denial]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/logic-product-denial/logic/logic-product-denial"/>
-  <id>https://www.cdslab.org/recipes/programming/logic-product-denial/logic/logic-product-denial</id>
-  <published>2020-09-30T00:00:00-05:00</published>
-  <updated>2020-09-30T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#plausibility" term="plausibility" /><category scheme="https://www.cdslab.org/recipes/tags/#deduction" term="deduction" /><category scheme="https://www.cdslab.org/recipes/tags/#reasoning" term="reasoning" /><category scheme="https://www.cdslab.org/recipes/tags/#logic" term="logic" /><category scheme="https://www.cdslab.org/recipes/tags/#boolean" term="boolean" />
-  <content type="html">
-  
-    
-&lt;p&gt;Show via Venn diagrams that the negation of a &lt;strong&gt;logical product&lt;/strong&gt; ($\overline{AB}$) is equivalent to the &lt;strong&gt;logical sum of the negations&lt;/strong&gt; ($\bar{A}+\bar{B}$).&lt;/p&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/logic-product-denial/logic/logic-product-denial&quot;&gt;Logical product denial&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on September 30, 2020.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Policeman, jewelry, and burglar]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/logic-policeman-jewelry-burglar/logic/logic-policeman-jewelry-burglar"/>
-  <id>https://www.cdslab.org/recipes/programming/logic-policeman-jewelry-burglar/logic/logic-policeman-jewelry-burglar</id>
-  <published>2020-09-30T00:00:00-05:00</published>
-  <updated>2020-09-30T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#plausibility" term="plausibility" /><category scheme="https://www.cdslab.org/recipes/tags/#deduction" term="deduction" /><category scheme="https://www.cdslab.org/recipes/tags/#reasoning" term="reasoning" /><category scheme="https://www.cdslab.org/recipes/tags/#logic" term="logic" /><category scheme="https://www.cdslab.org/recipes/tags/#boolean" term="boolean" />
-  <content type="html">
-  
-    
-&lt;p&gt;Suppose some dark night a policemanwalks down a street, apparently deserted. Suddenly he hears a burglar alarm, looks across the street, and sees a jewelry store with a broken window. Then a gentleman wearing a mask comes crawling out through the broken window, carrying a bag which turns out to be full of expensive jewelry. The policeman doesn’t hesitate at all in deciding that this gentleman is dishonest. But by what reasoning process does he arrive at this conclusion? Express it in terms of simple propositions like &lt;strong&gt;if A is true, then B…&lt;/strong&gt; .&lt;/p&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/logic-policeman-jewelry-burglar/logic/logic-policeman-jewelry-burglar&quot;&gt;Policeman, jewelry, and burglar&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on September 30, 2020.&lt;/p&gt;</content>
 </entry>
 
 </feed>

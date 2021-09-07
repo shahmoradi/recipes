@@ -93,12 +93,12 @@ callback([
 
   {
     "text": "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables via the least absolute deviations method",
-    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-squares-method"
+    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-absolute-deviations-method"
   } ,
 
   {
     "text": "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables via the least absolute deviations method",
-    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-absolute-deviations-method"
+    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-squares-method"
   } ,
 
   {
@@ -218,12 +218,12 @@ callback([
 
   {
     "text": "Monte Carlo approximation of the number Pi",
-    "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
+    "href": "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
   } ,
 
   {
     "text": "Monte Carlo approximation of the number Pi",
-    "href": "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
+    "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
   } ,
 
   {
@@ -397,6 +397,11 @@ callback([
   } ,
 
   {
+    "text": "Computing the first four moments of a sample",
+    "href": "/recipes/programming/stat-sample-mean-variance-skewness-kurtosis/stat-sample-mean-variance-skewness-kurtosis"
+  } ,
+
+  {
     "text": "Computing the area of a triangle",
     "href": "/recipes/programming/triangle-area/triangle-area"
   } ,
@@ -454,6 +459,11 @@ callback([
   {
     "text": "Best visualization coloring",
     "href": "/recipes/programming/visualization-coloring/visualization-coloring"
+  } ,
+
+  {
+    "text": "An experimental proof of Chebyshev's inequality",
+    "href": "/recipes/programming/stat-sample-chebyshev-inequality/stat-sample-chebyshev-inequality"
   } 
 
 ])
