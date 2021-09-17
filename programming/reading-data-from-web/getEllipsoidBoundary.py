@@ -1,5 +1,4 @@
-def getEllipsoidBoundary( self
-                        , covMat
+def getEllipsoidBoundary( covMat
                         , meanVec
                         , npoint = 50
                         ):
