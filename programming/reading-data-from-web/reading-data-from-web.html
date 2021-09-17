@@ -355,9 +355,44 @@ your script will have to raise a <code>urllib.request.HTTPError</code> exception
     
 </div>
 
-<p>(<strong>Extra credit</strong>) Use the <a href="https://github.com/cdslaborg/paramonte" target="_blank">ParaMonte</a> or any other Monte Carlo sampling package that you want to also compute the uncertainties associated with the slope and intercept of the linear fit to the data.</p>
+<p>Use the <a href="https://github.com/cdslaborg/paramonte" target="_blank">ParaMonte</a> or any other Monte Carlo sampling package that you want to also compute the uncertainties associated with the slope and intercept of the linear fit to the data.</p>
 
 <p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> For this part, you can get help from the instructor during the lectures to explain the concepts to you.</p>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+    
+        <a href="#problem-part-f" style="display:inline-block;">
+            <h2 id="problem-part-f" style="color:red;">
+                Problem Part F
+            </h2>
+        </a>
+    
+</div>
+
+<p>By now, you may have realized that each file, that you downloaded and visualized in the above, contains information for a single observed event, and that the rows in each file correspond to different possible <strong>realizations</strong> of the same observation. In other words, the rows represent together the uncertainty in the observation corresponding to the file. The above scatter plot that you have made illustrates all such possible realizations of <strong>all</strong> observations in a single visualization. While the result looks beautiful, sometimes it does not and you may need to reduce the data for a better illustration. For example, one common method is to represent each observation with the mean value of data and and add $1\sigma$ standard deviation error-bars to the mean values in the plots.</p>
+
+<p>Now using the above suggested data-reduction method, make an error-bar plot of the data. For reference, here is an example errobar plot of the reduced data, showing only the mean and standard deviations.</p>
+
+<figure>
+    <img src="SwiftDataPlotReduced.png" width="900" />  
+</figure>
+<p><br /></p>
+
+<p>Compare this graph with the previous one that you generated.</p>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+    
+        <a href="#problem-part-g" style="display:inline-block;">
+            <h2 id="problem-part-g" style="color:red;">
+                Problem Part G
+            </h2>
+        </a>
+    
+</div>
+
+<p>Although the above graph looks simpler than the original plot containing all thousands of points, the error bars do not correctly represent the uncertainties. Why? Because the y-error is correlated with x-error in most observations. To see this, compare the original plot of all data points with the latter reduced-data plot. How can we fix this problem, while keeping the plot simple, using only reduced data? The remedy is to use 2D ellipses to represent the $1\sigma$ standard deviations of data on both attributes. Unlike simple error bars, ellipses can capture potential correlations among the two attributes.</p>
+
+<p>Now, instead of representing the attribute error bars independently and individually in the plot, use a single ellipsoid to represent the $1\sigma$ uncertainty for each data point. For this, you will have to form the bivariate covariance matrix of the uncertainty for each observation. Then you pass this covariance matrix along with the mean to the <a href="getEllipsoidBoundary.py" target="_blank">this function</a> to get a set of representative points on the boundary of the ellipse corresponding to the mean and covariance matrix. Then you plot these representative points a closed line on the current plot. You repeat this process for all observation to obtain the full illustration.</p>
 
 
             </div>
@@ -422,8 +457,8 @@ your script will have to raise a <code>urllib.request.HTTPError</code> exception
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2021 / 09 / 07</section></br> -->
-         <section>Last updated Tuesday, 07 Sep 2021 at 03:16 PM CST</section></br>
+         <!-- <section>Last updated 2021 / 09 / 17</section></br> -->
+         <section>Last updated Friday, 17 Sep 2021 at 12:48 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
