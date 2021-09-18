@@ -7,13 +7,48 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2021-09-18T13:48:12-05:00</updated>
+<updated>2021-09-18T14:33:50-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
   <uri>https://www.cdslab.org/recipes/</uri>
   <email>shahmoradi@utexas.edu</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Visualizing the average precipitation among the US states]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/visualization-avg-precipitation-choropleth/visualization-avg-precipitation-choropleth"/>
+  <id>https://www.cdslab.org/recipes/programming/visualization-avg-precipitation-choropleth/visualization-avg-precipitation-choropleth</id>
+  <published>2021-09-19T00:00:00-05:00</published>
+  <updated>2019-07-04T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#MATLAB" term="MATLAB" /><category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#data" term="data" /><category scheme="https://www.cdslab.org/recipes/tags/#pandas" term="pandas" /><category scheme="https://www.cdslab.org/recipes/tags/#input" term="input" /><category scheme="https://www.cdslab.org/recipes/tags/#output" term="output" /><category scheme="https://www.cdslab.org/recipes/tags/#choropleth" term="choropleth" /><category scheme="https://www.cdslab.org/recipes/tags/#matplotlib" term="matplotlib" /><category scheme="https://www.cdslab.org/recipes/tags/#figure" term="figure" /><category scheme="https://www.cdslab.org/recipes/tags/#usa" term="usa" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Consider the following &lt;a href=&quot;precipitation.csv&quot; target=&quot;_blank&quot;&gt;dataset&lt;/a&gt; containing the average annual precipitation in the US states between 1971-2000. Make a choropleth visualization of this precipitation data (either using the SI or the US-British units). Do not forget to add a color-bar to your visualization.&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/visualization-avg-precipitation-choropleth/visualization-avg-precipitation-choropleth&quot;&gt;Visualizing the average precipitation among the US states&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on September 19, 2021.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -754,31 +789,6 @@
 
   
   &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/logic-functions-1d/logic-functions-1d&quot;&gt;Logic functions with 1 input&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 21, 2020.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[The two types of scientific reasoning]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/logic-two-types-of-scientific-reasoning/logic/logic-two-types-of-scientific-reasoning"/>
-  <id>https://www.cdslab.org/recipes/programming/logic-two-types-of-scientific-reasoning/logic/logic-two-types-of-scientific-reasoning</id>
-  <published>2020-09-30T00:00:00-05:00</published>
-  <updated>2020-09-30T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#plausibility" term="plausibility" /><category scheme="https://www.cdslab.org/recipes/tags/#deduction" term="deduction" /><category scheme="https://www.cdslab.org/recipes/tags/#reasoning" term="reasoning" /><category scheme="https://www.cdslab.org/recipes/tags/#logic" term="logic" /><category scheme="https://www.cdslab.org/recipes/tags/#boolean" term="boolean" />
-  <content type="html">
-  
-    
-&lt;p&gt;Name the two types of scientific reasoning and give an example argument for each one.&lt;/p&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/logic-two-types-of-scientific-reasoning/logic/logic-two-types-of-scientific-reasoning&quot;&gt;The two types of scientific reasoning&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on September 30, 2020.&lt;/p&gt;</content>
 </entry>
 
 </feed>

@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "Visualizing the average precipitation among the US states",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/visualization-avg-precipitation-choropleth/visualization-avg-precipitation-choropleth",
+		  "date"       : "2021-09-19 00:00:00 -0500",
+		  "shortdate"  : "September 19, 2021"
+		} ,
+	
+		{
 		  "title"      : "Computing the first four moments of a sample",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/stat-sample-mean-variance-skewness-kurtosis/stat-sample-mean-variance-skewness-kurtosis",

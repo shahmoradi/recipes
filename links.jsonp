@@ -7,6 +7,11 @@ callback([
   } ,
 
   {
+    "text": "Visualizing the average precipitation among the US states",
+    "href": "/recipes/programming/visualization-avg-precipitation-choropleth/visualization-avg-precipitation-choropleth"
+  } ,
+
+  {
     "text": "Version-control using Git and GitHub",
     "href": "/recipes/programming/vcs-using-git-github/vcs-using-git-github"
   } ,
@@ -218,12 +223,12 @@ callback([
 
   {
     "text": "Monte Carlo approximation of the number Pi",
-    "href": "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
+    "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
   } ,
 
   {
     "text": "Monte Carlo approximation of the number Pi",
-    "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
+    "href": "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
   } ,
 
   {
