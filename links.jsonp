@@ -223,12 +223,12 @@ callback([
 
   {
     "text": "Monte Carlo approximation of the number Pi",
-    "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
+    "href": "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
   } ,
 
   {
     "text": "Monte Carlo approximation of the number Pi",
-    "href": "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
+    "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
   } ,
 
   {
@@ -409,6 +409,11 @@ callback([
   {
     "text": "Computing the area of a triangle",
     "href": "/recipes/programming/triangle-area/triangle-area"
+  } ,
+
+  {
+    "text": "Computing the Pearson correlation coefficient of a dataset",
+    "href": "/recipes/programming/stat-pearson-corcoef/stat-pearson-corcoef"
   } ,
 
   {

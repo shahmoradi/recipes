@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "Computing the Pearson correlation coefficient of a dataset",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/stat-pearson-corcoef/stat-pearson-corcoef",
+		  "date"       : "2021-09-29 00:00:00 -0500",
+		  "shortdate"  : "September 29, 2021"
+		} ,
+	
+		{
 		  "title"      : "Visualizing the average precipitation among the US states",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/visualization-avg-precipitation-choropleth/visualization-avg-precipitation-choropleth",
