@@ -223,12 +223,12 @@ callback([
 
   {
     "text": "Monte Carlo approximation of the number Pi",
-    "href": "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
+    "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
   } ,
 
   {
     "text": "Monte Carlo approximation of the number Pi",
-    "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
+    "href": "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
   } ,
 
   {
@@ -413,7 +413,12 @@ callback([
 
   {
     "text": "Computing the Pearson correlation coefficient of a dataset",
-    "href": "/recipes/programming/stat-pearson-corcoef/stat-pearson-corcoef"
+    "href": "/recipes/programming/stat-corcoef-pearson/stat-corcoef-pearson"
+  } ,
+
+  {
+    "text": "Computing the Kendall's rank correlation coefficient of a dataset",
+    "href": "/recipes/programming/stat-corcoef-kendall/stat-corcoef-kendall"
   } ,
 
   {

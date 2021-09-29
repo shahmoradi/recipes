@@ -68,7 +68,11 @@
 
     
     <url>
-        <loc>https://www.cdslab.org/recipes/programming/stat-pearson-corcoef/stat-pearson-corcoef</loc>
+        <loc>https://www.cdslab.org/recipes/programming/stat-corcoef-pearson/stat-corcoef-pearson</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/stat-corcoef-kendall/stat-corcoef-kendall</loc>
     </url>
     
     <url>

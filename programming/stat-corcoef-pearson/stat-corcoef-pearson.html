@@ -3,18 +3,18 @@
 <head>
     
     <meta charset="utf-8">
-<title>THE TWO TYPES OF SCIENTIFIC REASONING &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>COMPUTING THE PEARSON CORRELATION COEFFICIENT OF A DATASET &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="plausibility, deduction, reasoning, logic, boolean">
+<meta name="keywords" content="statistics, sample, Pearson, correlation, warming, Python">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="The two types of scientific reasoning">
+<meta property="og:title" content="Computing the Pearson correlation coefficient of a dataset">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/logic-two-types-of-scientific-reasoning/logic/logic-two-types-of-scientific-reasoning">
+<meta property="og:url" content="/recipes/programming/stat-corcoef-pearson/stat-corcoef-pearson">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/logic-two-types-of-scientific-reasoning/logic/logic-two-types-of-scientific-reasoning">
+<link rel="canonical" href="/recipes/programming/stat-corcoef-pearson/stat-corcoef-pearson">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,39 +130,44 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/logic-two-types-of-scientific-reasoning/logic/logic-two-types-of-scientific-reasoning">The two types of scientific reasoning</a></h2>
+                            <h2><a href="/recipes/programming/stat-corcoef-pearson/stat-corcoef-pearson">Computing the Pearson correlation coefficient of a dataset</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
                                 
                                     &#8212; Last updated: 
-                                    <strong><time datetime="2020-09-30T00:00:00-05:00">30 September 2020</time></strong>
+                                    <strong><time datetime="2019-07-04T00:00:00-05:00">04 July 2019</time></strong>
                                 
                                 <ul class="tag-box inline">
                                     <span style="margin-right:1rem;">Tags:</span>
                                     
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#boolean" data-toggle="tooltip" title="Posts tagged with boolean" rel="tag">boolean</a>
+                                                <a href="/recipes/tags/index.html#Pearson" data-toggle="tooltip" title="Posts tagged with Pearson" rel="tag">Pearson</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#deduction" data-toggle="tooltip" title="Posts tagged with deduction" rel="tag">deduction</a>
+                                                <a href="/recipes/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#logic" data-toggle="tooltip" title="Posts tagged with logic" rel="tag">logic</a>
+                                                <a href="/recipes/tags/index.html#correlation" data-toggle="tooltip" title="Posts tagged with correlation" rel="tag">correlation</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#plausibility" data-toggle="tooltip" title="Posts tagged with plausibility" rel="tag">plausibility</a>
+                                                <a href="/recipes/tags/index.html#sample" data-toggle="tooltip" title="Posts tagged with sample" rel="tag">sample</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#reasoning" data-toggle="tooltip" title="Posts tagged with reasoning" rel="tag">reasoning</a>
+                                                <a href="/recipes/tags/index.html#statistics" data-toggle="tooltip" title="Posts tagged with statistics" rel="tag">statistics</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#warming" data-toggle="tooltip" title="Posts tagged with warming" rel="tag">warming</a>
                                             </li>
                                             
                                         
@@ -181,7 +186,34 @@
 
             <div style="text-align:left;">
                 
-<p>Name the two types of scientific reasoning and give an example argument for each one.</p>
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+    
+        <a href="#problem" style="display:inline-block;">
+            <h2 id="problem" style="color:red;">
+                Problem
+            </h2>
+        </a>
+    
+</div>
+
+<p>Recall the <a href="globalLandTempHist.txt" target="blank">globalLandTempHist.txt</a> dataset that consisted of the global land temperature of Earth over the past 300 years. 
+Also recall the equation for the Pearson’s correlation coefficient, between two attributes of a dataset.</p>
+
+\[r_{xy} = 
+\frac{
+    \sum_1^{n} ~ (x_i-\overline{x})(y_i-\overline{y})
+}{
+    \sqrt{\sum_1^{n} ~ (x_i-\overline{x})^2} ~\sqrt{\sum_1^{n} ~ (y_i-\overline{y})^2}
+}\]
+
+<p>where $n$ represents the number of data points. We wish to compute the Pearson correlation coefficient between the <code>year</code> and the <code>temperature anomaly</code> attribute in the land temperature data mentioned in the above. To do so, we will take the following steps:</p>
+
+<ol>
+  <li>Write a function named <code>getPearsonCor(data1,data2)</code> that return the Pearson correlation coefficient according to the equation in the above.</li>
+  <li>Now, read the dataset (using Pandas Python library, for example) and make sure to exlude lines of data that contain <code>nan</code> values. If you are using Python, you can get help from Pandas <code>dropna()</code> method to remove rows of data with <code>nan</code>.</li>
+  <li>Now, pass the two columns of data to your function to compute the Pearson correlation coefficient. You should obtain a positive correlation indicating that the global land temperature has increased with time over the past 300 years.</li>
+  <li>Now, use the Pearson correlation coefficient calculator from an established library in the language of your choice to verify your calculation of the Pearson correlation. Within Python, you can use Numpy’s <code>corrcoef()</code> function to compute the correlation.</li>
+</ol>
 
 
             </div>
@@ -189,11 +221,11 @@
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;The two types of scientific reasoning&quot;%20https://www.cdslab.org/recipes/programming/logic-two-types-of-scientific-reasoning/logic/logic-two-types-of-scientific-reasoning%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Computing the Pearson correlation coefficient of a dataset&quot;%20https://www.cdslab.org/recipes/programming/stat-corcoef-pearson/stat-corcoef-pearson%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/logic-two-types-of-scientific-reasoning/logic/logic-two-types-of-scientific-reasoning"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/stat-corcoef-pearson/stat-corcoef-pearson"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>

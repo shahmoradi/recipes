@@ -3,7 +3,15 @@
 		{
 		  "title"      : "Computing the Pearson correlation coefficient of a dataset",
 		  "category"   : "",
-		  "url"        : "/recipes/programming/stat-pearson-corcoef/stat-pearson-corcoef",
+		  "url"        : "/recipes/programming/stat-corcoef-pearson/stat-corcoef-pearson",
+		  "date"       : "2021-09-29 00:00:00 -0500",
+		  "shortdate"  : "September 29, 2021"
+		} ,
+	
+		{
+		  "title"      : "Computing the Kendall&#39;s rank correlation coefficient of a dataset",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/stat-corcoef-kendall/stat-corcoef-kendall",
 		  "date"       : "2021-09-29 00:00:00 -0500",
 		  "shortdate"  : "September 29, 2021"
 		} ,

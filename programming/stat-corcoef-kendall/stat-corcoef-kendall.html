@@ -3,18 +3,18 @@
 <head>
     
     <meta charset="utf-8">
-<title>COMPUTING THE PEARSON CORRELATION COEFFICIENT OF A DATASET &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>COMPUTING THE KENDALL'S RANK CORRELATION COEFFICIENT OF A DATASET &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="statistics, sample, Pearson, correlation, warming, Python">
+<meta name="keywords" content="statistics, sample, Kendall's, correlation, warming, Python">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Computing the Pearson correlation coefficient of a dataset">
+<meta property="og:title" content="Computing the Kendall's rank correlation coefficient of a dataset">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/stat-pearson-corcoef/stat-pearson-corcoef">
+<meta property="og:url" content="/recipes/programming/stat-corcoef-kendall/stat-corcoef-kendall">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/stat-pearson-corcoef/stat-pearson-corcoef">
+<link rel="canonical" href="/recipes/programming/stat-corcoef-kendall/stat-corcoef-kendall">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,7 +130,7 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/stat-pearson-corcoef/stat-pearson-corcoef">Computing the Pearson correlation coefficient of a dataset</a></h2>
+                            <h2><a href="/recipes/programming/stat-corcoef-kendall/stat-corcoef-kendall">Computing the Kendall's rank correlation coefficient of a dataset</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
                                 
@@ -142,7 +142,7 @@
                                     
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#Pearson" data-toggle="tooltip" title="Posts tagged with Pearson" rel="tag">Pearson</a>
+                                                <a href="/recipes/tags/index.html#Kendall's" data-toggle="tooltip" title="Posts tagged with Kendall's" rel="tag">Kendall's</a>
                                             </li>
                                             
                                         
@@ -197,22 +197,31 @@
 </div>
 
 <p>Recall the <a href="globalLandTempHist.txt" target="blank">globalLandTempHist.txt</a> dataset that consisted of the global land temperature of Earth over the past 300 years. 
-Also recall the equation for the Pearson’s correlation coefficient, between two attributes of a dataset.</p>
+Also recall the equation for the Kendall’s rank correlation coefficient, between two attributes of a dataset.</p>
 
-\[r_{xy} = 
+\[\tau_{xy} = 
 \frac{
-    \sum_1^{n} ~ (x_i-\overline{x})(y_i-\overline{y})
+    \text{#concordant pairs} - \text{#discordant pairs}
 }{
-    \sqrt{\sum_1^{n} ~ (x_i-\overline{x})^2} ~\sqrt{\sum_1^{n} ~ (y_i-\overline{y})^2}
+    \sqrt{\text{#concordant pairs} + \text{#discordant pairs} + \text{#extra-$y$}} ~ \sqrt{\text{#concordant pairs} + \text{#discordant pairs} + \text{#extra-$x$}}
 }\]
 
-<p>where $n$ represents the number of data points. We wish to compute the Pearson correlation coefficient between the <code>year</code> and the <code>temperature anomaly</code> attribute in the land temperature data mentioned in the above. To do so, we will take the following steps:</p>
+<p>where the concordance and discordance of a pair of data points is determined according to the following partitioning of the space for a given point.</p>
+
+<figure>
+    <img src="concordance.png" alt="concordance.png" width="700" /> 
+    <caption>
+        All points in the gray area are concordant and all points in the white area are discordant with respect to point (𝑋_1,𝑌_1). With 𝑁=30 points, there are a total of 435 possible point pairs. In this example there are 395 concordant point pairs and 40 discordant point pairs, leading to a Kendall rank correlation coefficient of 0.816.
+    </caption>
+</figure>
+
+<p>where $n$ represents the number of data points. We wish to compute the Kendall’s rank correlation coefficient between the <code>year</code> and the <code>temperature anomaly</code> attribute in the land temperature data mentioned in the above. To do so, we will take the following steps:</p>
 
 <ol>
-  <li>Write a function named <code>getPearsonCor(data1,data2)</code> that return the Pearson correlation coefficient according to the equation in the above.</li>
+  <li>Write a function named <code>getKendallCor(data1,data2)</code> that return the Kendall’s rank correlation coefficient according to the equation in the above.</li>
   <li>Now, read the dataset (using Pandas Python library, for example) and make sure to exlude lines of data that contain <code>nan</code> values. If you are using Python, you can get help from Pandas <code>dropna()</code> method to remove rows of data with <code>nan</code>.</li>
-  <li>Now, pass the two columns of data to your function to compute the Pearson correlation coefficient. You should obtain a positive correlation indicating that the global land temperature has increased with time over the past 300 years.</li>
-  <li>Now, use the Pearson correlation coefficient calculator from an established library in the language of your choice to verify your calculation of the Pearson correlation. Within Python, you can use Numpy’s <code>corrcoef()</code> function to compute the correlation.</li>
+  <li>Now, pass the two columns of data to your function to compute the Kendall’s rank correlation coefficient. You should obtain a positive correlation indicating that the global land temperature has increased with time over the past 300 years.</li>
+  <li>Now, use the Kendall’s rank correlation coefficient calculator from an established library in the language of your choice to verify your calculation of the Kendall’s rank correlation. Within Python, you can use Scipy’s <code>stats.kendalltau()</code> function to compute the correlation.</li>
 </ol>
 
 
@@ -221,11 +230,11 @@ Also recall the equation for the Pearson’s correlation coefficient, between tw
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Computing the Pearson correlation coefficient of a dataset&quot;%20https://www.cdslab.org/recipes/programming/stat-pearson-corcoef/stat-pearson-corcoef%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Computing the Kendall's rank correlation coefficient of a dataset&quot;%20https://www.cdslab.org/recipes/programming/stat-corcoef-kendall/stat-corcoef-kendall%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/stat-pearson-corcoef/stat-pearson-corcoef"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/stat-corcoef-kendall/stat-corcoef-kendall"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>
@@ -279,7 +288,7 @@ Also recall the equation for the Pearson’s correlation coefficient, between tw
         <footer class="notepad-site-footer">
     <div class="copyright">
          <!-- <section>Last updated 2021 / 09 / 29</section></br> -->
-         <section>Last updated Wednesday, 29 Sep 2021 at 02:05 PM CST</section></br>
+         <section>Last updated Wednesday, 29 Sep 2021 at 02:22 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

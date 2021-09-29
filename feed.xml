@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2021-09-29T14:05:56-05:00</updated>
+<updated>2021-09-29T14:22:21-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -19,8 +19,8 @@
 <entry>
   <title type="html"><![CDATA[Computing the Pearson correlation coefficient of a dataset]]></title>
   
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/stat-pearson-corcoef/stat-pearson-corcoef"/>
-  <id>https://www.cdslab.org/recipes/programming/stat-pearson-corcoef/stat-pearson-corcoef</id>
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/stat-corcoef-pearson/stat-corcoef-pearson"/>
+  <id>https://www.cdslab.org/recipes/programming/stat-corcoef-pearson/stat-corcoef-pearson</id>
   <published>2021-09-29T00:00:00-05:00</published>
   <updated>2019-07-04T00:00:00-00:00</updated>
   
@@ -64,7 +64,68 @@ Also recall the equation for the Pearson’s correlation coefficient, between tw
 
 
   
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/stat-pearson-corcoef/stat-pearson-corcoef&quot;&gt;Computing the Pearson correlation coefficient of a dataset&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on September 29, 2021.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/stat-corcoef-pearson/stat-corcoef-pearson&quot;&gt;Computing the Pearson correlation coefficient of a dataset&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on September 29, 2021.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Computing the Kendall's rank correlation coefficient of a dataset]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/stat-corcoef-kendall/stat-corcoef-kendall"/>
+  <id>https://www.cdslab.org/recipes/programming/stat-corcoef-kendall/stat-corcoef-kendall</id>
+  <published>2021-09-29T00:00:00-05:00</published>
+  <updated>2019-07-04T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#statistics" term="statistics" /><category scheme="https://www.cdslab.org/recipes/tags/#sample" term="sample" /><category scheme="https://www.cdslab.org/recipes/tags/#Kendall's" term="Kendall's" /><category scheme="https://www.cdslab.org/recipes/tags/#correlation" term="correlation" /><category scheme="https://www.cdslab.org/recipes/tags/#warming" term="warming" /><category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Recall the &lt;a href=&quot;globalLandTempHist.txt&quot; target=&quot;blank&quot;&gt;globalLandTempHist.txt&lt;/a&gt; dataset that consisted of the global land temperature of Earth over the past 300 years. 
+Also recall the equation for the Kendall’s rank correlation coefficient, between two attributes of a dataset.&lt;/p&gt;
+
+\[\tau_{xy} = 
+\frac{
+    \text{#concordant pairs} - \text{#discordant pairs}
+}{
+    \sqrt{\text{#concordant pairs} + \text{#discordant pairs} + \text{#extra-$y$}} ~ \sqrt{\text{#concordant pairs} + \text{#discordant pairs} + \text{#extra-$x$}}
+}\]
+
+&lt;p&gt;where the concordance and discordance of a pair of data points is determined according to the following partitioning of the space for a given point.&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;concordance.png&quot; alt=&quot;concordance.png&quot; width=&quot;700&quot; /&gt; 
+    &lt;caption&gt;
+        All points in the gray area are concordant and all points in the white area are discordant with respect to point (𝑋_1,𝑌_1). With 𝑁=30 points, there are a total of 435 possible point pairs. In this example there are 395 concordant point pairs and 40 discordant point pairs, leading to a Kendall rank correlation coefficient of 0.816.
+    &lt;/caption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;where $n$ represents the number of data points. We wish to compute the Kendall’s rank correlation coefficient between the &lt;code&gt;year&lt;/code&gt; and the &lt;code&gt;temperature anomaly&lt;/code&gt; attribute in the land temperature data mentioned in the above. To do so, we will take the following steps:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Write a function named &lt;code&gt;getKendallCor(data1,data2)&lt;/code&gt; that return the Kendall’s rank correlation coefficient according to the equation in the above.&lt;/li&gt;
+  &lt;li&gt;Now, read the dataset (using Pandas Python library, for example) and make sure to exlude lines of data that contain &lt;code&gt;nan&lt;/code&gt; values. If you are using Python, you can get help from Pandas &lt;code&gt;dropna()&lt;/code&gt; method to remove rows of data with &lt;code&gt;nan&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Now, pass the two columns of data to your function to compute the Kendall’s rank correlation coefficient. You should obtain a positive correlation indicating that the global land temperature has increased with time over the past 300 years.&lt;/li&gt;
+  &lt;li&gt;Now, use the Kendall’s rank correlation coefficient calculator from an established library in the language of your choice to verify your calculation of the Kendall’s rank correlation. Within Python, you can use Scipy’s &lt;code&gt;stats.kendalltau()&lt;/code&gt; function to compute the correlation.&lt;/li&gt;
+&lt;/ol&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/stat-corcoef-kendall/stat-corcoef-kendall&quot;&gt;Computing the Kendall's rank correlation coefficient of a dataset&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on September 29, 2021.&lt;/p&gt;</content>
 </entry>
 
 
@@ -775,39 +836,6 @@ Also recall the equation for the Pearson’s correlation coefficient, between tw
 
   
   &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/logic-functions-operations/logic-functions-operations&quot;&gt;Logic functions in terms of logic functions&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 21, 2020.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Logic functions with 2 input]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/logic-functions-2d/logic-functions-2d"/>
-  <id>https://www.cdslab.org/recipes/programming/logic-functions-2d/logic-functions-2d</id>
-  <published>2020-10-21T00:00:00-05:00</published>
-  <updated>2020-10-21T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#plausibility" term="plausibility" /><category scheme="https://www.cdslab.org/recipes/tags/#deduction" term="deduction" /><category scheme="https://www.cdslab.org/recipes/tags/#reasoning" term="reasoning" /><category scheme="https://www.cdslab.org/recipes/tags/#logic" term="logic" /><category scheme="https://www.cdslab.org/recipes/tags/#boolean" term="boolean" /><category scheme="https://www.cdslab.org/recipes/tags/#implication" term="implication" />
-  <content type="html">
-  
-    
-&lt;p&gt;Consider the following special functions that are TRUE only at specific points within the logical sample space:&lt;/p&gt;
-
-&lt;figure&gt;&lt;img src=&quot;truthTable.png&quot; width=&quot;350&quot; /&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;Show that the above truth table is equivalent to the following logical operations.&lt;/p&gt;
-
-&lt;figure&gt;&lt;img src=&quot;logicalOperators.png&quot; width=&quot;170&quot; /&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/logic-functions-2d/logic-functions-2d&quot;&gt;Logic functions with 2 input&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 21, 2020.&lt;/p&gt;</content>
 </entry>
 
 </feed>
