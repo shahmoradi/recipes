@@ -12,6 +12,11 @@ callback([
   } ,
 
   {
+    "text": "Visualizing and comparing the temperatures of Honolulu and Duluth",
+    "href": "/recipes/programming/vis-temp-honolulu-duluth/vis-temp-honolulu-duluth"
+  } ,
+
+  {
     "text": "Version-control using Git and GitHub",
     "href": "/recipes/programming/vcs-using-git-github/vcs-using-git-github"
   } ,

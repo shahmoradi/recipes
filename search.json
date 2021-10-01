@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "Visualizing and comparing the temperatures of Honolulu and Duluth",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/vis-temp-honolulu-duluth/vis-temp-honolulu-duluth",
+		  "date"       : "2021-10-01 00:00:00 -0500",
+		  "shortdate"  : "October 01, 2021"
+		} ,
+	
+		{
 		  "title"      : "Computing the Pearson correlation coefficient of a dataset",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/stat-corcoef-pearson/stat-corcoef-pearson",
