@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2021-10-01T12:55:14-05:00</updated>
+<updated>2021-10-04T00:28:26-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -70,6 +70,92 @@
 
   
   &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/vis-temp-honolulu-duluth/vis-temp-honolulu-duluth&quot;&gt;Visualizing and comparing the temperatures of Honolulu and Duluth&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 01, 2021.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Visualizing and comparing the temperatures of Honolulu and Duluth via Excel]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/vis-excel-temp-honolulu-duluth/vis-temp-honolulu-duluth-excel"/>
+  <id>https://www.cdslab.org/recipes/programming/vis-excel-temp-honolulu-duluth/vis-temp-honolulu-duluth-excel</id>
+  <published>2021-10-01T00:00:00-05:00</published>
+  <updated>2021-10-01T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#MATLAB" term="MATLAB" /><category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#Excel" term="Excel" /><category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#line" term="line" /><category scheme="https://www.cdslab.org/recipes/tags/#figure" term="figure" /><category scheme="https://www.cdslab.org/recipes/tags/#warming" term="warming" /><category scheme="https://www.cdslab.org/recipes/tags/#Hawaii" term="Hawaii" /><category scheme="https://www.cdslab.org/recipes/tags/#Minnesota" term="Minnesota" /><category scheme="https://www.cdslab.org/recipes/tags/#Honolulu" term="Honolulu" /><category scheme="https://www.cdslab.org/recipes/tags/#Duluth" term="Duluth" /><category scheme="https://www.cdslab.org/recipes/tags/#periodic" term="periodic" /><category scheme="https://www.cdslab.org/recipes/tags/#mean" term="mean" /><category scheme="https://www.cdslab.org/recipes/tags/#variance" term="variance" /><category scheme="https://www.cdslab.org/recipes/tags/#pandas" term="pandas" /><category scheme="https://www.cdslab.org/recipes/tags/#IO" term="IO" /><category scheme="https://www.cdslab.org/recipes/tags/#CSV" term="CSV" /><category scheme="https://www.cdslab.org/recipes/tags/#read_csv" term="read_csv" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Consider the following &lt;a href=&quot;TempData.xlsx&quot; target=&quot;_blank&quot;&gt;Excel dataset&lt;/a&gt; containing the temperature of two US cities Honolulu, HI and Duluth, MN from 1995 to 2020. There are two pages in the Excel file: Duluth, and Honolulu. Each row in the file corresponds to the average temperature (in Fahrenheit) of a city in a given day of the year. Each observation has the following attributes: “Year,AverageTemperature”.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Make a visualization of the data corresponding to these two city temperatures over the years similar to the following plots.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;Duluth.png&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;Honolulu.png&quot; /&gt;
+&lt;/figure&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/vis-excel-temp-honolulu-duluth/vis-temp-honolulu-duluth-excel&quot;&gt;Visualizing and comparing the temperatures of Honolulu and Duluth via Excel&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 01, 2021.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Visualizing the average precipitation of the US states vs. sunshine]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/vis-excel-rain-sunshine/vis-excel-rain-sunlight"/>
+  <id>https://www.cdslab.org/recipes/programming/vis-excel-rain-sunshine/vis-excel-rain-sunlight</id>
+  <published>2021-10-01T00:00:00-05:00</published>
+  <updated>2019-07-04T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#Excel" term="Excel" /><category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#data" term="data" /><category scheme="https://www.cdslab.org/recipes/tags/#input" term="input" /><category scheme="https://www.cdslab.org/recipes/tags/#output" term="output" /><category scheme="https://www.cdslab.org/recipes/tags/#figure" term="figure" /><category scheme="https://www.cdslab.org/recipes/tags/#usa" term="usa" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Consider the following &lt;a href=&quot;us_rain_population.txt&quot; target=&quot;_blank&quot;&gt;dataset&lt;/a&gt; containing the average annual precipitation in the US states between 1971-2000 and &lt;a href=&quot;us_sunshine.txt&quot; target=&quot;_blank&quot;&gt;this dataset&lt;/a&gt;. Combine these two datasets in Excel and generate a plot of US states precipitation vs. sunshine like the following figure. Note that you will have to adjust the data in the two file to remove a number of states that do not exist in both datasets.&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;precipitation_sunlight.png&quot; /&gt;
+&lt;/figure&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/vis-excel-rain-sunshine/vis-excel-rain-sunlight&quot;&gt;Visualizing the average precipitation of the US states vs. sunshine&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 01, 2021.&lt;/p&gt;</content>
 </entry>
 
 
@@ -800,64 +886,6 @@ Also recall the equation for the Kendall’s rank correlation coefficient, betwe
 
   
   &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/probability-correspondence-with-common-sense/probability-correspondence-with-common-sense&quot;&gt;Probability Theory: correspondence with commonsense&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 21, 2020.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[The proof of Bayes' Rule via Venn diagram]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/probability-bayes-rule-proof-venn-disgram/probability-bayes-rule-proof-venn-disgram"/>
-  <id>https://www.cdslab.org/recipes/programming/probability-bayes-rule-proof-venn-disgram/probability-bayes-rule-proof-venn-disgram</id>
-  <published>2020-10-21T00:00:00-05:00</published>
-  <updated>2020-09-30T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#plausibility" term="plausibility" /><category scheme="https://www.cdslab.org/recipes/tags/#deduction" term="deduction" /><category scheme="https://www.cdslab.org/recipes/tags/#reasoning" term="reasoning" /><category scheme="https://www.cdslab.org/recipes/tags/#logic" term="logic" /><category scheme="https://www.cdslab.org/recipes/tags/#boolean" term="boolean" /><category scheme="https://www.cdslab.org/recipes/tags/#implication" term="implication" />
-  <content type="html">
-  
-    
-&lt;p&gt;Prove the Bayes’s rule via Venn diagrams,&lt;/p&gt;
-
-\[\pi(B|A) = \frac{ \pi(A|B) ~ \pi(B) } { \pi(A) } ~.\]
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/probability-bayes-rule-proof-venn-disgram/probability-bayes-rule-proof-venn-disgram&quot;&gt;The proof of Bayes' Rule via Venn diagram&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 21, 2020.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[The fundamental logical operators]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/logic-fundamental-operations/logic-fundamental-operations"/>
-  <id>https://www.cdslab.org/recipes/programming/logic-fundamental-operations/logic-fundamental-operations</id>
-  <published>2020-10-21T00:00:00-05:00</published>
-  <updated>2020-10-21T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#plausibility" term="plausibility" /><category scheme="https://www.cdslab.org/recipes/tags/#deduction" term="deduction" /><category scheme="https://www.cdslab.org/recipes/tags/#reasoning" term="reasoning" /><category scheme="https://www.cdslab.org/recipes/tags/#logic" term="logic" /><category scheme="https://www.cdslab.org/recipes/tags/#boolean" term="boolean" /><category scheme="https://www.cdslab.org/recipes/tags/#implication" term="implication" /><category scheme="https://www.cdslab.org/recipes/tags/#nand" term="nand" /><category scheme="https://www.cdslab.org/recipes/tags/#nor" term="nor" />
-  <content type="html">
-  
-    
-&lt;p&gt;Show that the following identities hold,&lt;/p&gt;
-
-&lt;figure&gt;&lt;img src=&quot;threeFundamentals.png&quot; width=&quot;250&quot; /&gt;&lt;/figure&gt;
-
-&lt;p&gt;where the two arrow-up and arrow-down symbols represent the fundamental NAND and NOR operators,&lt;/p&gt;
-
-&lt;figure&gt;&lt;img src=&quot;nand_nor.png&quot; width=&quot;200&quot; /&gt;&lt;/figure&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/logic-fundamental-operations/logic-fundamental-operations&quot;&gt;The fundamental logical operators&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 21, 2020.&lt;/p&gt;</content>
 </entry>
 
 </feed>

@@ -7,8 +7,18 @@ callback([
   } ,
 
   {
+    "text": "Visualizing the average precipitation of the US states vs. sunshine",
+    "href": "/recipes/programming/vis-excel-rain-sunshine/vis-excel-rain-sunlight"
+  } ,
+
+  {
     "text": "Visualizing the average precipitation among the US states",
     "href": "/recipes/programming/visualization-avg-precipitation-choropleth/visualization-avg-precipitation-choropleth"
+  } ,
+
+  {
+    "text": "Visualizing and comparing the temperatures of Honolulu and Duluth via Excel",
+    "href": "/recipes/programming/vis-excel-temp-honolulu-duluth/vis-temp-honolulu-duluth-excel"
   } ,
 
   {
@@ -103,12 +113,12 @@ callback([
 
   {
     "text": "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables via the least absolute deviations method",
-    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-absolute-deviations-method"
+    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-squares-method"
   } ,
 
   {
     "text": "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables via the least absolute deviations method",
-    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-squares-method"
+    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-absolute-deviations-method"
   } ,
 
   {
