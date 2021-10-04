@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2021-10-04T11:42:26-05:00</updated>
+<updated>2021-10-04T14:36:29-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -197,7 +197,7 @@ Also recall that a covariance matrix is a symmetric positive-definite square mat
 
 &lt;p&gt;where each element is computed via the following equation,&lt;/p&gt;
 
-\[\sigma_{ij} = \sum_1^{n} ~ (x_i-\overline{x_i})(y_j-\overline{x_j})\]
+\[\sigma_{ij} = \sum_1^{n} ~ (x_i-\overline{x})(y_j-\overline{y})\]
 
 &lt;p&gt;where $n$ represents the number of data points and $x_i$ and $x_j$ are individual data points. Use the covariance matrix definition and the above equation to compute the covariance matrix of the two &lt;code&gt;year&lt;/code&gt; and the &lt;code&gt;temperature anomaly&lt;/code&gt; attributes in the data referenced above. To do so, first write a generic function &lt;code&gt;genCovMat(Data)&lt;/code&gt; that takes an input matrix (table) of data and generates the covariance matrix of data.&lt;/p&gt;
 
@@ -245,7 +245,7 @@ Also recall that a covariance matrix is a &lt;strong&gt;symmetric&lt;/strong&gt;
 
 &lt;p&gt;where each element is computed via the following equation,&lt;/p&gt;
 
-\[\sigma_{ij} = \sum_1^{n} ~ (x_i-\overline{x_i})(y_j-\overline{x_j})\]
+\[\sigma_{ij} = \sum_1^{n} ~ (x_i-\overline{x})(y_j-\overline{y})\]
 
 &lt;p&gt;where $n$ represents the number of data points and $x_i$ and $x_j$ are individual data points. Also, recall that the corresponding correlation matrix to this covariance matrix of data is defined as the following,&lt;/p&gt;
 
@@ -300,7 +300,7 @@ Also recall that a covariance matrix is a &lt;strong&gt;symmetric&lt;/strong&gt;
 
 &lt;p&gt;where each element is computed via the following equation,&lt;/p&gt;
 
-\[\sigma_{ij} = \sum_1^{n} ~ (x_i-\overline{x_i})(y_j-\overline{x_j})\]
+\[\sigma_{ij} = \sum_1^{n} ~ (x_i-\overline{x})(y_j-\overline{y})\]
 
 &lt;p&gt;where $n$ represents the number of data points and $x_i$ and $x_j$ are individual data points. Also, recall that the corresponding correlation matrix to this covariance matrix of data is defined as the following,&lt;/p&gt;
 
