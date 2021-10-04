@@ -65,6 +65,10 @@
         <loc>https://www.cdslab.org/recipes/page5/</loc>
     </url>
     
+    <url>
+        <loc>https://www.cdslab.org/recipes/page6/</loc>
+    </url>
+    
 
     
     <url>
@@ -77,6 +81,18 @@
     
     <url>
         <loc>https://www.cdslab.org/recipes/programming/vis-excel-rain-sunshine/vis-excel-rain-sunlight</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/stat-covmat/stat-covmat</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/stat-cormat/stat-cormat</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/stat-cormat-diag/stat-cormat-diag</loc>
     </url>
     
     <url>

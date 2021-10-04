@@ -25,6 +25,30 @@
 		} ,
 	
 		{
+		  "title"      : "Computing the covariance matrix of a dataset",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/stat-covmat/stat-covmat",
+		  "date"       : "2021-10-01 00:00:00 -0500",
+		  "shortdate"  : "October 01, 2021"
+		} ,
+	
+		{
+		  "title"      : "Computing the correlation matrix of a dataset",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/stat-cormat/stat-cormat",
+		  "date"       : "2021-10-01 00:00:00 -0500",
+		  "shortdate"  : "October 01, 2021"
+		} ,
+	
+		{
+		  "title"      : "Prove that the diagonal elements of a correlation matrix of a dataset must be one",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/stat-cormat-diag/stat-cormat-diag",
+		  "date"       : "2021-10-01 00:00:00 -0500",
+		  "shortdate"  : "October 01, 2021"
+		} ,
+	
+		{
 		  "title"      : "Computing the Pearson correlation coefficient of a dataset",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/stat-corcoef-pearson/stat-corcoef-pearson",

@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2021-10-04T00:28:26-05:00</updated>
+<updated>2021-10-04T11:42:26-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -156,6 +156,165 @@
 
   
   &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/vis-excel-rain-sunshine/vis-excel-rain-sunlight&quot;&gt;Visualizing the average precipitation of the US states vs. sunshine&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 01, 2021.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Computing the covariance matrix of a dataset]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/stat-covmat/stat-covmat"/>
+  <id>https://www.cdslab.org/recipes/programming/stat-covmat/stat-covmat</id>
+  <published>2021-10-01T00:00:00-05:00</published>
+  <updated>2019-07-04T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#statistics" term="statistics" /><category scheme="https://www.cdslab.org/recipes/tags/#sample" term="sample" /><category scheme="https://www.cdslab.org/recipes/tags/#covariance" term="covariance" /><category scheme="https://www.cdslab.org/recipes/tags/#matrix" term="matrix" /><category scheme="https://www.cdslab.org/recipes/tags/#correlation" term="correlation" /><category scheme="https://www.cdslab.org/recipes/tags/#warming" term="warming" /><category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Recall the &lt;a href=&quot;globalLandTempHist.txt&quot; target=&quot;blank&quot;&gt;globalLandTempHist.txt&lt;/a&gt; dataset that consisted of the global land temperature of Earth over the past 300 years. 
+Also recall that a covariance matrix is a symmetric positive-definite square matrix of the form,&lt;/p&gt;
+
+\[\Sigma = 
+\begin{pmatrix}
+\sigma_{11} &amp;amp; \sigma_{12} \\
+\sigma_{21} &amp;amp; \sigma_{22}
+\end{pmatrix}\]
+
+&lt;p&gt;where each element is computed via the following equation,&lt;/p&gt;
+
+\[\sigma_{ij} = \sum_1^{n} ~ (x_i-\overline{x_i})(y_j-\overline{x_j})\]
+
+&lt;p&gt;where $n$ represents the number of data points and $x_i$ and $x_j$ are individual data points. Use the covariance matrix definition and the above equation to compute the covariance matrix of the two &lt;code&gt;year&lt;/code&gt; and the &lt;code&gt;temperature anomaly&lt;/code&gt; attributes in the data referenced above. To do so, first write a generic function &lt;code&gt;genCovMat(Data)&lt;/code&gt; that takes an input matrix (table) of data and generates the covariance matrix of data.&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/stat-covmat/stat-covmat&quot;&gt;Computing the covariance matrix of a dataset&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 01, 2021.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Computing the correlation matrix of a dataset]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/stat-cormat/stat-cormat"/>
+  <id>https://www.cdslab.org/recipes/programming/stat-cormat/stat-cormat</id>
+  <published>2021-10-01T00:00:00-05:00</published>
+  <updated>2019-07-04T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#statistics" term="statistics" /><category scheme="https://www.cdslab.org/recipes/tags/#sample" term="sample" /><category scheme="https://www.cdslab.org/recipes/tags/#covariance" term="covariance" /><category scheme="https://www.cdslab.org/recipes/tags/#correlation" term="correlation" /><category scheme="https://www.cdslab.org/recipes/tags/#matrix" term="matrix" /><category scheme="https://www.cdslab.org/recipes/tags/#correlation" term="correlation" /><category scheme="https://www.cdslab.org/recipes/tags/#warming" term="warming" /><category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Recall the &lt;a href=&quot;globalLandTempHist.txt&quot; target=&quot;blank&quot;&gt;globalLandTempHist.txt&lt;/a&gt; dataset that consisted of the global land temperature of Earth over the past 300 years. 
+Also recall that a covariance matrix is a &lt;strong&gt;symmetric&lt;/strong&gt; positive-definite square matrix of the form,&lt;/p&gt;
+
+\[\Sigma = 
+\begin{pmatrix}
+\sigma_{11} &amp;amp; \sigma_{12} \\
+\sigma_{21} &amp;amp; \sigma_{22}
+\end{pmatrix}\]
+
+&lt;p&gt;where each element is computed via the following equation,&lt;/p&gt;
+
+\[\sigma_{ij} = \sum_1^{n} ~ (x_i-\overline{x_i})(y_j-\overline{x_j})\]
+
+&lt;p&gt;where $n$ represents the number of data points and $x_i$ and $x_j$ are individual data points. Also, recall that the corresponding correlation matrix to this covariance matrix of data is defined as the following,&lt;/p&gt;
+
+\[\text{Cor} = 
+\begin{pmatrix}
+\rho_{11} = 1 &amp;amp; \rho_{12} = \frac{\sigma_{12}}{\sqrt(\sigma_{11}\sigma_{22})} \\
+\rho_{21} = \frac{\sigma_{21}}{\sqrt(\sigma_{11}\sigma_{22})} &amp;amp; \rho_{22} = 1
+\end{pmatrix}\]
+
+&lt;p&gt;Use the covariance matrix definition and the above equations to compute the correlation matrix of the two &lt;code&gt;year&lt;/code&gt; and the &lt;code&gt;temperature anomaly&lt;/code&gt; attributes in the data referenced above. To do so, first write a generic function &lt;code&gt;genCorMat(Data)&lt;/code&gt; that takes an input matrix (table), then calls another function &lt;code&gt;genCovMat(data)&lt;/code&gt; that computes the covariance matrix of data, then uses this covariance matrix to calculate the corresponding elements of the correlation matrix.&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/stat-cormat/stat-cormat&quot;&gt;Computing the correlation matrix of a dataset&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 01, 2021.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Prove that the diagonal elements of a correlation matrix of a dataset must be one]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/stat-cormat-diag/stat-cormat-diag"/>
+  <id>https://www.cdslab.org/recipes/programming/stat-cormat-diag/stat-cormat-diag</id>
+  <published>2021-10-01T00:00:00-05:00</published>
+  <updated>2019-07-04T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#statistics" term="statistics" /><category scheme="https://www.cdslab.org/recipes/tags/#sample" term="sample" /><category scheme="https://www.cdslab.org/recipes/tags/#covariance" term="covariance" /><category scheme="https://www.cdslab.org/recipes/tags/#correlation" term="correlation" /><category scheme="https://www.cdslab.org/recipes/tags/#matrix" term="matrix" /><category scheme="https://www.cdslab.org/recipes/tags/#correlation" term="correlation" /><category scheme="https://www.cdslab.org/recipes/tags/#digonal" term="digonal" /><category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Recall that covariance matrix is a &lt;strong&gt;symmetric&lt;/strong&gt; positive-definite square matrix of the form,&lt;/p&gt;
+
+\[\Sigma = 
+\begin{pmatrix}
+\sigma_{11} &amp;amp; \sigma_{12} \\
+\sigma_{21} &amp;amp; \sigma_{22}
+\end{pmatrix}\]
+
+&lt;p&gt;where each element is computed via the following equation,&lt;/p&gt;
+
+\[\sigma_{ij} = \sum_1^{n} ~ (x_i-\overline{x_i})(y_j-\overline{x_j})\]
+
+&lt;p&gt;where $n$ represents the number of data points and $x_i$ and $x_j$ are individual data points. Also, recall that the corresponding correlation matrix to this covariance matrix of data is defined as the following,&lt;/p&gt;
+
+\[\text{Cor} = 
+\begin{pmatrix}
+\rho_{11} = 1 &amp;amp; \rho_{12} = \frac{\sigma_{12}}{\sqrt(\sigma_{11}\sigma_{22})} \\
+\rho_{21} = \frac{\sigma_{21}}{\sqrt(\sigma_{11}\sigma_{22})} &amp;amp; \rho_{22} = 1
+\end{pmatrix}\]
+
+&lt;p&gt;Using the above equations, show that the diagonal elements of the correlation matrix must be one as defined in the above.&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/stat-cormat-diag/stat-cormat-diag&quot;&gt;Prove that the diagonal elements of a correlation matrix of a dataset must be one&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 01, 2021.&lt;/p&gt;</content>
 </entry>
 
 
@@ -803,89 +962,6 @@ Also recall the equation for the Kendall’s rank correlation coefficient, betwe
 
   
   &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/logic-a-nand-equivalence/logic/logic-a-nand-equivalence&quot;&gt;Logic NAND equivalence&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on November 01, 2020.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[The major schools of thought in Probability Theory]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/probability-schools-of-thought/probability-schools-of-thought"/>
-  <id>https://www.cdslab.org/recipes/programming/probability-schools-of-thought/probability-schools-of-thought</id>
-  <published>2020-10-21T00:00:00-05:00</published>
-  <updated>2020-10-21T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#plausibility" term="plausibility" /><category scheme="https://www.cdslab.org/recipes/tags/#schools" term="schools" /><category scheme="https://www.cdslab.org/recipes/tags/#bayesian" term="bayesian" /><category scheme="https://www.cdslab.org/recipes/tags/#frequentist" term="frequentist" />
-  <content type="html">
-  
-    
-&lt;p&gt;Name four major schools of Probability Theory.&lt;/p&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/probability-schools-of-thought/probability-schools-of-thought&quot;&gt;The major schools of thought in Probability Theory&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 21, 2020.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[The fundamental desiderata of Probability Theory]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/probability-desiderata/probability-desiderata"/>
-  <id>https://www.cdslab.org/recipes/programming/probability-desiderata/probability-desiderata</id>
-  <published>2020-10-21T00:00:00-05:00</published>
-  <updated>2020-10-21T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#plausibility" term="plausibility" /><category scheme="https://www.cdslab.org/recipes/tags/#deduction" term="deduction" /><category scheme="https://www.cdslab.org/recipes/tags/#reasoning" term="reasoning" /><category scheme="https://www.cdslab.org/recipes/tags/#logic" term="logic" /><category scheme="https://www.cdslab.org/recipes/tags/#boolean" term="boolean" /><category scheme="https://www.cdslab.org/recipes/tags/#implication" term="implication" />
-  <content type="html">
-  
-    
-&lt;p&gt;Name the three fundamental desiderata of Probability Theory.&lt;/p&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/probability-desiderata/probability-desiderata&quot;&gt;The fundamental desiderata of Probability Theory&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 21, 2020.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Probability Theory: correspondence with commonsense]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/probability-correspondence-with-common-sense/probability-correspondence-with-common-sense"/>
-  <id>https://www.cdslab.org/recipes/programming/probability-correspondence-with-common-sense/probability-correspondence-with-common-sense</id>
-  <published>2020-10-21T00:00:00-05:00</published>
-  <updated>2020-10-21T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#plausibility" term="plausibility" /><category scheme="https://www.cdslab.org/recipes/tags/#deduction" term="deduction" /><category scheme="https://www.cdslab.org/recipes/tags/#reasoning" term="reasoning" /><category scheme="https://www.cdslab.org/recipes/tags/#logic" term="logic" /><category scheme="https://www.cdslab.org/recipes/tags/#boolean" term="boolean" /><category scheme="https://www.cdslab.org/recipes/tags/#implication" term="implication" /><category scheme="https://www.cdslab.org/recipes/tags/#commonsense" term="commonsense" />
-  <content type="html">
-  
-    
-&lt;p&gt;Show via an example Venn diagram that if,&lt;/p&gt;
-
-&lt;figure&gt;&lt;img src=&quot;commonsense.png&quot; width=&quot;200&quot; /&gt;&lt;/figure&gt;
-
-&lt;p&gt;holds, then,&lt;/p&gt;
-
-&lt;figure&gt;&lt;img src=&quot;result.png&quot; width=&quot;200&quot; /&gt;&lt;/figure&gt;
-
-&lt;p&gt;also holds.&lt;/p&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/probability-correspondence-with-common-sense/probability-correspondence-with-common-sense&quot;&gt;Probability Theory: correspondence with commonsense&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 21, 2020.&lt;/p&gt;</content>
 </entry>
 
 </feed>
