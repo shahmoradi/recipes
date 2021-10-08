@@ -112,6 +112,10 @@
     </url>
     
     <url>
+        <loc>https://www.cdslab.org/recipes/programming/stat-covmat-from-cormat-std/covmat-from-cormat-std</loc>
+    </url>
+    
+    <url>
         <loc>https://www.cdslab.org/recipes/programming/stat-cormat/stat-cormat</loc>
     </url>
     
@@ -120,7 +124,15 @@
     </url>
     
     <url>
+        <loc>https://www.cdslab.org/recipes/programming/stat-corcoef-spearman/stat-corcoef-spearman</loc>
+    </url>
+    
+    <url>
         <loc>https://www.cdslab.org/recipes/programming/stat-corcoef-pearson/stat-corcoef-pearson</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/stat-corcoef-outliers/stat-corcoef-outliers</loc>
     </url>
     
     <url>

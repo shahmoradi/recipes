@@ -82,6 +82,11 @@ callback([
   } ,
 
   {
+    "text": "The most sensitive correlation coefficient to outliers",
+    "href": "/recipes/programming/stat-corcoef-outliers/stat-corcoef-outliers"
+  } ,
+
+  {
     "text": "The major schools of thought in Probability Theory",
     "href": "/recipes/programming/probability-schools-of-thought/probability-schools-of-thought"
   } ,
@@ -462,6 +467,11 @@ callback([
   } ,
 
   {
+    "text": "Computing the covariance matrix from the correlation matrix and standard deviations",
+    "href": "/recipes/programming/stat-covmat-from-cormat-std/covmat-from-cormat-std"
+  } ,
+
+  {
     "text": "Computing the correlation matrix of a dataset",
     "href": "/recipes/programming/stat-cormat/stat-cormat"
   } ,
@@ -469,6 +479,11 @@ callback([
   {
     "text": "Computing the area of a triangle",
     "href": "/recipes/programming/triangle-area/triangle-area"
+  } ,
+
+  {
+    "text": "Computing the Spearman rank correlation coefficient of a dataset",
+    "href": "/recipes/programming/stat-corcoef-spearman/stat-corcoef-spearman"
   } ,
 
   {

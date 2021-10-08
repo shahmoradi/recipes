@@ -81,6 +81,14 @@
 		} ,
 	
 		{
+		  "title"      : "Computing the covariance matrix from the correlation matrix and standard deviations",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/stat-covmat-from-cormat-std/covmat-from-cormat-std",
+		  "date"       : "2021-10-01 00:00:00 -0500",
+		  "shortdate"  : "October 01, 2021"
+		} ,
+	
+		{
 		  "title"      : "Computing the correlation matrix of a dataset",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/stat-cormat/stat-cormat",
@@ -97,9 +105,25 @@
 		} ,
 	
 		{
+		  "title"      : "Computing the Spearman rank correlation coefficient of a dataset",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/stat-corcoef-spearman/stat-corcoef-spearman",
+		  "date"       : "2021-09-29 00:00:00 -0500",
+		  "shortdate"  : "September 29, 2021"
+		} ,
+	
+		{
 		  "title"      : "Computing the Pearson correlation coefficient of a dataset",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/stat-corcoef-pearson/stat-corcoef-pearson",
+		  "date"       : "2021-09-29 00:00:00 -0500",
+		  "shortdate"  : "September 29, 2021"
+		} ,
+	
+		{
+		  "title"      : "The most sensitive correlation coefficient to outliers",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/stat-corcoef-outliers/stat-corcoef-outliers",
 		  "date"       : "2021-09-29 00:00:00 -0500",
 		  "shortdate"  : "September 29, 2021"
 		} ,
