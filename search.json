@@ -1,6 +1,54 @@
 [
 	
 		{
+		  "title"      : "Ugly visualization",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/vis-ugly-graph/vis-ugly-graph",
+		  "date"       : "2021-10-08 00:00:00 -0500",
+		  "shortdate"  : "October 08, 2021"
+		} ,
+	
+		{
+		  "title"      : "The population growths of the US states",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/vis-population-growth-tx-la/vis-population-growth-tx-la",
+		  "date"       : "2021-10-08 00:00:00 -0500",
+		  "shortdate"  : "October 08, 2021"
+		} ,
+	
+		{
+		  "title"      : "The cities with the most and least moderate temperature",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/vis-most-moderate-temp-city/vis-most-moderate-temp-city",
+		  "date"       : "2021-10-08 00:00:00 -0500",
+		  "shortdate"  : "October 08, 2021"
+		} ,
+	
+		{
+		  "title"      : "Wrong visualization",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/vis-graph-wrong/vis-graph-wrong",
+		  "date"       : "2021-10-08 00:00:00 -0500",
+		  "shortdate"  : "October 08, 2021"
+		} ,
+	
+		{
+		  "title"      : "Excel Bar plot",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/vis-excel-bar-plot/vis-excel-bar-plot",
+		  "date"       : "2021-10-08 00:00:00 -0500",
+		  "shortdate"  : "October 08, 2021"
+		} ,
+	
+		{
+		  "title"      : "Visualization color scales",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/vis-colorscales/vis-colorscales",
+		  "date"       : "2021-10-08 00:00:00 -0500",
+		  "shortdate"  : "October 08, 2021"
+		} ,
+	
+		{
 		  "title"      : "Visualizing and comparing the temperatures of Honolulu and Duluth",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/vis-temp-honolulu-duluth/vis-temp-honolulu-duluth",

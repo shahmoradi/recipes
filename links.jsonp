@@ -7,6 +7,11 @@ callback([
   } ,
 
   {
+    "text": "Wrong visualization",
+    "href": "/recipes/programming/vis-graph-wrong/vis-graph-wrong"
+  } ,
+
+  {
     "text": "Visualizing the average precipitation of the US states vs. sunshine",
     "href": "/recipes/programming/vis-excel-rain-sunshine/vis-excel-rain-sunlight"
   } ,
@@ -27,6 +32,11 @@ callback([
   } ,
 
   {
+    "text": "Visualization color scales",
+    "href": "/recipes/programming/vis-colorscales/vis-colorscales"
+  } ,
+
+  {
     "text": "Version-control using Git and GitHub",
     "href": "/recipes/programming/vcs-using-git-github/vcs-using-git-github"
   } ,
@@ -39,6 +49,11 @@ callback([
   {
     "text": "Understanding the Central Limit Theorem via random walk",
     "href": "/recipes/programming/random-walk-central-limit-theorem/random-walk-central-limit-theorem"
+  } ,
+
+  {
+    "text": "Ugly visualization",
+    "href": "/recipes/programming/vis-ugly-graph/vis-ugly-graph"
   } ,
 
   {
@@ -62,6 +77,11 @@ callback([
   } ,
 
   {
+    "text": "The population growths of the US states",
+    "href": "/recipes/programming/vis-population-growth-tx-la/vis-population-growth-tx-la"
+  } ,
+
+  {
     "text": "The major schools of thought in Probability Theory",
     "href": "/recipes/programming/probability-schools-of-thought/probability-schools-of-thought"
   } ,
@@ -79,6 +99,11 @@ callback([
   {
     "text": "The different faces of binned data via different transformations",
     "href": "/recipes/programming/histogram-different-transformations/histogram-different-transformations"
+  } ,
+
+  {
+    "text": "The cities with the most and least moderate temperature",
+    "href": "/recipes/programming/vis-most-moderate-temp-city/vis-most-moderate-temp-city"
   } ,
 
   {
@@ -113,12 +138,12 @@ callback([
 
   {
     "text": "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables via the least absolute deviations method",
-    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-absolute-deviations-method"
+    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-squares-method"
   } ,
 
   {
     "text": "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables via the least absolute deviations method",
-    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-squares-method"
+    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-absolute-deviations-method"
   } ,
 
   {
@@ -389,6 +414,11 @@ callback([
   {
     "text": "Exception handling in the case of a simple projectile motion",
     "href": "/recipes/programming/exception-handling-projectile-motion/exception-handling-projectile-motion"
+  } ,
+
+  {
+    "text": "Excel Bar plot",
+    "href": "/recipes/programming/vis-excel-bar-plot/vis-excel-bar-plot"
   } ,
 
   {

@@ -7,13 +7,280 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2021-10-04T14:36:29-05:00</updated>
+<updated>2021-10-08T03:24:42-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
   <uri>https://www.cdslab.org/recipes/</uri>
   <email>shahmoradi@utexas.edu</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Ugly visualization]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/vis-ugly-graph/vis-ugly-graph"/>
+  <id>https://www.cdslab.org/recipes/programming/vis-ugly-graph/vis-ugly-graph</id>
+  <published>2021-10-08T00:00:00-05:00</published>
+  <updated>2021-10-01T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#histogram" term="histogram" /><category scheme="https://www.cdslab.org/recipes/tags/#ugly" term="ugly" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;What is ugly in the following graph?&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;ugly.png&quot; /&gt;
+&lt;/figure&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/vis-ugly-graph/vis-ugly-graph&quot;&gt;Ugly visualization&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 08, 2021.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[The population growths of the US states]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/vis-population-growth-tx-la/vis-population-growth-tx-la"/>
+  <id>https://www.cdslab.org/recipes/programming/vis-population-growth-tx-la/vis-population-growth-tx-la</id>
+  <published>2021-10-08T00:00:00-05:00</published>
+  <updated>2021-10-01T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#colorscale" term="colorscale" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Which color scale has been used in the following visualization?&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;statePopulationGrowth.png&quot; /&gt;
+&lt;/figure&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/vis-population-growth-tx-la/vis-population-growth-tx-la&quot;&gt;The population growths of the US states&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 08, 2021.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[The cities with the most and least moderate temperature]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/vis-most-moderate-temp-city/vis-most-moderate-temp-city"/>
+  <id>https://www.cdslab.org/recipes/programming/vis-most-moderate-temp-city/vis-most-moderate-temp-city</id>
+  <published>2021-10-08T00:00:00-05:00</published>
+  <updated>2021-10-01T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#polar" term="polar" /><category scheme="https://www.cdslab.org/recipes/tags/#coordinates" term="coordinates" /><category scheme="https://www.cdslab.org/recipes/tags/#periodic" term="periodic" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Consider the following plot displaying the temperatures of a number of US cities.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Which city’s temperature is the least varying throughout the year?&lt;/li&gt;
+  &lt;li&gt;Which city’s temperature is the wildest varying throughout the year?&lt;/li&gt;
+  &lt;li&gt;Which city the hottest in the month of January?&lt;/li&gt;
+  &lt;li&gt;Which city the coolest in the month of July?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;temperatures.png&quot; /&gt;
+&lt;/figure&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/vis-most-moderate-temp-city/vis-most-moderate-temp-city&quot;&gt;The cities with the most and least moderate temperature&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 08, 2021.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Wrong visualization]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/vis-graph-wrong/vis-graph-wrong"/>
+  <id>https://www.cdslab.org/recipes/programming/vis-graph-wrong/vis-graph-wrong</id>
+  <published>2021-10-08T00:00:00-05:00</published>
+  <updated>2021-10-01T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#histogram" term="histogram" /><category scheme="https://www.cdslab.org/recipes/tags/#kernel" term="kernel" /><category scheme="https://www.cdslab.org/recipes/tags/#density" term="density" /><category scheme="https://www.cdslab.org/recipes/tags/#wrong" term="wrong" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;What is wrong in the following visualization?&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;wrong.png&quot; /&gt;
+&lt;/figure&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/vis-graph-wrong/vis-graph-wrong&quot;&gt;Wrong visualization&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 08, 2021.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Excel Bar plot]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/vis-excel-bar-plot/vis-excel-bar-plot"/>
+  <id>https://www.cdslab.org/recipes/programming/vis-excel-bar-plot/vis-excel-bar-plot</id>
+  <published>2021-10-08T00:00:00-05:00</published>
+  <updated>2021-10-01T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#histogram" term="histogram" /><category scheme="https://www.cdslab.org/recipes/tags/#kernel" term="kernel" /><category scheme="https://www.cdslab.org/recipes/tags/#density" term="density" /><category scheme="https://www.cdslab.org/recipes/tags/#wrong" term="wrong" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Consider the following salary data.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Data Scientist | Physicist | Bioinformatician 
+---------------|-----------|-----------------
+$110,000       | $122,000  | $58,000           
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Make a graph of this data in Microsoft Excel similar to the following visualization.&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;salary.png&quot; /&gt;
+&lt;/figure&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/vis-excel-bar-plot/vis-excel-bar-plot&quot;&gt;Excel Bar plot&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 08, 2021.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Visualization color scales]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/vis-colorscales/vis-colorscales"/>
+  <id>https://www.cdslab.org/recipes/programming/vis-colorscales/vis-colorscales</id>
+  <published>2021-10-08T00:00:00-05:00</published>
+  <updated>2021-10-01T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#colorscale" term="colorscale" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Which classes of color scales the following color-mappings belong to?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;a)&lt;/strong&gt;&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&quot;colorscale1.png&quot; /&gt;
+&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;b)&lt;/strong&gt;&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&quot;colorscale2.png&quot; /&gt;
+&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;c)&lt;/strong&gt;&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&quot;colorscale3.png&quot; /&gt;
+&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;d)&lt;/strong&gt;&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&quot;colorscale4.png&quot; /&gt;
+&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/vis-colorscales/vis-colorscales&quot;&gt;Visualization color scales&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 08, 2021.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -664,304 +931,6 @@ Also recall the equation for the Kendall’s rank correlation coefficient, betwe
 
   
   &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/monte-carlo-approximation-of-pi-full-circle/monte-carlo-approximation-of-pi-full-circle&quot;&gt;Monte Carlo approximation of the number Pi using a full circle&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on May 03, 2021.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Monte Carlo approximation of the area of heart]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/monte-carlo-approximation-of-heart-area/monte-carlo-approximation-of-heart-area"/>
-  <id>https://www.cdslab.org/recipes/programming/monte-carlo-approximation-of-heart-area/monte-carlo-approximation-of-heart-area</id>
-  <published>2021-05-03T00:00:00-05:00</published>
-  <updated>2021-05-03T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#MATLAB" term="MATLAB" /><category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#numpy" term="numpy" /><category scheme="https://www.cdslab.org/recipes/tags/#matplotlib" term="matplotlib" /><category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#Monte%20Carlo" term="Monte Carlo" /><category scheme="https://www.cdslab.org/recipes/tags/#simulation" term="simulation" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#line" term="line" /><category scheme="https://www.cdslab.org/recipes/tags/#figure" term="figure" /><category scheme="https://www.cdslab.org/recipes/tags/#random%20number" term="random number" /><category scheme="https://www.cdslab.org/recipes/tags/#probability" term="probability" />
-  <content type="html">
-  
-    
-&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-    
-        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
-            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
-                Problem
-            &lt;/h2&gt;
-        &lt;/a&gt;
-    
-&lt;/div&gt;
-
-&lt;p&gt;A popular mathematical equation for 2D heart is the following,&lt;/p&gt;
-
-\[f(x,y) = (x^2 + y^2 - 1)^3 - x^2 y^3 = 0\]
-
-&lt;p&gt;Any $(x,y)$ values that result in $f(x,y) &amp;lt; 0$ represent the coordinates of a point that falls inside the heart shape. Write a script that generates a heart shape via a set of random points uniformly distributed inside the heart shape. Estimate the area of the heart by drawing an appropriate box around the heart and sampling points randomly uniformly from this box and counting those that fall inside the heart. Here is a plot of the heart,&lt;/p&gt;
-
-&lt;figure&gt;
-    &lt;img src=&quot;heart.png&quot; /&gt;
-&lt;/figure&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/monte-carlo-approximation-of-heart-area/monte-carlo-approximation-of-heart-area&quot;&gt;Monte Carlo approximation of the area of heart&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on May 03, 2021.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Parsing data from the World Wide Web]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/parsing-data-from-web/parsing-data-from-web"/>
-  <id>https://www.cdslab.org/recipes/programming/parsing-data-from-web/parsing-data-from-web</id>
-  <published>2021-04-12T00:00:00-05:00</published>
-  <updated>2021-04-12T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#MATLAB" term="MATLAB" /><category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#web" term="web" /><category scheme="https://www.cdslab.org/recipes/tags/#data%20transfer" term="data transfer" /><category scheme="https://www.cdslab.org/recipes/tags/#IO" term="IO" /><category scheme="https://www.cdslab.org/recipes/tags/#input" term="input" /><category scheme="https://www.cdslab.org/recipes/tags/#output" term="output" /><category scheme="https://www.cdslab.org/recipes/tags/#string" term="string" /><category scheme="https://www.cdslab.org/recipes/tags/#exception" term="exception" /><category scheme="https://www.cdslab.org/recipes/tags/#exception%20handling" term="exception handling" /><category scheme="https://www.cdslab.org/recipes/tags/#raise" term="raise" /><category scheme="https://www.cdslab.org/recipes/tags/#try-catch" term="try-catch" /><category scheme="https://www.cdslab.org/recipes/tags/#try-except" term="try-except" /><category scheme="https://www.cdslab.org/recipes/tags/#scatter%20plot" term="scatter plot" /><category scheme="https://www.cdslab.org/recipes/tags/#urllib" term="urllib" /><category scheme="https://www.cdslab.org/recipes/tags/#HTTPError" term="HTTPError" /><category scheme="https://www.cdslab.org/recipes/tags/#matplotlib" term="matplotlib" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#figure" term="figure" />
-  <content type="html">
-  
-    
-&lt;p&gt;Consider the following web-page address &lt;a href=&quot;https://cdslaborg.github.io/DataRepos_SwiftBat/index.html&quot; target=&quot;_blank&quot;&gt;https://cdslaborg.github.io/DataRepos_SwiftBat/index.html&lt;/a&gt;. This is a data table in HTML language containing data from the &lt;a href=&quot;https://www.nasa.gov/mission_pages/swift/main&quot; target=&quot;_blank&quot;&gt;NASA Swift satellite&lt;/a&gt;. Each row in this table represents information about a &lt;a href=&quot;https://en.wikipedia.org/wiki/Gamma-ray_burst&quot; target=&quot;_blank&quot;&gt;Gamma-Ray Burst (GRB)&lt;/a&gt; detection that Swift has made in the past years.&lt;/p&gt;
-
-&lt;p&gt;Each event is labeled by an ID that appears in the first column of the table named &lt;code&gt;GRB (Trig#)&lt;/code&gt;. Write a code that (downloads) and reads this HTML page from the web, then extracts the IDs of GRB events from the first column (IDs are the numbers that appear in parentheses in the first column). Then, writes the extracted IDs to an external output file on your system with the name &lt;code&gt;nasa.swift.grb.ids.txt&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Note that the IDs must be outputted as strings to preserve the preceding zeros. Each ID must appear on a separate line in the output file.&lt;/p&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/parsing-data-from-web/parsing-data-from-web&quot;&gt;Parsing data from the World Wide Web&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on April 12, 2021.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Data transfer: Converting formatted input to Comma-Separated-Values (CSV) output]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/formatted-input-to-csv-output/formatted-input-to-csv-output"/>
-  <id>https://www.cdslab.org/recipes/programming/formatted-input-to-csv-output/formatted-input-to-csv-output</id>
-  <published>2021-04-12T00:00:00-05:00</published>
-  <updated>2021-04-12T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#MATLAB" term="MATLAB" /><category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#input" term="input" /><category scheme="https://www.cdslab.org/recipes/tags/#output" term="output" /><category scheme="https://www.cdslab.org/recipes/tags/#IO" term="IO" /><category scheme="https://www.cdslab.org/recipes/tags/#command%20line" term="command line" /><category scheme="https://www.cdslab.org/recipes/tags/#argument" term="argument" /><category scheme="https://www.cdslab.org/recipes/tags/#function" term="function" /><category scheme="https://www.cdslab.org/recipes/tags/#exception" term="exception" /><category scheme="https://www.cdslab.org/recipes/tags/#for-loop" term="for-loop" />
-  <content type="html">
-  
-    
-&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-    
-        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
-            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
-                Problem
-            &lt;/h2&gt;
-        &lt;/a&gt;
-    
-&lt;/div&gt;
-
-&lt;p&gt;Consider this formatted data file: &lt;a href=&quot;data.in&quot; target=&quot;_blank&quot;&gt;data.in&lt;/a&gt;. Write a simple script named &lt;code&gt;formatted2csv&lt;/code&gt; that takes two input arguments representing the input and output file names. Then, the script writes the same input float data to the output file &lt;code&gt;data.out&lt;/code&gt; &lt;strong&gt;in a comma-separated (CSV) style&lt;/strong&gt;, like this &lt;a href=&quot;data.python.out&quot; target=&quot;_blank&quot;&gt;example output file&lt;/a&gt;.&lt;/p&gt;
-
-&lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
-    
-    
-    
-    &lt;figure&gt;
-        &lt;a href=&quot;#solution-python&quot; id=&quot;solution-python&quot;&gt;
-            &lt;img src=&quot;https://www.cdslab.org/recipes/images/Python.png&quot; width=&quot;75px&quot; /&gt;
-        &lt;/a&gt;
-        &lt;figcaption&gt;
-            &lt;a href=&quot;https://en.wikipedia.org/wiki/Python_(programming_language)&quot; target=&quot;_blank&quot;&gt;
-                Python
-            &lt;/a&gt;
-        &lt;/figcaption&gt;
-    &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Write your Python script in such a way that it takes the input and output file names from the Bash command line arguments, like the following,&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python formatted2csv.py data.in data.out
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
-    
-    
-    
-    &lt;figure&gt;
-        &lt;a href=&quot;#solution-matlab&quot; id=&quot;solution-matlab&quot;&gt;
-            &lt;img src=&quot;https://www.cdslab.org/recipes/images/MATLAB.png&quot; width=&quot;75px&quot; /&gt;
-        &lt;/a&gt;
-        &lt;figcaption&gt;
-            &lt;a href=&quot;https://en.wikipedia.org/wiki/MATLAB&quot; target=&quot;_blank&quot;&gt;
-                MATLAB
-            &lt;/a&gt;
-        &lt;/figcaption&gt;
-    &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Write your MATLAB script as a function that takes the input and output file names as input arguments to a function named &lt;code&gt;formatted2csv&lt;/code&gt;, so that it can be called like the following from the MATLAB command line.&lt;/p&gt;
-
-&lt;div class=&quot;language-matlab highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;formatted2csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'data.in'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'data.matlab.out'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/formatted-input-to-csv-output/formatted-input-to-csv-output&quot;&gt;Data transfer: Converting formatted input to Comma-Separated-Values (CSV) output&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on April 12, 2021.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Command line input option-value pairs]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/command-line-input-option-value/command-line-input-option-value"/>
-  <id>https://www.cdslab.org/recipes/programming/command-line-input-option-value/command-line-input-option-value</id>
-  <published>2021-04-05T00:00:00-05:00</published>
-  <updated>2021-04-05T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#input" term="input" /><category scheme="https://www.cdslab.org/recipes/tags/#IO" term="IO" /><category scheme="https://www.cdslab.org/recipes/tags/#command-line" term="command-line" /><category scheme="https://www.cdslab.org/recipes/tags/#physics" term="physics" /><category scheme="https://www.cdslab.org/recipes/tags/#gravity" term="gravity" /><category scheme="https://www.cdslab.org/recipes/tags/#free-fall" term="free-fall" />
-  <content type="html">
-  
-    
-&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-    
-        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
-            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
-                Problem
-            &lt;/h2&gt;
-        &lt;/a&gt;
-    
-&lt;/div&gt;
-
-&lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
-    
-    
-    
-    &lt;figure&gt;
-        &lt;a href=&quot;#problem-python&quot; id=&quot;problem-python&quot;&gt;
-            &lt;img src=&quot;https://www.cdslab.org/recipes/images/Python.png&quot; width=&quot;75px&quot; /&gt;
-        &lt;/a&gt;
-        &lt;figcaption&gt;
-            &lt;a href=&quot;https://en.wikipedia.org/wiki/Python_(programming_language)&quot; target=&quot;_blank&quot;&gt;
-                Python
-            &lt;/a&gt;
-        &lt;/figcaption&gt;
-    &lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Suppose we want to write a program that takes in three input parameters: the initial height ($y_0$) &lt;code&gt;initHeight&lt;/code&gt;, the initial velocity ($v_0$) &lt;code&gt;initVelocity&lt;/code&gt;, the time after which we want to know how much a projectile has moved in the vertical direction from the initial height ($y_0$), and the gravity constant ($g$) &lt;code&gt;gravityConstant&lt;/code&gt;. Write the program such that it takes these three parameters as pairs of option (keyword) and values plus an additional option &lt;code&gt;unit&lt;/code&gt; which can have either &lt;code&gt;SI&lt;/code&gt; or &lt;code&gt;English&lt;/code&gt; values. Then it computes and prints the final height &lt;code&gt;finalHeight&lt;/code&gt; via the following equation,&lt;/p&gt;
-
-\[y(t) = y_0 + v_0\times t + \frac{1}{2}g\times t^2 ~~,\]
-
-&lt;p&gt;or in scripting terms,&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;finalHeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initHeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initVelocity&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gravityConstant&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;(A)&lt;/strong&gt; Write your code such that it works with the following example input option-value pair,&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python getHeight.py unit SI initHeight 0 initVelocity 0 &lt;span class=&quot;nb&quot;&gt;time &lt;/span&gt;3 gravityConstant &lt;span class=&quot;nt&quot;&gt;-10&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Compute the height for the same input values as in the above, but for the gravity constant of the Moon $g \sim 1.62 ms^{-2}$. How does it compare to Earth?&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(B)&lt;/strong&gt; Rewrite your program such that the missing option value pairs from the input are assigned proper values. For example, if &lt;code&gt;initHeight&lt;/code&gt; is missing, it should be assigned a value of &lt;code&gt;0&lt;/code&gt;. If &lt;code&gt;initVelocity&lt;/code&gt; is missing, it should be assigned a value of &lt;code&gt;0&lt;/code&gt;. If &lt;code&gt;gravityConstant&lt;/code&gt; is missing, it should be assigned a value of &lt;code&gt;-10&lt;/code&gt; $m/s^2$ if the input &lt;code&gt;unit&lt;/code&gt; is &lt;code&gt;SI&lt;/code&gt;, otherwise it should be assigned &lt;code&gt;-32.17405&lt;/code&gt; $ft/s^2$. If the &lt;code&gt;unit&lt;/code&gt; is missing, it should be assigned &lt;code&gt;SI&lt;/code&gt; as the default value.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(C)&lt;/strong&gt; Now rewrite your program such that the missing option value pairs would be read from an input file, if the &lt;code&gt;file path_to_file&lt;/code&gt; is given as option value pair. For example, your code should be able to parse the contents of these two example input files: &lt;a href=&quot;input.1.txt&quot; target=&quot;_blank&quot;&gt;input.1.txt&lt;/a&gt; or &lt;a href=&quot;input.2.txt&quot; target=&quot;_blank&quot;&gt;input.2.txt&lt;/a&gt;, when called with the &lt;code&gt;file&lt;/code&gt; command-line option (and it should ignore any other input command-line option other than &lt;code&gt;file&lt;/code&gt; and its value.&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python getHeight.py file &lt;span class=&quot;s2&quot;&gt;&quot;input.1.txt&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;pre&gt;&lt;code&gt;Final Height = -45.0 in SI units.
-&lt;/code&gt;&lt;/pre&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/command-line-input-option-value/command-line-input-option-value&quot;&gt;Command line input option-value pairs&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on April 05, 2021.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Python modules and packaging]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/python-packaging/python-packaging"/>
-  <id>https://www.cdslab.org/recipes/programming/python-packaging/python-packaging</id>
-  <published>2021-03-31T00:00:00-05:00</published>
-  <updated>2021-03-31T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#MATLAB" term="MATLAB" /><category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#Fibonacci%20sequence" term="Fibonacci sequence" /><category scheme="https://www.cdslab.org/recipes/tags/#recursive" term="recursive" /><category scheme="https://www.cdslab.org/recipes/tags/#function" term="function" /><category scheme="https://www.cdslab.org/recipes/tags/#recursive%20function" term="recursive function" /><category scheme="https://www.cdslab.org/recipes/tags/#branching" term="branching" /><category scheme="https://www.cdslab.org/recipes/tags/#isreal" term="isreal" /><category scheme="https://www.cdslab.org/recipes/tags/#round" term="round" /><category scheme="https://www.cdslab.org/recipes/tags/#str2double" term="str2double" /><category scheme="https://www.cdslab.org/recipes/tags/#input" term="input" /><category scheme="https://www.cdslab.org/recipes/tags/#string" term="string" />
-  <content type="html">
-  
-    
-&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-    
-        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
-            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
-                Problem
-            &lt;/h2&gt;
-        &lt;/a&gt;
-    
-&lt;/div&gt;
-
-&lt;p&gt;Consider the following codes that compute the Fibonacci sequence using two different methods: &lt;a href=&quot;fib_recursive.py&quot; target=&quot;_blank&quot;&gt;fib_recursive.py&lt;/a&gt; and &lt;a href=&quot;fib_loop.py&quot; target=&quot;_blank&quot;&gt;fib_loop.py&lt;/a&gt;.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Put these two functions in a folder named &lt;code&gt;fib&lt;/code&gt; such that they can be imported as a Python package to your Python environment.&lt;/li&gt;
-  &lt;li&gt;Rewrite these scripts such that they are imported as Python packages without being executed, while the functions are called if the scripts are executed as standalone Python code.&lt;/li&gt;
-&lt;/ol&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/python-packaging/python-packaging&quot;&gt;Python modules and packaging&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on March 31, 2021.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Logic NAND equivalence]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/logic-a-nand-equivalence/logic/logic-a-nand-equivalence"/>
-  <id>https://www.cdslab.org/recipes/programming/logic-a-nand-equivalence/logic/logic-a-nand-equivalence</id>
-  <published>2020-11-01T00:00:00-05:00</published>
-  <updated>2020-11-01T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#plausibility" term="plausibility" /><category scheme="https://www.cdslab.org/recipes/tags/#deduction" term="deduction" /><category scheme="https://www.cdslab.org/recipes/tags/#reasoning" term="reasoning" /><category scheme="https://www.cdslab.org/recipes/tags/#logic" term="logic" /><category scheme="https://www.cdslab.org/recipes/tags/#boolean" term="boolean" /><category scheme="https://www.cdslab.org/recipes/tags/#implication" term="implication" />
-  <content type="html">
-  
-    
-&lt;p&gt;We have learned that,&lt;/p&gt;
-
-\[\begin{eqnarray}
-    \bar{A} &amp;amp;=&amp;amp; A \uparrow A ~, \nonumber \\
-    AB &amp;amp;=&amp;amp; (A \uparrow B) \uparrow (A \uparrow B) ~, \nonumber \\
-    A + B &amp;amp;=&amp;amp; (A \uparrow A) \uparrow (B \uparrow B) ~, \nonumber
-\end{eqnarray}\]
-
-&lt;p&gt;Now, using the above expressions, show that,&lt;/p&gt;
-
-\[(A \uparrow A) \uparrow ( ((A \uparrow B) \uparrow (A \uparrow B)) \uparrow ((A \uparrow B) \uparrow (A \uparrow B)) ) = A ~, \nonumber\]
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/logic-a-nand-equivalence/logic/logic-a-nand-equivalence&quot;&gt;Logic NAND equivalence&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on November 01, 2020.&lt;/p&gt;</content>
 </entry>
 
 </feed>
