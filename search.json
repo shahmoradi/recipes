@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "Computing the autocorrelation of a dataset",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/stat-autocorr/stat-autocorr",
+		  "date"       : "2021-10-11 00:00:00 -0500",
+		  "shortdate"  : "October 11, 2021"
+		} ,
+	
+		{
 		  "title"      : "Ugly visualization",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/vis-ugly-graph/vis-ugly-graph",

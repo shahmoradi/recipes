@@ -3,18 +3,18 @@
 <head>
     
     <meta charset="utf-8">
-<title>DATA TRANSFER: CONVERTING FORMATTED INPUT TO COMMA-SEPARATED-VALUES (CSV) OUTPUT &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>COMPUTING THE AUTOCORRELATION OF A DATASET &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="MATLAB, Python, input, output, IO, command line, argument, function, exception, for-loop">
+<meta name="keywords" content="statistics, sample, covariance, correlation, autocorrelation, warming, Python">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Data transfer: Converting formatted input to Comma-Separated-Values (CSV) output">
+<meta property="og:title" content="Computing the autocorrelation of a dataset">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/formatted-input-to-csv-output/formatted-input-to-csv-output">
+<meta property="og:url" content="/recipes/programming/stat-autocorr/stat-autocorr">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/formatted-input-to-csv-output/formatted-input-to-csv-output">
+<link rel="canonical" href="/recipes/programming/stat-autocorr/stat-autocorr">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,26 +130,16 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/formatted-input-to-csv-output/formatted-input-to-csv-output">Data transfer: Converting formatted input to Comma-Separated-Values (CSV) output</a></h2>
+                            <h2><a href="/recipes/programming/stat-autocorr/stat-autocorr">Computing the autocorrelation of a dataset</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
                                 
                                     &#8212; Last updated: 
-                                    <strong><time datetime="2021-04-12T00:00:00-05:00">12 April 2021</time></strong>
+                                    <strong><time datetime="2019-07-04T00:00:00-05:00">04 July 2019</time></strong>
                                 
                                 <ul class="tag-box inline">
                                     <span style="margin-right:1rem;">Tags:</span>
                                     
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#IO" data-toggle="tooltip" title="Posts tagged with IO" rel="tag">IO</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#MATLAB" data-toggle="tooltip" title="Posts tagged with MATLAB" rel="tag">MATLAB</a>
-                                            </li>
-                                            
                                         
                                             <li>
                                                 <a href="/recipes/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
@@ -157,37 +147,32 @@
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#argument" data-toggle="tooltip" title="Posts tagged with argument" rel="tag">argument</a>
+                                                <a href="/recipes/tags/index.html#autocorrelation" data-toggle="tooltip" title="Posts tagged with autocorrelation" rel="tag">autocorrelation</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#command line" data-toggle="tooltip" title="Posts tagged with command line" rel="tag">command line</a>
+                                                <a href="/recipes/tags/index.html#correlation" data-toggle="tooltip" title="Posts tagged with correlation" rel="tag">correlation</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#exception" data-toggle="tooltip" title="Posts tagged with exception" rel="tag">exception</a>
+                                                <a href="/recipes/tags/index.html#covariance" data-toggle="tooltip" title="Posts tagged with covariance" rel="tag">covariance</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#for-loop" data-toggle="tooltip" title="Posts tagged with for-loop" rel="tag">for-loop</a>
+                                                <a href="/recipes/tags/index.html#sample" data-toggle="tooltip" title="Posts tagged with sample" rel="tag">sample</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#function" data-toggle="tooltip" title="Posts tagged with function" rel="tag">function</a>
+                                                <a href="/recipes/tags/index.html#statistics" data-toggle="tooltip" title="Posts tagged with statistics" rel="tag">statistics</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#input" data-toggle="tooltip" title="Posts tagged with input" rel="tag">input</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#output" data-toggle="tooltip" title="Posts tagged with output" rel="tag">output</a>
+                                                <a href="/recipes/tags/index.html#warming" data-toggle="tooltip" title="Posts tagged with warming" rel="tag">warming</a>
                                             </li>
                                             
                                         
@@ -216,49 +201,29 @@
     
 </div>
 
-<p>Consider this formatted data file: <a href="data.in" target="_blank">data.in</a>. Write a simple script named <code>formatted2csv</code> that takes two input arguments representing the input and output file names. Then, the script writes the same input float data to the output file <code>data.out</code> <strong>in a comma-separated (CSV) style</strong>, like this <a href="data.python.out" target="_blank">example output file</a>.</p>
+<p>Recall the <a href="globalLandTempHist.txt" target="blank">globalLandTempHist.txt</a> dataset that consisted of the global land temperature of Earth over the past 300 years. 
+Also recall that the autocorrelation of a time-series is defined as the correlation of a univariate dataset with itself, with some positive lag $\tau$.</p>
 
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#solution-python" id="solution-python">
-            <img src="/recipes/images/Python.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
-                Python
-            </a>
-        </figcaption>
-    </figure>
-</div>
+<p>Use the definition of the correlation matrix that we have seen before to compute the autocorrelation of temperature anomaly of Earth starting from the first non-NAN value to the end, for all different possible lags. Make a plot of the autocorrelation vs. lag.</p>
 
-<p>Write your Python script in such a way that it takes the input and output file names from the Bash command line arguments, like the following,</p>
+<p>Now, use an external library in the language of your choice to compute the autocorrelation using Fast-Fourier Transform (FFT). Within Python, you can use <code>correlate</code> in SciPy package <code>from scipy.signal import correlate</code> to compute the autocorrelation. To do so, you will have to first normalize the input data (the anomaly data) to its mean. Then you pass the data in syntax like the following,</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python formatted2csv.py data.in data.out
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">correlate</span>
+
+<span class="n">Anomaly</span> <span class="o">=</span> <span class="n">Anomaly</span> <span class="o">-</span> <span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Anomaly</span><span class="p">)</span>
+
+<span class="n">nlag</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Anomaly</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">acf</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nlag</span><span class="p">)</span>
+
+<span class="n">acf</span> <span class="o">=</span> <span class="n">correlate</span> <span class="p">(</span> <span class="n">xdata</span>
+                <span class="p">,</span> <span class="n">xdata</span>
+                <span class="p">,</span> <span class="n">mode</span> <span class="o">=</span> <span class="s">"full"</span>
+                <span class="p">)[</span><span class="n">nlag</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="n">nlag</span><span class="p">]</span>
+<span class="n">acf</span> <span class="o">=</span> <span class="n">acf</span> <span class="o">/</span> <span class="n">acf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </code></pre></div></div>
 
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#solution-matlab" id="solution-matlab">
-            <img src="/recipes/images/MATLAB.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
-                MATLAB
-            </a>
-        </figcaption>
-    </figure>
-</div>
-
-<p>Write your MATLAB script as a function that takes the input and output file names as input arguments to a function named <code>formatted2csv</code>, so that it can be called like the following from the MATLAB command line.</p>
-
-<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">formatted2csv</span><span class="p">(</span><span class="s1">'data.in'</span><span class="p">,</span><span class="s1">'data.matlab.out'</span><span class="p">)</span>
-</code></pre></div></div>
+<p>Make a plot of this autocorrelation function (acf) and compare with what you have obtained from the slow version you have implemented.</p>
 
 
             </div>
@@ -266,11 +231,11 @@
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Data transfer: Converting formatted input to Comma-Separated-Values (CSV) output&quot;%20https://www.cdslab.org/recipes/programming/formatted-input-to-csv-output/formatted-input-to-csv-output%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Computing the autocorrelation of a dataset&quot;%20https://www.cdslab.org/recipes/programming/stat-autocorr/stat-autocorr%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/formatted-input-to-csv-output/formatted-input-to-csv-output"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/stat-autocorr/stat-autocorr"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>
