@@ -72,7 +72,15 @@
 
     
     <url>
+        <loc>https://www.cdslab.org/recipes/programming/stat-crosscorr/stat-crosscorr</loc>
+    </url>
+    
+    <url>
         <loc>https://www.cdslab.org/recipes/programming/stat-autocorr/stat-autocorr</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/stat-autocorr-removal/stat-autocorr-removal</loc>
     </url>
     
     <url>

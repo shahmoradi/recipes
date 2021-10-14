@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="utf-8">
+<title>COMPUTING AND REMOVING THE AUTOCORRELATION OF A DATASET &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<meta name="description" content="CDSLab Recipes">
+<meta name="keywords" content="statistics, sample, covariance, correlation, autocorrelation, warming, Python, ParaMonte, MCMC, Monte Carlo">
+
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Computing and removing the autocorrelation of a dataset">
+<meta property="og:description" content="CDSLab Recipes">
+<meta property="og:url" content="/recipes/programming/stat-autocorr-removal/stat-autocorr-removal">
+<meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
+<meta property="og:image" content="/recipes/images/">
+
+
+
+
+
+<link rel="canonical" href="/recipes/programming/stat-autocorr-removal/stat-autocorr-removal">
+<!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>
+<!--
+<link rel="stylesheet" href="/recipes/assets/css/vendor/font-awesome.min.css">
+-->
+<link rel="stylesheet" href="/recipes/assets/css/vendor/normalize.css">
+<link rel="stylesheet" href="/recipes/assets/css/vendor/nprogress.css">
+<link rel="stylesheet" href="/recipes/assets/css/vendor/foundation.min.css">
+<link rel="stylesheet" href="/recipes/assets/css/style.css">
+<link rel="stylesheet" href="/recipes/assets/css/post.css">
+
+<!--Mathjax LaTeX engine-->
+<script>
+    var MathJax = {"HTML-CSS": {scale: 100}};
+</script>
+<style TYPE="text/css">
+    code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        config: ["MMLorHTML.js"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+        jax: ["input/TeX"],
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<link rel="shortcut icon" href="/recipes/favicon.ico">
+
+<link href="/recipes/assets/css/prismOkaidia.css" rel="stylesheet" />
+<link href="/recipes/assets/css/alert.css" rel="stylesheet" />
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    
+</head>
+<body class="post-template" itemscope itemtype="https://schema.org/WebPage">
+
+
+
+    <main id="notepad-post-container-simple" class="notepad-post-container-simple" role="main">
+        <header class="notepad-post-header-simple">
+            <div class="notepad-post-menu-header-simple">
+
+                <a class="notepad-blog-logo" href=https://www.cdslab.org target="_blank"><img src="/recipes/images/logo.png" alt="cdslab.org" /></a>
+                <div class="notepad-blog-menu">      
+                    <div class="notepad-mobile-menu show-for-small">
+                        <a href="#"><i class="fa fa-bars"></i></a>
+                    </div>
+                    <ul class="notepad-menu">
+                        <li class="notepad-mobile-close-btn show-for-small text-right">
+                            <a href="#"><i class="fa fa-times"></i></a>
+                        </li>
+                        
+                            <li>
+                                
+                                    <a href="/recipes/">Home</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/recipes/highlights">Highlights</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/recipes/tags">Tags</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/recipes/about">About</a>
+                                
+                            </li>
+                                    
+                        <li><a href="/recipes/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+                    </ul>
+                </div>
+            </div>
+
+                <div class="notepad-post-title-simple row">
+                    <div class="small-12 columns">
+                        <div class="notepad-post-meta-simple">
+                            <h2><a href="/recipes/programming/stat-autocorr-removal/stat-autocorr-removal">Computing and removing the autocorrelation of a dataset</a></h2>
+                            <p>
+                                by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
+                                
+                                    &#8212; Last updated: 
+                                    <strong><time datetime="2019-07-04T00:00:00-05:00">04 July 2019</time></strong>
+                                
+                                <ul class="tag-box inline">
+                                    <span style="margin-right:1rem;">Tags:</span>
+                                    
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#MCMC" data-toggle="tooltip" title="Posts tagged with MCMC" rel="tag">MCMC</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#Monte Carlo" data-toggle="tooltip" title="Posts tagged with Monte Carlo" rel="tag">Monte Carlo</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#ParaMonte" data-toggle="tooltip" title="Posts tagged with ParaMonte" rel="tag">ParaMonte</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#autocorrelation" data-toggle="tooltip" title="Posts tagged with autocorrelation" rel="tag">autocorrelation</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#correlation" data-toggle="tooltip" title="Posts tagged with correlation" rel="tag">correlation</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#covariance" data-toggle="tooltip" title="Posts tagged with covariance" rel="tag">covariance</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#sample" data-toggle="tooltip" title="Posts tagged with sample" rel="tag">sample</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#statistics" data-toggle="tooltip" title="Posts tagged with statistics" rel="tag">statistics</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#warming" data-toggle="tooltip" title="Posts tagged with warming" rel="tag">warming</a>
+                                            </li>
+                                            
+                                        
+                                    
+                                </ul>
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <article class="notepad-post-content post tag-simple">
+
+            <div style="text-align:left;">
+                
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+    
+        <a href="#problem" style="display:inline-block;">
+            <h2 id="problem" style="color:red;">
+                Problem
+            </h2>
+        </a>
+    
+</div>
+
+<p>Consider the following Banana function.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">getLogFuncBanana</span><span class="p">(</span><span class="n">point</span><span class="p">):</span>
+
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+    <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">multivariate_normal</span> <span class="k">as</span> <span class="n">mvn</span>
+    <span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">logsumexp</span>
+    
+    <span class="n">NPAR</span> <span class="o">=</span> <span class="mi">2</span>                        <span class="c1"># sum(Banana,gaussian) normalization factor
+</span>    <span class="n">normfac</span> <span class="o">=</span> <span class="mf">0.3</span>                   <span class="c1"># sum(Banana,gaussian) normalization factor
+</span>    <span class="n">lognormfac</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">normfac</span><span class="p">)</span>    <span class="c1"># sum(Banana,gaussian) normalization factor
+</span>    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">1.5</span>                 <span class="c1"># parameters of the Banana function
+</span>    <span class="n">MeanB</span> <span class="o">=</span> <span class="p">[</span> <span class="o">-</span><span class="mf">5.0</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">]</span>           <span class="c1"># mean vector of Banana function
+</span>    <span class="n">MeanG</span> <span class="o">=</span> <span class="p">[</span>  <span class="mf">3.5</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">]</span>           <span class="c1"># mean vector of Gaussian function
+</span>    <span class="n">CovMatB</span>     <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">reshape</span><span class="p">([</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.81</span><span class="p">],</span> <span class="n">newshape</span> <span class="o">=</span> <span class="p">(</span><span class="n">NPAR</span><span class="p">,</span><span class="n">NPAR</span><span class="p">))</span>    <span class="c1"># Covariance matrix of Banana function
+</span>    <span class="n">CovMatG</span>     <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">reshape</span><span class="p">([</span><span class="mf">0.15</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.15</span><span class="p">],</span> <span class="n">newshape</span> <span class="o">=</span> <span class="p">(</span><span class="n">NPAR</span><span class="p">,</span><span class="n">NPAR</span><span class="p">))</span>    <span class="c1"># Covariance matrix of Gaussian function
+</span>
+    <span class="n">LogProb</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="c1"># transformed parameters that transform the Gaussian to the Banana function
+</span>
+    <span class="n">pointSkewed</span> <span class="o">=</span> <span class="p">[</span> <span class="o">-</span><span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">+</span><span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span>
+
+    <span class="c1"># Gaussian function
+</span>
+    <span class="n">LogProb</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">lognormfac</span> <span class="o">+</span> <span class="n">mvn</span><span class="p">.</span><span class="n">logpdf</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">pointSkewed</span><span class="p">,</span> <span class="n">mean</span> <span class="o">=</span> <span class="n">MeanG</span><span class="p">,</span> <span class="n">cov</span> <span class="o">=</span> <span class="n">CovMatG</span><span class="p">)</span> <span class="c1"># logProbBanana
+</span>
+    <span class="c1"># Do variable transformations for the Skewed-Gaussian (banana) function.
+</span>
+    <span class="n">pointSkewed</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="o">=</span> <span class="n">pointSkewed</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">a</span>
+    <span class="n">pointSkewed</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="o">=</span> <span class="n">pointSkewed</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">a</span> <span class="o">-</span> <span class="p">(</span><span class="n">pointSkewed</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">b</span>
+
+    <span class="c1"># Banana function
+</span>
+    <span class="n">LogProb</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">mvn</span><span class="p">.</span><span class="n">logpdf</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">pointSkewed</span><span class="p">,</span> <span class="n">mean</span> <span class="o">=</span> <span class="n">MeanB</span><span class="p">,</span> <span class="n">cov</span> <span class="o">=</span> <span class="n">CovMatB</span><span class="p">)</span> <span class="c1"># logProbBanana
+</span>
+    <span class="k">return</span> <span class="n">logsumexp</span><span class="p">(</span><span class="n">LogProb</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>We wish to generate random sample from the distribution function represented by this Python function. We do so via the ParaMonte library’s ParaDRAM MCMC sampler,</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="o">--</span><span class="n">user</span> <span class="n">paramonte</span>
+<span class="kn">import</span> <span class="nn">paramonte</span> <span class="k">as</span> <span class="n">pm</span>
+<span class="n">sim</span> <span class="o">=</span> <span class="n">pm</span><span class="p">.</span><span class="n">paradram</span><span class="p">()</span>
+<span class="n">sim</span><span class="p">.</span><span class="n">spec</span><span class="p">.</span><span class="n">chainSize</span> <span class="o">=</span> <span class="mi">30000</span>
+<span class="n">sim</span><span class="p">.</span><span class="n">runSampler</span><span class="p">(</span> <span class="n">ndim</span> <span class="o">=</span> <span class="mi">2</span>
+              <span class="p">,</span> <span class="n">getLogFunc</span> <span class="o">=</span> <span class="n">getLogFuncBanana</span>
+              <span class="p">)</span>
+</code></pre></div></div>
+
+<p>This sampler outputs an MCMC chain that we can subsequently visualize,</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">notebook</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="n">chain</span> <span class="o">=</span> <span class="n">sim</span><span class="p">.</span><span class="n">readChain</span><span class="p">(</span><span class="n">renabled</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">chain</span><span class="p">.</span><span class="n">df</span><span class="p">[</span><span class="s">"Banana Function Value"</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">exp</span><span class="p">(</span><span class="n">chain</span><span class="p">.</span><span class="n">df</span><span class="p">.</span><span class="n">SampleLogFunc</span><span class="p">.</span><span class="n">values</span><span class="p">)</span>
+
+<span class="n">chain</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">contour3</span><span class="p">()</span>
+<span class="n">chain</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">contour3</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">fname</span> <span class="o">=</span> <span class="s">"bananaFuncContour3.png"</span><span class="p">)</span>
+
+<span class="n">chain</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">scatter3</span><span class="p">.</span><span class="n">scatter</span><span class="p">.</span><span class="n">kws</span><span class="p">.</span><span class="n">s</span> <span class="o">=</span> <span class="mf">0.03</span>
+<span class="n">chain</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">scatter3</span><span class="p">.</span><span class="n">scatter</span><span class="p">.</span><span class="n">kws</span><span class="p">.</span><span class="n">cmap</span> <span class="o">=</span> <span class="s">"winter"</span>
+<span class="n">chain</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">scatter3</span><span class="p">(</span><span class="n">zcolumns</span> <span class="o">=</span> <span class="s">"Banana Function Value"</span><span class="p">,</span> <span class="n">ccolumns</span> <span class="o">=</span> <span class="s">"Banana Function Value"</span><span class="p">)</span>
+<span class="n">chain</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">scatter3</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">fname</span> <span class="o">=</span> <span class="s">"bananaFuncScatter3.png"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="bananaFuncContour3.png" alt="bananaFuncContour3.png" /></p>
+
+<p><img src="bananaFuncScatter3.png" alt="bananaFuncScatter3.png" /></p>
+
+<p>Now, this MCMC chain is a time-series data, meaning that we can compute its autocorrelation (for each data attribute). The ParaMonte library does this for us automatically which we can visualize via,</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">chain</span><span class="p">.</span><span class="n">stats</span><span class="p">.</span><span class="n">autocorr</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">()</span>
+<span class="n">chain</span><span class="p">.</span><span class="n">stats</span><span class="p">.</span><span class="n">autocorr</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">fname</span> <span class="o">=</span> <span class="s">"bananaCompactChainACF.png"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="bananaCompactChainACF.png" alt="bananaCompactChainACF.png" /></p>
+
+<p>Obviously, the three attributes of this chain are autocorrelated. But, we can remove traces of autocorrelation by choosing an appropriate step by which we jump over (skip) the data to <em>thin</em> (or <em>reduce</em> or <em>decorrelate</em> or <em>refine</em> the chain).  Choose such an appropriate step size and refine the data in <code>chain.df</code> and then compute the autocorrelation of the refined data via <code>scipy.signal.correlate</code> function. Then, visualize it similar to the above illustration by the ParaMonte library to ensure the refinement process has truly removed the autocorrelation from your data.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">correlate</span>
+
+<span class="n">attribute</span> <span class="o">=</span> <span class="n">attribute</span> <span class="o">-</span> <span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">attribute</span><span class="p">)</span>
+
+<span class="n">nlag</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">attribute</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">acf</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nlag</span><span class="p">)</span>
+
+<span class="n">acf</span> <span class="o">=</span> <span class="n">correlate</span> <span class="p">(</span> <span class="n">attribute</span>
+                <span class="p">,</span> <span class="n">attribute</span>
+                <span class="p">,</span> <span class="n">mode</span> <span class="o">=</span> <span class="s">"full"</span>
+                <span class="p">)[</span><span class="n">nlag</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="n">nlag</span><span class="p">]</span>
+<span class="n">acf</span> <span class="o">=</span> <span class="n">acf</span> <span class="o">/</span> <span class="n">acf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+
+            </div>
+        </article>
+        <div class="cf"></div>
+<div class="row text-center">
+    <section class="notepad-post-share">
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Computing and removing the autocorrelation of a dataset&quot;%20https://www.cdslab.org/recipes/programming/stat-autocorr-removal/stat-autocorr-removal%20via%20&#64;"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+            <i class="fa fa-twitter"></i>
+        </a>
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/stat-autocorr-removal/stat-autocorr-removal"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+            <i class="fa fa-facebook"></i>
+        </a>
+        
+    </section>
+</div>
+        <div class="cf"></div>
+<div class="notepad-author-info">
+    <div class="row">
+        <section class="notepad-post-author small-12 columns">
+            <a href=https://www.shahmoradi.org target="_blank">
+                <img src="/recipes/images/AmirShahmoradi.png" class="notepad-post-author-avatar" alt="Amir Shahmoradi's photo">
+            </a>
+            <span class="author-label">Author</span>
+            <h1>Amir Shahmoradi</h1>
+            <p><a href="mailto:shahmoradi@utexas.edu" class="author-website">shahmoradi@utexas.edu</a></p>
+            <p>Genius is 99% perspiration and 1% inspiration</p>
+        </section>
+    </div>
+</div> 
+        <div class="cf"></div>
+
+        <section class="notepad-disqus row">
+            <div class="small-12 columns">
+                <h1 class="notepad-comments-header">Comments</h1>
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'shahmoradi'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+        </section>
+
+        <div class="cf"></div>
+        <footer class="notepad-site-footer">
+    <div class="copyright">
+         <!-- <section>Last updated 2021 / 10 / 13</section></br> -->
+         <section>Last updated Wednesday, 13 Oct 2021 at 11:30 PM CST</section></br>
+         <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
+         <section>SEIR 365 | Arlington TX 76010</section></br>
+    </div>
+    <div class="social-icons">
+
+        
+        <a href="https://facebook.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+        </a>
+        
+
+        
+        <a href="https://github.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+        </a>
+        
+
+        
+
+        
+        <a href="https://instagram.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-instagram fa-stack-1x"></i>
+            </span>
+        </a>
+        
+
+        
+        <a href="https://medium.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-medium fa-stack-1x"></i>
+                <!--
+                -->
+            </span>
+        </a>
+        
+
+        
+        <a href="https://twitter.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+<div style="color: #000000; float: none; width: 100%; padding-top: 1rem;">
+    <span style="font-size:0.8em">visitor count: 
+        <script type="text/javascript">
+            var sc_project=12051053; 
+            var sc_invisible=0; 
+            var sc_security="e095256f"; 
+            var sc_text=3; 
+            var scJsHost = "https://";
+            document.write("<sc"+"ript type='text/javascript' src='" + scJsHost + 
+            "statcounter.com/counter/counter.js'></"+"script>");
+        </script>
+    </span>
+</div>
+
+
+    </div>
+    <div class="cf"></div>
+</footer> 
+    </main>
+    <!--dynamic page header-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/recipes/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+  <script src="/recipes/assets/js/vendor/modernizr.js"></script>
+  <script src="/recipes/assets/js/foundation.min.js"></script>
+  
+  <script src="/recipes/assets/js/notepad.js"></script>
+  <script src="/recipes/assets/js/scripts.min.js"></script>
+  <script src="/recipes/assets/js/vendor/nprogress.js"></script>
+  
+  <script>
+    $(document).foundation();
+  </script>
+  <script type='text/javascript'>console.log("N/A");</script>
+  <script type='text/javascript'>console.log("https://www.cdslab.org/");</script>
+
+<!--header anchor links-->
+<script src="/recipes/assets/js/autoAnchorLink.js"></script>
+
+<!-- <script src="/recipes/assets/js/prismOkaidia.js"></script>
+<script src="/recipes/assets/js/prismTwilight.js"></script>
+<script src="/recipes/assets/js/prismDefault.js"></script>
+ -->
+<script src="/recipes/assets/js/prismCoy.js"></script> 
+    <!--automatic Table of Content.-->
+    <script src="/recipes/assets/js/autoTOC.js"></script>
+</body>
+</html>

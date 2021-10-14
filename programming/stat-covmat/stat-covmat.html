@@ -216,6 +216,93 @@ Also recall that a covariance matrix is a symmetric positive-definite square mat
 
 <p>where $n$ represents the number of data points and $x_i$ and $x_j$ are individual data points. Use the covariance matrix definition and the above equation to compute the covariance matrix of the two <code>year</code> and the <code>temperature anomaly</code> attributes in the data referenced above. To do so, first write a generic function <code>genCovMat(Data)</code> that takes an input matrix (table) of data and generates the covariance matrix of data.</p>
 
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution" style="display:inline-block;">
+        <h2 id="solution" style="color:blue;">
+            Solution
+        </h2>
+    </a>
+
+</div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-matlab" id="solution-matlab">
+            <img src="/recipes/images/MATLAB.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
+                MATLAB
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>To be added…</p>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-python" id="solution-python">
+            <img src="/recipes/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">genCovMat</span><span class="p">(</span><span class="n">Data</span><span class="p">,</span> <span class="n">Mean</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+    <span class="s">"""
+    Generate and return the covariance matrix of the input data.
+    The columns of data must be individual attributes.
+    The rows of data must be individual observations.
+    Please pass clean matrix of all real values (no NA, no NaN).
+    
+    Parameters
+    ----------
+        Data
+            The input Numpy matrix of data of all numeric values.
+    
+        Mean
+            The mean of the input data along the columns (attributes)
+            (**optional**, default = numpy.mean(Data))
+    """</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+    <span class="k">if</span> <span class="n">Mean</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span> <span class="n">Mean</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Data</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">ndim</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Data</span><span class="p">[</span><span class="mi">0</span><span class="p">,:])</span>
+    <span class="n">npnt</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">normFac</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">npnt</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">CovMat</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">ndim</span><span class="p">,</span><span class="n">ndim</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">irow</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ndim</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">icol</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">irow</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">CovMat</span><span class="p">[</span><span class="n">irow</span><span class="p">,</span><span class="n">icol</span><span class="p">]</span> <span class="o">=</span> <span class="n">normFac</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span> <span class="n">Data</span><span class="p">[:,</span><span class="n">irow</span><span class="p">]</span> <span class="o">-</span> <span class="n">Mean</span><span class="p">[</span><span class="n">irow</span><span class="p">]</span> <span class="p">,</span> <span class="n">Data</span><span class="p">[:,</span><span class="n">icol</span><span class="p">]</span> <span class="o">-</span> <span class="n">Mean</span><span class="p">[</span><span class="n">icol</span><span class="p">]</span> <span class="p">)</span>
+            <span class="n">CovMat</span><span class="p">[</span><span class="n">icol</span><span class="p">,</span><span class="n">irow</span><span class="p">]</span> <span class="o">=</span> <span class="n">CovMat</span><span class="p">[</span><span class="n">irow</span><span class="p">,</span><span class="n">icol</span><span class="p">]</span> 
+    <span class="k">return</span> <span class="n">CovMat</span>
+
+<span class="c1">#### Read the temperature anomaly data and compute the covariance matrix.
+</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'http://www.cdslab.org/recipes/programming/stat-covmat/globalLandTempHist.txt'</span><span class="p">,</span> <span class="s">', '</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">CovMat</span> <span class="o">=</span> <span class="n">genCovMat</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">values</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"CovMat = </span><span class="se">\n</span><span class="s">{}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">CovMat</span><span class="p">))</span>
+</code></pre></div></div>
+<pre><code>CovMat = 
+[[5.81382831e+03 2.30956353e+01]
+ [2.30956353e+01 8.75891017e-01]]
+</code></pre>
+
 
             </div>
         </article>
@@ -279,8 +366,8 @@ Also recall that a covariance matrix is a symmetric positive-definite square mat
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2021 / 10 / 11</section></br> -->
-         <section>Last updated Monday, 11 Oct 2021 at 02:03 PM CST</section></br>
+         <!-- <section>Last updated 2021 / 10 / 13</section></br> -->
+         <section>Last updated Wednesday, 13 Oct 2021 at 11:30 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

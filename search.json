@@ -1,9 +1,25 @@
 [
 	
 		{
+		  "title"      : "Computing the cross-correlation of two data attributes",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/stat-crosscorr/stat-crosscorr",
+		  "date"       : "2021-10-11 00:00:00 -0500",
+		  "shortdate"  : "October 11, 2021"
+		} ,
+	
+		{
 		  "title"      : "Computing the autocorrelation of a dataset",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/stat-autocorr/stat-autocorr",
+		  "date"       : "2021-10-11 00:00:00 -0500",
+		  "shortdate"  : "October 11, 2021"
+		} ,
+	
+		{
+		  "title"      : "Computing and removing the autocorrelation of a dataset",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/stat-autocorr-removal/stat-autocorr-removal",
 		  "date"       : "2021-10-11 00:00:00 -0500",
 		  "shortdate"  : "October 11, 2021"
 		} ,

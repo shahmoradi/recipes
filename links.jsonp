@@ -143,12 +143,12 @@ callback([
 
   {
     "text": "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables via the least absolute deviations method",
-    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-absolute-deviations-method"
+    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-squares-method"
   } ,
 
   {
     "text": "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables via the least absolute deviations method",
-    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-squares-method"
+    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-absolute-deviations-method"
   } ,
 
   {
@@ -273,12 +273,12 @@ callback([
 
   {
     "text": "Monte Carlo approximation of the number Pi",
-    "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
+    "href": "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
   } ,
 
   {
     "text": "Monte Carlo approximation of the number Pi",
-    "href": "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
+    "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
   } ,
 
   {
@@ -462,6 +462,11 @@ callback([
   } ,
 
   {
+    "text": "Computing the cross-correlation of two data attributes",
+    "href": "/recipes/programming/stat-crosscorr/stat-crosscorr"
+  } ,
+
+  {
     "text": "Computing the covariance matrix of a dataset",
     "href": "/recipes/programming/stat-covmat/stat-covmat"
   } ,
@@ -509,6 +514,11 @@ callback([
   {
     "text": "Computing the Fibonacci sequence via for-loop",
     "href": "/recipes/programming/fibonacci-sequence-via-for-loop/fibonacci-sequence-via-for-loop"
+  } ,
+
+  {
+    "text": "Computing and removing the autocorrelation of a dataset",
+    "href": "/recipes/programming/stat-autocorr-removal/stat-autocorr-removal"
   } ,
 
   {
