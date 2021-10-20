@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "Computing the cross-correlation of sin() and cos()",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/stat-crosscorr-sin-cos/stat-crosscorr-sin-cos",
+		  "date"       : "2021-10-20 00:00:00 -0500",
+		  "shortdate"  : "October 20, 2021"
+		} ,
+	
+		{
 		  "title"      : "Computing the cross-correlation of two data attributes",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/stat-crosscorr/stat-crosscorr",

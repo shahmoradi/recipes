@@ -273,12 +273,12 @@ callback([
 
   {
     "text": "Monte Carlo approximation of the number Pi",
-    "href": "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
+    "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
   } ,
 
   {
     "text": "Monte Carlo approximation of the number Pi",
-    "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
+    "href": "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
   } ,
 
   {
@@ -464,6 +464,11 @@ callback([
   {
     "text": "Computing the cross-correlation of two data attributes",
     "href": "/recipes/programming/stat-crosscorr/stat-crosscorr"
+  } ,
+
+  {
+    "text": "Computing the cross-correlation of sin() and cos()",
+    "href": "/recipes/programming/stat-crosscorr-sin-cos/stat-crosscorr-sin-cos"
   } ,
 
   {

@@ -3,18 +3,18 @@
 <head>
     
     <meta charset="utf-8">
-<title>OPERATOR PRECEDENCE &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>COMPUTING THE CROSS-CORRELATION OF SIN() AND COS() &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="value, variable, type, operator, precedence, operator precedence, Python, MATLAB">
+<meta name="keywords" content="statistics, sample, covariance, correlation, crosscorrelation, sin, cos, periodic, Python">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Operator precedence">
+<meta property="og:title" content="Computing the cross-correlation of sin() and cos()">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/operator-precedence/operator-precedence">
+<meta property="og:url" content="/recipes/programming/stat-crosscorr-sin-cos/stat-crosscorr-sin-cos">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/operator-precedence/operator-precedence">
+<link rel="canonical" href="/recipes/programming/stat-crosscorr-sin-cos/stat-crosscorr-sin-cos">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,7 +130,7 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/operator-precedence/operator-precedence">Operator precedence</a></h2>
+                            <h2><a href="/recipes/programming/stat-crosscorr-sin-cos/stat-crosscorr-sin-cos">Computing the cross-correlation of sin() and cos()</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
                                 
@@ -142,42 +142,47 @@
                                     
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#MATLAB" data-toggle="tooltip" title="Posts tagged with MATLAB" rel="tag">MATLAB</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
                                                 <a href="/recipes/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#operator" data-toggle="tooltip" title="Posts tagged with operator" rel="tag">operator</a>
+                                                <a href="/recipes/tags/index.html#correlation" data-toggle="tooltip" title="Posts tagged with correlation" rel="tag">correlation</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#operator precedence" data-toggle="tooltip" title="Posts tagged with operator precedence" rel="tag">operator precedence</a>
+                                                <a href="/recipes/tags/index.html#cos" data-toggle="tooltip" title="Posts tagged with cos" rel="tag">cos</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#precedence" data-toggle="tooltip" title="Posts tagged with precedence" rel="tag">precedence</a>
+                                                <a href="/recipes/tags/index.html#covariance" data-toggle="tooltip" title="Posts tagged with covariance" rel="tag">covariance</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#type" data-toggle="tooltip" title="Posts tagged with type" rel="tag">type</a>
+                                                <a href="/recipes/tags/index.html#crosscorrelation" data-toggle="tooltip" title="Posts tagged with crosscorrelation" rel="tag">crosscorrelation</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#value" data-toggle="tooltip" title="Posts tagged with value" rel="tag">value</a>
+                                                <a href="/recipes/tags/index.html#periodic" data-toggle="tooltip" title="Posts tagged with periodic" rel="tag">periodic</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#variable" data-toggle="tooltip" title="Posts tagged with variable" rel="tag">variable</a>
+                                                <a href="/recipes/tags/index.html#sample" data-toggle="tooltip" title="Posts tagged with sample" rel="tag">sample</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#sin" data-toggle="tooltip" title="Posts tagged with sin" rel="tag">sin</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#statistics" data-toggle="tooltip" title="Posts tagged with statistics" rel="tag">statistics</a>
                                             </li>
                                             
                                         
@@ -206,19 +211,23 @@
     
 </div>
 
-<p><strong><a href="https://en.wikipedia.org/wiki/Order_of_operations" target="blank">Operator Precedence</a>.</strong> Think about what the results would be for the following expressions, and then type them into the terminal to verify your answers. Briefly explain the results for each one.</p>
+<p>Generate two arrays corresponding to the values of $\sin()$ and $\cos()$ functions in the range $[0, 10\pi]$. Make a plot of the resulting arrays like the following illustration.</p>
 
-<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">\</span><span class="mi">2</span> 
-<span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">/</span><span class="mi">2</span>
-<span class="o">&gt;&gt;</span> <span class="nb">int8</span><span class="p">(</span><span class="mi">1</span><span class="p">/</span><span class="mi">2</span><span class="p">)</span>
-<span class="o">&gt;&gt;</span> <span class="nb">int8</span><span class="p">(</span><span class="mi">1</span><span class="p">/</span><span class="mi">3</span><span class="p">)</span>
-<span class="o">&gt;&gt;</span> <span class="o">-</span><span class="mi">5</span><span class="o">^</span><span class="mi">2</span>  
-<span class="o">&gt;&gt;</span> <span class="o">-</span><span class="mi">5</span><span class="o">**</span><span class="mi">2</span>  
-<span class="o">&gt;&gt;</span> <span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span> <span class="o">^</span> <span class="mi">2</span> 
-<span class="o">&gt;&gt;</span> <span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> 
-<span class="o">&gt;&gt;</span> <span class="mi">10</span><span class="o">-</span><span class="mi">6</span><span class="p">/</span><span class="mi">2</span> 
-<span class="o">&gt;&gt;</span> <span class="mi">5</span><span class="o">*</span><span class="mi">4</span><span class="p">/</span><span class="mi">2</span><span class="o">*</span><span class="mi">3</span>
-</code></pre></div></div>
+<p><img src="sin-cos.png" alt="sin-cos" /></p>
+
+<p>Now use an FFT package in the language of your choice to compute the cross-correlation between the two resulting arrays from $\sin()$ and $\cos()$. Plot the resulting cross-correlation to obtain an illustration like the following.</p>
+
+<p><img src="sin-cos-ccf.png" alt="sin-cos-ccf" /></p>
+
+<p>Explain the reason for the periodic behavior of the cross-correlation. Why does the periodic signal decay toward the tails?</p>
+
+<p>Now compute the autocorrelation of each of the arrays separately and plot the resulting autocorrelations to compare with the CCF between the two as computed in the above. Plot the resulting autocorrelations to obtain illustrations like the following,</p>
+
+<p><img src="sin-sin-acf.png" alt="sin-sin-acf" /></p>
+
+<p><img src="cos-cos-acf.png" alt="cos-cos-acf" /></p>
+
+<p>Explain why the autocorrelations of <code>sin()</code> and <code>cos()</code> are similar to each other while they look different from the cross-correlation in the above.</p>
 
 
             </div>
@@ -226,11 +235,11 @@
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Operator precedence&quot;%20https://www.cdslab.org/recipes/programming/operator-precedence/operator-precedence%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Computing the cross-correlation of sin() and cos()&quot;%20https://www.cdslab.org/recipes/programming/stat-crosscorr-sin-cos/stat-crosscorr-sin-cos%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/operator-precedence/operator-precedence"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/stat-crosscorr-sin-cos/stat-crosscorr-sin-cos"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>
