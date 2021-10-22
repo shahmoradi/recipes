@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2021-10-22T12:52:50-05:00</updated>
+<updated>2021-10-22T12:58:06-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -59,7 +59,7 @@
 
 &lt;p&gt;&lt;img src=&quot;cos-cos-acf.png&quot; alt=&quot;cos-cos-acf&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Explain why the autocorrelations of &lt;code&gt;sin()&lt;/code&gt; and &lt;code&gt;cos()&lt;/code&gt; are similar to each other while they look different from the cross-correlation in the above.&lt;/p&gt;
+&lt;p&gt;Explain why the autocorrelations of &lt;code&gt;sin()&lt;/code&gt; and &lt;code&gt;cos()&lt;/code&gt; are similar to each other while they look different from the cross-correlation in the above. What can you do to make the cross-correlation of &lt;code&gt;sin-cos&lt;/code&gt; look like the autocorrelations of &lt;code&gt;sin-sin&lt;/code&gt; and &lt;code&gt;cos-cos&lt;/code&gt;?&lt;/p&gt;
 
 
   
