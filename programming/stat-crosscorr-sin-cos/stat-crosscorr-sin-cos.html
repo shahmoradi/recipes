@@ -3,18 +3,18 @@
 <head>
     
     <meta charset="utf-8">
-<title>VISUALIZING THE AVERAGE PRECIPITATION OF THE US STATES VS. SUNSHINE &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>COMPUTING THE CROSS-CORRELATION OF SIN() AND COS() &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="Excel, visualization, data, input, output, figure, usa">
+<meta name="keywords" content="statistics, sample, covariance, correlation, crosscorrelation, sin, cos, periodic, Python">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Visualizing the average precipitation of the US states vs. sunshine">
+<meta property="og:title" content="Computing the cross-correlation of sin() and cos()">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/vis-excel-rain-sunshine/vis-excel-rain-sunlight">
+<meta property="og:url" content="/recipes/programming/stat-crosscorr-sin-cos/stat-crosscorr-sin-cos">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/vis-excel-rain-sunshine/vis-excel-rain-sunlight">
+<link rel="canonical" href="/recipes/programming/stat-crosscorr-sin-cos/stat-crosscorr-sin-cos">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,7 +130,7 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/vis-excel-rain-sunshine/vis-excel-rain-sunlight">Visualizing the average precipitation of the US states vs. sunshine</a></h2>
+                            <h2><a href="/recipes/programming/stat-crosscorr-sin-cos/stat-crosscorr-sin-cos">Computing the cross-correlation of sin() and cos()</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
                                 
@@ -142,37 +142,47 @@
                                     
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#Excel" data-toggle="tooltip" title="Posts tagged with Excel" rel="tag">Excel</a>
+                                                <a href="/recipes/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#data" data-toggle="tooltip" title="Posts tagged with data" rel="tag">data</a>
+                                                <a href="/recipes/tags/index.html#correlation" data-toggle="tooltip" title="Posts tagged with correlation" rel="tag">correlation</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#figure" data-toggle="tooltip" title="Posts tagged with figure" rel="tag">figure</a>
+                                                <a href="/recipes/tags/index.html#cos" data-toggle="tooltip" title="Posts tagged with cos" rel="tag">cos</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#input" data-toggle="tooltip" title="Posts tagged with input" rel="tag">input</a>
+                                                <a href="/recipes/tags/index.html#covariance" data-toggle="tooltip" title="Posts tagged with covariance" rel="tag">covariance</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#output" data-toggle="tooltip" title="Posts tagged with output" rel="tag">output</a>
+                                                <a href="/recipes/tags/index.html#crosscorrelation" data-toggle="tooltip" title="Posts tagged with crosscorrelation" rel="tag">crosscorrelation</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#usa" data-toggle="tooltip" title="Posts tagged with usa" rel="tag">usa</a>
+                                                <a href="/recipes/tags/index.html#periodic" data-toggle="tooltip" title="Posts tagged with periodic" rel="tag">periodic</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#visualization" data-toggle="tooltip" title="Posts tagged with visualization" rel="tag">visualization</a>
+                                                <a href="/recipes/tags/index.html#sample" data-toggle="tooltip" title="Posts tagged with sample" rel="tag">sample</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#sin" data-toggle="tooltip" title="Posts tagged with sin" rel="tag">sin</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#statistics" data-toggle="tooltip" title="Posts tagged with statistics" rel="tag">statistics</a>
                                             </li>
                                             
                                         
@@ -201,11 +211,23 @@
     
 </div>
 
-<p>Consider the following <a href="us_rain_population.txt" target="_blank">dataset</a> containing the average annual precipitation in the US states between 1971-2000 and <a href="us_sunshine.txt" target="_blank">this dataset</a>. Combine these two datasets in Excel and generate a plot of US states precipitation vs. sunshine like the following figure. Note that you will have to adjust the data in the two file to remove a number of states that do not exist in both datasets.</p>
+<p>Generate two arrays corresponding to the values of $\sin()$ and $\cos()$ functions in the range $[0, 10\pi]$. Make a plot of the resulting arrays like the following illustration.</p>
 
-<figure>
-    <img src="precipitation_sunlight.png" />
-</figure>
+<p><img src="sin-cos.png" alt="sin-cos" /></p>
+
+<p>Now use an FFT package in the language of your choice to compute the cross-correlation between the two resulting arrays from $\sin()$ and $\cos()$. Plot the resulting cross-correlation to obtain an illustration like the following.</p>
+
+<p><img src="sin-cos-ccf.png" alt="sin-cos-ccf" /></p>
+
+<p>Explain the reason for the periodic behavior of the cross-correlation. Why does the periodic signal decay toward the tails?</p>
+
+<p>Now compute the autocorrelation of each of the arrays separately and plot the resulting autocorrelations to compare with the CCF between the two as computed in the above. Plot the resulting autocorrelations to obtain illustrations like the following,</p>
+
+<p><img src="sin-sin-acf.png" alt="sin-sin-acf" /></p>
+
+<p><img src="cos-cos-acf.png" alt="cos-cos-acf" /></p>
+
+<p>Explain why the autocorrelations of <code>sin()</code> and <code>cos()</code> are similar to each other while they look different from the cross-correlation in the above.</p>
 
 
             </div>
@@ -213,11 +235,11 @@
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Visualizing the average precipitation of the US states vs. sunshine&quot;%20https://www.cdslab.org/recipes/programming/vis-excel-rain-sunshine/vis-excel-rain-sunlight%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Computing the cross-correlation of sin() and cos()&quot;%20https://www.cdslab.org/recipes/programming/stat-crosscorr-sin-cos/stat-crosscorr-sin-cos%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/vis-excel-rain-sunshine/vis-excel-rain-sunlight"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/stat-crosscorr-sin-cos/stat-crosscorr-sin-cos"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>
