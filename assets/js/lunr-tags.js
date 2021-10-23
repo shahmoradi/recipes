@@ -470,7 +470,7 @@ var store = [{
   "date": "October 20, 2021",
   "category": null,
   "tags": ["statistics","sample","covariance","correlation","crosscorrelation","sin","cos","periodic","Python"],
-  "excerpt": "Problem Generate two arrays corresponding to the values of $\\sin()$ and $\\cos()$ functions in the range $[0, 10\\pi]$. Make a..."
+  "excerpt": "Problem Generate two arrays corresponding to the values of $\\sin(x)$ and $\\cos(x+\\pi/2)$ functions in the range $[0, 10\\pi]$. Make a..."
 },{
   "title": "Computing the cross-correlation of two data attributes",
   "link": "/programming/stat-crosscorr/stat-crosscorr",
