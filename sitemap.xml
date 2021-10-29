@@ -72,6 +72,10 @@
 
     
     <url>
+        <loc>https://www.cdslab.org/recipes/programming/regression-gaussian-data/regression-gaussian-data</loc>
+    </url>
+    
+    <url>
         <loc>https://www.cdslab.org/recipes/programming/stat-crosscorr-sin-cos/stat-crosscorr-sin-cos</loc>
     </url>
     
@@ -153,10 +157,6 @@
     
     <url>
         <loc>https://www.cdslab.org/recipes/programming/stat-corcoef-kendall/stat-corcoef-kendall</loc>
-    </url>
-    
-    <url>
-        <loc>https://www.cdslab.org/recipes/programming/regression-gaussian-data/regression-gaussian-data</loc>
     </url>
     
     <url>

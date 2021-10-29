@@ -7,13 +7,75 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2021-10-29T12:05:20-05:00</updated>
+<updated>2021-10-29T12:28:36-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
   <uri>https://www.cdslab.org/recipes/</uri>
   <email>shahmoradi@utexas.edu</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Regression: Estimating the parameters of a Normally-distributed sample]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/regression-gaussian-data/regression-gaussian-data"/>
+  <id>https://www.cdslab.org/recipes/programming/regression-gaussian-data/regression-gaussian-data</id>
+  <published>2021-10-28T00:00:00-05:00</published>
+  <updated>2021-10-28T00:00:00-05:00</updated>
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#MATLAB" term="MATLAB" /><category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#linear" term="linear" /><category scheme="https://www.cdslab.org/recipes/tags/#regression" term="regression" /><category scheme="https://www.cdslab.org/recipes/tags/#Gaussian" term="Gaussian" /><category scheme="https://www.cdslab.org/recipes/tags/#distribution" term="distribution" /><category scheme="https://www.cdslab.org/recipes/tags/#Normal%20distribution" term="Normal distribution" /><category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#line" term="line" /><category scheme="https://www.cdslab.org/recipes/tags/#figure" term="figure" /><category scheme="https://www.cdslab.org/recipes/tags/#random%20number" term="random number" /><category scheme="https://www.cdslab.org/recipes/tags/#distribution%20function" term="distribution function" /><category scheme="https://www.cdslab.org/recipes/tags/#probability%20density%20function" term="probability density function" /><category scheme="https://www.cdslab.org/recipes/tags/#PDF" term="PDF" /><category scheme="https://www.cdslab.org/recipes/tags/#probability" term="probability" /><category scheme="https://www.cdslab.org/recipes/tags/#objective%20function" term="objective function" /><category scheme="https://www.cdslab.org/recipes/tags/#maximum%20likelihood%20method" term="maximum likelihood method" /><category scheme="https://www.cdslab.org/recipes/tags/#Monte%20Carlo" term="Monte Carlo" /><category scheme="https://www.cdslab.org/recipes/tags/#Markov%20Chain" term="Markov Chain" /><category scheme="https://www.cdslab.org/recipes/tags/#MCMC" term="MCMC" /><category scheme="https://www.cdslab.org/recipes/tags/#ParaMonte" term="ParaMonte" /><category scheme="https://www.cdslab.org/recipes/tags/#ParaDRAM" term="ParaDRAM" /><category scheme="https://www.cdslab.org/recipes/tags/#uncertainty%20quantification" term="uncertainty quantification" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Supposed we have observed a dataset comprised of $15027$ events with one attribute &lt;code&gt;variable&lt;/code&gt; in this file: &lt;a href=&quot;dataFull.csv&quot; target=&quot;_blank&quot;&gt;dataFull.csv&lt;/a&gt;. Plotting these points would yield a histogram like the following plot,&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;data.png&quot; width=&quot;900&quot; /&gt;
+&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now our goal is to form a hypothesis about this dataset, that is, a hypothesis about the distribution of the events in the above plot.&lt;/p&gt;
+
+&lt;p&gt;To help you get started, we can first take the logarithm of this dataset to better understand the distribution of the attribute of the dataset and plot the transformed data,&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;logdata.png&quot; width=&quot;900&quot; /&gt;
+&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Just by looking at the observed (red) distribution, we can form a relatively good hypothesis about the distribution of the data: This dataset is likely very well fit by a log-normal distribution, that is, the log-transform of data is very well fit by a Normal distribution.&lt;/p&gt;
+
+&lt;p&gt;Now, use the maximum likelihood method to infer the two unknown parameters of the corresponding Normal distribution that best fits the log-transformed data.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Hint:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;First read the data using Pandas library, then log-transform data to make it look like a Normal distribution.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Write a class that takes the log-data as input and has two methods, &lt;code&gt;getLogProb(data,avg,std)&lt;/code&gt; and &lt;code&gt;getLogLike(param)&lt;/code&gt;. The former computes the log-probability of observing the input dataset &lt;code&gt;data&lt;/code&gt; given the parameters of the model (the Normal average &lt;code&gt;avg&lt;/code&gt; and the Normal standard deviation &lt;code&gt;std&lt;/code&gt;). The latter method takes a set of parameters as a vector containing the average of the Normal distribution (&lt;code&gt;avg&lt;/code&gt;) and the natural-logarithm of the standard deviation of the Normal distribution &lt;code&gt;log(std)&lt;/code&gt;. Given these two parameters, &lt;code&gt;getLogLike(param)&lt;/code&gt; sums over the log-probabilities returned by &lt;code&gt;getLogProb(data,avg,std)&lt;/code&gt; to compute the log-likelihood and returns it as the output.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;You can use &lt;code&gt;scipy.optimize.fmin&lt;/code&gt; to perform the maximization of log-likelihood to obtain the best-fit parameters. Once done with the minimization (of negative log-likelihood), report the best-fit parameters on the display.&lt;/li&gt;
+&lt;/ol&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/regression-gaussian-data/regression-gaussian-data&quot;&gt;Regression: Estimating the parameters of a Normally-distributed sample&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 28, 2021.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -1469,41 +1531,6 @@ Pearson's r using SciPy = 0.3236486317130345
 
   
   &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/stat-corcoef-pearson/stat-corcoef-pearson&quot;&gt;Computing the Pearson correlation coefficient of a dataset&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on September 29, 2021.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[The most sensitive correlation coefficient to outliers]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/stat-corcoef-outliers/stat-corcoef-outliers"/>
-  <id>https://www.cdslab.org/recipes/programming/stat-corcoef-outliers/stat-corcoef-outliers</id>
-  <published>2021-09-29T00:00:00-05:00</published>
-  <updated>2019-07-04T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#statistics" term="statistics" /><category scheme="https://www.cdslab.org/recipes/tags/#sample" term="sample" /><category scheme="https://www.cdslab.org/recipes/tags/#Kendall" term="Kendall" /><category scheme="https://www.cdslab.org/recipes/tags/#Spearman" term="Spearman" /><category scheme="https://www.cdslab.org/recipes/tags/#Pearson" term="Pearson" /><category scheme="https://www.cdslab.org/recipes/tags/#correlation" term="correlation" /><category scheme="https://www.cdslab.org/recipes/tags/#warming" term="warming" /><category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" />
-  <content type="html">
-  
-    
-&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-    
-        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
-            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
-                Problem
-            &lt;/h2&gt;
-        &lt;/a&gt;
-    
-&lt;/div&gt;
-
-&lt;p&gt;Which correlation coefficient is the most sensitive to outliers among the three Pearson, Spearman, and Kendall correlation coefficients? Why?&lt;/p&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/stat-corcoef-outliers/stat-corcoef-outliers&quot;&gt;The most sensitive correlation coefficient to outliers&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on September 29, 2021.&lt;/p&gt;</content>
 </entry>
 
 </feed>

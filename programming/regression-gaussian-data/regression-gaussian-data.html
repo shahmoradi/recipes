@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-<title>REGRESSION: PREDICTING THE DISTRIBUTION OF THE A DATASET SUBJECTED TO CENSORSHIP (SAMPLE INCOMPLETENESS) &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>REGRESSION: ESTIMATING THE PARAMETERS OF A NORMALLY-DISTRIBUTED SAMPLE &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
 <meta name="keywords" content="MATLAB, Python, linear, regression, Gaussian, distribution, Normal distribution, visualization, plot, line, figure, random number, distribution function, probability density function, PDF, probability, objective function, maximum likelihood method, Monte Carlo, Markov Chain, MCMC, ParaMonte, ParaDRAM, uncertainty quantification">
 
@@ -12,7 +12,7 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Regression: Predicting the distribution of the a dataset subjected to censorship (sample incompleteness)">
+<meta property="og:title" content="Regression: Estimating the parameters of a Normally-distributed sample">
 <meta property="og:description" content="CDSLab Recipes">
 <meta property="og:url" content="/recipes/programming/regression-gaussian-data/regression-gaussian-data">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
@@ -130,7 +130,7 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/regression-gaussian-data/regression-gaussian-data">Regression: Predicting the distribution of the a dataset subjected to censorship (sample incompleteness)</a></h2>
+                            <h2><a href="/recipes/programming/regression-gaussian-data/regression-gaussian-data">Regression: Estimating the parameters of a Normally-distributed sample</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
                                 
@@ -283,16 +283,14 @@
     
 </div>
 
-<p>Supposed we have observed a dataset comprised of $15027$ events with one attribute <code>variable</code> in this file: <a href="dataFull.csv" target="_blank">dataFull.csv</a>. Plotting these points would yield a red-colored histogram like the following plot,</p>
+<p>Supposed we have observed a dataset comprised of $15027$ events with one attribute <code>variable</code> in this file: <a href="dataFull.csv" target="_blank">dataFull.csv</a>. Plotting these points would yield a histogram like the following plot,</p>
 
 <figure>
     <img src="data.png" width="900" />
 </figure>
 <p><br /></p>
 
-<p>The pale black shaded area represents the missing points from our observational dataset. These are points that we could NOT observe (or detect) because of some instrumental bias and sample incompleteness as represented by the black line.</p>
-
-<p>Now our goal is to form a hypothesis about this dataset, that is, a hypothesis about the distribution of the events in the above plot. To make a correct assessment, we will have to also carefully consider the effects of the detection threshold (the black line) in our inference.</p>
+<p>Now our goal is to form a hypothesis about this dataset, that is, a hypothesis about the distribution of the events in the above plot.</p>
 
 <p>To help you get started, we can first take the logarithm of this dataset to better understand the distribution of the attribute of the dataset and plot the transformed data,</p>
 
@@ -301,116 +299,19 @@
 </figure>
 <p><br /></p>
 
-<p>Just by looking at the observed (red) distribution, we can form a relatively good hypothesis about the distribution of the data: If the detection threshold did not exist, the complete dataset (including the points in the black shaded area) would have likely very well resembled a lognormal distribution (or a normal distribution on the logarithmic axes).</p>
+<p>Just by looking at the observed (red) distribution, we can form a relatively good hypothesis about the distribution of the data: This dataset is likely very well fit by a log-normal distribution, that is, the log-transform of data is very well fit by a Normal distribution.</p>
 
-<p>However, this dataset is affected by the detection threshold and we need to also take a model of the detection threshold into account. The logarithmic transformation makes it crystal-clear to us that the detection threshold is likely best modeled by a vertical line.</p>
-
-<p>Now, use the maximum likelihood method combined with the MCMC sampling technique in the language of your choice (e.g., Python/MATLAB) to perform a Markov Chain Monte Carlo simulation for this regression problem and find the underlying true parameters of the hypothesized lognormal distribution (or equivalently, the Gaussian distribution in logarithmic space) as well as the detection threshold value (the value of the vertical black line).</p>
+<p>Now, use the maximum likelihood method to infer the two unknown parameters of the corresponding Normal distribution that best fits the log-transformed data.</p>
 
 <p><strong>Hint:</strong></p>
 
 <ol>
+  <li>First read the data using Pandas library, then log-transform data to make it look like a Normal distribution.</li>
   <li>
-    <p>First read the data using Pandas library, then log-transform data to make it look like a Normal distribution.</p>
+    <p>Write a class that takes the log-data as input and has two methods, <code>getLogProb(data,avg,std)</code> and <code>getLogLike(param)</code>. The former computes the log-probability of observing the input dataset <code>data</code> given the parameters of the model (the Normal average <code>avg</code> and the Normal standard deviation <code>std</code>). The latter method takes a set of parameters as a vector containing the average of the Normal distribution (<code>avg</code>) and the natural-logarithm of the standard deviation of the Normal distribution <code>log(std)</code>. Given these two parameters, <code>getLogLike(param)</code> sums over the log-probabilities returned by <code>getLogProb(data,avg,std)</code> to compute the log-likelihood and returns it as the output.</p>
   </li>
-  <li>
-    <p>Write a class that takes the log-data as input and has two methods, <code>getLogProb(data,avg,std,cutoff)</code> and <code>getLogLike(param)</code>. The former computes the log-probability of observing the input dataset <code>data</code> given the parameters of the model (the Normal average <code>avg</code>, the Normal standard deviation <code>std</code>, and the vetical cutoff on the distribution <code>cutoff</code>). The latter method takes a set of parameters as a vector containing the average of the Normal distribution (<code>avg</code>), the natural-logarithm of the standard deviation of the Normal distribution <code>log(std)</code>, and the value of the hard-cutoff on the data. Given these three parameters, <code>getLogLike(param)</code> sums over the log-probabilities returned by <code>getLogProb(data,avg,std,cutoff)</code> to compute the log-likelihood and returns it as the output.</p>
-  </li>
-  <li>
-    <p>Think about this problem: If any of the observed data points has a value that is larger than a given hard-cutoff, could that set of parameters with that hard-cutoff be possible at all? In other words, if the maximum of your data is larger than the given input <code>cutoff</code> value (which is <code>param[2]</code> in <code>getLogLike()</code>), then that set of input parameters to <code>getLogLike()</code> is impossible. Therefore, the log-likelihood corresponding to that set of parameters must be negative-infinity to indicate the impossibility of that set of parameters. However, given the computer’s limited float range, the log-likelihood must be set to the largest negative number (e.g., <code>-1.e300</code> is good enough) and returned. Otherwise, if all data values are smaller than the input cutoff, then the log-likelihood value is computed by summing over all probabilities returned by <code>getLogProb()</code>.</p>
-  </li>
-  <li>
-    <p>In the latter case when you call <code>getLogProb()</code>, keep in mind that you will have to normalize the log-Gaussian probabilities, that you would normally compute, by the incomplete area created by the hard cutoff on the distribution. This is the area to the left of the hard cutoff on the distribution and can be computed via the Gaussian Cumulative Distribution Function (CDF). You will have to subtract the natural logarithm of this area from the log-probabilities of all data.</p>
-  </li>
-  <li>
-    <p>You can use the <a href="https://www.cdslab.org/paramonte/" target="_blank">ParaMonte library</a> in Python or in MATLAB to explore the resulting log-likelihood function. In such case, make sure you start your MCMC exploration by a good set of initial parameter values, such that the MCMC sampler can correctly explore the parameter-space without getting lost. This means making sure that you set the initial starting cutoff value to something larger than the maximum value of your data, for example, <code>cutoff_init = 2 * np.max(logdata)</code>. Here is the full syntax on how to call the <code>ParaDRAM()</code> sampler of the <code>paramonte</code> library,</p>
-  </li>
+  <li>You can use <code>scipy.optimize.fmin</code> to perform the maximization of log-likelihood to obtain the best-fit parameters. Once done with the minimization (of negative log-likelihood), report the best-fit parameters on the display.</li>
 </ol>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">paramonte</span> <span class="k">as</span> <span class="n">pm</span>
-<span class="n">pm</span><span class="p">.</span><span class="n">version</span><span class="p">.</span><span class="n">interface</span><span class="p">.</span><span class="n">dump</span><span class="p">()</span> <span class="c1"># get the version of ParaMonte we are working with
-</span><span class="n">pmpd</span> <span class="o">=</span> <span class="n">pm</span><span class="p">.</span><span class="n">ParaDRAM</span><span class="p">()</span> <span class="c1"># create a ParaDRAM sampler object
-</span><span class="n">pmpd</span><span class="p">.</span><span class="n">spec</span><span class="p">.</span><span class="n">chainSize</span> <span class="o">=</span> <span class="mi">20000</span> <span class="c1"># change the number of sampled points from default 100,000 to 30,000
-</span><span class="n">pmpd</span><span class="p">.</span><span class="n">spec</span><span class="p">.</span><span class="n">variableNameList</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Average"</span><span class="p">,</span><span class="s">"LogStandardDeviation"</span><span class="p">,</span><span class="s">"Cutoff"</span><span class="p">]</span>
-<span class="n">pmpd</span><span class="p">.</span><span class="n">spec</span><span class="p">.</span><span class="n">startPointVec</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">normal</span><span class="p">.</span><span class="n">maxdata</span><span class="p">]</span> <span class="c1"># ensure the initial starting point of the search for cutoff is good.
-</span><span class="n">pmpd</span><span class="p">.</span><span class="n">spec</span><span class="p">.</span><span class="n">targetAcceptanceRate</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.3</span><span class="p">]</span> <span class="c1"># ensure the MCMC sampling efficiency does not become too large or too small.
-</span>
-<span class="c1"># call MCMC sampler
-</span>
-<span class="n">pmpd</span><span class="p">.</span><span class="n">runSampler</span><span class="p">(</span> <span class="n">ndim</span> <span class="o">=</span> <span class="mi">3</span>
-               <span class="p">,</span> <span class="n">getLogFunc</span> <span class="o">=</span> <span class="n">normal</span><span class="p">.</span><span class="n">getLogLike</span>
-               <span class="p">)</span>
-</code></pre></div></div>
-<pre><code>ParaDRAM - NOTE: Running the ParaDRAM sampler in serial mode...
-ParaDRAM - NOTE: To run the ParaDRAM sampler in parallel mode visit: cdslab.org/pm
-ParaDRAM - NOTE: If you are using Jupyter notebook, check the Jupyter's terminal window
-ParaDRAM - NOTE: for realtime simulation progress and report.
-
-
-ParaDRAM - NOTE: To read the generated output files sample or chain files, try the following:
-ParaDRAM - NOTE: 
-ParaDRAM - NOTE:     pmpd.readSample()      # to read the final i.i.d. sample from the output sample file. 
-ParaDRAM - NOTE:     pmpd.readChain()       # to read the uniquely-accepted points from the output chain file. 
-ParaDRAM - NOTE:     pmpd.readMarkovChain() # to read the Markov Chain. NOT recommended for extremely-large chains.
-ParaDRAM - NOTE: 
-ParaDRAM - NOTE: Replace 'pmpd' with the name you are using for your ParaDRAM object.
-ParaDRAM - NOTE: For more information and examples on the usage, visit:
-ParaDRAM - NOTE: 
-ParaDRAM - NOTE:     https://www.cdslab.org/paramonte/
-</code></pre>
-
-<p>where <code>normal.maxdata</code> represents the maximum of the data, and <code>normal.getLogLike(param)</code> returns the log-likelihood value given the input <code>param</code> which is the average and log-standard-deviation of the Normal distribution and the cutoff, corresponding to <code>param[0]</code>, <code>param[1]</code>, <code>param[2]</code>.</p>
-
-<p>Here is the resulting maximum-likelihood parameters inferred from the paramonte-ParaDRAM MCMC sampler as is done below in Python:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">df</span><span class="p">.</span><span class="n">mean</span><span class="p">()</span>
-</code></pre></div></div>
-<pre><code>SampleLogFunc          -38794.057165
-Average                    -0.018469
-LogStandardDeviation       -0.011038
-Cutoff                      0.693154
-</code></pre>
-
-<p>Once you are done with sampling, you can draw and save the parameter traceplots and histograms like the following (in Python),</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># read the resulting sample
-</span>
-<span class="n">pmpd</span><span class="p">.</span><span class="n">readSample</span><span class="p">()</span>
-
-<span class="c1"># plot traceplots of the sampled parameters
-</span>
-<span class="k">for</span> <span class="n">colname</span> <span class="ow">in</span> <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">df</span><span class="p">.</span><span class="n">columns</span><span class="p">:</span>
-    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">.</span><span class="n">ycolumns</span> <span class="o">=</span> <span class="n">colname</span>
-    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">.</span><span class="n">outputFile</span> <span class="o">=</span> <span class="s">"traceplot_"</span> <span class="o">+</span> <span class="n">colname</span>
-    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">()</span>
-    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">.</span><span class="n">currentFig</span><span class="p">.</span><span class="n">axes</span><span class="p">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">"MCMC Count"</span><span class="p">)</span>
-    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">.</span><span class="n">currentFig</span><span class="p">.</span><span class="n">axes</span><span class="p">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">colname</span><span class="p">)</span>
-
-<span class="c1"># plot the histograms of the sampled parameters
-</span>
-<span class="k">for</span> <span class="n">colname</span> <span class="ow">in</span> <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">df</span><span class="p">.</span><span class="n">columns</span><span class="p">:</span>
-    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">histplot</span><span class="p">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">colname</span>
-    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">histplot</span><span class="p">.</span><span class="n">outputFile</span> <span class="o">=</span> <span class="s">"histogram_"</span> <span class="o">+</span> <span class="n">colname</span>
-    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">hist</span><span class="p">()</span>
-    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">histplot</span><span class="p">.</span><span class="n">currentFig</span><span class="p">.</span><span class="n">axes</span><span class="p">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">"MCMC Count"</span><span class="p">)</span>
-    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">histplot</span><span class="p">.</span><span class="n">currentFig</span><span class="p">.</span><span class="n">axes</span><span class="p">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">colname</span><span class="p">)</span>
-
-</code></pre></div></div>
-
-<p>This will generate and save to external files, the following plots,</p>
-
-<figure><img src="traceplot_Average.png" width="900" /></figure>
-<p><br /></p>
-<figure><img src="traceplot_LogStandardDeviation.png" width="900" /></figure>
-<p><br /></p>
-<figure><img src="traceplot_Cutoff.png" width="900" /></figure>
-<p><br /></p>
-<figure><img src="histogram_Average.png" width="900" /></figure>
-<p><br /></p>
-<figure><img src="histogram_LogStandardDeviation.png" width="900" /></figure>
-<p><br /></p>
-<figure><img src="histogram_Cutoff.png" width="900" /></figure>
-<p><br /></p>
 
 
             </div>
@@ -418,7 +319,7 @@ Cutoff                      0.693154
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Regression: Predicting the distribution of the a dataset subjected to censorship (sample incompleteness)&quot;%20https://www.cdslab.org/recipes/programming/regression-gaussian-data/regression-gaussian-data%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Regression: Estimating the parameters of a Normally-distributed sample&quot;%20https://www.cdslab.org/recipes/programming/regression-gaussian-data/regression-gaussian-data%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
@@ -476,7 +377,7 @@ Cutoff                      0.693154
         <footer class="notepad-site-footer">
     <div class="copyright">
          <!-- <section>Last updated 2021 / 10 / 29</section></br> -->
-         <section>Last updated Friday, 29 Oct 2021 at 12:05 PM CST</section></br>
+         <section>Last updated Friday, 29 Oct 2021 at 12:28 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
