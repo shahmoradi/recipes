@@ -169,6 +169,14 @@
 		} ,
 	
 		{
+		  "title"      : "Regression: Predicting the distribution of the a dataset subjected to censorship (sample incompleteness)",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/regression-gaussian-data/regression-gaussian-data",
+		  "date"       : "2021-09-28 00:00:00 -0500",
+		  "shortdate"  : "September 28, 2021"
+		} ,
+	
+		{
 		  "title"      : "Visualizing the average precipitation among the US states",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/visualization-avg-precipitation-choropleth/visualization-avg-precipitation-choropleth",
