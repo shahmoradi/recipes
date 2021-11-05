@@ -188,6 +188,11 @@ callback([
 
   {
     "text": "Regression: Estimating the parameters of a Normally-distributed sample",
+    "href": "/recipes/programming/regression-linear-gaussian/regression-linear-gaussian"
+  } ,
+
+  {
+    "text": "Regression: Estimating the parameters of a Normally-distributed sample",
     "href": "/recipes/programming/regression-gaussian-data/regression-gaussian-data"
   } ,
 
