@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "Regression: Predicting the global land temperature of Earth in 2050 from the past data: Choosing the best model",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/regression-predicting-future-global-land-temperature-excel/regression-predicting-future-global-land-temperature-excel",
+		  "date"       : "2021-11-11 00:00:00 -0600",
+		  "shortdate"  : "November 11, 2021"
+		} ,
+	
+		{
 		  "title"      : "Regression: Estimating the parameters of a Normally-distributed sample",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/regression-linear-gaussian/regression-linear-gaussian",
