@@ -320,6 +320,30 @@
 
 <p>Now, use the maximum likelihood method combined with the MCMC sampling technique in the language of your choice (e.g., Python/MATLAB) to perform a Markov Chain Monte Carlo simulation for this regression problem and find the underlying true parameters of the hypothesized lognormal distribution (or equivalently, the Gaussian distribution in logarithmic space) as well as the detection threshold value (the value of the vertical black line).</p>
 
+<ol>
+  <li>To solve this problem, and any other scientific problem solving, We should always break it down to simpler tinier chunks that are manageable and also simplify the scientific hypothesis so that the possibility of accumulation of layers of error in the calculations diminishes. In this case, a simpler hypothesis than <strong>the censored Gaussian fit</strong> to this data is <strong>a simple Gaussian fit without any sample censorship</strong>. We will first solve this problem for this simple hypothesis of a uncensored Gaussian.
+    <ol>
+      <li>First, write a function that takes an input observation and the parameters of a Gaussian distribution ($\mu, \sigma$) and returns the natural logarithm of the Gaussian probability density function (PDF),<br />
+\(\log\big( \pi( D_i | \mu, \sigma ) \big).\)</li>
+      <li>Use the simple generic definition of the likelihood function,<br />
+\(\begin{eqnarray*}
+\log\Big( \mathcal{L}\big( \mathcal{D}; \mathbf{\theta} = [\mu, \sigma] \big) \Big)
+&amp;=&amp; \log\Big( \prod_{i = 1}^{i = N} ~ \pi( D_i | \mu, \sigma ) \Big) \\
+&amp;=&amp; \sum_{i = 1}^{i = N} ~ \log\Big(\pi( D_i | \mu, \sigma ) \Big)
+~.
+\end{eqnarray*}\)</li>
+      <li>Maximize this liklelihood function to get the best-fit Gaussian parameters for the model. The best-fit model would yield a fit like the following to our data,
+        <figure>
+    <img src="CensoredDataGaussianFit.png" width="900" />
+</figure>
+        <p><br />
+which despite being the best-fit, still looks quite awful. Why? Because our hypothesis is awful: This dataset is not pure Gaussian, it is censored.</p>
+      </li>
+      <li>We can now go on to the more sophisticated case that includes data censorship.</li>
+    </ol>
+  </li>
+</ol>
+
 <p><strong>Hint:</strong></p>
 
 <ol>
@@ -327,7 +351,7 @@
     <p>First read the data using Pandas library, then log-transform data to make it look like a Normal distribution.</p>
   </li>
   <li>
-    <p>Write a class that takes the log-data as input and has two methods, <code>getLogProb(data,avg,std,cutoff)</code> and <code>getLogLike(param)</code>. The former computes the log-probability of observing the input dataset <code>data</code> given the parameters of the model (the Normal average <code>avg</code>, the Normal standard deviation <code>std</code>, and the vetical cutoff on the distribution <code>cutoff</code>). The latter method takes a set of parameters as a vector containing the average of the Normal distribution (<code>avg</code>), the natural-logarithm of the standard deviation of the Normal distribution <code>log(std)</code>, and the value of the hard-cutoff on the data. Given these three parameters, <code>getLogLike(param)</code> sums over the log-probabilities returned by <code>getLogProb(data,avg,std,cutoff)</code> to compute the log-likelihood and returns it as the output.</p>
+    <p>Write a class or a series of functions that take the log-data as input and has two methods, <code>getLogProb(data,avg,std,cutoff)</code> and <code>getLogLike(param)</code>. The former computes the log-probability of observing the input dataset <code>data</code> given the parameters of the model (the Normal average <code>avg</code>, the Normal standard deviation <code>std</code>, and the vetical cutoff on the distribution <code>cutoff</code>). The latter method takes a set of parameters as a vector containing the average of the Normal distribution (<code>avg</code>), the natural-logarithm of the standard deviation of the Normal distribution <code>log(std)</code>, and the value of the hard-cutoff on the data. Given these three parameters, <code>getLogLike(param)</code> sums over the log-probabilities returned by <code>getLogProb(data,avg,std,cutoff)</code> to compute the log-likelihood and returns it as the output.</p>
   </li>
   <li>
     <p>Think about this problem: If any of the observed data points has a value that is larger than a given hard-cutoff, could that set of parameters with that hard-cutoff be possible at all? In other words, if the maximum of your data is larger than the given input <code>cutoff</code> value (which is <code>param[2]</code> in <code>getLogLike()</code>), then that set of input parameters to <code>getLogLike()</code> is impossible. Therefore, the log-likelihood corresponding to that set of parameters must be negative-infinity to indicate the impossibility of that set of parameters. However, given the computer’s limited float range, the log-likelihood must be set to the largest negative number (e.g., <code>-1.e300</code> is good enough) and returned. Otherwise, if all data values are smaller than the input cutoff, then the log-likelihood value is computed by summing over all probabilities returned by <code>getLogProb()</code>.</p>
@@ -376,7 +400,8 @@ ParaDRAM - NOTE:     https://www.cdslab.org/paramonte/
 
 <p>Here is the resulting maximum-likelihood parameters inferred from the paramonte-ParaDRAM MCMC sampler as is done below in Python:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">df</span><span class="p">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sample</span> <span class="o">=</span> <span class="n">pmpd</span><span class="p">.</span><span class="n">readSample</span><span class="p">(</span><span class="n">renabled</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">sample</span><span class="p">.</span><span class="n">df</span><span class="p">.</span><span class="n">mean</span><span class="p">()</span>
 </code></pre></div></div>
 <pre><code>SampleLogFunc          -38794.057165
 Average                    -0.018469
@@ -388,25 +413,25 @@ Cutoff                      0.693154
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># read the resulting sample
 </span>
-<span class="n">pmpd</span><span class="p">.</span><span class="n">readSample</span><span class="p">()</span>
+<span class="n">sample</span> <span class="o">=</span> <span class="n">pmpd</span><span class="p">.</span><span class="n">readSample</span><span class="p">(</span><span class="n">renabled</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="c1"># plot traceplots of the sampled parameters
 </span>
-<span class="k">for</span> <span class="n">colname</span> <span class="ow">in</span> <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">df</span><span class="p">.</span><span class="n">columns</span><span class="p">:</span>
-    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">.</span><span class="n">ycolumns</span> <span class="o">=</span> <span class="n">colname</span>
-    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">.</span><span class="n">outputFile</span> <span class="o">=</span> <span class="s">"traceplot_"</span> <span class="o">+</span> <span class="n">colname</span>
-    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">()</span>
-    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">.</span><span class="n">currentFig</span><span class="p">.</span><span class="n">axes</span><span class="p">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">"MCMC Count"</span><span class="p">)</span>
-    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">.</span><span class="n">currentFig</span><span class="p">.</span><span class="n">axes</span><span class="p">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">colname</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">colname</span> <span class="ow">in</span> <span class="n">sample</span><span class="p">.</span><span class="n">df</span><span class="p">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="n">sample</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">.</span><span class="n">ycolumns</span> <span class="o">=</span> <span class="n">colname</span>
+    <span class="n">sample</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">.</span><span class="n">outputFile</span> <span class="o">=</span> <span class="s">"traceplot_"</span> <span class="o">+</span> <span class="n">colname</span>
+    <span class="n">sample</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">()</span>
+    <span class="n">sample</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">.</span><span class="n">currentFig</span><span class="p">.</span><span class="n">axes</span><span class="p">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">"MCMC Count"</span><span class="p">)</span>
+    <span class="n">sample</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">.</span><span class="n">currentFig</span><span class="p">.</span><span class="n">axes</span><span class="p">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">colname</span><span class="p">)</span>
 
 <span class="c1"># plot the histograms of the sampled parameters
 </span>
-<span class="k">for</span> <span class="n">colname</span> <span class="ow">in</span> <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">df</span><span class="p">.</span><span class="n">columns</span><span class="p">:</span>
-    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">histplot</span><span class="p">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">colname</span>
-    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">histplot</span><span class="p">.</span><span class="n">outputFile</span> <span class="o">=</span> <span class="s">"histogram_"</span> <span class="o">+</span> <span class="n">colname</span>
-    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">hist</span><span class="p">()</span>
-    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">histplot</span><span class="p">.</span><span class="n">currentFig</span><span class="p">.</span><span class="n">axes</span><span class="p">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">"MCMC Count"</span><span class="p">)</span>
-    <span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">plot</span><span class="p">.</span><span class="n">histplot</span><span class="p">.</span><span class="n">currentFig</span><span class="p">.</span><span class="n">axes</span><span class="p">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">colname</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">colname</span> <span class="ow">in</span> <span class="n">sample</span><span class="p">.</span><span class="n">df</span><span class="p">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="n">sample</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">histplot</span><span class="p">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">colname</span>
+    <span class="n">sample</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">histplot</span><span class="p">.</span><span class="n">outputFile</span> <span class="o">=</span> <span class="s">"histogram_"</span> <span class="o">+</span> <span class="n">colname</span>
+    <span class="n">sample</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">histplot</span><span class="p">()</span>
+    <span class="n">sample</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">histplot</span><span class="p">.</span><span class="n">currentFig</span><span class="p">.</span><span class="n">axes</span><span class="p">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">colname</span><span class="p">)</span>
+    <span class="n">sample</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">histplot</span><span class="p">.</span><span class="n">currentFig</span><span class="p">.</span><span class="n">axes</span><span class="p">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">"MCMC Count"</span><span class="p">)</span>
 
 </code></pre></div></div>
 
@@ -423,6 +448,11 @@ Cutoff                      0.693154
 <figure><img src="histogram_LogStandardDeviation.png" width="900" /></figure>
 <p><br /></p>
 <figure><img src="histogram_Cutoff.png" width="900" /></figure>
+<p><br /></p>
+
+<p>Here is a plot of the resulting best-fit truncated Gaussian to the censored data:</p>
+
+<figure><img src="CensoredDataCensoredNormalFit.png" width="900" /></figure>
 <p><br /></p>
 
 
@@ -489,7 +519,7 @@ Cutoff                      0.693154
         <footer class="notepad-site-footer">
     <div class="copyright">
          <!-- <section>Last updated 2021 / 11 / 12</section></br> -->
-         <section>Last updated Friday, 12 Nov 2021 at 01:57 AM CST</section></br>
+         <section>Last updated Friday, 12 Nov 2021 at 11:28 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

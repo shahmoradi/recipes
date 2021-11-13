@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2021-11-12T01:57:26-06:00</updated>
+<updated>2021-11-12T23:28:39-06:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -65,7 +65,7 @@
 
 
 <entry>
-  <title type="html"><![CDATA[Regression: Estimating the parameters of a Normally-distributed sample]]></title>
+  <title type="html"><![CDATA[Regression: Estimating the parameters of a linear model for a Normally-distributed sample]]></title>
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/regression-linear-gaussian/regression-linear-gaussian"/>
   <id>https://www.cdslab.org/recipes/programming/regression-linear-gaussian/regression-linear-gaussian</id>
@@ -122,7 +122,7 @@ As you may have guessed, the only difference between this dataset and the previo
 
 
   
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/regression-linear-gaussian/regression-linear-gaussian&quot;&gt;Regression: Estimating the parameters of a Normally-distributed sample&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on November 05, 2021.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/regression-linear-gaussian/regression-linear-gaussian&quot;&gt;Regression: Estimating the parameters of a linear model for a Normally-distributed sample&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on November 05, 2021.&lt;/p&gt;</content>
 </entry>
 
 
@@ -841,32 +841,22 @@ $110,000       | $122,000  | $58,000
 &lt;p&gt;Consider the following &lt;a href=&quot;TempData.xlsx&quot; target=&quot;_blank&quot;&gt;Excel dataset&lt;/a&gt; containing the temperature of two US cities Honolulu, HI and Duluth, MN from 1995 to 2020. There are two pages in the Excel file: Duluth, and Honolulu. Each row in the file corresponds to the average temperature (in Fahrenheit) of a city in a given day of the year. Each observation has the following attributes: “Year,AverageTemperature”.&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Make a visualization of the data corresponding to these two city temperatures over the years similar to the following plots.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;figure&gt;
+  &lt;li&gt;Make a visualization of the data corresponding to these two city temperatures over the years similar to the following plots.
+    &lt;figure&gt;
     &lt;img src=&quot;Duluth.png&quot; /&gt;
 &lt;/figure&gt;
-
-&lt;figure&gt;
+    &lt;figure&gt;
     &lt;img src=&quot;Honolulu.png&quot; /&gt;
 &lt;/figure&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Use Excel’s &lt;code&gt;AVERAGE&lt;/code&gt; command to compute the average temperatures of the two cities over the years. Which one is hotter?&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Which city has less fluctuating temperatures across days of the year? Prove this by computing the standard deviations of temperatures over all years for each city. Recall that the standard deviation measure the amount of dispersion of data around the data mean. You can use Excel’s &lt;code&gt;STDEV&lt;/code&gt; function to compute the standard deviation of a column of data.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Now, perform a linear regression on the temperature data for both cities in Excel and report the linear equation and the slope of the line that you find.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;How do the temperatures of these two cities correlate with each other? &lt;strong&gt;Hint&lt;/strong&gt;: To answer this question, make a plot of the temperatures of the two cities against each other like the following graph. Then use the &lt;strong&gt;Tendline&lt;/strong&gt; tools of the graph to obtain a linear fit to the data points. Then, add the equation and the $R^2$ value to the plot. The square-root of $R^2$, that is, $R$, is the amount of correlation between the temperatures of two cities during all years.
+  &lt;li&gt;Use Excel’s &lt;code&gt;AVERAGE&lt;/code&gt; command to compute the average temperatures of the two cities over the years. Which one is hotter?&lt;/li&gt;
+  &lt;li&gt;Which city has less fluctuating temperatures across days of the year? Prove this by computing the standard deviations of temperatures over all the years for each city. Recall that the standard deviation measures the amount of dispersion of data around the data mean. You can use Excel’s &lt;code&gt;STDEV&lt;/code&gt; function to compute the standard deviation of a column of data.&lt;/li&gt;
+  &lt;li&gt;Now, perform a linear regression on the temperature data for both cities in Excel and report the linear equation and the slope of the line that you find.&lt;/li&gt;
+  &lt;li&gt;How do the temperatures of these two cities correlate with each other? &lt;strong&gt;Hint&lt;/strong&gt;: To answer this question, make a plot of the temperatures of the two cities against each other like the following graph. Then use the &lt;strong&gt;TRENDLINE&lt;/strong&gt; tools of the graph to obtain a linear fit to the data points. Then, add the equation and the $R^2$ value to the plot. The square-root of $R^2$, that is, $R$, is the amount of correlation between the temperatures of two cities during all years.
     &lt;figure&gt;
     &lt;img src=&quot;duluth_honolulu_cor.png&quot; /&gt;
 &lt;/figure&gt;
-    &lt;p&gt;Is this correlation positive or negative?  What does this imply about the geographical locations of the two cities on Earth?  &lt;strong&gt;Hint&lt;/strong&gt; Think about the effects of geographical latitude on temperature.&lt;/p&gt;
+    &lt;p&gt;Is this correlation positive or negative?  What does this imply about the geographical locations of the two cities on Earth?  &lt;strong&gt;Hint&lt;/strong&gt;: Think about the effects of geographical latitude on temperature.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;What do you think the temperatures of Duluth, MN and Sydney, Australia should be correlated? Positively or negatively? Why?&lt;/li&gt;
 &lt;/ol&gt;
