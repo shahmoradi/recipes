@@ -3,18 +3,18 @@
 <head>
     
     <meta charset="utf-8">
-<title>REGRESSION: OBTAINING THE MOST LIKELY MEAN OF A SET OF STANDARD NORMALLY DISTRIBUTED RANDOM VARIABLES VIA THE LEAST ABSOLUTE DEVIATIONS METHOD &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>PUZZLE: MATCHSTICK WRONG EQUATION &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="MATLAB, Python, regression, visualization, Monte Carlo, simulation, plot, line, figure, random number, distribution function, probability density function, PDF, probability, objective function">
+<meta name="keywords" content="matchstick, equation, puzzle">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables via the least absolute deviations method">
+<meta property="og:title" content="Puzzle: Matchstick Wrong Equation">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-absolute-deviations-method">
+<meta property="og:url" content="/recipes/programming/puzzle-matchstick-equation/puzzle-matchstick-equation">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-absolute-deviations-method">
+<link rel="canonical" href="/recipes/programming/puzzle-matchstick-equation/puzzle-matchstick-equation">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,89 +130,29 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-absolute-deviations-method">Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables via the least absolute deviations method</a></h2>
+                            <h2><a href="/recipes/programming/puzzle-matchstick-equation/puzzle-matchstick-equation">Puzzle: Matchstick Wrong Equation</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
                                 
                                     &#8212; Last updated: 
-                                    <strong><time datetime="2019-11-21T00:00:00-06:00">21 November 2019</time></strong>
+                                    <strong><time datetime="2021-10-01T00:00:00-05:00">01 October 2021</time></strong>
                                 
                                 <ul class="tag-box inline">
                                     <span style="margin-right:1rem;">Tags:</span>
                                     
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#MATLAB" data-toggle="tooltip" title="Posts tagged with MATLAB" rel="tag">MATLAB</a>
+                                                <a href="/recipes/tags/index.html#equation" data-toggle="tooltip" title="Posts tagged with equation" rel="tag">equation</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#Monte Carlo" data-toggle="tooltip" title="Posts tagged with Monte Carlo" rel="tag">Monte Carlo</a>
+                                                <a href="/recipes/tags/index.html#matchstick" data-toggle="tooltip" title="Posts tagged with matchstick" rel="tag">matchstick</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#PDF" data-toggle="tooltip" title="Posts tagged with PDF" rel="tag">PDF</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#distribution function" data-toggle="tooltip" title="Posts tagged with distribution function" rel="tag">distribution function</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#figure" data-toggle="tooltip" title="Posts tagged with figure" rel="tag">figure</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#line" data-toggle="tooltip" title="Posts tagged with line" rel="tag">line</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#objective function" data-toggle="tooltip" title="Posts tagged with objective function" rel="tag">objective function</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#plot" data-toggle="tooltip" title="Posts tagged with plot" rel="tag">plot</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#probability" data-toggle="tooltip" title="Posts tagged with probability" rel="tag">probability</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#probability density function" data-toggle="tooltip" title="Posts tagged with probability density function" rel="tag">probability density function</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#random number" data-toggle="tooltip" title="Posts tagged with random number" rel="tag">random number</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#regression" data-toggle="tooltip" title="Posts tagged with regression" rel="tag">regression</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#simulation" data-toggle="tooltip" title="Posts tagged with simulation" rel="tag">simulation</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#visualization" data-toggle="tooltip" title="Posts tagged with visualization" rel="tag">visualization</a>
+                                                <a href="/recipes/tags/index.html#puzzle" data-toggle="tooltip" title="Posts tagged with puzzle" rel="tag">puzzle</a>
                                             </li>
                                             
                                         
@@ -241,49 +181,10 @@
     
 </div>
 
-<p>Consider this dataset, <a href="Drand.mat" target="_blank">Drand.mat</a>, which contains a set of random numbers. Write a sctipt that computes the mean of this sample via the Least-Sum-of-Squares method. For this, you will need to use a funtion minimizer in the language of your choice. Compare your results in the end with the simple method of computing the mean, which is the sum of all the values divided by the number of points.</p>
-
-<p>Here is a best-fit Gaussian distribution using the most likely parameters to the histogram of this dataset.</p>
-
+<p>Move just one matchstick in the following equation to make it hold.</p>
 <figure>
-    <img src="histfit.png" />
+    <img src="matchstick_equation.png" />
 </figure>
-
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#hint-python" id="hint-python">
-            <img src="/recipes/images/Python.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
-                Python
-            </a>
-        </figcaption>
-    </figure>
-</div>
-
-<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> 
-For optimization tasks in Python, you can use <code>fmin()</code> function from Python’s package <strong>scipy</strong>: <code>from scipy.optimize import fmin</code>. To read MATLAB binary files (<code>*.mat</code>) in Python, you will have to use Scipy’s <code>loadmat()</code> function (<code>from scipy.io import loadmat</code>).
-</p>
-
-<p>Name your main script <code>findBestFitParameters.py</code>. Here is an example expected output of such script,</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">findBestFitParameters</span><span class="p">.</span><span class="n">py</span>
-</code></pre></div></div>
-<pre><code>Optimization terminated successfully.
-         Current function value: 100.868424
-         Iterations: 21
-         Function evaluations: 42
-
-Least-Squares mean = -0.08197021484375
-simple average formula = -0.08197189633971344
-relative difference = 2.0513289127509662e-05
-</code></pre>
-
-<p>Start your parameter search via <code>fmin()</code> with the following value: $\mu = 10$.</p>
 
 
             </div>
@@ -291,11 +192,11 @@ relative difference = 2.0513289127509662e-05
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables via the least absolute deviations method&quot;%20https://www.cdslab.org/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-absolute-deviations-method%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Puzzle: Matchstick Wrong Equation&quot;%20https://www.cdslab.org/recipes/programming/puzzle-matchstick-equation/puzzle-matchstick-equation%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-absolute-deviations-method"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/puzzle-matchstick-equation/puzzle-matchstick-equation"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>

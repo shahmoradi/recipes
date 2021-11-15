@@ -237,6 +237,16 @@ callback([
   } ,
 
   {
+    "text": "Puzzle: Matchstick Wrong Equation",
+    "href": "/recipes/programming/puzzle-matchstick-equation/puzzle-matchstick-equation"
+  } ,
+
+  {
+    "text": "Puzzle: How many living creatures are in the pond",
+    "href": "/recipes/programming/puzzle-how-many-animals-in-pond/puzzle-how-many-animals-in-pond"
+  } ,
+
+  {
     "text": "Prove that the diagonal elements of a correlation matrix of a dataset must be one",
     "href": "/recipes/programming/stat-cormat-diag/stat-cormat-diag"
   } ,
@@ -288,12 +298,12 @@ callback([
 
   {
     "text": "Monte Carlo approximation of the number Pi",
-    "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
+    "href": "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
   } ,
 
   {
     "text": "Monte Carlo approximation of the number Pi",
-    "href": "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
+    "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
   } ,
 
   {

@@ -1,6 +1,22 @@
 [
 	
 		{
+		  "title"      : "Puzzle: Matchstick Wrong Equation",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/puzzle-matchstick-equation/puzzle-matchstick-equation",
+		  "date"       : "2021-11-15 00:00:00 -0600",
+		  "shortdate"  : "November 15, 2021"
+		} ,
+	
+		{
+		  "title"      : "Puzzle: How many living creatures are in the pond",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/puzzle-how-many-animals-in-pond/puzzle-how-many-animals-in-pond",
+		  "date"       : "2021-11-15 00:00:00 -0600",
+		  "shortdate"  : "November 15, 2021"
+		} ,
+	
+		{
 		  "title"      : "Regression: Predicting the global land temperature of Earth in 2050 from the past data: Choosing the best model",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/regression-predicting-future-global-land-temperature-excel/regression-predicting-future-global-land-temperature-excel",
