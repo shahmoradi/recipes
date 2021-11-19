@@ -3,18 +3,18 @@
 <head>
     
     <meta charset="utf-8">
-<title>IMPLEMENTING THE BELL-SHAPED (GAUSSIAN) FUNCTION &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>COGNITIVE BIASES &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="Python, MATLAB, Gaussian, bell-shaped, pi, value, variable, type">
+<meta name="keywords" content="cognitive, bias">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Implementing the Bell-shaped (Gaussian) function">
+<meta property="og:title" content="Cognitive Biases">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/implementing-gaussian-function/implementing-gaussian-function">
+<meta property="og:url" content="/recipes/programming/cognitive-biases/cognitive-biases">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/implementing-gaussian-function/implementing-gaussian-function">
+<link rel="canonical" href="/recipes/programming/cognitive-biases/cognitive-biases">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,54 +130,21 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/implementing-gaussian-function/implementing-gaussian-function">Implementing the Bell-shaped (Gaussian) function</a></h2>
+                            <h2><a href="/recipes/programming/cognitive-biases/cognitive-biases">Cognitive Biases</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
-                                
-                                    &#8212; Last updated: 
-                                    <strong><time datetime="2019-07-04T00:00:00-05:00">04 July 2019</time></strong>
                                 
                                 <ul class="tag-box inline">
                                     <span style="margin-right:1rem;">Tags:</span>
                                     
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#Gaussian" data-toggle="tooltip" title="Posts tagged with Gaussian" rel="tag">Gaussian</a>
+                                                <a href="/recipes/tags/index.html#bias" data-toggle="tooltip" title="Posts tagged with bias" rel="tag">bias</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#MATLAB" data-toggle="tooltip" title="Posts tagged with MATLAB" rel="tag">MATLAB</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#bell-shaped" data-toggle="tooltip" title="Posts tagged with bell-shaped" rel="tag">bell-shaped</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#pi" data-toggle="tooltip" title="Posts tagged with pi" rel="tag">pi</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#type" data-toggle="tooltip" title="Posts tagged with type" rel="tag">type</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#value" data-toggle="tooltip" title="Posts tagged with value" rel="tag">value</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#variable" data-toggle="tooltip" title="Posts tagged with variable" rel="tag">variable</a>
+                                                <a href="/recipes/tags/index.html#cognitive" data-toggle="tooltip" title="Posts tagged with cognitive" rel="tag">cognitive</a>
                                             </li>
                                             
                                         
@@ -206,33 +173,14 @@
     
 </div>
 
-<p>The bell-shaped <a href="https://en.wikipedia.org/wiki/Normal_distribution" target="_blank">Gaussian probability density function</a>,</p>
+<p>Suppose I have discovered a positive relationship between properties of some celestial objects, like the one formed by the black dots in the following figure.</p>
+<figure>
+    <img src="discovery.png" width="700" />
+</figure>
 
-\[f(x)=\frac{1}{\sqrt{2\pi}\sigma}\exp\bigg[ -\frac{1}{2}\bigg( \frac{x-\mu}{\sigma} \bigg)^2 \bigg]\]
+<p>But in making such a discovery, I repeatedly and subconsciously throw away any data point that does not seem to be a good fit to my hypothesis and keep those only data points that seem to confirm my hypothesis. Of course, these exclusions are not done in bad faith, I have reasons for myself that appear legitimate at least on the surface to exclude those outlier (red) data points to my discovery.</p>
 
-<p>is one of the most widely used functions in science and technology. The parameters of the function (mu,sigma&gt;0) are prescribed real numbers. Write a program for evaluating this function when $\mu=0$, $\sigma=2$, $x = 1$.</p>
-
-<p>Verify your answer by getting the same result from <a href="https://www.wolframalpha.com/" target="_blank">Wolfram Alpha</a> mathematical search engine.</p>
-
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#hint-python" id="hint-python">
-            <img src="/recipes/images/Python.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
-                Python
-            </a>
-        </figcaption>
-    </figure>
-</div>
-
-<p><strong>Hint:</strong> The value <code>pi</code>, and <code>exp()</code> , <code>sqrt()</code> function are built-in in MATLAB, but are not so in Python. You will need to export them using the following command in Python,</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">sqrt</span>
-</code></pre></div></div>
+<p>What kind of cognitive bias is affecting my discovery?</p>
 
 
             </div>
@@ -240,11 +188,11 @@
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Implementing the Bell-shaped (Gaussian) function&quot;%20https://www.cdslab.org/recipes/programming/implementing-gaussian-function/implementing-gaussian-function%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Cognitive Biases&quot;%20https://www.cdslab.org/recipes/programming/cognitive-biases/cognitive-biases%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/implementing-gaussian-function/implementing-gaussian-function"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/cognitive-biases/cognitive-biases"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>

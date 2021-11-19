@@ -572,6 +572,11 @@ callback([
   } ,
 
   {
+    "text": "Cognitive Biases",
+    "href": "/recipes/programming/cognitive-biases/cognitive-biases"
+  } ,
+
+  {
     "text": "Checking if an input is a prime number (via recursive function calls)?",
     "href": "/recipes/programming/isprime-recursive/isprime-recursive"
   } ,
