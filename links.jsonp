@@ -143,12 +143,12 @@ callback([
 
   {
     "text": "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables via the least absolute deviations method",
-    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-squares-method"
+    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-absolute-deviations-method"
   } ,
 
   {
     "text": "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables via the least absolute deviations method",
-    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-absolute-deviations-method"
+    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-squares-method"
   } ,
 
   {
@@ -189,6 +189,11 @@ callback([
   {
     "text": "Regression: Predicting the bivariate distribution of the a dataset subjected to censorship (sample incompleteness)",
     "href": "/recipes/programming/regression-censored-mvn-data/regression-censored-mvn-data"
+  } ,
+
+  {
+    "text": "Regression: Model selection for a bivariate data using Excel",
+    "href": "/recipes/programming/regression-model-selection-excel/regression-model-selection-excel"
   } ,
 
   {

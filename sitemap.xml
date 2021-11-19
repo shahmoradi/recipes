@@ -69,6 +69,10 @@
         <loc>https://www.cdslab.org/recipes/page6/</loc>
     </url>
     
+    <url>
+        <loc>https://www.cdslab.org/recipes/page7/</loc>
+    </url>
+    
 
     
     <url>
@@ -129,6 +133,10 @@
     
     <url>
         <loc>https://www.cdslab.org/recipes/programming/vis-colorscales/vis-colorscales</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/regression-model-selection-excel/regression-model-selection-excel</loc>
     </url>
     
     <url>

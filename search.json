@@ -121,6 +121,14 @@
 		} ,
 	
 		{
+		  "title"      : "Regression: Model selection for a bivariate data using Excel",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/regression-model-selection-excel/regression-model-selection-excel",
+		  "date"       : "2021-10-05 00:00:00 -0500",
+		  "shortdate"  : "October 05, 2021"
+		} ,
+	
+		{
 		  "title"      : "Visualizing and comparing the temperatures of Honolulu and Duluth",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/vis-temp-honolulu-duluth/vis-temp-honolulu-duluth",
