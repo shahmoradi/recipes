@@ -502,7 +502,7 @@ var store = [{
   "date": "November 19, 2021",
   "category": null,
   "tags": ["MATLAB","Python","Gaussian","Error Function","Cumulative Distribution Function","integration","CDF","regression","distribution","censored","sample incompleteness","Normal distribution","visualization","plot","line","figure","random number","distribution function","probability density function","PDF","probability","objective function","maximum likelihood method","Monte Carlo","Markov Chain","MCMC","ParaMonte","ParaDRAM","uncertainty quantification"],
-  "excerpt": "Problem Supposed we have observed a dataset comprised of $15027$ events with one attribute variable in this file: data.csv. Plotting..."
+  "excerpt": "Problem Supposed we have observed a dataset of events with one attribute variable in this file: data.csv. Plotting these points..."
 },{
   "title": "Puzzle: Matchstick Wrong Equation",
   "link": "/programming/puzzle-matchstick-equation/puzzle-matchstick-equation",

@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2021-11-19T12:58:59-06:00</updated>
+<updated>2021-11-19T13:12:37-06:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -43,7 +43,7 @@
     
 &lt;/div&gt;
 
-&lt;p&gt;Supposed we have observed a dataset comprised of $15027$ events with one attribute &lt;code&gt;variable&lt;/code&gt; in this file: &lt;a href=&quot;data.csv&quot; target=&quot;_blank&quot;&gt;data.csv&lt;/a&gt;. Plotting these points would yield a blue-colored histogram like the following plot,&lt;/p&gt;
+&lt;p&gt;Supposed we have observed a dataset of events with one attribute &lt;code&gt;variable&lt;/code&gt; in this file: &lt;a href=&quot;data.csv&quot; target=&quot;_blank&quot;&gt;data.csv&lt;/a&gt;. Plotting these points would yield a blue-colored histogram like the following plot,&lt;/p&gt;
 
 &lt;figure&gt;
     &lt;img src=&quot;data.png&quot; width=&quot;900&quot; /&gt;
