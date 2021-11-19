@@ -7,13 +7,61 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2021-11-18T23:37:03-06:00</updated>
+<updated>2021-11-19T12:58:59-06:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
   <uri>https://www.cdslab.org/recipes/</uri>
   <email>shahmoradi@utexas.edu</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Regression: Predicting the distribution of the a dataset subjected to a smooth censorship (sample incompleteness)]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/regression-erf-censored-gaussian-data/regression-erf-censored-gaussian-data"/>
+  <id>https://www.cdslab.org/recipes/programming/regression-erf-censored-gaussian-data/regression-erf-censored-gaussian-data</id>
+  <published>2021-11-19T00:00:00-06:00</published>
+  <updated>2021-11-19T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#MATLAB" term="MATLAB" /><category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#Gaussian" term="Gaussian" /><category scheme="https://www.cdslab.org/recipes/tags/#Error%20Function" term="Error Function" /><category scheme="https://www.cdslab.org/recipes/tags/#Cumulative%20Distribution%20Function" term="Cumulative Distribution Function" /><category scheme="https://www.cdslab.org/recipes/tags/#integration" term="integration" /><category scheme="https://www.cdslab.org/recipes/tags/#CDF" term="CDF" /><category scheme="https://www.cdslab.org/recipes/tags/#regression" term="regression" /><category scheme="https://www.cdslab.org/recipes/tags/#distribution" term="distribution" /><category scheme="https://www.cdslab.org/recipes/tags/#censored" term="censored" /><category scheme="https://www.cdslab.org/recipes/tags/#sample%20incompleteness" term="sample incompleteness" /><category scheme="https://www.cdslab.org/recipes/tags/#Normal%20distribution" term="Normal distribution" /><category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#line" term="line" /><category scheme="https://www.cdslab.org/recipes/tags/#figure" term="figure" /><category scheme="https://www.cdslab.org/recipes/tags/#random%20number" term="random number" /><category scheme="https://www.cdslab.org/recipes/tags/#distribution%20function" term="distribution function" /><category scheme="https://www.cdslab.org/recipes/tags/#probability%20density%20function" term="probability density function" /><category scheme="https://www.cdslab.org/recipes/tags/#PDF" term="PDF" /><category scheme="https://www.cdslab.org/recipes/tags/#probability" term="probability" /><category scheme="https://www.cdslab.org/recipes/tags/#objective%20function" term="objective function" /><category scheme="https://www.cdslab.org/recipes/tags/#maximum%20likelihood%20method" term="maximum likelihood method" /><category scheme="https://www.cdslab.org/recipes/tags/#Monte%20Carlo" term="Monte Carlo" /><category scheme="https://www.cdslab.org/recipes/tags/#Markov%20Chain" term="Markov Chain" /><category scheme="https://www.cdslab.org/recipes/tags/#MCMC" term="MCMC" /><category scheme="https://www.cdslab.org/recipes/tags/#ParaMonte" term="ParaMonte" /><category scheme="https://www.cdslab.org/recipes/tags/#ParaDRAM" term="ParaDRAM" /><category scheme="https://www.cdslab.org/recipes/tags/#uncertainty%20quantification" term="uncertainty quantification" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Supposed we have observed a dataset comprised of $15027$ events with one attribute &lt;code&gt;variable&lt;/code&gt; in this file: &lt;a href=&quot;data.csv&quot; target=&quot;_blank&quot;&gt;data.csv&lt;/a&gt;. Plotting these points would yield a blue-colored histogram like the following plot,&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;data.png&quot; width=&quot;900&quot; /&gt;
+&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Unlike the previous problems where the censorship was due to a sharp cutoff on a Gaussian dataset, the smooth cutoff in this problem is due to the following Gaussian model mixed with and inverted Gaussian CDF,&lt;/p&gt;
+
+\[\pi( x | \mu_G, \sigma_G, \mu_C, \sigma_C) \propto \mathcal{N}(x | \mu_G, \sigma_G) \times \frac{1}{2} \Big[ 1 + \text{erf}\Big(\frac{\mu_C-x}{\sigma_C\sqrt{2}}\Big) \Big] ~,\]
+
+&lt;p&gt;where $\mu_G, \sigma_G$ are the mean and standard deviation parameters of the Gaussian distribution and $\mu_G, \sigma_G$ are the unknown parameters of the Gaussian CDF smooth cutoff on this dataset.&lt;/p&gt;
+
+&lt;p&gt;Now our goal is to constrain the four unknown parameters of the above model using the maximum likelihood method. You can use the &lt;a href=&quot;https://www.cdslab.org/paramonte/&quot; target=&quot;_blank&quot;&gt;ParaMonte library&lt;/a&gt; in Python or in MATLAB to explore the resulting log-likelihood function. In such s case, make sure you start your MCMC exploration by a good set of initial parameter values, such that the MCMC sampler can correctly explore the parameter-space without getting lost. You can get help from &lt;a href=&quot;https://www.cdslab.orghttps://www.cdslab.org/recipes/programming/regression-censored-gaussian-data/regression-censored-gaussian-data&quot; target=&quot;_blank&quot;&gt;another relevant problem here&lt;/a&gt;.&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/regression-erf-censored-gaussian-data/regression-erf-censored-gaussian-data&quot;&gt;Regression: Predicting the distribution of the a dataset subjected to a smooth censorship (sample incompleteness)&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on November 19, 2021.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -1028,45 +1076,6 @@ $110,000       | $122,000  | $58,000
 
   
   &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/vis-excel-temp-honolulu-duluth/vis-temp-honolulu-duluth-excel&quot;&gt;Visualizing and comparing the temperatures of Honolulu and Duluth via Excel&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 01, 2021.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Visualizing the average precipitation of the US states vs. sunshine]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/vis-excel-rain-sunshine/vis-excel-rain-sunlight"/>
-  <id>https://www.cdslab.org/recipes/programming/vis-excel-rain-sunshine/vis-excel-rain-sunlight</id>
-  <published>2021-10-01T00:00:00-05:00</published>
-  <updated>2019-07-04T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#Excel" term="Excel" /><category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#data" term="data" /><category scheme="https://www.cdslab.org/recipes/tags/#input" term="input" /><category scheme="https://www.cdslab.org/recipes/tags/#output" term="output" /><category scheme="https://www.cdslab.org/recipes/tags/#figure" term="figure" /><category scheme="https://www.cdslab.org/recipes/tags/#usa" term="usa" />
-  <content type="html">
-  
-    
-&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-    
-        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
-            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
-                Problem
-            &lt;/h2&gt;
-        &lt;/a&gt;
-    
-&lt;/div&gt;
-
-&lt;p&gt;Consider the following &lt;a href=&quot;us_rain_population.txt&quot; target=&quot;_blank&quot;&gt;dataset&lt;/a&gt; containing the average annual precipitation in the US states between 1971-2000 and &lt;a href=&quot;us_sunshine.txt&quot; target=&quot;_blank&quot;&gt;this dataset&lt;/a&gt;. Combine these two datasets in Excel and generate a plot of US states precipitation vs. sunshine like the following figure. Note that you will have to adjust the data in the two file to remove a number of states that do not exist in both datasets.&lt;/p&gt;
-
-&lt;figure&gt;
-    &lt;img src=&quot;precipitation_sunlight.png&quot; /&gt;
-&lt;/figure&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/vis-excel-rain-sunshine/vis-excel-rain-sunlight&quot;&gt;Visualizing the average precipitation of the US states vs. sunshine&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 01, 2021.&lt;/p&gt;</content>
 </entry>
 
 </feed>
