@@ -308,12 +308,12 @@ callback([
 
   {
     "text": "Monte Carlo approximation of the number Pi",
-    "href": "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
+    "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
   } ,
 
   {
     "text": "Monte Carlo approximation of the number Pi",
-    "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
+    "href": "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
   } ,
 
   {
@@ -384,6 +384,11 @@ callback([
   {
     "text": "Logic NAND equivalence",
     "href": "/recipes/programming/logic-a-nand-equivalence/logic/logic-a-nand-equivalence"
+  } ,
+
+  {
+    "text": "Kmeans clustering: Determining the cluster number using the Elbow method",
+    "href": "/recipes/programming/clustering-kmeans-customers/clustering-kmeans-customers"
   } ,
 
   {
