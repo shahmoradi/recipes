@@ -517,7 +517,7 @@ var store = [{
   "date": "November 21, 2021",
   "category": null,
   "tags": ["Python","numpy","matplotlib","visualization","scikit-learn","clustering","plot","scatter plot","kmeans","kmeans++","figure","random number","pandas","read_csv","Elbow method"],
-  "excerpt": "Problem Consider this dataset customers.txt of a Mall’s customers containing the details of customers in a mall. Our aim is..."
+  "excerpt": "Problem Consider this dataset customers.csv of a Mall’s customers containing the details of customers in a mall. Our aim is..."
 },{
   "title": "Regression: Predicting the distribution of the a dataset subjected to a smooth censorship (sample incompleteness)",
   "link": "/programming/regression-erf-censored-gaussian-data/regression-erf-censored-gaussian-data",
