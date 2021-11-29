@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "Kmeans clustering - an implementation",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/clustering-kmeans-implementation/clustering-kmeans-implementation",
+		  "date"       : "2021-11-29 00:00:00 -0600",
+		  "shortdate"  : "November 29, 2021"
+		} ,
+	
+		{
 		  "title"      : "Kmeans clustering: Determining the cluster number using the Elbow method",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/clustering-kmeans-customers/clustering-kmeans-customers",

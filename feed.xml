@@ -7,13 +7,74 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2021-11-22T14:29:12-06:00</updated>
+<updated>2021-11-29T14:25:52-06:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
   <uri>https://www.cdslab.org/recipes/</uri>
   <email>shahmoradi@utexas.edu</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Kmeans clustering - an implementation]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/clustering-kmeans-implementation/clustering-kmeans-implementation"/>
+  <id>https://www.cdslab.org/recipes/programming/clustering-kmeans-implementation/clustering-kmeans-implementation</id>
+  <published>2021-11-29T00:00:00-06:00</published>
+  <updated>2019-11-21T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#numpy" term="numpy" /><category scheme="https://www.cdslab.org/recipes/tags/#matplotlib" term="matplotlib" /><category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#scikit-learn" term="scikit-learn" /><category scheme="https://www.cdslab.org/recipes/tags/#clustering" term="clustering" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#scatter%20plot" term="scatter plot" /><category scheme="https://www.cdslab.org/recipes/tags/#kmeans" term="kmeans" /><category scheme="https://www.cdslab.org/recipes/tags/#kmeans++" term="kmeans++" /><category scheme="https://www.cdslab.org/recipes/tags/#figure" term="figure" /><category scheme="https://www.cdslab.org/recipes/tags/#random%20number" term="random number" /><category scheme="https://www.cdslab.org/recipes/tags/#pandas" term="pandas" /><category scheme="https://www.cdslab.org/recipes/tags/#read_csv" term="read_csv" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Consider this dataset &lt;a href=&quot;points.txt&quot; target=&quot;_blank&quot;&gt;points.txt&lt;/a&gt;. 
+Write a script that reads this dataset and plots the second column of the dataset versus the first column as the following,&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;points.png&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Now write another script that applies Kmeans clustering technique to this data set and plot the 
+resulting clusters for a range of input number of clusters. Here is an example plot for a cluster count of 6.&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;clusters6.png&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Make an Elbow plot with the inertia of the clusterings you have done with various cluster counts.&lt;/p&gt;
+
+&lt;p&gt;Now, write a new algorithm implementing the Kmeans method.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;The function that you write must take a two dimensional data as input and the number of clusters to find.&lt;/li&gt;
+  &lt;li&gt;Then the function randomly initializes the centers of the clusters.&lt;/li&gt;
+  &lt;li&gt;Then it computes the distances of each point from each cluster center.&lt;/li&gt;
+  &lt;li&gt;Then it assigns each point to its nearest cluster center.&lt;/li&gt;
+  &lt;li&gt;Based on the members identified for each cluster, the function computes the new cluster centers as the averages of their member points.&lt;/li&gt;
+  &lt;li&gt;Then it compares the new centers with the old centers and if no center has changed by more than a certain threshold, it returns the memberships and the cluster centers as the clustering result. Otherwise, if at least one center has change beyond the arbitrary threshold that you have set (or the user passes to your function), then it repeats all of the above tasks from 3 to the end, until convergence occurs.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Verify the functionality of your implementation with the external package that you originally used to perform Kmeans clustering.&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/clustering-kmeans-implementation/clustering-kmeans-implementation&quot;&gt;Kmeans clustering - an implementation&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on November 29, 2021.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -1004,63 +1065,6 @@ $110,000       | $122,000  | $58,000
 
   
   &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/cognitive-biases/cognitive-biases&quot;&gt;Cognitive Biases&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 05, 2021.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Visualizing and comparing the temperatures of Honolulu and Duluth]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/vis-temp-honolulu-duluth/vis-temp-honolulu-duluth"/>
-  <id>https://www.cdslab.org/recipes/programming/vis-temp-honolulu-duluth/vis-temp-honolulu-duluth</id>
-  <published>2021-10-01T00:00:00-05:00</published>
-  <updated>2021-10-01T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#MATLAB" term="MATLAB" /><category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#line" term="line" /><category scheme="https://www.cdslab.org/recipes/tags/#figure" term="figure" /><category scheme="https://www.cdslab.org/recipes/tags/#warming" term="warming" /><category scheme="https://www.cdslab.org/recipes/tags/#Hawaii" term="Hawaii" /><category scheme="https://www.cdslab.org/recipes/tags/#Minnesota" term="Minnesota" /><category scheme="https://www.cdslab.org/recipes/tags/#Honolulu" term="Honolulu" /><category scheme="https://www.cdslab.org/recipes/tags/#Duluth" term="Duluth" /><category scheme="https://www.cdslab.org/recipes/tags/#periodic" term="periodic" /><category scheme="https://www.cdslab.org/recipes/tags/#mean" term="mean" /><category scheme="https://www.cdslab.org/recipes/tags/#variance" term="variance" /><category scheme="https://www.cdslab.org/recipes/tags/#pandas" term="pandas" /><category scheme="https://www.cdslab.org/recipes/tags/#IO" term="IO" /><category scheme="https://www.cdslab.org/recipes/tags/#CSV" term="CSV" /><category scheme="https://www.cdslab.org/recipes/tags/#read_csv" term="read_csv" />
-  <content type="html">
-  
-    
-&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-    
-        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
-            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
-                Problem
-            &lt;/h2&gt;
-        &lt;/a&gt;
-    
-&lt;/div&gt;
-
-&lt;p&gt;Consider the following &lt;a href=&quot;https://www.dropbox.com/s/b3f96uw0c0o34rt/city_temperature_1995_2020.csv?dl=0&quot; target=&quot;_blank&quot;&gt;csv dataset&lt;/a&gt; containing the temperature of cities around the world from 1995 to 2020. Each row in the file corresponds to the average temperature (in Fahrenheit) of a city in a given day of the year. Each observation has the following attributes: “Region,Country,State,City,Month,Day,Year,AvgTemperature”. We want to extract the data corresponding to the cities of Honolulu, Hawaii and Duluth, Minnesota and visualize them.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Use Python Pandas library (or an equivalent tool in another language) to extract the rows of data corresponding to these two cities.&lt;br /&gt;
-&lt;strong&gt;Hint&lt;/strong&gt;: You can use Pandas &lt;code&gt;read_csv()&lt;/code&gt; function and data &lt;em&gt;subsetting&lt;/em&gt; technique to select only rows whose city names match the names of interest.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Use Python’s &lt;code&gt;matplotlib&lt;/code&gt; library or an equivalent tool to visualize the data of the two cities similar to the graphs shown below.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;figure&gt;
-    &lt;img src=&quot;TempDuluth.png&quot; /&gt;
-&lt;/figure&gt;
-
-&lt;figure&gt;
-    &lt;img src=&quot;TempHonolulu.png&quot; /&gt;
-&lt;/figure&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Which city has less fluctuating temperatures across days of the year? Prove this by computing the first and the second moments of the data corresponding to the two cities and reporting them here.&lt;/li&gt;
-&lt;/ol&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/vis-temp-honolulu-duluth/vis-temp-honolulu-duluth&quot;&gt;Visualizing and comparing the temperatures of Honolulu and Duluth&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 01, 2021.&lt;/p&gt;</content>
 </entry>
 
 </feed>
