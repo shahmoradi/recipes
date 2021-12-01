@@ -7,13 +7,101 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2021-11-29T15:35:31-06:00</updated>
+<updated>2021-12-01T14:14:49-06:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
   <uri>https://www.cdslab.org/recipes/</uri>
   <email>shahmoradi@utexas.edu</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Online comparison of the Kmeans clustering algorithm with DBSCAN]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/clustering-kmeans-vs-dbscan-online/clustering-kmeans-vs-dbscan-online"/>
+  <id>https://www.cdslab.org/recipes/programming/clustering-kmeans-vs-dbscan-online/clustering-kmeans-vs-dbscan-online</id>
+  <published>2021-12-01T00:00:00-06:00</published>
+  <updated>2021-12-01T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#clustering" term="clustering" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#scatter%20plot" term="scatter plot" /><category scheme="https://www.cdslab.org/recipes/tags/#kmeans" term="kmeans" /><category scheme="https://www.cdslab.org/recipes/tags/#DBSCAN" term="DBSCAN" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;On &lt;a href=&quot;https://www.naftaliharris.com/blog/visualizing-k-means-clustering/&quot; target=&quot;_blank&quot;&gt;this website&lt;/a&gt;, you will find an online simulator of the Kmeans clustering technique.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Visit this page and choose the first choice stating &lt;strong&gt;I’ll Chooose&lt;/strong&gt;. You will be taken to a new page.&lt;/li&gt;
+  &lt;li&gt;On this new page, choose &lt;strong&gt;Smiley Face&lt;/strong&gt;. Then, you will be taken to a another page where you see a set of points like a smiley face.&lt;/li&gt;
+  &lt;li&gt;You will notice that you have the choice of adding (specifying) as many cluster centers as you like. Using mouse clicks, specify (add) four cluster centers on your best guess for the cluster centers.&lt;/li&gt;
+  &lt;li&gt;Then, press &lt;strong&gt;Go!&lt;/strong&gt; and then continue updating &lt;strong&gt;Centroids&lt;/strong&gt; (cluster centers) until the cluster do not change visibly anymore (convergence to a set of clusters has occurred).&lt;/li&gt;
+  &lt;li&gt;Is the final set of clusters that you get satisfying?&lt;/li&gt;
+  &lt;li&gt;Take a screenshot of the clusters that you get and submit it with your homework.&lt;/li&gt;
+  &lt;li&gt;Repeat this procedure with a new random set of cluster centers.&lt;/li&gt;
+  &lt;li&gt;Do the resulting clusters look the same as you got before? Why?&lt;/li&gt;
+  &lt;li&gt;Take a screenshot of the clusters that you get and submit it with your homework.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Now, visit &lt;a href=&quot;https://www.naftaliharris.com/blog/visualizing-dbscan-clustering/&quot; target=&quot;_blank&quot;&gt;this website&lt;/a&gt; and choose the same option &lt;strong&gt;Smiley Face&lt;/strong&gt; as before to perform DBSCAN clustering on the same &lt;strong&gt;Smiley Face&lt;/strong&gt; data. Adjust the parameters such that the two eyes, mouth, and the face-circle each become separate clusters. Why is the DBSCAN clustering so much more successful than the Kmeans? Take a screenshot of the clustering result to submit with your homework.&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/clustering-kmeans-vs-dbscan-online/clustering-kmeans-vs-dbscan-online&quot;&gt;Online comparison of the Kmeans clustering algorithm with DBSCAN&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on December 01, 2021.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Online experimentation with DBSCAN clustering technique]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/clustering-dbscan-online/clustering-dbscan-online"/>
+  <id>https://www.cdslab.org/recipes/programming/clustering-dbscan-online/clustering-dbscan-online</id>
+  <published>2021-12-01T00:00:00-06:00</published>
+  <updated>2021-12-01T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#clustering" term="clustering" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#scatter%20plot" term="scatter plot" /><category scheme="https://www.cdslab.org/recipes/tags/#DBSCAN" term="DBSCAN" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;On &lt;a href=&quot;https://www.naftaliharris.com/blog/visualizing-dbscan-clustering/&quot; target=&quot;_blank&quot;&gt;this website&lt;/a&gt;, you will find an online simulator of the DBSCAN clustering technique. Visit this page and choose the first dataset option named &lt;strong&gt;Uniform&lt;/strong&gt;. Recall from our lecture notes that the DBSCAN method has two free adjustable parameters that you need to set prior to clustering.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;What are the two free parameters of the DBSCAN clustering technique?&lt;/li&gt;
+  &lt;li&gt;Choose a set of parameters for DBSCAN on this page for the uniform dataset such that all points are partitioned a single cluster. Is this set of parameters unique to achieve the same clustering result? If not, provide another example set of parameters?&lt;/li&gt;
+  &lt;li&gt;Now, choose another set of parameters such that there is at least one outlier (noise) point left at the end of clustering that does not belong to any cluster.&lt;/li&gt;
+&lt;/ol&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/clustering-dbscan-online/clustering-dbscan-online&quot;&gt;Online experimentation with DBSCAN clustering technique&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on December 01, 2021.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -977,94 +1065,6 @@ $110,000       | $122,000  | $58,000
 
   
   &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/vis-colorscales/vis-colorscales&quot;&gt;Visualization color scales&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 08, 2021.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Regression: Model selection for a bivariate data using Excel]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/regression-model-selection-excel/regression-model-selection-excel"/>
-  <id>https://www.cdslab.org/recipes/programming/regression-model-selection-excel/regression-model-selection-excel</id>
-  <published>2021-10-05T00:00:00-05:00</published>
-  <updated>2021-10-05T00:00:00-05:00</updated>
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#regression" term="regression" /><category scheme="https://www.cdslab.org/recipes/tags/#Gaussian" term="Gaussian" /><category scheme="https://www.cdslab.org/recipes/tags/#distribution" term="distribution" /><category scheme="https://www.cdslab.org/recipes/tags/#Normal%20distribution" term="Normal distribution" /><category scheme="https://www.cdslab.org/recipes/tags/#moving%20average" term="moving average" /><category scheme="https://www.cdslab.org/recipes/tags/#polynomial" term="polynomial" /><category scheme="https://www.cdslab.org/recipes/tags/#linear" term="linear" /><category scheme="https://www.cdslab.org/recipes/tags/#exponential" term="exponential" /><category scheme="https://www.cdslab.org/recipes/tags/#logarithmic" term="logarithmic" /><category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#line" term="line" /><category scheme="https://www.cdslab.org/recipes/tags/#figure" term="figure" /><category scheme="https://www.cdslab.org/recipes/tags/#random%20number" term="random number" />
-  <content type="html">
-  
-    
-&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-    
-        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
-            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
-                Problem
-            &lt;/h2&gt;
-        &lt;/a&gt;
-    
-&lt;/div&gt;
-
-&lt;p&gt;Supposed we have observed a dataset comprised of events with two attributes $x$ and $y$ as in this file: &lt;a href=&quot;data.xlsx&quot; target=&quot;_blank&quot;&gt;data.xlsx&lt;/a&gt;.&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Plot this data in Microsoft Excel.&lt;/li&gt;
-  &lt;li&gt;Form a hypothesis about the relationship between $x$ and $y$.&lt;/li&gt;
-  &lt;li&gt;Use Excel’s Trendline toolbox to fit your hypothesized model to this data.&lt;/li&gt;
-  &lt;li&gt;Is is a good fit to data?&lt;/li&gt;
-  &lt;li&gt;Try at least one other hypothesis for this dataset and fit the corresponding model to the observed trend in data.&lt;/li&gt;
-  &lt;li&gt;Which hypothesis is a better fit to your data? The original or your alternative hypothesis?&lt;/li&gt;
-  &lt;li&gt;Use the Excel Trendline again to obtain the equation for the model that seems to be a better fit to data.&lt;/li&gt;
-  &lt;li&gt;Using this equation, compute the predicted $y$ values by the model for the corresponding $x$ values in the dataset.&lt;/li&gt;
-  &lt;li&gt;Subtract the model-predicted $y$ values from the actual $y$ values in the data set. We call this &lt;strong&gt;fitting residuals&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;Make a histogram of this fitting residual in Excel. Does the histogram of residuals look significantly asymmetric at all?&lt;br /&gt;
-(&lt;strong&gt;Hint&lt;/strong&gt;: If you have chosen a good model for your data, then this histogram should look fairly symmetric.)&lt;/li&gt;
-&lt;/ol&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/regression-model-selection-excel/regression-model-selection-excel&quot;&gt;Regression: Model selection for a bivariate data using Excel&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 05, 2021.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Cognitive Biases]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/cognitive-biases/cognitive-biases"/>
-  <id>https://www.cdslab.org/recipes/programming/cognitive-biases/cognitive-biases</id>
-  <published>2021-10-05T00:00:00-05:00</published>
-  <updated>2021-10-05T00:00:00-05:00</updated>
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#cognitive" term="cognitive" /><category scheme="https://www.cdslab.org/recipes/tags/#bias" term="bias" />
-  <content type="html">
-  
-    
-&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-    
-        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
-            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
-                Problem
-            &lt;/h2&gt;
-        &lt;/a&gt;
-    
-&lt;/div&gt;
-
-&lt;p&gt;Suppose I have discovered a positive relationship between properties of some celestial objects, like the one formed by the black dots in the following figure.&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img src=&quot;discovery.png&quot; width=&quot;700&quot; /&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;But in making such a discovery, I repeatedly and subconsciously throw away any data point that does not seem to be a good fit to my hypothesis and keep those only data points that seem to confirm my hypothesis. Of course, these exclusions are not done in bad faith, I have reasons for myself that appear legitimate at least on the surface to exclude those outlier (red) data points to my discovery.&lt;/p&gt;
-
-&lt;p&gt;What kind of cognitive bias is affecting my discovery?&lt;/p&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/cognitive-biases/cognitive-biases&quot;&gt;Cognitive Biases&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 05, 2021.&lt;/p&gt;</content>
 </entry>
 
 </feed>

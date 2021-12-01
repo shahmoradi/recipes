@@ -3,18 +3,18 @@
 <head>
     
     <meta charset="utf-8">
-<title>REGRESSION: PREDICTING THE GLOBAL LAND TEMPERATURE OF EARTH IN 2050 FROM THE PAST DATA: CHOOSING THE BEST MODEL &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>ONLINE EXPERIMENTATION WITH DBSCAN CLUSTERING TECHNIQUE &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="Excel, regression, global, warming, climate, visualization, plot, line, figure, random number, distribution function, probability density function, PDF, probability, objective function, least squares method">
+<meta name="keywords" content="visualization, clustering, plot, scatter plot, DBSCAN">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Regression: Predicting the global land temperature of Earth in 2050 from the past data: Choosing the best model">
+<meta property="og:title" content="Online experimentation with DBSCAN clustering technique">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/regression-predicting-future-global-land-temperature-excel/regression-predicting-future-global-land-temperature-excel">
+<meta property="og:url" content="/recipes/programming/clustering-dbscan-online/clustering-dbscan-online">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/regression-predicting-future-global-land-temperature-excel/regression-predicting-future-global-land-temperature-excel">
+<link rel="canonical" href="/recipes/programming/clustering-dbscan-online/clustering-dbscan-online">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,56 +130,24 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/regression-predicting-future-global-land-temperature-excel/regression-predicting-future-global-land-temperature-excel">Regression: Predicting the global land temperature of Earth in 2050 from the past data: Choosing the best model</a></h2>
+                            <h2><a href="/recipes/programming/clustering-dbscan-online/clustering-dbscan-online">Online experimentation with DBSCAN clustering technique</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
+                                
+                                    &#8212; Last updated: 
+                                    <strong><time datetime="2021-12-01T00:00:00-06:00">01 December 2021</time></strong>
                                 
                                 <ul class="tag-box inline">
                                     <span style="margin-right:1rem;">Tags:</span>
                                     
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#Excel" data-toggle="tooltip" title="Posts tagged with Excel" rel="tag">Excel</a>
+                                                <a href="/recipes/tags/index.html#DBSCAN" data-toggle="tooltip" title="Posts tagged with DBSCAN" rel="tag">DBSCAN</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#PDF" data-toggle="tooltip" title="Posts tagged with PDF" rel="tag">PDF</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#climate" data-toggle="tooltip" title="Posts tagged with climate" rel="tag">climate</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#distribution function" data-toggle="tooltip" title="Posts tagged with distribution function" rel="tag">distribution function</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#figure" data-toggle="tooltip" title="Posts tagged with figure" rel="tag">figure</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#global" data-toggle="tooltip" title="Posts tagged with global" rel="tag">global</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#least squares method" data-toggle="tooltip" title="Posts tagged with least squares method" rel="tag">least squares method</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#line" data-toggle="tooltip" title="Posts tagged with line" rel="tag">line</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#objective function" data-toggle="tooltip" title="Posts tagged with objective function" rel="tag">objective function</a>
+                                                <a href="/recipes/tags/index.html#clustering" data-toggle="tooltip" title="Posts tagged with clustering" rel="tag">clustering</a>
                                             </li>
                                             
                                         
@@ -189,32 +157,12 @@
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#probability" data-toggle="tooltip" title="Posts tagged with probability" rel="tag">probability</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#probability density function" data-toggle="tooltip" title="Posts tagged with probability density function" rel="tag">probability density function</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#random number" data-toggle="tooltip" title="Posts tagged with random number" rel="tag">random number</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#regression" data-toggle="tooltip" title="Posts tagged with regression" rel="tag">regression</a>
+                                                <a href="/recipes/tags/index.html#scatter plot" data-toggle="tooltip" title="Posts tagged with scatter plot" rel="tag">scatter plot</a>
                                             </li>
                                             
                                         
                                             <li>
                                                 <a href="/recipes/tags/index.html#visualization" data-toggle="tooltip" title="Posts tagged with visualization" rel="tag">visualization</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#warming" data-toggle="tooltip" title="Posts tagged with warming" rel="tag">warming</a>
                                             </li>
                                             
                                         
@@ -243,33 +191,24 @@
     
 </div>
 
-<p>Consider this dataset, <a href="1880_2020.csv" target="_blank">1880_2020.csv</a>, which contains the global land and ocean temperature anomalies of the earth from January 1880 to June 2020 at every month. As stated in the file, temperatures are in Degrees Celsius and reported as anomalies relative to the average global land temperature of the Earth between in the year 1950.</p>
-
+<p>On <a href="https://www.naftaliharris.com/blog/visualizing-dbscan-clustering/" target="_blank">this website</a>, you will find an online simulator of the DBSCAN clustering technique. Visit this page and choose the first dataset option named <strong>Uniform</strong>. Recall from our lecture notes that the DBSCAN method has two free adjustable parameters that you need to set prior to clustering.</p>
 <ol>
-  <li>First, use Microsoft Excel software to plot the temperature anomalies reported in this dataset. You can divide the <code>Year</code> column of data by $100$ to obtain real years.</li>
-  <li>Fit a linear regression to temperature anomaly like the following illustration in Excel and obtain the linear regression equation. Then use the equation to predict the temperature of Earth in 2050.
-    <figure>
-    <img src="linear.png" />
-</figure>
-  </li>
-  <li>Fit a quadratic (Polynomial of degree two) regression to temperature anomaly like the following illustration in Excel and obtain the quadratic regression equation. Then use the equation to predict the temperature of Earth in 2050.
-    <figure>
-    <img src="quadratic.png" />
-</figure>
-  </li>
-  <li>Which one of the mathematical models that you have fir to data is a better representation of reality? Which one predicts more temperature increase in the near future?</li>
+  <li>What are the two free parameters of the DBSCAN clustering technique?</li>
+  <li>Choose a set of parameters for DBSCAN on this page for the uniform dataset such that all points are partitioned a single cluster. Is this set of parameters unique to achieve the same clustering result? If not, provide another example set of parameters?</li>
+  <li>Now, choose another set of parameters such that there is at least one outlier (noise) point left at the end of clustering that does not belong to any cluster.</li>
 </ol>
+
 
             </div>
         </article>
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Regression: Predicting the global land temperature of Earth in 2050 from the past data: Choosing the best model&quot;%20https://www.cdslab.org/recipes/programming/regression-predicting-future-global-land-temperature-excel/regression-predicting-future-global-land-temperature-excel%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Online experimentation with DBSCAN clustering technique&quot;%20https://www.cdslab.org/recipes/programming/clustering-dbscan-online/clustering-dbscan-online%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/regression-predicting-future-global-land-temperature-excel/regression-predicting-future-global-land-temperature-excel"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/clustering-dbscan-online/clustering-dbscan-online"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>

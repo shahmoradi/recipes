@@ -292,6 +292,16 @@ callback([
   } ,
 
   {
+    "text": "Online experimentation with DBSCAN clustering technique",
+    "href": "/recipes/programming/clustering-dbscan-online/clustering-dbscan-online"
+  } ,
+
+  {
+    "text": "Online comparison of the Kmeans clustering algorithm with DBSCAN",
+    "href": "/recipes/programming/clustering-kmeans-vs-dbscan-online/clustering-kmeans-vs-dbscan-online"
+  } ,
+
+  {
     "text": "Monte Carlo sampling of the sum of two Gaussian distributions",
     "href": "/recipes/programming/monte-carlo-sampling-of-bimodal-gaussian/monte-carlo-sampling-of-bimodal-gaussian"
   } ,
@@ -308,12 +318,12 @@ callback([
 
   {
     "text": "Monte Carlo approximation of the number Pi",
-    "href": "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
+    "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
   } ,
 
   {
     "text": "Monte Carlo approximation of the number Pi",
-    "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
+    "href": "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
   } ,
 
   {

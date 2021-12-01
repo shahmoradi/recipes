@@ -76,6 +76,14 @@
 
     
     <url>
+        <loc>https://www.cdslab.org/recipes/programming/clustering-kmeans-vs-dbscan-online/clustering-kmeans-vs-dbscan-online</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/clustering-dbscan-online/clustering-dbscan-online</loc>
+    </url>
+    
+    <url>
         <loc>https://www.cdslab.org/recipes/programming/clustering-kmeans-implementation/clustering-kmeans-implementation</loc>
     </url>
     
