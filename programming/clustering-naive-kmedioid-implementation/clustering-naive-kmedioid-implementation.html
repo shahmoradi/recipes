@@ -3,18 +3,18 @@
 <head>
     
     <meta charset="utf-8">
-<title>THE PROOF OF BAYES' RULE VIA VENN DIAGRAM &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>A NAIVE IMPLEMENTATION OF KMEDOIDS CLUSTERING &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="plausibility, deduction, reasoning, logic, boolean, implication">
+<meta name="keywords" content="MATLAB, Python, matplotlib, scikit-learn, clustering, plot, kmeans, Kmedoids">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="The proof of Bayes' Rule via Venn diagram">
+<meta property="og:title" content="A naive implementation of Kmedoids clustering">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/probability-bayes-rule-proof-venn-disgram/probability-bayes-rule-proof-venn-disgram">
+<meta property="og:url" content="/recipes/programming/clustering-naive-kmedioid-implementation/clustering-naive-kmedioid-implementation">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/probability-bayes-rule-proof-venn-disgram/probability-bayes-rule-proof-venn-disgram">
+<link rel="canonical" href="/recipes/programming/clustering-naive-kmedioid-implementation/clustering-naive-kmedioid-implementation">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,44 +130,54 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/probability-bayes-rule-proof-venn-disgram/probability-bayes-rule-proof-venn-disgram">The proof of Bayes' Rule via Venn diagram</a></h2>
+                            <h2><a href="/recipes/programming/clustering-naive-kmedioid-implementation/clustering-naive-kmedioid-implementation">A naive implementation of Kmedoids clustering</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
                                 
                                     &#8212; Last updated: 
-                                    <strong><time datetime="2020-09-30T00:00:00-05:00">30 September 2020</time></strong>
+                                    <strong><time datetime="2021-11-30T00:00:00-06:00">30 November 2021</time></strong>
                                 
                                 <ul class="tag-box inline">
                                     <span style="margin-right:1rem;">Tags:</span>
                                     
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#boolean" data-toggle="tooltip" title="Posts tagged with boolean" rel="tag">boolean</a>
+                                                <a href="/recipes/tags/index.html#Kmedoids" data-toggle="tooltip" title="Posts tagged with Kmedoids" rel="tag">Kmedoids</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#deduction" data-toggle="tooltip" title="Posts tagged with deduction" rel="tag">deduction</a>
+                                                <a href="/recipes/tags/index.html#MATLAB" data-toggle="tooltip" title="Posts tagged with MATLAB" rel="tag">MATLAB</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#implication" data-toggle="tooltip" title="Posts tagged with implication" rel="tag">implication</a>
+                                                <a href="/recipes/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#logic" data-toggle="tooltip" title="Posts tagged with logic" rel="tag">logic</a>
+                                                <a href="/recipes/tags/index.html#clustering" data-toggle="tooltip" title="Posts tagged with clustering" rel="tag">clustering</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#plausibility" data-toggle="tooltip" title="Posts tagged with plausibility" rel="tag">plausibility</a>
+                                                <a href="/recipes/tags/index.html#kmeans" data-toggle="tooltip" title="Posts tagged with kmeans" rel="tag">kmeans</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#reasoning" data-toggle="tooltip" title="Posts tagged with reasoning" rel="tag">reasoning</a>
+                                                <a href="/recipes/tags/index.html#matplotlib" data-toggle="tooltip" title="Posts tagged with matplotlib" rel="tag">matplotlib</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#plot" data-toggle="tooltip" title="Posts tagged with plot" rel="tag">plot</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#scikit-learn" data-toggle="tooltip" title="Posts tagged with scikit-learn" rel="tag">scikit-learn</a>
                                             </li>
                                             
                                         
@@ -186,9 +196,32 @@
 
             <div style="text-align:left;">
                 
-<p>Prove the Bayes’s rule via Venn diagrams,</p>
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+    
+        <a href="#problem" style="display:inline-block;">
+            <h2 id="problem" style="color:red;">
+                Problem
+            </h2>
+        </a>
+    
+</div>
 
-\[\pi(B|A) = \frac{ \pi(A|B) ~ \pi(B) } { \pi(A) } ~.\]
+<p>The K-medoids is a classical partitioning technique of clustering that splits the data set of $n$ objects into $k$ clusters, where the number $k$ of clusters is assumed to be known a priori. Unlike the K-means algorithm however, <strong>the K-medoids algorithm chooses points within the dataset as the centers of the clusters</strong>.</p>
+
+<p>A naive implementation of the K-medoids algorithm is similar to the K-means algorithm and requires the following steps,</p>
+
+<ol>
+  <li>Select the initial medoids randomly (that is, select $k$ points from the dataset randomly as the cluster centers).</li>
+  <li>Iterate while the cost decreases:
+    <ol>
+      <li>In each cluster, make the point that minimizes the sum of distances within the cluster the medoid.</li>
+      <li>Reassign each point to the cluster defined by the closest medoid determined in the previous step.</li>
+    </ol>
+  </li>
+</ol>
+
+<p>Write a function in Python, MATLAB, or your preferred language to cluster an input dataset using the naive K-medoids method.<br />
+Test the functionality of your algorithm with <a href="https://www.cdslab.org/recipes/programming/clustering-kmeans-implementation/points.txt" target="_blank">this example dataset</a> for 6 clusters.</p>
 
 
             </div>
@@ -196,11 +229,11 @@
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;The proof of Bayes' Rule via Venn diagram&quot;%20https://www.cdslab.org/recipes/programming/probability-bayes-rule-proof-venn-disgram/probability-bayes-rule-proof-venn-disgram%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;A naive implementation of Kmedoids clustering&quot;%20https://www.cdslab.org/recipes/programming/clustering-naive-kmedioid-implementation/clustering-naive-kmedioid-implementation%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/probability-bayes-rule-proof-venn-disgram/probability-bayes-rule-proof-venn-disgram"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/clustering-naive-kmedioid-implementation/clustering-naive-kmedioid-implementation"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>

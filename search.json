@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "A naive implementation of Kmedoids clustering",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/clustering-naive-kmedioid-implementation/clustering-naive-kmedioid-implementation",
+		  "date"       : "2021-12-01 00:00:00 -0600",
+		  "shortdate"  : "December 01, 2021"
+		} ,
+	
+		{
 		  "title"      : "Online comparison of the Kmeans clustering algorithm with DBSCAN",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/clustering-kmeans-vs-dbscan-online/clustering-kmeans-vs-dbscan-online",
