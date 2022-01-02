@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2021-12-03T13:05:45-06:00</updated>
+<updated>2022-01-02T03:17:12-06:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -22,7 +22,7 @@
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/clustering-naive-kmedioid-implementation/clustering-naive-kmedioid-implementation"/>
   <id>https://www.cdslab.org/recipes/programming/clustering-naive-kmedioid-implementation/clustering-naive-kmedioid-implementation</id>
   <published>2021-12-01T00:00:00-06:00</published>
-  <updated>2021-11-30T00:00:00-00:00</updated>
+  <updated>2021-12-01T00:00:00-00:00</updated>
   
   <author>
     <name>Amir Shahmoradi</name>

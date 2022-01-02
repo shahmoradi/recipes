@@ -242,6 +242,82 @@
 
 <p>Ensure the accuracy of your integration result is better than $0.00001$ by progressively comparing the integral with actual integration result $I = 155 / 6$.</p>
 
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution" style="display:inline-block;">
+        <h2 id="solution" style="color:blue;">
+            Solution
+        </h2>
+    </a>
+
+</div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-python" id="solution-python">
+            <img src="/recipes/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>Here is an example Python script that computes the above integral: <a href="main.py" target="_blank">main.py</a>,</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">ndim</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">xmin</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">xmax</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">getFunc</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">point</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">point</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">maxHeightFunc</span> <span class="o">=</span> <span class="n">getFunc</span><span class="p">(</span><span class="n">ndim</span><span class="o">*</span><span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">)])</span>
+<span class="n">boxVolume</span> <span class="o">=</span> <span class="n">maxHeightFunc</span>
+<span class="n">numAcceptedRejected</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">numAccepted</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">truth</span> <span class="o">=</span> <span class="mi">155</span><span class="o">/</span><span class="mf">6.</span>
+<span class="n">integral</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+
+    <span class="n">numAcceptedRejected</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">maxHeightFunc</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="n">getFunc</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="n">ndim</span><span class="p">)):</span> <span class="n">numAccepted</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">integral</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">boxVolume</span> <span class="o">*</span> <span class="n">numAccepted</span> <span class="o">/</span> <span class="n">numAcceptedRejected</span><span class="p">)</span>
+
+    <span class="n">delta</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nb">abs</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">integral</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">truth</span><span class="p">)</span>
+    <span class="c1">#if numAcceptedRejected%100 == 0: print(numAccepted, numAcceptedRejected, delta, integral[-1])
+</span>    <span class="k">if</span> <span class="n">numAcceptedRejected</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">delta</span> <span class="o">&lt;=</span> <span class="mf">0.00001</span><span class="p">:</span>
+        <span class="c1">#print(np.abs((integral[-1] - integral[-2]) / integral[-1]))
+</span>        <span class="k">break</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"integral = {}, relative accuracy = {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">integral</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">np</span><span class="p">.</span><span class="n">double</span><span class="p">(</span><span class="n">delta</span><span class="p">)))</span>
+
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="n">sns</span><span class="p">.</span><span class="nb">set</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">plot</span>   <span class="p">(</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">integral</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+                <span class="p">,</span> <span class="n">integral</span>
+                <span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xscale</span><span class="p">(</span><span class="s">"log"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"integral = {},</span><span class="se">\n</span><span class="s"> relative accuracy = {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">integral</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">np</span><span class="p">.</span><span class="n">double</span><span class="p">(</span><span class="n">delta</span><span class="p">)))</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"log10( Number of Monte Carlo Rejection Sampling Steps )"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Integral Result"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Here is a plot of the integral progression,</p>
+
+<figure>
+    <img src="integral.png" />
+</figure>
+
 
             </div>
         </article>
@@ -305,8 +381,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2021 / 12 / 03</section></br> -->
-         <section>Last updated Friday, 03 Dec 2021 at 01:05 PM CST</section></br>
+         <!-- <section>Last updated 2022 / 01 / 02</section></br> -->
+         <section>Last updated Sunday, 02 Jan 2022 at 03:17 AM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

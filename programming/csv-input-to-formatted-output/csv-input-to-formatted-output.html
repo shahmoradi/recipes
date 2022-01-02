@@ -260,6 +260,73 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python csv2formatted.py data.in data.python.out
 </code></pre></div></div>
 
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution" style="display:inline-block;">
+        <h2 id="solution" style="color:blue;">
+            Solution
+        </h2>
+    </a>
+
+</div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-matlab" id="solution-matlab">
+            <img src="/recipes/images/MATLAB.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
+                MATLAB
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>Here is an example implementation in MATLAB.</p>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span>  <span class="n">csv2formatted</span><span class="p">(</span><span class="n">inputFileName</span><span class="p">,</span><span class="n">outputFileName</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="nb">csvread</span><span class="p">(</span><span class="n">inputFileName</span><span class="p">);</span>
+    <span class="n">fileID</span> <span class="o">=</span> <span class="nb">fopen</span><span class="p">(</span><span class="n">outputFileName</span><span class="p">,</span><span class="s1">'w'</span><span class="p">);</span>
+    <span class="k">for</span> <span class="n">irow</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">d</span><span class="p">(:,</span><span class="mi">1</span><span class="p">))</span>
+        <span class="nb">fprintf</span><span class="p">(</span><span class="n">fileID</span><span class="p">,</span><span class="s1">'%14.3f'</span><span class="p">,</span><span class="n">d</span><span class="p">(</span><span class="n">irow</span><span class="p">,:));</span>
+        <span class="nb">fprintf</span><span class="p">(</span><span class="n">fileID</span><span class="p">,</span><span class="s1">'\n'</span><span class="p">);</span>
+    <span class="k">end</span>
+    <span class="nb">fclose</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-python" id="solution-python">
+            <img src="/recipes/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>Here is an example implementation in Python.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s">'w'</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">row</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">','</span><span class="p">):</span>
+            <span class="n">outfile</span><span class="p">.</span><span class="n">write</span><span class="p">(</span> <span class="s">'{:14.3f}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">column</span><span class="p">))</span> <span class="p">)</span>
+        <span class="n">outfile</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+    <span class="n">outfile</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div></div>
+
 
             </div>
         </article>
@@ -323,8 +390,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2021 / 12 / 03</section></br> -->
-         <section>Last updated Friday, 03 Dec 2021 at 01:05 PM CST</section></br>
+         <!-- <section>Last updated 2022 / 01 / 02</section></br> -->
+         <section>Last updated Sunday, 02 Jan 2022 at 03:17 AM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
