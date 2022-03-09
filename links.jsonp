@@ -47,6 +47,11 @@ callback([
   } ,
 
   {
+    "text": "Visualization: The world map resized by population",
+    "href": "/recipes/programming/vis-world-map-resized/vis-world-map-resized"
+  } ,
+
+  {
     "text": "Visualization color scales",
     "href": "/recipes/programming/vis-colorscales/vis-colorscales"
   } ,
@@ -333,12 +338,12 @@ callback([
 
   {
     "text": "Monte Carlo approximation of the number Pi",
-    "href": "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
+    "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
   } ,
 
   {
     "text": "Monte Carlo approximation of the number Pi",
-    "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
+    "href": "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
   } ,
 
   {

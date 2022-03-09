@@ -377,6 +377,14 @@
 		} ,
 	
 		{
+		  "title"      : "Visualization: The world map resized by population",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/vis-world-map-resized/vis-world-map-resized",
+		  "date"       : "2021-03-08 00:00:00 -0600",
+		  "shortdate"  : "March 08, 2021"
+		} ,
+	
+		{
 		  "title"      : "Visualization: Worldwide Internet Usage",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/vis-internet-usage/vis-internet-usage",
