@@ -361,6 +361,30 @@
 		} ,
 	
 		{
+		  "title"      : "Visualization: The world population",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/vis-world-population/vis-world-population",
+		  "date"       : "2021-03-08 00:00:00 -0600",
+		  "shortdate"  : "March 08, 2021"
+		} ,
+	
+		{
+		  "title"      : "Visualization: The world population (refined)",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/vis-world-population-refined/vis-world-population-refined",
+		  "date"       : "2021-03-08 00:00:00 -0600",
+		  "shortdate"  : "March 08, 2021"
+		} ,
+	
+		{
+		  "title"      : "Visualization: Worldwide Internet Usage",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/vis-internet-usage/vis-internet-usage",
+		  "date"       : "2021-03-08 00:00:00 -0600",
+		  "shortdate"  : "March 08, 2021"
+		} ,
+	
+		{
 		  "title"      : "Logic NAND equivalence",
 		  "category"   : "logic",
 		  "url"        : "/recipes/programming/logic-a-nand-equivalence/logic/logic-a-nand-equivalence",

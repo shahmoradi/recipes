@@ -32,6 +32,21 @@ callback([
   } ,
 
   {
+    "text": "Visualization: Worldwide Internet Usage",
+    "href": "/recipes/programming/vis-internet-usage/vis-internet-usage"
+  } ,
+
+  {
+    "text": "Visualization: The world population (refined)",
+    "href": "/recipes/programming/vis-world-population-refined/vis-world-population-refined"
+  } ,
+
+  {
+    "text": "Visualization: The world population",
+    "href": "/recipes/programming/vis-world-population/vis-world-population"
+  } ,
+
+  {
     "text": "Visualization color scales",
     "href": "/recipes/programming/vis-colorscales/vis-colorscales"
   } ,
