@@ -923,7 +923,7 @@ var store = [{
   "date": "October 21, 2020",
   "category": null,
   "tags": ["plausibility","deduction","reasoning","logic","boolean","implication"],
-  "excerpt": "Show that the following functions, can be written as, where the basis logic functions have the following truth table, Answer:..."
+  "excerpt": "\nShow that the following functions,\n\n\n\ncan be written as,\n\n\n\nwhere the basis logic functions have the following truth table,\n\n\n\n"
 },{
   "title": "Logic functions with 2 input",
   "link": "/programming/logic-functions-2d/logic-functions-2d",
@@ -944,7 +944,7 @@ var store = [{
   "date": "September 30, 2020",
   "category": "logic",
   "tags": ["plausibility","deduction","reasoning","logic","boolean"],
-  "excerpt": "Name the two types of scientific reasoning and give an example argument for each one. Answer: Deductive reasoning For example,..."
+  "excerpt": "\nName the two types of scientific reasoning and give an example argument for each one.\n\n"
 },{
   "title": "Logical product denial",
   "link": "/programming/logic-product-denial/logic/logic-product-denial",
@@ -979,7 +979,7 @@ var store = [{
   "date": "September 30, 2020",
   "category": "logic",
   "tags": ["plausibility","deduction","reasoning","logic","boolean","venn","diagram"],
-  "excerpt": "\nConsider the following Boolean algebraic expressions. Draw a Venn diagram corresponding to each one,\n\n\n\n"
+  "excerpt": "\nConsider the following Boolean algebraic expressions. Draw a Venn diagram corresponding to each one,\n\n"
 },{
   "title": "Regression: Predicting the bivariate distribution of the a dataset subjected to censorship (sample incompleteness)",
   "link": "/programming/regression-censored-mvn-data/regression-censored-mvn-data",
