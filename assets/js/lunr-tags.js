@@ -888,28 +888,28 @@ var store = [{
   "date": "October 21, 2020",
   "category": null,
   "tags": ["plausibility","schools","bayesian","frequentist"],
-  "excerpt": "Name four major schools of Probability Theory. Answer: Classic Probability Theory. Bayesian Probability Theory. Frequentist Probability Theory. Propensity Probability Theory...."
+  "excerpt": "\nName four major schools of Probability Theory.\n\n"
 },{
   "title": "The fundamental desiderata of Probability Theory",
   "link": "/programming/probability-desiderata/probability-desiderata",
   "date": "October 21, 2020",
   "category": null,
   "tags": ["plausibility","deduction","reasoning","logic","boolean","implication"],
-  "excerpt": "Name the three fundamental desiderata of Probability Theory. Answer: Degrees of plausibility are represented by real numbers. Qualitative correspondence with..."
+  "excerpt": "\nName the three fundamental desiderata of Probability Theory.\n\n"
 },{
   "title": "Probability Theory: correspondence with commonsense",
   "link": "/programming/probability-correspondence-with-common-sense/probability-correspondence-with-common-sense",
   "date": "October 21, 2020",
   "category": null,
   "tags": ["plausibility","deduction","reasoning","logic","boolean","implication","commonsense"],
-  "excerpt": "Show via an example Venn diagram that if, holds, then, also holds. Answer: Degrees of plausibility are represented by real..."
+  "excerpt": "\nShow via an example Venn diagram that if,\n\n\n\nholds, then,\n\n\n\nalso holds.\n\n"
 },{
   "title": "The proof of Bayes' Rule via Venn diagram",
   "link": "/programming/probability-bayes-rule-proof-venn-disgram/probability-bayes-rule-proof-venn-disgram",
   "date": "October 21, 2020",
   "category": null,
   "tags": ["plausibility","deduction","reasoning","logic","boolean","implication"],
-  "excerpt": "\nProve the Bayes’s rule via Venn diagrams,\n\n\\[\\pi(B|A) = \\frac{ \\pi(A|B) ~ \\pi(B) } { \\pi(A) } ~.\\]\n\nAnswer:\n\n\n\n\n"
+  "excerpt": "\nProve the Bayes’s rule via Venn diagrams,\n\n\\[\\pi(B|A) = \\frac{ \\pi(A|B) ~ \\pi(B) } { \\pi(A) } ~.\\]\n\n"
 },{
   "title": "The fundamental logical operators",
   "link": "/programming/logic-fundamental-operations/logic-fundamental-operations",
