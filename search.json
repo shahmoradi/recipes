@@ -4,7 +4,7 @@
 		  "title"      : "A naive implementation of Kmedoids clustering",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/clustering-naive-kmedioid-implementation/clustering-naive-kmedioid-implementation",
-		  "date"       : "2021-12-01 00:00:00 -0800",
+		  "date"       : "2021-12-01 00:00:00 -0600",
 		  "shortdate"  : "December 01, 2021"
 		} ,
 	
@@ -12,7 +12,7 @@
 		  "title"      : "Online comparison of the Kmeans clustering algorithm with DBSCAN",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/clustering-kmeans-vs-dbscan-online/clustering-kmeans-vs-dbscan-online",
-		  "date"       : "2021-12-01 00:00:00 -0800",
+		  "date"       : "2021-12-01 00:00:00 -0600",
 		  "shortdate"  : "December 01, 2021"
 		} ,
 	
@@ -20,7 +20,7 @@
 		  "title"      : "Online experimentation with DBSCAN clustering technique",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/clustering-dbscan-online/clustering-dbscan-online",
-		  "date"       : "2021-12-01 00:00:00 -0800",
+		  "date"       : "2021-12-01 00:00:00 -0600",
 		  "shortdate"  : "December 01, 2021"
 		} ,
 	
@@ -28,7 +28,7 @@
 		  "title"      : "Kmeans clustering - an implementation",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/clustering-kmeans-implementation/clustering-kmeans-implementation",
-		  "date"       : "2021-11-29 00:00:00 -0800",
+		  "date"       : "2021-11-29 00:00:00 -0600",
 		  "shortdate"  : "November 29, 2021"
 		} ,
 	
@@ -36,7 +36,7 @@
 		  "title"      : "Kmeans clustering: Determining the cluster number using the Elbow method",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/clustering-kmeans-customers/clustering-kmeans-customers",
-		  "date"       : "2021-11-21 00:00:00 -0800",
+		  "date"       : "2021-11-21 00:00:00 -0600",
 		  "shortdate"  : "November 21, 2021"
 		} ,
 	
@@ -44,7 +44,7 @@
 		  "title"      : "Regression: Predicting the distribution of the a dataset subjected to a smooth censorship (sample incompleteness)",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/regression-erf-censored-gaussian-data/regression-erf-censored-gaussian-data",
-		  "date"       : "2021-11-19 00:00:00 -0800",
+		  "date"       : "2021-11-19 00:00:00 -0600",
 		  "shortdate"  : "November 19, 2021"
 		} ,
 	
@@ -52,7 +52,7 @@
 		  "title"      : "Puzzle: Matchstick Wrong Equation",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/puzzle-matchstick-equation/puzzle-matchstick-equation",
-		  "date"       : "2021-11-15 00:00:00 -0800",
+		  "date"       : "2021-11-15 00:00:00 -0600",
 		  "shortdate"  : "November 15, 2021"
 		} ,
 	
@@ -60,7 +60,7 @@
 		  "title"      : "Puzzle: How many living creatures are in the pond",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/puzzle-how-many-animals-in-pond/puzzle-how-many-animals-in-pond",
-		  "date"       : "2021-11-15 00:00:00 -0800",
+		  "date"       : "2021-11-15 00:00:00 -0600",
 		  "shortdate"  : "November 15, 2021"
 		} ,
 	
@@ -68,7 +68,7 @@
 		  "title"      : "Regression: Predicting the global land temperature of Earth in 2050 from the past data: Choosing the best model",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/regression-predicting-future-global-land-temperature-excel/regression-predicting-future-global-land-temperature-excel",
-		  "date"       : "2021-11-11 00:00:00 -0800",
+		  "date"       : "2021-11-11 00:00:00 -0600",
 		  "shortdate"  : "November 11, 2021"
 		} ,
 	
@@ -76,7 +76,7 @@
 		  "title"      : "Regression: Estimating the parameters of a linear model for a Normally-distributed sample",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/regression-linear-gaussian/regression-linear-gaussian",
-		  "date"       : "2021-11-05 00:00:00 -0700",
+		  "date"       : "2021-11-05 00:00:00 -0500",
 		  "shortdate"  : "November 05, 2021"
 		} ,
 	
@@ -84,7 +84,7 @@
 		  "title"      : "Regression: Estimating the parameters of a Normally-distributed sample",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/regression-gaussian-data/regression-gaussian-data",
-		  "date"       : "2021-10-28 00:00:00 -0700",
+		  "date"       : "2021-10-28 00:00:00 -0500",
 		  "shortdate"  : "October 28, 2021"
 		} ,
 	
@@ -92,7 +92,7 @@
 		  "title"      : "Computing the cross-correlation of sin() and cos()",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/stat-crosscorr-sin-cos/stat-crosscorr-sin-cos",
-		  "date"       : "2021-10-20 00:00:00 -0700",
+		  "date"       : "2021-10-20 00:00:00 -0500",
 		  "shortdate"  : "October 20, 2021"
 		} ,
 	
@@ -100,7 +100,7 @@
 		  "title"      : "Computing the cross-correlation of two data attributes",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/stat-crosscorr/stat-crosscorr",
-		  "date"       : "2021-10-11 00:00:00 -0700",
+		  "date"       : "2021-10-11 00:00:00 -0500",
 		  "shortdate"  : "October 11, 2021"
 		} ,
 	
@@ -108,7 +108,7 @@
 		  "title"      : "Computing the autocorrelation of a dataset",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/stat-autocorr/stat-autocorr",
-		  "date"       : "2021-10-11 00:00:00 -0700",
+		  "date"       : "2021-10-11 00:00:00 -0500",
 		  "shortdate"  : "October 11, 2021"
 		} ,
 	
@@ -116,7 +116,7 @@
 		  "title"      : "Computing and removing the autocorrelation of a dataset",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/stat-autocorr-removal/stat-autocorr-removal",
-		  "date"       : "2021-10-11 00:00:00 -0700",
+		  "date"       : "2021-10-11 00:00:00 -0500",
 		  "shortdate"  : "October 11, 2021"
 		} ,
 	
@@ -124,7 +124,7 @@
 		  "title"      : "Ugly visualization",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/vis-ugly-graph/vis-ugly-graph",
-		  "date"       : "2021-10-08 00:00:00 -0700",
+		  "date"       : "2021-10-08 00:00:00 -0500",
 		  "shortdate"  : "October 08, 2021"
 		} ,
 	
@@ -132,7 +132,7 @@
 		  "title"      : "The population growths of the US states",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/vis-population-growth-tx-la/vis-population-growth-tx-la",
-		  "date"       : "2021-10-08 00:00:00 -0700",
+		  "date"       : "2021-10-08 00:00:00 -0500",
 		  "shortdate"  : "October 08, 2021"
 		} ,
 	
@@ -140,7 +140,7 @@
 		  "title"      : "The cities with the most and least moderate temperature",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/vis-most-moderate-temp-city/vis-most-moderate-temp-city",
-		  "date"       : "2021-10-08 00:00:00 -0700",
+		  "date"       : "2021-10-08 00:00:00 -0500",
 		  "shortdate"  : "October 08, 2021"
 		} ,
 	
@@ -148,7 +148,7 @@
 		  "title"      : "Wrong visualization",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/vis-graph-wrong/vis-graph-wrong",
-		  "date"       : "2021-10-08 00:00:00 -0700",
+		  "date"       : "2021-10-08 00:00:00 -0500",
 		  "shortdate"  : "October 08, 2021"
 		} ,
 	
@@ -156,7 +156,7 @@
 		  "title"      : "Excel Bar plot",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/vis-excel-bar-plot/vis-excel-bar-plot",
-		  "date"       : "2021-10-08 00:00:00 -0700",
+		  "date"       : "2021-10-08 00:00:00 -0500",
 		  "shortdate"  : "October 08, 2021"
 		} ,
 	
@@ -164,7 +164,7 @@
 		  "title"      : "Visualization color scales",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/vis-colorscales/vis-colorscales",
-		  "date"       : "2021-10-08 00:00:00 -0700",
+		  "date"       : "2021-10-08 00:00:00 -0500",
 		  "shortdate"  : "October 08, 2021"
 		} ,
 	
@@ -172,7 +172,7 @@
 		  "title"      : "Regression: Model selection for a bivariate data using Excel",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/regression-model-selection-excel/regression-model-selection-excel",
-		  "date"       : "2021-10-05 00:00:00 -0700",
+		  "date"       : "2021-10-05 00:00:00 -0500",
 		  "shortdate"  : "October 05, 2021"
 		} ,
 	
@@ -180,7 +180,7 @@
 		  "title"      : "Cognitive Biases",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/cognitive-biases/cognitive-biases",
-		  "date"       : "2021-10-05 00:00:00 -0700",
+		  "date"       : "2021-10-05 00:00:00 -0500",
 		  "shortdate"  : "October 05, 2021"
 		} ,
 	
@@ -188,7 +188,7 @@
 		  "title"      : "Visualizing and comparing the temperatures of Honolulu and Duluth",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/vis-temp-honolulu-duluth/vis-temp-honolulu-duluth",
-		  "date"       : "2021-10-01 00:00:00 -0700",
+		  "date"       : "2021-10-01 00:00:00 -0500",
 		  "shortdate"  : "October 01, 2021"
 		} ,
 	
@@ -196,7 +196,7 @@
 		  "title"      : "Visualizing and comparing the temperatures of Honolulu and Duluth via Excel",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/vis-excel-temp-honolulu-duluth/vis-temp-honolulu-duluth-excel",
-		  "date"       : "2021-10-01 00:00:00 -0700",
+		  "date"       : "2021-10-01 00:00:00 -0500",
 		  "shortdate"  : "October 01, 2021"
 		} ,
 	
@@ -204,7 +204,7 @@
 		  "title"      : "Visualizing the average precipitation of the US states vs. sunshine",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/vis-excel-rain-sunshine/vis-excel-rain-sunlight",
-		  "date"       : "2021-10-01 00:00:00 -0700",
+		  "date"       : "2021-10-01 00:00:00 -0500",
 		  "shortdate"  : "October 01, 2021"
 		} ,
 	
@@ -212,7 +212,7 @@
 		  "title"      : "Computing the covariance matrix of a dataset",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/stat-covmat/stat-covmat",
-		  "date"       : "2021-10-01 00:00:00 -0700",
+		  "date"       : "2021-10-01 00:00:00 -0500",
 		  "shortdate"  : "October 01, 2021"
 		} ,
 	
@@ -220,7 +220,7 @@
 		  "title"      : "Computing the covariance matrix from the correlation matrix and standard deviations",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/stat-covmat-from-cormat-std/covmat-from-cormat-std",
-		  "date"       : "2021-10-01 00:00:00 -0700",
+		  "date"       : "2021-10-01 00:00:00 -0500",
 		  "shortdate"  : "October 01, 2021"
 		} ,
 	
@@ -228,7 +228,7 @@
 		  "title"      : "Computing the correlation matrix of a dataset",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/stat-cormat/stat-cormat",
-		  "date"       : "2021-10-01 00:00:00 -0700",
+		  "date"       : "2021-10-01 00:00:00 -0500",
 		  "shortdate"  : "October 01, 2021"
 		} ,
 	
@@ -236,7 +236,7 @@
 		  "title"      : "Prove that the diagonal elements of a correlation matrix of a dataset must be one",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/stat-cormat-diag/stat-cormat-diag",
-		  "date"       : "2021-10-01 00:00:00 -0700",
+		  "date"       : "2021-10-01 00:00:00 -0500",
 		  "shortdate"  : "October 01, 2021"
 		} ,
 	
@@ -244,7 +244,7 @@
 		  "title"      : "Computing the Spearman rank correlation coefficient of a dataset",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/stat-corcoef-spearman/stat-corcoef-spearman",
-		  "date"       : "2021-09-29 00:00:00 -0700",
+		  "date"       : "2021-09-29 00:00:00 -0500",
 		  "shortdate"  : "September 29, 2021"
 		} ,
 	
@@ -252,7 +252,7 @@
 		  "title"      : "Computing the Pearson correlation coefficient of a dataset",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/stat-corcoef-pearson/stat-corcoef-pearson",
-		  "date"       : "2021-09-29 00:00:00 -0700",
+		  "date"       : "2021-09-29 00:00:00 -0500",
 		  "shortdate"  : "September 29, 2021"
 		} ,
 	
@@ -260,7 +260,7 @@
 		  "title"      : "The most sensitive correlation coefficient to outliers",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/stat-corcoef-outliers/stat-corcoef-outliers",
-		  "date"       : "2021-09-29 00:00:00 -0700",
+		  "date"       : "2021-09-29 00:00:00 -0500",
 		  "shortdate"  : "September 29, 2021"
 		} ,
 	
@@ -268,7 +268,7 @@
 		  "title"      : "Computing the Kendall&#39;s rank correlation coefficient of a dataset",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/stat-corcoef-kendall/stat-corcoef-kendall",
-		  "date"       : "2021-09-29 00:00:00 -0700",
+		  "date"       : "2021-09-29 00:00:00 -0500",
 		  "shortdate"  : "September 29, 2021"
 		} ,
 	
@@ -276,7 +276,7 @@
 		  "title"      : "Visualizing the average precipitation among the US states",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/visualization-avg-precipitation-choropleth/visualization-avg-precipitation-choropleth",
-		  "date"       : "2021-09-19 00:00:00 -0700",
+		  "date"       : "2021-09-19 00:00:00 -0500",
 		  "shortdate"  : "September 19, 2021"
 		} ,
 	
@@ -284,7 +284,7 @@
 		  "title"      : "Computing the first four moments of a sample",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/stat-sample-mean-variance-skewness-kurtosis/stat-sample-mean-variance-skewness-kurtosis",
-		  "date"       : "2021-09-03 00:00:00 -0700",
+		  "date"       : "2021-09-03 00:00:00 -0500",
 		  "shortdate"  : "September 03, 2021"
 		} ,
 	
@@ -292,7 +292,7 @@
 		  "title"      : "An experimental proof of Chebyshev&#39;s inequality",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/stat-sample-chebyshev-inequality/stat-sample-chebyshev-inequality",
-		  "date"       : "2021-09-03 00:00:00 -0700",
+		  "date"       : "2021-09-03 00:00:00 -0500",
 		  "shortdate"  : "September 03, 2021"
 		} ,
 	
@@ -300,7 +300,7 @@
 		  "title"      : "Computing the mean of a weighted data",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/stat-mean-weighted/stat-mean-weighted",
-		  "date"       : "2021-09-03 00:00:00 -0700",
+		  "date"       : "2021-09-03 00:00:00 -0500",
 		  "shortdate"  : "September 03, 2021"
 		} ,
 	
@@ -308,7 +308,7 @@
 		  "title"      : "Monte Carlo approximation of the number Pi",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling",
-		  "date"       : "2021-07-06 00:00:00 -0700",
+		  "date"       : "2021-07-06 00:00:00 -0500",
 		  "shortdate"  : "July 06, 2021"
 		} ,
 	
@@ -316,7 +316,7 @@
 		  "title"      : "Monte Carlo approximation of the number Pi using a full circle",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/monte-carlo-approximation-of-pi-full-circle/monte-carlo-approximation-of-pi-full-circle",
-		  "date"       : "2021-05-03 00:00:00 -0700",
+		  "date"       : "2021-05-03 00:00:00 -0500",
 		  "shortdate"  : "May 03, 2021"
 		} ,
 	
@@ -324,7 +324,7 @@
 		  "title"      : "Monte Carlo approximation of the area of heart",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/monte-carlo-approximation-of-heart-area/monte-carlo-approximation-of-heart-area",
-		  "date"       : "2021-05-03 00:00:00 -0700",
+		  "date"       : "2021-05-03 00:00:00 -0500",
 		  "shortdate"  : "May 03, 2021"
 		} ,
 	
@@ -332,7 +332,7 @@
 		  "title"      : "Parsing data from the World Wide Web",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/parsing-data-from-web/parsing-data-from-web",
-		  "date"       : "2021-04-12 00:00:00 -0700",
+		  "date"       : "2021-04-12 00:00:00 -0500",
 		  "shortdate"  : "April 12, 2021"
 		} ,
 	
@@ -340,7 +340,7 @@
 		  "title"      : "Data transfer: Converting formatted input to Comma-Separated-Values (CSV) output",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/formatted-input-to-csv-output/formatted-input-to-csv-output",
-		  "date"       : "2021-04-12 00:00:00 -0700",
+		  "date"       : "2021-04-12 00:00:00 -0500",
 		  "shortdate"  : "April 12, 2021"
 		} ,
 	
@@ -348,7 +348,7 @@
 		  "title"      : "Command line input option-value pairs",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/command-line-input-option-value/command-line-input-option-value",
-		  "date"       : "2021-04-05 00:00:00 -0700",
+		  "date"       : "2021-04-05 00:00:00 -0500",
 		  "shortdate"  : "April 05, 2021"
 		} ,
 	
@@ -356,7 +356,7 @@
 		  "title"      : "Python modules and packaging",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/python-packaging/python-packaging",
-		  "date"       : "2021-03-31 00:00:00 -0700",
+		  "date"       : "2021-03-31 00:00:00 -0500",
 		  "shortdate"  : "March 31, 2021"
 		} ,
 	
@@ -364,7 +364,7 @@
 		  "title"      : "Visualization: The world population",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/vis-world-population/vis-world-population",
-		  "date"       : "2021-03-08 00:00:00 -0800",
+		  "date"       : "2021-03-08 00:00:00 -0600",
 		  "shortdate"  : "March 08, 2021"
 		} ,
 	
@@ -372,7 +372,7 @@
 		  "title"      : "Visualization: The world population (refined)",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/vis-world-population-refined/vis-world-population-refined",
-		  "date"       : "2021-03-08 00:00:00 -0800",
+		  "date"       : "2021-03-08 00:00:00 -0600",
 		  "shortdate"  : "March 08, 2021"
 		} ,
 	
@@ -380,7 +380,7 @@
 		  "title"      : "Visualization: The world map resized by population",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/vis-world-map-resized/vis-world-map-resized",
-		  "date"       : "2021-03-08 00:00:00 -0800",
+		  "date"       : "2021-03-08 00:00:00 -0600",
 		  "shortdate"  : "March 08, 2021"
 		} ,
 	
@@ -388,7 +388,7 @@
 		  "title"      : "Visualization: Worldwide Internet Usage",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/vis-internet-usage/vis-internet-usage",
-		  "date"       : "2021-03-08 00:00:00 -0800",
+		  "date"       : "2021-03-08 00:00:00 -0600",
 		  "shortdate"  : "March 08, 2021"
 		} ,
 	
@@ -396,7 +396,7 @@
 		  "title"      : "Logic NAND equivalence",
 		  "category"   : "logic",
 		  "url"        : "/recipes/programming/logic-a-nand-equivalence/logic/logic-a-nand-equivalence",
-		  "date"       : "2020-11-01 00:00:00 -0700",
+		  "date"       : "2020-11-01 00:00:00 -0500",
 		  "shortdate"  : "November 01, 2020"
 		} ,
 	
@@ -404,7 +404,7 @@
 		  "title"      : "The major schools of thought in Probability Theory",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/probability-schools-of-thought/probability-schools-of-thought",
-		  "date"       : "2020-10-21 00:00:00 -0700",
+		  "date"       : "2020-10-21 00:00:00 -0500",
 		  "shortdate"  : "October 21, 2020"
 		} ,
 	
@@ -412,7 +412,7 @@
 		  "title"      : "The fundamental desiderata of Probability Theory",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/probability-desiderata/probability-desiderata",
-		  "date"       : "2020-10-21 00:00:00 -0700",
+		  "date"       : "2020-10-21 00:00:00 -0500",
 		  "shortdate"  : "October 21, 2020"
 		} ,
 	
@@ -420,7 +420,7 @@
 		  "title"      : "Probability Theory: correspondence with commonsense",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/probability-correspondence-with-common-sense/probability-correspondence-with-common-sense",
-		  "date"       : "2020-10-21 00:00:00 -0700",
+		  "date"       : "2020-10-21 00:00:00 -0500",
 		  "shortdate"  : "October 21, 2020"
 		} ,
 	
@@ -428,7 +428,7 @@
 		  "title"      : "The proof of Bayes&#39; Rule via Venn diagram",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/probability-bayes-rule-proof-venn-disgram/probability-bayes-rule-proof-venn-disgram",
-		  "date"       : "2020-10-21 00:00:00 -0700",
+		  "date"       : "2020-10-21 00:00:00 -0500",
 		  "shortdate"  : "October 21, 2020"
 		} ,
 	
@@ -436,7 +436,7 @@
 		  "title"      : "The fundamental logical operators",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/logic-fundamental-operations/logic-fundamental-operations",
-		  "date"       : "2020-10-21 00:00:00 -0700",
+		  "date"       : "2020-10-21 00:00:00 -0500",
 		  "shortdate"  : "October 21, 2020"
 		} ,
 	
@@ -444,7 +444,7 @@
 		  "title"      : "Logic functions in terms of logic functions",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/logic-functions-operations/logic-functions-operations",
-		  "date"       : "2020-10-21 00:00:00 -0700",
+		  "date"       : "2020-10-21 00:00:00 -0500",
 		  "shortdate"  : "October 21, 2020"
 		} ,
 	
@@ -452,7 +452,7 @@
 		  "title"      : "Logic functions with 2 input",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/logic-functions-2d/logic-functions-2d",
-		  "date"       : "2020-10-21 00:00:00 -0700",
+		  "date"       : "2020-10-21 00:00:00 -0500",
 		  "shortdate"  : "October 21, 2020"
 		} ,
 	
@@ -460,7 +460,7 @@
 		  "title"      : "Logic functions with 1 input",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/logic-functions-1d/logic-functions-1d",
-		  "date"       : "2020-10-21 00:00:00 -0700",
+		  "date"       : "2020-10-21 00:00:00 -0500",
 		  "shortdate"  : "October 21, 2020"
 		} ,
 	
@@ -468,7 +468,7 @@
 		  "title"      : "The two types of scientific reasoning",
 		  "category"   : "logic",
 		  "url"        : "/recipes/programming/logic-two-types-of-scientific-reasoning/logic/logic-two-types-of-scientific-reasoning",
-		  "date"       : "2020-09-30 00:00:00 -0700",
+		  "date"       : "2020-09-30 00:00:00 -0500",
 		  "shortdate"  : "September 30, 2020"
 		} ,
 	
@@ -476,7 +476,7 @@
 		  "title"      : "Logical product denial",
 		  "category"   : "logic",
 		  "url"        : "/recipes/programming/logic-product-denial/logic/logic-product-denial",
-		  "date"       : "2020-09-30 00:00:00 -0700",
+		  "date"       : "2020-09-30 00:00:00 -0500",
 		  "shortdate"  : "September 30, 2020"
 		} ,
 	
@@ -484,7 +484,7 @@
 		  "title"      : "Policeman, jewelry, and burglar",
 		  "category"   : "logic",
 		  "url"        : "/recipes/programming/logic-policeman-jewelry-burglar/logic/logic-policeman-jewelry-burglar",
-		  "date"       : "2020-09-30 00:00:00 -0700",
+		  "date"       : "2020-09-30 00:00:00 -0500",
 		  "shortdate"  : "September 30, 2020"
 		} ,
 	
@@ -492,7 +492,7 @@
 		  "title"      : "Logical implication",
 		  "category"   : "logic",
 		  "url"        : "/recipes/programming/logic-implication/logic/logic-implication",
-		  "date"       : "2020-09-30 00:00:00 -0700",
+		  "date"       : "2020-09-30 00:00:00 -0500",
 		  "shortdate"  : "September 30, 2020"
 		} ,
 	
@@ -500,7 +500,7 @@
 		  "title"      : "Logic implication, denial, equivalence",
 		  "category"   : "logic",
 		  "url"        : "/recipes/programming/logic-implication-denial-equivalence/logic/logic-implication-denial-equivalence",
-		  "date"       : "2020-09-30 00:00:00 -0700",
+		  "date"       : "2020-09-30 00:00:00 -0500",
 		  "shortdate"  : "September 30, 2020"
 		} ,
 	
@@ -508,7 +508,7 @@
 		  "title"      : "Venn diagram representation of Boolean expressions",
 		  "category"   : "logic",
 		  "url"        : "/recipes/programming/logic-boolean-algebra-venn-diagram/logic/logic-boolean-algebra-venn-diagram",
-		  "date"       : "2020-09-30 00:00:00 -0700",
+		  "date"       : "2020-09-30 00:00:00 -0500",
 		  "shortdate"  : "September 30, 2020"
 		} ,
 	
@@ -516,7 +516,7 @@
 		  "title"      : "Regression: Predicting the bivariate distribution of the a dataset subjected to censorship (sample incompleteness)",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/regression-censored-mvn-data/regression-censored-mvn-data",
-		  "date"       : "2020-08-12 00:00:00 -0700",
+		  "date"       : "2020-08-12 00:00:00 -0500",
 		  "shortdate"  : "August 12, 2020"
 		} ,
 	
@@ -524,7 +524,7 @@
 		  "title"      : "Regression: Predicting the distribution of the a dataset subjected to censorship (sample incompleteness)",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/regression-censored-gaussian-data/regression-censored-gaussian-data",
-		  "date"       : "2020-08-12 00:00:00 -0700",
+		  "date"       : "2020-08-12 00:00:00 -0500",
 		  "shortdate"  : "August 12, 2020"
 		} ,
 	
@@ -532,7 +532,7 @@
 		  "title"      : "Best visualization coloring",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/visualization-coloring/visualization-coloring",
-		  "date"       : "2020-07-23 00:00:00 -0700",
+		  "date"       : "2020-07-23 00:00:00 -0500",
 		  "shortdate"  : "July 23, 2020"
 		} ,
 	
@@ -540,7 +540,7 @@
 		  "title"      : "Regression: Predicting the global land temperature of the Earth in 2050 from the past data via the maximum likelihood approach",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/regression-predicting-future-global-land-temperature-maxlikelihood/regression-predicting-future-global-land-temperature-maxlikelihood",
-		  "date"       : "2020-07-23 00:00:00 -0700",
+		  "date"       : "2020-07-23 00:00:00 -0500",
 		  "shortdate"  : "July 23, 2020"
 		} ,
 	
@@ -548,7 +548,7 @@
 		  "title"      : "Regression: Predicting the global land temperature of the Earth in 2050 from the past data: linear vs. exponential temperature increase",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/regression-predicting-future-global-land-temperature-exp/regression-predicting-future-global-land-temperature-exp",
-		  "date"       : "2020-07-23 00:00:00 -0700",
+		  "date"       : "2020-07-23 00:00:00 -0500",
 		  "shortdate"  : "July 23, 2020"
 		} ,
 	
@@ -556,7 +556,7 @@
 		  "title"      : "The different faces of binned data via different transformations",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/histogram-different-transformations/histogram-different-transformations",
-		  "date"       : "2020-07-07 00:00:00 -0700",
+		  "date"       : "2020-07-07 00:00:00 -0500",
 		  "shortdate"  : "July 07, 2020"
 		} ,
 	
@@ -564,7 +564,7 @@
 		  "title"      : "Coordinates transformation for better visualization",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/coordinates-transformation/coordinates-transformation",
-		  "date"       : "2020-07-02 00:00:00 -0700",
+		  "date"       : "2020-07-02 00:00:00 -0500",
 		  "shortdate"  : "July 02, 2020"
 		} ,
 	
@@ -572,7 +572,7 @@
 		  "title"      : "Implementing an integration problem via an integrand object",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/oop-integration-simpson/oop-integration-simpson",
-		  "date"       : "2020-06-30 00:00:00 -0700",
+		  "date"       : "2020-06-30 00:00:00 -0500",
 		  "shortdate"  : "June 30, 2020"
 		} ,
 	
@@ -580,7 +580,7 @@
 		  "title"      : "Making and using multiple Dynamic-Link Libraries (DLL) from within a single executable using the Intel Fortran Compiler on Windows OS",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/fortran-dll-multiple-libraries/fortran-dll-multiple-libraries",
-		  "date"       : "2020-06-28 00:00:00 -0700",
+		  "date"       : "2020-06-28 00:00:00 -0500",
 		  "shortdate"  : "June 28, 2020"
 		} ,
 	
@@ -588,7 +588,7 @@
 		  "title"      : "Intel Parallel Studio installation on Windows Operating Systems",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/intel-parallel-studio-installation-windows/intel-parallel-studio-installation-windows",
-		  "date"       : "2020-01-01 00:00:00 -0800",
+		  "date"       : "2020-01-01 00:00:00 -0600",
 		  "shortdate"  : "January 01, 2020"
 		} ,
 	
@@ -596,7 +596,7 @@
 		  "title"      : "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/regression-simple-least-squares-method/regression-simple-least-squares-method",
-		  "date"       : "2019-12-05 00:00:00 -0800",
+		  "date"       : "2019-12-05 00:00:00 -0600",
 		  "shortdate"  : "December 05, 2019"
 		} ,
 	
@@ -604,7 +604,7 @@
 		  "title"      : "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables via the least absolute deviations method",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-squares-method",
-		  "date"       : "2019-12-05 00:00:00 -0800",
+		  "date"       : "2019-12-05 00:00:00 -0600",
 		  "shortdate"  : "December 05, 2019"
 		} ,
 	
@@ -612,7 +612,7 @@
 		  "title"      : "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables via the least absolute deviations method",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-absolute-deviations-method",
-		  "date"       : "2019-12-05 00:00:00 -0800",
+		  "date"       : "2019-12-05 00:00:00 -0600",
 		  "shortdate"  : "December 05, 2019"
 		} ,
 	
@@ -620,7 +620,7 @@
 		  "title"      : "Monte Carlo sampling of the sum of two Gaussian distributions",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/monte-carlo-sampling-of-bimodal-gaussian/monte-carlo-sampling-of-bimodal-gaussian",
-		  "date"       : "2019-11-21 00:00:00 -0800",
+		  "date"       : "2019-11-21 00:00:00 -0600",
 		  "shortdate"  : "November 21, 2019"
 		} ,
 	
@@ -628,7 +628,7 @@
 		  "title"      : "Kmeans clustering",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/clustering-kmeans/clustering-kmeans",
-		  "date"       : "2019-11-21 00:00:00 -0800",
+		  "date"       : "2019-11-21 00:00:00 -0600",
 		  "shortdate"  : "November 21, 2019"
 		} ,
 	
@@ -636,7 +636,7 @@
 		  "title"      : "Regression: Predicting the global land temperature of the Earth in 2050 from the past data",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/regression-predicting-future-global-land-temperature/regression-predicting-future-global-land-temperature",
-		  "date"       : "2019-11-01 00:00:00 -0700",
+		  "date"       : "2019-11-01 00:00:00 -0500",
 		  "shortdate"  : "November 01, 2019"
 		} ,
 	
@@ -644,7 +644,7 @@
 		  "title"      : "Understanding the Central Limit Theorem via random walk",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/random-walk-central-limit-theorem/random-walk-central-limit-theorem",
-		  "date"       : "2019-11-01 00:00:00 -0700",
+		  "date"       : "2019-11-01 00:00:00 -0500",
 		  "shortdate"  : "November 01, 2019"
 		} ,
 	
@@ -652,7 +652,7 @@
 		  "title"      : "Finding the maximum value of an array via recursive function calls",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/finding-maximum-value-via-recursive-function/finding-maximum-value-via-recursive-function",
-		  "date"       : "2019-10-29 00:00:00 -0700",
+		  "date"       : "2019-10-29 00:00:00 -0500",
 		  "shortdate"  : "October 29, 2019"
 		} ,
 	
@@ -660,7 +660,7 @@
 		  "title"      : "Finding the position of the maximum value of an array via recursive function calls",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/finding-maximum-location-via-recursive-function/finding-maximum-location-via-recursive-function",
-		  "date"       : "2019-10-29 00:00:00 -0700",
+		  "date"       : "2019-10-29 00:00:00 -0500",
 		  "shortdate"  : "October 29, 2019"
 		} ,
 	
@@ -668,7 +668,7 @@
 		  "title"      : "Making and using a Dynamic-Link Library (DLL) from a Fortran procedure using Intel Fortran Compiler on Windows OS: getSquare()",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/fortran-dll-getsquare/fortran-dll-getsquare",
-		  "date"       : "2019-08-04 00:00:00 -0700",
+		  "date"       : "2019-08-04 00:00:00 -0500",
 		  "shortdate"  : "August 04, 2019"
 		} ,
 	
@@ -676,7 +676,7 @@
 		  "title"      : "Calling Fortran function from other languages via a Dynamic-Link Library (DLL): getPower()",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/fortran-dll-getpower/fortran-dll-getpower",
-		  "date"       : "2019-08-04 00:00:00 -0700",
+		  "date"       : "2019-08-04 00:00:00 -0500",
 		  "shortdate"  : "August 04, 2019"
 		} ,
 	
@@ -684,7 +684,7 @@
 		  "title"      : "Passing characters and strings from C to Fortran and from Fortran to C",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/fortran-c-interoperation-string/fortran-c-interoperation-string",
-		  "date"       : "2019-08-04 00:00:00 -0700",
+		  "date"       : "2019-08-04 00:00:00 -0500",
 		  "shortdate"  : "August 04, 2019"
 		} ,
 	
@@ -692,7 +692,7 @@
 		  "title"      : "Passing allocatable string from Fortran to C",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/fortran-c-interoperation-passing-allocatable-to-c/fortran-c-interoperation-passing-allocatable-to-c",
-		  "date"       : "2019-08-04 00:00:00 -0700",
+		  "date"       : "2019-08-04 00:00:00 -0500",
 		  "shortdate"  : "August 04, 2019"
 		} ,
 	
@@ -700,7 +700,7 @@
 		  "title"      : "Data transfer: Converting Comma-Separated-Values (CSV) input to formatted output",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/csv-input-to-formatted-output/csv-input-to-formatted-output",
-		  "date"       : "2019-08-04 00:00:00 -0700",
+		  "date"       : "2019-08-04 00:00:00 -0500",
 		  "shortdate"  : "August 04, 2019"
 		} ,
 	
@@ -708,7 +708,7 @@
 		  "title"      : "The while-loop implementation of for-loop",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/while-loop-to-for-loop/while-loop-to-for-loop",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -716,7 +716,7 @@
 		  "title"      : "Version-control using Git and GitHub",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/vcs-using-git-github/vcs-using-git-github",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -724,7 +724,7 @@
 		  "title"      : "Simple GitHub page from README.md file",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/vcs-github-readme-webpage/vcs-github-readme-webpage",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -732,7 +732,7 @@
 		  "title"      : "value, variable, type, syntax error",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/values-variables-types-syntax-error/values-variables-types-syntax-error",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -740,7 +740,7 @@
 		  "title"      : "Computing the area of a triangle",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/triangle-area/triangle-area",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -748,7 +748,7 @@
 		  "title"      : "Time required for cooking a refrigerated egg",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/time-to-cook-frozen-egg/time-to-cook-frozen-egg",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -756,7 +756,7 @@
 		  "title"      : "String concatenation using for-loop",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/string-concatenation-using-for-loop/string-concatenation-using-for-loop",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -764,7 +764,7 @@
 		  "title"      : "String concatenation using for-loop I",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/string-concatenation-using-for-loop-i/string-concatenation-using-for-loop-I",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -772,7 +772,7 @@
 		  "title"      : "Simulating the Monty Hall game",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/simulating-monty-hall-game/simulating-monty-hall-game",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -780,7 +780,7 @@
 		  "title"      : "Impact of round-off errors on numerical computations",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/roundoff-error-paradox/roundoff-error-paradox",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -788,7 +788,7 @@
 		  "title"      : "Regression: obtaining the most likely mean and standard deviation of a set of Standard Normally Distributed Random Variables",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/regression-standard-normal-distribution/regression-standard-normal-distribution",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -796,7 +796,7 @@
 		  "title"      : "Reading data from the World Wide Web",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/reading-data-from-web/reading-data-from-web",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -804,7 +804,7 @@
 		  "title"      : "Python aliasing vs. copying variables",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/python-variable-aliasing-copying/python-variable-aliasing-copying",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -812,7 +812,7 @@
 		  "title"      : "Single-line Python input and string manipulation",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/python-single-line-input-string-manipulation/python-single-line-input-string-manipulation",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -820,7 +820,7 @@
 		  "title"      : "Python script full of syntax errors",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/python-script-full-of-syntax-errors/python-script-full-of-syntax-errors",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -828,7 +828,7 @@
 		  "title"      : "Python script full of errors",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/python-script-full-of-errors/python-script-full-of-errors",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -836,7 +836,7 @@
 		  "title"      : "Python dictionary of class members",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/python-dictionary-of-class-members/python-dictionary-of-class-members",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -844,7 +844,7 @@
 		  "title"      : "Python script call from the Bash command line",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/python-call-script-from-bash/python-call-script-from-bash",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -852,7 +852,7 @@
 		  "title"      : "Impact of machine precision on numerical computation",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/precision-error-paradox/precision-error-paradox",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -860,7 +860,7 @@
 		  "title"      : "Converting polar and Cartesian vector representations using functions and structures",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/polar-cartesian-coordinates-conversion/polar-cartesian-coordinates-conversion",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -868,7 +868,7 @@
 		  "title"      : "Operator precedence",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/operator-precedence/operator-precedence",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -876,7 +876,7 @@
 		  "title"      : "Check if number is even in one line function definition",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/one-line-check-even-number/one-line-check-even-number",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -884,7 +884,7 @@
 		  "title"      : "Getting the boundary of objects in images",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/object-boundary-detection/object-boundary-detection",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -892,7 +892,7 @@
 		  "title"      : "Monte Carlo sampling of distribution functions",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/monte-carlo-sampling-of-distribution-functions/monte-carlo-sampling-of-distribution-functions",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -900,7 +900,7 @@
 		  "title"      : "Monte Carlo approximation of the number Pi",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -908,7 +908,7 @@
 		  "title"      : "Modifying the index of a for-loop",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/modifying-loop-index-value/modifying-loop-index-value",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -916,7 +916,7 @@
 		  "title"      : "Matrix Initialization",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/matrix-initialization/matrix-initialization",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -924,7 +924,7 @@
 		  "title"      : "MATLAB working directory",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/matlab-working-directory/matlab-working-directory",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -932,7 +932,7 @@
 		  "title"      : "Subplots in MATLAB",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/matlab-subplots/matlab-subplots",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -940,7 +940,7 @@
 		  "title"      : "MATLAB script full of errors",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/matlab-script-full-of-errors/matlab-script-full-of-errors",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -948,7 +948,7 @@
 		  "title"      : "Getting the largest prime number smaller than the input value",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/largest-prime-number-smaller-than-input/largest-prime-number-smaller-than-input",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -956,7 +956,7 @@
 		  "title"      : "Checking if an input is a prime number (via recursive function calls)?",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/isprime-recursive/isprime-recursive",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -964,7 +964,7 @@
 		  "title"      : "Integer overflow",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/integer-overflow/integer-overflow",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -972,7 +972,7 @@
 		  "title"      : "Implementing the Bell-shaped (Gaussian) function",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/implementing-gaussian-function/implementing-gaussian-function",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -980,7 +980,7 @@
 		  "title"      : "Function generators",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/function-generators/function-generators",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -988,7 +988,7 @@
 		  "title"      : "Computing the Fibonacci sequence via recursive function calls",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/fibonacci-sequence-via-recursive-function-calls/fibonacci-sequence-via-recursive-function-calls",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -996,7 +996,7 @@
 		  "title"      : "Computing the Fibonacci sequence via for-loop",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/fibonacci-sequence-via-for-loop/fibonacci-sequence-via-for-loop",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -1004,7 +1004,7 @@
 		  "title"      : "Exception handling in the case of a simple projectile motion",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/exception-handling-projectile-motion/exception-handling-projectile-motion",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -1012,7 +1012,7 @@
 		  "title"      : "Exception handling in the case of division by zero",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/exception-handling-derivative/exception-handling-derivative",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -1020,7 +1020,7 @@
 		  "title"      : "Data transfer: Parsing Amino Acid data file",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/data-transfer-amino-acid/data-transfer-amino-acid",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -1028,7 +1028,7 @@
 		  "title"      : "Command line input arguments summation via sum()",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/command-line-input-arguments-summation/command-line-input-arguments-summation",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -1036,7 +1036,7 @@
 		  "title"      : "Command line input arguments summation via eval()",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/command-line-input-arguments-eval/command-line-input-arguments-eval",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -1044,7 +1044,7 @@
 		  "title"      : "Calculating the size of a directory",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/calculating-directory-size/calculating-directory-size",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} ,
 	
@@ -1052,7 +1052,7 @@
 		  "title"      : "Branching, the Pythonic way",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/branching-pythonic-way/branching-pythonic-way",
-		  "date"       : "2019-07-04 00:00:00 -0700",
+		  "date"       : "2019-07-04 00:00:00 -0500",
 		  "shortdate"  : "July 04, 2019"
 		} 
 	

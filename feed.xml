@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2022-05-03T13:59:48-07:00</updated>
+<updated>2022-09-12T01:07:19-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -21,7 +21,7 @@
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/clustering-naive-kmedioid-implementation/clustering-naive-kmedioid-implementation"/>
   <id>https://www.cdslab.org/recipes/programming/clustering-naive-kmedioid-implementation/clustering-naive-kmedioid-implementation</id>
-  <published>2021-12-01T00:00:00-08:00</published>
+  <published>2021-12-01T00:00:00-06:00</published>
   <updated>2021-12-01T00:00:00-00:00</updated>
   
   <author>
@@ -71,7 +71,7 @@ Test the functionality of your algorithm with &lt;a href=&quot;https://www.cdsla
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/clustering-kmeans-vs-dbscan-online/clustering-kmeans-vs-dbscan-online"/>
   <id>https://www.cdslab.org/recipes/programming/clustering-kmeans-vs-dbscan-online/clustering-kmeans-vs-dbscan-online</id>
-  <published>2021-12-01T00:00:00-08:00</published>
+  <published>2021-12-01T00:00:00-06:00</published>
   <updated>2021-12-01T00:00:00-00:00</updated>
   
   <author>
@@ -119,7 +119,7 @@ Test the functionality of your algorithm with &lt;a href=&quot;https://www.cdsla
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/clustering-dbscan-online/clustering-dbscan-online"/>
   <id>https://www.cdslab.org/recipes/programming/clustering-dbscan-online/clustering-dbscan-online</id>
-  <published>2021-12-01T00:00:00-08:00</published>
+  <published>2021-12-01T00:00:00-06:00</published>
   <updated>2021-12-01T00:00:00-00:00</updated>
   
   <author>
@@ -159,7 +159,7 @@ Test the functionality of your algorithm with &lt;a href=&quot;https://www.cdsla
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/clustering-kmeans-implementation/clustering-kmeans-implementation"/>
   <id>https://www.cdslab.org/recipes/programming/clustering-kmeans-implementation/clustering-kmeans-implementation</id>
-  <published>2021-11-29T00:00:00-08:00</published>
+  <published>2021-11-29T00:00:00-06:00</published>
   <updated>2019-11-21T00:00:00-00:00</updated>
   
   <author>
@@ -220,7 +220,7 @@ resulting clusters for a range of input number of clusters. Here is an example p
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/clustering-kmeans-customers/clustering-kmeans-customers"/>
   <id>https://www.cdslab.org/recipes/programming/clustering-kmeans-customers/clustering-kmeans-customers</id>
-  <published>2021-11-21T00:00:00-08:00</published>
+  <published>2021-11-21T00:00:00-06:00</published>
   <updated>2019-11-21T00:00:00-00:00</updated>
   
   <author>
@@ -261,7 +261,7 @@ resulting clusters for a range of input number of clusters. Here is an example p
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/regression-erf-censored-gaussian-data/regression-erf-censored-gaussian-data"/>
   <id>https://www.cdslab.org/recipes/programming/regression-erf-censored-gaussian-data/regression-erf-censored-gaussian-data</id>
-  <published>2021-11-19T00:00:00-08:00</published>
+  <published>2021-11-19T00:00:00-06:00</published>
   <updated>2021-11-19T00:00:00-00:00</updated>
   
   <author>
@@ -309,7 +309,7 @@ resulting clusters for a range of input number of clusters. Here is an example p
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/puzzle-matchstick-equation/puzzle-matchstick-equation"/>
   <id>https://www.cdslab.org/recipes/programming/puzzle-matchstick-equation/puzzle-matchstick-equation</id>
-  <published>2021-11-15T00:00:00-08:00</published>
+  <published>2021-11-15T00:00:00-06:00</published>
   <updated>2021-10-01T00:00:00-00:00</updated>
   
   <author>
@@ -347,7 +347,7 @@ resulting clusters for a range of input number of clusters. Here is an example p
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/puzzle-how-many-animals-in-pond/puzzle-how-many-animals-in-pond"/>
   <id>https://www.cdslab.org/recipes/programming/puzzle-how-many-animals-in-pond/puzzle-how-many-animals-in-pond</id>
-  <published>2021-11-15T00:00:00-08:00</published>
+  <published>2021-11-15T00:00:00-06:00</published>
   <updated>2021-10-01T00:00:00-00:00</updated>
   
   <author>
@@ -385,8 +385,8 @@ resulting clusters for a range of input number of clusters. Here is an example p
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/regression-predicting-future-global-land-temperature-excel/regression-predicting-future-global-land-temperature-excel"/>
   <id>https://www.cdslab.org/recipes/programming/regression-predicting-future-global-land-temperature-excel/regression-predicting-future-global-land-temperature-excel</id>
-  <published>2021-11-11T00:00:00-08:00</published>
-  <updated>2021-11-11T00:00:00-08:00</updated>
+  <published>2021-11-11T00:00:00-06:00</published>
+  <updated>2021-11-11T00:00:00-06:00</updated>
   <author>
     <name>Amir Shahmoradi</name>
     <uri>https://www.cdslab.org/recipes</uri>
@@ -433,8 +433,8 @@ resulting clusters for a range of input number of clusters. Here is an example p
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/regression-linear-gaussian/regression-linear-gaussian"/>
   <id>https://www.cdslab.org/recipes/programming/regression-linear-gaussian/regression-linear-gaussian</id>
-  <published>2021-11-05T00:00:00-07:00</published>
-  <updated>2021-11-05T00:00:00-07:00</updated>
+  <published>2021-11-05T00:00:00-05:00</published>
+  <updated>2021-11-05T00:00:00-05:00</updated>
   <author>
     <name>Amir Shahmoradi</name>
     <uri>https://www.cdslab.org/recipes</uri>
@@ -495,8 +495,8 @@ As you may have guessed, the only difference between this dataset and the previo
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/regression-gaussian-data/regression-gaussian-data"/>
   <id>https://www.cdslab.org/recipes/programming/regression-gaussian-data/regression-gaussian-data</id>
-  <published>2021-10-28T00:00:00-07:00</published>
-  <updated>2021-10-28T00:00:00-07:00</updated>
+  <published>2021-10-28T00:00:00-05:00</published>
+  <updated>2021-10-28T00:00:00-05:00</updated>
   <author>
     <name>Amir Shahmoradi</name>
     <uri>https://www.cdslab.org/recipes</uri>
@@ -557,7 +557,7 @@ As you may have guessed, the only difference between this dataset and the previo
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/stat-crosscorr-sin-cos/stat-crosscorr-sin-cos"/>
   <id>https://www.cdslab.org/recipes/programming/stat-crosscorr-sin-cos/stat-crosscorr-sin-cos</id>
-  <published>2021-10-20T00:00:00-07:00</published>
+  <published>2021-10-20T00:00:00-05:00</published>
   <updated>2019-07-04T00:00:00-00:00</updated>
   
   <author>
@@ -608,7 +608,7 @@ As you may have guessed, the only difference between this dataset and the previo
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/stat-crosscorr/stat-crosscorr"/>
   <id>https://www.cdslab.org/recipes/programming/stat-crosscorr/stat-crosscorr</id>
-  <published>2021-10-11T00:00:00-07:00</published>
+  <published>2021-10-11T00:00:00-05:00</published>
   <updated>2019-07-04T00:00:00-00:00</updated>
   
   <author>
@@ -672,7 +672,7 @@ Now, use an external library in the language of your choice to compute the autoc
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/stat-autocorr/stat-autocorr"/>
   <id>https://www.cdslab.org/recipes/programming/stat-autocorr/stat-autocorr</id>
-  <published>2021-10-11T00:00:00-07:00</published>
+  <published>2021-10-11T00:00:00-05:00</published>
   <updated>2019-07-04T00:00:00-00:00</updated>
   
   <author>
@@ -729,7 +729,7 @@ Also recall that the autocorrelation of a time-series is defined as the correlat
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/stat-autocorr-removal/stat-autocorr-removal"/>
   <id>https://www.cdslab.org/recipes/programming/stat-autocorr-removal/stat-autocorr-removal</id>
-  <published>2021-10-11T00:00:00-07:00</published>
+  <published>2021-10-11T00:00:00-05:00</published>
   <updated>2019-07-04T00:00:00-00:00</updated>
   
   <author>
@@ -856,7 +856,7 @@ Also recall that the autocorrelation of a time-series is defined as the correlat
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/vis-ugly-graph/vis-ugly-graph"/>
   <id>https://www.cdslab.org/recipes/programming/vis-ugly-graph/vis-ugly-graph</id>
-  <published>2021-10-08T00:00:00-07:00</published>
+  <published>2021-10-08T00:00:00-05:00</published>
   <updated>2021-10-01T00:00:00-00:00</updated>
   
   <author>
@@ -895,7 +895,7 @@ Also recall that the autocorrelation of a time-series is defined as the correlat
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/vis-population-growth-tx-la/vis-population-growth-tx-la"/>
   <id>https://www.cdslab.org/recipes/programming/vis-population-growth-tx-la/vis-population-growth-tx-la</id>
-  <published>2021-10-08T00:00:00-07:00</published>
+  <published>2021-10-08T00:00:00-05:00</published>
   <updated>2021-10-01T00:00:00-00:00</updated>
   
   <author>
@@ -934,7 +934,7 @@ Also recall that the autocorrelation of a time-series is defined as the correlat
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/vis-most-moderate-temp-city/vis-most-moderate-temp-city"/>
   <id>https://www.cdslab.org/recipes/programming/vis-most-moderate-temp-city/vis-most-moderate-temp-city</id>
-  <published>2021-10-08T00:00:00-07:00</published>
+  <published>2021-10-08T00:00:00-05:00</published>
   <updated>2021-10-01T00:00:00-00:00</updated>
   
   <author>
@@ -979,7 +979,7 @@ Also recall that the autocorrelation of a time-series is defined as the correlat
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/vis-graph-wrong/vis-graph-wrong"/>
   <id>https://www.cdslab.org/recipes/programming/vis-graph-wrong/vis-graph-wrong</id>
-  <published>2021-10-08T00:00:00-07:00</published>
+  <published>2021-10-08T00:00:00-05:00</published>
   <updated>2021-10-01T00:00:00-00:00</updated>
   
   <author>
@@ -1018,7 +1018,7 @@ Also recall that the autocorrelation of a time-series is defined as the correlat
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/vis-excel-bar-plot/vis-excel-bar-plot"/>
   <id>https://www.cdslab.org/recipes/programming/vis-excel-bar-plot/vis-excel-bar-plot</id>
-  <published>2021-10-08T00:00:00-07:00</published>
+  <published>2021-10-08T00:00:00-05:00</published>
   <updated>2021-10-01T00:00:00-00:00</updated>
   
   <author>
