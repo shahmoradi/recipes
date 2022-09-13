@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "Version-control: Setting up Git Software and GitHub Account",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/vcs-git-github-setup/vcs-git-github-setup",
+		  "date"       : "2022-09-13 00:00:00 -0500",
+		  "shortdate"  : "September 13, 2022"
+		} ,
+	
+		{
 		  "title"      : "A naive implementation of Kmedoids clustering",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/clustering-naive-kmedioid-implementation/clustering-naive-kmedioid-implementation",

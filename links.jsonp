@@ -57,6 +57,11 @@ callback([
   } ,
 
   {
+    "text": "Version-control: Setting up Git Software and GitHub Account",
+    "href": "/recipes/programming/vcs-git-github-setup/vcs-git-github-setup"
+  } ,
+
+  {
     "text": "Version-control using Git and GitHub",
     "href": "/recipes/programming/vcs-using-git-github/vcs-using-git-github"
   } ,

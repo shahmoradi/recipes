@@ -7,13 +7,154 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2022-09-12T01:07:19-05:00</updated>
+<updated>2022-09-13T16:07:02-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
   <uri>https://www.cdslab.org/recipes/</uri>
   <email>shahmoradi@utexas.edu</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Version-control: Setting up Git Software and GitHub Account]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/vcs-git-github-setup/vcs-git-github-setup"/>
+  <id>https://www.cdslab.org/recipes/programming/vcs-git-github-setup/vcs-git-github-setup</id>
+  <published>2022-09-13T00:00:00-05:00</published>
+  <updated>2022-09-13T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#VCS" term="VCS" /><category scheme="https://www.cdslab.org/recipes/tags/#git" term="git" /><category scheme="https://www.cdslab.org/recipes/tags/#GitHub" term="GitHub" /><category scheme="https://www.cdslab.org/recipes/tags/#version%20control%20system" term="version control system" /><category scheme="https://www.cdslab.org/recipes/tags/#project" term="project" /><category scheme="https://www.cdslab.org/recipes/tags/#markdown" term="markdown" /><category scheme="https://www.cdslab.org/recipes/tags/#git%20branch" term="git branch" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
+    
+    
+    
+    &lt;figure&gt;
+        &lt;a href=&quot;#git&quot; id=&quot;git&quot;&gt;
+            &lt;img src=&quot;https://www.cdslab.org/recipes/images/Git.png&quot; width=&quot;75px&quot; /&gt;
+        &lt;/a&gt;
+        &lt;figcaption&gt;
+            &lt;a href=&quot;https://en.wikipedia.org/wiki/Git&quot; target=&quot;_blank&quot;&gt;
+                Git
+            &lt;/a&gt;
+        &lt;/figcaption&gt;
+    &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This exercise guides you through the steps needed to take to properly install and minimally use the git software and the Git Bash terminal on your system.&lt;br /&gt;
+By the end of this exercise, you will be able to initialize an empty git project anywhere in your computer, or initialize a project on GitHub and clone it to your system.&lt;br /&gt;
+&lt;strong&gt;Guidelines.&lt;/strong&gt; Use the following references for operations in a (Git) Bash terminal.&lt;br /&gt;
+    - &lt;a href=&quot;https://www.cdslab.org/python/notes/preliminary-foundations/version-control-system/linuxRef.pdf&quot; target=&quot;_blank&quot;&gt;Linux Bash command reference&lt;/a&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Only Windows users&lt;/strong&gt;. Before installing the Git software, I highly recommend you to download and install the most recent version of &lt;a href=&quot;https://notepad-plus-plus.org/downloads/&quot; target=&quot;_blank&quot;&gt;Nodepad++ text editor&lt;/a&gt; on your system, if you do not have it already.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Git installation&lt;/strong&gt;. Visit the &lt;a href=&quot;https://git-scm.com/downloads&quot; target=&quot;_blank&quot;&gt;Git downloads website&lt;/a&gt; and download the most recent version of the git software to install on your system.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Only Windows users&lt;/strong&gt;. During the installation, the git software may ask you to link your Notepad++ software with git. If given this option, choose it.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Interacting with Git&lt;/strong&gt;.
+    &lt;ul&gt;
+      &lt;li&gt;Depending on your operating system,
+        &lt;ul&gt;
+          &lt;li&gt;&lt;strong&gt;On Windows systems&lt;/strong&gt;,
+            &lt;ol&gt;
+              &lt;li&gt;press the Windows key + &lt;code&gt;E&lt;/code&gt; to open a Windows explorer.&lt;br /&gt;
+&lt;img src=&quot;explorer-key-shortcut.jpg&quot; alt=&quot;explorer-key-shortcut.jpg&quot; /&gt;&lt;/li&gt;
+              &lt;li&gt;Then, navigate to the directory &lt;code&gt;C:\Users\account&lt;/code&gt;, where you have to replace &lt;code&gt;account&lt;/code&gt; with your Windows account name.&lt;/li&gt;
+              &lt;li&gt;Now right-click on an empty region of the Windows explorer, you should see a menu like the following.&lt;br /&gt;
+&lt;img src=&quot;git.bash.here.png&quot; alt=&quot;git.bash.here.png&quot; /&gt;&lt;br /&gt;
+Click on “Git Bash Here” to open a Git Bash session. You should see a Bash session opened like the following screen shot,&lt;br /&gt;
+&lt;img src=&quot;git.bash.png&quot; alt=&quot;git.bash.png&quot; /&gt;&lt;br /&gt;
+What is &lt;strong&gt;Git Bash&lt;/strong&gt;? Git Bash is simply a &lt;a href=&quot;https://en.wikipedia.org/wiki/Bash_(Unix_shell)&quot; target=&quot;_blank&quot;&gt;Bash terminal&lt;/a&gt; that is tailored for Git usage on Windows.&lt;br /&gt;
+The Linux and macOS operating systems have Bash-compatible terminals (shells) that allow interaction with the operating system.&lt;br /&gt;
+The Git software was originally built as a Linux application that natively used the Linux terminals for interaction.&lt;br /&gt;
+However, Windows system is not fully compatible with Linux terminals and does not have native Linux-compatible terminals.&lt;br /&gt;
+Therefore, the Git developers decided to ship the Git software with a dedicated Bash terminal for use on Windows systems,
+so that Windows users also get the same feeling as Linux and macOS users when dealing with Git software.&lt;/li&gt;
+            &lt;/ol&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;On Linux / macOS systems&lt;/strong&gt;.
+            &lt;ol&gt;
+              &lt;li&gt;Simply search for &lt;strong&gt;terminal&lt;/strong&gt; in the search box of your operating system and open a terminal.&lt;/li&gt;
+              &lt;li&gt;Then type &lt;code&gt;cd ~&lt;/code&gt; and press enter. This will take you to &lt;strong&gt;home directory&lt;/strong&gt; of your system.&lt;/li&gt;
+              &lt;li&gt;Then type &lt;code&gt;open .&lt;/code&gt; in your terminal and press enter to open a &lt;strong&gt;macOS finder&lt;/strong&gt; in the same location as your home folder.&lt;/li&gt;
+            &lt;/ol&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Now, within your terminal (whether Git Bash or Linux/macOS terminal), type &lt;code&gt;pwd&lt;/code&gt; and press enter.&lt;br /&gt;
+&lt;strong&gt;Why?&lt;/strong&gt; This Bash command displays the current working directory where you are.&lt;br /&gt;
+It should print the path to the home directory of your system, because you are already in the home directory.&lt;/li&gt;
+      &lt;li&gt;Now type &lt;code&gt;ls -a&lt;/code&gt; and press enter.&lt;br /&gt;
+&lt;strong&gt;Why?&lt;/strong&gt; This Bash command will display a list of all files and folders in the home directory of your computer.&lt;br /&gt;
+The &lt;code&gt;-a&lt;/code&gt; flag requests the Bash terminal to show all files (&lt;strong&gt;including hidden files&lt;/strong&gt;).&lt;br /&gt;
+Note that any file or folder whose name begins with a &lt;code&gt;.&lt;/code&gt; is automatically hidden from your view.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Creating your first Git project.&lt;/strong&gt;&lt;br /&gt;
+There are two ways to create git projects,
+    &lt;ol&gt;
+      &lt;li&gt;Creating a git project on your local system.
+        &lt;ul&gt;
+          &lt;li&gt;Now type &lt;code&gt;mkdir git&lt;/code&gt; and press enter.&lt;br /&gt;
+&lt;strong&gt;Why?&lt;/strong&gt; This Bash command will create a new folder named &lt;code&gt;git&lt;/code&gt; within the current directory of your Bash session (which is already your home directory).&lt;br /&gt;
+Although you can use any place in your computer to store your Git projects, it is good practice and much easier to keep them all in one place (the &lt;code&gt;git&lt;/code&gt; folder you just created).
+            &lt;blockquote&gt;
+              &lt;p&gt;Some of you may have already created a &lt;code&gt;git&lt;/code&gt; folder in your home directory. &lt;br /&gt;
+  In such a case, the command &lt;code&gt;mkdir git&lt;/code&gt; will lead to an error because the folder already exists.&lt;br /&gt;
+  Do not panic, ignore the error message and move on to the next step below.&lt;/p&gt;
+            &lt;/blockquote&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Now type &lt;code&gt;ls -l&lt;/code&gt; again and press enter.&lt;br /&gt;
+&lt;strong&gt;Why?&lt;/strong&gt; If you have successfully created the new folder &lt;code&gt;git&lt;/code&gt; in your current directory, this command will show you the new folder in the listing it displays.&lt;br /&gt;
+If you cannot find it, you need to reach out to me to identify the roots of the problem.&lt;/li&gt;
+          &lt;li&gt;Now type &lt;code&gt;cd git&lt;/code&gt; and press enter.&lt;br /&gt;
+&lt;strong&gt;Why?&lt;/strong&gt; The &lt;code&gt;cd&lt;/code&gt; Bash command stands for &lt;strong&gt;Change Directory&lt;/strong&gt;. Therefore, &lt;code&gt;cd git&lt;/code&gt; will change your current working directory from your home directory to the subdirectory &lt;code&gt;git&lt;/code&gt;.&lt;/li&gt;
+          &lt;li&gt;Now, we want to create a new git project in this folder. Let’s say the name of the project is &lt;code&gt;test&lt;/code&gt;.&lt;/li&gt;
+          &lt;li&gt;First, we will have to create a &lt;code&gt;test&lt;/code&gt; folder where we will store all files and materials related to the &lt;code&gt;test&lt;/code&gt; git project. Type the following in the terminal and press enter.
+            &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;mkdir test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cd test&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+            &lt;p&gt;This command will create a &lt;code&gt;test&lt;/code&gt; subfolder in your &lt;code&gt;git&lt;/code&gt; folder and then will change the current directory to wihtin the &lt;code&gt;test&lt;/code&gt; subfolder.&lt;br /&gt;
+The &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; simply means &lt;strong&gt;and&lt;/strong&gt;: Make directory &lt;code&gt;test&lt;/code&gt; &lt;strong&gt;and&lt;/strong&gt; change directory to &lt;code&gt;test&lt;/code&gt;.&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;This is where we want to host our git test project. To initialize an empty Git project here, type the following git command in the terminal,
+            &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;Done.&lt;/strong&gt; You have successfully created an empty test Git project on your computer.&lt;/li&gt;
+          &lt;li&gt;Each and every Git project is always associated with a &lt;code&gt;.git&lt;/code&gt; subfolder in the same location where your store your project on your system.&lt;br /&gt;
+To ensure you have successfully initiated a Git project, type &lt;code&gt;ls -a&lt;/code&gt; in your terminal and press enter.&lt;br /&gt;
+This should display a list among which there is &lt;code&gt;.git&lt;/code&gt;.&lt;br /&gt;
+If you do not see this hidden folder in the list displayed, your &lt;code&gt;test&lt;/code&gt; folder is &lt;strong&gt;not&lt;/strong&gt; a git project yet!&lt;/li&gt;
+          &lt;li&gt;Of course, your Git project is still empty. But you can now put anything you like in it and make it part of your project.&lt;br /&gt;
+For example, we can add an empty text file to it by typing,
+            &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;touch &lt;/span&gt;README.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+            &lt;p&gt;in the Bash terminal and pressing enter.&lt;/p&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Creating a git project on a server and cloning the project on your local system.&lt;br /&gt;
+This is the easier way of initializing projects and sharing them with other Team members in the project.&lt;br /&gt;
+In the follow-up exercises, we will learn how to initialize Git projects using &lt;a href=&quot;https://github.com/&quot; target=&quot;_blank&quot;&gt;GitHub&lt;/a&gt; as the git server.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/vcs-git-github-setup/vcs-git-github-setup&quot;&gt;Version-control: Setting up Git Software and GitHub Account&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on September 13, 2022.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -1010,52 +1151,6 @@ Also recall that the autocorrelation of a time-series is defined as the correlat
 
   
   &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/vis-graph-wrong/vis-graph-wrong&quot;&gt;Wrong visualization&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 08, 2021.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Excel Bar plot]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/vis-excel-bar-plot/vis-excel-bar-plot"/>
-  <id>https://www.cdslab.org/recipes/programming/vis-excel-bar-plot/vis-excel-bar-plot</id>
-  <published>2021-10-08T00:00:00-05:00</published>
-  <updated>2021-10-01T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#histogram" term="histogram" /><category scheme="https://www.cdslab.org/recipes/tags/#kernel" term="kernel" /><category scheme="https://www.cdslab.org/recipes/tags/#density" term="density" /><category scheme="https://www.cdslab.org/recipes/tags/#wrong" term="wrong" />
-  <content type="html">
-  
-    
-&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-    
-        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
-            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
-                Problem
-            &lt;/h2&gt;
-        &lt;/a&gt;
-    
-&lt;/div&gt;
-
-&lt;p&gt;Consider the following salary data.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Data Scientist | Physicist | Bioinformatician 
----------------|-----------|-----------------
-$110,000       | $122,000  | $58,000           
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Make a graph of this data in Microsoft Excel similar to the following visualization.&lt;/p&gt;
-
-&lt;figure&gt;
-    &lt;img src=&quot;salary.png&quot; /&gt;
-&lt;/figure&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/vis-excel-bar-plot/vis-excel-bar-plot&quot;&gt;Excel Bar plot&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 08, 2021.&lt;/p&gt;</content>
 </entry>
 
 </feed>

@@ -3,18 +3,18 @@
 <head>
     
     <meta charset="utf-8">
-<title>INTEL PARALLEL STUDIO INSTALLATION ON WINDOWS OPERATING SYSTEMS &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>VERSION-CONTROL: SETTING UP GIT SOFTWARE AND GITHUB ACCOUNT &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="Intel Parallel Studio, Microsoft Visual Studio, Windows, installation, Fortran, C, C++">
+<meta name="keywords" content="VCS, git, GitHub, version control system, project, markdown, git branch">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Intel Parallel Studio installation on Windows Operating Systems">
+<meta property="og:title" content="Version-control: Setting up Git Software and GitHub Account">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/intel-parallel-studio-installation-windows/intel-parallel-studio-installation-windows">
+<meta property="og:url" content="/recipes/programming/vcs-git-github-setup/vcs-git-github-setup">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/intel-parallel-studio-installation-windows/intel-parallel-studio-installation-windows">
+<link rel="canonical" href="/recipes/programming/vcs-git-github-setup/vcs-git-github-setup">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,49 +130,49 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/intel-parallel-studio-installation-windows/intel-parallel-studio-installation-windows">Intel Parallel Studio installation on Windows Operating Systems</a></h2>
+                            <h2><a href="/recipes/programming/vcs-git-github-setup/vcs-git-github-setup">Version-control: Setting up Git Software and GitHub Account</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
                                 
                                     &#8212; Last updated: 
-                                    <strong><time datetime="2020-01-01T00:00:00-06:00">01 January 2020</time></strong>
+                                    <strong><time datetime="2022-09-13T00:00:00-05:00">13 September 2022</time></strong>
                                 
                                 <ul class="tag-box inline">
                                     <span style="margin-right:1rem;">Tags:</span>
                                     
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#C" data-toggle="tooltip" title="Posts tagged with C" rel="tag">C</a>
+                                                <a href="/recipes/tags/index.html#GitHub" data-toggle="tooltip" title="Posts tagged with GitHub" rel="tag">GitHub</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#C++" data-toggle="tooltip" title="Posts tagged with C++" rel="tag">C++</a>
+                                                <a href="/recipes/tags/index.html#VCS" data-toggle="tooltip" title="Posts tagged with VCS" rel="tag">VCS</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#Fortran" data-toggle="tooltip" title="Posts tagged with Fortran" rel="tag">Fortran</a>
+                                                <a href="/recipes/tags/index.html#git" data-toggle="tooltip" title="Posts tagged with git" rel="tag">git</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#Intel Parallel Studio" data-toggle="tooltip" title="Posts tagged with Intel Parallel Studio" rel="tag">Intel Parallel Studio</a>
+                                                <a href="/recipes/tags/index.html#git branch" data-toggle="tooltip" title="Posts tagged with git branch" rel="tag">git branch</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#Microsoft Visual Studio" data-toggle="tooltip" title="Posts tagged with Microsoft Visual Studio" rel="tag">Microsoft Visual Studio</a>
+                                                <a href="/recipes/tags/index.html#markdown" data-toggle="tooltip" title="Posts tagged with markdown" rel="tag">markdown</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#Windows" data-toggle="tooltip" title="Posts tagged with Windows" rel="tag">Windows</a>
+                                                <a href="/recipes/tags/index.html#project" data-toggle="tooltip" title="Posts tagged with project" rel="tag">project</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#installation" data-toggle="tooltip" title="Posts tagged with installation" rel="tag">installation</a>
+                                                <a href="/recipes/tags/index.html#version control system" data-toggle="tooltip" title="Posts tagged with version control system" rel="tag">version control system</a>
                                             </li>
                                             
                                         
@@ -191,83 +191,135 @@
 
             <div style="text-align:left;">
                 
-<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
     
-        <a href="#problem" style="display:inline-block;">
-            <h2 id="problem" style="color:red;">
-                Problem
-            </h2>
+    
+    
+    <figure>
+        <a href="#git" id="git">
+            <img src="/recipes/images/Git.png" width="75px" />
         </a>
-    
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Git" target="_blank">
+                Git
+            </a>
+        </figcaption>
+    </figure>
 </div>
 
-<p>How can I install Intel Parallel Studio on Windows?</p>
-
-<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
-
-    <a href="#solution" style="display:inline-block;">
-        <h2 id="solution" style="color:blue;">
-            Solution
-        </h2>
-    </a>
-
-</div>
-
-<p>The Intel Parallel Studio provides a wide variety of High-Performance numerical libraries and tools, most importantly, the Intel Fortran and C/C++ compilers. However, its installation on Windows systems, in particular, its Fortran compiler can be a bit tricky.</p>
-
-<p>Here are the <strong>steps required to take to properly install Intel Parallel Studio on Windows</strong>:</p>
+<p>This exercise guides you through the steps needed to take to properly install and minimally use the git software and the Git Bash terminal on your system.<br />
+By the end of this exercise, you will be able to initialize an empty git project anywhere in your computer, or initialize a project on GitHub and clone it to your system.<br />
+<strong>Guidelines.</strong> Use the following references for operations in a (Git) Bash terminal.<br />
+    - <a href="https://www.cdslab.org/python/notes/preliminary-foundations/version-control-system/linuxRef.pdf" target="_blank">Linux Bash command reference</a>
+<br />
+<br /></p>
 
 <ol>
-  <li>First, you need to <strong>make sure that you can obtain a valid license from Intel</strong> to download, install, and successfully use the parallel studio for at least one year or perhaps, for eternity. Failure to obtain a license means that the software would be accessible for only 30 days of trial usage after the installation. Fortunately, <strong>a valid license can be obtained</strong> for Intel Parallel Studio in its entirety, <strong>completely free of charge</strong>, if you belong to one of the following professional groups:<br />
- <br />
+  <li><strong>Only Windows users</strong>. Before installing the Git software, I highly recommend you to download and install the most recent version of <a href="https://notepad-plus-plus.org/downloads/" target="_blank">Nodepad++ text editor</a> on your system, if you do not have it already.</li>
+  <li><strong>Git installation</strong>. Visit the <a href="https://git-scm.com/downloads" target="_blank">Git downloads website</a> and download the most recent version of the git software to install on your system.
+    <ul>
+      <li><strong>Only Windows users</strong>. During the installation, the git software may ask you to link your Notepad++ software with git. If given this option, choose it.</li>
+    </ul>
+  </li>
+  <li><strong>Interacting with Git</strong>.
+    <ul>
+      <li>Depending on your operating system,
+        <ul>
+          <li><strong>On Windows systems</strong>,
+            <ol>
+              <li>press the Windows key + <code>E</code> to open a Windows explorer.<br />
+<img src="explorer-key-shortcut.jpg" alt="explorer-key-shortcut.jpg" /></li>
+              <li>Then, navigate to the directory <code>C:\Users\account</code>, where you have to replace <code>account</code> with your Windows account name.</li>
+              <li>Now right-click on an empty region of the Windows explorer, you should see a menu like the following.<br />
+<img src="git.bash.here.png" alt="git.bash.here.png" /><br />
+Click on “Git Bash Here” to open a Git Bash session. You should see a Bash session opened like the following screen shot,<br />
+<img src="git.bash.png" alt="git.bash.png" /><br />
+What is <strong>Git Bash</strong>? Git Bash is simply a <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)" target="_blank">Bash terminal</a> that is tailored for Git usage on Windows.<br />
+The Linux and macOS operating systems have Bash-compatible terminals (shells) that allow interaction with the operating system.<br />
+The Git software was originally built as a Linux application that natively used the Linux terminals for interaction.<br />
+However, Windows system is not fully compatible with Linux terminals and does not have native Linux-compatible terminals.<br />
+Therefore, the Git developers decided to ship the Git software with a dedicated Bash terminal for use on Windows systems,
+so that Windows users also get the same feeling as Linux and macOS users when dealing with Git software.</li>
+            </ol>
+          </li>
+          <li><strong>On Linux / macOS systems</strong>.
+            <ol>
+              <li>Simply search for <strong>terminal</strong> in the search box of your operating system and open a terminal.</li>
+              <li>Then type <code>cd ~</code> and press enter. This will take you to <strong>home directory</strong> of your system.</li>
+              <li>Then type <code>open .</code> in your terminal and press enter to open a <strong>macOS finder</strong> in the same location as your home folder.</li>
+            </ol>
+          </li>
+        </ul>
+      </li>
+      <li>Now, within your terminal (whether Git Bash or Linux/macOS terminal), type <code>pwd</code> and press enter.<br />
+<strong>Why?</strong> This Bash command displays the current working directory where you are.<br />
+It should print the path to the home directory of your system, because you are already in the home directory.</li>
+      <li>Now type <code>ls -a</code> and press enter.<br />
+<strong>Why?</strong> This Bash command will display a list of all files and folders in the home directory of your computer.<br />
+The <code>-a</code> flag requests the Bash terminal to show all files (<strong>including hidden files</strong>).<br />
+Note that any file or folder whose name begins with a <code>.</code> is automatically hidden from your view.</li>
+    </ul>
+  </li>
+  <li><strong>Creating your first Git project.</strong><br />
+There are two ways to create git projects,
     <ol>
-      <li><strong>students</strong>,</li>
-      <li><strong>open-source developers</strong>,</li>
-      <li><strong>educators (teachers/professors)</strong>.<br />
- <br />
- These communities together, in my opinion, already cover a large fraction of programmers and primary users of Intel Parallel Studio (excluding corporations, which are wealthy enough to afford the high price tag of Intel Parallel Studio).
- <br /><br />
- <strong>UPDATE Jan 1, 2021: Intel recently announced the release of a brand new version of Intel Parallel Studio, known as the Intel oneAPI, which is now freely available to the entire public community. Everyone can now freely use the Intel compilers and HPC libraries. What a great news!</strong>
- <br /><br /></li>
+      <li>Creating a git project on your local system.
+        <ul>
+          <li>Now type <code>mkdir git</code> and press enter.<br />
+<strong>Why?</strong> This Bash command will create a new folder named <code>git</code> within the current directory of your Bash session (which is already your home directory).<br />
+Although you can use any place in your computer to store your Git projects, it is good practice and much easier to keep them all in one place (the <code>git</code> folder you just created).
+            <blockquote>
+              <p>Some of you may have already created a <code>git</code> folder in your home directory. <br />
+  In such a case, the command <code>mkdir git</code> will lead to an error because the folder already exists.<br />
+  Do not panic, ignore the error message and move on to the next step below.</p>
+            </blockquote>
+          </li>
+          <li>Now type <code>ls -l</code> again and press enter.<br />
+<strong>Why?</strong> If you have successfully created the new folder <code>git</code> in your current directory, this command will show you the new folder in the listing it displays.<br />
+If you cannot find it, you need to reach out to me to identify the roots of the problem.</li>
+          <li>Now type <code>cd git</code> and press enter.<br />
+<strong>Why?</strong> The <code>cd</code> Bash command stands for <strong>Change Directory</strong>. Therefore, <code>cd git</code> will change your current working directory from your home directory to the subdirectory <code>git</code>.</li>
+          <li>Now, we want to create a new git project in this folder. Let’s say the name of the project is <code>test</code>.</li>
+          <li>First, we will have to create a <code>test</code> folder where we will store all files and materials related to the <code>test</code> git project. Type the following in the terminal and press enter.
+            <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir test</span> <span class="o">&amp;&amp;</span> <span class="nb">cd test</span>
+</code></pre></div>            </div>
+            <p>This command will create a <code>test</code> subfolder in your <code>git</code> folder and then will change the current directory to wihtin the <code>test</code> subfolder.<br />
+The <code>&amp;&amp;</code> simply means <strong>and</strong>: Make directory <code>test</code> <strong>and</strong> change directory to <code>test</code>.</p>
+          </li>
+          <li>This is where we want to host our git test project. To initialize an empty Git project here, type the following git command in the terminal,
+            <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init
+</code></pre></div>            </div>
+          </li>
+          <li><strong>Done.</strong> You have successfully created an empty test Git project on your computer.</li>
+          <li>Each and every Git project is always associated with a <code>.git</code> subfolder in the same location where your store your project on your system.<br />
+To ensure you have successfully initiated a Git project, type <code>ls -a</code> in your terminal and press enter.<br />
+This should display a list among which there is <code>.git</code>.<br />
+If you do not see this hidden folder in the list displayed, your <code>test</code> folder is <strong>not</strong> a git project yet!</li>
+          <li>Of course, your Git project is still empty. But you can now put anything you like in it and make it part of your project.<br />
+For example, we can add an empty text file to it by typing,
+            <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">touch </span>README.md
+</code></pre></div>            </div>
+            <p>in the Bash terminal and pressing enter.</p>
+          </li>
+        </ul>
+      </li>
+      <li>Creating a git project on a server and cloning the project on your local system.<br />
+This is the easier way of initializing projects and sharing them with other Team members in the project.<br />
+In the follow-up exercises, we will learn how to initialize Git projects using <a href="https://github.com/" target="_blank">GitHub</a> as the git server.</li>
     </ol>
   </li>
-  <li>
-    <p><strong>Download Intel Parallel Studio</strong> from its <a href="https://software.intel.com/en-us/parallel-studio-xe/choose-download" target="_blank">dedicated website</a>. But <strong>do not install it yet</strong>. You will have to first install a recent version of Microsoft Visual Studio.</p>
-  </li>
-  <li>
-    <p><strong>Download</strong> the recent version of <strong>Microsoft Visual Studio (MSVS) Community edition</strong> installer from its <a href="https://visualstudio.microsoft.com/vs/community/" target="_blank">dedicated website</a>. The good news is that Microsoft has recently made the community edition of its Visual Studio available to the public, free of charge.</p>
-  </li>
-  <li><strong>Run the Microsoft Visual Studio installer</strong>. Once you see the following prompt window, make sure you <strong>select at least the C++ components to install on your system</strong> (if you do not want all of the components). This component selection is essential for successful installation of Intel Parallel C++/Fortran compilers,
-    <figure>
-     <img src="community-page-installer.png" />
- </figure>
-  </li>
-  <li>
-    <p>Once the MSVS has been installed on your system (your system may need a reboot), <strong>run Intel Parallel Studio installer</strong> and <strong>choose all of the components that you need</strong>/want to install from Intel Parallel Studio installer window. I recommend installing all of the components as you will often need and use them in the future.</p>
-  </li>
-  <li><strong>Your installation is complete</strong> (you may need a reboot again). You can now access intel compilers and tools from the MSVS application. However, I strongly recommend you to <strong>use Intel’s provided Windows command-line environment (CMD)</strong> that comes with all the Intel tools and their paths predefined in it <strong>to help build your applications on the command line, much like a Linux environment</strong>. In the long run, you will likely find it more comfortable than the GUI-based MSMV application. You can access this specially-designed Windows CMD from Windows’ Start Menu as shown below,
-    <figure>
-     <img src="intelCMD.png" />
- </figure>
-  </li>
-  <li>You can test whether the Intel compilers have been correctly installed by typing <code>ifort</code> to invoke the Intel Fortran compiler or <code>icl</code> to invoke the Intel C++ compiler, as shown in the following screenshot,
-    <figure>
-     <img src="compilerTest.png" />
- </figure>
-  </li>
 </ol>
-
 
             </div>
         </article>
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Intel Parallel Studio installation on Windows Operating Systems&quot;%20https://www.cdslab.org/recipes/programming/intel-parallel-studio-installation-windows/intel-parallel-studio-installation-windows%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Version-control: Setting up Git Software and GitHub Account&quot;%20https://www.cdslab.org/recipes/programming/vcs-git-github-setup/vcs-git-github-setup%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/intel-parallel-studio-installation-windows/intel-parallel-studio-installation-windows"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/vcs-git-github-setup/vcs-git-github-setup"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>
