@@ -76,6 +76,14 @@
 
     
     <url>
+        <loc>https://www.cdslab.org/recipes/programming/logic-nand-nor/logic/logic-nand-nor</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/logic-functions-implication/logic-functions-implication</loc>
+    </url>
+    
+    <url>
         <loc>https://www.cdslab.org/recipes/programming/vcs-git-github-setup/vcs-git-github-setup</loc>
     </url>
     

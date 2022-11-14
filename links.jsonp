@@ -168,12 +168,12 @@ callback([
 
   {
     "text": "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables via the least absolute deviations method",
-    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-absolute-deviations-method"
+    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-squares-method"
   } ,
 
   {
     "text": "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables via the least absolute deviations method",
-    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-squares-method"
+    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-absolute-deviations-method"
   } ,
 
   {
@@ -417,8 +417,18 @@ callback([
   } ,
 
   {
+    "text": "Logic functions in terms of logic functions",
+    "href": "/recipes/programming/logic-functions-implication/logic-functions-implication"
+  } ,
+
+  {
     "text": "Logic NAND equivalence",
     "href": "/recipes/programming/logic-a-nand-equivalence/logic/logic-a-nand-equivalence"
+  } ,
+
+  {
+    "text": "Logic NAND and NOR",
+    "href": "/recipes/programming/logic-nand-nor/logic/logic-nand-nor"
   } ,
 
   {

@@ -7,13 +7,73 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2022-09-13T16:07:02-05:00</updated>
+<updated>2022-11-14T01:51:50-06:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
   <uri>https://www.cdslab.org/recipes/</uri>
   <email>shahmoradi@utexas.edu</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Logic NAND and NOR]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/logic-nand-nor/logic/logic-nand-nor"/>
+  <id>https://www.cdslab.org/recipes/programming/logic-nand-nor/logic/logic-nand-nor</id>
+  <published>2022-11-01T00:00:00-05:00</published>
+  <updated>2020-11-01T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#plausibility" term="plausibility" /><category scheme="https://www.cdslab.org/recipes/tags/#deduction" term="deduction" /><category scheme="https://www.cdslab.org/recipes/tags/#reasoning" term="reasoning" /><category scheme="https://www.cdslab.org/recipes/tags/#logic" term="logic" /><category scheme="https://www.cdslab.org/recipes/tags/#boolean" term="boolean" /><category scheme="https://www.cdslab.org/recipes/tags/#implication" term="implication" />
+  <content type="html">
+  
+    
+&lt;p&gt;Recall the definitions of NAND and NOR from our lecture notes. Show that,&lt;/p&gt;
+
+\[\overline{(A \uparrow A) \downarrow (B \uparrow B)} \equiv (\overline{A} \downarrow \overline{A}) \uparrow (\overline{B} \downarrow \overline{B}) ~.\]
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/logic-nand-nor/logic/logic-nand-nor&quot;&gt;Logic NAND and NOR&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on November 01, 2022.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Logic functions in terms of logic functions]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/logic-functions-implication/logic-functions-implication"/>
+  <id>https://www.cdslab.org/recipes/programming/logic-functions-implication/logic-functions-implication</id>
+  <published>2022-10-21T00:00:00-05:00</published>
+  <updated>2020-10-21T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#plausibility" term="plausibility" /><category scheme="https://www.cdslab.org/recipes/tags/#deduction" term="deduction" /><category scheme="https://www.cdslab.org/recipes/tags/#reasoning" term="reasoning" /><category scheme="https://www.cdslab.org/recipes/tags/#logic" term="logic" /><category scheme="https://www.cdslab.org/recipes/tags/#boolean" term="boolean" /><category scheme="https://www.cdslab.org/recipes/tags/#implication" term="implication" />
+  <content type="html">
+  
+    
+&lt;p&gt;Consider the following logic functions,&lt;/p&gt;
+
+&lt;figure&gt;&lt;img src=&quot;basisTruthTable.png&quot; width=&quot;350&quot; /&gt;&lt;/figure&gt;
+
+&lt;p&gt;Show that,&lt;/p&gt;
+
+\[f_1(A, B) + f_3(A, B) + f_4(A, B)\]
+
+&lt;p&gt;is equivalent to logical implication $A \Rightarrow B$.&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/logic-functions-implication/logic-functions-implication&quot;&gt;Logic functions in terms of logic functions&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 21, 2022.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -1067,90 +1127,6 @@ Also recall that the autocorrelation of a time-series is defined as the correlat
 
   
   &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/vis-population-growth-tx-la/vis-population-growth-tx-la&quot;&gt;The population growths of the US states&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 08, 2021.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[The cities with the most and least moderate temperature]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/vis-most-moderate-temp-city/vis-most-moderate-temp-city"/>
-  <id>https://www.cdslab.org/recipes/programming/vis-most-moderate-temp-city/vis-most-moderate-temp-city</id>
-  <published>2021-10-08T00:00:00-05:00</published>
-  <updated>2021-10-01T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#polar" term="polar" /><category scheme="https://www.cdslab.org/recipes/tags/#coordinates" term="coordinates" /><category scheme="https://www.cdslab.org/recipes/tags/#periodic" term="periodic" />
-  <content type="html">
-  
-    
-&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-    
-        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
-            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
-                Problem
-            &lt;/h2&gt;
-        &lt;/a&gt;
-    
-&lt;/div&gt;
-
-&lt;p&gt;Consider the following plot displaying the temperatures of a number of US cities.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Which city’s temperature is the least varying throughout the year?&lt;/li&gt;
-  &lt;li&gt;Which city’s temperature is the wildest varying throughout the year?&lt;/li&gt;
-  &lt;li&gt;Which city the hottest in the month of January?&lt;/li&gt;
-  &lt;li&gt;Which city the coolest in the month of July?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;figure&gt;
-    &lt;img src=&quot;temperatures.png&quot; /&gt;
-&lt;/figure&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/vis-most-moderate-temp-city/vis-most-moderate-temp-city&quot;&gt;The cities with the most and least moderate temperature&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 08, 2021.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Wrong visualization]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/vis-graph-wrong/vis-graph-wrong"/>
-  <id>https://www.cdslab.org/recipes/programming/vis-graph-wrong/vis-graph-wrong</id>
-  <published>2021-10-08T00:00:00-05:00</published>
-  <updated>2021-10-01T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#histogram" term="histogram" /><category scheme="https://www.cdslab.org/recipes/tags/#kernel" term="kernel" /><category scheme="https://www.cdslab.org/recipes/tags/#density" term="density" /><category scheme="https://www.cdslab.org/recipes/tags/#wrong" term="wrong" />
-  <content type="html">
-  
-    
-&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-    
-        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
-            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
-                Problem
-            &lt;/h2&gt;
-        &lt;/a&gt;
-    
-&lt;/div&gt;
-
-&lt;p&gt;What is wrong in the following visualization?&lt;/p&gt;
-
-&lt;figure&gt;
-    &lt;img src=&quot;wrong.png&quot; /&gt;
-&lt;/figure&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/vis-graph-wrong/vis-graph-wrong&quot;&gt;Wrong visualization&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 08, 2021.&lt;/p&gt;</content>
 </entry>
 
 </feed>

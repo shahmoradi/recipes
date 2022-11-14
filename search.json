@@ -1,6 +1,22 @@
 [
 	
 		{
+		  "title"      : "Logic NAND and NOR",
+		  "category"   : "logic",
+		  "url"        : "/recipes/programming/logic-nand-nor/logic/logic-nand-nor",
+		  "date"       : "2022-11-01 00:00:00 -0500",
+		  "shortdate"  : "November 01, 2022"
+		} ,
+	
+		{
+		  "title"      : "Logic functions in terms of logic functions",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/logic-functions-implication/logic-functions-implication",
+		  "date"       : "2022-10-21 00:00:00 -0500",
+		  "shortdate"  : "October 21, 2022"
+		} ,
+	
+		{
 		  "title"      : "Version-control: Setting up Git Software and GitHub Account",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/vcs-git-github-setup/vcs-git-github-setup",
