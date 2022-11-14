@@ -392,6 +392,11 @@ callback([
   } ,
 
   {
+    "text": "Logical implication in terms of logic functions",
+    "href": "/recipes/programming/logic-functions-implication/logic-functions-implication"
+  } ,
+
+  {
     "text": "Logical implication",
     "href": "/recipes/programming/logic-implication/logic/logic-implication"
   } ,
@@ -414,11 +419,6 @@ callback([
   {
     "text": "Logic functions in terms of logic functions",
     "href": "/recipes/programming/logic-functions-operations/logic-functions-operations"
-  } ,
-
-  {
-    "text": "Logic functions in terms of logic functions",
-    "href": "/recipes/programming/logic-functions-implication/logic-functions-implication"
   } ,
 
   {
