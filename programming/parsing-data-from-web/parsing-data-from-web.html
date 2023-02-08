@@ -262,46 +262,6 @@
 
 <p>Note that the IDs must be outputted as strings to preserve the preceding zeros. Each ID must appear on a separate line in the output file.</p>
 
-<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
-
-    <a href="#solution" style="display:inline-block;">
-        <h2 id="solution" style="color:blue;">
-            Solution
-        </h2>
-    </a>
-
-</div>
-
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#solution-python" id="solution-python">
-            <img src="/recipes/images/Python.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
-                Python
-            </a>
-        </figcaption>
-    </figure>
-</div>
-
-<p>Here is an example implementation of the script in Python,</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">urllib.request</span> <span class="k">as</span> <span class="n">ur</span>
-<span class="n">myurl</span> <span class="o">=</span> <span class="s">"https://cdslaborg.github.io/DataRepos_SwiftBat/index.html"</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">"nasa.swift.grb.ids.txt"</span><span class="p">,</span> <span class="s">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
-    <span class="k">with</span> <span class="n">ur</span><span class="p">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">myurl</span><span class="p">)</span> <span class="k">as</span> <span class="n">webfile</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">webfile</span><span class="p">.</span><span class="n">readlines</span><span class="p">():</span>
-            <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="o">==</span> <span class="s">"&lt;TR&gt;"</span><span class="p">:</span>
-                <span class="n">ID</span> <span class="o">=</span> <span class="n">line</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">")"</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="n">split</span><span class="p">(</span><span class="s">"("</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-                <span class="k">if</span> <span class="n">ID</span><span class="p">.</span><span class="n">isdigit</span><span class="p">():</span>
-                    <span class="n">outfile</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">ID</span><span class="o">+</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
-</code></pre></div></div>
-
 
             </div>
         </article>
@@ -365,8 +325,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2022 / 11 / 14</section></br> -->
-         <section>Last updated Monday, 14 Nov 2022 at 01:55 AM CST</section></br>
+         <!-- <section>Last updated 2023 / 02 / 08</section></br> -->
+         <section>Last updated Wednesday, 08 Feb 2023 at 02:45 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

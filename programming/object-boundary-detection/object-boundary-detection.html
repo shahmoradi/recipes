@@ -222,141 +222,6 @@
     <img src="subplotsWithTumorBoundaries.png" width="900" />  
 </figure>
 
-<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
-
-    <a href="#solution" style="display:inline-block;">
-        <h2 id="solution" style="color:blue;">
-            Solution
-        </h2>
-    </a>
-
-</div>
-
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#solution-matlab" id="solution-matlab">
-            <img src="/recipes/images/MATLAB.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
-                MATLAB
-            </a>
-        </figcaption>
-    </figure>
-</div>
-
-<p>Here is an implementation: <a href="makeSubplotsWithTumorBoundary.m" target="_blank">makeSubplotsWithTumorBoundary.m</a>,</p>
-
-<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">close</span> <span class="nb">all</span><span class="p">;</span>
-<span class="nb">load</span><span class="p">(</span><span class="s1">'./data3D.mat'</span><span class="p">);</span>
-
-<span class="n">nrow</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">sqrt</span><span class="p">(</span><span class="nb">length</span><span class="p">(</span><span class="n">data</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,:))));</span>
-<span class="n">ncol</span> <span class="o">=</span> <span class="n">nrow</span><span class="p">;</span>
-
-<span class="n">marginTop</span> <span class="o">=</span> <span class="mf">0.06</span><span class="p">;</span>
-<span class="n">marginBottom</span> <span class="o">=</span> <span class="mf">0.12</span><span class="p">;</span>
-<span class="n">marginLeft</span> <span class="o">=</span> <span class="mf">0.08</span><span class="p">;</span>
-<span class="n">marginRight</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">;</span>
-<span class="n">subplotInterspace</span> <span class="o">=</span> <span class="mf">0.03</span><span class="p">;</span> <span class="c1">% space between subplots</span>
-<span class="n">subplotWidth</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">marginLeft</span><span class="o">-</span><span class="n">marginRight</span><span class="p">)/</span><span class="n">ncol</span> <span class="o">-</span> <span class="n">subplotInterspace</span><span class="p">;</span>
-<span class="n">subplotHeight</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">marginTop</span><span class="o">-</span><span class="n">marginBottom</span><span class="p">)/</span><span class="n">nrow</span> <span class="o">-</span> <span class="n">subplotInterspace</span><span class="p">;</span>
-<span class="n">mainPlotPositionX</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">;</span>
-<span class="n">mainPlotPositionY</span> <span class="o">=</span> <span class="mf">0.08</span><span class="p">;</span>
-<span class="n">mainPlotWidth</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">marginRight</span> <span class="o">-</span> <span class="n">mainPlotPositionX</span><span class="p">;</span>
-<span class="n">mainPlotHeight</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="mf">0.05</span> <span class="o">-</span> <span class="n">mainPlotPositionY</span><span class="p">;</span>
-<span class="n">mainPlotTitleFontSize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
-<span class="n">mainPlotAxisFontSize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
-<span class="n">subPlotFontSize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-
-<span class="n">colorbarPositionX</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">marginRight</span><span class="p">;</span> <span class="c1">%+subplotInterspace; % x position of colorbar</span>
-<span class="c1">%colorbarPositionY = 1-marginBottom; % x position of colorbar</span>
-<span class="n">colorbarWidth</span> <span class="o">=</span> <span class="mf">0.03</span><span class="p">;</span>
-<span class="n">colorbarHeight</span> <span class="o">=</span> <span class="n">nrow</span><span class="o">*</span><span class="p">(</span><span class="n">subplotHeight</span><span class="o">+</span><span class="n">subplotInterspace</span><span class="p">)</span><span class="o">-</span><span class="n">subplotInterspace</span><span class="p">;</span> <span class="c1">%1-marginTop-marginBottom-subplotInterspace;</span>
-<span class="n">colorbarFontSize</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>
-<span class="n">ColorLimits</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="nb">max</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">data</span><span class="p">(:,:,:))))];</span>
-
-<span class="nb">figure</span><span class="p">(</span> <span class="s1">'Position'</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">900</span><span class="p">,</span> <span class="mi">1350</span><span class="p">]</span> <span class="k">...</span>
-      <span class="k">...</span><span class="c">, 'visible','off' ...</span>
-      <span class="k">...</span><span class="c">, 'Color','none' ...</span>
-      <span class="p">);</span>
-
-<span class="n">mainPlot</span> <span class="o">=</span> <span class="nb">axes</span><span class="p">(</span> <span class="s1">'position'</span> <span class="k">...</span>
-               <span class="p">,</span> <span class="p">[</span><span class="n">mainPlotPositionX</span> <span class="n">mainPlotPositionY</span> <span class="n">mainPlotWidth</span> <span class="n">mainPlotHeight</span><span class="p">]</span> <span class="k">...</span>
-               <span class="p">,</span> <span class="s1">'Xlim'</span><span class="p">,[</span><span class="mi">0</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">'Ylim'</span><span class="p">,[</span><span class="mi">0</span> <span class="mi">1</span><span class="p">]</span> <span class="k">...</span>
-               <span class="p">,</span> <span class="s1">'Color'</span><span class="p">,</span> <span class="s1">'none'</span> <span class="k">...</span>
-               <span class="p">);</span>
-<span class="n">mainPlot</span><span class="o">.</span><span class="n">XTick</span> <span class="o">=</span> <span class="p">[];</span>
-<span class="n">mainPlot</span><span class="o">.</span><span class="n">YTick</span> <span class="o">=</span> <span class="p">[];</span>
-<span class="n">mainPlot</span><span class="o">.</span><span class="n">XAxis</span><span class="o">.</span><span class="n">Visible</span> <span class="o">=</span> <span class="s1">'off'</span><span class="p">;</span>
-<span class="n">mainPlot</span><span class="o">.</span><span class="n">YAxis</span><span class="o">.</span><span class="n">Visible</span> <span class="o">=</span> <span class="s1">'off'</span><span class="p">;</span>
-<span class="n">mainPlot</span><span class="o">.</span><span class="n">XLabel</span><span class="o">.</span><span class="n">Visible</span> <span class="o">=</span> <span class="s1">'on'</span><span class="p">;</span>
-<span class="n">mainPlot</span><span class="o">.</span><span class="n">YLabel</span><span class="o">.</span><span class="n">Visible</span> <span class="o">=</span> <span class="s1">'on'</span><span class="p">;</span>
-<span class="n">mainPlot</span><span class="o">.</span><span class="n">XLabel</span><span class="o">.</span><span class="n">String</span> <span class="o">=</span> <span class="s1">'Voxel Number in X Direction'</span><span class="p">;</span>
-<span class="n">mainPlot</span><span class="o">.</span><span class="n">YLabel</span><span class="o">.</span><span class="n">String</span> <span class="o">=</span> <span class="s1">'Voxel Number in Y Direction'</span><span class="p">;</span>
-<span class="n">mainPlot</span><span class="o">.</span><span class="n">Title</span><span class="o">.</span><span class="n">String</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'A beautiful design of '</span><span class="p">,</span><span class="nb">sprintf</span><span class="p">(</span><span class="s1">'%0.1f'</span><span class="p">,</span><span class="n">nrow</span><span class="p">),</span><span class="s1">' x '</span><span class="p">,</span><span class="nb">sprintf</span><span class="p">(</span><span class="s1">'%0.1f'</span><span class="p">,</span><span class="n">ncol</span><span class="p">),</span><span class="s1">' subplots using MATLAB'</span><span class="p">];</span>
-<span class="n">mainPlot</span><span class="o">.</span><span class="n">XLabel</span><span class="o">.</span><span class="n">FontSize</span> <span class="o">=</span> <span class="n">mainPlotAxisFontSize</span><span class="p">;</span>
-<span class="n">mainPlot</span><span class="o">.</span><span class="n">YLabel</span><span class="o">.</span><span class="n">FontSize</span> <span class="o">=</span> <span class="n">mainPlotAxisFontSize</span><span class="p">;</span>
-<span class="n">mainPlot</span><span class="o">.</span><span class="n">Title</span><span class="o">.</span><span class="n">FontSize</span> <span class="o">=</span> <span class="n">mainPlotTitleFontSize</span><span class="p">;</span>
-<span class="k">for</span> <span class="n">irow</span> <span class="o">=</span> <span class="n">nrow</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span>
-    <span class="k">for</span> <span class="n">icol</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">ncol</span>
-        <span class="n">sliceNumber</span> <span class="o">=</span> <span class="p">(</span><span class="n">nrow</span><span class="o">-</span><span class="n">irow</span><span class="p">)</span><span class="o">*</span><span class="n">nrow</span><span class="o">+</span><span class="n">icol</span><span class="p">;</span>
-        <span class="n">subPlot</span> <span class="o">=</span> <span class="nb">axes</span><span class="p">(</span> <span class="s1">'position'</span><span class="p">,</span> <span class="p">[</span> <span class="k">...</span>
-                                                   <span class="p">(</span><span class="n">icol</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">subplotInterspace</span><span class="o">+</span><span class="n">subplotWidth</span><span class="p">)</span> <span class="o">+</span> <span class="n">marginLeft</span> <span class="k">...</span>
-                                                   <span class="p">(</span><span class="n">irow</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">subplotInterspace</span><span class="o">+</span><span class="n">subplotHeight</span><span class="p">)</span> <span class="o">+</span> <span class="n">marginBottom</span> <span class="k">...</span>
-                                                   <span class="n">subplotWidth</span> <span class="k">...</span>
-                                                   <span class="n">subplotHeight</span> <span class="k">...</span>
-                                                 <span class="p">]</span> <span class="k">...</span>
-                                   <span class="p">);</span>
-        <span class="nb">imagesc</span><span class="p">(</span><span class="n">data</span><span class="p">(:,:,</span><span class="n">sliceNumber</span><span class="p">),</span><span class="n">ColorLimits</span><span class="p">);</span>
-        <span class="nb">hold</span> <span class="n">on</span><span class="p">;</span>
-        
-        <span class="c1">% plot the boundaries</span>
-        <span class="n">Bcell</span> <span class="o">=</span> <span class="n">getBoundary</span><span class="p">(</span><span class="n">data</span><span class="p">(:,:,</span><span class="n">sliceNumber</span><span class="p">));</span> <span class="c1">% get the boundaries of the tumor regions</span>
-        <span class="k">for</span> <span class="n">ib</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">Bcell</span><span class="p">)</span>
-            <span class="nb">plot</span><span class="p">(</span> <span class="n">Bcell</span><span class="p">{</span><span class="n">ib</span><span class="p">}(:,</span><span class="mi">2</span><span class="p">)</span> <span class="k">...</span>
-                <span class="p">,</span> <span class="n">Bcell</span><span class="p">{</span><span class="n">ib</span><span class="p">}(:,</span><span class="mi">1</span><span class="p">)</span> <span class="k">...</span>
-                <span class="p">,</span> <span class="s1">'color'</span><span class="p">,</span> <span class="s1">'red'</span> <span class="k">...</span>
-                <span class="p">,</span> <span class="s1">'linewidth'</span><span class="p">,</span> <span class="mi">4</span> <span class="k">...</span>
-            <span class="p">)</span>
-        <span class="k">end</span>
-
-        <span class="n">subPlot</span><span class="o">.</span><span class="n">FontSize</span> <span class="o">=</span> <span class="n">subPlotFontSize</span><span class="p">;</span>
-        <span class="k">if</span> <span class="n">icol</span> <span class="o">~=</span> <span class="mi">1</span>
-            <span class="n">subPlot</span><span class="o">.</span><span class="n">YTickLabels</span> <span class="o">=</span> <span class="p">[];</span>
-        <span class="k">end</span>
-        <span class="k">if</span> <span class="n">irow</span> <span class="o">~=</span> <span class="mi">1</span>
-            <span class="n">subPlot</span><span class="o">.</span><span class="n">XTickLabels</span> <span class="o">=</span> <span class="p">[];</span>
-        <span class="k">end</span>
-        <span class="n">subPlot</span><span class="o">.</span><span class="n">Title</span><span class="o">.</span><span class="n">String</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'z = '</span><span class="p">,</span> <span class="nb">num2str</span><span class="p">(</span><span class="n">sliceNumber</span><span class="p">)];</span>
-        <span class="n">subPlot</span><span class="o">.</span><span class="n">CLim</span> <span class="o">=</span> <span class="n">ColorLimits</span><span class="p">;</span>
-    <span class="k">end</span>
-<span class="k">end</span>
-<span class="nb">axes</span><span class="p">(</span><span class="n">mainPlot</span><span class="p">);</span>
-<span class="nb">caxis</span><span class="p">(</span><span class="n">ColorLimits</span><span class="p">);</span>
-<span class="n">cbar</span> <span class="o">=</span> <span class="nb">colorbar</span><span class="p">;</span>
-<span class="nb">ylabel</span><span class="p">(</span><span class="n">cbar</span><span class="p">,</span><span class="s1">'Number of Tumor Cells'</span><span class="p">);</span>
-<span class="n">cbar</span><span class="o">.</span><span class="n">Position</span> <span class="o">=</span> <span class="p">[</span> <span class="n">colorbarPositionX</span> <span class="k">...</span>
-                  <span class="n">marginBottom</span> <span class="k">...</span>
-                  <span class="n">colorbarWidth</span> <span class="k">...</span>
-                  <span class="n">colorbarHeight</span> <span class="k">...</span>
-                  <span class="p">];</span>
-<span class="n">cbar</span><span class="o">.</span><span class="n">FontSize</span> <span class="o">=</span> <span class="n">colorbarFontSize</span><span class="p">;</span> 
-
-<span class="nb">saveas</span><span class="p">(</span><span class="nb">gcf</span><span class="p">,</span><span class="s1">'subplotsWithTumorBoundaries.png'</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>Note that this sctipt calls another function <a href="getBoundary.m">getBoundary.m</a>,</p>
-
-<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="n">BoundaryCellArray</span> <span class="o">=</span> <span class="n">getBoundary</span><span class="p">(</span><span class="n">InputData</span><span class="p">)</span>
-    <span class="n">InputDataBinary</span> <span class="o">=</span> <span class="n">InputData</span><span class="p">;</span>
-    <span class="n">InputDataBinary</span><span class="p">(</span><span class="n">InputData</span><span class="o">~=</span><span class="mi">0</span><span class="p">)</span> <span class="o">=</span><span class="mi">1</span><span class="p">;</span>
-    <span class="n">BoundaryCellArray</span> <span class="o">=</span> <span class="n">bwboundaries</span><span class="p">(</span><span class="n">InputDataBinary</span><span class="p">);</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
 
             </div>
         </article>
@@ -420,8 +285,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2022 / 11 / 14</section></br> -->
-         <section>Last updated Monday, 14 Nov 2022 at 01:55 AM CST</section></br>
+         <!-- <section>Last updated 2023 / 02 / 08</section></br> -->
+         <section>Last updated Wednesday, 08 Feb 2023 at 02:45 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

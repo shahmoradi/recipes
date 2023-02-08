@@ -254,71 +254,6 @@
 <span class="nb">false</span>
 </code></pre></div></div>
 
-<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
-
-    <a href="#solution" style="display:inline-block;">
-        <h2 id="solution" style="color:blue;">
-            Solution
-        </h2>
-    </a>
-
-</div>
-
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#solution-matlab" id="solution-matlab">
-            <img src="/recipes/images/MATLAB.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
-                MATLAB
-            </a>
-        </figcaption>
-    </figure>
-</div>
-
-<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>                   <span class="c1">% assigns value 1 to a</span>
-<span class="n">b</span> <span class="o">=</span> <span class="s1">'x'</span>                 <span class="c1">% assigns character 'x' to b</span>
-<span class="n">c</span> <span class="o">=</span> <span class="nb">true</span>                <span class="c1">% assigns logical value true to variable c</span>
-<span class="nb">whos</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span>              <span class="c1">% prints a description of the variables a b c</span>
-<span class="n">a</span> <span class="o">==</span> <span class="n">c</span>                  <span class="c1">% evaluates whether a euqals b</span>
-<span class="n">a</span> <span class="o">+</span> <span class="n">c</span>                   <span class="c1">% returns sum of a and c</span>
-<span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">]</span>           <span class="c1">% creates a real array</span>
-<span class="n">e</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span> <span class="s1">'b'</span> <span class="s1">'c'</span> <span class="s1">'d'</span><span class="p">]</span>   <span class="c1">% creates a string 'abcd'</span>
-<span class="n">f</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="s1">'d'</span><span class="p">}</span>   <span class="c1">% creates a cell array of the input 4 characters</span>
-<span class="n">g</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'abcd'</span><span class="p">]</span>            <span class="c1">% creates a string 'abcd'</span>
-<span class="n">h</span> <span class="o">=</span> <span class="p">{</span><span class="err">‘</span><span class="n">a</span><span class="err">’</span> <span class="err">‘</span><span class="n">b</span><span class="err">’</span> <span class="err">‘</span><span class="n">c</span><span class="err">’</span> <span class="err">‘</span><span class="n">d</span><span class="err">’</span><span class="p">}</span>   <span class="c1">% syntax error due to use of undefined characters ‘ and ’</span>
-<span class="n">i</span> <span class="o">=</span> <span class="p">{</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="n">d</span><span class="p">}</span>          <span class="c1">% creates a cell array from the four input variables</span>
-<span class="nb">whos</span> <span class="n">d</span> <span class="n">e</span> <span class="n">f</span> <span class="n">g</span> <span class="n">h</span> <span class="n">i</span>        <span class="c1">% prints a description of the variables d e f g h i</span>
-<span class="nb">class</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>                <span class="c1">% returns the type of the variable a</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>                 <span class="c1">% syntax error: input arguments to type() must be character vectors or strings</span>
-<span class="n">True</span>                    <span class="c1">% syntax error: undefined variable</span>
-<span class="nb">true</span>                    <span class="c1">% logical value true in MATLAB</span>
-<span class="n">False</span>                   <span class="c1">% syntax error: undefined variable</span>
-<span class="nb">false</span>                   <span class="c1">% logical value false in MATLAB</span>
-</code></pre></div></div>
-
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#solution-python" id="solution-python">
-            <img src="/recipes/images/Python.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
-                Python
-            </a>
-        </figcaption>
-    </figure>
-</div>
-
-<p>In Python, many of the above commands would yield syntax errors, however, they can be easily fixed with minor tweaks.</p>
-
 
             </div>
         </article>
@@ -382,8 +317,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2022 / 11 / 14</section></br> -->
-         <section>Last updated Monday, 14 Nov 2022 at 01:55 AM CST</section></br>
+         <!-- <section>Last updated 2023 / 02 / 08</section></br> -->
+         <section>Last updated Wednesday, 08 Feb 2023 at 02:45 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
