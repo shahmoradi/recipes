@@ -452,7 +452,7 @@ callback([
   } ,
 
   {
-    "text": "Intel Oneapi C/C++/Fortran Compiler Installation",
+    "text": "Intel OneAPI C/C++/Fortran Compiler Installation",
     "href": "/recipes/programming/intel-oneapi-c-cpp-fortran-compiler-installation/intel-oneapi-c-cpp-fortran-compiler-installation"
   } ,
 
