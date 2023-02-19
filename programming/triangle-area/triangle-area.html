@@ -269,9 +269,9 @@
     <span class="n">v1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span> <span class="n">v2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span> <span class="n">v3</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">vertices</span> <span class="o">=</span> <span class="p">[</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">v3</span><span class="p">]</span>
     <span class="n">expected</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">computed</span> <span class="o">=</span> <span class="n">get_triangle_area</span><span class="p">(</span><span class="n">vertices</span><span class="p">)</span>
+    <span class="n">computed</span> <span class="o">=</span> <span class="nf">get_triangle_area</span><span class="p">(</span><span class="n">vertices</span><span class="p">)</span>
     <span class="n">tol</span> <span class="o">=</span> <span class="mf">1E-14</span>
-    <span class="n">success</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">expected</span> <span class="o">-</span> <span class="n">computed</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">tol</span>
+    <span class="n">success</span> <span class="o">=</span> <span class="nf">abs</span><span class="p">(</span><span class="n">expected</span> <span class="o">-</span> <span class="n">computed</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">tol</span>
     <span class="n">msg</span> <span class="o">=</span> <span class="s">'computed area=%g != %g (expected)'</span> <span class="o">%</span> <span class="p">(</span><span class="n">computed</span><span class="p">,</span> <span class="n">expected</span><span class="p">)</span>
     <span class="k">assert</span> <span class="n">success</span><span class="p">,</span> <span class="n">msg</span>
 </code></pre></div></div>
@@ -339,8 +339,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2023 / 02 / 08</section></br> -->
-         <section>Last updated Wednesday, 08 Feb 2023 at 02:45 PM CST</section></br>
+         <!-- <section>Last updated 2023 / 02 / 19</section></br> -->
+         <section>Last updated Sunday, 19 Feb 2023 at 03:33 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

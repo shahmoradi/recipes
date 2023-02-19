@@ -219,20 +219,20 @@
 <p>Consider the following Banana function.</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">getLogFuncBanana</span><span class="p">(</span><span class="n">point</span><span class="p">):</span>
 
-    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-    <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">multivariate_normal</span> <span class="k">as</span> <span class="n">mvn</span>
-    <span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">logsumexp</span>
+    <span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+    <span class="kn">from</span> <span class="n">scipy.stats</span> <span class="kn">import</span> <span class="n">multivariate_normal</span> <span class="k">as</span> <span class="n">mvn</span>
+    <span class="kn">from</span> <span class="n">scipy.special</span> <span class="kn">import</span> <span class="n">logsumexp</span>
     
     <span class="n">NPAR</span> <span class="o">=</span> <span class="mi">2</span>                        <span class="c1"># sum(Banana,gaussian) normalization factor
 </span>    <span class="n">normfac</span> <span class="o">=</span> <span class="mf">0.3</span>                   <span class="c1"># sum(Banana,gaussian) normalization factor
-</span>    <span class="n">lognormfac</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">normfac</span><span class="p">)</span>    <span class="c1"># sum(Banana,gaussian) normalization factor
+</span>    <span class="n">lognormfac</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="n">normfac</span><span class="p">)</span>    <span class="c1"># sum(Banana,gaussian) normalization factor
 </span>    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">1.5</span>                 <span class="c1"># parameters of the Banana function
 </span>    <span class="n">MeanB</span> <span class="o">=</span> <span class="p">[</span> <span class="o">-</span><span class="mf">5.0</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">]</span>           <span class="c1"># mean vector of Banana function
 </span>    <span class="n">MeanG</span> <span class="o">=</span> <span class="p">[</span>  <span class="mf">3.5</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">]</span>           <span class="c1"># mean vector of Gaussian function
-</span>    <span class="n">CovMatB</span>     <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">reshape</span><span class="p">([</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.81</span><span class="p">],</span> <span class="n">newshape</span> <span class="o">=</span> <span class="p">(</span><span class="n">NPAR</span><span class="p">,</span><span class="n">NPAR</span><span class="p">))</span>    <span class="c1"># Covariance matrix of Banana function
-</span>    <span class="n">CovMatG</span>     <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">reshape</span><span class="p">([</span><span class="mf">0.15</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.15</span><span class="p">],</span> <span class="n">newshape</span> <span class="o">=</span> <span class="p">(</span><span class="n">NPAR</span><span class="p">,</span><span class="n">NPAR</span><span class="p">))</span>    <span class="c1"># Covariance matrix of Gaussian function
+</span>    <span class="n">CovMatB</span>     <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">reshape</span><span class="p">([</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.81</span><span class="p">],</span> <span class="n">newshape</span> <span class="o">=</span> <span class="p">(</span><span class="n">NPAR</span><span class="p">,</span><span class="n">NPAR</span><span class="p">))</span>    <span class="c1"># Covariance matrix of Banana function
+</span>    <span class="n">CovMatG</span>     <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">reshape</span><span class="p">([</span><span class="mf">0.15</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.15</span><span class="p">],</span> <span class="n">newshape</span> <span class="o">=</span> <span class="p">(</span><span class="n">NPAR</span><span class="p">,</span><span class="n">NPAR</span><span class="p">))</span>    <span class="c1"># Covariance matrix of Gaussian function
 </span>
-    <span class="n">LogProb</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">LogProb</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
     <span class="c1"># transformed parameters that transform the Gaussian to the Banana function
 </span>
@@ -240,7 +240,7 @@
 
     <span class="c1"># Gaussian function
 </span>
-    <span class="n">LogProb</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">lognormfac</span> <span class="o">+</span> <span class="n">mvn</span><span class="p">.</span><span class="n">logpdf</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">pointSkewed</span><span class="p">,</span> <span class="n">mean</span> <span class="o">=</span> <span class="n">MeanG</span><span class="p">,</span> <span class="n">cov</span> <span class="o">=</span> <span class="n">CovMatG</span><span class="p">)</span> <span class="c1"># logProbBanana
+    <span class="n">LogProb</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">lognormfac</span> <span class="o">+</span> <span class="n">mvn</span><span class="p">.</span><span class="nf">logpdf</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">pointSkewed</span><span class="p">,</span> <span class="n">mean</span> <span class="o">=</span> <span class="n">MeanG</span><span class="p">,</span> <span class="n">cov</span> <span class="o">=</span> <span class="n">CovMatG</span><span class="p">)</span> <span class="c1"># logProbBanana
 </span>
     <span class="c1"># Do variable transformations for the Skewed-Gaussian (banana) function.
 </span>
@@ -249,18 +249,18 @@
 
     <span class="c1"># Banana function
 </span>
-    <span class="n">LogProb</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">mvn</span><span class="p">.</span><span class="n">logpdf</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">pointSkewed</span><span class="p">,</span> <span class="n">mean</span> <span class="o">=</span> <span class="n">MeanB</span><span class="p">,</span> <span class="n">cov</span> <span class="o">=</span> <span class="n">CovMatB</span><span class="p">)</span> <span class="c1"># logProbBanana
+    <span class="n">LogProb</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">mvn</span><span class="p">.</span><span class="nf">logpdf</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">pointSkewed</span><span class="p">,</span> <span class="n">mean</span> <span class="o">=</span> <span class="n">MeanB</span><span class="p">,</span> <span class="n">cov</span> <span class="o">=</span> <span class="n">CovMatB</span><span class="p">)</span> <span class="c1"># logProbBanana
 </span>
-    <span class="k">return</span> <span class="n">logsumexp</span><span class="p">(</span><span class="n">LogProb</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nf">logsumexp</span><span class="p">(</span><span class="n">LogProb</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>We wish to generate random sample from the distribution function represented by this Python function. We do so via the ParaMonte library’s ParaDRAM MCMC sampler,</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="o">--</span><span class="n">user</span> <span class="n">paramonte</span>
-<span class="kn">import</span> <span class="nn">paramonte</span> <span class="k">as</span> <span class="n">pm</span>
-<span class="n">sim</span> <span class="o">=</span> <span class="n">pm</span><span class="p">.</span><span class="n">paradram</span><span class="p">()</span>
+<span class="kn">import</span> <span class="n">paramonte</span> <span class="k">as</span> <span class="n">pm</span>
+<span class="n">sim</span> <span class="o">=</span> <span class="n">pm</span><span class="p">.</span><span class="nf">paradram</span><span class="p">()</span>
 <span class="n">sim</span><span class="p">.</span><span class="n">spec</span><span class="p">.</span><span class="n">chainSize</span> <span class="o">=</span> <span class="mi">30000</span>
-<span class="n">sim</span><span class="p">.</span><span class="n">runSampler</span><span class="p">(</span> <span class="n">ndim</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">sim</span><span class="p">.</span><span class="nf">runSampler</span><span class="p">(</span> <span class="n">ndim</span> <span class="o">=</span> <span class="mi">2</span>
               <span class="p">,</span> <span class="n">getLogFunc</span> <span class="o">=</span> <span class="n">getLogFuncBanana</span>
               <span class="p">)</span>
 </code></pre></div></div>
@@ -268,17 +268,17 @@
 <p>This sampler outputs an MCMC chain that we can subsequently visualize,</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">notebook</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="n">chain</span> <span class="o">=</span> <span class="n">sim</span><span class="p">.</span><span class="n">readChain</span><span class="p">(</span><span class="n">renabled</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">chain</span><span class="p">.</span><span class="n">df</span><span class="p">[</span><span class="s">"Banana Function Value"</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">exp</span><span class="p">(</span><span class="n">chain</span><span class="p">.</span><span class="n">df</span><span class="p">.</span><span class="n">SampleLogFunc</span><span class="p">.</span><span class="n">values</span><span class="p">)</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="n">chain</span> <span class="o">=</span> <span class="n">sim</span><span class="p">.</span><span class="nf">readChain</span><span class="p">(</span><span class="n">renabled</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">chain</span><span class="p">.</span><span class="n">df</span><span class="p">[</span><span class="s">"Banana Function Value"</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">exp</span><span class="p">(</span><span class="n">chain</span><span class="p">.</span><span class="n">df</span><span class="p">.</span><span class="n">SampleLogFunc</span><span class="p">.</span><span class="n">values</span><span class="p">)</span>
 
-<span class="n">chain</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">contour3</span><span class="p">()</span>
-<span class="n">chain</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">contour3</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">fname</span> <span class="o">=</span> <span class="s">"bananaFuncContour3.png"</span><span class="p">)</span>
+<span class="n">chain</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="nf">contour3</span><span class="p">()</span>
+<span class="n">chain</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">contour3</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="n">fname</span> <span class="o">=</span> <span class="s">"bananaFuncContour3.png"</span><span class="p">)</span>
 
 <span class="n">chain</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">scatter3</span><span class="p">.</span><span class="n">scatter</span><span class="p">.</span><span class="n">kws</span><span class="p">.</span><span class="n">s</span> <span class="o">=</span> <span class="mf">0.03</span>
 <span class="n">chain</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">scatter3</span><span class="p">.</span><span class="n">scatter</span><span class="p">.</span><span class="n">kws</span><span class="p">.</span><span class="n">cmap</span> <span class="o">=</span> <span class="s">"winter"</span>
-<span class="n">chain</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">scatter3</span><span class="p">(</span><span class="n">zcolumns</span> <span class="o">=</span> <span class="s">"Banana Function Value"</span><span class="p">,</span> <span class="n">ccolumns</span> <span class="o">=</span> <span class="s">"Banana Function Value"</span><span class="p">)</span>
-<span class="n">chain</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">scatter3</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">fname</span> <span class="o">=</span> <span class="s">"bananaFuncScatter3.png"</span><span class="p">)</span>
+<span class="n">chain</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="nf">scatter3</span><span class="p">(</span><span class="n">zcolumns</span> <span class="o">=</span> <span class="s">"Banana Function Value"</span><span class="p">,</span> <span class="n">ccolumns</span> <span class="o">=</span> <span class="s">"Banana Function Value"</span><span class="p">)</span>
+<span class="n">chain</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">scatter3</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="n">fname</span> <span class="o">=</span> <span class="s">"bananaFuncScatter3.png"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><img src="bananaFuncContour3.png" alt="bananaFuncContour3.png" /></p>
@@ -287,23 +287,23 @@
 
 <p>Now, this MCMC chain is a time-series data, meaning that we can compute its autocorrelation (for each data attribute). The ParaMonte library does this for us automatically which we can visualize via,</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">chain</span><span class="p">.</span><span class="n">stats</span><span class="p">.</span><span class="n">autocorr</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">()</span>
-<span class="n">chain</span><span class="p">.</span><span class="n">stats</span><span class="p">.</span><span class="n">autocorr</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">fname</span> <span class="o">=</span> <span class="s">"bananaCompactChainACF.png"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">chain</span><span class="p">.</span><span class="n">stats</span><span class="p">.</span><span class="n">autocorr</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="nf">line</span><span class="p">()</span>
+<span class="n">chain</span><span class="p">.</span><span class="n">stats</span><span class="p">.</span><span class="n">autocorr</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="n">fname</span> <span class="o">=</span> <span class="s">"bananaCompactChainACF.png"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><img src="bananaCompactChainACF.png" alt="bananaCompactChainACF.png" /></p>
 
 <p>Obviously, the three attributes of this chain are autocorrelated. But, we can remove traces of autocorrelation by choosing an appropriate step by which we jump over (skip) the data to <em>thin</em> (or <em>reduce</em> or <em>decorrelate</em> or <em>refine</em> the chain).  Choose such an appropriate step size and refine the data in <code>chain.df</code> and then compute the autocorrelation of the refined data via <code>scipy.signal.correlate</code> function. Then, visualize it similar to the above illustration by the ParaMonte library to ensure the refinement process has truly removed the autocorrelation from your data.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">correlate</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">from</span> <span class="n">scipy.signal</span> <span class="kn">import</span> <span class="n">correlate</span>
 
-<span class="n">attribute</span> <span class="o">=</span> <span class="n">attribute</span> <span class="o">-</span> <span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">attribute</span><span class="p">)</span>
+<span class="n">attribute</span> <span class="o">=</span> <span class="n">attribute</span> <span class="o">-</span> <span class="n">np</span><span class="p">.</span><span class="nf">mean</span><span class="p">(</span><span class="n">attribute</span><span class="p">)</span>
 
-<span class="n">nlag</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">attribute</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
-<span class="n">acf</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nlag</span><span class="p">)</span>
+<span class="n">nlag</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">attribute</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">acf</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">zeros</span><span class="p">(</span><span class="n">nlag</span><span class="p">)</span>
 
-<span class="n">acf</span> <span class="o">=</span> <span class="n">correlate</span> <span class="p">(</span> <span class="n">attribute</span>
+<span class="n">acf</span> <span class="o">=</span> <span class="nf">correlate </span><span class="p">(</span> <span class="n">attribute</span>
                 <span class="p">,</span> <span class="n">attribute</span>
                 <span class="p">,</span> <span class="n">mode</span> <span class="o">=</span> <span class="s">"full"</span>
                 <span class="p">)[</span><span class="n">nlag</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="n">nlag</span><span class="p">]</span>
@@ -373,8 +373,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2023 / 02 / 08</section></br> -->
-         <section>Last updated Wednesday, 08 Feb 2023 at 02:45 PM CST</section></br>
+         <!-- <section>Last updated 2023 / 02 / 19</section></br> -->
+         <section>Last updated Sunday, 19 Feb 2023 at 03:33 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

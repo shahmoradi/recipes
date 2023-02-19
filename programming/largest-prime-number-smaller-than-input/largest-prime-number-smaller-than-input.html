@@ -257,11 +257,11 @@
         <span class="k">if</span> <span class="n">n</span><span class="o">%</span><span class="n">divisor</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="bp">True</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">divisor</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="k">return</span> <span class="n">is_divisible</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">divisor</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nf">is_divisible</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">divisor</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span>
         <span class="n">isPrime</span> <span class="o">=</span> <span class="bp">True</span>
-    <span class="k">elif</span> <span class="n">is_divisible</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">divisor</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">elif</span> <span class="nf">is_divisible</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">divisor</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
         <span class="n">isPrime</span> <span class="o">=</span> <span class="bp">False</span>
     <span class="k">return</span> <span class="n">isPrime</span>
 
@@ -269,10 +269,10 @@
     <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">0</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">isPrime</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">getNumPrimes</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nf">isPrime</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nf">getNumPrimes</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">getNumPrimes</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">getNumPrimes</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
 </code></pre></div></div>
 <pre><code>5
 </code></pre>
@@ -344,8 +344,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2023 / 02 / 08</section></br> -->
-         <section>Last updated Wednesday, 08 Feb 2023 at 02:45 PM CST</section></br>
+         <!-- <section>Last updated 2023 / 02 / 19</section></br> -->
+         <section>Last updated Sunday, 19 Feb 2023 at 03:33 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

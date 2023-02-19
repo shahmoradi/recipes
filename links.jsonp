@@ -168,12 +168,12 @@ callback([
 
   {
     "text": "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables via the least absolute deviations method",
-    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-squares-method"
+    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-absolute-deviations-method"
   } ,
 
   {
     "text": "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables via the least absolute deviations method",
-    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-absolute-deviations-method"
+    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-squares-method"
   } ,
 
   {
@@ -343,12 +343,12 @@ callback([
 
   {
     "text": "Monte Carlo approximation of the number Pi",
-    "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
+    "href": "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
   } ,
 
   {
     "text": "Monte Carlo approximation of the number Pi",
-    "href": "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
+    "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
   } ,
 
   {
@@ -449,6 +449,11 @@ callback([
   {
     "text": "Intel Parallel Studio installation on Windows Operating Systems",
     "href": "/recipes/programming/intel-parallel-studio-installation-windows/intel-parallel-studio-installation-windows"
+  } ,
+
+  {
+    "text": "Intel Oneapi C/C++/Fortran Compiler Installation",
+    "href": "/recipes/programming/intel-oneapi-c-cpp-fortran-compiler-installation/intel-oneapi-c-cpp-fortran-compiler-installation"
   } ,
 
   {

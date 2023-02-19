@@ -364,9 +364,9 @@ which despite being the best-fit, still looks quite awful. Why? Because our hypo
   </li>
 </ol>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">paramonte</span> <span class="k">as</span> <span class="n">pm</span>
-<span class="n">pm</span><span class="p">.</span><span class="n">version</span><span class="p">.</span><span class="n">interface</span><span class="p">.</span><span class="n">dump</span><span class="p">()</span> <span class="c1"># get the version of ParaMonte we are working with
-</span><span class="n">pmpd</span> <span class="o">=</span> <span class="n">pm</span><span class="p">.</span><span class="n">ParaDRAM</span><span class="p">()</span> <span class="c1"># create a ParaDRAM sampler object
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">paramonte</span> <span class="k">as</span> <span class="n">pm</span>
+<span class="n">pm</span><span class="p">.</span><span class="n">version</span><span class="p">.</span><span class="n">interface</span><span class="p">.</span><span class="nf">dump</span><span class="p">()</span> <span class="c1"># get the version of ParaMonte we are working with
+</span><span class="n">pmpd</span> <span class="o">=</span> <span class="n">pm</span><span class="p">.</span><span class="nc">ParaDRAM</span><span class="p">()</span> <span class="c1"># create a ParaDRAM sampler object
 </span><span class="n">pmpd</span><span class="p">.</span><span class="n">spec</span><span class="p">.</span><span class="n">chainSize</span> <span class="o">=</span> <span class="mi">20000</span> <span class="c1"># change the number of sampled points from default 100,000 to 30,000
 </span><span class="n">pmpd</span><span class="p">.</span><span class="n">spec</span><span class="p">.</span><span class="n">variableNameList</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Average"</span><span class="p">,</span><span class="s">"LogStandardDeviation"</span><span class="p">,</span><span class="s">"Cutoff"</span><span class="p">]</span>
 <span class="n">pmpd</span><span class="p">.</span><span class="n">spec</span><span class="p">.</span><span class="n">startPointVec</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">normal</span><span class="p">.</span><span class="n">maxdata</span><span class="p">]</span> <span class="c1"># ensure the initial starting point of the search for cutoff is good.
@@ -374,7 +374,7 @@ which despite being the best-fit, still looks quite awful. Why? Because our hypo
 </span>
 <span class="c1"># call MCMC sampler
 </span>
-<span class="n">pmpd</span><span class="p">.</span><span class="n">runSampler</span><span class="p">(</span> <span class="n">ndim</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">pmpd</span><span class="p">.</span><span class="nf">runSampler</span><span class="p">(</span> <span class="n">ndim</span> <span class="o">=</span> <span class="mi">3</span>
                <span class="p">,</span> <span class="n">getLogFunc</span> <span class="o">=</span> <span class="n">normal</span><span class="p">.</span><span class="n">getLogLike</span>
                <span class="p">)</span>
 </code></pre></div></div>
@@ -400,8 +400,8 @@ ParaDRAM - NOTE:     https://www.cdslab.org/paramonte/
 
 <p>Here is the resulting maximum-likelihood parameters inferred from the paramonte-ParaDRAM MCMC sampler as is done below in Python:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sample</span> <span class="o">=</span> <span class="n">pmpd</span><span class="p">.</span><span class="n">readSample</span><span class="p">(</span><span class="n">renabled</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">sample</span><span class="p">.</span><span class="n">df</span><span class="p">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sample</span> <span class="o">=</span> <span class="n">pmpd</span><span class="p">.</span><span class="nf">readSample</span><span class="p">(</span><span class="n">renabled</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">sample</span><span class="p">.</span><span class="n">df</span><span class="p">.</span><span class="nf">mean</span><span class="p">()</span>
 </code></pre></div></div>
 <pre><code>SampleLogFunc          -38794.057165
 Average                    -0.018469
@@ -413,25 +413,25 @@ Cutoff                      0.693154
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># read the resulting sample
 </span>
-<span class="n">sample</span> <span class="o">=</span> <span class="n">pmpd</span><span class="p">.</span><span class="n">readSample</span><span class="p">(</span><span class="n">renabled</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">sample</span> <span class="o">=</span> <span class="n">pmpd</span><span class="p">.</span><span class="nf">readSample</span><span class="p">(</span><span class="n">renabled</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="c1"># plot traceplots of the sampled parameters
 </span>
 <span class="k">for</span> <span class="n">colname</span> <span class="ow">in</span> <span class="n">sample</span><span class="p">.</span><span class="n">df</span><span class="p">.</span><span class="n">columns</span><span class="p">:</span>
     <span class="n">sample</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">.</span><span class="n">ycolumns</span> <span class="o">=</span> <span class="n">colname</span>
     <span class="n">sample</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">.</span><span class="n">outputFile</span> <span class="o">=</span> <span class="s">"traceplot_"</span> <span class="o">+</span> <span class="n">colname</span>
-    <span class="n">sample</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">()</span>
-    <span class="n">sample</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">.</span><span class="n">currentFig</span><span class="p">.</span><span class="n">axes</span><span class="p">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">"MCMC Count"</span><span class="p">)</span>
-    <span class="n">sample</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">.</span><span class="n">currentFig</span><span class="p">.</span><span class="n">axes</span><span class="p">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">colname</span><span class="p">)</span>
+    <span class="n">sample</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="nf">line</span><span class="p">()</span>
+    <span class="n">sample</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">.</span><span class="n">currentFig</span><span class="p">.</span><span class="n">axes</span><span class="p">.</span><span class="nf">set_xlabel</span><span class="p">(</span><span class="s">"MCMC Count"</span><span class="p">)</span>
+    <span class="n">sample</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">.</span><span class="n">currentFig</span><span class="p">.</span><span class="n">axes</span><span class="p">.</span><span class="nf">set_ylabel</span><span class="p">(</span><span class="n">colname</span><span class="p">)</span>
 
 <span class="c1"># plot the histograms of the sampled parameters
 </span>
 <span class="k">for</span> <span class="n">colname</span> <span class="ow">in</span> <span class="n">sample</span><span class="p">.</span><span class="n">df</span><span class="p">.</span><span class="n">columns</span><span class="p">:</span>
     <span class="n">sample</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">histplot</span><span class="p">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">colname</span>
     <span class="n">sample</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">histplot</span><span class="p">.</span><span class="n">outputFile</span> <span class="o">=</span> <span class="s">"histogram_"</span> <span class="o">+</span> <span class="n">colname</span>
-    <span class="n">sample</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">histplot</span><span class="p">()</span>
-    <span class="n">sample</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">histplot</span><span class="p">.</span><span class="n">currentFig</span><span class="p">.</span><span class="n">axes</span><span class="p">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">colname</span><span class="p">)</span>
-    <span class="n">sample</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">histplot</span><span class="p">.</span><span class="n">currentFig</span><span class="p">.</span><span class="n">axes</span><span class="p">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">"MCMC Count"</span><span class="p">)</span>
+    <span class="n">sample</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="nf">histplot</span><span class="p">()</span>
+    <span class="n">sample</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">histplot</span><span class="p">.</span><span class="n">currentFig</span><span class="p">.</span><span class="n">axes</span><span class="p">.</span><span class="nf">set_xlabel</span><span class="p">(</span><span class="n">colname</span><span class="p">)</span>
+    <span class="n">sample</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">histplot</span><span class="p">.</span><span class="n">currentFig</span><span class="p">.</span><span class="n">axes</span><span class="p">.</span><span class="nf">set_ylabel</span><span class="p">(</span><span class="s">"MCMC Count"</span><span class="p">)</span>
 
 </code></pre></div></div>
 
@@ -518,8 +518,8 @@ Cutoff                      0.693154
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2023 / 02 / 08</section></br> -->
-         <section>Last updated Wednesday, 08 Feb 2023 at 02:45 PM CST</section></br>
+         <!-- <section>Last updated 2023 / 02 / 19</section></br> -->
+         <section>Last updated Sunday, 19 Feb 2023 at 03:33 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

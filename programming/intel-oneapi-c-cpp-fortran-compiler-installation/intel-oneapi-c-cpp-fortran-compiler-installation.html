@@ -3,18 +3,18 @@
 <head>
     
     <meta charset="utf-8">
-<title>OPERATOR PRECEDENCE &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>INTEL ONEAPI C/C++/FORTRAN COMPILER INSTALLATION &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="value, variable, type, operator, precedence, operator precedence, Python, MATLAB">
+<meta name="keywords" content="Intel Parallel Studio, Microsoft Visual Studio, Windows, installation, Fortran, C, C++">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Operator precedence">
+<meta property="og:title" content="Intel Oneapi C/C++/Fortran Compiler Installation">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/operator-precedence/operator-precedence">
+<meta property="og:url" content="/recipes/programming/intel-oneapi-c-cpp-fortran-compiler-installation/intel-oneapi-c-cpp-fortran-compiler-installation">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/operator-precedence/operator-precedence">
+<link rel="canonical" href="/recipes/programming/intel-oneapi-c-cpp-fortran-compiler-installation/intel-oneapi-c-cpp-fortran-compiler-installation">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,54 +130,49 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/operator-precedence/operator-precedence">Operator precedence</a></h2>
+                            <h2><a href="/recipes/programming/intel-oneapi-c-cpp-fortran-compiler-installation/intel-oneapi-c-cpp-fortran-compiler-installation">Intel Oneapi C/C++/Fortran Compiler Installation</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
                                 
                                     &#8212; Last updated: 
-                                    <strong><time datetime="2019-07-04T00:00:00-05:00">04 July 2019</time></strong>
+                                    <strong><time datetime="2020-01-01T00:00:00-06:00">01 January 2020</time></strong>
                                 
                                 <ul class="tag-box inline">
                                     <span style="margin-right:1rem;">Tags:</span>
                                     
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#MATLAB" data-toggle="tooltip" title="Posts tagged with MATLAB" rel="tag">MATLAB</a>
+                                                <a href="/recipes/tags/index.html#C" data-toggle="tooltip" title="Posts tagged with C" rel="tag">C</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
+                                                <a href="/recipes/tags/index.html#C++" data-toggle="tooltip" title="Posts tagged with C++" rel="tag">C++</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#operator" data-toggle="tooltip" title="Posts tagged with operator" rel="tag">operator</a>
+                                                <a href="/recipes/tags/index.html#Fortran" data-toggle="tooltip" title="Posts tagged with Fortran" rel="tag">Fortran</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#operator precedence" data-toggle="tooltip" title="Posts tagged with operator precedence" rel="tag">operator precedence</a>
+                                                <a href="/recipes/tags/index.html#Intel Parallel Studio" data-toggle="tooltip" title="Posts tagged with Intel Parallel Studio" rel="tag">Intel Parallel Studio</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#precedence" data-toggle="tooltip" title="Posts tagged with precedence" rel="tag">precedence</a>
+                                                <a href="/recipes/tags/index.html#Microsoft Visual Studio" data-toggle="tooltip" title="Posts tagged with Microsoft Visual Studio" rel="tag">Microsoft Visual Studio</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#type" data-toggle="tooltip" title="Posts tagged with type" rel="tag">type</a>
+                                                <a href="/recipes/tags/index.html#Windows" data-toggle="tooltip" title="Posts tagged with Windows" rel="tag">Windows</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#value" data-toggle="tooltip" title="Posts tagged with value" rel="tag">value</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#variable" data-toggle="tooltip" title="Posts tagged with variable" rel="tag">variable</a>
+                                                <a href="/recipes/tags/index.html#installation" data-toggle="tooltip" title="Posts tagged with installation" rel="tag">installation</a>
                                             </li>
                                             
                                         
@@ -206,19 +201,68 @@
     
 </div>
 
-<p><strong><a href="https://en.wikipedia.org/wiki/Order_of_operations" target="blank">Operator Precedence</a>.</strong> Think about what the results would be for the following expressions, and then type them into the terminal to verify your answers. Briefly explain the results for each one.</p>
+<p>How can I install Intel Parallel Studio on Windows?</p>
 
-<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">\</span><span class="mi">2</span> 
-<span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">/</span><span class="mi">2</span>
-<span class="o">&gt;&gt;</span> <span class="nb">int8</span><span class="p">(</span><span class="mi">1</span><span class="p">/</span><span class="mi">2</span><span class="p">)</span>
-<span class="o">&gt;&gt;</span> <span class="nb">int8</span><span class="p">(</span><span class="mi">1</span><span class="p">/</span><span class="mi">3</span><span class="p">)</span>
-<span class="o">&gt;&gt;</span> <span class="o">-</span><span class="mi">5</span><span class="o">^</span><span class="mi">2</span>  
-<span class="o">&gt;&gt;</span> <span class="o">-</span><span class="mi">5</span><span class="o">**</span><span class="mi">2</span>  
-<span class="o">&gt;&gt;</span> <span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span> <span class="o">^</span> <span class="mi">2</span> 
-<span class="o">&gt;&gt;</span> <span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> 
-<span class="o">&gt;&gt;</span> <span class="mi">10</span><span class="o">-</span><span class="mi">6</span><span class="p">/</span><span class="mi">2</span> 
-<span class="o">&gt;&gt;</span> <span class="mi">5</span><span class="o">*</span><span class="mi">4</span><span class="p">/</span><span class="mi">2</span><span class="o">*</span><span class="mi">3</span>
-</code></pre></div></div>
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution" style="display:inline-block;">
+        <h2 id="solution" style="color:blue;">
+            Solution
+        </h2>
+    </a>
+
+</div>
+
+<p>The Intel OneAPI HPC toolkit provides a wide variety of High-Performance numerical libraries and tools, most importantly, the Intel Fortran and C/C++ compilers.<br />
+However, its installation, particularly, on Windows systems can be a bit tricky.</p>
+
+<p>Here are the <strong>steps required to take to properly install the Intel OneAPI compilers on Linux/macOS/Windows</strong>:</p>
+
+<ol>
+  <li>If you are a Linux/macOS user move on to step 2.<br />
+If you are a <strong>Windows</strong> user,
+    <ol>
+      <li><strong>Download</strong> a recent version of <strong>Microsoft Visual Studio (MSVS) Community edition</strong> installer 
+which is <a href="https://visualstudio.microsoft.com/vs/community" target="_blank">available free of charge</a>.</li>
+      <li><strong>Run the Microsoft Visual Studio installer</strong>.<br />
+Once you see the following prompt window, make sure you <strong>select at least the C++ components to install on your system</strong> (if you do not want all of the components).<br />
+This component selection is essential for successful installation of Intel OneAPI components and compilers,
+        <figure>
+    <img src="community-page-installer.png" />
+</figure>
+        <p>Once the installation is complete, you may need to reboot your system.</p>
+      </li>
+    </ol>
+  </li>
+  <li><strong>Download Intel OneAPI Base Toolkit</strong> from its <a href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html" target="_blank">dedicated website</a>. <br />
+Follow the installation instructions provided by Intel to install the Base Toolkit.</li>
+  <li><strong>Download Intel OneAPI HPC Toolkit</strong> from its <a href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit-download.html" target="_blank">dedicated website</a>. <br />
+Follow the installation instructions provided by Intel to install the HPC Toolkit.<br />
+This component contains all Intel products relevant to scientific computing, parallel computing, and C/C++/Fortran compilers.</li>
+  <li><strong>Your installation is complete</strong> (you may need a reboot again).
+    <ol>
+      <li>If you are on <strong>Windows</strong>,
+        <ol>
+          <li>You can now access intel compilers and tools from within the Microsoft Visual Studio application.</li>
+          <li>You can also use the <strong>use Intel’s provided Windows command-line environment (CMD)</strong> that comes with all the Intel OneAPI.<br />
+This environment contains all paths to Intel applications predefined <strong>to help build your applications on the command line, much like a Linux environment</strong>.<br />
+In the long run, you will likely find the command line much more convenient than the GUI interface that the Microsoft Visual Studio application offers.
+            <figure>
+    <img src="intelCMD.png" />
+</figure>
+          </li>
+        </ol>
+      </li>
+      <li>On all platforms, whether Windows or Unix, you can now open the relevant terminal (Intel CMD on Windows and Bash/dash/zsh/… terminal on Linux/macOS) 
+to test whether the Intel compilers have been correctly installed by typing <code>ifx</code> to invoke the Intel Fortran compiler or <code>icl</code> to invoke the Intel C++ compiler, 
+The following snapshot demonstrates the usage on Windows CMD terminal,
+        <figure>
+    <img src="compilerTest.png" />
+</figure>
+      </li>
+    </ol>
+  </li>
+</ol>
 
 
             </div>
@@ -226,11 +270,11 @@
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Operator precedence&quot;%20https://www.cdslab.org/recipes/programming/operator-precedence/operator-precedence%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Intel Oneapi C/C++/Fortran Compiler Installation&quot;%20https://www.cdslab.org/recipes/programming/intel-oneapi-c-cpp-fortran-compiler-installation/intel-oneapi-c-cpp-fortran-compiler-installation%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/operator-precedence/operator-precedence"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/intel-oneapi-c-cpp-fortran-compiler-installation/intel-oneapi-c-cpp-fortran-compiler-installation"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>

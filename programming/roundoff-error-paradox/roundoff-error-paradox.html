@@ -253,15 +253,15 @@
 
 <p>Consider the following program,</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
-<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">60</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">60</span><span class="p">):</span>
     <span class="n">r_org</span> <span class="o">=</span> <span class="mf">2.0</span>
     <span class="n">r</span> <span class="o">=</span> <span class="n">r_org</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">r</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
         <span class="n">r</span> <span class="o">=</span> <span class="n">r</span> <span class="o">**</span> <span class="mi">2</span>
-    <span class="k">print</span> <span class="p">(</span><span class="s">'With {} times sqrt and then {} times **2, the number {} becomes: {:.16f}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">r_org</span><span class="p">,</span><span class="n">r</span><span class="p">))</span>
+    <span class="nf">print </span><span class="p">(</span><span class="s">'With {} times sqrt and then {} times **2, the number {} becomes: {:.16f}'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">r_org</span><span class="p">,</span><span class="n">r</span><span class="p">))</span>
 </code></pre></div></div>
 
 <p>Explain what this code does. Then run the code, and explain why do you the behavior observed. In particular, why do you not recover the original value $2$ after many repetitions of the same forward and reverse task?</p>
@@ -329,8 +329,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2023 / 02 / 08</section></br> -->
-         <section>Last updated Wednesday, 08 Feb 2023 at 02:45 PM CST</section></br>
+         <!-- <section>Last updated 2023 / 02 / 19</section></br> -->
+         <section>Last updated Sunday, 19 Feb 2023 at 03:33 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
