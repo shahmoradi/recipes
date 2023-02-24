@@ -289,6 +289,121 @@
 <span class="nf">print </span><span class="p">(</span><span class="nf">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nf">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
 </code></pre></div></div>
 
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution-part-a" style="display:inline-block;">
+        <h2 id="solution-part-a" style="color:blue;">
+            Solution Part A
+        </h2>
+    </a>
+
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Assign a value to a new variable
+</span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+ 
+<span class="c1"># Create an alias identifier for this variable
+</span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+ 
+<span class="c1"># Observe how they refer to the same variable!
+</span><span class="nf">print </span><span class="p">(</span><span class="nf">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nf">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+ 
+<span class="c1"># Create another alias
+</span><span class="n">c</span> <span class="o">=</span> <span class="n">b</span>
+ 
+<span class="c1"># Now assign a new value to b!
+</span><span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+ 
+<span class="c1"># And observe how a and c are still the same variable
+# But b is not
+</span><span class="nf">print </span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+<span class="nf">print </span><span class="p">(</span><span class="nf">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="nf">id</span><span class="p">(</span><span class="n">b</span><span class="p">),</span><span class="nf">id</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+ 
+<span class="c1"># Now for another quirk, suppose we do this:
+</span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+ 
+<span class="c1"># We used an assignment, but the value didn't change
+# So the alias remains unbroken
+</span><span class="nf">print </span><span class="p">(</span><span class="nf">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nf">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution-part-b" style="display:inline-block;">
+        <h2 id="solution-part-b" style="color:blue;">
+            Solution Part B
+        </h2>
+    </a>
+
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Create a new &lt;list&gt;
+</span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+ 
+<span class="c1"># Create an alias identifier for this list
+</span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+<span class="nf">print </span><span class="p">(</span><span class="nf">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nf">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+ 
+<span class="c1"># Now change the &lt;list&gt; b in-place
+</span><span class="n">b</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+ 
+<span class="c1"># And observe how this also changes a
+# The alias is not broken by in-place operations
+</span><span class="nf">print </span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="nf">print </span><span class="p">(</span><span class="nf">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="nf">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution-part-c" style="display:inline-block;">
+        <h2 id="solution-part-c" style="color:blue;">
+            Solution Part C
+        </h2>
+    </a>
+
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Create a &lt;list&gt;
+</span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+ 
+<span class="c1"># Create a new &lt;list&gt; with the same value
+</span><span class="n">b</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+ 
+<span class="c1"># We now have two separate variables with identical but separate values
+</span><span class="nf">print </span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="nf">print </span><span class="p">(</span><span class="nf">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nf">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+ 
+<span class="c1"># Same with the full slice technique:
+</span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span>
+<span class="nf">print </span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="nf">print </span><span class="p">(</span><span class="nf">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nf">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution-part-d" style="display:inline-block;">
+        <h2 id="solution-part-d" style="color:blue;">
+            Solution Part D
+        </h2>
+    </a>
+
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Create &lt;tuple&gt;
+</span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,)</span>
+ 
+<span class="c1"># Try to force a copy
+</span><span class="n">b</span> <span class="o">=</span> <span class="nf">tuple</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+ 
+<span class="c1"># It didn't work...
+</span><span class="nf">print </span><span class="p">(</span><span class="nf">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nf">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+ 
+<span class="c1"># Neither does this
+</span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span>
+<span class="nf">print </span><span class="p">(</span><span class="nf">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nf">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</code></pre></div></div>
+
 
             </div>
         </article>
@@ -352,8 +467,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2023 / 02 / 19</section></br> -->
-         <section>Last updated Sunday, 19 Feb 2023 at 03:35 PM CST</section></br>
+         <!-- <section>Last updated 2023 / 02 / 24</section></br> -->
+         <section>Last updated Friday, 24 Feb 2023 at 11:00 AM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
