@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2023-03-01T02:55:30-06:00</updated>
+<updated>2023-03-01T02:57:38-06:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -37,9 +37,9 @@
 &lt;ol&gt;
   &lt;li&gt;What does this imply for the storage of real (floating-point) numbers in computers?&lt;/li&gt;
   &lt;li&gt;Now consider the IEEE-storage convention for real numbers in computers for &lt;code&gt;real32&lt;/code&gt;, &lt;code&gt;real64&lt;/code&gt;, and &lt;code&gt;real128&lt;/code&gt; bit storage formats as illustrated below.
-    &lt;figure&gt;&lt;img src=&quot;../real32.png&quot; width=&quot;70%&quot; /&gt;&lt;/figure&gt;
-    &lt;figure&gt;&lt;img src=&quot;../real64.png&quot; width=&quot;70%&quot; /&gt;&lt;/figure&gt;
-    &lt;figure&gt;&lt;img src=&quot;../real128.png&quot; width=&quot;70%&quot; /&gt;&lt;/figure&gt;
+    &lt;figure&gt;&lt;img src=&quot;../real32.png&quot; width=&quot;100%&quot; /&gt;&lt;/figure&gt;
+    &lt;figure&gt;&lt;img src=&quot;../real64.png&quot; width=&quot;100%&quot; /&gt;&lt;/figure&gt;
+    &lt;figure&gt;&lt;img src=&quot;../real128.png&quot; width=&quot;100%&quot; /&gt;&lt;/figure&gt;
     &lt;p&gt;Compute how many real numbers each of the above formats can represent.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;How many of these numbers are in the range $[0, 1)$ for each storage convention?&lt;/li&gt;
