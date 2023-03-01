@@ -482,6 +482,11 @@ callback([
   } ,
 
   {
+    "text": "IEEE-storage convention for real numbers",
+    "href": "/recipes/programming/digital-storage-real-number/digital/digital-storage-real-number"
+  } ,
+
+  {
     "text": "Getting the largest prime number smaller than the input value",
     "href": "/recipes/programming/largest-prime-number-smaller-than-input/largest-prime-number-smaller-than-input"
   } ,

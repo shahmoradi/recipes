@@ -7,13 +7,50 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2023-02-24T11:00:50-06:00</updated>
+<updated>2023-03-01T02:55:22-06:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
   <uri>https://www.cdslab.org/recipes/</uri>
   <email>shahmoradi@utexas.edu</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[IEEE-storage convention for real numbers]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/digital-storage-real-number/digital/digital-storage-real-number"/>
+  <id>https://www.cdslab.org/recipes/programming/digital-storage-real-number/digital/digital-storage-real-number</id>
+  <published>2023-02-25T00:00:00-06:00</published>
+  <updated>2023-02-25T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#integer" term="integer" /><category scheme="https://www.cdslab.org/recipes/tags/#memory" term="memory" /><category scheme="https://www.cdslab.org/recipes/tags/#IEEE" term="IEEE" /><category scheme="https://www.cdslab.org/recipes/tags/#storage" term="storage" /><category scheme="https://www.cdslab.org/recipes/tags/#real" term="real" /><category scheme="https://www.cdslab.org/recipes/tags/#float" term="float" /><category scheme="https://www.cdslab.org/recipes/tags/#real32" term="real32" /><category scheme="https://www.cdslab.org/recipes/tags/#real64" term="real64" /><category scheme="https://www.cdslab.org/recipes/tags/#real128" term="real128" />
+  <content type="html">
+  
+    
+&lt;p&gt;Recall that computers can only store discrete values in memory.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;What does this imply for the storage of real (floating-point) numbers in computers?&lt;/li&gt;
+  &lt;li&gt;Now consider the IEEE-storage convention for real numbers in computers for &lt;code&gt;real32&lt;/code&gt;, &lt;code&gt;real64&lt;/code&gt;, and &lt;code&gt;real128&lt;/code&gt; bit storage formats as illustrated below.
+    &lt;figure&gt;&lt;img src=&quot;../real32.png&quot; width=&quot;70%&quot; /&gt;&lt;/figure&gt;
+    &lt;figure&gt;&lt;img src=&quot;../real64.png&quot; width=&quot;70%&quot; /&gt;&lt;/figure&gt;
+    &lt;figure&gt;&lt;img src=&quot;../real128.png&quot; width=&quot;70%&quot; /&gt;&lt;/figure&gt;
+    &lt;p&gt;Compute how many real numbers each of the above formats can represent.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;How many of these numbers are in the range $[0, 1)$ for each storage convention?&lt;/li&gt;
+  &lt;li&gt;What are the minimum and maximum possible representable real values in these conventions?&lt;/li&gt;
+  &lt;li&gt;Is there a way to represent numbers that are smaller than the minimum representable real numbers in these conventions?&lt;/li&gt;
+&lt;/ol&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/digital-storage-real-number/digital/digital-storage-real-number&quot;&gt;IEEE-storage convention for real numbers&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on February 25, 2023.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -44,67 +81,6 @@
 &lt;/div&gt;
 
 &lt;p&gt;How can I install the Intel OneAPI C/C++/Fortran Compiler on Windows, Linux, or macOS?&lt;/p&gt;
-
-&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
-
-    &lt;a href=&quot;#solution&quot; style=&quot;display:inline-block;&quot;&gt;
-        &lt;h2 id=&quot;solution&quot; style=&quot;color:blue;&quot;&gt;
-            Solution
-        &lt;/h2&gt;
-    &lt;/a&gt;
-
-&lt;/div&gt;
-
-&lt;p&gt;The Intel OneAPI HPC toolkit provides a wide variety of High-Performance numerical libraries and tools, most importantly, the Intel Fortran and C/C++ compilers.&lt;br /&gt;
-However, its installation, particularly, on Windows systems can be a bit tricky.&lt;/p&gt;
-
-&lt;p&gt;Here are the &lt;strong&gt;steps required to take to properly install the Intel OneAPI compilers on Linux/macOS/Windows&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;If you are a Linux/macOS user move on to step 2.&lt;br /&gt;
-If you are a &lt;strong&gt;Windows&lt;/strong&gt; user,
-    &lt;ol&gt;
-      &lt;li&gt;&lt;strong&gt;Download&lt;/strong&gt; a recent version of &lt;strong&gt;Microsoft Visual Studio (MSVS) Community edition&lt;/strong&gt; installer 
-which is &lt;a href=&quot;https://visualstudio.microsoft.com/vs/community&quot; target=&quot;_blank&quot;&gt;available free of charge&lt;/a&gt;.&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;Run the Microsoft Visual Studio installer&lt;/strong&gt;.&lt;br /&gt;
-Once you see the following prompt window, make sure you &lt;strong&gt;select at least the C++ components to install on your system&lt;/strong&gt; (if you do not want all of the components).&lt;br /&gt;
-This component selection is essential for successful installation of Intel OneAPI components and compilers,
-        &lt;figure&gt;
-    &lt;img src=&quot;community-page-installer.png&quot; /&gt;
-&lt;/figure&gt;
-        &lt;p&gt;Once the installation is complete, you may need to reboot your system.&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Download Intel OneAPI Base Toolkit&lt;/strong&gt; from its &lt;a href=&quot;https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html&quot; target=&quot;_blank&quot;&gt;dedicated website&lt;/a&gt;. &lt;br /&gt;
-Follow the installation instructions provided by Intel to install the Base Toolkit.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Download Intel OneAPI HPC Toolkit&lt;/strong&gt; from its &lt;a href=&quot;https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit-download.html&quot; target=&quot;_blank&quot;&gt;dedicated website&lt;/a&gt;. &lt;br /&gt;
-Follow the installation instructions provided by Intel to install the HPC Toolkit.&lt;br /&gt;
-This component contains all Intel products relevant to scientific computing, parallel computing, and C/C++/Fortran compilers.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Your installation is complete&lt;/strong&gt; (you may need a reboot again).
-    &lt;ol&gt;
-      &lt;li&gt;If you are on &lt;strong&gt;Windows&lt;/strong&gt;,
-        &lt;ol&gt;
-          &lt;li&gt;You can now access intel compilers and tools from within the Microsoft Visual Studio application.&lt;/li&gt;
-          &lt;li&gt;You can also use the &lt;strong&gt;use Intel’s provided Windows command-line environment (CMD)&lt;/strong&gt; that comes with all the Intel OneAPI.&lt;br /&gt;
-This environment contains all paths to Intel applications predefined &lt;strong&gt;to help build your applications on the command line, much like a Linux environment&lt;/strong&gt;.&lt;br /&gt;
-In the long run, you will likely find the command line much more convenient than the GUI interface that the Microsoft Visual Studio application offers.
-            &lt;figure&gt;
-    &lt;img src=&quot;intelCMD.png&quot; /&gt;
-&lt;/figure&gt;
-          &lt;/li&gt;
-        &lt;/ol&gt;
-      &lt;/li&gt;
-      &lt;li&gt;On all platforms, whether Windows or Unix, you can now open the relevant terminal (Intel CMD on Windows and Bash/dash/zsh/… terminal on Linux/macOS) 
-to test whether the Intel compilers have been correctly installed by typing &lt;code&gt;ifx&lt;/code&gt; to invoke the Intel Fortran compiler or &lt;code&gt;icl&lt;/code&gt; to invoke the Intel C++ compiler, 
-The following snapshot demonstrates the usage on Windows CMD terminal,
-        &lt;figure&gt;
-    &lt;img src=&quot;compilerTest.png&quot; /&gt;
-&lt;/figure&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
 
 
   
@@ -1145,45 +1121,6 @@ Also recall that the autocorrelation of a time-series is defined as the correlat
 
   
   &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/stat-autocorr-removal/stat-autocorr-removal&quot;&gt;Computing and removing the autocorrelation of a dataset&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 11, 2021.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Ugly visualization]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/vis-ugly-graph/vis-ugly-graph"/>
-  <id>https://www.cdslab.org/recipes/programming/vis-ugly-graph/vis-ugly-graph</id>
-  <published>2021-10-08T00:00:00-05:00</published>
-  <updated>2021-10-01T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#histogram" term="histogram" /><category scheme="https://www.cdslab.org/recipes/tags/#ugly" term="ugly" />
-  <content type="html">
-  
-    
-&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-    
-        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
-            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
-                Problem
-            &lt;/h2&gt;
-        &lt;/a&gt;
-    
-&lt;/div&gt;
-
-&lt;p&gt;What is ugly in the following graph?&lt;/p&gt;
-
-&lt;figure&gt;
-    &lt;img src=&quot;ugly.png&quot; /&gt;
-&lt;/figure&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/vis-ugly-graph/vis-ugly-graph&quot;&gt;Ugly visualization&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 08, 2021.&lt;/p&gt;</content>
 </entry>
 
 </feed>
