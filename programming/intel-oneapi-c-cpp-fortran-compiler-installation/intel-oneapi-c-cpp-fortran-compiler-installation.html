@@ -203,6 +203,67 @@
 
 <p>How can I install the Intel OneAPI C/C++/Fortran Compiler on Windows, Linux, or macOS?</p>
 
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution" style="display:inline-block;">
+        <h2 id="solution" style="color:blue;">
+            Solution
+        </h2>
+    </a>
+
+</div>
+
+<p>The Intel OneAPI HPC toolkit provides a wide variety of High-Performance numerical libraries and tools, most importantly, the Intel Fortran and C/C++ compilers.<br />
+However, its installation, particularly, on Windows systems can be a bit tricky.</p>
+
+<p>Here are the <strong>steps required to take to properly install the Intel OneAPI compilers on Linux/macOS/Windows</strong>:</p>
+
+<ol>
+  <li>If you are a Linux/macOS user move on to step 2.<br />
+If you are a <strong>Windows</strong> user,
+    <ol>
+      <li><strong>Download</strong> a recent version of <strong>Microsoft Visual Studio (MSVS) Community edition</strong> installer 
+which is <a href="https://visualstudio.microsoft.com/vs/community" target="_blank">available free of charge</a>.</li>
+      <li><strong>Run the Microsoft Visual Studio installer</strong>.<br />
+Once you see the following prompt window, make sure you <strong>select at least the C++ components to install on your system</strong> (if you do not want all of the components).<br />
+This component selection is essential for successful installation of Intel OneAPI components and compilers,
+        <figure>
+    <img src="community-page-installer.png" />
+</figure>
+        <p>Once the installation is complete, you may need to reboot your system.</p>
+      </li>
+    </ol>
+  </li>
+  <li><strong>Download Intel OneAPI Base Toolkit</strong> from its <a href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html" target="_blank">dedicated website</a>. <br />
+Follow the installation instructions provided by Intel to install the Base Toolkit.</li>
+  <li><strong>Download Intel OneAPI HPC Toolkit</strong> from its <a href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit-download.html" target="_blank">dedicated website</a>. <br />
+Follow the installation instructions provided by Intel to install the HPC Toolkit.<br />
+This component contains all Intel products relevant to scientific computing, parallel computing, and C/C++/Fortran compilers.</li>
+  <li><strong>Your installation is complete</strong> (you may need a reboot again).
+    <ol>
+      <li>If you are on <strong>Windows</strong>,
+        <ol>
+          <li>You can now access intel compilers and tools from within the Microsoft Visual Studio application.</li>
+          <li>You can also use the <strong>use Intel’s provided Windows command-line environment (CMD)</strong> that comes with all the Intel OneAPI.<br />
+This environment contains all paths to Intel applications predefined <strong>to help build your applications on the command line, much like a Linux environment</strong>.<br />
+In the long run, you will likely find the command line much more convenient than the GUI interface that the Microsoft Visual Studio application offers.
+            <figure>
+    <img src="intelCMD.png" />
+</figure>
+          </li>
+        </ol>
+      </li>
+      <li>On all platforms, whether Windows or Unix, you can now open the relevant terminal (Intel CMD on Windows and Bash/dash/zsh/… terminal on Linux/macOS) 
+to test whether the Intel compilers have been correctly installed by typing <code>ifx</code> to invoke the Intel Fortran compiler or <code>icl</code> to invoke the Intel C++ compiler, 
+The following snapshot demonstrates the usage on Windows CMD terminal,
+        <figure>
+    <img src="compilerTest.png" />
+</figure>
+      </li>
+    </ol>
+  </li>
+</ol>
+
 
             </div>
         </article>
@@ -266,8 +327,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2023 / 03 / 01</section></br> -->
-         <section>Last updated Wednesday, 01 Mar 2023 at 02:57 AM CST</section></br>
+         <!-- <section>Last updated 2023 / 04 / 12</section></br> -->
+         <section>Last updated Wednesday, 12 Apr 2023 at 06:51 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

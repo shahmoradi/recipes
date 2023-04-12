@@ -310,6 +310,104 @@
 <span class="n">acf</span> <span class="o">=</span> <span class="n">acf</span> <span class="o">/</span> <span class="n">acf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </code></pre></div></div>
 
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution" style="display:inline-block;">
+        <h2 id="solution" style="color:blue;">
+            Solution
+        </h2>
+    </a>
+
+</div>
+
+<p>The resulting behavior is language-dependent.</p>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-matlab" id="solution-matlab">
+            <img src="/recipes/images/MATLAB.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
+                MATLAB
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>To be written…</p>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-python" id="solution-python">
+            <img src="/recipes/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">from</span> <span class="n">scipy.signal</span> <span class="kn">import</span> <span class="n">correlate</span>
+
+<span class="n">anomalies</span> <span class="o">=</span> <span class="n">anomalies</span> <span class="o">-</span> <span class="n">np</span><span class="p">.</span><span class="nf">mean</span><span class="p">(</span><span class="n">anomalies</span><span class="p">)</span>
+
+<span class="n">nlag</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">anomalies</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">acf</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">zeros</span><span class="p">(</span><span class="n">nlag</span><span class="p">)</span>
+
+<span class="n">acf</span> <span class="o">=</span> <span class="nf">correlate </span><span class="p">(</span> <span class="n">anomalies</span>
+                <span class="p">,</span> <span class="n">anomalies</span>
+                <span class="p">,</span> <span class="n">mode</span> <span class="o">=</span> <span class="s">"full"</span>
+                <span class="p">)[</span><span class="n">nlag</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="n">nlag</span><span class="p">]</span>
+<span class="n">acf</span> <span class="o">=</span> <span class="n">acf</span> <span class="o">/</span> <span class="n">acf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1">################################
+</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="n">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
+<span class="n">sns</span><span class="p">.</span><span class="nf">set</span><span class="p">()</span>
+<span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="mf">1.25</span><span class="o">*</span><span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="mf">6.4</span><span class="p">,</span><span class="mf">4.8</span><span class="p">]),</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">subplot</span><span class="p">()</span>
+
+<span class="n">ax</span><span class="p">.</span><span class="nf">plot </span><span class="p">(</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">acf</span><span class="p">))</span>
+        <span class="p">,</span> <span class="n">acf</span>
+        <span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">xticks</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="n">fontsize</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">yticks</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="n">fontsize</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">.</span><span class="nf">set_xlabel</span><span class="p">(</span><span class="s">"Lag"</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="n">fontsize</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">.</span><span class="nf">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s">"Global Temperature Anomaly Autocorrelation"</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="n">fontsize</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="s">"globalTempAnomaliesACF.png"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+
+<span class="c1">##########################
+</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="mf">1.25</span><span class="o">*</span><span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="mf">6.4</span><span class="p">,</span><span class="mf">4.8</span><span class="p">]),</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">subplot</span><span class="p">()</span>
+
+<span class="n">ax</span><span class="p">.</span><span class="nf">plot </span><span class="p">(</span> <span class="n">years</span>
+        <span class="p">,</span> <span class="n">anomalies</span>
+        <span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">xticks</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="n">fontsize</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">yticks</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="n">fontsize</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">.</span><span class="nf">set_xlabel</span><span class="p">(</span><span class="s">"Year"</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="n">fontsize</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">.</span><span class="nf">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s">"Average Global Temperature Anomaly [ Celsius ]"</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="n">fontsize</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="s">"globalTempAnomalies.png"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
 
             </div>
         </article>
@@ -373,8 +471,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2023 / 03 / 01</section></br> -->
-         <section>Last updated Wednesday, 01 Mar 2023 at 02:57 AM CST</section></br>
+         <!-- <section>Last updated 2023 / 04 / 12</section></br> -->
+         <section>Last updated Wednesday, 12 Apr 2023 at 06:51 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

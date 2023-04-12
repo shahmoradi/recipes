@@ -229,6 +229,170 @@
 
 <p>Explain why the autocorrelations of <code>sin()</code> and <code>cos()</code> are similar to each other while they look different from the cross-correlation in the above. What can you do to make the cross-correlation of <code>sin-cos</code> look like the autocorrelations of <code>sin-sin</code> and <code>cos-cos</code>?</p>
 
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+
+    <a href="#solution" style="display:inline-block;">
+        <h2 id="solution" style="color:blue;">
+            Solution
+        </h2>
+    </a>
+
+</div>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-matlab" id="solution-matlab">
+            <img src="/recipes/images/MATLAB.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
+                MATLAB
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>To be added…</p>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-python" id="solution-python">
+            <img src="/recipes/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<ol>
+  <li>Here is a Python script that generates the plots,
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">yc</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">cos</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="n">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
+<span class="n">sns</span><span class="p">.</span><span class="nf">set</span><span class="p">()</span>
+
+<span class="c1"># plot sin() and cos()
+</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mf">6.4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">150</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">subplot</span><span class="p">()</span>
+
+<span class="n">ax</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span> <span class="n">x</span>
+       <span class="p">,</span> <span class="n">yc</span>
+       <span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">"b"</span>
+       <span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">2</span>
+       <span class="p">)</span>
+<span class="n">ax</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span> <span class="n">x</span>
+       <span class="p">,</span> <span class="n">ys</span>
+       <span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">"r"</span>
+       <span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">2</span>
+       <span class="p">)</span>
+
+<span class="n">ax</span><span class="p">.</span><span class="nf">set_xlabel</span><span class="p">(</span><span class="s">"x"</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">.</span><span class="nf">set_ylabel</span><span class="p">(</span><span class="s">"f ( x )"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">legend</span><span class="p">([</span><span class="sa">r</span><span class="s">"cos(x+$\pi$/2)"</span><span class="p">,</span><span class="s">"sin(x)"</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="s">"sin-cos.png"</span><span class="p">)</span>
+
+<span class="c1"># Compute the cross-correlaiton between sin() and cos()
+</span>
+<span class="kn">from</span> <span class="n">scipy.signal</span> <span class="kn">import</span> <span class="n">correlate</span>
+<span class="n">ccf</span> <span class="o">=</span> <span class="nf">correlate  </span><span class="p">(</span> <span class="n">yc</span>
+                 <span class="p">,</span> <span class="n">ys</span>
+                 <span class="p">,</span> <span class="n">mode</span> <span class="o">=</span> <span class="s">"full"</span>
+                 <span class="p">)</span>
+<span class="n">ccf</span> <span class="o">=</span> <span class="n">ccf</span> <span class="o">/</span> <span class="n">np</span><span class="p">.</span><span class="nf">max</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">abs</span><span class="p">(</span><span class="n">ccf</span><span class="p">))</span>
+
+<span class="c1"># plot the cross-correlation between sin() and cos()
+</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="n">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
+<span class="n">sns</span><span class="p">.</span><span class="nf">set</span><span class="p">()</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mf">6.4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">150</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">subplot</span><span class="p">()</span>
+
+<span class="n">ax</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="o">-</span><span class="nf">len</span><span class="p">(</span><span class="n">ccf</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">ccf</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+       <span class="p">,</span> <span class="n">ccf</span>
+       <span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">"black"</span>
+       <span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">2</span>
+       <span class="p">)</span>
+
+<span class="n">ax</span><span class="p">.</span><span class="nf">set_xlabel</span><span class="p">(</span><span class="s">"Lag"</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">.</span><span class="nf">set_ylabel</span><span class="p">(</span><span class="s">"Cross-Correlation ( CCF )"</span><span class="p">)</span>
+
+<span class="c1"># C
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="s">"sin-cos-ccf.png"</span><span class="p">)</span>
+
+<span class="c1"># Compute the autocorrelation of sin()
+</span>
+<span class="kn">from</span> <span class="n">scipy.signal</span> <span class="kn">import</span> <span class="n">correlate</span>
+<span class="n">acfsin</span> <span class="o">=</span> <span class="nf">correlate</span><span class="p">(</span> <span class="n">ys</span>
+                  <span class="p">,</span> <span class="n">ys</span>
+                  <span class="p">,</span> <span class="n">mode</span> <span class="o">=</span> <span class="s">"full"</span>
+                  <span class="p">)</span>
+<span class="n">acfsin</span> <span class="o">=</span> <span class="n">acfsin</span> <span class="o">/</span> <span class="n">np</span><span class="p">.</span><span class="nf">max</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">abs</span><span class="p">(</span><span class="n">acfsin</span><span class="p">))</span>
+
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="n">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
+<span class="n">sns</span><span class="p">.</span><span class="nf">set</span><span class="p">()</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mf">6.4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">150</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">subplot</span><span class="p">()</span>
+
+<span class="n">ax</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="o">-</span><span class="nf">len</span><span class="p">(</span><span class="n">acfsin</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">acfsin</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+       <span class="p">,</span> <span class="n">acfsin</span>
+       <span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">"r"</span>
+       <span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">2</span>
+       <span class="p">)</span>
+
+<span class="n">ax</span><span class="p">.</span><span class="nf">set_xlabel</span><span class="p">(</span><span class="s">"Lag"</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">.</span><span class="nf">set_ylabel</span><span class="p">(</span><span class="s">"Auto-Correlation ( CCF ) : sin ( x )"</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="s">"sin-sin-acf.png"</span><span class="p">)</span>
+
+<span class="c1"># Compute the autocorrelation of cos()
+</span>
+<span class="kn">from</span> <span class="n">scipy.signal</span> <span class="kn">import</span> <span class="n">correlate</span>
+<span class="n">acfcos</span> <span class="o">=</span> <span class="nf">correlate</span><span class="p">(</span> <span class="n">yc</span>
+                  <span class="p">,</span> <span class="n">yc</span>
+                  <span class="p">,</span> <span class="n">mode</span> <span class="o">=</span> <span class="s">"full"</span>
+                  <span class="p">)</span>
+<span class="n">acfcos</span> <span class="o">=</span> <span class="n">acfcos</span> <span class="o">/</span> <span class="n">np</span><span class="p">.</span><span class="nf">max</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">abs</span><span class="p">(</span><span class="n">acfcos</span><span class="p">))</span>
+
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="n">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
+<span class="n">sns</span><span class="p">.</span><span class="nf">set</span><span class="p">()</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mf">6.4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">150</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">subplot</span><span class="p">()</span>
+
+<span class="n">ax</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="o">-</span><span class="nf">len</span><span class="p">(</span><span class="n">acfcos</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">acfcos</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+       <span class="p">,</span> <span class="n">acfcos</span>
+       <span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">"b"</span>
+       <span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">2</span>
+       <span class="p">)</span>
+
+<span class="n">ax</span><span class="p">.</span><span class="nf">set_xlabel</span><span class="p">(</span><span class="s">"Lag"</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">.</span><span class="nf">set_ylabel</span><span class="p">(</span><span class="s">"Auto-Correlation ( CCF ) : cos ( x )"</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="s">"cos-cos-acf.png"</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
 
             </div>
         </article>
@@ -292,8 +456,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2023 / 03 / 01</section></br> -->
-         <section>Last updated Wednesday, 01 Mar 2023 at 02:57 AM CST</section></br>
+         <!-- <section>Last updated 2023 / 04 / 12</section></br> -->
+         <section>Last updated Wednesday, 12 Apr 2023 at 06:51 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

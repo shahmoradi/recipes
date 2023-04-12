@@ -3,18 +3,18 @@
 <head>
     
     <meta charset="utf-8">
-<title>LOGIC FUNCTIONS WITH 2 INPUT &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>PROJECTILE MOTION IMPLEMENTATION THROUGH OOP MULTIPLE INHERITANCE &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="plausibility, deduction, reasoning, logic, boolean, implication">
+<meta name="keywords" content="Python, OOP, object, class, instantiation, inheritance, differentiation, projectile">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Logic functions with 2 input">
+<meta property="og:title" content="Projectile motion implementation through OOP multiple inheritance">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/logic-functions-2d/logic-functions-2d">
+<meta property="og:url" content="/recipes/programming/oop-projectile/oop-projectile">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/logic-functions-2d/logic-functions-2d">
+<link rel="canonical" href="/recipes/programming/oop-projectile/oop-projectile">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,44 +130,54 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/logic-functions-2d/logic-functions-2d">Logic functions with 2 input</a></h2>
+                            <h2><a href="/recipes/programming/oop-projectile/oop-projectile">Projectile motion implementation through OOP multiple inheritance</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
                                 
                                     &#8212; Last updated: 
-                                    <strong><time datetime="2020-10-21T00:00:00-05:00">21 October 2020</time></strong>
+                                    <strong><time datetime="2020-06-30T00:00:00-05:00">30 June 2020</time></strong>
                                 
                                 <ul class="tag-box inline">
                                     <span style="margin-right:1rem;">Tags:</span>
                                     
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#boolean" data-toggle="tooltip" title="Posts tagged with boolean" rel="tag">boolean</a>
+                                                <a href="/recipes/tags/index.html#OOP" data-toggle="tooltip" title="Posts tagged with OOP" rel="tag">OOP</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#deduction" data-toggle="tooltip" title="Posts tagged with deduction" rel="tag">deduction</a>
+                                                <a href="/recipes/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#implication" data-toggle="tooltip" title="Posts tagged with implication" rel="tag">implication</a>
+                                                <a href="/recipes/tags/index.html#class" data-toggle="tooltip" title="Posts tagged with class" rel="tag">class</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#logic" data-toggle="tooltip" title="Posts tagged with logic" rel="tag">logic</a>
+                                                <a href="/recipes/tags/index.html#differentiation" data-toggle="tooltip" title="Posts tagged with differentiation" rel="tag">differentiation</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#plausibility" data-toggle="tooltip" title="Posts tagged with plausibility" rel="tag">plausibility</a>
+                                                <a href="/recipes/tags/index.html#inheritance" data-toggle="tooltip" title="Posts tagged with inheritance" rel="tag">inheritance</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#reasoning" data-toggle="tooltip" title="Posts tagged with reasoning" rel="tag">reasoning</a>
+                                                <a href="/recipes/tags/index.html#instantiation" data-toggle="tooltip" title="Posts tagged with instantiation" rel="tag">instantiation</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#object" data-toggle="tooltip" title="Posts tagged with object" rel="tag">object</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#projectile" data-toggle="tooltip" title="Posts tagged with projectile" rel="tag">projectile</a>
                                             </li>
                                             
                                         
@@ -186,20 +196,83 @@
 
             <div style="text-align:left;">
                 
-<p>Consider the following special functions that are TRUE only at specific points within the logical sample space:</p>
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+    
+        <a href="#problem" style="display:inline-block;">
+            <h2 id="problem" style="color:red;">
+                Problem
+            </h2>
+        </a>
+    
+</div>
+<p>Consider the problem of projectile motion in purely vertical direction that we solved in class.
+Here is the class we defined for the projectile,</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ProjY</span><span class="p">(</span><span class="n">Func</span><span class="p">):</span>  
+<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">velInitY</span><span class="p">):</span>  
+    <span class="n">self</span><span class="p">.</span><span class="n">velInitY</span> <span class="o">=</span> <span class="n">velInitY</span> <span class="c1"># initial velocity along the x direction.  
+</span>    <span class="n">self</span><span class="p">.</span><span class="n">g</span> <span class="o">=</span> <span class="n">g</span> <span class="c1"># gravityConstant, 9.81 on earth.  
+</span><span class="k">def</span> <span class="nf">getLocY</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>  
+    <span class="s">"""  
+    Return the location of the projectile at the specific given `time` and initial velocity.  
+    Input  
+        time    :   An input real (float) representing the time  
+                    past since the start of the projectile motion.  
+    """</span>  
+    <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">velInitY</span> <span class="o">*</span> <span class="n">time</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">self</span><span class="p">.</span><span class="n">gravityConstant</span> <span class="o">*</span> <span class="n">time</span><span class="o">**</span><span class="mi">2</span>  
+</code></pre></div></div>
+<ol>
+  <li>Now, define a similar class for projectile motion in the x direction.<br />
+(<strong>Note</strong>: Recall the projectile motion along the x direction does not involve acceleration.)</li>
+  <li>Create example objects from both classes and to the following deafferentation function 
+to compute the velocity in the <code>x</code> and <code>y</code> directions after one second.
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">getDiff</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">deltaX</span> <span class="o">=</span> <span class="mf">1.e-5</span><span class="p">):</span>
+<span class="s">"""
+Return the derivative of the function contained with the input `func` object.
+The `func` object must contain a method that returns the value of the function
+"""</span>
+    <span class="nf">return </span><span class="p">(</span><span class="n">func</span><span class="p">.</span><span class="nf">eval</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">deltaX</span><span class="p">)</span> <span class="o">-</span> <span class="n">func</span><span class="p">.</span><span class="nf">eval</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="n">deltaX</span> <span class="c1"># finite differencing
+</span></code></pre></div>    </div>
+    <p>(<strong>Hint</strong>: Feel free to add wrapper methods named <code>eval</code> to the classes 
+above to make their objects passable to the <code>getDiff()</code> function.)</p>
+  </li>
+  <li>Define a subclass that inherits the properties of the projectiles in x and y directions
+from the corresponding super (parent) classes (<code>ProjY</code> and <code>ProjX</code>).<br />
+To do so, you need to define the new subclass via
+<a href="https://www.cdslab.org/python/notes/object-oriented-programming/inheritance/inheritance.html#multiple-inheritance">multiple inheritance</a>.</li>
+  <li>In addition to the inherited methods, this new subclass must contain a <code>getLoc(time)</code> method
+which computes and returns the location <code>(x,y)</code> of the projectile by calling and 
+aggregating information from the corresponding methods of the 
+parent classes <code>getLogX(time)</code> and <code>getLogY(time)</code>.</li>
+  <li>Finally, add a new method <code>getSpeed(time)</code> which computes the speed of the projectile
+at any given moment of time. (<strong>Hint</strong>: Within this method you need to compute the velocities
+along each direction using the differentiation function above and then combine them to return 
+the projectile speed at the given time.)</li>
+</ol>
 
-<figure><img src="truthTable.png" width="350" /></figure>
-<p><br /></p>
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
 
-<p>Show that the above truth table is equivalent to the following logical operations.</p>
+    <a href="#solution" style="display:inline-block;">
+        <h2 id="solution" style="color:blue;">
+            Solution
+        </h2>
+    </a>
 
-<figure><img src="logicalOperators.png" width="170" /></figure>
-<p><br /></p>
-
-<p><strong>Answer:</strong></p>
-
-<figure><img src="truthTableResults.jpg" width="50%" /></figure>
-<p><br /></p>
+</div>
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-python" id="solution-python">
+            <img src="/recipes/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
 
 
             </div>
@@ -207,11 +280,11 @@
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Logic functions with 2 input&quot;%20https://www.cdslab.org/recipes/programming/logic-functions-2d/logic-functions-2d%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Projectile motion implementation through OOP multiple inheritance&quot;%20https://www.cdslab.org/recipes/programming/oop-projectile/oop-projectile%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/logic-functions-2d/logic-functions-2d"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/oop-projectile/oop-projectile"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>

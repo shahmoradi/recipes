@@ -287,6 +287,11 @@ callback([
   } ,
 
   {
+    "text": "Projectile motion implementation through OOP multiple inheritance",
+    "href": "/recipes/programming/oop-projectile/oop-projectile"
+  } ,
+
+  {
     "text": "Probability Theory: correspondence with commonsense",
     "href": "/recipes/programming/probability-correspondence-with-common-sense/probability-correspondence-with-common-sense"
   } ,
