@@ -235,6 +235,13 @@ to compute the velocity in the <code>x</code> and <code>y</code> directions afte
     """</span>  
     <span class="nf">return </span><span class="p">(</span><span class="n">func</span><span class="p">.</span><span class="nf">eval</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">deltaT</span><span class="p">)</span> <span class="o">-</span> <span class="n">func</span><span class="p">.</span><span class="nf">eval</span><span class="p">(</span><span class="n">t</span><span class="p">))</span> <span class="o">/</span> <span class="n">deltaT</span> <span class="c1"># finite differencing  
 </span></code></pre></div>    </div>
+    <p>Here is the final result for cross-validating your answer,</p>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">px</span> <span class="o">=</span> <span class="nc">ProjLocX</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  
+<span class="n">py</span> <span class="o">=</span> <span class="nc">ProjLocY</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  
+<span class="nf">print</span><span class="p">(</span><span class="nf">getDiff</span><span class="p">(</span><span class="n">px</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="mi">1</span><span class="p">),</span> <span class="nf">getDiff</span><span class="p">(</span><span class="n">py</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="mi">1</span><span class="p">))</span>  
+</code></pre></div>    </div>
+    <pre><code>9.999999999976694 0.19995099993508345  
+</code></pre>
   </li>
   <li>
     <p>Define a subclass that inherits the properties of the projectiles in x and y directions
@@ -251,9 +258,15 @@ at any given moment of time. (<strong>Hint</strong>: Within this method you need
 along each direction using the differentiation function above and then combine them to return 
 the projectile speed at the given time.)<br />
 Compute and return the speed of the projectile in X-Y plane for initial 
-velocities <code>(10, 10)</code> meters / sec at time <code>1 sec</code> since the start of the projectile.</li>
+velocities <code>(10, 10)</code> meters / sec at time <code>1 sec</code> since the start of the projectile.<br />
+Here is the final result for cross-validating your answers,
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">p</span> <span class="o">=</span> <span class="nc">ProjLoc</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  
+<span class="nf">print</span><span class="p">(</span><span class="nf">getDiff</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="mi">1</span><span class="p">))</span>  
+</code></pre></div>    </div>
+    <pre><code>8.999206006166105  
+</code></pre>
+  </li>
 </ol>
-
 
             </div>
         </article>
@@ -318,7 +331,7 @@ velocities <code>(10, 10)</code> meters / sec at time <code>1 sec</code> since t
         <footer class="notepad-site-footer">
     <div class="copyright">
          <!-- <section>Last updated 2023 / 04 / 16</section></br> -->
-         <section>Last updated Sunday, 16 Apr 2023 at 12:48 AM CST</section></br>
+         <section>Last updated Sunday, 16 Apr 2023 at 12:10 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
