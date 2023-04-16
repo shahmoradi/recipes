@@ -222,50 +222,10 @@ Here is the class we defined for the projectile,</p>
     <span class="k">def</span> <span class="nf">eval</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span> <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="nf">getLocY</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>  
 </code></pre></div></div>
 <ol>
-  <li>Now, define a similar class for projectile motion in the x direction.<br />
-(<strong>Note</strong>: Recall the projectile motion along the x direction does not involve acceleration.)</li>
-</ol>
-
-<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
-
-    <a href="#solution" style="display:inline-block;">
-        <h2 id="solution" style="color:blue;">
-            Solution
-        </h2>
-    </a>
-
-</div>
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#solution-python" id="solution-python">
-            <img src="/recipes/images/Python.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
-                Python
-            </a>
-        </figcaption>
-    </figure>
-</div>
-<p>Here is an implementation,</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ProjLocX</span><span class="p">():</span>  
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">velInitX</span><span class="p">):</span>  
-        <span class="n">self</span><span class="p">.</span><span class="n">velInitX</span> <span class="o">=</span> <span class="n">velInitX</span> <span class="c1"># initial velocity along the x direction.  
-</span>    <span class="k">def</span> <span class="nf">getLocX</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>  
-        <span class="s">"""  
-        Return the location of the projectile at the specific given `time` and initial velocity.  
-        Input  
-            time    :   An input real (float) representing the time  
-                        past since the start of the projectile motion.  
-        """</span>  
-        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">velInitX</span> <span class="o">*</span> <span class="n">time</span>  
-    <span class="k">def</span> <span class="nf">eval</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span> <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="nf">getLocX</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>  
-</code></pre></div></div>
-
-<ol>
+  <li>
+    <p>Now, define a similar class for projectile motion in the x direction.<br />
+(<strong>Note</strong>: Recall the projectile motion along the x direction does not involve acceleration.)</p>
+  </li>
   <li>Create example objects from both classes and pass them to the following deafferentation function 
 to compute the velocity in the <code>x</code> and <code>y</code> directions after one second (with initial velocity of <code>10</code> meters / sec in both <code>X</code> and <code>Y</code> directions.
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">getDiff</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">deltaT</span> <span class="o">=</span> <span class="mf">1.e-5</span><span class="p">):</span>  
@@ -276,80 +236,12 @@ to compute the velocity in the <code>x</code> and <code>y</code> directions afte
     <span class="nf">return </span><span class="p">(</span><span class="n">func</span><span class="p">.</span><span class="nf">eval</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">deltaT</span><span class="p">)</span> <span class="o">-</span> <span class="n">func</span><span class="p">.</span><span class="nf">eval</span><span class="p">(</span><span class="n">t</span><span class="p">))</span> <span class="o">/</span> <span class="n">deltaT</span> <span class="c1"># finite differencing  
 </span></code></pre></div>    </div>
   </li>
-</ol>
-
-<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
-
-    <a href="#solution" style="display:inline-block;">
-        <h2 id="solution" style="color:blue;">
-            Solution
-        </h2>
-    </a>
-
-</div>
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#solution-python" id="solution-python">
-            <img src="/recipes/images/Python.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
-                Python
-            </a>
-        </figcaption>
-    </figure>
-</div>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">px</span> <span class="o">=</span> <span class="nc">ProjLocX</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  
-<span class="n">py</span> <span class="o">=</span> <span class="nc">ProjLocY</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  
-<span class="nf">print</span><span class="p">(</span><span class="nf">getDiff</span><span class="p">(</span><span class="n">px</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="mi">1</span><span class="p">),</span> <span class="nf">getDiff</span><span class="p">(</span><span class="n">py</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="mi">1</span><span class="p">))</span>  
-</code></pre></div></div>
-<pre><code>9.999999999976694 0.19995099993508345
-</code></pre>
-
-<ol>
-  <li>Define a subclass that inherits the properties of the projectiles in x and y directions
+  <li>
+    <p>Define a subclass that inherits the properties of the projectiles in x and y directions
 from the corresponding super (parent) classes (<code>ProjLocX</code> and <code>ProjLocY</code>).<br />
 To do so, you need to define the new subclass via
-<a href="https://www.cdslab.org/python/notes/object-oriented-programming/inheritance/inheritance.html#multiple-inheritance">multiple inheritance</a>.</li>
-</ol>
-
-<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
-
-    <a href="#solution" style="display:inline-block;">
-        <h2 id="solution" style="color:blue;">
-            Solution
-        </h2>
-    </a>
-
-</div>
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#solution-python" id="solution-python">
-            <img src="/recipes/images/Python.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
-                Python
-            </a>
-        </figcaption>
-    </figure>
-</div>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="k">class</span> <span class="nc">ProjLoc</span><span class="p">(</span><span class="n">ProjLocX</span><span class="p">,</span> <span class="n">ProjLocY</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">velInitX</span><span class="p">,</span> <span class="n">velInitY</span><span class="p">,</span> <span class="n">gravityConstent</span> <span class="o">=</span> <span class="mf">9.8</span><span class="p">):</span>
-        <span class="n">ProjLocX</span><span class="p">.</span><span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">velInitX</span><span class="p">)</span>
-        <span class="n">ProjLocY</span><span class="p">.</span><span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">velInitY</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">eval</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="nf">getLocX</span><span class="p">(</span><span class="n">time</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">self</span><span class="p">.</span><span class="nf">getLocY</span><span class="p">(</span><span class="n">time</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div></div>
-
-<ol>
+<a href="https://www.cdslab.org/python/notes/object-oriented-programming/inheritance/inheritance.html#multiple-inheritance">multiple inheritance</a>.</p>
+  </li>
   <li>In addition to the inherited methods, this new subclass must contain a <code>eval(time)</code> method
 which computes and returns the location <code>(x,y)</code> of the projectile by calling and 
 aggregating information from the corresponding methods of the 
@@ -361,36 +253,6 @@ the projectile speed at the given time.)<br />
 Compute and return the speed of the projectile in X-Y plane for initial 
 velocities <code>(10, 10)</code> meters / sec at time <code>1 sec</code> since the start of the projectile.</li>
 </ol>
-
-<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
-
-    <a href="#solution" style="display:inline-block;">
-        <h2 id="solution" style="color:blue;">
-            Solution
-        </h2>
-    </a>
-
-</div>
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#solution-python" id="solution-python">
-            <img src="/recipes/images/Python.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
-                Python
-            </a>
-        </figcaption>
-    </figure>
-</div>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">p</span> <span class="o">=</span> <span class="nc">ProjLoc</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="nf">getDiff</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="mi">1</span><span class="p">))</span>
-</code></pre></div></div>
-<pre><code>8.999206006166105
-</code></pre>
 
 
             </div>
