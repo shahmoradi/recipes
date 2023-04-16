@@ -253,7 +253,7 @@ To do so, you need to define the new subclass via
 which computes and returns the location <code>(x,y)</code> of the projectile by calling and 
 aggregating information from the corresponding methods of the 
 parent classes <code>getLocX(time)</code> and <code>getLocY(time)</code>.</li>
-  <li>Finally, add a new method <code>getSpeed(time)</code> which computes the speed of the projectile
+  <li>Finally, add a new method <code>getSpeed(time)</code> which computes the velocity of the projectile
 at any given moment of time. (<strong>Hint</strong>: Within this method you need to compute the velocities
 along each direction using the differentiation function above and then combine them to return 
 the projectile speed at the given time.)<br />
@@ -261,9 +261,9 @@ Compute and return the speed of the projectile in X-Y plane for initial
 velocities <code>(10, 10)</code> meters / sec at time <code>1 sec</code> since the start of the projectile.<br />
 Here is the final result for cross-validating your answers,
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">p</span> <span class="o">=</span> <span class="nc">ProjLoc</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  
-<span class="nf">print</span><span class="p">(</span><span class="nf">getDiff</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="mi">1</span><span class="p">))</span>  
+<span class="nf">print</span><span class="p">(</span><span class="s">"Speed at time = {} is {}"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="nf">norm</span><span class="p">(</span><span class="nf">getDiff</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="mi">1</span><span class="p">))))</span>  
 </code></pre></div>    </div>
-    <pre><code>8.999206006166105  
+    <pre><code>Speed at time = 1 is 10.00199882033131
 </code></pre>
   </li>
 </ol>
@@ -331,7 +331,7 @@ Here is the final result for cross-validating your answers,
         <footer class="notepad-site-footer">
     <div class="copyright">
          <!-- <section>Last updated 2023 / 04 / 16</section></br> -->
-         <section>Last updated Sunday, 16 Apr 2023 at 12:10 PM CST</section></br>
+         <section>Last updated Sunday, 16 Apr 2023 at 01:54 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
