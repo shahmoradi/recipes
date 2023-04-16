@@ -639,14 +639,14 @@ var store = [{
   "date": "November 15, 2021",
   "category": null,
   "tags": ["matchstick","equation","puzzle"],
-  "excerpt": "Problem Move just one matchstick in the following equation to make it hold. Solution Change 8 to 6 and 4..."
+  "excerpt": "\n\n    \n        \n            \n                Problem\n            \n        \n    \n\n\nMove just one matchstick in the following equation to make it hold.\n\n    \n\n\n"
 },{
   "title": "Puzzle: How many living creatures are in the pond",
   "link": "/programming/puzzle-how-many-animals-in-pond/puzzle-how-many-animals-in-pond",
   "date": "November 15, 2021",
   "category": null,
   "tags": ["matchstick","equation","puzzle"],
-  "excerpt": "Problem How many living creatures can you identify in this figure? (Hint: There are two). Solution Two: Frog, Horse head..."
+  "excerpt": "\n\n    \n        \n            \n                Problem\n            \n        \n    \n\n\nHow many living creatures can you identify in this figure? (Hint: There are two).\n\n    \n\n\n"
 },{
   "title": "Regression: Predicting the global land temperature of Earth in 2050 from the past data: Choosing the best model",
   "link": "/programming/regression-predicting-future-global-land-temperature-excel/regression-predicting-future-global-land-temperature-excel",
@@ -702,14 +702,14 @@ var store = [{
   "date": "October 8, 2021",
   "category": null,
   "tags": ["visualization","plot","histogram","ugly"],
-  "excerpt": "\n\n    \n        \n            \n                Problem\n            \n        \n    \n\n\nWhat is ugly in the following graph?\n\n\n    \n\n\n\n\n    \n        \n            Solution\n        \n    \n\n\n\n"
+  "excerpt": "\n\n    \n        \n            \n                Problem\n            \n        \n    \n\n\nWhat is ugly in the following graph?\n\n\n    \n\n\n"
 },{
   "title": "The population growths of the US states",
   "link": "/programming/vis-population-growth-tx-la/vis-population-growth-tx-la",
   "date": "October 8, 2021",
   "category": null,
   "tags": ["visualization","plot","colorscale"],
-  "excerpt": "\n\n    \n        \n            \n                Problem\n            \n        \n    \n\n\nWhich color scale has been used in the following visualization?\n\n\n    \n\n\n\n\n    \n        \n            Solution\n        \n    \n\n\n\n"
+  "excerpt": "\n\n    \n        \n            \n                Problem\n            \n        \n    \n\n\nWhich color scale has been used in the following visualization?\n\n\n    \n\n\n"
 },{
   "title": "The cities with the most and least moderate temperature",
   "link": "/programming/vis-most-moderate-temp-city/vis-most-moderate-temp-city",
@@ -723,7 +723,7 @@ var store = [{
   "date": "October 8, 2021",
   "category": null,
   "tags": ["visualization","plot","histogram","kernel","density","wrong"],
-  "excerpt": "\n\n    \n        \n            \n                Problem\n            \n        \n    \n\n\nWhat is wrong in the following visualization?\n\n\n    \n\n\n\n\n    \n        \n            Solution\n        \n    \n\n\n\n"
+  "excerpt": "\n\n    \n        \n            \n                Problem\n            \n        \n    \n\n\nWhat is wrong in the following visualization?\n\n\n    \n\n\n"
 },{
   "title": "Excel Bar plot",
   "link": "/programming/vis-excel-bar-plot/vis-excel-bar-plot",
@@ -737,7 +737,7 @@ var store = [{
   "date": "October 8, 2021",
   "category": null,
   "tags": ["visualization","plot","colorscale"],
-  "excerpt": "\n\n    \n        \n            \n                Problem\n            \n        \n    \n\n\nWhich classes of color scales the following color-mappings belong to?\n\na)\n\n    \n\n\n\nb)\n\n    \n\n\n\nc)\n\n    \n\n\n\nd)\n\n    \n\n\n\n\n\n    \n        \n            Solution\n        \n    \n\n\n\n"
+  "excerpt": "\n\n    \n        \n            \n                Problem\n            \n        \n    \n\n\nWhich classes of color scales the following color-mappings belong to?\n\na)\n\n    \n\n\n\nb)\n\n    \n\n\n\nc)\n\n    \n\n\n\nd)\n\n    \n\n\n\n"
 },{
   "title": "Regression: Model selection for a bivariate data using Excel",
   "link": "/programming/regression-model-selection-excel/regression-model-selection-excel",
@@ -912,7 +912,7 @@ var store = [{
   "date": "March 8, 2021",
   "category": null,
   "tags": ["visualization","plot","geography"],
-  "excerpt": "Problem The following plot shows the worldwide population by countries and states. What kind of visualization is this plot? Solution..."
+  "excerpt": "\n\n    \n        \n            \n                Problem\n            \n        \n    \n\n\nThe following plot shows the worldwide population by countries and states. \nWhat kind of visualization is this plot?\n\n\n    \n\n\n"
 },{
   "title": "Visualization: The world population (refined)",
   "link": "/programming/vis-world-population-refined/vis-world-population-refined",
@@ -947,28 +947,28 @@ var store = [{
   "date": "October 21, 2020",
   "category": null,
   "tags": ["plausibility","schools","bayesian","frequentist"],
-  "excerpt": "Name four major schools of Probability Theory. Answer: Classic Probability Theory. Bayesian Probability Theory. Frequentist Probability Theory. Propensity Probability Theory...."
+  "excerpt": "\nName four major schools of Probability Theory.\n\n"
 },{
   "title": "The fundamental desiderata of Probability Theory",
   "link": "/programming/probability-desiderata/probability-desiderata",
   "date": "October 21, 2020",
   "category": null,
   "tags": ["plausibility","deduction","reasoning","logic","boolean","implication"],
-  "excerpt": "Name the three fundamental desiderata of Probability Theory. Answer: Degrees of plausibility are represented by real numbers. Qualitative correspondence with..."
+  "excerpt": "\nName the three fundamental desiderata of Probability Theory.\n\n"
 },{
   "title": "Probability Theory: correspondence with commonsense",
   "link": "/programming/probability-correspondence-with-common-sense/probability-correspondence-with-common-sense",
   "date": "October 21, 2020",
   "category": null,
   "tags": ["plausibility","deduction","reasoning","logic","boolean","implication","commonsense"],
-  "excerpt": "\nShow via an example Venn diagram that if,\n\n\n\nholds, then,\n\n\n\nalso holds.\n\nAnswer:\n\n"
+  "excerpt": "\nShow via an example Venn diagram that if,\n\n\n\nholds, then,\n\n\n\nalso holds.\n\n"
 },{
   "title": "The proof of Bayes' Rule via Venn diagram",
   "link": "/programming/probability-bayes-rule-proof-venn-disgram/probability-bayes-rule-proof-venn-disgram",
   "date": "October 21, 2020",
   "category": null,
   "tags": ["plausibility","deduction","reasoning","logic","boolean","implication"],
-  "excerpt": "\nProve the Bayes’s rule via Venn diagrams,\n\n\\[\\pi(B|A) = \\frac{ \\pi(A|B) ~ \\pi(B) } { \\pi(A) } ~.\\]\n\nAnswer:\n\n\n\n\n"
+  "excerpt": "\nProve the Bayes’s rule via Venn diagrams,\n\n\\[\\pi(B|A) = \\frac{ \\pi(A|B) ~ \\pi(B) } { \\pi(A) } ~.\\]\n\n"
 },{
   "title": "The fundamental logical operators",
   "link": "/programming/logic-fundamental-operations/logic-fundamental-operations",
@@ -982,7 +982,7 @@ var store = [{
   "date": "October 21, 2020",
   "category": null,
   "tags": ["plausibility","deduction","reasoning","logic","boolean","implication"],
-  "excerpt": "Show that the following functions, can be written as, where the basis logic functions have the following truth table, Answer:..."
+  "excerpt": "\nShow that the following functions,\n\n\n\ncan be written as,\n\n\n\nwhere the basis logic functions have the following truth table,\n\n\n\n"
 },{
   "title": "Logic functions with 2 input",
   "link": "/programming/logic-functions-2d/logic-functions-2d",
@@ -1003,7 +1003,7 @@ var store = [{
   "date": "September 30, 2020",
   "category": "logic",
   "tags": ["plausibility","deduction","reasoning","logic","boolean"],
-  "excerpt": "Name the two types of scientific reasoning and give an example argument for each one. Answer: Deductive reasoning For example,..."
+  "excerpt": "\nName the two types of scientific reasoning and give an example argument for each one.\n\n"
 },{
   "title": "Logical product denial",
   "link": "/programming/logic-product-denial/logic/logic-product-denial",
@@ -1038,7 +1038,7 @@ var store = [{
   "date": "September 30, 2020",
   "category": "logic",
   "tags": ["plausibility","deduction","reasoning","logic","boolean","venn","diagram"],
-  "excerpt": "\nConsider the following Boolean algebraic expressions. Draw a Venn diagram corresponding to each one,\n\n\n\n"
+  "excerpt": "\nConsider the following Boolean algebraic expressions. Draw a Venn diagram corresponding to each one,\n\n"
 },{
   "title": "Regression: Predicting the bivariate distribution of the a dataset subjected to censorship (sample incompleteness)",
   "link": "/programming/regression-censored-mvn-data/regression-censored-mvn-data",
@@ -1059,7 +1059,7 @@ var store = [{
   "date": "July 23, 2020",
   "category": null,
   "tags": ["MATLAB","regression","visualization","plot","line","figure","random number","distribution function","probability density function","PDF","probability","objective function","least squares method"],
-  "excerpt": "Problem Consider the following color palettes. Which one is more appropriate for effective visualization communications with humans? Solution The purple-green..."
+  "excerpt": "\n\n    \n        \n            \n                Problem\n            \n        \n    \n\n\nConsider the following color palettes. Which one is more appropriate for effective visualization communications with humans?\n\n\n    \n\n\n\n    \n\n\n"
 },{
   "title": "Regression: Predicting the global land temperature of the Earth in 2050 from the past data via the maximum likelihood approach",
   "link": "/programming/regression-predicting-future-global-land-temperature-maxlikelihood/regression-predicting-future-global-land-temperature-maxlikelihood",
@@ -1115,7 +1115,7 @@ var store = [{
   "date": "January 1, 2020",
   "category": null,
   "tags": ["Intel Parallel Studio","Microsoft Visual Studio","Windows","installation","Fortran","C","C++"],
-  "excerpt": "Problem How can I install Intel Parallel Studio on Windows? Solution The Intel Parallel Studio provides a wide variety of..."
+  "excerpt": "\n\n    \n        \n            \n                Problem\n            \n        \n    \n\n\nHow can I install Intel Parallel Studio on Windows?\n\n"
 },{
   "title": "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables",
   "link": "/programming/regression-simple-least-squares-method/regression-simple-least-squares-method",
