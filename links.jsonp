@@ -317,6 +317,11 @@ callback([
   } ,
 
   {
+    "text": "Parabola as a subclass of line",
+    "href": "/recipes/programming/oop-parabola/oop-parabola"
+  } ,
+
+  {
     "text": "Operator precedence",
     "href": "/recipes/programming/operator-precedence/operator-precedence"
   } ,
@@ -348,12 +353,12 @@ callback([
 
   {
     "text": "Monte Carlo approximation of the number Pi",
-    "href": "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
+    "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
   } ,
 
   {
     "text": "Monte Carlo approximation of the number Pi",
-    "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
+    "href": "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
   } ,
 
   {

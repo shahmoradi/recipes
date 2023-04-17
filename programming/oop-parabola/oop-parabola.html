@@ -3,18 +3,18 @@
 <head>
     
     <meta charset="utf-8">
-<title>EXCEPTION HANDLING IN THE CASE OF A SIMPLE PROJECTILE MOTION &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>PARABOLA AS A SUBCLASS OF LINE &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="Python, projectile motion, exception handling, exception, ValueError, try-except, raise">
+<meta name="keywords" content="Python, OOP, object, class, instantiation, inheritance, differentiation, parabola">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Exception handling in the case of a simple projectile motion">
+<meta property="og:title" content="Parabola as a subclass of line">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/exception-handling-projectile-motion/exception-handling-projectile-motion">
+<meta property="og:url" content="/recipes/programming/oop-parabola/oop-parabola">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/exception-handling-projectile-motion/exception-handling-projectile-motion">
+<link rel="canonical" href="/recipes/programming/oop-parabola/oop-parabola">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,16 +130,21 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/exception-handling-projectile-motion/exception-handling-projectile-motion">Exception handling in the case of a simple projectile motion</a></h2>
+                            <h2><a href="/recipes/programming/oop-parabola/oop-parabola">Parabola as a subclass of line</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
                                 
                                     &#8212; Last updated: 
-                                    <strong><time datetime="2019-07-04T00:00:00-05:00">04 July 2019</time></strong>
+                                    <strong><time datetime="2020-06-30T00:00:00-05:00">30 June 2020</time></strong>
                                 
                                 <ul class="tag-box inline">
                                     <span style="margin-right:1rem;">Tags:</span>
                                     
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#OOP" data-toggle="tooltip" title="Posts tagged with OOP" rel="tag">OOP</a>
+                                            </li>
+                                            
                                         
                                             <li>
                                                 <a href="/recipes/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
@@ -147,32 +152,32 @@
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#ValueError" data-toggle="tooltip" title="Posts tagged with ValueError" rel="tag">ValueError</a>
+                                                <a href="/recipes/tags/index.html#class" data-toggle="tooltip" title="Posts tagged with class" rel="tag">class</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#exception" data-toggle="tooltip" title="Posts tagged with exception" rel="tag">exception</a>
+                                                <a href="/recipes/tags/index.html#differentiation" data-toggle="tooltip" title="Posts tagged with differentiation" rel="tag">differentiation</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#exception handling" data-toggle="tooltip" title="Posts tagged with exception handling" rel="tag">exception handling</a>
+                                                <a href="/recipes/tags/index.html#inheritance" data-toggle="tooltip" title="Posts tagged with inheritance" rel="tag">inheritance</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#projectile motion" data-toggle="tooltip" title="Posts tagged with projectile motion" rel="tag">projectile motion</a>
+                                                <a href="/recipes/tags/index.html#instantiation" data-toggle="tooltip" title="Posts tagged with instantiation" rel="tag">instantiation</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#raise" data-toggle="tooltip" title="Posts tagged with raise" rel="tag">raise</a>
+                                                <a href="/recipes/tags/index.html#object" data-toggle="tooltip" title="Posts tagged with object" rel="tag">object</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#try-except" data-toggle="tooltip" title="Posts tagged with try-except" rel="tag">try-except</a>
+                                                <a href="/recipes/tags/index.html#parabola" data-toggle="tooltip" title="Posts tagged with parabola" rel="tag">parabola</a>
                                             </li>
                                             
                                         
@@ -200,67 +205,30 @@
         </a>
     
 </div>
-
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#problem-python" id="problem-python">
-            <img src="/recipes/images/Python.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
-                Python
-            </a>
-        </figcaption>
-    </figure>
-</div>
-
-<p>Consider the simplest program for evaluating the formula $y(t) = v_0t-\frac{1}{2}gt^2$,</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">v0</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span><span class="p">;</span> <span class="n">t</span> <span class="o">=</span> <span class="mf">0.6</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">v0</span><span class="o">*</span><span class="n">t</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">g</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p><strong>(A)</strong> Write a program that takes in the above necessary input data ($t$,$v_0$) as command-line arguments.<br />
-<br />
-<strong>(B)</strong> Extend your program from part (A) with exception handling such that missing command-line arguments are detected. For example, if the user has entered enough input arguments, then the code should raise <code>IndexError</code> exception. In the <code>except IndexError</code> block, the code should use the <code>input</code> function to ask the user for the missing input data.<br />
-<br />
-<strong>(C)</strong> Add another exception handling block that tests if the $t$ value read from the command line, lies between $0$ and $2v_0/g$. If not, then it raises a <code>ValueError</code> exception in the if the block on the legal values of $t$, and notifies the user about the legal interval for $t$ in the exception message.</p>
-
-<p>Here are some example runs of the code,</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./projectile.py
-Both v0 and t must be supplied on the <span class="nb">command </span>line
-v0 <span class="o">=</span> ?
-5
-t <span class="o">=</span> ?
-4
-Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
-  File <span class="s2">"./projectile.py"</span>, line 17, <span class="k">in</span> &lt;module&gt;
-    <span class="s1">'must be between 0 and 2v0/g = {}'</span>.format<span class="o">(</span>t,2.0<span class="k">*</span>v0/g<span class="o">))</span>
-ValueError: t <span class="o">=</span> 4.0 is a non-physical value.
-must be between 0 and 2v0/g <span class="o">=</span> 1.019367991845056
-</code></pre></div></div>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./projectile.py
-Both v0 and t must be supplied on the <span class="nb">command </span>line
-v0 <span class="o">=</span> ?
-5
-t <span class="o">=</span> ?
-0.5
-y <span class="o">=</span> 1.27375
-</code></pre></div></div>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./projectile.py 5 0.4
-y <span class="o">=</span> 1.2151999999999998
-</code></pre></div></div>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./projectile.py 5 0.4 3
-y <span class="o">=</span> 1.2151999999999998
-</code></pre></div></div>
+<p>Recall the equation for a line is given by $f(x) = c_0 + c_1 x$ where $c_0$ and $c_1$ are the constants of the equation (intercept and slope, respectively).</p>
+<ol>
+  <li>Write a class whose constructor takes two arguments <code>(c0, c1)</code> and whose objects are either,
+    <ol>
+      <li>in Python, <strong>callable</strong> that return the function value $f(x)$ at the specified $x$ value when called or,</li>
+      <li>have a method named <code>eval(x)</code> that computes $f(x)$ at the specified $x$ value.</li>
+    </ol>
+  </li>
+  <li>Recall the equation for a parabola is given by $f(x) = c_0 + c_1 x + c_2 x^2$.<br />
+Therefore, parabola can be considered as a subclass of the superclass <code>Line()</code> you have implemented above.<br />
+Write a subclass <code>Parabola</code> that inherits its <code>(c0, c1)</code> coefficients from the superclass <code>Line</code>, 
+but its constructor also adds a third coefficient <code>c3</code> which makes it a parabola.<br />
+This class must be either,
+    <ol>
+      <li>in Python, <strong>callable</strong> that returns the function value $f(x)$ at the specified $x$ value when called or,</li>
+      <li>have a method named <code>eval(x)</code> that overrides the parent method <code>eval()</code> inherited from the superclass <code>Line()</code> and computes $f(x)$ at the specified $x$ value.</li>
+    </ol>
+  </li>
+  <li>Now compute the result for the following coefficients and <code>x</code> value (code is in Python syntax).
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">parabola</span> <span class="o">=</span> <span class="nc">Parabola</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">parabola</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mf">2.5</span><span class="p">))</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
 
 
             </div>
@@ -268,11 +236,11 @@ y <span class="o">=</span> 1.2151999999999998
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Exception handling in the case of a simple projectile motion&quot;%20https://www.cdslab.org/recipes/programming/exception-handling-projectile-motion/exception-handling-projectile-motion%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Parabola as a subclass of line&quot;%20https://www.cdslab.org/recipes/programming/oop-parabola/oop-parabola%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/exception-handling-projectile-motion/exception-handling-projectile-motion"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/oop-parabola/oop-parabola"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>

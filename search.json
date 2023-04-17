@@ -617,6 +617,14 @@
 		} ,
 	
 		{
+		  "title"      : "Parabola as a subclass of line",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/oop-parabola/oop-parabola",
+		  "date"       : "2020-06-30 00:00:00 -0500",
+		  "shortdate"  : "June 30, 2020"
+		} ,
+	
+		{
 		  "title"      : "Implementing an integration problem via an integrand object",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/oop-integration-simpson/oop-integration-simpson",
