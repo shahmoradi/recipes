@@ -3,18 +3,18 @@
 <head>
     
     <meta charset="utf-8">
-<title>IMPLEMENTING AN INTEGRATION PROBLEM VIA AN INTEGRAND OBJECT &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>PERFORMANCE BENCHMARKING OF NAIVE MATRIX MULTIPLICATION IN PYTHON VS. OPTIMIZED LIBRARIES &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="Python, OOP, object, class, instantiation, integration, midpoint, Simpson">
+<meta name="keywords" content="Python, MKL, matmul, matrix, multiplication, performance, hpc">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Implementing an integration problem via an integrand object">
+<meta property="og:title" content="Performance benchmarking of naive matrix multiplication in Python vs. optimized libraries">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/oop-integration-simpson/oop-integration-simpson">
+<meta property="og:url" content="/recipes/programming/hpc-matmul-python/hpc-matmul-python">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/oop-integration-simpson/oop-integration-simpson">
+<link rel="canonical" href="/recipes/programming/hpc-matmul-python/hpc-matmul-python">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,19 +130,19 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/oop-integration-simpson/oop-integration-simpson">Implementing an integration problem via an integrand object</a></h2>
+                            <h2><a href="/recipes/programming/hpc-matmul-python/hpc-matmul-python">Performance benchmarking of naive matrix multiplication in Python vs. optimized libraries</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
                                 
                                     &#8212; Last updated: 
-                                    <strong><time datetime="2020-06-30T00:00:00-05:00">30 June 2020</time></strong>
+                                    <strong><time datetime="2022-04-17T00:00:00-05:00">17 April 2022</time></strong>
                                 
                                 <ul class="tag-box inline">
                                     <span style="margin-right:1rem;">Tags:</span>
                                     
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#OOP" data-toggle="tooltip" title="Posts tagged with OOP" rel="tag">OOP</a>
+                                                <a href="/recipes/tags/index.html#MKL" data-toggle="tooltip" title="Posts tagged with MKL" rel="tag">MKL</a>
                                             </li>
                                             
                                         
@@ -152,32 +152,27 @@
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#Simpson" data-toggle="tooltip" title="Posts tagged with Simpson" rel="tag">Simpson</a>
+                                                <a href="/recipes/tags/index.html#hpc" data-toggle="tooltip" title="Posts tagged with hpc" rel="tag">hpc</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#class" data-toggle="tooltip" title="Posts tagged with class" rel="tag">class</a>
+                                                <a href="/recipes/tags/index.html#matmul" data-toggle="tooltip" title="Posts tagged with matmul" rel="tag">matmul</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#instantiation" data-toggle="tooltip" title="Posts tagged with instantiation" rel="tag">instantiation</a>
+                                                <a href="/recipes/tags/index.html#matrix" data-toggle="tooltip" title="Posts tagged with matrix" rel="tag">matrix</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#integration" data-toggle="tooltip" title="Posts tagged with integration" rel="tag">integration</a>
+                                                <a href="/recipes/tags/index.html#multiplication" data-toggle="tooltip" title="Posts tagged with multiplication" rel="tag">multiplication</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#midpoint" data-toggle="tooltip" title="Posts tagged with midpoint" rel="tag">midpoint</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#object" data-toggle="tooltip" title="Posts tagged with object" rel="tag">object</a>
+                                                <a href="/recipes/tags/index.html#performance" data-toggle="tooltip" title="Posts tagged with performance" rel="tag">performance</a>
                                             </li>
                                             
                                         
@@ -205,49 +200,95 @@
         </a>
     
 </div>
-
-<p><strong>Integration by midpoint rule</strong>: The idea of the Midpoint rule for integration is to divide the area under a curve $f(x)$ into $n$ equal-sized rectangles. The height of the rectangle is determined by the value of $f$ at the midpoint of the rectangle. The figure below illustrates the idea,</p>
-
-<figure>
-    <img src="midpnt.gif" width="500" />  
-</figure>
-
-<p>To implement the midpoint rule, one has to compute the area of each rectangle, sum them up, just as in the formula for the Midpoint rule,</p>
-
-\[\int^b_a f(x) dx \approx h\sum^{n-1}_{i=0} f(a + i\times h + 0.5h) ~,\]
-
-<p>where $h=(b-a)/n$ is the width of each rectangle. Implement this formula as a Python function with this interface <code>integrate(evalIntegrand, lowerLimit, upperLimit, numBin = 1000)</code> where <code>numBin</code> represents $n$ in the above equation. Test the integrator with the following example input mathematical function,</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="nf">integrate</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">sin</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-</code></pre></div></div>
-<pre><code>-1.743934249004316e-17  
+<ol>
+  <li>Write a Python function with the following interface that computes the matrix multiplication of two input matrices.
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">matmul</span><span class="p">(</span><span class="n">matA</span><span class="p">,</span> <span class="n">matB</span><span class="p">):</span>
+    <span class="p">...</span>
+</code></pre></div>    </div>
+    <p>such that it returns the following result for the given input matrices.</p>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">matA</span> <span class="o">=</span>  <span class="p">[</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+        <span class="p">,</span> <span class="p">[</span><span class="mi">4</span> <span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+        <span class="p">,</span> <span class="p">[</span><span class="mi">5</span> <span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+        <span class="p">]</span>
+<span class="n">matB</span> <span class="o">=</span>  <span class="p">[</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+        <span class="p">,</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+        <span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">matmul</span><span class="p">(</span><span class="n">matA</span><span class="p">,</span> <span class="n">matB</span><span class="p">))</span>
+</code></pre></div>    </div>
+    <pre><code>[[ 48.  76.  57. 100.]  
+ [ 36.  62.  64.  50.]  
+ [ 24.  41.  38.  47.]]  
 </code></pre>
+  </li>
+  <li>Now, confirm the results of your function with the <code>numpy</code> library’s <code>matmul</code> function.</li>
+  <li>Now, benchmark the performance of the numpy <code>matmul</code> with the one you implemented for square matrices of rank: <code>2, 4, 16, 32, 64, 128, 256, 512, 1024</code>.<br />
+To make the benchmark accurate and fair, we will have to first fill these matrices with random values.<br />
+You can do so via numpy as the following code snippet,
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">matA</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">rand</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">matA</span><span class="p">),</span> <span class="nf">len</span><span class="p">(</span><span class="n">matA</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">matB</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">rand</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">matB</span><span class="p">),</span> <span class="nf">len</span><span class="p">(</span><span class="n">matB</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</code></pre></div>    </div>
+    <p>Note that the matrix initializations must occur out of the timing sections of your benchmark.<br />
+To measure time, you can either use the Jupyter notebook’s <code>%%timeit</code> magic if you are with Jupyter environment
+or use the <code>perf_counter</code> function from the <a href="https://docs.python.org/3/library/time.html">Python module <code>time</code></a>.<br />
+There are also many other ways to time your code.  Feel free use any method that best suits your needs.<br />
+If you use the <code>perf_counter</code> function, remember to perform many matrix multiplications for small matrix ranks 
+and gradually decrease the number of multiplications in your benchmark for larger matrix ranks.<br />
+Then you will have to properly normalize the timing for each matrix rank by the number repetitions 
+of the matrix multiplication to ensure the numbers are comparable.<br />
+Repetitions are essential to capture the tiny time it takes to multiply small rank matrices.</p>
+  </li>
+  <li>Store the timing results for matrix multiplication for the two methods in an array.<br />
+Then use <code>matplotlib</code> python library to plot the two timing vectors vs. matrix ranks with which you did the benchmark.<br />
+Seek help from our <a href="https://www.cdslab.org/python/notes/visualization/2d/2d.html">lecture notes on plotting</a> if you do not know how to make line/scatter plots in Python.</li>
+</ol>
 
-<p>Note that this number could be slightly different on your system depending on your Python version and computer architecture, however, the number should be of the same order as the number in the above. Now, suppose you want to implement a projectile motion described via the physical equation $v = v_0 -g\times t$ where $v_0$ represents the initial velocity of the projectile, $g$ is the gravity constant, and $t$ is time starting from zero. Integrating this function from $t=0$ to $t=1$ would give us the total distance traveled by the projectile during this time period. Now, create a class implementation of this projectile motion such that the following code works and compute the total distance traveled by this projectile in the first second of the projectile motion.</p>
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">projectile</span> <span class="o">=</span> <span class="nc">Projectile</span><span class="p">(</span><span class="n">initVelocity</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span> <span class="s">"v(time=1) ="</span><span class="p">,</span> <span class="n">projectile</span><span class="p">.</span><span class="nf">getVelocity</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span> <span class="s">"Total distance traveled after 1 second: {} meters"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="nf">integrate</span><span class="p">(</span><span class="n">projectile</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span>
+    <a href="#solution" style="display:inline-block;">
+        <h2 id="solution" style="color:blue;">
+            Solution
+        </h2>
+    </a>
+
+</div>
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#solution-python" id="solution-python">
+            <img src="/recipes/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">matmul</span><span class="p">(</span><span class="n">matA</span><span class="p">,</span> <span class="n">matB</span><span class="p">):</span>
+    <span class="s">"""
+    Multiply the input matrices adn return the result.
+    """</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">zeros</span><span class="p">((</span><span class="nf">len</span><span class="p">(</span><span class="n">matA</span><span class="p">),</span> <span class="nf">len</span><span class="p">(</span><span class="n">matB</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">matA</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">matB</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">B</span><span class="p">)):</span>
+                <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">matA</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">matB</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">result</span>
 </code></pre></div></div>
-<pre><code>v(time=1) = 0.1899999999999995  
-Total distance traveled after 1 second: 5.095000000000001 meters  
-</code></pre>
-
-<p><strong>Hint</strong>: One way to achieve the goal with the exact syntax as in the above is to add <code>__call__</code> method to 
-your class such that the proper method of the object is implicitly called when the whole object is passed to the <code>integrate</code> function.</p>
-
 
             </div>
         </article>
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Implementing an integration problem via an integrand object&quot;%20https://www.cdslab.org/recipes/programming/oop-integration-simpson/oop-integration-simpson%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Performance benchmarking of naive matrix multiplication in Python vs. optimized libraries&quot;%20https://www.cdslab.org/recipes/programming/hpc-matmul-python/hpc-matmul-python%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/oop-integration-simpson/oop-integration-simpson"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/hpc-matmul-python/hpc-matmul-python"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>

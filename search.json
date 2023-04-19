@@ -41,6 +41,14 @@
 		} ,
 	
 		{
+		  "title"      : "Performance benchmarking of naive matrix multiplication in Python vs. optimized libraries",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/hpc-matmul-python/hpc-matmul-python",
+		  "date"       : "2022-04-17 00:00:00 -0500",
+		  "shortdate"  : "April 17, 2022"
+		} ,
+	
+		{
 		  "title"      : "A naive implementation of Kmedoids clustering",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/clustering-naive-kmedioid-implementation/clustering-naive-kmedioid-implementation",

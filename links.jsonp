@@ -302,6 +302,11 @@ callback([
   } ,
 
   {
+    "text": "Performance benchmarking of naive matrix multiplication in Python vs. optimized libraries",
+    "href": "/recipes/programming/hpc-matmul-python/hpc-matmul-python"
+  } ,
+
+  {
     "text": "Passing characters and strings from C to Fortran and from Fortran to C",
     "href": "/recipes/programming/fortran-c-interoperation-string/fortran-c-interoperation-string"
   } ,

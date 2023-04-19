@@ -96,6 +96,10 @@
     </url>
     
     <url>
+        <loc>https://www.cdslab.org/recipes/programming/hpc-matmul-python/hpc-matmul-python</loc>
+    </url>
+    
+    <url>
         <loc>https://www.cdslab.org/recipes/programming/clustering-naive-kmedioid-implementation/clustering-naive-kmedioid-implementation</loc>
     </url>
     
