@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 <title>PERFORMANCE BENCHMARKING OF NAIVE MATRIX MULTIPLICATION IN PYTHON VS. OPTIMIZED LIBRARIES &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="Python, MKL, matmul, matrix, multiplication, performance, hpc">
+<meta name="keywords" content="Python, MKL, matmul, matrix, multiplication, performance, optimization, hpc">
 
 
 
@@ -172,6 +172,11 @@
                                             
                                         
                                             <li>
+                                                <a href="/recipes/tags/index.html#optimization" data-toggle="tooltip" title="Posts tagged with optimization" rel="tag">optimization</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
                                                 <a href="/recipes/tags/index.html#performance" data-toggle="tooltip" title="Posts tagged with performance" rel="tag">performance</a>
                                             </li>
                                             
@@ -225,7 +230,8 @@
   <li>Now, benchmark the performance of the numpy <code>matmul</code> with the one you implemented for square matrices of rank: <code>2, 4, 16, 32, 64, 128, 256, 512, 1024</code>.<br />
 To make the benchmark accurate and fair, we will have to first fill these matrices with random values.<br />
 You can do so via numpy as the following code snippet,
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">matA</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">rand</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">matA</span><span class="p">),</span> <span class="nf">len</span><span class="p">(</span><span class="n">matA</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+    <span class="n">matA</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">rand</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">matA</span><span class="p">),</span> <span class="nf">len</span><span class="p">(</span><span class="n">matA</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
     <span class="n">matB</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">rand</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">matB</span><span class="p">),</span> <span class="nf">len</span><span class="p">(</span><span class="n">matB</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 </code></pre></div>    </div>
     <p>Note that the matrix initializations must occur out of the timing sections of your benchmark.<br />
@@ -242,42 +248,6 @@ Repetitions are essential to capture the tiny time it takes to multiply small ra
 Then use <code>matplotlib</code> python library to plot the two timing vectors vs. matrix ranks with which you did the benchmark.<br />
 Seek help from our <a href="https://www.cdslab.org/python/notes/visualization/2d/2d.html">lecture notes on plotting</a> if you do not know how to make line/scatter plots in Python.</li>
 </ol>
-
-<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
-
-    <a href="#solution" style="display:inline-block;">
-        <h2 id="solution" style="color:blue;">
-            Solution
-        </h2>
-    </a>
-
-</div>
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#solution-python" id="solution-python">
-            <img src="/recipes/images/Python.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
-                Python
-            </a>
-        </figcaption>
-    </figure>
-</div>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">matmul</span><span class="p">(</span><span class="n">matA</span><span class="p">,</span> <span class="n">matB</span><span class="p">):</span>
-    <span class="s">"""
-    Multiply the input matrices adn return the result.
-    """</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">zeros</span><span class="p">((</span><span class="nf">len</span><span class="p">(</span><span class="n">matA</span><span class="p">),</span> <span class="nf">len</span><span class="p">(</span><span class="n">matB</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">matA</span><span class="p">)):</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">matB</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
-            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">B</span><span class="p">)):</span>
-                <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">matA</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">matB</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">result</span>
-</code></pre></div></div>
 
             </div>
         </article>
@@ -341,8 +311,8 @@ Seek help from our <a href="https://www.cdslab.org/python/notes/visualization/2d
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2023 / 04 / 19</section></br> -->
-         <section>Last updated Wednesday, 19 Apr 2023 at 03:55 PM CST</section></br>
+         <!-- <section>Last updated 2023 / 04 / 20</section></br> -->
+         <section>Last updated Thursday, 20 Apr 2023 at 03:45 AM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

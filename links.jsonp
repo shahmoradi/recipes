@@ -168,12 +168,12 @@ callback([
 
   {
     "text": "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables via the least absolute deviations method",
-    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-absolute-deviations-method"
+    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-squares-method"
   } ,
 
   {
     "text": "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables via the least absolute deviations method",
-    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-squares-method"
+    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-absolute-deviations-method"
   } ,
 
   {
@@ -299,6 +299,31 @@ callback([
   {
     "text": "Policeman, jewelry, and burglar",
     "href": "/recipes/programming/logic-policeman-jewelry-burglar/logic/logic-policeman-jewelry-burglar"
+  } ,
+
+  {
+    "text": "Performance optimization: loop invariant code motion",
+    "href": "/recipes/programming/hpc-loop-invariant-code-motion/hpc-loop-invariant-code-motion"
+  } ,
+
+  {
+    "text": "Performance optimization: Forced reduction - sincos",
+    "href": "/recipes/programming/hpc-forced-reduction-sincos/hpc-forced-reduction-sincos"
+  } ,
+
+  {
+    "text": "Performance optimization: Forced reduction - hidden opportunities",
+    "href": "/recipes/programming/hpc-forced-reduction-exp/hpc-forced-reduction-exp"
+  } ,
+
+  {
+    "text": "Performance optimization: Breaking out of loop early",
+    "href": "/recipes/programming/hpc-breaking-out-of-loop-early/hpc-breaking-out-of-loop-early"
+  } ,
+
+  {
+    "text": "Performance benchmarking of naive matrix multiplication: naive vs. matmul vs. MKL",
+    "href": "/recipes/programming/hpc-matmul-mkl/hpc-matmul-mkl"
   } ,
 
   {

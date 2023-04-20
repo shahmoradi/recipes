@@ -49,6 +49,46 @@
 		} ,
 	
 		{
+		  "title"      : "Performance benchmarking of naive matrix multiplication: naive vs. matmul vs. MKL",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/hpc-matmul-mkl/hpc-matmul-mkl",
+		  "date"       : "2022-04-17 00:00:00 -0500",
+		  "shortdate"  : "April 17, 2022"
+		} ,
+	
+		{
+		  "title"      : "Performance optimization: loop invariant code motion",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/hpc-loop-invariant-code-motion/hpc-loop-invariant-code-motion",
+		  "date"       : "2022-04-17 00:00:00 -0500",
+		  "shortdate"  : "April 17, 2022"
+		} ,
+	
+		{
+		  "title"      : "Performance optimization: Forced reduction - sincos",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/hpc-forced-reduction-sincos/hpc-forced-reduction-sincos",
+		  "date"       : "2022-04-17 00:00:00 -0500",
+		  "shortdate"  : "April 17, 2022"
+		} ,
+	
+		{
+		  "title"      : "Performance optimization: Forced reduction - hidden opportunities",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/hpc-forced-reduction-exp/hpc-forced-reduction-exp",
+		  "date"       : "2022-04-17 00:00:00 -0500",
+		  "shortdate"  : "April 17, 2022"
+		} ,
+	
+		{
+		  "title"      : "Performance optimization: Breaking out of loop early",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/hpc-breaking-out-of-loop-early/hpc-breaking-out-of-loop-early",
+		  "date"       : "2022-04-17 00:00:00 -0500",
+		  "shortdate"  : "April 17, 2022"
+		} ,
+	
+		{
 		  "title"      : "A naive implementation of Kmedoids clustering",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/clustering-naive-kmedioid-implementation/clustering-naive-kmedioid-implementation",

@@ -73,6 +73,10 @@
         <loc>https://www.cdslab.org/recipes/page7/</loc>
     </url>
     
+    <url>
+        <loc>https://www.cdslab.org/recipes/page8/</loc>
+    </url>
+    
 
     
     <url>
@@ -97,6 +101,26 @@
     
     <url>
         <loc>https://www.cdslab.org/recipes/programming/hpc-matmul-python/hpc-matmul-python</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/hpc-matmul-mkl/hpc-matmul-mkl</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/hpc-loop-invariant-code-motion/hpc-loop-invariant-code-motion</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/hpc-forced-reduction-sincos/hpc-forced-reduction-sincos</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/hpc-forced-reduction-exp/hpc-forced-reduction-exp</loc>
+    </url>
+    
+    <url>
+        <loc>https://www.cdslab.org/recipes/programming/hpc-breaking-out-of-loop-early/hpc-breaking-out-of-loop-early</loc>
     </url>
     
     <url>

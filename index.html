@@ -339,7 +339,167 @@ is equivalent to logical implication $A \Rightarrow B$.
                 <div class="notepad-index-post-tags">
                     
                     
-                    <a href="/recipes/tags/index.html#MKL" title="Other posts tagged MKL">MKL</a>&nbsp;<a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#hpc" title="Other posts tagged hpc">hpc</a>&nbsp;<a href="/recipes/tags/index.html#matmul" title="Other posts tagged matmul">matmul</a>&nbsp;<a href="/recipes/tags/index.html#matrix" title="Other posts tagged matrix">matrix</a>&nbsp;<a href="/recipes/tags/index.html#multiplication" title="Other posts tagged multiplication">multiplication</a>&nbsp;<a href="/recipes/tags/index.html#performance" title="Other posts tagged performance">performance</a>
+                    <a href="/recipes/tags/index.html#MKL" title="Other posts tagged MKL">MKL</a>&nbsp;<a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#hpc" title="Other posts tagged hpc">hpc</a>&nbsp;<a href="/recipes/tags/index.html#matmul" title="Other posts tagged matmul">matmul</a>&nbsp;<a href="/recipes/tags/index.html#matrix" title="Other posts tagged matrix">matrix</a>&nbsp;<a href="/recipes/tags/index.html#multiplication" title="Other posts tagged multiplication">multiplication</a>&nbsp;<a href="/recipes/tags/index.html#optimization" title="Other posts tagged optimization">optimization</a>&nbsp;<a href="/recipes/tags/index.html#performance" title="Other posts tagged performance">performance</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2022-04-17T00:00:00-05:00">
+                        <span class="day">
+                            17
+                        </span>
+                        <span class="month-year">
+                            April 2022
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/hpc-matmul-mkl/hpc-matmul-mkl">
+                            Performance benchmarking of naive matrix multiplication: naive vs. matmul vs. MKL
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Unlike The C/C++ programming languages, The Fortran language has native functions for matrix operations. The most important of these is the matmul intrinsic function, which has inspired all other programming languages for the same functionality. However, we can also...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#MKL" title="Other posts tagged MKL">MKL</a>&nbsp;<a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#hpc" title="Other posts tagged hpc">hpc</a>&nbsp;<a href="/recipes/tags/index.html#matmul" title="Other posts tagged matmul">matmul</a>&nbsp;<a href="/recipes/tags/index.html#matrix" title="Other posts tagged matrix">matrix</a>&nbsp;<a href="/recipes/tags/index.html#multiplication" title="Other posts tagged multiplication">multiplication</a>&nbsp;<a href="/recipes/tags/index.html#optimization" title="Other posts tagged optimization">optimization</a>&nbsp;<a href="/recipes/tags/index.html#performance" title="Other posts tagged performance">performance</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2022-04-17T00:00:00-05:00">
+                        <span class="day">
+                            17
+                        </span>
+                        <span class="month-year">
+                            April 2022
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/hpc-loop-invariant-code-motion/hpc-loop-invariant-code-motion">
+                            Performance optimization: loop invariant code motion
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Consider the following Python code snippet, import numpy as np const = 256. x = [i for i in range(1, 100000)] z = np.zeros(len(x)) for i, element in enumerate(x): z[i] = np.sqrt(const) * x[i] What can you do to...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#hpc" title="Other posts tagged hpc">hpc</a>&nbsp;<a href="/recipes/tags/index.html#optimization" title="Other posts tagged optimization">optimization</a>&nbsp;<a href="/recipes/tags/index.html#performance" title="Other posts tagged performance">performance</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2022-04-17T00:00:00-05:00">
+                        <span class="day">
+                            17
+                        </span>
+                        <span class="month-year">
+                            April 2022
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/hpc-forced-reduction-sincos/hpc-forced-reduction-sincos">
+                            Performance optimization: Forced reduction - sincos
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Consider the following Python function, import numpy as np def sincos(x): """ Return `sin(x) * cos(x). """ return np.sin(x) * np.cos(x) What can you do to the above code to make it more performant? Prove your suggestion by benchmarking...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#hpc" title="Other posts tagged hpc">hpc</a>&nbsp;<a href="/recipes/tags/index.html#optimization" title="Other posts tagged optimization">optimization</a>&nbsp;<a href="/recipes/tags/index.html#performance" title="Other posts tagged performance">performance</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2022-04-17T00:00:00-05:00">
+                        <span class="day">
+                            17
+                        </span>
+                        <span class="month-year">
+                            April 2022
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/hpc-forced-reduction-exp/hpc-forced-reduction-exp">
+                            Performance optimization: Forced reduction - hidden opportunities
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Consider the following Python function, import numpy as np def count(xvec): """ Return the count of elements of the input `xvec` whose natural logarithm is less than `0`. """ counter = 0 for element in xvec: if np.log(element) &lt;...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#hpc" title="Other posts tagged hpc">hpc</a>&nbsp;<a href="/recipes/tags/index.html#optimization" title="Other posts tagged optimization">optimization</a>&nbsp;<a href="/recipes/tags/index.html#performance" title="Other posts tagged performance">performance</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2022-04-17T00:00:00-05:00">
+                        <span class="day">
+                            17
+                        </span>
+                        <span class="month-year">
+                            April 2022
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/hpc-breaking-out-of-loop-early/hpc-breaking-out-of-loop-early">
+                            Performance optimization: Breaking out of loop early
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Consider the following Python function, def any(boolVec): """ Return True if any of the elements of the input value are True, otherwise, return False. """ result = False for element in boolVec: result = result or element return result...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#hpc" title="Other posts tagged hpc">hpc</a>&nbsp;<a href="/recipes/tags/index.html#optimization" title="Other posts tagged optimization">optimization</a>&nbsp;<a href="/recipes/tags/index.html#performance" title="Other posts tagged performance">performance</a>
                 </div>
             </div>
         </article>
@@ -664,171 +824,11 @@ How many living creatures can you identify in this figure? (Hint: There are two)
             </div>
         </article>
 	
-        <article class="notepad-index-post post row">
-            <div class="small-12 medium-3 large-2 columns datetime">
-                <span class="notepad-post-meta">
-                    <time datetime="2021-11-05T00:00:00-05:00">
-                        <span class="day">
-                            05
-                        </span>
-                        <span class="month-year">
-                            November 2021
-                        </span>
-                    </time>
-                </span>
-            </div>
-            <div class="small-12 medium-9 large-10 columns">
-                <header class="notepad-post-header">
-                    <h6 class="notepad-post-title">
-                        <a href="/recipes/programming/regression-linear-gaussian/regression-linear-gaussian">
-                            Regression: Estimating the parameters of a linear model for a Normally-distributed sample
-                        </a>
-                    </h6>
-                </header>
-                <section class="notepad-post-excerpt">
-                    <p>Problem Supposed we have observed a dataset comprised of events with one attribute as in this file: z.csv. Plotting these points would yield a histogram like the following plot, Now our goal is to form a hypothesis about this dataset,...</p>
-                </section>
-                <div class="notepad-index-post-tags">
-                    
-                    
-                    <a href="/recipes/tags/index.html#Gaussian" title="Other posts tagged Gaussian">Gaussian</a>&nbsp;<a href="/recipes/tags/index.html#MATLAB" title="Other posts tagged MATLAB">MATLAB</a>&nbsp;<a href="/recipes/tags/index.html#MCMC" title="Other posts tagged MCMC">MCMC</a>&nbsp;<a href="/recipes/tags/index.html#Markov Chain" title="Other posts tagged Markov Chain">Markov Chain</a>&nbsp;<a href="/recipes/tags/index.html#Monte Carlo" title="Other posts tagged Monte Carlo">Monte Carlo</a>&nbsp;<a href="/recipes/tags/index.html#Normal distribution" title="Other posts tagged Normal distribution">Normal distribution</a>&nbsp;<a href="/recipes/tags/index.html#PDF" title="Other posts tagged PDF">PDF</a>&nbsp;<a href="/recipes/tags/index.html#ParaDRAM" title="Other posts tagged ParaDRAM">ParaDRAM</a>&nbsp;<a href="/recipes/tags/index.html#ParaMonte" title="Other posts tagged ParaMonte">ParaMonte</a>&nbsp;<a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#distribution" title="Other posts tagged distribution">distribution</a>&nbsp;<a href="/recipes/tags/index.html#distribution function" title="Other posts tagged distribution function">distribution function</a>&nbsp;<a href="/recipes/tags/index.html#figure" title="Other posts tagged figure">figure</a>&nbsp;<a href="/recipes/tags/index.html#line" title="Other posts tagged line">line</a>&nbsp;<a href="/recipes/tags/index.html#linear" title="Other posts tagged linear">linear</a>&nbsp;<a href="/recipes/tags/index.html#linear" title="Other posts tagged linear">linear</a>&nbsp;<a href="/recipes/tags/index.html#maximum likelihood method" title="Other posts tagged maximum likelihood method">maximum likelihood method</a>&nbsp;<a href="/recipes/tags/index.html#objective function" title="Other posts tagged objective function">objective function</a>&nbsp;<a href="/recipes/tags/index.html#plot" title="Other posts tagged plot">plot</a>&nbsp;<a href="/recipes/tags/index.html#probability" title="Other posts tagged probability">probability</a>&nbsp;<a href="/recipes/tags/index.html#probability density function" title="Other posts tagged probability density function">probability density function</a>&nbsp;<a href="/recipes/tags/index.html#random number" title="Other posts tagged random number">random number</a>&nbsp;<a href="/recipes/tags/index.html#regression" title="Other posts tagged regression">regression</a>&nbsp;<a href="/recipes/tags/index.html#uncertainty quantification" title="Other posts tagged uncertainty quantification">uncertainty quantification</a>&nbsp;<a href="/recipes/tags/index.html#visualization" title="Other posts tagged visualization">visualization</a>
-                </div>
-            </div>
-        </article>
-	
-        <article class="notepad-index-post post row">
-            <div class="small-12 medium-3 large-2 columns datetime">
-                <span class="notepad-post-meta">
-                    <time datetime="2021-10-28T00:00:00-05:00">
-                        <span class="day">
-                            28
-                        </span>
-                        <span class="month-year">
-                            October 2021
-                        </span>
-                    </time>
-                </span>
-            </div>
-            <div class="small-12 medium-9 large-10 columns">
-                <header class="notepad-post-header">
-                    <h6 class="notepad-post-title">
-                        <a href="/recipes/programming/regression-gaussian-data/regression-gaussian-data">
-                            Regression: Estimating the parameters of a Normally-distributed sample
-                        </a>
-                    </h6>
-                </header>
-                <section class="notepad-post-excerpt">
-                    <p>Problem Supposed we have observed a dataset comprised of $15027$ events with one attribute variable in this file: dataFull.csv. Plotting these points would yield a histogram like the following plot, Now our goal is to form a hypothesis about this...</p>
-                </section>
-                <div class="notepad-index-post-tags">
-                    
-                    
-                    <a href="/recipes/tags/index.html#Gaussian" title="Other posts tagged Gaussian">Gaussian</a>&nbsp;<a href="/recipes/tags/index.html#MATLAB" title="Other posts tagged MATLAB">MATLAB</a>&nbsp;<a href="/recipes/tags/index.html#MCMC" title="Other posts tagged MCMC">MCMC</a>&nbsp;<a href="/recipes/tags/index.html#Markov Chain" title="Other posts tagged Markov Chain">Markov Chain</a>&nbsp;<a href="/recipes/tags/index.html#Monte Carlo" title="Other posts tagged Monte Carlo">Monte Carlo</a>&nbsp;<a href="/recipes/tags/index.html#Normal distribution" title="Other posts tagged Normal distribution">Normal distribution</a>&nbsp;<a href="/recipes/tags/index.html#PDF" title="Other posts tagged PDF">PDF</a>&nbsp;<a href="/recipes/tags/index.html#ParaDRAM" title="Other posts tagged ParaDRAM">ParaDRAM</a>&nbsp;<a href="/recipes/tags/index.html#ParaMonte" title="Other posts tagged ParaMonte">ParaMonte</a>&nbsp;<a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#distribution" title="Other posts tagged distribution">distribution</a>&nbsp;<a href="/recipes/tags/index.html#distribution function" title="Other posts tagged distribution function">distribution function</a>&nbsp;<a href="/recipes/tags/index.html#figure" title="Other posts tagged figure">figure</a>&nbsp;<a href="/recipes/tags/index.html#line" title="Other posts tagged line">line</a>&nbsp;<a href="/recipes/tags/index.html#linear" title="Other posts tagged linear">linear</a>&nbsp;<a href="/recipes/tags/index.html#maximum likelihood method" title="Other posts tagged maximum likelihood method">maximum likelihood method</a>&nbsp;<a href="/recipes/tags/index.html#objective function" title="Other posts tagged objective function">objective function</a>&nbsp;<a href="/recipes/tags/index.html#plot" title="Other posts tagged plot">plot</a>&nbsp;<a href="/recipes/tags/index.html#probability" title="Other posts tagged probability">probability</a>&nbsp;<a href="/recipes/tags/index.html#probability density function" title="Other posts tagged probability density function">probability density function</a>&nbsp;<a href="/recipes/tags/index.html#random number" title="Other posts tagged random number">random number</a>&nbsp;<a href="/recipes/tags/index.html#regression" title="Other posts tagged regression">regression</a>&nbsp;<a href="/recipes/tags/index.html#uncertainty quantification" title="Other posts tagged uncertainty quantification">uncertainty quantification</a>&nbsp;<a href="/recipes/tags/index.html#visualization" title="Other posts tagged visualization">visualization</a>
-                </div>
-            </div>
-        </article>
-	
-        <article class="notepad-index-post post row">
-            <div class="small-12 medium-3 large-2 columns datetime">
-                <span class="notepad-post-meta">
-                    <time datetime="2021-10-20T00:00:00-05:00">
-                        <span class="day">
-                            20
-                        </span>
-                        <span class="month-year">
-                            October 2021
-                        </span>
-                    </time>
-                </span>
-            </div>
-            <div class="small-12 medium-9 large-10 columns">
-                <header class="notepad-post-header">
-                    <h6 class="notepad-post-title">
-                        <a href="/recipes/programming/stat-crosscorr-sin-cos/stat-crosscorr-sin-cos">
-                            Computing the cross-correlation of sin() and cos()
-                        </a>
-                    </h6>
-                </header>
-                <section class="notepad-post-excerpt">
-                    <p>Problem Generate two arrays corresponding to the values of $\sin(x)$ and $\cos(x+\pi/2)$ functions in the range $[0, 10\pi]$. Make a plot of the resulting arrays like the following illustration. Now use an FFT package in the language of your choice...</p>
-                </section>
-                <div class="notepad-index-post-tags">
-                    
-                    
-                    <a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#correlation" title="Other posts tagged correlation">correlation</a>&nbsp;<a href="/recipes/tags/index.html#cos" title="Other posts tagged cos">cos</a>&nbsp;<a href="/recipes/tags/index.html#covariance" title="Other posts tagged covariance">covariance</a>&nbsp;<a href="/recipes/tags/index.html#crosscorrelation" title="Other posts tagged crosscorrelation">crosscorrelation</a>&nbsp;<a href="/recipes/tags/index.html#periodic" title="Other posts tagged periodic">periodic</a>&nbsp;<a href="/recipes/tags/index.html#sample" title="Other posts tagged sample">sample</a>&nbsp;<a href="/recipes/tags/index.html#sin" title="Other posts tagged sin">sin</a>&nbsp;<a href="/recipes/tags/index.html#statistics" title="Other posts tagged statistics">statistics</a>
-                </div>
-            </div>
-        </article>
-	
-        <article class="notepad-index-post post row">
-            <div class="small-12 medium-3 large-2 columns datetime">
-                <span class="notepad-post-meta">
-                    <time datetime="2021-10-11T00:00:00-05:00">
-                        <span class="day">
-                            11
-                        </span>
-                        <span class="month-year">
-                            October 2021
-                        </span>
-                    </time>
-                </span>
-            </div>
-            <div class="small-12 medium-9 large-10 columns">
-                <header class="notepad-post-header">
-                    <h6 class="notepad-post-title">
-                        <a href="/recipes/programming/stat-crosscorr/stat-crosscorr">
-                            Computing the cross-correlation of two data attributes
-                        </a>
-                    </h6>
-                </header>
-                <section class="notepad-post-excerpt">
-                    <p>Problem Consider this dataset of carbon emissions history per country. Make a visualization of the global carbon emission data in the CSV file in the above by summing over the contributions of all countries per year to obtain an illustration...</p>
-                </section>
-                <div class="notepad-index-post-tags">
-                    
-                    
-                    <a href="/recipes/tags/index.html#CO2" title="Other posts tagged CO2">CO2</a>&nbsp;<a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#carbon" title="Other posts tagged carbon">carbon</a>&nbsp;<a href="/recipes/tags/index.html#correlation" title="Other posts tagged correlation">correlation</a>&nbsp;<a href="/recipes/tags/index.html#covariance" title="Other posts tagged covariance">covariance</a>&nbsp;<a href="/recipes/tags/index.html#crosscorrelation" title="Other posts tagged crosscorrelation">crosscorrelation</a>&nbsp;<a href="/recipes/tags/index.html#sample" title="Other posts tagged sample">sample</a>&nbsp;<a href="/recipes/tags/index.html#statistics" title="Other posts tagged statistics">statistics</a>&nbsp;<a href="/recipes/tags/index.html#warming" title="Other posts tagged warming">warming</a>
-                </div>
-            </div>
-        </article>
-	
-        <article class="notepad-index-post post row">
-            <div class="small-12 medium-3 large-2 columns datetime">
-                <span class="notepad-post-meta">
-                    <time datetime="2021-10-11T00:00:00-05:00">
-                        <span class="day">
-                            11
-                        </span>
-                        <span class="month-year">
-                            October 2021
-                        </span>
-                    </time>
-                </span>
-            </div>
-            <div class="small-12 medium-9 large-10 columns">
-                <header class="notepad-post-header">
-                    <h6 class="notepad-post-title">
-                        <a href="/recipes/programming/stat-autocorr/stat-autocorr">
-                            Computing the autocorrelation of a dataset
-                        </a>
-                    </h6>
-                </header>
-                <section class="notepad-post-excerpt">
-                    <p>Problem Recall the globalLandTempHist.txt dataset that consisted of the global land temperature of Earth over the past 300 years. Also recall that the autocorrelation of a time-series is defined as the correlation of a univariate dataset with itself, with some...</p>
-                </section>
-                <div class="notepad-index-post-tags">
-                    
-                    
-                    <a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#autocorrelation" title="Other posts tagged autocorrelation">autocorrelation</a>&nbsp;<a href="/recipes/tags/index.html#correlation" title="Other posts tagged correlation">correlation</a>&nbsp;<a href="/recipes/tags/index.html#covariance" title="Other posts tagged covariance">covariance</a>&nbsp;<a href="/recipes/tags/index.html#sample" title="Other posts tagged sample">sample</a>&nbsp;<a href="/recipes/tags/index.html#statistics" title="Other posts tagged statistics">statistics</a>&nbsp;<a href="/recipes/tags/index.html#warming" title="Other posts tagged warming">warming</a>
-                </div>
-            </div>
-        </article>
-	
     <nav class="pagination" role="navigation">
         
             <span class="newer-posts faded"><i class="fa fa-chevron-left"></i> Newer</span>
         
-        <span class="page-number">Page 1 of 7</span>
+        <span class="page-number">Page 1 of 8</span>
          
             <a class="older-posts" href="/recipes/page2/">Older <i class="fa fa-chevron-right"></i></a>
         
@@ -837,8 +837,8 @@ How many living creatures can you identify in this figure? (Hint: There are two)
         </main>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2023 / 04 / 19</section></br> -->
-         <section>Last updated Wednesday, 19 Apr 2023 at 03:55 PM CST</section></br>
+         <!-- <section>Last updated 2023 / 04 / 20</section></br> -->
+         <section>Last updated Thursday, 20 Apr 2023 at 03:45 AM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

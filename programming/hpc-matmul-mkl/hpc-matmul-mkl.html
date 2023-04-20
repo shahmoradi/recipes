@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="utf-8">
+<title>PERFORMANCE BENCHMARKING OF NAIVE MATRIX MULTIPLICATION: NAIVE VS. MATMUL VS. MKL &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<meta name="description" content="CDSLab Recipes">
+<meta name="keywords" content="Python, MKL, matmul, matrix, multiplication, performance, optimization, hpc">
+
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Performance benchmarking of naive matrix multiplication: naive vs. matmul vs. MKL">
+<meta property="og:description" content="CDSLab Recipes">
+<meta property="og:url" content="/recipes/programming/hpc-matmul-mkl/hpc-matmul-mkl">
+<meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
+<meta property="og:image" content="/recipes/images/">
+
+
+
+
+
+<link rel="canonical" href="/recipes/programming/hpc-matmul-mkl/hpc-matmul-mkl">
+<!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>
+<!--
+<link rel="stylesheet" href="/recipes/assets/css/vendor/font-awesome.min.css">
+-->
+<link rel="stylesheet" href="/recipes/assets/css/vendor/normalize.css">
+<link rel="stylesheet" href="/recipes/assets/css/vendor/nprogress.css">
+<link rel="stylesheet" href="/recipes/assets/css/vendor/foundation.min.css">
+<link rel="stylesheet" href="/recipes/assets/css/style.css">
+<link rel="stylesheet" href="/recipes/assets/css/post.css">
+
+<!--Mathjax LaTeX engine-->
+<script>
+    var MathJax = {"HTML-CSS": {scale: 100}};
+</script>
+<style TYPE="text/css">
+    code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        config: ["MMLorHTML.js"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+        jax: ["input/TeX"],
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<link rel="shortcut icon" href="/recipes/favicon.ico">
+
+<link href="/recipes/assets/css/prismOkaidia.css" rel="stylesheet" />
+<link href="/recipes/assets/css/alert.css" rel="stylesheet" />
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    
+</head>
+<body class="post-template" itemscope itemtype="https://schema.org/WebPage">
+
+
+
+    <main id="notepad-post-container-simple" class="notepad-post-container-simple" role="main">
+        <header class="notepad-post-header-simple">
+            <div class="notepad-post-menu-header-simple">
+
+                <a class="notepad-blog-logo" href=https://www.cdslab.org target="_blank"><img src="/recipes/images/logo.png" alt="cdslab.org" /></a>
+                <div class="notepad-blog-menu">      
+                    <div class="notepad-mobile-menu show-for-small">
+                        <a href="#"><i class="fa fa-bars"></i></a>
+                    </div>
+                    <ul class="notepad-menu">
+                        <li class="notepad-mobile-close-btn show-for-small text-right">
+                            <a href="#"><i class="fa fa-times"></i></a>
+                        </li>
+                        
+                            <li>
+                                
+                                    <a href="/recipes/">Home</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/recipes/highlights">Highlights</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/recipes/tags">Tags</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/recipes/about">About</a>
+                                
+                            </li>
+                                    
+                        <li><a href="/recipes/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+                    </ul>
+                </div>
+            </div>
+
+                <div class="notepad-post-title-simple row">
+                    <div class="small-12 columns">
+                        <div class="notepad-post-meta-simple">
+                            <h2><a href="/recipes/programming/hpc-matmul-mkl/hpc-matmul-mkl">Performance benchmarking of naive matrix multiplication: naive vs. matmul vs. MKL</a></h2>
+                            <p>
+                                by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
+                                
+                                    &#8212; Last updated: 
+                                    <strong><time datetime="2022-04-17T00:00:00-05:00">17 April 2022</time></strong>
+                                
+                                <ul class="tag-box inline">
+                                    <span style="margin-right:1rem;">Tags:</span>
+                                    
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#MKL" data-toggle="tooltip" title="Posts tagged with MKL" rel="tag">MKL</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#hpc" data-toggle="tooltip" title="Posts tagged with hpc" rel="tag">hpc</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#matmul" data-toggle="tooltip" title="Posts tagged with matmul" rel="tag">matmul</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#matrix" data-toggle="tooltip" title="Posts tagged with matrix" rel="tag">matrix</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#multiplication" data-toggle="tooltip" title="Posts tagged with multiplication" rel="tag">multiplication</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#optimization" data-toggle="tooltip" title="Posts tagged with optimization" rel="tag">optimization</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#performance" data-toggle="tooltip" title="Posts tagged with performance" rel="tag">performance</a>
+                                            </li>
+                                            
+                                        
+                                    
+                                </ul>
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <article class="notepad-post-content post tag-simple">
+
+            <div style="text-align:left;">
+                
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+    
+        <a href="#problem" style="display:inline-block;">
+            <h2 id="problem" style="color:red;">
+                Problem
+            </h2>
+        </a>
+    
+</div>
+
+<p>Unlike The C/C++ programming languages, The Fortran language has native functions for matrix operations.<br />
+The most important of these is the <code>matmul</code> intrinsic function, which has inspired all other programming languages for the same functionality.<br />
+However, we can also implement a naive version of matrix multiplication in all languages.<br />
+Additionally, there are highly optimized parallel libraries that implement matrix multiplication for us.<br />
+Originally written in Fortran, these libraries are now known as BLAS and LAPACK libraries and different vendors offer different implementations of these libraries.<br />
+One of the most popular and optimized such implementations is offer by Intel through its Math Kernel Library (MKL).<br />
+The following program tests the performance of matrix multiplication approaches using a naive looping, intrinsic <code>matmul</code>, and finally an optimized BLAS implementation.</p>
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">program</span><span class="w"> </span><span class="n">matmul_benchmark</span><span class="w">
+
+    </span><span class="k">use</span><span class="w"> </span><span class="n">iso_fortran_env</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">error_unit</span><span class="p">,</span><span class="w"> </span><span class="n">int64</span><span class="w">
+    </span><span class="k">implicit</span><span class="w"> </span><span class="k">none</span><span class="w">
+
+    </span><span class="kt">integer</span><span class="p">(</span><span class="n">int64</span><span class="p">)</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">tic</span><span class="p">,</span><span class="w"> </span><span class="n">toc</span><span class="w">
+    </span><span class="kt">real</span><span class="p">,</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">matA</span><span class="p">(:,:),</span><span class="w"> </span><span class="n">matB</span><span class="p">(:,:),</span><span class="w"> </span><span class="n">matC</span><span class="p">(:,:)</span><span class="w">
+    </span><span class="kt">real</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">rate</span><span class="p">,</span><span class="w"> </span><span class="n">naiveTime</span><span class="p">,</span><span class="w"> </span><span class="n">matmulTime</span><span class="p">,</span><span class="w"> </span><span class="n">blasTime</span><span class="p">,</span><span class="w"> </span><span class="n">dummy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.</span><span class="w">
+    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">nrepeat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="o">**</span><span class="mi">17</span><span class="w">
+    </span><span class="kt">integer</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="p">,</span><span class="w"> </span><span class="n">irepeat</span><span class="w">
+
+    </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"(*(g0,:,', '))"</span><span class="p">)</span><span class="w"> </span><span class="s2">"matrixRank"</span><span class="p">,</span><span class="w"> </span><span class="s2">"seconds_naive"</span><span class="p">,</span><span class="w"> </span><span class="s2">"seconds_matmul"</span><span class="p">,</span><span class="w"> </span><span class="s2">"seconds_blas"</span><span class="w">
+
+    </span><span class="c1">! Loop over array sizes.</span><span class="w">
+    </span><span class="k">do</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="w">
+
+        </span><span class="n">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="o">**</span><span class="n">i</span><span class="w"> </span><span class="c1">! matrix rank.</span><span class="w">
+        </span><span class="k">allocate</span><span class="p">(</span><span class="n">matA</span><span class="p">(</span><span class="n">rank</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="p">),</span><span class="w"> </span><span class="n">matB</span><span class="p">(</span><span class="n">rank</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="p">),</span><span class="w"> </span><span class="n">matC</span><span class="p">(</span><span class="n">rank</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="p">))</span><span class="w"> </span><span class="c1">! allocate memory for the matrices.</span><span class="w">
+
+        </span><span class="c1">! Benchmark the naive matrix multiplication implementation.</span><span class="w">
+
+        </span><span class="k">call</span><span class="w"> </span><span class="n">reset</span><span class="p">(</span><span class="n">matA</span><span class="p">,</span><span class="w"> </span><span class="n">matB</span><span class="p">,</span><span class="w"> </span><span class="n">matC</span><span class="p">)</span><span class="w">
+        </span><span class="k">call</span><span class="w"> </span><span class="nb">system_clock</span><span class="p">(</span><span class="n">tic</span><span class="p">,</span><span class="w"> </span><span class="n">rate</span><span class="p">)</span><span class="w">
+        </span><span class="k">do</span><span class="w"> </span><span class="n">irepeat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">nrepeat</span><span class="w"> </span><span class="p">/</span><span class="w"> </span><span class="n">rank</span><span class="w">
+            </span><span class="k">call</span><span class="w"> </span><span class="n">setMatMul</span><span class="p">(</span><span class="n">matA</span><span class="p">,</span><span class="w"> </span><span class="n">matB</span><span class="p">,</span><span class="w"> </span><span class="n">matC</span><span class="p">)</span><span class="w">
+        </span><span class="k">end</span><span class="w"> </span><span class="k">do</span><span class="w">
+        </span><span class="k">call</span><span class="w"> </span><span class="nb">system_clock</span><span class="p">(</span><span class="n">toc</span><span class="p">)</span><span class="w">
+        </span><span class="n">naiveTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">toc</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tic</span><span class="p">)</span><span class="w"> </span><span class="p">/</span><span class="w"> </span><span class="n">rate</span><span class="w"> </span><span class="p">/</span><span class="w"> </span><span class="n">nrepeat</span><span class="w">
+        </span><span class="n">dummy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dummy</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">sum</span><span class="p">(</span><span class="n">matC</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">naiveTime</span><span class="w"> </span><span class="c1">! dummy operation to prevent aggressive compiler optimizations each benchmark.</span><span class="w">
+
+        </span><span class="c1">! Benchmark the intrinsic `matmul` matrix multiplication implementation.</span><span class="w">
+
+        </span><span class="k">call</span><span class="w"> </span><span class="n">reset</span><span class="p">(</span><span class="n">matA</span><span class="p">,</span><span class="w"> </span><span class="n">matB</span><span class="p">,</span><span class="w"> </span><span class="n">matC</span><span class="p">)</span><span class="w">
+        </span><span class="k">call</span><span class="w"> </span><span class="nb">system_clock</span><span class="p">(</span><span class="n">tic</span><span class="p">,</span><span class="w"> </span><span class="n">rate</span><span class="p">)</span><span class="w">
+        </span><span class="k">do</span><span class="w"> </span><span class="n">irepeat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">nrepeat</span><span class="w"> </span><span class="p">/</span><span class="w"> </span><span class="n">rank</span><span class="w">
+            </span><span class="n">matC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matC</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">matmul</span><span class="p">(</span><span class="n">matA</span><span class="p">,</span><span class="w"> </span><span class="n">matB</span><span class="p">)</span><span class="w">
+        </span><span class="k">end</span><span class="w"> </span><span class="k">do</span><span class="w">
+        </span><span class="k">call</span><span class="w"> </span><span class="nb">system_clock</span><span class="p">(</span><span class="n">toc</span><span class="p">)</span><span class="w">
+        </span><span class="n">matmulTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">toc</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tic</span><span class="p">)</span><span class="w"> </span><span class="p">/</span><span class="w"> </span><span class="n">rate</span><span class="w"> </span><span class="p">/</span><span class="w"> </span><span class="n">nrepeat</span><span class="w">
+        </span><span class="n">dummy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dummy</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">sum</span><span class="p">(</span><span class="n">matC</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">matmulTime</span><span class="w"> </span><span class="c1">! dummy operation to prevent aggressive compiler optimizations each benchmark.</span><span class="w">
+
+        </span><span class="c1">! Benchmark the intrinsic `matmul` matrix multiplication implementation.</span><span class="w">
+
+        </span><span class="k">call</span><span class="w"> </span><span class="n">reset</span><span class="p">(</span><span class="n">matA</span><span class="p">,</span><span class="w"> </span><span class="n">matB</span><span class="p">,</span><span class="w"> </span><span class="n">matC</span><span class="p">)</span><span class="w">
+        </span><span class="k">call</span><span class="w"> </span><span class="nb">system_clock</span><span class="p">(</span><span class="n">tic</span><span class="p">,</span><span class="w"> </span><span class="n">rate</span><span class="p">)</span><span class="w">
+        </span><span class="k">do</span><span class="w"> </span><span class="n">irepeat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">nrepeat</span><span class="w"> </span><span class="p">/</span><span class="w"> </span><span class="n">rank</span><span class="w">
+            </span><span class="k">call</span><span class="w"> </span><span class="n">sgemm</span><span class="w">  </span><span class="p">(</span><span class="w"> </span><span class="s2">"N"</span><span class="w">           </span><span class="p">&amp;</span><span class="w"> </span><span class="c1">! transposition of matA.</span><span class="w">
+                        </span><span class="p">,</span><span class="w"> </span><span class="s2">"N"</span><span class="w">           </span><span class="p">&amp;</span><span class="w"> </span><span class="c1">! transposition of matB.</span><span class="w">
+                        </span><span class="p">,</span><span class="w"> </span><span class="nb">size</span><span class="p">(</span><span class="n">matA</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c1">! the number of rows of `matA`.</span><span class="w">
+                        </span><span class="p">,</span><span class="w"> </span><span class="nb">size</span><span class="p">(</span><span class="n">matB</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c1">! the number of columns of `matB`.</span><span class="w">
+                        </span><span class="p">,</span><span class="w"> </span><span class="nb">size</span><span class="p">(</span><span class="n">matA</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c1">! the number of columns of `matA`.</span><span class="w">
+                        </span><span class="p">,</span><span class="w"> </span><span class="mf">1.</span><span class="w">            </span><span class="p">&amp;</span><span class="w"> </span><span class="c1">! the `alpha` coefficient of multiplication: C := alpha*op( A )*op( B ) + beta*C</span><span class="w">
+                        </span><span class="p">,</span><span class="w"> </span><span class="n">matA</span><span class="w">          </span><span class="p">&amp;</span><span class="w"> </span><span class="c1">! matrix matA.</span><span class="w">
+                        </span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="w">          </span><span class="p">&amp;</span><span class="w"> </span><span class="c1">! the leading dimension of matA.</span><span class="w">
+                        </span><span class="p">,</span><span class="w"> </span><span class="n">matB</span><span class="w">          </span><span class="p">&amp;</span><span class="w"> </span><span class="c1">! matrix matB.</span><span class="w">
+                        </span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="w">          </span><span class="p">&amp;</span><span class="w"> </span><span class="c1">! the leading dimension of matB.</span><span class="w">
+                        </span><span class="p">,</span><span class="w"> </span><span class="mf">1.</span><span class="w">            </span><span class="p">&amp;</span><span class="w"> </span><span class="c1">! the `beta` coefficient of multiplication: C := alpha*op( A )*op( B ) + beta*C</span><span class="w">
+                        </span><span class="p">,</span><span class="w"> </span><span class="n">matC</span><span class="w">          </span><span class="p">&amp;</span><span class="w"> </span><span class="c1">! matrix matC.</span><span class="w">
+                        </span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="w">          </span><span class="p">&amp;</span><span class="w"> </span><span class="c1">! the leading dimension of matC.</span><span class="w">
+                        </span><span class="p">)</span><span class="w">
+        </span><span class="k">end</span><span class="w"> </span><span class="k">do</span><span class="w">
+        </span><span class="k">call</span><span class="w"> </span><span class="nb">system_clock</span><span class="p">(</span><span class="n">toc</span><span class="p">)</span><span class="w">
+        </span><span class="n">blasTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">toc</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tic</span><span class="p">)</span><span class="w"> </span><span class="p">/</span><span class="w"> </span><span class="n">rate</span><span class="w"> </span><span class="p">/</span><span class="w"> </span><span class="n">nrepeat</span><span class="w">
+        </span><span class="n">dummy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dummy</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">sum</span><span class="p">(</span><span class="n">matC</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">blasTime</span><span class="w"> </span><span class="c1">! dummy operation to prevent aggressive compiler optimizations each benchmark.</span><span class="w">
+
+        </span><span class="c1">! Report the timings.</span><span class="w">
+
+        </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"(*(g0,:,', '))"</span><span class="p">)</span><span class="w"> </span><span class="n">rank</span><span class="p">,</span><span class="w"> </span><span class="n">naiveTime</span><span class="p">,</span><span class="w"> </span><span class="n">matmulTime</span><span class="p">,</span><span class="w"> </span><span class="n">blasTime</span><span class="w">
+
+        </span><span class="k">deallocate</span><span class="p">(</span><span class="n">matA</span><span class="p">,</span><span class="w"> </span><span class="n">matB</span><span class="p">,</span><span class="w"> </span><span class="n">matC</span><span class="p">)</span><span class="w">
+
+    </span><span class="k">end</span><span class="w"> </span><span class="k">do</span><span class="w">
+
+    </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"(*(g0,:,', '))"</span><span class="p">)</span><span class="w"> </span><span class="n">dummy</span><span class="w"> </span><span class="c1">! dummy operation to prevent aggressive compiler optimizations each benchmark.</span><span class="w">
+
+</span><span class="k">contains</span><span class="w">
+
+    </span><span class="k">subroutine</span><span class="w"> </span><span class="n">reset</span><span class="p">(</span><span class="n">matA</span><span class="p">,</span><span class="w"> </span><span class="n">matB</span><span class="p">,</span><span class="w"> </span><span class="n">matC</span><span class="p">)</span><span class="w">
+        </span><span class="c1">! Reset and fill the matrices with random values in range [-.5, .5].</span><span class="w">
+        </span><span class="kt">real</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="k">out</span><span class="p">)</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">matA</span><span class="p">(:,:),</span><span class="w"> </span><span class="n">matB</span><span class="p">(:,:),</span><span class="w"> </span><span class="n">matC</span><span class="p">(:,:)</span><span class="w">
+        </span><span class="k">call</span><span class="w"> </span><span class="nb">random_number</span><span class="p">(</span><span class="n">matA</span><span class="p">);</span><span class="w"> </span><span class="n">matA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matA</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">0.5</span><span class="w">
+        </span><span class="k">call</span><span class="w"> </span><span class="nb">random_number</span><span class="p">(</span><span class="n">matB</span><span class="p">);</span><span class="w"> </span><span class="n">matB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matB</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">0.5</span><span class="w">
+        </span><span class="k">call</span><span class="w"> </span><span class="nb">random_number</span><span class="p">(</span><span class="n">matC</span><span class="p">);</span><span class="w"> </span><span class="n">matC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matC</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">0.5</span><span class="w">
+    </span><span class="k">end</span><span class="w">
+
+    </span><span class="k">pure</span><span class="w"> </span><span class="k">subroutine</span><span class="w"> </span><span class="n">setMatMul</span><span class="p">(</span><span class="n">matA</span><span class="p">,</span><span class="w"> </span><span class="n">matB</span><span class="p">,</span><span class="w"> </span><span class="n">matC</span><span class="p">)</span><span class="w">
+        </span><span class="c1">! Update the input `matC` with the result of the matrix multiplication of `matA` with `matB`.</span><span class="w">
+        </span><span class="kt">real</span><span class="w">        </span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="k">in</span><span class="p">)</span><span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="k">contiguous</span><span class="w">    </span><span class="p">::</span><span class="w"> </span><span class="n">matA</span><span class="p">(:,:),</span><span class="w"> </span><span class="n">matB</span><span class="p">(:,:)</span><span class="w">
+        </span><span class="kt">real</span><span class="w">        </span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="k">inout</span><span class="p">)</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="k">contiguous</span><span class="w">    </span><span class="p">::</span><span class="w"> </span><span class="n">matC</span><span class="p">(:,:)</span><span class="w">
+        </span><span class="kt">integer</span><span class="w">                                     </span><span class="p">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="w">
+        </span><span class="k">do</span><span class="w"> </span><span class="k">concurrent</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nb">size</span><span class="p">(</span><span class="n">matA</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nb">size</span><span class="p">(</span><span class="n">matB</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="w">
+            </span><span class="k">do</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nb">size</span><span class="p">(</span><span class="n">matA</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w">
+                </span><span class="n">matC</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matC</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">matA</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">matB</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w">
+            </span><span class="k">end</span><span class="w"> </span><span class="k">do</span><span class="w">
+        </span><span class="k">end</span><span class="w"> </span><span class="k">do</span><span class="w">
+    </span><span class="k">end</span><span class="w">
+
+</span><span class="k">end</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Download the above code as the file <a href="main.F90">main.F90</a>, then compile and run this program on your system.<br />
+    To do so, first navigate to the folder containing this file in a shell environment, then,</p>
+<ul>
+  <li>If you are using Intel Fortran compiler on Windows, try the following command to compile and run it.<br />
+First open an Intel command line environment (open Windows startup, then look for <code>Intel oneAPI command prompt</code> application).
+    <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">ifort</span> <span class="kd">main</span>.F90 <span class="na">-O</span><span class="m">3</span> <span class="na">/F</span><span class="mh">0x1000000000</span> <span class="na">/Qmkl</span><span class="nl">:parallel</span> <span class="na">/exe</span><span class="nl">:main</span>.exe
+<span class="kd">main</span><span class="err">.exe</span>
+</code></pre></div>    </div>
+  </li>
+  <li>If you are using Intel Fortran compiler on Linux or macOS, try the following command to compile and run it.
+    <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">ifort</span> <span class="na">-O</span><span class="m">3</span> <span class="kd">main</span>.F90 <span class="na">-lblas -o </span><span class="kd">main</span><span class="err">.exe</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+
+            </div>
+        </article>
+        <div class="cf"></div>
+<div class="row text-center">
+    <section class="notepad-post-share">
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Performance benchmarking of naive matrix multiplication: naive vs. matmul vs. MKL&quot;%20https://www.cdslab.org/recipes/programming/hpc-matmul-mkl/hpc-matmul-mkl%20via%20&#64;"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+            <i class="fa fa-twitter"></i>
+        </a>
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/hpc-matmul-mkl/hpc-matmul-mkl"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+            <i class="fa fa-facebook"></i>
+        </a>
+        
+    </section>
+</div>
+        <div class="cf"></div>
+<div class="notepad-author-info">
+    <div class="row">
+        <section class="notepad-post-author small-12 columns">
+            <a href=https://www.shahmoradi.org target="_blank">
+                <img src="/recipes/images/AmirShahmoradi.png" class="notepad-post-author-avatar" alt="Amir Shahmoradi's photo">
+            </a>
+            <span class="author-label">Author</span>
+            <h1>Amir Shahmoradi</h1>
+            <p><a href="mailto:shahmoradi@utexas.edu" class="author-website">shahmoradi@utexas.edu</a></p>
+            <p>Genius is 99% perspiration and 1% inspiration</p>
+        </section>
+    </div>
+</div> 
+        <div class="cf"></div>
+
+        <section class="notepad-disqus row">
+            <div class="small-12 columns">
+                <h1 class="notepad-comments-header">Comments</h1>
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'shahmoradi'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+        </section>
+
+        <div class="cf"></div>
+        <footer class="notepad-site-footer">
+    <div class="copyright">
+         <!-- <section>Last updated 2023 / 04 / 20</section></br> -->
+         <section>Last updated Thursday, 20 Apr 2023 at 03:45 AM CST</section></br>
+         <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
+         <section>SEIR 365 | Arlington TX 76010</section></br>
+    </div>
+    <div class="social-icons">
+
+        
+        <a href="https://facebook.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+        </a>
+        
+
+        
+        <a href="https://github.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+        </a>
+        
+
+        
+
+        
+        <a href="https://instagram.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-instagram fa-stack-1x"></i>
+            </span>
+        </a>
+        
+
+        
+        <a href="https://medium.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-medium fa-stack-1x"></i>
+                <!--
+                -->
+            </span>
+        </a>
+        
+
+        
+        <a href="https://twitter.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+<div style="color: #000000; float: none; width: 100%; padding-top: 1rem;">
+    <span style="font-size:0.8em">visitor count: 
+        <script type="text/javascript">
+            var sc_project=12051053; 
+            var sc_invisible=0; 
+            var sc_security="e095256f"; 
+            var sc_text=3; 
+            var scJsHost = "https://";
+            document.write("<sc"+"ript type='text/javascript' src='" + scJsHost + 
+            "statcounter.com/counter/counter.js'></"+"script>");
+        </script>
+    </span>
+</div>
+
+
+    </div>
+    <div class="cf"></div>
+</footer> 
+    </main>
+    <!--dynamic page header-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/recipes/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+  <script src="/recipes/assets/js/vendor/modernizr.js"></script>
+  <script src="/recipes/assets/js/foundation.min.js"></script>
+  
+  <script src="/recipes/assets/js/notepad.js"></script>
+  <script src="/recipes/assets/js/scripts.min.js"></script>
+  <script src="/recipes/assets/js/vendor/nprogress.js"></script>
+  
+  <script>
+    $(document).foundation();
+  </script>
+  <script type='text/javascript'>console.log("N/A");</script>
+  <script type='text/javascript'>console.log("https://www.cdslab.org/");</script>
+
+<!--header anchor links-->
+<script src="/recipes/assets/js/autoAnchorLink.js"></script>
+
+<!-- <script src="/recipes/assets/js/prismOkaidia.js"></script>
+<script src="/recipes/assets/js/prismTwilight.js"></script>
+<script src="/recipes/assets/js/prismDefault.js"></script>
+ -->
+<script src="/recipes/assets/js/prismCoy.js"></script> 
+    <!--automatic Table of Content.-->
+    <script src="/recipes/assets/js/autoTOC.js"></script>
+</body>
+</html>
