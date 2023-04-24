@@ -307,8 +307,18 @@ callback([
   } ,
 
   {
+    "text": "Performance optimization: Searching sorted array via linear vs. binary search",
+    "href": "/recipes/programming/hpc-linear-binary-search/hpc-linear-binary-search"
+  } ,
+
+  {
     "text": "Performance optimization: Forced reduction - sincos",
     "href": "/recipes/programming/hpc-forced-reduction-sincos/hpc-forced-reduction-sincos"
+  } ,
+
+  {
+    "text": "Performance optimization: Forced reduction - sin(x)cos(y) + cos(x)sin(y)",
+    "href": "/recipes/programming/hpc-forced-reduction-sinxpy/hpc-forced-reduction-sinxpy"
   } ,
 
   {
@@ -383,12 +393,12 @@ callback([
 
   {
     "text": "Monte Carlo approximation of the number Pi",
-    "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
+    "href": "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
   } ,
 
   {
     "text": "Monte Carlo approximation of the number Pi",
-    "href": "/recipes/programming/monte-carlo-quadratic-integration-rejection-sampling/monte-carlo-quadratic-integration-rejection-sampling"
+    "href": "/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi"
   } ,
 
   {

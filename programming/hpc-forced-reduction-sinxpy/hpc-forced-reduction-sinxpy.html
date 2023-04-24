@@ -3,18 +3,18 @@
 <head>
     
     <meta charset="utf-8">
-<title>STRING CONCATENATION USING FOR-LOOP I &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>PERFORMANCE OPTIMIZATION: FORCED REDUCTION - SIN(X)COS(Y) + COS(X)SIN(Y) &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="MATLAB, string, concatenation, for-loop, loop, cell array, list">
+<meta name="keywords" content="Python, performance, optimization, hpc">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="String concatenation using for-loop I">
+<meta property="og:title" content="Performance optimization: Forced reduction - sin(x)cos(y) + cos(x)sin(y)">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/string-concatenation-using-for-loop-i/string-concatenation-using-for-loop-I">
+<meta property="og:url" content="/recipes/programming/hpc-forced-reduction-sinxpy/hpc-forced-reduction-sinxpy">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/string-concatenation-using-for-loop-i/string-concatenation-using-for-loop-I">
+<link rel="canonical" href="/recipes/programming/hpc-forced-reduction-sinxpy/hpc-forced-reduction-sinxpy">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,49 +130,34 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/string-concatenation-using-for-loop-i/string-concatenation-using-for-loop-I">String concatenation using for-loop I</a></h2>
+                            <h2><a href="/recipes/programming/hpc-forced-reduction-sinxpy/hpc-forced-reduction-sinxpy">Performance optimization: Forced reduction - sin(x)cos(y) + cos(x)sin(y)</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
                                 
                                     &#8212; Last updated: 
-                                    <strong><time datetime="2019-07-04T00:00:00-05:00">04 July 2019</time></strong>
+                                    <strong><time datetime="2022-04-17T00:00:00-05:00">17 April 2022</time></strong>
                                 
                                 <ul class="tag-box inline">
                                     <span style="margin-right:1rem;">Tags:</span>
                                     
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#MATLAB" data-toggle="tooltip" title="Posts tagged with MATLAB" rel="tag">MATLAB</a>
+                                                <a href="/recipes/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#cell array" data-toggle="tooltip" title="Posts tagged with cell array" rel="tag">cell array</a>
+                                                <a href="/recipes/tags/index.html#hpc" data-toggle="tooltip" title="Posts tagged with hpc" rel="tag">hpc</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#concatenation" data-toggle="tooltip" title="Posts tagged with concatenation" rel="tag">concatenation</a>
+                                                <a href="/recipes/tags/index.html#optimization" data-toggle="tooltip" title="Posts tagged with optimization" rel="tag">optimization</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#for-loop" data-toggle="tooltip" title="Posts tagged with for-loop" rel="tag">for-loop</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#list" data-toggle="tooltip" title="Posts tagged with list" rel="tag">list</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#loop" data-toggle="tooltip" title="Posts tagged with loop" rel="tag">loop</a>
-                                            </li>
-                                            
-                                        
-                                            <li>
-                                                <a href="/recipes/tags/index.html#string" data-toggle="tooltip" title="Posts tagged with string" rel="tag">string</a>
+                                                <a href="/recipes/tags/index.html#performance" data-toggle="tooltip" title="Posts tagged with performance" rel="tag">performance</a>
                                             </li>
                                             
                                         
@@ -201,33 +186,19 @@
     
 </div>
 
-<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
-    
-    
-    
-    <figure>
-        <a href="#problem-matlab" id="problem-matlab">
-            <img src="/recipes/images/MATLAB.png" width="75px" />
-        </a>
-        <figcaption>
-            <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank">
-                MATLAB
-            </a>
-        </figcaption>
-    </figure>
-</div>
-
-<p>Consider the following nested cell vector,</p>
-
-<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">List</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="s1">'M'</span><span class="p">,</span><span class="s1">'A'</span><span class="p">,</span><span class="s1">'T'</span><span class="p">,</span><span class="s1">'L'</span><span class="p">,</span><span class="s1">'A'</span><span class="p">,</span><span class="s1">'B'</span><span class="p">},</span> <span class="p">{</span><span class="s1">' '</span><span class="p">},</span> <span class="p">{</span><span class="s1">'i'</span><span class="p">,</span><span class="s1">'s'</span><span class="p">},</span> <span class="p">{</span><span class="s1">' '</span><span class="p">},</span> <span class="p">{</span><span class="s1">'a'</span><span class="p">},</span> <span class="p">{</span><span class="s1">' '</span><span class="p">},</span> <span class="p">{</span><span class="s1">'s'</span><span class="p">,</span><span class="s1">'t'</span><span class="p">,</span><span class="s1">'r'</span><span class="p">,</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'n'</span><span class="p">,</span><span class="s1">'g'</span><span class="p">,</span><span class="s1">'e'</span><span class="p">},</span> <span class="p">{</span><span class="s1">', '</span><span class="p">},</span> <span class="p">{</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'u'</span><span class="p">,</span><span class="s1">'t'</span><span class="p">,</span><span class="s1">' '</span><span class="p">},</span> <span class="p">{</span><span class="s1">'p'</span><span class="p">,</span><span class="s1">'o'</span><span class="p">,</span><span class="s1">'p'</span><span class="p">,</span><span class="s1">'u'</span><span class="p">,</span><span class="s1">'l'</span><span class="p">,</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'r'</span><span class="p">},</span> <span class="p">{</span><span class="s1">' '</span><span class="p">},</span> <span class="p">{</span><span class="s1">'p'</span><span class="p">,</span><span class="s1">'r'</span><span class="p">,</span><span class="s1">'o'</span><span class="p">,</span><span class="s1">'g'</span><span class="p">,</span><span class="s1">'r'</span><span class="p">,</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'m'</span><span class="p">,</span><span class="s1">'m'</span><span class="p">,</span><span class="s1">'i'</span><span class="p">,</span><span class="s1">'n'</span><span class="p">,</span><span class="s1">'g'</span><span class="p">,</span><span class="s1">' '</span><span class="p">,</span><span class="s1">'l'</span><span class="p">,</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'n'</span><span class="p">,</span><span class="s1">'g'</span><span class="p">,</span><span class="s1">'u'</span><span class="p">,</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'g'</span><span class="p">,</span><span class="s1">'e'</span><span class="p">}</span> <span class="p">};</span>
+<p>Consider the following Python function,</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="k">def</span> <span class="nf">getSCCS_slow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="s">"""
+    Return `sin(x) * cos(y) + cos(x) * sin(y)`.
+    """</span>
+    <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="nf">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="nf">cos</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="nf">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="nf">sin</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Write a MATLAB script <code>extractLetter.m</code> that uses for-loop to extract all the letters in the variable list and finally prints them all as a single string like the following,</p>
-
-<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">extractLetter</span>
-</code></pre></div></div>
-<pre><code>MATLAB is a strange, but a very capable popular programming language.
-</code></pre>
+<p>What can you do to the above code to make it more performant?<br />
+Prove your suggestion by benchmarking your revised code against the original code above.<br />
+How much performance improvement do you observe?<br />
+(<strong>Hint</strong>: Think of rewriting the above trigonometric expression in terms of a single <code>sin()</code> term.)</p>
 
 
             </div>
@@ -235,11 +206,11 @@
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;String concatenation using for-loop I&quot;%20https://www.cdslab.org/recipes/programming/string-concatenation-using-for-loop-i/string-concatenation-using-for-loop-I%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Performance optimization: Forced reduction - sin(x)cos(y) + cos(x)sin(y)&quot;%20https://www.cdslab.org/recipes/programming/hpc-forced-reduction-sinxpy/hpc-forced-reduction-sinxpy%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/string-concatenation-using-for-loop-i/string-concatenation-using-for-loop-I"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/hpc-forced-reduction-sinxpy/hpc-forced-reduction-sinxpy"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>

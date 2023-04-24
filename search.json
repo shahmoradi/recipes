@@ -65,6 +65,22 @@
 		} ,
 	
 		{
+		  "title"      : "Performance optimization: Searching sorted array via linear vs. binary search",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/hpc-linear-binary-search/hpc-linear-binary-search",
+		  "date"       : "2022-04-17 00:00:00 -0500",
+		  "shortdate"  : "April 17, 2022"
+		} ,
+	
+		{
+		  "title"      : "Performance optimization: Forced reduction - sin(x)cos(y) + cos(x)sin(y)",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/hpc-forced-reduction-sinxpy/hpc-forced-reduction-sinxpy",
+		  "date"       : "2022-04-17 00:00:00 -0500",
+		  "shortdate"  : "April 17, 2022"
+		} ,
+	
+		{
 		  "title"      : "Performance optimization: Forced reduction - sincos",
 		  "category"   : "",
 		  "url"        : "/recipes/programming/hpc-forced-reduction-sincos/hpc-forced-reduction-sincos",
