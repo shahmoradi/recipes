@@ -294,12 +294,43 @@ average global land temperature of the Earth between Jan 1951 to Dec 1980.</p>
     <img src="GlobalLandTemperatureAnomaly2050.png" />
 </figure>
 
-<p>where the red line represents the linear-fit to the temperature anomaly data from 1970-2013, and then extrapolates to the temperature anomaly to the year 2050. Interestingly, the predicted temperature-anomaly at year 2050 ($1.9158$) is very close to what the climate scientists have been talking about, for a long time.</p>
+<p>where the red line represents the linear-fit to the temperature anomaly data from 1970-2013, and then extrapolates to the temperature anomaly to the year 2050. Interestingly, the predicted temperature-anomaly at year 2050 ($1.9158$) is very close to what the climate scientists have been talking about, for a long time.<br />
+<strong>Hint</strong>: <br />
+To get started, think of how to express your hypothesis mathematically as an equation.</p>
+<ol>
+  <li>What is the hypothesis here?</li>
+  <li>How would you write the hypothesis mathematically (it’s simple, don’t overthink)?</li>
+  <li>What are the parameters of your model (hypothesis)?</li>
+  <li>Now, obviously, if you have proposed a realistic model, it should not fit the data perfectly.<br />
+Rather, you would expect to see some data scatter around your best-fit model.<br />
+Therefore, we need to also propose a hypothesis for the form of scatter around this physical model.</li>
+  <li>What do you think would be a good model describe the data scatter around your deterministic model?<br />
+If you have no idea, take the simplest case, a Gaussian.<br />
+What would be the parameters of this noise model then?<br />
+Which one of them can be computed from your originally-proposed deterministic model?<br />
+Which one of the parameters is unknown and has to be inferred through the fitting process?</li>
+  <li>So, now over all, how many parameters do you need to constrain for your combined (deterministic + noise model)?</li>
+  <li>Now, write the likelihood function for this dataset under your proposed combined hypothesis.
+The likelihood function is simply the product the probabilities of observing individual events given your deterministic and noise models (Use our lecture notes for help to define it).</li>
+  <li>Now, we need to maximize this function, but it is not computationally feasible. Why? What do you suggest to do with the likelihood function to make computable within the limited numerical precision of the computer?</li>
+  <li>Apply the necessary transformation to get an <strong>objective function</strong> that can be readily maximized by a computer.</li>
+  <li>Now, use the optimizer algorithm of your language of choice to find the parameter sets that maximize the likelihood of observing your data given the model (In Python, You can use SciPy’s <code>minimize()</code> function).</li>
+  <li>Now, repeat the same process for a different hypothesis: The temperature anomaly is flat from the year 1970 to 2013.<br />
+That is surely a bad hypothesis, but regardless, let’s form a mathematical model corresponding to this hypothesis and see how it looks like.</li>
+  <li>Now, use the BIC model selection criterion (from our lecture notes) to compare the performance of the two hypotheses for our data (one is temperature increase over time, the other is constant temperature (no global warming)).<br />
+Which one fits the data better?</li>
+  <li>What does each model predict for the temperature of Earth in 2050?</li>
+</ol>
 
-<p><strong>(b)</strong> Next, we want to know the uncertainty in the our predicted value of the temperature anomaly in 2050. Use Markov Chain Monte Carlo techniques to sample the constructed maximum-likelihood objective function and compute the $1\sigma$ uncertainty range for the predicted anomaly in the year 2050.</p>
+<p><strong>(b) Extra Credit</strong> - So far, we were able to find the best fit model to our data, constrain its parameters, and predict the temperature of Earth in 2050 based on those models.<br />
+But we can do more than just making a single point prediction. We can quantify the uncertainty in our prediction for the temperature of Earth in 2050!<br />
+To do so, we need to learn the shape of the likelihood function in addition to just learning its maximum location.<br />
+One of the best tools for exploring objective functions is the Markov Chain Monte Carlo technique which enables us to to sample the constructed maximum-likelihood objective function 
+and compute the $1\sigma$ uncertainty range for the predicted anomaly in the year 2050.</p>
 
 <p><strong>Hint:</strong><br />
-You can use the <a href="https://www.cdslab.org/paramonte/" target="_blank">ParaMonte library</a> in Python or in MATLAB to perform the Monte Carlo simulation.</p>
+Use can reach out to the instructor for more help on this part of the problem. But in general, you can use an MCMC tool like the 
+<a href="https://www.cdslab.org/paramonte/" target="_blank">ParaMonte library</a> in Python, MATLAB, C, or Fortran to perform the Monte Carlo simulation (exploration of the likelihood) for this task.</p>
 
 
             </div>
@@ -364,8 +395,8 @@ You can use the <a href="https://www.cdslab.org/paramonte/" target="_blank">Para
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2023 / 04 / 24</section></br> -->
-         <section>Last updated Monday, 24 Apr 2023 at 08:30 AM CST</section></br>
+         <!-- <section>Last updated 2023 / 05 / 03</section></br> -->
+         <section>Last updated Wednesday, 03 May 2023 at 02:30 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
