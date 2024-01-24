@@ -219,6 +219,23 @@ By the end of this exercise, you will be able to initialize an empty git project
   <li><strong>Git installation</strong>. Visit the <a href="https://git-scm.com/downloads" target="_blank">Git downloads website</a> and download the most recent version of the git software to install on your system.
     <ul>
       <li><strong>Only Windows users</strong>. During the installation, the git software may ask you to link your Notepad++ software with git. If given this option, choose it.</li>
+      <li><strong>Only macOS users</strong>. One of the easiest ways to install the Git software is via the Homebrew package manager.
+        <ol>
+          <li>First, open a command line terminal and type <code>brew</code> and press <code>Enter</code> key.<br />
+If the terminal returns an error not recognizing Homebrew <code>brew</code> command, it means you do not have <code>brew</code> installed on your system.<br />
+If you do have <code>brew</code> already installed, skip the next step.</li>
+          <li>In you terminal, copy and paste the following command and press <code>Enter</code>:
+            <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/bin/bash <span class="nt">-c</span> <span class="s2">"</span><span class="si">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="si">)</span><span class="s2">"</span>
+</code></pre></div>            </div>
+            <p>The Homebrew installation may take a while depending on the quality of your network connection.<br />
+<strong>Carefully read any questions and message prompted by Homebrew and respond correctly.</strong></p>
+          </li>
+          <li>Once done, type the following command to install <code>git</code> on your system:
+            <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">install </span>git
+</code></pre></div>            </div>
+          </li>
+        </ol>
+      </li>
     </ul>
   </li>
   <li><strong>Interacting with Git</strong>.
@@ -372,8 +389,8 @@ In the follow-up exercises, we will learn how to initialize Git projects using <
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2023 / 05 / 03</section></br> -->
-         <section>Last updated Wednesday, 03 May 2023 at 02:30 PM CST</section></br>
+         <!-- <section>Last updated 2024 / 01 / 24</section></br> -->
+         <section>Last updated Wednesday, 24 Jan 2024 at 01:42 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

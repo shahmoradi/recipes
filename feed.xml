@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2023-05-03T14:30:04-05:00</updated>
+<updated>2024-01-24T13:42:14-06:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -254,6 +254,23 @@ By the end of this exercise, you will be able to initialize an empty git project
   &lt;li&gt;&lt;strong&gt;Git installation&lt;/strong&gt;. Visit the &lt;a href=&quot;https://git-scm.com/downloads&quot; target=&quot;_blank&quot;&gt;Git downloads website&lt;/a&gt; and download the most recent version of the git software to install on your system.
     &lt;ul&gt;
       &lt;li&gt;&lt;strong&gt;Only Windows users&lt;/strong&gt;. During the installation, the git software may ask you to link your Notepad++ software with git. If given this option, choose it.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Only macOS users&lt;/strong&gt;. One of the easiest ways to install the Git software is via the Homebrew package manager.
+        &lt;ol&gt;
+          &lt;li&gt;First, open a command line terminal and type &lt;code&gt;brew&lt;/code&gt; and press &lt;code&gt;Enter&lt;/code&gt; key.&lt;br /&gt;
+If the terminal returns an error not recognizing Homebrew &lt;code&gt;brew&lt;/code&gt; command, it means you do not have &lt;code&gt;brew&lt;/code&gt; installed on your system.&lt;br /&gt;
+If you do have &lt;code&gt;brew&lt;/code&gt; already installed, skip the next step.&lt;/li&gt;
+          &lt;li&gt;In you terminal, copy and paste the following command and press &lt;code&gt;Enter&lt;/code&gt;:
+            &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/bin/bash &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-fsSL&lt;/span&gt; https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+            &lt;p&gt;The Homebrew installation may take a while depending on the quality of your network connection.&lt;br /&gt;
+&lt;strong&gt;Carefully read any questions and message prompted by Homebrew and respond correctly.&lt;/strong&gt;&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Once done, type the following command to install &lt;code&gt;git&lt;/code&gt; on your system:
+            &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Interacting with Git&lt;/strong&gt;.
