@@ -1130,7 +1130,7 @@ var store = [{
   "date": "September 30, 2020",
   "category": "logic",
   "tags": ["plausibility","deduction","reasoning","logic","boolean","venn","diagram"],
-  "excerpt": "\nConsider the following Boolean algebraic expressions. Draw a Venn diagram corresponding to each one,\n\n"
+  "excerpt": "\nConsider the following Boolean algebraic expressions. Draw a Venn diagram corresponding to each one,\n\n\n\n"
 },{
   "title": "Regression: Predicting the bivariate distribution of the a dataset subjected to censorship (sample incompleteness)",
   "link": "/programming/regression-censored-mvn-data/regression-censored-mvn-data",
