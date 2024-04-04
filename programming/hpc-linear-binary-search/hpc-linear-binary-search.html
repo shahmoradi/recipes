@@ -216,21 +216,21 @@ Suppose we a set of <code>nbin</code> ascending-sorted histogram bins <code>edge
 whose histogram bin <code>i</code> we wish to find such that <code>edges[i] &lt;= x &lt; edges[i + 1]</code> assuming <code>i &lt; nbin - 1</code>.<br />
 Write a function (e.g., in Python) with the following example Python interface that use <strong>linear searching</strong> method to find the correct histogram bin of <code>x</code>.</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">getBinLinear</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">edges</span><span class="p">):</span>
-    <span class="s">"""
+    <span class="sh">"""</span><span class="s">
     Return the index of the element of `edges` such that the condition `edges[i] &lt;= x &lt; edges[i + 1]` holds.
     If `x` is larger than all elements of `edges`, then the function returns `len(edges) - 1`.
     If `x` is smaller than all elements of `edges`, then the function returns `- 1`.
-    """</span>
+    </span><span class="sh">"""</span>
 </code></pre></div></div>
 
 <p>Recall that for sorted arrays, we can also use the binary search method to compute the corresponding bin of <code>x</code>.<br />
 Write a new function with the following example Python interface to use the <strong>binary searching</strong> method to find the histogram bin of <code>x</code>.</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">getBinBinary</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">edges</span><span class="p">):</span>
-    <span class="s">"""
+    <span class="sh">"""</span><span class="s">
     Return the index of the element of `edges` such that the condition `edges[i] &lt;= x &lt; edges[i + 1]` holds.
     If `x` is larger than all elements of `edges`, then the function returns `len(edges) - 1`.
     If `x` is smaller than all elements of `edges`, then the function returns `- 1`.
-    """</span>
+    </span><span class="sh">"""</span>
 </code></pre></div></div>
 
 <p>Which algorithm is faster for finding the bin of an arbitrary <code>x</code> value? When? Why?<br />
@@ -245,7 +245,7 @@ Here is an example range of <code>nbin</code> values (in Python) with which you 
     <span class="n">nbin</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">int</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
     <span class="n">edges</span> <span class="o">=</span> <span class="nf">range</span><span class="p">(</span><span class="n">nbin</span><span class="p">)</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">edges</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
-    <span class="nf">print</span><span class="p">(</span><span class="s">"nbin = {}, x = {}"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">nbin</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">nbin = {}, x = {}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">nbin</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
 </code></pre></div></div>
 <pre><code>nbin = 4, x = 2
 nbin = 13, x = 11
@@ -322,8 +322,8 @@ nbin = 50000, x = 49998
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2024 / 04 / 03</section></br> -->
-         <section>Last updated Wednesday, 03 Apr 2024 at 03:46 PM CST</section></br>
+         <!-- <section>Last updated 2024 / 04 / 04</section></br> -->
+         <section>Last updated Thursday, 04 Apr 2024 at 02:44 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

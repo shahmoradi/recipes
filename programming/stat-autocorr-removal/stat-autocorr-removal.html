@@ -270,15 +270,15 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">notebook</span>
 <span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
 <span class="n">chain</span> <span class="o">=</span> <span class="n">sim</span><span class="p">.</span><span class="nf">readChain</span><span class="p">(</span><span class="n">renabled</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">chain</span><span class="p">.</span><span class="n">df</span><span class="p">[</span><span class="s">"Banana Function Value"</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">exp</span><span class="p">(</span><span class="n">chain</span><span class="p">.</span><span class="n">df</span><span class="p">.</span><span class="n">SampleLogFunc</span><span class="p">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">chain</span><span class="p">.</span><span class="n">df</span><span class="p">[</span><span class="sh">"</span><span class="s">Banana Function Value</span><span class="sh">"</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">exp</span><span class="p">(</span><span class="n">chain</span><span class="p">.</span><span class="n">df</span><span class="p">.</span><span class="n">SampleLogFunc</span><span class="p">.</span><span class="n">values</span><span class="p">)</span>
 
 <span class="n">chain</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="nf">contour3</span><span class="p">()</span>
-<span class="n">chain</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">contour3</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="n">fname</span> <span class="o">=</span> <span class="s">"bananaFuncContour3.png"</span><span class="p">)</span>
+<span class="n">chain</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">contour3</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="n">fname</span> <span class="o">=</span> <span class="sh">"</span><span class="s">bananaFuncContour3.png</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="n">chain</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">scatter3</span><span class="p">.</span><span class="n">scatter</span><span class="p">.</span><span class="n">kws</span><span class="p">.</span><span class="n">s</span> <span class="o">=</span> <span class="mf">0.03</span>
-<span class="n">chain</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">scatter3</span><span class="p">.</span><span class="n">scatter</span><span class="p">.</span><span class="n">kws</span><span class="p">.</span><span class="n">cmap</span> <span class="o">=</span> <span class="s">"winter"</span>
-<span class="n">chain</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="nf">scatter3</span><span class="p">(</span><span class="n">zcolumns</span> <span class="o">=</span> <span class="s">"Banana Function Value"</span><span class="p">,</span> <span class="n">ccolumns</span> <span class="o">=</span> <span class="s">"Banana Function Value"</span><span class="p">)</span>
-<span class="n">chain</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">scatter3</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="n">fname</span> <span class="o">=</span> <span class="s">"bananaFuncScatter3.png"</span><span class="p">)</span>
+<span class="n">chain</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">scatter3</span><span class="p">.</span><span class="n">scatter</span><span class="p">.</span><span class="n">kws</span><span class="p">.</span><span class="n">cmap</span> <span class="o">=</span> <span class="sh">"</span><span class="s">winter</span><span class="sh">"</span>
+<span class="n">chain</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="nf">scatter3</span><span class="p">(</span><span class="n">zcolumns</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Banana Function Value</span><span class="sh">"</span><span class="p">,</span> <span class="n">ccolumns</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Banana Function Value</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">chain</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">scatter3</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="n">fname</span> <span class="o">=</span> <span class="sh">"</span><span class="s">bananaFuncScatter3.png</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><img src="bananaFuncContour3.png" alt="bananaFuncContour3.png" /></p>
@@ -288,7 +288,7 @@
 <p>Now, this MCMC chain is a time-series data, meaning that we can compute its autocorrelation (for each data attribute). The ParaMonte library does this for us automatically which we can visualize via,</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">chain</span><span class="p">.</span><span class="n">stats</span><span class="p">.</span><span class="n">autocorr</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="nf">line</span><span class="p">()</span>
-<span class="n">chain</span><span class="p">.</span><span class="n">stats</span><span class="p">.</span><span class="n">autocorr</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="n">fname</span> <span class="o">=</span> <span class="s">"bananaCompactChainACF.png"</span><span class="p">)</span>
+<span class="n">chain</span><span class="p">.</span><span class="n">stats</span><span class="p">.</span><span class="n">autocorr</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">line</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="n">fname</span> <span class="o">=</span> <span class="sh">"</span><span class="s">bananaCompactChainACF.png</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><img src="bananaCompactChainACF.png" alt="bananaCompactChainACF.png" /></p>
@@ -305,7 +305,7 @@
 
 <span class="n">acf</span> <span class="o">=</span> <span class="nf">correlate </span><span class="p">(</span> <span class="n">attribute</span>
                 <span class="p">,</span> <span class="n">attribute</span>
-                <span class="p">,</span> <span class="n">mode</span> <span class="o">=</span> <span class="s">"full"</span>
+                <span class="p">,</span> <span class="n">mode</span> <span class="o">=</span> <span class="sh">"</span><span class="s">full</span><span class="sh">"</span>
                 <span class="p">)[</span><span class="n">nlag</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="n">nlag</span><span class="p">]</span>
 <span class="n">acf</span> <span class="o">=</span> <span class="n">acf</span> <span class="o">/</span> <span class="n">acf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </code></pre></div></div>
@@ -373,8 +373,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2024 / 04 / 03</section></br> -->
-         <section>Last updated Wednesday, 03 Apr 2024 at 03:46 PM CST</section></br>
+         <!-- <section>Last updated 2024 / 04 / 04</section></br> -->
+         <section>Last updated Thursday, 04 Apr 2024 at 02:44 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

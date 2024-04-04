@@ -228,20 +228,20 @@ Carolina Vedovato
 <p>We want to create a dictionary of members of this class with individuals’ full names serving as dictionary keys, and their roles in class as the corresponding values of the keys. The naive way of generating this dictionary would be to use one of the methods for generating dictionary discussed in the lecture notes. For example,</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">class_dict</span>  <span class="o">=</span> <span class="p">{</span> 
-            <span class="p">,</span> <span class="s">'Christian-Andrew Bagby-wright'</span> <span class="p">:</span> <span class="s">'student'</span>
-            <span class="p">,</span> <span class="s">'Matthew Chrysler'</span>              <span class="p">:</span> <span class="s">'student'</span>
-            <span class="p">,</span> <span class="s">'Niyousha Davachi'</span>              <span class="p">:</span> <span class="s">'student'</span>
-            <span class="p">,</span> <span class="s">'Pauline Dredger'</span>               <span class="p">:</span> <span class="s">'student'</span>
-            <span class="p">,</span> <span class="s">'Marcos Guillen'</span>                <span class="p">:</span> <span class="s">'student'</span>
-            <span class="p">,</span> <span class="s">'Lauren Kuffel'</span>                 <span class="p">:</span> <span class="s">'student'</span>
-            <span class="p">,</span> <span class="s">'Shashank Kumbhare'</span>             <span class="p">:</span> <span class="s">'student'</span>
-            <span class="p">,</span> <span class="s">'Hany Mahdy'</span>                    <span class="p">:</span> <span class="s">'student'</span>
-            <span class="p">,</span> <span class="s">'Sarah Moorman'</span>                 <span class="p">:</span> <span class="s">'student'</span>
-            <span class="p">,</span> <span class="s">'Andrew Myers'</span>                  <span class="p">:</span> <span class="s">'student'</span>
-            <span class="p">,</span> <span class="s">'Joshua Osborne'</span>                <span class="p">:</span> <span class="s">'student'</span>
-            <span class="p">,</span> <span class="s">'Rebecca Proni'</span>                 <span class="p">:</span> <span class="s">'student'</span>
-            <span class="p">,</span> <span class="s">'Amir Shahmoradi'</span>               <span class="p">:</span> <span class="s">'instructor'</span>
-            <span class="p">,</span> <span class="s">'Carolina Vedovato'</span>             <span class="p">:</span> <span class="s">'student'</span>
+            <span class="p">,</span> <span class="sh">'</span><span class="s">Christian-Andrew Bagby-wright</span><span class="sh">'</span> <span class="p">:</span> <span class="sh">'</span><span class="s">student</span><span class="sh">'</span>
+            <span class="p">,</span> <span class="sh">'</span><span class="s">Matthew Chrysler</span><span class="sh">'</span>              <span class="p">:</span> <span class="sh">'</span><span class="s">student</span><span class="sh">'</span>
+            <span class="p">,</span> <span class="sh">'</span><span class="s">Niyousha Davachi</span><span class="sh">'</span>              <span class="p">:</span> <span class="sh">'</span><span class="s">student</span><span class="sh">'</span>
+            <span class="p">,</span> <span class="sh">'</span><span class="s">Pauline Dredger</span><span class="sh">'</span>               <span class="p">:</span> <span class="sh">'</span><span class="s">student</span><span class="sh">'</span>
+            <span class="p">,</span> <span class="sh">'</span><span class="s">Marcos Guillen</span><span class="sh">'</span>                <span class="p">:</span> <span class="sh">'</span><span class="s">student</span><span class="sh">'</span>
+            <span class="p">,</span> <span class="sh">'</span><span class="s">Lauren Kuffel</span><span class="sh">'</span>                 <span class="p">:</span> <span class="sh">'</span><span class="s">student</span><span class="sh">'</span>
+            <span class="p">,</span> <span class="sh">'</span><span class="s">Shashank Kumbhare</span><span class="sh">'</span>             <span class="p">:</span> <span class="sh">'</span><span class="s">student</span><span class="sh">'</span>
+            <span class="p">,</span> <span class="sh">'</span><span class="s">Hany Mahdy</span><span class="sh">'</span>                    <span class="p">:</span> <span class="sh">'</span><span class="s">student</span><span class="sh">'</span>
+            <span class="p">,</span> <span class="sh">'</span><span class="s">Sarah Moorman</span><span class="sh">'</span>                 <span class="p">:</span> <span class="sh">'</span><span class="s">student</span><span class="sh">'</span>
+            <span class="p">,</span> <span class="sh">'</span><span class="s">Andrew Myers</span><span class="sh">'</span>                  <span class="p">:</span> <span class="sh">'</span><span class="s">student</span><span class="sh">'</span>
+            <span class="p">,</span> <span class="sh">'</span><span class="s">Joshua Osborne</span><span class="sh">'</span>                <span class="p">:</span> <span class="sh">'</span><span class="s">student</span><span class="sh">'</span>
+            <span class="p">,</span> <span class="sh">'</span><span class="s">Rebecca Proni</span><span class="sh">'</span>                 <span class="p">:</span> <span class="sh">'</span><span class="s">student</span><span class="sh">'</span>
+            <span class="p">,</span> <span class="sh">'</span><span class="s">Amir Shahmoradi</span><span class="sh">'</span>               <span class="p">:</span> <span class="sh">'</span><span class="s">instructor</span><span class="sh">'</span>
+            <span class="p">,</span> <span class="sh">'</span><span class="s">Carolina Vedovato</span><span class="sh">'</span>             <span class="p">:</span> <span class="sh">'</span><span class="s">student</span><span class="sh">'</span>
             <span class="p">}</span>
 </code></pre></div></div>
 
@@ -312,8 +312,8 @@ Carolina Vedovato
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2024 / 04 / 03</section></br> -->
-         <section>Last updated Wednesday, 03 Apr 2024 at 03:46 PM CST</section></br>
+         <!-- <section>Last updated 2024 / 04 / 04</section></br> -->
+         <section>Last updated Thursday, 04 Apr 2024 at 02:44 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

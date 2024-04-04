@@ -600,7 +600,7 @@ Power_mod.obj
 <span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
 
 <span class="c1"># import the dll
-</span><span class="n">flib</span> <span class="o">=</span> <span class="n">ct</span><span class="p">.</span><span class="nc">CDLL</span><span class="p">(</span><span class="s">'Power.dll'</span><span class="p">)</span>
+</span><span class="n">flib</span> <span class="o">=</span> <span class="n">ct</span><span class="p">.</span><span class="nc">CDLL</span><span class="p">(</span><span class="sh">'</span><span class="s">Power.dll</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="c1"># define input variables with the correct types
 </span><span class="n">base</span> <span class="o">=</span> <span class="n">ct</span><span class="p">.</span><span class="nf">c_double</span><span class="p">(</span><span class="mf">100.0</span><span class="p">)</span>
@@ -616,7 +616,7 @@ Power_mod.obj
 </span><span class="n">result</span> <span class="o">=</span> <span class="n">flib</span><span class="p">.</span><span class="nf">getPow</span><span class="p">(</span> <span class="n">ct</span><span class="p">.</span><span class="nf">byref</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
                     <span class="p">,</span> <span class="n">ct</span><span class="p">.</span><span class="nf">byref</span><span class="p">(</span><span class="n">expo</span><span class="p">)</span>
                     <span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span> <span class="s">"getPow({},{}) = {}"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">base</span><span class="p">,</span><span class="n">expo</span><span class="p">,</span><span class="n">result</span><span class="p">)</span> <span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span> <span class="sh">"</span><span class="s">getPow({},{}) = {}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">base</span><span class="p">,</span><span class="n">expo</span><span class="p">,</span><span class="n">result</span><span class="p">)</span> <span class="p">)</span>
 </code></pre></div></div>
 <pre><code>getPow(c_double(100.0),c_long(3)) = 1000000.0
 </code></pre>
@@ -688,8 +688,8 @@ Power_mod.obj
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2024 / 04 / 03</section></br> -->
-         <section>Last updated Wednesday, 03 Apr 2024 at 03:46 PM CST</section></br>
+         <!-- <section>Last updated 2024 / 04 / 04</section></br> -->
+         <section>Last updated Thursday, 04 Apr 2024 at 02:44 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

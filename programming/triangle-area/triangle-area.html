@@ -262,17 +262,17 @@
 <p>Write a function <code>get_triangle_area(vertices)</code> that returns the area of a triangle whose vertices are specified by the input argument variable <code>vertices</code>, which could be a nested list of the vertex coordinates. Test your implementation with the following test function, which also illustrates how the <code>get_triangle_area</code> function works.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">test_get_triangle_area</span><span class="p">():</span>
-    <span class="s">"""
+    <span class="sh">"""</span><span class="s">
     Verify the area of a triangle with vertex coordinates
     (0,0), (1,0), and (0,2).
-    """</span>
+    </span><span class="sh">"""</span>
     <span class="n">v1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span> <span class="n">v2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span> <span class="n">v3</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">vertices</span> <span class="o">=</span> <span class="p">[</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">v3</span><span class="p">]</span>
     <span class="n">expected</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">computed</span> <span class="o">=</span> <span class="nf">get_triangle_area</span><span class="p">(</span><span class="n">vertices</span><span class="p">)</span>
     <span class="n">tol</span> <span class="o">=</span> <span class="mf">1E-14</span>
     <span class="n">success</span> <span class="o">=</span> <span class="nf">abs</span><span class="p">(</span><span class="n">expected</span> <span class="o">-</span> <span class="n">computed</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">tol</span>
-    <span class="n">msg</span> <span class="o">=</span> <span class="s">'computed area=%g != %g (expected)'</span> <span class="o">%</span> <span class="p">(</span><span class="n">computed</span><span class="p">,</span> <span class="n">expected</span><span class="p">)</span>
+    <span class="n">msg</span> <span class="o">=</span> <span class="sh">'</span><span class="s">computed area=%g != %g (expected)</span><span class="sh">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">computed</span><span class="p">,</span> <span class="n">expected</span><span class="p">)</span>
     <span class="k">assert</span> <span class="n">success</span><span class="p">,</span> <span class="n">msg</span>
 </code></pre></div></div>
 
@@ -339,8 +339,8 @@
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2024 / 04 / 03</section></br> -->
-         <section>Last updated Wednesday, 03 Apr 2024 at 03:46 PM CST</section></br>
+         <!-- <section>Last updated 2024 / 04 / 04</section></br> -->
+         <section>Last updated Thursday, 04 Apr 2024 at 02:44 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>

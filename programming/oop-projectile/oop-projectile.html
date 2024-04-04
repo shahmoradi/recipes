@@ -212,12 +212,12 @@ Here is the class we defined for the projectile,</p>
         <span class="n">self</span><span class="p">.</span><span class="n">velInitY</span> <span class="o">=</span> <span class="n">velInitY</span> <span class="c1"># initial velocity along the y direction.  
 </span>        <span class="n">self</span><span class="p">.</span><span class="n">gravityConstant</span> <span class="o">=</span> <span class="n">g</span> <span class="c1"># gravityConstant, 9.81 on earth.  
 </span>    <span class="k">def</span> <span class="nf">getLocY</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>  
-        <span class="s">"""  
+        <span class="sh">"""</span><span class="s">  
         Return the location of the projectile at the specific given `time` and initial velocity.  
         Input  
             time    :   An input real (float) representing the time  
                         past since the start of the projectile motion.  
-        """</span>  
+        </span><span class="sh">"""</span>  
         <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">velInitY</span> <span class="o">*</span> <span class="n">time</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">self</span><span class="p">.</span><span class="n">gravityConstant</span> <span class="o">*</span> <span class="n">time</span><span class="o">**</span><span class="mi">2</span>  
     <span class="k">def</span> <span class="nf">eval</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span> <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="nf">getLocY</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>  
 </code></pre></div></div>
@@ -229,10 +229,10 @@ Here is the class we defined for the projectile,</p>
   <li>Create example objects from both classes and pass them to the following deafferentation function 
 to compute the velocity in the <code>x</code> and <code>y</code> directions after one second (with initial velocity of <code>10</code> meters / sec in both <code>X</code> and <code>Y</code> directions.
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">getDiff</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">deltaT</span> <span class="o">=</span> <span class="mf">1.e-5</span><span class="p">):</span>  
-    <span class="s">"""  
+    <span class="sh">"""</span><span class="s">  
     Return the derivative of the function contained with the input `func` object.  
     The `func` object must contain a method that returns the value of the function  
-    """</span>  
+    </span><span class="sh">"""</span>  
     <span class="nf">return </span><span class="p">(</span><span class="n">func</span><span class="p">.</span><span class="nf">eval</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">deltaT</span><span class="p">)</span> <span class="o">-</span> <span class="n">func</span><span class="p">.</span><span class="nf">eval</span><span class="p">(</span><span class="n">t</span><span class="p">))</span> <span class="o">/</span> <span class="n">deltaT</span> <span class="c1"># finite differencing  
 </span></code></pre></div>    </div>
     <p>Here is the final result for cross-validating your answer,</p>
@@ -261,7 +261,7 @@ Compute and return the speed of the projectile in X-Y plane for initial
 velocities <code>(10, 10)</code> meters / sec at time <code>1 sec</code> since the start of the projectile.<br />
 Here is the final result for cross-validating your answers,
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">p</span> <span class="o">=</span> <span class="nc">ProjLoc</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  
-<span class="nf">print</span><span class="p">(</span><span class="s">"Speed at time = {} is {}"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="nf">norm</span><span class="p">(</span><span class="nf">getDiff</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="mi">1</span><span class="p">))))</span>  
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Speed at time = {} is {}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="nf">norm</span><span class="p">(</span><span class="nf">getDiff</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="mi">1</span><span class="p">))))</span>  
 </code></pre></div>    </div>
     <pre><code>Speed at time = 1 is 10.00199882033131
 </code></pre>
@@ -330,8 +330,8 @@ Here is the final result for cross-validating your answers,
         <div class="cf"></div>
         <footer class="notepad-site-footer">
     <div class="copyright">
-         <!-- <section>Last updated 2024 / 04 / 03</section></br> -->
-         <section>Last updated Wednesday, 03 Apr 2024 at 03:46 PM CST</section></br>
+         <!-- <section>Last updated 2024 / 04 / 04</section></br> -->
+         <section>Last updated Thursday, 04 Apr 2024 at 02:44 PM CST</section></br>
          <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
          <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
