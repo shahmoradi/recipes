@@ -609,9 +609,17 @@
 		} ,
 	
 		{
-		  "title"      : "Venn diagram representation of Boolean expressions",
+		  "title"      : "Venn diagram representation of Boolean identities",
 		  "category"   : "logic",
 		  "url"        : "/recipes/programming/logic-boolean-algebra-venn-diagram/logic/logic-boolean-algebra-venn-diagram",
+		  "date"       : "2020-09-30 00:00:00 -0500",
+		  "shortdate"  : "September 30, 2020"
+		} ,
+	
+		{
+		  "title"      : "Truth table representation of Boolean identities",
+		  "category"   : "logic",
+		  "url"        : "/recipes/programming/logic-boolean-algebra-truth-table/logic/logic-boolean-algebra-truth-table",
 		  "date"       : "2020-09-30 00:00:00 -0500",
 		  "shortdate"  : "September 30, 2020"
 		} ,

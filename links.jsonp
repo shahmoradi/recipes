@@ -67,7 +67,7 @@ callback([
   } ,
 
   {
-    "text": "Venn diagram representation of Boolean expressions",
+    "text": "Venn diagram representation of Boolean identities",
     "href": "/recipes/programming/logic-boolean-algebra-venn-diagram/logic/logic-boolean-algebra-venn-diagram"
   } ,
 
@@ -79,6 +79,11 @@ callback([
   {
     "text": "Ugly visualization",
     "href": "/recipes/programming/vis-ugly-graph/vis-ugly-graph"
+  } ,
+
+  {
+    "text": "Truth table representation of Boolean identities",
+    "href": "/recipes/programming/logic-boolean-algebra-truth-table/logic/logic-boolean-algebra-truth-table"
   } ,
 
   {
@@ -168,12 +173,12 @@ callback([
 
   {
     "text": "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables via the least absolute deviations method",
-    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-squares-method"
+    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-absolute-deviations-method"
   } ,
 
   {
     "text": "Regression: obtaining the most likely mean of a set of Standard Normally Distributed Random Variables via the least absolute deviations method",
-    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-absolute-deviations-method"
+    "href": "/recipes/programming/regression-simple-least-absolute-deviations-method/regression-simple-least-squares-method"
   } ,
 
   {
