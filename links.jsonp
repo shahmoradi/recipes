@@ -282,7 +282,7 @@ callback([
   } ,
 
   {
-    "text": "Puzzle: How many living creatures are in the pond",
+    "text": "Puzzle: How many and what living creatures do you see?",
     "href": "/recipes/programming/puzzle-how-many-animals-in-pond/puzzle-how-many-animals-in-pond"
   } ,
 
