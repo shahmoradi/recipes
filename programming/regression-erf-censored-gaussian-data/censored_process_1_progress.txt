@@ -1,0 +1,5 @@
+NumFuncCallTotal,NumFuncCallAccepted,MeanAcceptanceRateSinceStart,MeanAcceptanceRateSinceLastReport,TimeElapsedSinceLastReportInSeconds,TimeElapsedSinceStartInSeconds,TimeRemainedToFinishInSeconds
+999,628,NaN,NaN,2.5860000,2.5860000,79.770687
+1999,1152,NaN,NaN,3.9980001,6.5840001,107.72156
+2999,1644,NaN,NaN,5.1209998,11.705000,130.69159
+3999,2125,NaN,NaN,4.3150001,16.020000,134.75647
