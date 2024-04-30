@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2024-04-30T11:51:27-05:00</updated>
+<updated>2024-04-30T11:51:40-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -17,7 +17,7 @@
 
 
 <entry>
-  <title type="html"><![CDATA[Better visualizations through axes transformations.]]></title>
+  <title type="html"><![CDATA[Better visualizations through axes transformations]]></title>
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/vis-excel-axis-transformation/vis-excel-axis-transformation"/>
   <id>https://www.cdslab.org/recipes/programming/vis-excel-axis-transformation/vis-excel-axis-transformation</id>
@@ -113,7 +113,7 @@ Select this option. You should immediately see that the visualization in the plo
 
 
   
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/vis-excel-axis-transformation/vis-excel-axis-transformation&quot;&gt;Better visualizations through axes transformations.&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on April 29, 2024.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/vis-excel-axis-transformation/vis-excel-axis-transformation&quot;&gt;Better visualizations through axes transformations&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on April 29, 2024.&lt;/p&gt;</content>
 </entry>
 
 

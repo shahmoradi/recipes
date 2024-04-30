@@ -727,7 +727,7 @@ callback([
   } ,
 
   {
-    "text": "Better visualizations through axes transformations.",
+    "text": "Better visualizations through axes transformations",
     "href": "/recipes/programming/vis-excel-axis-transformation/vis-excel-axis-transformation"
   } ,
 
