@@ -7,13 +7,114 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2024-04-15T13:55:10-05:00</updated>
+<updated>2024-04-30T11:40:46-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
   <uri>https://www.cdslab.org/recipes/</uri>
   <email>shahmoradi@utexas.edu</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Better visualizations through axes transformation.]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/vis-excel-axis-transformation/vis-excel-axis-transformation"/>
+  <id>https://www.cdslab.org/recipes/programming/vis-excel-axis-transformation/vis-excel-axis-transformation</id>
+  <published>2024-04-29T00:00:00-05:00</published>
+  <updated>2024-04-30T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#Excel" term="Excel" /><category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#data" term="data" /><category scheme="https://www.cdslab.org/recipes/tags/#input" term="input" /><category scheme="https://www.cdslab.org/recipes/tags/#output" term="output" /><category scheme="https://www.cdslab.org/recipes/tags/#figure" term="figure" /><category scheme="https://www.cdslab.org/recipes/tags/#texas" term="texas" /><category scheme="https://www.cdslab.org/recipes/tags/#population" term="population" /><category scheme="https://www.cdslab.org/recipes/tags/#transformation" term="transformation" /><category scheme="https://www.cdslab.org/recipes/tags/#logarithm" term="logarithm" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Consider the following &lt;a href=&quot;textas_city_population.txt&quot; target=&quot;_blank&quot;&gt;dataset&lt;/a&gt; containing the population of Texas cities. 
+Our goal is to visualize the population of Texas cities:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Data Preparation.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open the Excel file.
+    &lt;blockquote&gt;
+      &lt;p&gt;If you are opening this file for the first time, you may need to &lt;strong&gt;enable editing&lt;/strong&gt; by clicking on the prompt that Excel shows at the top of the file.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Select the population numbers you see in column &lt;strong&gt;F&lt;/strong&gt; of the spreadsheet by:
+    &lt;ol&gt;
+      &lt;li&gt;clicking on the first number you see the column (the Texas population),&lt;/li&gt;
+      &lt;li&gt;pressing and holding the &lt;code&gt;ctrl&lt;/code&gt; and &lt;code&gt;shift&lt;/code&gt; keys on the keyboard simultaneously,&lt;/li&gt;
+      &lt;li&gt;while holding the keys, pressing the &lt;strong&gt;arrow-down&lt;/strong&gt; key on the keyboard.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now that you have selected the population data, you can copy the data by pressing and holding the &lt;code&gt;ctrl&lt;/code&gt; key and pressing the &lt;code&gt;C&lt;/code&gt; letter key. 
+You should see the border of the selected numbers animated.&lt;/li&gt;
+  &lt;li&gt;Now, open a new spreadsheet page by clicking at the &lt;code&gt;+&lt;/code&gt; sign you see at the end of the bottom bar in the Excel file.
+This action should create a new spreadsheet in the same Excel file named &lt;code&gt;Sheet1&lt;/code&gt;.
+You can rename this &lt;code&gt;Sheet1&lt;/code&gt; by double-clicking on it and giving it the new name &lt;code&gt;data&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Now, click on the new speadsheet page and paste the copied population data to column &lt;strong&gt;B&lt;/strong&gt; of the spreadsheet.
+    &lt;blockquote&gt;
+      &lt;p&gt;If no data is pasted, you need to go back to the original spreadsheet page, copy the selection again, come back to data spreadsheet page and past it.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Select the pasted data column by clicking on the column name &lt;strong&gt;B&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;Look at the top right of the Excel bar menu. You should see an option &lt;strong&gt;Sort &amp;amp; Filter&lt;/strong&gt; in the &lt;strong&gt;Editing&lt;/strong&gt; panel of the top bar.
+Click on &lt;strong&gt;Sort &amp;amp; Filter&lt;/strong&gt; and select &lt;strong&gt;Sort Largest to Smallest&lt;/strong&gt;.
+This will sort all population numbers in column &lt;strong&gt;B&lt;/strong&gt; from the largest to the smallest.&lt;/li&gt;
+  &lt;li&gt;Select the first cell in column &lt;strong&gt;A&lt;/strong&gt; of the spreadsheet.
+Fill the cells one through four of column &lt;strong&gt;A&lt;/strong&gt; with numbers &lt;code&gt;1&lt;/code&gt; through &lt;code&gt;4&lt;/code&gt; respectively.
+Now, hold the mouse pointer on the lower-right corner of the fourth cell in column &lt;strong&gt;A&lt;/strong&gt;.
+You should see that the mouse pointer changes to a small black &lt;code&gt;+&lt;/code&gt; symbol, called &lt;strong&gt;Fill Handle&lt;/strong&gt;.
+While the Fill Handle is active, double click on the lower right corner of the fourth cell.
+This should fill all cells in column &lt;strong&gt;A&lt;/strong&gt; with sequential numbers starting from number &lt;code&gt;1&lt;/code&gt; in the first cell.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Visualization.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Press and hold the &lt;code&gt;ctrl&lt;/code&gt; key on the keyboard and select columns &lt;strong&gt;A&lt;/strong&gt; and &lt;strong&gt;B&lt;/strong&gt; in the spreadsheet with your mouse.&lt;/li&gt;
+  &lt;li&gt;While the data remains selected, click on the &lt;strong&gt;Insert&lt;/strong&gt; tab on the top-left bar of the Excel file.&lt;/li&gt;
+  &lt;li&gt;Hover the mouse pointer on the last graphics option in the lowest-right corner of the &lt;strong&gt;Charts&lt;/strong&gt; panel.
+This should open a new panel for scatter plot visualizations.&lt;/li&gt;
+  &lt;li&gt;Select the first graphics option in the opened panel.
+This should create a visualization in the spreadsheet of Texas city populations (in column &lt;strong&gt;B&lt;/strong&gt; of the spreadsheet) vs. the city IDs in column &lt;strong&gt;A&lt;/strong&gt;.
+    &lt;figure&gt;
+    &lt;img src=&quot;texas_city_population.png&quot; /&gt;
+&lt;/figure&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Question&lt;/strong&gt;. Based on this plot, what is the approximate population of the $1000$th most populous city in Texas?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Visualization Transformation.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Select the vertical axis of the line-scatter plot and right-click on it with your mouse.
+This should open a menu.&lt;/li&gt;
+  &lt;li&gt;Select the last option &lt;strong&gt;Format Axis…&lt;/strong&gt; from the menu.
+This should open a new panel to the right side of the Excel file.&lt;/li&gt;
+  &lt;li&gt;You should be able to see an option named &lt;strong&gt;Logarithmic Scale&lt;/strong&gt; toward the bottom of this newly-opened panel.
+Select this option. You should immediately see that the visualization in the plot changes.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Question&lt;/strong&gt;. Based on this axis-transformed plot, what is the approximate population of the $1000$th most populous city in Texas?&lt;/li&gt;
+&lt;/ol&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/vis-excel-axis-transformation/vis-excel-axis-transformation&quot;&gt;Better visualizations through axes transformation.&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on April 29, 2024.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -1204,44 +1305,6 @@ resulting clusters for a range of input number of clusters. Here is an example p
 
   
   &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/regression-erf-censored-gaussian-data/regression-erf-censored-gaussian-data&quot;&gt;Regression: Predicting the distribution of the a dataset subjected to a smooth censorship (sample incompleteness)&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on November 19, 2021.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Puzzle: Matchstick Wrong Equation]]></title>
-  
-  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/puzzle-matchstick-equation/puzzle-matchstick-equation"/>
-  <id>https://www.cdslab.org/recipes/programming/puzzle-matchstick-equation/puzzle-matchstick-equation</id>
-  <published>2021-11-15T00:00:00-06:00</published>
-  <updated>2021-10-01T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Amir Shahmoradi</name>
-    <uri>https://www.cdslab.org/recipes</uri>
-    <email>shahmoradi@utexas.edu</email>
-  </author>
-  <category scheme="https://www.cdslab.org/recipes/tags/#matchstick" term="matchstick" /><category scheme="https://www.cdslab.org/recipes/tags/#equation" term="equation" /><category scheme="https://www.cdslab.org/recipes/tags/#puzzle" term="puzzle" />
-  <content type="html">
-  
-    
-&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
-    
-        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
-            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
-                Problem
-            &lt;/h2&gt;
-        &lt;/a&gt;
-    
-&lt;/div&gt;
-
-&lt;p&gt;Move just one matchstick in the following equation to make it hold.&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img src=&quot;matchstick_equation.png&quot; /&gt;
-&lt;/figure&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/puzzle-matchstick-equation/puzzle-matchstick-equation&quot;&gt;Puzzle: Matchstick Wrong Equation&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on November 15, 2021.&lt;/p&gt;</content>
 </entry>
 
 </feed>

@@ -3,18 +3,18 @@
 <head>
     
     <meta charset="utf-8">
-<title>IEEE-STORAGE CONVENTION FOR REAL NUMBERS &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<title>BETTER VISUALIZATIONS THROUGH AXES TRANSFORMATION. &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
 <meta name="description" content="CDSLab Recipes">
-<meta name="keywords" content="integer, memory, IEEE, storage, real, float, real32, real64, real128">
+<meta name="keywords" content="Excel, visualization, data, input, output, figure, texas, population, transformation, logarithm">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="IEEE-storage convention for real numbers">
+<meta property="og:title" content="Better visualizations through axes transformation.">
 <meta property="og:description" content="CDSLab Recipes">
-<meta property="og:url" content="/recipes/programming/digital-storage-real-number/digital/digital-storage-real-number">
+<meta property="og:url" content="/recipes/programming/vis-excel-axis-transformation/vis-excel-axis-transformation">
 <meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
 <meta property="og:image" content="/recipes/images/">
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="canonical" href="/recipes/programming/digital-storage-real-number/digital/digital-storage-real-number">
+<link rel="canonical" href="/recipes/programming/vis-excel-axis-transformation/vis-excel-axis-transformation">
 <!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
 
 
@@ -130,59 +130,64 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h2><a href="/recipes/programming/digital-storage-real-number/digital/digital-storage-real-number">IEEE-storage convention for real numbers</a></h2>
+                            <h2><a href="/recipes/programming/vis-excel-axis-transformation/vis-excel-axis-transformation">Better visualizations through axes transformation.</a></h2>
                             <p>
                                 by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
                                 
                                     &#8212; Last updated: 
-                                    <strong><time datetime="2023-02-25T00:00:00-06:00">25 February 2023</time></strong>
+                                    <strong><time datetime="2024-04-30T00:00:00-05:00">30 April 2024</time></strong>
                                 
                                 <ul class="tag-box inline">
                                     <span style="margin-right:1rem;">Tags:</span>
                                     
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#IEEE" data-toggle="tooltip" title="Posts tagged with IEEE" rel="tag">IEEE</a>
+                                                <a href="/recipes/tags/index.html#Excel" data-toggle="tooltip" title="Posts tagged with Excel" rel="tag">Excel</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#float" data-toggle="tooltip" title="Posts tagged with float" rel="tag">float</a>
+                                                <a href="/recipes/tags/index.html#data" data-toggle="tooltip" title="Posts tagged with data" rel="tag">data</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#integer" data-toggle="tooltip" title="Posts tagged with integer" rel="tag">integer</a>
+                                                <a href="/recipes/tags/index.html#figure" data-toggle="tooltip" title="Posts tagged with figure" rel="tag">figure</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#memory" data-toggle="tooltip" title="Posts tagged with memory" rel="tag">memory</a>
+                                                <a href="/recipes/tags/index.html#input" data-toggle="tooltip" title="Posts tagged with input" rel="tag">input</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#real" data-toggle="tooltip" title="Posts tagged with real" rel="tag">real</a>
+                                                <a href="/recipes/tags/index.html#logarithm" data-toggle="tooltip" title="Posts tagged with logarithm" rel="tag">logarithm</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#real128" data-toggle="tooltip" title="Posts tagged with real128" rel="tag">real128</a>
+                                                <a href="/recipes/tags/index.html#output" data-toggle="tooltip" title="Posts tagged with output" rel="tag">output</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#real32" data-toggle="tooltip" title="Posts tagged with real32" rel="tag">real32</a>
+                                                <a href="/recipes/tags/index.html#population" data-toggle="tooltip" title="Posts tagged with population" rel="tag">population</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#real64" data-toggle="tooltip" title="Posts tagged with real64" rel="tag">real64</a>
+                                                <a href="/recipes/tags/index.html#texas" data-toggle="tooltip" title="Posts tagged with texas" rel="tag">texas</a>
                                             </li>
                                             
                                         
                                             <li>
-                                                <a href="/recipes/tags/index.html#storage" data-toggle="tooltip" title="Posts tagged with storage" rel="tag">storage</a>
+                                                <a href="/recipes/tags/index.html#transformation" data-toggle="tooltip" title="Posts tagged with transformation" rel="tag">transformation</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#visualization" data-toggle="tooltip" title="Posts tagged with visualization" rel="tag">visualization</a>
                                             </li>
                                             
                                         
@@ -201,18 +206,82 @@
 
             <div style="text-align:left;">
                 
-<p>Recall that computers can only store discrete values in memory.</p>
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+    
+        <a href="#problem" style="display:inline-block;">
+            <h2 id="problem" style="color:red;">
+                Problem
+            </h2>
+        </a>
+    
+</div>
+
+<p>Consider the following <a href="textas_city_population.txt" target="_blank">dataset</a> containing the population of Texas cities. 
+Our goal is to visualize the population of Texas cities:</p>
+
+<p><strong>Data Preparation.</strong></p>
+
 <ol>
-  <li>What does this imply for the storage of real (floating-point) numbers in computers?</li>
-  <li>Now consider the IEEE-storage convention for real numbers in computers for <code>real32</code>, <code>real64</code>, and <code>real128</code> bit storage formats as illustrated below.
-    <figure><img src="../real32.png" width="100%" /></figure>
-    <figure><img src="../real64.png" width="100%" /></figure>
-    <figure><img src="../real128.png" width="100%" /></figure>
-    <p>Compute how many real numbers each of the above formats can represent.</p>
+  <li>Open the Excel file.
+    <blockquote>
+      <p>If you are opening this file for the first time, you may need to <strong>enable editing</strong> by clicking on the prompt that Excel shows at the top of the file.</p>
+    </blockquote>
   </li>
-  <li>How many of these numbers are in the range $[0, 1)$ for each storage convention?</li>
-  <li>What are the minimum and maximum possible representable real values in these conventions?</li>
-  <li>Is there a way to represent numbers that are smaller than the minimum representable real numbers in these conventions?</li>
+  <li>Select the population numbers you see in column <strong>F</strong> of the spreadsheet by:
+    <ol>
+      <li>clicking on the first number you see the column (the Texas population),</li>
+      <li>pressing and holding the <code>ctrl</code> and <code>shift</code> keys on the keyboard simultaneously,</li>
+      <li>while holding the keys, pressing the <strong>arrow-down</strong> key on the keyboard.</li>
+    </ol>
+  </li>
+  <li>Now that you have selected the population data, you can copy the data by pressing and holding the <code>ctrl</code> key and pressing the <code>C</code> letter key. 
+You should see the border of the selected numbers animated.</li>
+  <li>Now, open a new spreadsheet page by clicking at the <code>+</code> sign you see at the end of the bottom bar in the Excel file.
+This action should create a new spreadsheet in the same Excel file named <code>Sheet1</code>.
+You can rename this <code>Sheet1</code> by double-clicking on it and giving it the new name <code>data</code>.</li>
+  <li>Now, click on the new speadsheet page and paste the copied population data to column <strong>B</strong> of the spreadsheet.
+    <blockquote>
+      <p>If no data is pasted, you need to go back to the original spreadsheet page, copy the selection again, come back to data spreadsheet page and past it.</p>
+    </blockquote>
+  </li>
+  <li>Select the pasted data column by clicking on the column name <strong>B</strong>.</li>
+  <li>Look at the top right of the Excel bar menu. You should see an option <strong>Sort &amp; Filter</strong> in the <strong>Editing</strong> panel of the top bar.
+Click on <strong>Sort &amp; Filter</strong> and select <strong>Sort Largest to Smallest</strong>.
+This will sort all population numbers in column <strong>B</strong> from the largest to the smallest.</li>
+  <li>Select the first cell in column <strong>A</strong> of the spreadsheet.
+Fill the cells one through four of column <strong>A</strong> with numbers <code>1</code> through <code>4</code> respectively.
+Now, hold the mouse pointer on the lower-right corner of the fourth cell in column <strong>A</strong>.
+You should see that the mouse pointer changes to a small black <code>+</code> symbol, called <strong>Fill Handle</strong>.
+While the Fill Handle is active, double click on the lower right corner of the fourth cell.
+This should fill all cells in column <strong>A</strong> with sequential numbers starting from number <code>1</code> in the first cell.</li>
+</ol>
+
+<p><strong>Visualization.</strong></p>
+
+<ol>
+  <li>Press and hold the <code>ctrl</code> key on the keyboard and select columns <strong>A</strong> and <strong>B</strong> in the spreadsheet with your mouse.</li>
+  <li>While the data remains selected, click on the <strong>Insert</strong> tab on the top-left bar of the Excel file.</li>
+  <li>Hover the mouse pointer on the last graphics option in the lowest-right corner of the <strong>Charts</strong> panel.
+This should open a new panel for scatter plot visualizations.</li>
+  <li>Select the first graphics option in the opened panel.
+This should create a visualization in the spreadsheet of Texas city populations (in column <strong>B</strong> of the spreadsheet) vs. the city IDs in column <strong>A</strong>.
+    <figure>
+    <img src="texas_city_population.png" />
+</figure>
+  </li>
+  <li><strong>Question</strong>. Based on this plot, what is the approximate population of the $1000$th most populous city in Texas?</li>
+</ol>
+
+<p><strong>Visualization Transformation.</strong></p>
+
+<ol>
+  <li>Select the vertical axis of the line-scatter plot and right-click on it with your mouse.
+This should open a menu.</li>
+  <li>Select the last option <strong>Format Axis…</strong> from the menu.
+This should open a new panel to the right side of the Excel file.</li>
+  <li>You should be able to see an option named <strong>Logarithmic Scale</strong> toward the bottom of this newly-opened panel.
+Select this option. You should immediately see that the visualization in the plot changes.</li>
+  <li><strong>Question</strong>. Based on this axis-transformed plot, what is the approximate population of the $1000$th most populous city in Texas?</li>
 </ol>
 
 
@@ -221,11 +290,11 @@
         <div class="cf"></div>
 <div class="row text-center">
     <section class="notepad-post-share">
-        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;IEEE-storage convention for real numbers&quot;%20https://www.cdslab.org/recipes/programming/digital-storage-real-number/digital/digital-storage-real-number%20via%20&#64;"
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Better visualizations through axes transformation.&quot;%20https://www.cdslab.org/recipes/programming/vis-excel-axis-transformation/vis-excel-axis-transformation%20via%20&#64;"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
             <i class="fa fa-twitter"></i>
         </a>
-        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/digital-storage-real-number/digital/digital-storage-real-number"
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/vis-excel-axis-transformation/vis-excel-axis-transformation"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
             <i class="fa fa-facebook"></i>
         </a>

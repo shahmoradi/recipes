@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "Better visualizations through axes transformation.",
+		  "category"   : "",
+		  "url"        : "/recipes/programming/vis-excel-axis-transformation/vis-excel-axis-transformation",
+		  "date"       : "2024-04-29 00:00:00 -0500",
+		  "shortdate"  : "April 29, 2024"
+		} ,
+	
+		{
 		  "title"      : "IEEE-storage convention for real numbers",
 		  "category"   : "digital",
 		  "url"        : "/recipes/programming/digital-storage-real-number/digital/digital-storage-real-number",

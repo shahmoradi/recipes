@@ -727,6 +727,11 @@ callback([
   } ,
 
   {
+    "text": "Better visualizations through axes transformation.",
+    "href": "/recipes/programming/vis-excel-axis-transformation/vis-excel-axis-transformation"
+  } ,
+
+  {
     "text": "Best visualization coloring",
     "href": "/recipes/programming/visualization-coloring/visualization-coloring"
   } ,
