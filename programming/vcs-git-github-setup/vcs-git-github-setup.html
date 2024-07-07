@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="utf-8">
+<title>VERSION-CONTROL: SETTING UP GIT SOFTWARE AND GITHUB ACCOUNT &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<meta name="description" content="CDSLab Recipes">
+<meta name="keywords" content="VCS, git, GitHub, version control system, project, markdown, git branch">
+
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Version-control: Setting up Git Software and GitHub Account">
+<meta property="og:description" content="CDSLab Recipes">
+<meta property="og:url" content="/recipes/programming/vcs-git-github-setup/vcs-git-github-setup">
+<meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
+<meta property="og:image" content="/recipes/images/">
+
+
+
+
+
+<link rel="canonical" href="/recipes/programming/vcs-git-github-setup/vcs-git-github-setup">
+<!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>
+<!--
+<link rel="stylesheet" href="/recipes/assets/css/vendor/font-awesome.min.css">
+-->
+<link rel="stylesheet" href="/recipes/assets/css/vendor/normalize.css">
+<link rel="stylesheet" href="/recipes/assets/css/vendor/nprogress.css">
+<link rel="stylesheet" href="/recipes/assets/css/vendor/foundation.min.css">
+<link rel="stylesheet" href="/recipes/assets/css/style.css">
+<link rel="stylesheet" href="/recipes/assets/css/post.css">
+
+<!--Mathjax LaTeX engine-->
+<script>
+    var MathJax = {"HTML-CSS": {scale: 100}};
+</script>
+<style TYPE="text/css">
+    code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        config: ["MMLorHTML.js"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+        jax: ["input/TeX"],
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<link rel="shortcut icon" href="/recipes/favicon.ico">
+
+<link href="/recipes/assets/css/prismOkaidia.css" rel="stylesheet" />
+<link href="/recipes/assets/css/alert.css" rel="stylesheet" />
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    
+</head>
+<body class="post-template" itemscope itemtype="https://schema.org/WebPage">
+
+
+
+    <main id="notepad-post-container-simple" class="notepad-post-container-simple" role="main">
+        <header class="notepad-post-header-simple">
+            <div class="notepad-post-menu-header-simple">
+
+                <a class="notepad-blog-logo" href=https://www.cdslab.org target="_blank"><img src="/recipes/images/logo.png" alt="cdslab.org" /></a>
+                <div class="notepad-blog-menu">      
+                    <div class="notepad-mobile-menu show-for-small">
+                        <a href="#"><i class="fa fa-bars"></i></a>
+                    </div>
+                    <ul class="notepad-menu">
+                        <li class="notepad-mobile-close-btn show-for-small text-right">
+                            <a href="#"><i class="fa fa-times"></i></a>
+                        </li>
+                        
+                            <li>
+                                
+                                    <a href="/recipes/">Home</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/recipes/highlights">Highlights</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/recipes/tags">Tags</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/recipes/about">About</a>
+                                
+                            </li>
+                                    
+                        <li><a href="/recipes/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+                    </ul>
+                </div>
+            </div>
+
+                <div class="notepad-post-title-simple row">
+                    <div class="small-12 columns">
+                        <div class="notepad-post-meta-simple">
+                            <h2><a href="/recipes/programming/vcs-git-github-setup/vcs-git-github-setup">Version-control: Setting up Git Software and GitHub Account</a></h2>
+                            <p>
+                                by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
+                                
+                                    &#8212; Last updated: 
+                                    <strong><time datetime="2022-09-13T00:00:00-04:00">13 September 2022</time></strong>
+                                
+                                <ul class="tag-box inline">
+                                    <span style="margin-right:1rem;">Tags:</span>
+                                    
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#GitHub" data-toggle="tooltip" title="Posts tagged with GitHub" rel="tag">GitHub</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#VCS" data-toggle="tooltip" title="Posts tagged with VCS" rel="tag">VCS</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#git" data-toggle="tooltip" title="Posts tagged with git" rel="tag">git</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#git branch" data-toggle="tooltip" title="Posts tagged with git branch" rel="tag">git branch</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#markdown" data-toggle="tooltip" title="Posts tagged with markdown" rel="tag">markdown</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#project" data-toggle="tooltip" title="Posts tagged with project" rel="tag">project</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#version control system" data-toggle="tooltip" title="Posts tagged with version control system" rel="tag">version control system</a>
+                                            </li>
+                                            
+                                        
+                                    
+                                </ul>
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <article class="notepad-post-content post tag-simple">
+
+            <div style="text-align:left;">
+                
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#git" id="git">
+            <img src="/recipes/images/Git.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Git" target="_blank">
+                Git
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p>This exercise guides you through the steps needed to take to properly install and minimally use the git software and the Git Bash terminal on your system.<br />
+By the end of this exercise, you will be able to initialize an empty git project anywhere in your computer, or initialize a project on GitHub and clone it to your system.<br />
+<strong>Guidelines.</strong> Use the following references for operations in a (Git) Bash terminal.<br />
+    - <a href="https://www.cdslab.org/python/notes/preliminary-foundations/version-control-system/linuxRef.pdf" target="_blank">Linux Bash command reference</a>
+<br />
+<br /></p>
+
+<ol>
+  <li><strong>Only Windows users</strong>. Before installing the Git software, I highly recommend you to download and install the most recent version of <a href="https://notepad-plus-plus.org/downloads/" target="_blank">Nodepad++ text editor</a> on your system, if you do not have it already.</li>
+  <li><strong>Git installation</strong>. Visit the <a href="https://git-scm.com/downloads" target="_blank">Git downloads website</a> and download the most recent version of the git software to install on your system.
+    <ul>
+      <li><strong>Only Windows users</strong>. During the installation, the git software may ask you to link your Notepad++ software with git. If given this option, choose it.</li>
+      <li><strong>Only macOS users</strong>. One of the easiest ways to install the Git software is via the Homebrew package manager.
+        <ol>
+          <li>First, open a command line terminal and type <code>brew</code> and press <code>Enter</code> key.<br />
+If the terminal returns an error not recognizing Homebrew <code>brew</code> command, it means you do not have <code>brew</code> installed on your system.<br />
+If you do have <code>brew</code> already installed, skip the next step.</li>
+          <li>In you terminal, copy and paste the following command and press <code>Enter</code>:
+            <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/bin/bash <span class="nt">-c</span> <span class="s2">"</span><span class="si">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="si">)</span><span class="s2">"</span>
+</code></pre></div>            </div>
+            <p>The Homebrew installation may take a while depending on the quality of your network connection.<br />
+<strong>Carefully read any questions and message prompted by Homebrew and respond correctly.</strong></p>
+          </li>
+          <li>Once done, type the following command to install <code>git</code> on your system:
+            <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">install </span>git
+</code></pre></div>            </div>
+          </li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Interacting with Git</strong>.
+    <ul>
+      <li>Depending on your operating system,
+        <ul>
+          <li><strong>On Windows systems</strong>,
+            <ol>
+              <li>press the Windows key + <code>E</code> to open a Windows explorer.<br />
+<img src="explorer-key-shortcut.jpg" alt="explorer-key-shortcut.jpg" /></li>
+              <li>Then, navigate to the directory <code>C:\Users\account</code>, where you have to replace <code>account</code> with your Windows account name.</li>
+              <li>Now right-click on an empty region of the Windows explorer, you should see a menu like the following.<br />
+<img src="git.bash.here.png" alt="git.bash.here.png" /><br />
+Click on “Git Bash Here” to open a Git Bash session. You should see a Bash session opened like the following screen shot,<br />
+<img src="git.bash.png" alt="git.bash.png" /><br />
+What is <strong>Git Bash</strong>? Git Bash is simply a <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)" target="_blank">Bash terminal</a> that is tailored for Git usage on Windows.<br />
+The Linux and macOS operating systems have Bash-compatible terminals (shells) that allow interaction with the operating system.<br />
+The Git software was originally built as a Linux application that natively used the Linux terminals for interaction.<br />
+However, Windows system is not fully compatible with Linux terminals and does not have native Linux-compatible terminals.<br />
+Therefore, the Git developers decided to ship the Git software with a dedicated Bash terminal for use on Windows systems,
+so that Windows users also get the same feeling as Linux and macOS users when dealing with Git software.</li>
+            </ol>
+          </li>
+          <li><strong>On Linux / macOS systems</strong>.
+            <ol>
+              <li>Simply search for <strong>terminal</strong> in the search box of your operating system and open a terminal.</li>
+              <li>Then type <code>cd ~</code> and press enter. This will take you to <strong>home directory</strong> of your system.</li>
+              <li>Then type <code>open .</code> in your terminal and press enter to open a <strong>macOS finder</strong> in the same location as your home folder.</li>
+            </ol>
+          </li>
+        </ul>
+      </li>
+      <li>Now, within your terminal (whether Git Bash or Linux/macOS terminal), type <code>pwd</code> and press enter.<br />
+<strong>Why?</strong> This Bash command displays the current working directory where you are.<br />
+It should print the path to the home directory of your system, because you are already in the home directory.</li>
+      <li>Now type <code>ls -a</code> and press enter.<br />
+<strong>Why?</strong> This Bash command will display a list of all files and folders in the home directory of your computer.<br />
+The <code>-a</code> flag requests the Bash terminal to show all files (<strong>including hidden files</strong>).<br />
+Note that any file or folder whose name begins with a <code>.</code> is automatically hidden from your view.</li>
+    </ul>
+  </li>
+  <li><strong>Creating your first Git project.</strong><br />
+There are two ways to create git projects,
+    <ol>
+      <li>Creating a git project on your local system.
+        <ul>
+          <li>Now type <code>mkdir git</code> and press enter.<br />
+<strong>Why?</strong> This Bash command will create a new folder named <code>git</code> within the current directory of your Bash session (which is already your home directory).<br />
+Although you can use any place in your computer to store your Git projects, it is good practice and much easier to keep them all in one place (the <code>git</code> folder you just created).
+            <blockquote>
+              <p>Some of you may have already created a <code>git</code> folder in your home directory. <br />
+  In such a case, the command <code>mkdir git</code> will lead to an error because the folder already exists.<br />
+  Do not panic, ignore the error message and move on to the next step below.</p>
+            </blockquote>
+          </li>
+          <li>Now type <code>ls -l</code> again and press enter.<br />
+<strong>Why?</strong> If you have successfully created the new folder <code>git</code> in your current directory, this command will show you the new folder in the listing it displays.<br />
+If you cannot find it, you need to reach out to me to identify the roots of the problem.</li>
+          <li>Now type <code>cd git</code> and press enter.<br />
+<strong>Why?</strong> The <code>cd</code> Bash command stands for <strong>Change Directory</strong>. Therefore, <code>cd git</code> will change your current working directory from your home directory to the subdirectory <code>git</code>.</li>
+          <li>Now, we want to create a new git project in this folder. Let’s say the name of the project is <code>test</code>.</li>
+          <li>First, we will have to create a <code>test</code> folder where we will store all files and materials related to the <code>test</code> git project. Type the following in the terminal and press enter.
+            <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir test</span> <span class="o">&amp;&amp;</span> <span class="nb">cd test</span>
+</code></pre></div>            </div>
+            <p>This command will create a <code>test</code> subfolder in your <code>git</code> folder and then will change the current directory to wihtin the <code>test</code> subfolder.<br />
+The <code>&amp;&amp;</code> simply means <strong>and</strong>: Make directory <code>test</code> <strong>and</strong> change directory to <code>test</code>.</p>
+          </li>
+          <li>This is where we want to host our git test project. To initialize an empty Git project here, type the following git command in the terminal,
+            <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init
+</code></pre></div>            </div>
+          </li>
+          <li><strong>Done.</strong> You have successfully created an empty test Git project on your computer.</li>
+          <li>Each and every Git project is always associated with a <code>.git</code> subfolder in the same location where your store your project on your system.<br />
+To ensure you have successfully initiated a Git project, type <code>ls -a</code> in your terminal and press enter.<br />
+This should display a list among which there is <code>.git</code>.<br />
+If you do not see this hidden folder in the list displayed, your <code>test</code> folder is <strong>not</strong> a git project yet!</li>
+          <li>Of course, your Git project is still empty. But you can now put anything you like in it and make it part of your project.<br />
+For example, we can add an empty text file to it by typing,
+            <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">touch </span>README.md
+</code></pre></div>            </div>
+            <p>in the Bash terminal and pressing enter.</p>
+          </li>
+        </ul>
+      </li>
+      <li>Creating a git project on a server and cloning the project on your local system.<br />
+This is the easier way of initializing projects and sharing them with other Team members in the project.<br />
+In the follow-up exercises, we will learn how to initialize Git projects using <a href="https://github.com/" target="_blank">GitHub</a> as the git server.</li>
+    </ol>
+  </li>
+</ol>
+
+            </div>
+        </article>
+        <div class="cf"></div>
+<div class="row text-center">
+    <section class="notepad-post-share">
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Version-control: Setting up Git Software and GitHub Account&quot;%20https://www.cdslab.org/recipes/programming/vcs-git-github-setup/vcs-git-github-setup%20via%20&#64;"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+            <i class="fa fa-twitter"></i>
+        </a>
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/vcs-git-github-setup/vcs-git-github-setup"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+            <i class="fa fa-facebook"></i>
+        </a>
+        
+    </section>
+</div>
+        <div class="cf"></div>
+<div class="notepad-author-info">
+    <div class="row">
+        <section class="notepad-post-author small-12 columns">
+            <a href=https://www.shahmoradi.org target="_blank">
+                <img src="/recipes/images/AmirShahmoradi.png" class="notepad-post-author-avatar" alt="Amir Shahmoradi's photo">
+            </a>
+            <span class="author-label">Author</span>
+            <h1>Amir Shahmoradi</h1>
+            <p><a href="mailto:shahmoradi@utexas.edu" class="author-website">shahmoradi@utexas.edu</a></p>
+            <p>Genius is 99% perspiration and 1% inspiration</p>
+        </section>
+    </div>
+</div> 
+        <div class="cf"></div>
+
+        <section class="notepad-disqus row">
+            <div class="small-12 columns">
+                <h1 class="notepad-comments-header">Comments</h1>
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'shahmoradi'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+        </section>
+
+        <div class="cf"></div>
+        <footer class="notepad-site-footer">
+    <div class="copyright">
+         <!-- <section>Last updated 2024 / 07 / 06</section></br> -->
+         <section>Last updated Saturday, 06 Jul 2024 at 09:55 PM CST</section></br>
+         <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
+         <section>SEIR 365 | Arlington TX 76010</section></br>
+    </div>
+    <div class="social-icons">
+
+        
+        <a href="https://facebook.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+        </a>
+        
+
+        
+        <a href="https://github.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+        </a>
+        
+
+        
+
+        
+        <a href="https://instagram.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-instagram fa-stack-1x"></i>
+            </span>
+        </a>
+        
+
+        
+        <a href="https://medium.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-medium fa-stack-1x"></i>
+                <!--
+                -->
+            </span>
+        </a>
+        
+
+        
+        <a href="https://twitter.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+<div style="color: #000000; float: none; width: 100%; padding-top: 1rem;">
+    <span style="font-size:0.8em">visitor count: 
+        <script type="text/javascript">
+            var sc_project=12051053; 
+            var sc_invisible=0; 
+            var sc_security="e095256f"; 
+            var sc_text=3; 
+            var scJsHost = "https://";
+            document.write("<sc"+"ript type='text/javascript' src='" + scJsHost + 
+            "statcounter.com/counter/counter.js'></"+"script>");
+        </script>
+    </span>
+</div>
+
+
+    </div>
+    <div class="cf"></div>
+</footer> 
+    </main>
+    <!--dynamic page header-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/recipes/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+  <script src="/recipes/assets/js/vendor/modernizr.js"></script>
+  <script src="/recipes/assets/js/foundation.min.js"></script>
+  
+  <script src="/recipes/assets/js/notepad.js"></script>
+  <script src="/recipes/assets/js/scripts.min.js"></script>
+  <script src="/recipes/assets/js/vendor/nprogress.js"></script>
+  
+  <script>
+    $(document).foundation();
+  </script>
+  <script type='text/javascript'>console.log("N/A");</script>
+  <script type='text/javascript'>console.log("https://www.cdslab.org/");</script>
+
+<!--header anchor links-->
+<script src="/recipes/assets/js/autoAnchorLink.js"></script>
+
+<!-- <script src="/recipes/assets/js/prismOkaidia.js"></script>
+<script src="/recipes/assets/js/prismTwilight.js"></script>
+<script src="/recipes/assets/js/prismDefault.js"></script>
+ -->
+<script src="/recipes/assets/js/prismCoy.js"></script> 
+    <!--automatic Table of Content.-->
+    <script src="/recipes/assets/js/autoTOC.js"></script>
+</body>
+</html>
