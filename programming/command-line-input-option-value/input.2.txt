@@ -1,4 +1,0 @@
-initHeight
-0 initVelocity 0 time
-3 gravityConstant -10
-unit SI
