@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<title>CDSLAB RECIPES &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<meta name="description" content="CDSLab Recipes -- A cookbook for all sorts of problems">
+<meta name="keywords" content="Computer, Programming, Amir, Shahmoradi, University, Texas, Arlington, Physics">
+
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CDSLab Recipes">
+<meta property="og:description" content="CDSLab Recipes -- A cookbook for all sorts of problems">
+<meta property="og:url" content="/recipes/page4/">
+<meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
+<meta property="og:image" content="/recipes/images/">
+
+
+
+
+
+<link rel="canonical" href="/recipes/page4/">
+<!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>
+<!--
+<link rel="stylesheet" href="/recipes/assets/css/vendor/font-awesome.min.css">
+-->
+<link rel="stylesheet" href="/recipes/assets/css/vendor/normalize.css">
+<link rel="stylesheet" href="/recipes/assets/css/vendor/nprogress.css">
+<link rel="stylesheet" href="/recipes/assets/css/vendor/foundation.min.css">
+<link rel="stylesheet" href="/recipes/assets/css/style.css">
+<link rel="stylesheet" href="/recipes/assets/css/post.css">
+
+<!--Mathjax LaTeX engine-->
+<script>
+    var MathJax = {"HTML-CSS": {scale: 100}};
+</script>
+<style TYPE="text/css">
+    code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        config: ["MMLorHTML.js"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+        jax: ["input/TeX"],
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<link rel="shortcut icon" href="/recipes/favicon.ico">
+
+<link href="/recipes/assets/css/prismOkaidia.css" rel="stylesheet" />
+<link href="/recipes/assets/css/alert.css" rel="stylesheet" />
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+    <body class="home-template" itemscope itemtype="https://schema.org/WebPage">
+        <header class="notepad-site-head">
+    <div class="notepad-site-head-menu">
+        <a class="notepad-blog-logo" href="https://www.cdslab.org" target="_blank"><img src="/recipes/images/logo.png" alt="cdslab.org" /></a>
+        
+        <div class="notepad-blog-menu">      
+            <div class="notepad-mobile-menu show-for-small">
+                <a href="#"><i class="fa fa-bars"></i></a>
+            </div>
+            <ul class="notepad-menu">
+                <li class="notepad-mobile-close-btn show-for-small text-right">
+                    <a href="#"><i class="fa fa-times"></i></a>
+                </li>
+                
+                    <li>
+                    <a href="/recipes/">Home</a>
+                     </li>
+                
+                    <li>
+                    <a href="/recipes/highlights">Highlights</a>
+                     </li>
+                
+                    <li>
+                    <a href="/recipes/tags">Tags</a>
+                     </li>
+                
+                    <li>
+                    <a href="/recipes/about">About</a>
+                     </li>
+                            
+                <li><a href="/recipes/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="notepad-site-head-content">
+            <!--
+            -->
+            <!--
+        <div class="notepad-site-head-bg"></div>
+            -->
+        <h1 class="notepad-blog-title" >
+            <a href="https://www.uta.edu/science/" target="_blank"><img src="/recipes/images/uta.png" width="200px" style="margin-top:-4rem;" ></a><br><br>
+            <span class="notepad-site-head-title-bg" style="text-transform: none">
+                CDSLab Recipes - A repository for all sorts of problems with solutions
+            </span>
+        </h1>
+        <h2 class="notepad-blog-description" style="margin-bottom:-5rem;" >
+          CDSLab Recipes
+        </h2>
+            <!--
+            -->
+    </div>
+</header>
+
+        <main class="notepad-content" role="main">
+            
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2021-03-08T00:00:00-05:00">
+                        <span class="day">
+                            08
+                        </span>
+                        <span class="month-year">
+                            March 2021
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/vis-world-population-refined/vis-world-population-refined">
+                            Visualization: The world population (refined)
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem The following plot is a refined map of the worldwide population. What kind of visualization and map is this plot? Select all that apply. Robinson map, Interrupted Goode Homolosine map, Cartesian Longitude and Latitude map, Cartogram Heat map, Winkel...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#geography" title="Other posts tagged geography">geography</a>&nbsp;<a href="/recipes/tags/index.html#plot" title="Other posts tagged plot">plot</a>&nbsp;<a href="/recipes/tags/index.html#visualization" title="Other posts tagged visualization">visualization</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2021-03-08T00:00:00-05:00">
+                        <span class="day">
+                            08
+                        </span>
+                        <span class="month-year">
+                            March 2021
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/vis-world-map-resized/vis-world-map-resized">
+                            Visualization: The world map resized by population
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>
+
+    
+        
+            
+                Problem
+            
+        
+    
+
+
+The following plot uses (distorts) the country sizes to represent the worldwide population. 
+What kind of visualization (map) is this plot?
+
+
+  Cartogram Heat map,
+  Robinson map,
+  Winkel map,
+  Choropleth,
+  Cartogram,
+
+
+
+    
+
+
+</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#geography" title="Other posts tagged geography">geography</a>&nbsp;<a href="/recipes/tags/index.html#plot" title="Other posts tagged plot">plot</a>&nbsp;<a href="/recipes/tags/index.html#visualization" title="Other posts tagged visualization">visualization</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2021-03-08T00:00:00-05:00">
+                        <span class="day">
+                            08
+                        </span>
+                        <span class="month-year">
+                            March 2021
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/vis-internet-usage/vis-internet-usage">
+                            Visualization: Worldwide Internet Usage
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>
+
+    
+        
+            
+                Problem
+            
+        
+    
+
+
+The following plot shows the worldwide usage of Internet by countries. 
+What kind of visualization is this plot?
+(By the way, which country is the largest Internet-user in the world?)
+
+
+    
+
+
+</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#geography" title="Other posts tagged geography">geography</a>&nbsp;<a href="/recipes/tags/index.html#plot" title="Other posts tagged plot">plot</a>&nbsp;<a href="/recipes/tags/index.html#visualization" title="Other posts tagged visualization">visualization</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2020-11-01T00:00:00-04:00">
+                        <span class="day">
+                            01
+                        </span>
+                        <span class="month-year">
+                            November 2020
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/logic-a-nand-equivalence/logic/logic-a-nand-equivalence">
+                            Logic NAND equivalence
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>We have learned that, \[\begin{eqnarray} \bar{A} &amp;=&amp; A \uparrow A ~, \nonumber \\ AB &amp;=&amp; (A \uparrow B) \uparrow (A \uparrow B) ~, \nonumber \\ A + B &amp;=&amp; (A \uparrow A) \uparrow (B \uparrow B) ~, \nonumber \end{eqnarray}\] Now,...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#boolean" title="Other posts tagged boolean">boolean</a>&nbsp;<a href="/recipes/tags/index.html#deduction" title="Other posts tagged deduction">deduction</a>&nbsp;<a href="/recipes/tags/index.html#implication" title="Other posts tagged implication">implication</a>&nbsp;<a href="/recipes/tags/index.html#logic" title="Other posts tagged logic">logic</a>&nbsp;<a href="/recipes/tags/index.html#plausibility" title="Other posts tagged plausibility">plausibility</a>&nbsp;<a href="/recipes/tags/index.html#reasoning" title="Other posts tagged reasoning">reasoning</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2020-10-21T00:00:00-04:00">
+                        <span class="day">
+                            21
+                        </span>
+                        <span class="month-year">
+                            October 2020
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/probability-schools-of-thought/probability-schools-of-thought">
+                            The major schools of thought in Probability Theory
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>
+Name four major schools of Probability Theory.
+
+</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#bayesian" title="Other posts tagged bayesian">bayesian</a>&nbsp;<a href="/recipes/tags/index.html#frequentist" title="Other posts tagged frequentist">frequentist</a>&nbsp;<a href="/recipes/tags/index.html#plausibility" title="Other posts tagged plausibility">plausibility</a>&nbsp;<a href="/recipes/tags/index.html#schools" title="Other posts tagged schools">schools</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2020-10-21T00:00:00-04:00">
+                        <span class="day">
+                            21
+                        </span>
+                        <span class="month-year">
+                            October 2020
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/probability-desiderata/probability-desiderata">
+                            The fundamental desiderata of Probability Theory
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>
+Name the three fundamental desiderata of Probability Theory.
+
+</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#boolean" title="Other posts tagged boolean">boolean</a>&nbsp;<a href="/recipes/tags/index.html#deduction" title="Other posts tagged deduction">deduction</a>&nbsp;<a href="/recipes/tags/index.html#implication" title="Other posts tagged implication">implication</a>&nbsp;<a href="/recipes/tags/index.html#logic" title="Other posts tagged logic">logic</a>&nbsp;<a href="/recipes/tags/index.html#plausibility" title="Other posts tagged plausibility">plausibility</a>&nbsp;<a href="/recipes/tags/index.html#reasoning" title="Other posts tagged reasoning">reasoning</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2020-10-21T00:00:00-04:00">
+                        <span class="day">
+                            21
+                        </span>
+                        <span class="month-year">
+                            October 2020
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/probability-correspondence-with-common-sense/probability-correspondence-with-common-sense">
+                            Probability Theory: correspondence with commonsense
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>
+Show via an example Venn diagram that if,
+
+
+
+holds, then,
+
+
+
+also holds.
+
+</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#boolean" title="Other posts tagged boolean">boolean</a>&nbsp;<a href="/recipes/tags/index.html#commonsense" title="Other posts tagged commonsense">commonsense</a>&nbsp;<a href="/recipes/tags/index.html#deduction" title="Other posts tagged deduction">deduction</a>&nbsp;<a href="/recipes/tags/index.html#implication" title="Other posts tagged implication">implication</a>&nbsp;<a href="/recipes/tags/index.html#logic" title="Other posts tagged logic">logic</a>&nbsp;<a href="/recipes/tags/index.html#plausibility" title="Other posts tagged plausibility">plausibility</a>&nbsp;<a href="/recipes/tags/index.html#reasoning" title="Other posts tagged reasoning">reasoning</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2020-10-21T00:00:00-04:00">
+                        <span class="day">
+                            21
+                        </span>
+                        <span class="month-year">
+                            October 2020
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/probability-bayes-rule-proof-venn-disgram/probability-bayes-rule-proof-venn-disgram">
+                            The proof of Bayes' Rule via Venn diagram
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>
+Prove the Bayes’s rule via Venn diagrams,
+
+\[\pi(B|A) = \frac{ \pi(A|B) ~ \pi(B) } { \pi(A) } ~.\]
+
+</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#boolean" title="Other posts tagged boolean">boolean</a>&nbsp;<a href="/recipes/tags/index.html#deduction" title="Other posts tagged deduction">deduction</a>&nbsp;<a href="/recipes/tags/index.html#implication" title="Other posts tagged implication">implication</a>&nbsp;<a href="/recipes/tags/index.html#logic" title="Other posts tagged logic">logic</a>&nbsp;<a href="/recipes/tags/index.html#plausibility" title="Other posts tagged plausibility">plausibility</a>&nbsp;<a href="/recipes/tags/index.html#reasoning" title="Other posts tagged reasoning">reasoning</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2020-10-21T00:00:00-04:00">
+                        <span class="day">
+                            21
+                        </span>
+                        <span class="month-year">
+                            October 2020
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/logic-fundamental-operations/logic-fundamental-operations">
+                            The fundamental logical operators
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>
+Show that the following identities hold,
+
+
+
+where the two arrow-up and arrow-down symbols represent the fundamental NAND and NOR operators,
+
+
+
+</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#boolean" title="Other posts tagged boolean">boolean</a>&nbsp;<a href="/recipes/tags/index.html#deduction" title="Other posts tagged deduction">deduction</a>&nbsp;<a href="/recipes/tags/index.html#implication" title="Other posts tagged implication">implication</a>&nbsp;<a href="/recipes/tags/index.html#logic" title="Other posts tagged logic">logic</a>&nbsp;<a href="/recipes/tags/index.html#nand" title="Other posts tagged nand">nand</a>&nbsp;<a href="/recipes/tags/index.html#nor" title="Other posts tagged nor">nor</a>&nbsp;<a href="/recipes/tags/index.html#plausibility" title="Other posts tagged plausibility">plausibility</a>&nbsp;<a href="/recipes/tags/index.html#reasoning" title="Other posts tagged reasoning">reasoning</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2020-10-21T00:00:00-04:00">
+                        <span class="day">
+                            21
+                        </span>
+                        <span class="month-year">
+                            October 2020
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/logic-functions-operations/logic-functions-operations">
+                            Logic functions in terms of logic functions
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>
+Show that the following functions,
+
+
+
+can be written as,
+
+
+
+where the basis logic functions have the following truth table,
+
+
+
+</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#boolean" title="Other posts tagged boolean">boolean</a>&nbsp;<a href="/recipes/tags/index.html#deduction" title="Other posts tagged deduction">deduction</a>&nbsp;<a href="/recipes/tags/index.html#implication" title="Other posts tagged implication">implication</a>&nbsp;<a href="/recipes/tags/index.html#logic" title="Other posts tagged logic">logic</a>&nbsp;<a href="/recipes/tags/index.html#plausibility" title="Other posts tagged plausibility">plausibility</a>&nbsp;<a href="/recipes/tags/index.html#reasoning" title="Other posts tagged reasoning">reasoning</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2020-10-21T00:00:00-04:00">
+                        <span class="day">
+                            21
+                        </span>
+                        <span class="month-year">
+                            October 2020
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/logic-functions-2d/logic-functions-2d">
+                            Logic functions with 2 input
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>
+Consider the following special functions that are TRUE only at specific points within the logical sample space:
+
+
+
+
+Show that the above truth table is equivalent to the following logical operations.
+
+
+
+
+</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#boolean" title="Other posts tagged boolean">boolean</a>&nbsp;<a href="/recipes/tags/index.html#deduction" title="Other posts tagged deduction">deduction</a>&nbsp;<a href="/recipes/tags/index.html#implication" title="Other posts tagged implication">implication</a>&nbsp;<a href="/recipes/tags/index.html#logic" title="Other posts tagged logic">logic</a>&nbsp;<a href="/recipes/tags/index.html#plausibility" title="Other posts tagged plausibility">plausibility</a>&nbsp;<a href="/recipes/tags/index.html#reasoning" title="Other posts tagged reasoning">reasoning</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2020-10-21T00:00:00-04:00">
+                        <span class="day">
+                            21
+                        </span>
+                        <span class="month-year">
+                            October 2020
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/logic-functions-1d/logic-functions-1d">
+                            Logic functions with 1 input
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Consider a set of logic functions \(\{ f_1(A), f_2(A), f_3(A), f_4(A)\}\) that take a proposition (\(A\)) as input which is either True or False. These functions map the truth value of the input proposition to either True or False according...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#boolean" title="Other posts tagged boolean">boolean</a>&nbsp;<a href="/recipes/tags/index.html#deduction" title="Other posts tagged deduction">deduction</a>&nbsp;<a href="/recipes/tags/index.html#implication" title="Other posts tagged implication">implication</a>&nbsp;<a href="/recipes/tags/index.html#logic" title="Other posts tagged logic">logic</a>&nbsp;<a href="/recipes/tags/index.html#plausibility" title="Other posts tagged plausibility">plausibility</a>&nbsp;<a href="/recipes/tags/index.html#reasoning" title="Other posts tagged reasoning">reasoning</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2020-09-30T00:00:00-04:00">
+                        <span class="day">
+                            30
+                        </span>
+                        <span class="month-year">
+                            September 2020
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/logic-two-types-of-scientific-reasoning/logic/logic-two-types-of-scientific-reasoning">
+                            The two types of scientific reasoning
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>
+Name the two types of scientific reasoning and give an example argument for each one.
+
+</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#boolean" title="Other posts tagged boolean">boolean</a>&nbsp;<a href="/recipes/tags/index.html#deduction" title="Other posts tagged deduction">deduction</a>&nbsp;<a href="/recipes/tags/index.html#logic" title="Other posts tagged logic">logic</a>&nbsp;<a href="/recipes/tags/index.html#plausibility" title="Other posts tagged plausibility">plausibility</a>&nbsp;<a href="/recipes/tags/index.html#reasoning" title="Other posts tagged reasoning">reasoning</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2020-09-30T00:00:00-04:00">
+                        <span class="day">
+                            30
+                        </span>
+                        <span class="month-year">
+                            September 2020
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/logic-product-denial/logic/logic-product-denial">
+                            Logical product denial
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>
+Show via Venn diagrams that the negation of a logical product ($\overline{AB}$) is equivalent to the logical sum of the negations ($\bar{A}+\bar{B}$).
+
+</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#boolean" title="Other posts tagged boolean">boolean</a>&nbsp;<a href="/recipes/tags/index.html#deduction" title="Other posts tagged deduction">deduction</a>&nbsp;<a href="/recipes/tags/index.html#logic" title="Other posts tagged logic">logic</a>&nbsp;<a href="/recipes/tags/index.html#plausibility" title="Other posts tagged plausibility">plausibility</a>&nbsp;<a href="/recipes/tags/index.html#reasoning" title="Other posts tagged reasoning">reasoning</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2020-09-30T00:00:00-04:00">
+                        <span class="day">
+                            30
+                        </span>
+                        <span class="month-year">
+                            September 2020
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/logic-policeman-jewelry-burglar/logic/logic-policeman-jewelry-burglar">
+                            Policeman, jewelry, and burglar
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Suppose some dark night a policemanwalks down a street, apparently deserted. Suddenly he hears a burglar alarm, looks across the street, and sees a jewelry store with a broken window. Then a gentleman wearing a mask comes crawling out through...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#boolean" title="Other posts tagged boolean">boolean</a>&nbsp;<a href="/recipes/tags/index.html#deduction" title="Other posts tagged deduction">deduction</a>&nbsp;<a href="/recipes/tags/index.html#logic" title="Other posts tagged logic">logic</a>&nbsp;<a href="/recipes/tags/index.html#plausibility" title="Other posts tagged plausibility">plausibility</a>&nbsp;<a href="/recipes/tags/index.html#reasoning" title="Other posts tagged reasoning">reasoning</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2020-09-30T00:00:00-04:00">
+                        <span class="day">
+                            30
+                        </span>
+                        <span class="month-year">
+                            September 2020
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/logic-implication/logic/logic-implication">
+                            Logical implication
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>
+Show via Venn diagrams that the logical implication ($A\Rightarrow B$) is equivalent to the following expressions,
+
+\[A\bar{B} ~ \text{is false} ~,\]
+
+\[\bar{A} + B ~ \text{is true} ~,\]
+
+\[A = AB ~,\]
+
+</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#boolean" title="Other posts tagged boolean">boolean</a>&nbsp;<a href="/recipes/tags/index.html#deduction" title="Other posts tagged deduction">deduction</a>&nbsp;<a href="/recipes/tags/index.html#implication" title="Other posts tagged implication">implication</a>&nbsp;<a href="/recipes/tags/index.html#logic" title="Other posts tagged logic">logic</a>&nbsp;<a href="/recipes/tags/index.html#plausibility" title="Other posts tagged plausibility">plausibility</a>&nbsp;<a href="/recipes/tags/index.html#reasoning" title="Other posts tagged reasoning">reasoning</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2020-09-30T00:00:00-04:00">
+                        <span class="day">
+                            30
+                        </span>
+                        <span class="month-year">
+                            September 2020
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/logic-implication-denial-equivalence/logic/logic-implication-denial-equivalence">
+                            Logic implication, denial, equivalence
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>We have learned that the logical implication ($C\Rightarrow D$) is equivalent to the following expressions, \[C\bar{D} ~ \text{is false} ~,\] \[\bar{C} + D ~ \text{is true} ~,\] \[C = CD ~,\] Now, using the above expressions, show that if, \[(B\Rightarrow...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#boolean" title="Other posts tagged boolean">boolean</a>&nbsp;<a href="/recipes/tags/index.html#deduction" title="Other posts tagged deduction">deduction</a>&nbsp;<a href="/recipes/tags/index.html#implication" title="Other posts tagged implication">implication</a>&nbsp;<a href="/recipes/tags/index.html#logic" title="Other posts tagged logic">logic</a>&nbsp;<a href="/recipes/tags/index.html#plausibility" title="Other posts tagged plausibility">plausibility</a>&nbsp;<a href="/recipes/tags/index.html#reasoning" title="Other posts tagged reasoning">reasoning</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2020-09-30T00:00:00-04:00">
+                        <span class="day">
+                            30
+                        </span>
+                        <span class="month-year">
+                            September 2020
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/logic-boolean-algebra-venn-diagram/logic/logic-boolean-algebra-venn-diagram">
+                            Venn diagram representation of Boolean identities
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>
+Show, via Venn diagrams, that the following Boolean algebraic identities hold.
+
+
+
+</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#boolean" title="Other posts tagged boolean">boolean</a>&nbsp;<a href="/recipes/tags/index.html#deduction" title="Other posts tagged deduction">deduction</a>&nbsp;<a href="/recipes/tags/index.html#diagram" title="Other posts tagged diagram">diagram</a>&nbsp;<a href="/recipes/tags/index.html#logic" title="Other posts tagged logic">logic</a>&nbsp;<a href="/recipes/tags/index.html#plausibility" title="Other posts tagged plausibility">plausibility</a>&nbsp;<a href="/recipes/tags/index.html#reasoning" title="Other posts tagged reasoning">reasoning</a>&nbsp;<a href="/recipes/tags/index.html#venn" title="Other posts tagged venn">venn</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2020-09-30T00:00:00-04:00">
+                        <span class="day">
+                            30
+                        </span>
+                        <span class="month-year">
+                            September 2020
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/logic-boolean-algebra-truth-table/logic/logic-boolean-algebra-truth-table">
+                            Truth table representation of Boolean identities
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>
+Show, via Truth Tables, that the following Boolean algebraic identities hold.
+
+
+
+</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#boolean" title="Other posts tagged boolean">boolean</a>&nbsp;<a href="/recipes/tags/index.html#deduction" title="Other posts tagged deduction">deduction</a>&nbsp;<a href="/recipes/tags/index.html#diagram" title="Other posts tagged diagram">diagram</a>&nbsp;<a href="/recipes/tags/index.html#logic" title="Other posts tagged logic">logic</a>&nbsp;<a href="/recipes/tags/index.html#plausibility" title="Other posts tagged plausibility">plausibility</a>&nbsp;<a href="/recipes/tags/index.html#reasoning" title="Other posts tagged reasoning">reasoning</a>&nbsp;<a href="/recipes/tags/index.html#table" title="Other posts tagged table">table</a>&nbsp;<a href="/recipes/tags/index.html#truth" title="Other posts tagged truth">truth</a>&nbsp;<a href="/recipes/tags/index.html#venn" title="Other posts tagged venn">venn</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2020-08-12T00:00:00-04:00">
+                        <span class="day">
+                            12
+                        </span>
+                        <span class="month-year">
+                            August 2020
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/regression-censored-mvn-data/regression-censored-mvn-data">
+                            Regression: Predicting the bivariate distribution of the a dataset subjected to censorship (sample incompleteness)
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Supposed we have observed a dataset comprised of $4975$ events with two attributes variable1 and variable2 points in this file: data.csv. Plotting these points would yield a scatter plot like the red points in the following plot, The pale...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#MATLAB" title="Other posts tagged MATLAB">MATLAB</a>&nbsp;<a href="/recipes/tags/index.html#MCMC" title="Other posts tagged MCMC">MCMC</a>&nbsp;<a href="/recipes/tags/index.html#MVN" title="Other posts tagged MVN">MVN</a>&nbsp;<a href="/recipes/tags/index.html#Markov Chain" title="Other posts tagged Markov Chain">Markov Chain</a>&nbsp;<a href="/recipes/tags/index.html#Monte Carlo" title="Other posts tagged Monte Carlo">Monte Carlo</a>&nbsp;<a href="/recipes/tags/index.html#Normal distribution" title="Other posts tagged Normal distribution">Normal distribution</a>&nbsp;<a href="/recipes/tags/index.html#PDF" title="Other posts tagged PDF">PDF</a>&nbsp;<a href="/recipes/tags/index.html#ParaDRAM" title="Other posts tagged ParaDRAM">ParaDRAM</a>&nbsp;<a href="/recipes/tags/index.html#ParaMonte" title="Other posts tagged ParaMonte">ParaMonte</a>&nbsp;<a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#bivariate" title="Other posts tagged bivariate">bivariate</a>&nbsp;<a href="/recipes/tags/index.html#censored" title="Other posts tagged censored">censored</a>&nbsp;<a href="/recipes/tags/index.html#distribution function" title="Other posts tagged distribution function">distribution function</a>&nbsp;<a href="/recipes/tags/index.html#figure" title="Other posts tagged figure">figure</a>&nbsp;<a href="/recipes/tags/index.html#line" title="Other posts tagged line">line</a>&nbsp;<a href="/recipes/tags/index.html#linear" title="Other posts tagged linear">linear</a>&nbsp;<a href="/recipes/tags/index.html#maximum likelihood method" title="Other posts tagged maximum likelihood method">maximum likelihood method</a>&nbsp;<a href="/recipes/tags/index.html#objective function" title="Other posts tagged objective function">objective function</a>&nbsp;<a href="/recipes/tags/index.html#plot" title="Other posts tagged plot">plot</a>&nbsp;<a href="/recipes/tags/index.html#probability" title="Other posts tagged probability">probability</a>&nbsp;<a href="/recipes/tags/index.html#probability density function" title="Other posts tagged probability density function">probability density function</a>&nbsp;<a href="/recipes/tags/index.html#random number" title="Other posts tagged random number">random number</a>&nbsp;<a href="/recipes/tags/index.html#regression" title="Other posts tagged regression">regression</a>&nbsp;<a href="/recipes/tags/index.html#sample incompleteness" title="Other posts tagged sample incompleteness">sample incompleteness</a>&nbsp;<a href="/recipes/tags/index.html#uncertainty quantification" title="Other posts tagged uncertainty quantification">uncertainty quantification</a>&nbsp;<a href="/recipes/tags/index.html#visualization" title="Other posts tagged visualization">visualization</a>
+                </div>
+            </div>
+        </article>
+	
+    <nav class="pagination" role="navigation">
+        
+            
+            <a class="newer-posts" href="/recipes/page3"><i class="fa fa-chevron-left"></i> Newer</a>
+            
+        
+        <span class="page-number">Page 4 of 8</span>
+         
+            <a class="older-posts" href="/recipes/page5/">Older <i class="fa fa-chevron-right"></i></a>
+        
+    </nav>
+
+        </main>
+        <footer class="notepad-site-footer">
+    <div class="copyright">
+         <!-- <section>Last updated 2024 / 07 / 10</section></br> -->
+         <section>Last updated Wednesday, 10 Jul 2024 at 10:21 PM CST</section></br>
+         <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
+         <section>SEIR 365 | Arlington TX 76010</section></br>
+    </div>
+    <div class="social-icons">
+
+        
+        <a href="https://facebook.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+        </a>
+        
+
+        
+        <a href="https://github.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+        </a>
+        
+
+        
+
+        
+        <a href="https://instagram.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-instagram fa-stack-1x"></i>
+            </span>
+        </a>
+        
+
+        
+        <a href="https://medium.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-medium fa-stack-1x"></i>
+                <!--
+                -->
+            </span>
+        </a>
+        
+
+        
+        <a href="https://twitter.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+<div style="color: #000000; float: none; width: 100%; padding-top: 1rem;">
+    <span style="font-size:0.8em">visitor count: 
+        <script type="text/javascript">
+            var sc_project=12051053; 
+            var sc_invisible=0; 
+            var sc_security="e095256f"; 
+            var sc_text=3; 
+            var scJsHost = "https://";
+            document.write("<sc"+"ript type='text/javascript' src='" + scJsHost + 
+            "statcounter.com/counter/counter.js'></"+"script>");
+        </script>
+    </span>
+</div>
+
+
+    </div>
+    <div class="cf"></div>
+</footer>
+        <!--dynamic page header-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/recipes/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+  <script src="/recipes/assets/js/vendor/modernizr.js"></script>
+  <script src="/recipes/assets/js/foundation.min.js"></script>
+  
+  <script src="/recipes/assets/js/notepad.js"></script>
+  <script src="/recipes/assets/js/scripts.min.js"></script>
+  <script src="/recipes/assets/js/vendor/nprogress.js"></script>
+  
+  <script>
+    $(document).foundation();
+  </script>
+  <script type='text/javascript'>console.log("N/A");</script>
+  <script type='text/javascript'>console.log("https://www.cdslab.org/");</script>
+
+<!--header anchor links-->
+<script src="/recipes/assets/js/autoAnchorLink.js"></script>
+
+<!-- <script src="/recipes/assets/js/prismOkaidia.js"></script>
+<script src="/recipes/assets/js/prismTwilight.js"></script>
+<script src="/recipes/assets/js/prismDefault.js"></script>
+ -->
+<script src="/recipes/assets/js/prismCoy.js"></script>  
+    </body>
+</html>
