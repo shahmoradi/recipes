@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<title>CDSLAB RECIPES &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<meta name="description" content="CDSLab Recipes -- A cookbook for all sorts of problems">
+<meta name="keywords" content="Computer, Programming, Amir, Shahmoradi, University, Texas, Arlington, Physics">
+
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CDSLab Recipes">
+<meta property="og:description" content="CDSLab Recipes -- A cookbook for all sorts of problems">
+<meta property="og:url" content="/recipes/">
+<meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
+<meta property="og:image" content="/recipes/images/">
+
+
+
+
+
+<link rel="canonical" href="/recipes/">
+<!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>
+<!--
+<link rel="stylesheet" href="/recipes/assets/css/vendor/font-awesome.min.css">
+-->
+<link rel="stylesheet" href="/recipes/assets/css/vendor/normalize.css">
+<link rel="stylesheet" href="/recipes/assets/css/vendor/nprogress.css">
+<link rel="stylesheet" href="/recipes/assets/css/vendor/foundation.min.css">
+<link rel="stylesheet" href="/recipes/assets/css/style.css">
+<link rel="stylesheet" href="/recipes/assets/css/post.css">
+
+<!--Mathjax LaTeX engine-->
+<script>
+    var MathJax = {"HTML-CSS": {scale: 100}};
+</script>
+<style TYPE="text/css">
+    code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        config: ["MMLorHTML.js"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+        jax: ["input/TeX"],
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<link rel="shortcut icon" href="/recipes/favicon.ico">
+
+<link href="/recipes/assets/css/prismOkaidia.css" rel="stylesheet" />
+<link href="/recipes/assets/css/alert.css" rel="stylesheet" />
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+    <body class="home-template" itemscope itemtype="https://schema.org/WebPage">
+        <header class="notepad-site-head">
+    <div class="notepad-site-head-menu">
+        <a class="notepad-blog-logo" href="https://www.cdslab.org" target="_blank"><img src="/recipes/images/logo.png" alt="cdslab.org" /></a>
+        
+        <div class="notepad-blog-menu">      
+            <div class="notepad-mobile-menu show-for-small">
+                <a href="#"><i class="fa fa-bars"></i></a>
+            </div>
+            <ul class="notepad-menu">
+                <li class="notepad-mobile-close-btn show-for-small text-right">
+                    <a href="#"><i class="fa fa-times"></i></a>
+                </li>
+                
+                    <li>
+                    <a href="/recipes/">Home</a>
+                     </li>
+                
+                    <li>
+                    <a href="/recipes/highlights">Highlights</a>
+                     </li>
+                
+                    <li>
+                    <a href="/recipes/tags">Tags</a>
+                     </li>
+                
+                    <li>
+                    <a href="/recipes/about">About</a>
+                     </li>
+                            
+                <li><a href="/recipes/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="notepad-site-head-content">
+            <!--
+            -->
+            <!--
+        <div class="notepad-site-head-bg"></div>
+            -->
+        <h1 class="notepad-blog-title" >
+            <a href="https://www.uta.edu/science/" target="_blank"><img src="/recipes/images/uta.png" width="200px" style="margin-top:-4rem;" ></a><br><br>
+            <span class="notepad-site-head-title-bg" style="text-transform: none">
+                CDSLab Recipes - A repository for all sorts of problems with solutions
+            </span>
+        </h1>
+        <h2 class="notepad-blog-description" style="margin-bottom:-5rem;" >
+          CDSLab Recipes
+        </h2>
+            <!--
+            -->
+    </div>
+</header>
+
+        <main class="notepad-content" role="main">
+            
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2024-04-29T00:00:00-04:00">
+                        <span class="day">
+                            29
+                        </span>
+                        <span class="month-year">
+                            April 2024
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/vis-excel-axis-transformation/vis-excel-axis-transformation">
+                            Better visualizations through axes transformations
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Consider the following dataset containing the population of Texas cities. Our goal is to visualize the population of Texas cities: Data Preparation. Open the Excel file. If you are opening this file for the first time, you may need...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#Excel" title="Other posts tagged Excel">Excel</a>&nbsp;<a href="/recipes/tags/index.html#data" title="Other posts tagged data">data</a>&nbsp;<a href="/recipes/tags/index.html#figure" title="Other posts tagged figure">figure</a>&nbsp;<a href="/recipes/tags/index.html#input" title="Other posts tagged input">input</a>&nbsp;<a href="/recipes/tags/index.html#logarithm" title="Other posts tagged logarithm">logarithm</a>&nbsp;<a href="/recipes/tags/index.html#output" title="Other posts tagged output">output</a>&nbsp;<a href="/recipes/tags/index.html#population" title="Other posts tagged population">population</a>&nbsp;<a href="/recipes/tags/index.html#texas" title="Other posts tagged texas">texas</a>&nbsp;<a href="/recipes/tags/index.html#transformation" title="Other posts tagged transformation">transformation</a>&nbsp;<a href="/recipes/tags/index.html#visualization" title="Other posts tagged visualization">visualization</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2023-02-25T00:00:00-05:00">
+                        <span class="day">
+                            25
+                        </span>
+                        <span class="month-year">
+                            February 2023
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/digital-storage-real-number/digital/digital-storage-real-number">
+                            IEEE-storage convention for real numbers
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Recall that computers can only store discrete values in memory. What does this imply for the storage of real (floating-point) numbers in computers? Now consider the IEEE-storage convention for real numbers in computers for real32, real64, and real128 bit storage...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#IEEE" title="Other posts tagged IEEE">IEEE</a>&nbsp;<a href="/recipes/tags/index.html#float" title="Other posts tagged float">float</a>&nbsp;<a href="/recipes/tags/index.html#integer" title="Other posts tagged integer">integer</a>&nbsp;<a href="/recipes/tags/index.html#memory" title="Other posts tagged memory">memory</a>&nbsp;<a href="/recipes/tags/index.html#real" title="Other posts tagged real">real</a>&nbsp;<a href="/recipes/tags/index.html#real128" title="Other posts tagged real128">real128</a>&nbsp;<a href="/recipes/tags/index.html#real32" title="Other posts tagged real32">real32</a>&nbsp;<a href="/recipes/tags/index.html#real64" title="Other posts tagged real64">real64</a>&nbsp;<a href="/recipes/tags/index.html#storage" title="Other posts tagged storage">storage</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2023-01-01T00:00:00-05:00">
+                        <span class="day">
+                            01
+                        </span>
+                        <span class="month-year">
+                            January 2023
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/intel-oneapi-c-cpp-fortran-compiler-installation/intel-oneapi-c-cpp-fortran-compiler-installation">
+                            Intel OneAPI C/C++/Fortran Compiler Installation
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem How can I install the Intel OneAPI C/C++/Fortran Compiler on Windows, Linux, or macOS? Solution The Intel OneAPI HPC toolkit provides a wide variety of High-Performance numerical libraries and tools, most importantly, the Intel Fortran and C/C++ compilers. However,...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#C" title="Other posts tagged C">C</a>&nbsp;<a href="/recipes/tags/index.html#C++" title="Other posts tagged C++">C++</a>&nbsp;<a href="/recipes/tags/index.html#Fortran" title="Other posts tagged Fortran">Fortran</a>&nbsp;<a href="/recipes/tags/index.html#Intel Parallel Studio" title="Other posts tagged Intel Parallel Studio">Intel Parallel Studio</a>&nbsp;<a href="/recipes/tags/index.html#Microsoft Visual Studio" title="Other posts tagged Microsoft Visual Studio">Microsoft Visual Studio</a>&nbsp;<a href="/recipes/tags/index.html#Windows" title="Other posts tagged Windows">Windows</a>&nbsp;<a href="/recipes/tags/index.html#installation" title="Other posts tagged installation">installation</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2022-11-01T00:00:00-04:00">
+                        <span class="day">
+                            01
+                        </span>
+                        <span class="month-year">
+                            November 2022
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/logic-nand-nor/logic/logic-nand-nor">
+                            Logic NAND and NOR
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>
+Recall the definitions of NAND and NOR from our lecture notes. Show that,
+
+\[\overline{(A \uparrow A) \downarrow (B \uparrow B)} \equiv (\overline{A} \downarrow \overline{A}) \uparrow (\overline{B} \downarrow \overline{B}) ~.\]
+
+</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#boolean" title="Other posts tagged boolean">boolean</a>&nbsp;<a href="/recipes/tags/index.html#deduction" title="Other posts tagged deduction">deduction</a>&nbsp;<a href="/recipes/tags/index.html#implication" title="Other posts tagged implication">implication</a>&nbsp;<a href="/recipes/tags/index.html#logic" title="Other posts tagged logic">logic</a>&nbsp;<a href="/recipes/tags/index.html#plausibility" title="Other posts tagged plausibility">plausibility</a>&nbsp;<a href="/recipes/tags/index.html#reasoning" title="Other posts tagged reasoning">reasoning</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2022-10-21T00:00:00-04:00">
+                        <span class="day">
+                            21
+                        </span>
+                        <span class="month-year">
+                            October 2022
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/logic-functions-implication/logic-functions-implication">
+                            Logical implication in terms of logic functions
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>
+Consider the following logic functions,
+
+
+
+Show that,
+
+\[f_1(A, B) + f_3(A, B) + f_4(A, B)\]
+
+is equivalent to logical implication $A \Rightarrow B$.
+
+</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#boolean" title="Other posts tagged boolean">boolean</a>&nbsp;<a href="/recipes/tags/index.html#deduction" title="Other posts tagged deduction">deduction</a>&nbsp;<a href="/recipes/tags/index.html#implication" title="Other posts tagged implication">implication</a>&nbsp;<a href="/recipes/tags/index.html#logic" title="Other posts tagged logic">logic</a>&nbsp;<a href="/recipes/tags/index.html#plausibility" title="Other posts tagged plausibility">plausibility</a>&nbsp;<a href="/recipes/tags/index.html#reasoning" title="Other posts tagged reasoning">reasoning</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2022-09-13T00:00:00-04:00">
+                        <span class="day">
+                            13
+                        </span>
+                        <span class="month-year">
+                            September 2022
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/vcs-git-github-setup/vcs-git-github-setup">
+                            Version-control: Setting up Git Software and GitHub Account
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Git This exercise guides you through the steps needed to take to properly install and minimally use the git software and the Git Bash terminal on your system. By the end of this exercise, you will be able to initialize...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#GitHub" title="Other posts tagged GitHub">GitHub</a>&nbsp;<a href="/recipes/tags/index.html#VCS" title="Other posts tagged VCS">VCS</a>&nbsp;<a href="/recipes/tags/index.html#git" title="Other posts tagged git">git</a>&nbsp;<a href="/recipes/tags/index.html#git branch" title="Other posts tagged git branch">git branch</a>&nbsp;<a href="/recipes/tags/index.html#markdown" title="Other posts tagged markdown">markdown</a>&nbsp;<a href="/recipes/tags/index.html#project" title="Other posts tagged project">project</a>&nbsp;<a href="/recipes/tags/index.html#version control system" title="Other posts tagged version control system">version control system</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2022-04-17T00:00:00-04:00">
+                        <span class="day">
+                            17
+                        </span>
+                        <span class="month-year">
+                            April 2022
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/hpc-matmul-python/hpc-matmul-python">
+                            Performance benchmarking of naive matrix multiplication in Python vs. optimized libraries
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Write a Python function with the following interface that computes the matrix multiplication of two input matrices. def matmul(matA, matB): ... such that it returns the following result for the given input matrices. matA = [ [12, 7, 3]...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#MKL" title="Other posts tagged MKL">MKL</a>&nbsp;<a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#hpc" title="Other posts tagged hpc">hpc</a>&nbsp;<a href="/recipes/tags/index.html#matmul" title="Other posts tagged matmul">matmul</a>&nbsp;<a href="/recipes/tags/index.html#matrix" title="Other posts tagged matrix">matrix</a>&nbsp;<a href="/recipes/tags/index.html#multiplication" title="Other posts tagged multiplication">multiplication</a>&nbsp;<a href="/recipes/tags/index.html#optimization" title="Other posts tagged optimization">optimization</a>&nbsp;<a href="/recipes/tags/index.html#performance" title="Other posts tagged performance">performance</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2022-04-17T00:00:00-04:00">
+                        <span class="day">
+                            17
+                        </span>
+                        <span class="month-year">
+                            April 2022
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/hpc-matmul-mkl/hpc-matmul-mkl">
+                            Performance benchmarking of naive matrix multiplication: naive vs. matmul vs. MKL
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Unlike The C/C++ programming languages, The Fortran language has native functions for matrix operations. The most important of these is the matmul intrinsic function, which has inspired all other programming languages for the same functionality. However, we can also...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#MKL" title="Other posts tagged MKL">MKL</a>&nbsp;<a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#hpc" title="Other posts tagged hpc">hpc</a>&nbsp;<a href="/recipes/tags/index.html#matmul" title="Other posts tagged matmul">matmul</a>&nbsp;<a href="/recipes/tags/index.html#matrix" title="Other posts tagged matrix">matrix</a>&nbsp;<a href="/recipes/tags/index.html#multiplication" title="Other posts tagged multiplication">multiplication</a>&nbsp;<a href="/recipes/tags/index.html#optimization" title="Other posts tagged optimization">optimization</a>&nbsp;<a href="/recipes/tags/index.html#performance" title="Other posts tagged performance">performance</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2022-04-17T00:00:00-04:00">
+                        <span class="day">
+                            17
+                        </span>
+                        <span class="month-year">
+                            April 2022
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/hpc-loop-invariant-code-motion/hpc-loop-invariant-code-motion">
+                            Performance optimization: loop invariant code motion
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Consider the following Python code snippet, import numpy as np const = 256. x = [i for i in range(1, 100000)] z = np.zeros(len(x)) for i, element in enumerate(x): z[i] = np.sqrt(const) * x[i] What can you do to...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#hpc" title="Other posts tagged hpc">hpc</a>&nbsp;<a href="/recipes/tags/index.html#optimization" title="Other posts tagged optimization">optimization</a>&nbsp;<a href="/recipes/tags/index.html#performance" title="Other posts tagged performance">performance</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2022-04-17T00:00:00-04:00">
+                        <span class="day">
+                            17
+                        </span>
+                        <span class="month-year">
+                            April 2022
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/hpc-linear-binary-search/hpc-linear-binary-search">
+                            Performance optimization: Searching sorted array via linear vs. binary search
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Recall our discussion of linear vs. binary searching of sorted arrays for a particular value. Suppose we a set of nbin ascending-sorted histogram bins edges = range(nbin) and a given number x whose histogram bin i we wish to...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#array" title="Other posts tagged array">array</a>&nbsp;<a href="/recipes/tags/index.html#binary" title="Other posts tagged binary">binary</a>&nbsp;<a href="/recipes/tags/index.html#hpc" title="Other posts tagged hpc">hpc</a>&nbsp;<a href="/recipes/tags/index.html#linear" title="Other posts tagged linear">linear</a>&nbsp;<a href="/recipes/tags/index.html#optimization" title="Other posts tagged optimization">optimization</a>&nbsp;<a href="/recipes/tags/index.html#performance" title="Other posts tagged performance">performance</a>&nbsp;<a href="/recipes/tags/index.html#search" title="Other posts tagged search">search</a>&nbsp;<a href="/recipes/tags/index.html#sorting" title="Other posts tagged sorting">sorting</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2022-04-17T00:00:00-04:00">
+                        <span class="day">
+                            17
+                        </span>
+                        <span class="month-year">
+                            April 2022
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/hpc-forced-reduction-sinxpy/hpc-forced-reduction-sinxpy">
+                            Performance optimization: Forced reduction - sin(x)cos(y) + cos(x)sin(y)
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Consider the following Python function, import numpy as np def getSCCS_slow(x, y): """ Return `sin(x) * cos(y) + cos(x) * sin(y)`. """ return np.sin(x) * np.cos(y) + np.cos(x) * np.sin(y) What can you do to the above code to...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#hpc" title="Other posts tagged hpc">hpc</a>&nbsp;<a href="/recipes/tags/index.html#optimization" title="Other posts tagged optimization">optimization</a>&nbsp;<a href="/recipes/tags/index.html#performance" title="Other posts tagged performance">performance</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2022-04-17T00:00:00-04:00">
+                        <span class="day">
+                            17
+                        </span>
+                        <span class="month-year">
+                            April 2022
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/hpc-forced-reduction-sincos/hpc-forced-reduction-sincos">
+                            Performance optimization: Forced reduction - sincos
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Consider the following Python function, import numpy as np def sincos(x): """ Return `sin(x) * cos(x)`. """ return np.sin(x) * np.cos(x) What can you do to the above code to make it more performant? Prove your suggestion by benchmarking...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#hpc" title="Other posts tagged hpc">hpc</a>&nbsp;<a href="/recipes/tags/index.html#optimization" title="Other posts tagged optimization">optimization</a>&nbsp;<a href="/recipes/tags/index.html#performance" title="Other posts tagged performance">performance</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2022-04-17T00:00:00-04:00">
+                        <span class="day">
+                            17
+                        </span>
+                        <span class="month-year">
+                            April 2022
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/hpc-forced-reduction-exp/hpc-forced-reduction-exp">
+                            Performance optimization: Forced reduction - hidden opportunities
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Consider the following Python function, import numpy as np def count(xvec): """ Return the count of elements of the input `xvec` whose natural logarithm is less than `0`. """ counter = 0 for element in xvec: if np.log(element) &lt;...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#hpc" title="Other posts tagged hpc">hpc</a>&nbsp;<a href="/recipes/tags/index.html#optimization" title="Other posts tagged optimization">optimization</a>&nbsp;<a href="/recipes/tags/index.html#performance" title="Other posts tagged performance">performance</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2022-04-17T00:00:00-04:00">
+                        <span class="day">
+                            17
+                        </span>
+                        <span class="month-year">
+                            April 2022
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/hpc-breaking-out-of-loop-early/hpc-breaking-out-of-loop-early">
+                            Performance optimization: Breaking out of loop early
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Consider the following Python function, def any(boolVec): """ Return True if any of the elements of the input value are True, otherwise, return False. """ result = False for element in boolVec: result = result or element return result...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#hpc" title="Other posts tagged hpc">hpc</a>&nbsp;<a href="/recipes/tags/index.html#optimization" title="Other posts tagged optimization">optimization</a>&nbsp;<a href="/recipes/tags/index.html#performance" title="Other posts tagged performance">performance</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2021-12-01T00:00:00-05:00">
+                        <span class="day">
+                            01
+                        </span>
+                        <span class="month-year">
+                            December 2021
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/clustering-naive-kmedioid-implementation/clustering-naive-kmedioid-implementation">
+                            A naive implementation of Kmedoids clustering
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem The K-medoids is a classical partitioning technique of clustering that splits the data set of $n$ objects into $k$ clusters, where the number $k$ of clusters is assumed to be known a priori. Unlike the K-means algorithm however, the...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#Kmedoids" title="Other posts tagged Kmedoids">Kmedoids</a>&nbsp;<a href="/recipes/tags/index.html#MATLAB" title="Other posts tagged MATLAB">MATLAB</a>&nbsp;<a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#clustering" title="Other posts tagged clustering">clustering</a>&nbsp;<a href="/recipes/tags/index.html#kmeans" title="Other posts tagged kmeans">kmeans</a>&nbsp;<a href="/recipes/tags/index.html#matplotlib" title="Other posts tagged matplotlib">matplotlib</a>&nbsp;<a href="/recipes/tags/index.html#plot" title="Other posts tagged plot">plot</a>&nbsp;<a href="/recipes/tags/index.html#scikit-learn" title="Other posts tagged scikit-learn">scikit-learn</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2021-12-01T00:00:00-05:00">
+                        <span class="day">
+                            01
+                        </span>
+                        <span class="month-year">
+                            December 2021
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/clustering-kmeans-vs-dbscan-online/clustering-kmeans-vs-dbscan-online">
+                            Online comparison of the Kmeans clustering algorithm with DBSCAN
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem On this website, you will find an online simulator of the Kmeans clustering technique. Visit this page and choose the first choice stating I’ll Chooose. You will be taken to a new page. On this new page, choose Smiley...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#DBSCAN" title="Other posts tagged DBSCAN">DBSCAN</a>&nbsp;<a href="/recipes/tags/index.html#clustering" title="Other posts tagged clustering">clustering</a>&nbsp;<a href="/recipes/tags/index.html#kmeans" title="Other posts tagged kmeans">kmeans</a>&nbsp;<a href="/recipes/tags/index.html#plot" title="Other posts tagged plot">plot</a>&nbsp;<a href="/recipes/tags/index.html#scatter plot" title="Other posts tagged scatter plot">scatter plot</a>&nbsp;<a href="/recipes/tags/index.html#visualization" title="Other posts tagged visualization">visualization</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2021-12-01T00:00:00-05:00">
+                        <span class="day">
+                            01
+                        </span>
+                        <span class="month-year">
+                            December 2021
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/clustering-dbscan-online/clustering-dbscan-online">
+                            Online experimentation with DBSCAN clustering technique
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem On this website, you will find an online simulator of the DBSCAN clustering technique. Visit this page and choose the first dataset option named Uniform. Recall from our lecture notes that the DBSCAN method has two free adjustable parameters...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#DBSCAN" title="Other posts tagged DBSCAN">DBSCAN</a>&nbsp;<a href="/recipes/tags/index.html#clustering" title="Other posts tagged clustering">clustering</a>&nbsp;<a href="/recipes/tags/index.html#plot" title="Other posts tagged plot">plot</a>&nbsp;<a href="/recipes/tags/index.html#scatter plot" title="Other posts tagged scatter plot">scatter plot</a>&nbsp;<a href="/recipes/tags/index.html#visualization" title="Other posts tagged visualization">visualization</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2021-11-29T00:00:00-05:00">
+                        <span class="day">
+                            29
+                        </span>
+                        <span class="month-year">
+                            November 2021
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/clustering-kmeans-implementation/clustering-kmeans-implementation">
+                            Kmeans clustering - an implementation
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Consider this dataset points.txt. Write a script that reads this dataset and plots the second column of the dataset versus the first column as the following, Now write another script that applies Kmeans clustering technique to this data set...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#clustering" title="Other posts tagged clustering">clustering</a>&nbsp;<a href="/recipes/tags/index.html#figure" title="Other posts tagged figure">figure</a>&nbsp;<a href="/recipes/tags/index.html#kmeans" title="Other posts tagged kmeans">kmeans</a>&nbsp;<a href="/recipes/tags/index.html#kmeans++" title="Other posts tagged kmeans++">kmeans++</a>&nbsp;<a href="/recipes/tags/index.html#matplotlib" title="Other posts tagged matplotlib">matplotlib</a>&nbsp;<a href="/recipes/tags/index.html#numpy" title="Other posts tagged numpy">numpy</a>&nbsp;<a href="/recipes/tags/index.html#pandas" title="Other posts tagged pandas">pandas</a>&nbsp;<a href="/recipes/tags/index.html#plot" title="Other posts tagged plot">plot</a>&nbsp;<a href="/recipes/tags/index.html#random number" title="Other posts tagged random number">random number</a>&nbsp;<a href="/recipes/tags/index.html#read_csv" title="Other posts tagged read_csv">read_csv</a>&nbsp;<a href="/recipes/tags/index.html#scatter plot" title="Other posts tagged scatter plot">scatter plot</a>&nbsp;<a href="/recipes/tags/index.html#scikit-learn" title="Other posts tagged scikit-learn">scikit-learn</a>&nbsp;<a href="/recipes/tags/index.html#visualization" title="Other posts tagged visualization">visualization</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2021-11-21T00:00:00-05:00">
+                        <span class="day">
+                            21
+                        </span>
+                        <span class="month-year">
+                            November 2021
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/clustering-kmeans-customers/clustering-kmeans-customers">
+                            Kmeans clustering: Determining the cluster number using the Elbow method
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Consider this dataset customers.csv of a Mall’s customers containing the details of customers in a mall. Our aim is to cluster the customers based on the relevant features “annual income” and “spending score”. Write a script that reads this...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#Elbow method" title="Other posts tagged Elbow method">Elbow method</a>&nbsp;<a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#clustering" title="Other posts tagged clustering">clustering</a>&nbsp;<a href="/recipes/tags/index.html#figure" title="Other posts tagged figure">figure</a>&nbsp;<a href="/recipes/tags/index.html#kmeans" title="Other posts tagged kmeans">kmeans</a>&nbsp;<a href="/recipes/tags/index.html#kmeans++" title="Other posts tagged kmeans++">kmeans++</a>&nbsp;<a href="/recipes/tags/index.html#matplotlib" title="Other posts tagged matplotlib">matplotlib</a>&nbsp;<a href="/recipes/tags/index.html#numpy" title="Other posts tagged numpy">numpy</a>&nbsp;<a href="/recipes/tags/index.html#pandas" title="Other posts tagged pandas">pandas</a>&nbsp;<a href="/recipes/tags/index.html#plot" title="Other posts tagged plot">plot</a>&nbsp;<a href="/recipes/tags/index.html#random number" title="Other posts tagged random number">random number</a>&nbsp;<a href="/recipes/tags/index.html#read_csv" title="Other posts tagged read_csv">read_csv</a>&nbsp;<a href="/recipes/tags/index.html#scatter plot" title="Other posts tagged scatter plot">scatter plot</a>&nbsp;<a href="/recipes/tags/index.html#scikit-learn" title="Other posts tagged scikit-learn">scikit-learn</a>&nbsp;<a href="/recipes/tags/index.html#visualization" title="Other posts tagged visualization">visualization</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2021-11-19T00:00:00-05:00">
+                        <span class="day">
+                            19
+                        </span>
+                        <span class="month-year">
+                            November 2021
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/regression-erf-censored-gaussian-data/regression-erf-censored-gaussian-data">
+                            Regression: Predicting the distribution of the a dataset subjected to a smooth censorship (sample incompleteness)
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Supposed we have observed a dataset of events with one attribute variable in this file: data.csv. Plotting these points would yield a blue-colored histogram like the following plot, Unlike the previous problems where the censorship was due to a...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#CDF" title="Other posts tagged CDF">CDF</a>&nbsp;<a href="/recipes/tags/index.html#Cumulative Distribution Function" title="Other posts tagged Cumulative Distribution Function">Cumulative Distribution Function</a>&nbsp;<a href="/recipes/tags/index.html#Error Function" title="Other posts tagged Error Function">Error Function</a>&nbsp;<a href="/recipes/tags/index.html#Gaussian" title="Other posts tagged Gaussian">Gaussian</a>&nbsp;<a href="/recipes/tags/index.html#MATLAB" title="Other posts tagged MATLAB">MATLAB</a>&nbsp;<a href="/recipes/tags/index.html#MCMC" title="Other posts tagged MCMC">MCMC</a>&nbsp;<a href="/recipes/tags/index.html#Markov Chain" title="Other posts tagged Markov Chain">Markov Chain</a>&nbsp;<a href="/recipes/tags/index.html#Monte Carlo" title="Other posts tagged Monte Carlo">Monte Carlo</a>&nbsp;<a href="/recipes/tags/index.html#Normal distribution" title="Other posts tagged Normal distribution">Normal distribution</a>&nbsp;<a href="/recipes/tags/index.html#PDF" title="Other posts tagged PDF">PDF</a>&nbsp;<a href="/recipes/tags/index.html#ParaDRAM" title="Other posts tagged ParaDRAM">ParaDRAM</a>&nbsp;<a href="/recipes/tags/index.html#ParaMonte" title="Other posts tagged ParaMonte">ParaMonte</a>&nbsp;<a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#censored" title="Other posts tagged censored">censored</a>&nbsp;<a href="/recipes/tags/index.html#distribution" title="Other posts tagged distribution">distribution</a>&nbsp;<a href="/recipes/tags/index.html#distribution function" title="Other posts tagged distribution function">distribution function</a>&nbsp;<a href="/recipes/tags/index.html#figure" title="Other posts tagged figure">figure</a>&nbsp;<a href="/recipes/tags/index.html#integration" title="Other posts tagged integration">integration</a>&nbsp;<a href="/recipes/tags/index.html#line" title="Other posts tagged line">line</a>&nbsp;<a href="/recipes/tags/index.html#maximum likelihood method" title="Other posts tagged maximum likelihood method">maximum likelihood method</a>&nbsp;<a href="/recipes/tags/index.html#objective function" title="Other posts tagged objective function">objective function</a>&nbsp;<a href="/recipes/tags/index.html#plot" title="Other posts tagged plot">plot</a>&nbsp;<a href="/recipes/tags/index.html#probability" title="Other posts tagged probability">probability</a>&nbsp;<a href="/recipes/tags/index.html#probability density function" title="Other posts tagged probability density function">probability density function</a>&nbsp;<a href="/recipes/tags/index.html#random number" title="Other posts tagged random number">random number</a>&nbsp;<a href="/recipes/tags/index.html#regression" title="Other posts tagged regression">regression</a>&nbsp;<a href="/recipes/tags/index.html#sample incompleteness" title="Other posts tagged sample incompleteness">sample incompleteness</a>&nbsp;<a href="/recipes/tags/index.html#uncertainty quantification" title="Other posts tagged uncertainty quantification">uncertainty quantification</a>&nbsp;<a href="/recipes/tags/index.html#visualization" title="Other posts tagged visualization">visualization</a>
+                </div>
+            </div>
+        </article>
+	
+    <nav class="pagination" role="navigation">
+        
+            <span class="newer-posts faded"><i class="fa fa-chevron-left"></i> Newer</span>
+        
+        <span class="page-number">Page 1 of 8</span>
+         
+            <a class="older-posts" href="/recipes/page2/">Older <i class="fa fa-chevron-right"></i></a>
+        
+    </nav>
+
+        </main>
+        <footer class="notepad-site-footer">
+    <div class="copyright">
+         <!-- <section>Last updated 2024 / 07 / 17</section></br> -->
+         <section>Last updated Wednesday, 17 Jul 2024 at 12:51 AM CST</section></br>
+         <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
+         <section>SEIR 365 | Arlington TX 76010</section></br>
+    </div>
+    <div class="social-icons">
+
+        
+        <a href="https://facebook.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+        </a>
+        
+
+        
+        <a href="https://github.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+        </a>
+        
+
+        
+
+        
+        <a href="https://instagram.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-instagram fa-stack-1x"></i>
+            </span>
+        </a>
+        
+
+        
+        <a href="https://medium.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-medium fa-stack-1x"></i>
+                <!--
+                -->
+            </span>
+        </a>
+        
+
+        
+        <a href="https://twitter.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+<div style="color: #000000; float: none; width: 100%; padding-top: 1rem;">
+    <span style="font-size:0.8em">visitor count: 
+        <script type="text/javascript">
+            var sc_project=12051053; 
+            var sc_invisible=0; 
+            var sc_security="e095256f"; 
+            var sc_text=3; 
+            var scJsHost = "https://";
+            document.write("<sc"+"ript type='text/javascript' src='" + scJsHost + 
+            "statcounter.com/counter/counter.js'></"+"script>");
+        </script>
+    </span>
+</div>
+
+
+    </div>
+    <div class="cf"></div>
+</footer>
+        <!--dynamic page header-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/recipes/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+  <script src="/recipes/assets/js/vendor/modernizr.js"></script>
+  <script src="/recipes/assets/js/foundation.min.js"></script>
+  
+  <script src="/recipes/assets/js/notepad.js"></script>
+  <script src="/recipes/assets/js/scripts.min.js"></script>
+  <script src="/recipes/assets/js/vendor/nprogress.js"></script>
+  
+  <script>
+    $(document).foundation();
+  </script>
+  <script type='text/javascript'>console.log("N/A");</script>
+  <script type='text/javascript'>console.log("https://www.cdslab.org/");</script>
+
+<!--header anchor links-->
+<script src="/recipes/assets/js/autoAnchorLink.js"></script>
+
+<!-- <script src="/recipes/assets/js/prismOkaidia.js"></script>
+<script src="/recipes/assets/js/prismTwilight.js"></script>
+<script src="/recipes/assets/js/prismDefault.js"></script>
+ -->
+<script src="/recipes/assets/js/prismCoy.js"></script>  
+    </body>
+</html>
