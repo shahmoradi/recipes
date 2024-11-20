@@ -823,7 +823,7 @@ var store = [{
   "date": "October 8, 2021",
   "category": null,
   "tags": ["visualization","plot","polar","coordinates","periodic"],
-  "excerpt": "Problem Consider the following plot displaying the temperatures of a number of US cities. Which city’s temperature is the least..."
+  "excerpt": "Problem Consider the following plot displaying the temperatures of a number of US cities. The coordinates used in this type..."
 },{
   "title": "Wrong visualization",
   "link": "/programming/vis-graph-wrong/vis-graph-wrong",
