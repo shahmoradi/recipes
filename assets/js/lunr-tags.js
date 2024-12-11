@@ -844,7 +844,7 @@ var store = [{
   "date": "October 8, 2021",
   "category": null,
   "tags": ["visualization","plot","colorscale"],
-  "excerpt": "\n\n    \n        \n            \n                Problem\n            \n        \n    \n\n\nWhich classes of color scales the following color-mappings belong to?\n\na)\n\n    \n\n\n\nb)\n\n    \n\n\n\nc)\n\n    \n\n\n\nd)\n\n    \n\n\n\n"
+  "excerpt": "Problem Which classes of color scales the following color-mappings belong to? Very briefly describe the primary use case of each..."
 },{
   "title": "Regression: Model selection for a bivariate data using Excel",
   "link": "/programming/regression-model-selection-excel/regression-model-selection-excel",
