@@ -7,7 +7,7 @@
 <generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
-<updated>2025-08-26T01:43:51-04:00</updated>
+<updated>2025-08-28T00:27:44-05:00</updated>
 <id>https://www.cdslab.org/recipes/</id>
 <author>
   <name>Amir Shahmoradi</name>
@@ -21,7 +21,7 @@
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/vis-excel-axis-transformation/vis-excel-axis-transformation"/>
   <id>https://www.cdslab.org/recipes/programming/vis-excel-axis-transformation/vis-excel-axis-transformation</id>
-  <published>2024-04-29T00:00:00-04:00</published>
+  <published>2024-04-29T00:00:00-05:00</published>
   <updated>2024-04-30T00:00:00-00:00</updated>
   
   <author>
@@ -122,7 +122,7 @@ Select this option. You should immediately see that the visualization in the plo
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/digital-storage-real-number/digital/digital-storage-real-number"/>
   <id>https://www.cdslab.org/recipes/programming/digital-storage-real-number/digital/digital-storage-real-number</id>
-  <published>2023-02-25T00:00:00-05:00</published>
+  <published>2023-02-25T00:00:00-06:00</published>
   <updated>2023-02-25T00:00:00-00:00</updated>
   
   <author>
@@ -159,7 +159,7 @@ Select this option. You should immediately see that the visualization in the plo
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/intel-oneapi-c-cpp-fortran-compiler-installation/intel-oneapi-c-cpp-fortran-compiler-installation"/>
   <id>https://www.cdslab.org/recipes/programming/intel-oneapi-c-cpp-fortran-compiler-installation/intel-oneapi-c-cpp-fortran-compiler-installation</id>
-  <published>2023-01-01T00:00:00-05:00</published>
+  <published>2023-01-01T00:00:00-06:00</published>
   <updated>2020-01-01T00:00:00-00:00</updated>
   
   <author>
@@ -255,7 +255,7 @@ The following snapshot demonstrates the usage on Windows CMD terminal,
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/logic-nand-nor/logic/logic-nand-nor"/>
   <id>https://www.cdslab.org/recipes/programming/logic-nand-nor/logic/logic-nand-nor</id>
-  <published>2022-11-01T00:00:00-04:00</published>
+  <published>2022-11-01T00:00:00-05:00</published>
   <updated>2020-11-01T00:00:00-00:00</updated>
   
   <author>
@@ -282,7 +282,7 @@ The following snapshot demonstrates the usage on Windows CMD terminal,
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/logic-functions-implication/logic-functions-implication"/>
   <id>https://www.cdslab.org/recipes/programming/logic-functions-implication/logic-functions-implication</id>
-  <published>2022-10-21T00:00:00-04:00</published>
+  <published>2022-10-21T00:00:00-05:00</published>
   <updated>2020-10-21T00:00:00-00:00</updated>
   
   <author>
@@ -315,7 +315,7 @@ The following snapshot demonstrates the usage on Windows CMD terminal,
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/vcs-git-github-setup/vcs-git-github-setup"/>
   <id>https://www.cdslab.org/recipes/programming/vcs-git-github-setup/vcs-git-github-setup</id>
-  <published>2022-09-13T00:00:00-04:00</published>
+  <published>2022-09-13T00:00:00-05:00</published>
   <updated>2022-09-13T00:00:00-00:00</updated>
   
   <author>
@@ -473,7 +473,7 @@ In the follow-up exercises, we will learn how to initialize Git projects using &
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/hpc-matmul-python/hpc-matmul-python"/>
   <id>https://www.cdslab.org/recipes/programming/hpc-matmul-python/hpc-matmul-python</id>
-  <published>2022-04-17T00:00:00-04:00</published>
+  <published>2022-04-17T00:00:00-05:00</published>
   <updated>2022-04-17T00:00:00-00:00</updated>
   
   <author>
@@ -548,7 +548,7 @@ Seek help from our &lt;a href=&quot;https://www.cdslab.org/python/notes/visualiz
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/hpc-matmul-mkl/hpc-matmul-mkl"/>
   <id>https://www.cdslab.org/recipes/programming/hpc-matmul-mkl/hpc-matmul-mkl</id>
-  <published>2022-04-17T00:00:00-04:00</published>
+  <published>2022-04-17T00:00:00-05:00</published>
   <updated>2022-04-17T00:00:00-00:00</updated>
   
   <author>
@@ -703,7 +703,7 @@ First open an Intel command line environment (open Windows startup, then look fo
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/hpc-loop-invariant-code-motion/hpc-loop-invariant-code-motion"/>
   <id>https://www.cdslab.org/recipes/programming/hpc-loop-invariant-code-motion/hpc-loop-invariant-code-motion</id>
-  <published>2022-04-17T00:00:00-04:00</published>
+  <published>2022-04-17T00:00:00-05:00</published>
   <updated>2022-04-17T00:00:00-00:00</updated>
   
   <author>
@@ -749,7 +749,7 @@ How much performance improvement do you observe?&lt;/p&gt;
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/hpc-linear-binary-search/hpc-linear-binary-search"/>
   <id>https://www.cdslab.org/recipes/programming/hpc-linear-binary-search/hpc-linear-binary-search</id>
-  <published>2022-04-17T00:00:00-04:00</published>
+  <published>2022-04-17T00:00:00-05:00</published>
   <updated>2022-04-17T00:00:00-00:00</updated>
   
   <author>
@@ -830,7 +830,7 @@ nbin = 50000, x = 49998
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/hpc-forced-reduction-sinxpy/hpc-forced-reduction-sinxpy"/>
   <id>https://www.cdslab.org/recipes/programming/hpc-forced-reduction-sinxpy/hpc-forced-reduction-sinxpy</id>
-  <published>2022-04-17T00:00:00-04:00</published>
+  <published>2022-04-17T00:00:00-05:00</published>
   <updated>2022-04-17T00:00:00-00:00</updated>
   
   <author>
@@ -877,7 +877,7 @@ How much performance improvement do you observe?&lt;br /&gt;
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/hpc-forced-reduction-sincos/hpc-forced-reduction-sincos"/>
   <id>https://www.cdslab.org/recipes/programming/hpc-forced-reduction-sincos/hpc-forced-reduction-sincos</id>
-  <published>2022-04-17T00:00:00-04:00</published>
+  <published>2022-04-17T00:00:00-05:00</published>
   <updated>2022-04-17T00:00:00-00:00</updated>
   
   <author>
@@ -923,7 +923,7 @@ How much performance improvement do you observe?&lt;/p&gt;
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/hpc-forced-reduction-exp/hpc-forced-reduction-exp"/>
   <id>https://www.cdslab.org/recipes/programming/hpc-forced-reduction-exp/hpc-forced-reduction-exp</id>
-  <published>2022-04-17T00:00:00-04:00</published>
+  <published>2022-04-17T00:00:00-05:00</published>
   <updated>2022-04-17T00:00:00-00:00</updated>
   
   <author>
@@ -972,7 +972,7 @@ How much performance improvement do you observe?&lt;/p&gt;
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/hpc-breaking-out-of-loop-early/hpc-breaking-out-of-loop-early"/>
   <id>https://www.cdslab.org/recipes/programming/hpc-breaking-out-of-loop-early/hpc-breaking-out-of-loop-early</id>
-  <published>2022-04-17T00:00:00-04:00</published>
+  <published>2022-04-17T00:00:00-05:00</published>
   <updated>2022-04-17T00:00:00-00:00</updated>
   
   <author>
@@ -1025,7 +1025,7 @@ For example, you can use the NumPy library’s &lt;code&gt;choice&lt;/code&gt; f
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/clustering-naive-kmedioid-implementation/clustering-naive-kmedioid-implementation"/>
   <id>https://www.cdslab.org/recipes/programming/clustering-naive-kmedioid-implementation/clustering-naive-kmedioid-implementation</id>
-  <published>2021-12-01T00:00:00-05:00</published>
+  <published>2021-12-01T00:00:00-06:00</published>
   <updated>2021-12-01T00:00:00-00:00</updated>
   
   <author>
@@ -1075,7 +1075,7 @@ Test the functionality of your algorithm with &lt;a href=&quot;https://www.cdsla
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/clustering-kmeans-vs-dbscan-online/clustering-kmeans-vs-dbscan-online"/>
   <id>https://www.cdslab.org/recipes/programming/clustering-kmeans-vs-dbscan-online/clustering-kmeans-vs-dbscan-online</id>
-  <published>2021-12-01T00:00:00-05:00</published>
+  <published>2021-12-01T00:00:00-06:00</published>
   <updated>2021-12-01T00:00:00-00:00</updated>
   
   <author>
@@ -1123,7 +1123,7 @@ Test the functionality of your algorithm with &lt;a href=&quot;https://www.cdsla
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/clustering-dbscan-online/clustering-dbscan-online"/>
   <id>https://www.cdslab.org/recipes/programming/clustering-dbscan-online/clustering-dbscan-online</id>
-  <published>2021-12-01T00:00:00-05:00</published>
+  <published>2021-12-01T00:00:00-06:00</published>
   <updated>2021-12-01T00:00:00-00:00</updated>
   
   <author>
@@ -1163,7 +1163,7 @@ Test the functionality of your algorithm with &lt;a href=&quot;https://www.cdsla
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/clustering-kmeans-implementation/clustering-kmeans-implementation"/>
   <id>https://www.cdslab.org/recipes/programming/clustering-kmeans-implementation/clustering-kmeans-implementation</id>
-  <published>2021-11-29T00:00:00-05:00</published>
+  <published>2021-11-29T00:00:00-06:00</published>
   <updated>2019-11-21T00:00:00-00:00</updated>
   
   <author>
@@ -1224,7 +1224,7 @@ resulting clusters for a range of input number of clusters. Here is an example p
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/clustering-kmeans-customers/clustering-kmeans-customers"/>
   <id>https://www.cdslab.org/recipes/programming/clustering-kmeans-customers/clustering-kmeans-customers</id>
-  <published>2021-11-21T00:00:00-05:00</published>
+  <published>2021-11-21T00:00:00-06:00</published>
   <updated>2019-11-21T00:00:00-00:00</updated>
   
   <author>
@@ -1265,7 +1265,7 @@ resulting clusters for a range of input number of clusters. Here is an example p
   
   <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/regression-erf-censored-gaussian-data/regression-erf-censored-gaussian-data"/>
   <id>https://www.cdslab.org/recipes/programming/regression-erf-censored-gaussian-data/regression-erf-censored-gaussian-data</id>
-  <published>2021-11-19T00:00:00-05:00</published>
+  <published>2021-11-19T00:00:00-06:00</published>
   <updated>2021-11-19T00:00:00-00:00</updated>
   
   <author>
