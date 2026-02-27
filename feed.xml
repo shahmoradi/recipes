@@ -1,0 +1,1310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+
+
+
+<title type="text">CDSLab Recipes - A repository for all sorts of problems with solutions</title>
+<generator uri="https://github.com/shahmoradi/jekyll">Jekyll</generator>
+<link rel="self" type="application/atom+xml" href="https://www.cdslab.org/recipes/feed.xml" />
+<link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/" />
+<updated>2026-02-27T10:54:51-07:00</updated>
+<id>https://www.cdslab.org/recipes/</id>
+<author>
+  <name>Amir Shahmoradi</name>
+  <uri>https://www.cdslab.org/recipes/</uri>
+  <email>shahmoradi@utexas.edu</email>
+</author>
+
+
+<entry>
+  <title type="html"><![CDATA[Better visualizations through axes transformations]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/vis-excel-axis-transformation/vis-excel-axis-transformation"/>
+  <id>https://www.cdslab.org/recipes/programming/vis-excel-axis-transformation/vis-excel-axis-transformation</id>
+  <published>2024-04-29T00:00:00-06:00</published>
+  <updated>2024-04-30T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#Excel" term="Excel" /><category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#data" term="data" /><category scheme="https://www.cdslab.org/recipes/tags/#input" term="input" /><category scheme="https://www.cdslab.org/recipes/tags/#output" term="output" /><category scheme="https://www.cdslab.org/recipes/tags/#figure" term="figure" /><category scheme="https://www.cdslab.org/recipes/tags/#texas" term="texas" /><category scheme="https://www.cdslab.org/recipes/tags/#population" term="population" /><category scheme="https://www.cdslab.org/recipes/tags/#transformation" term="transformation" /><category scheme="https://www.cdslab.org/recipes/tags/#logarithm" term="logarithm" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Consider the following &lt;a href=&quot;texas_city_population.xlsx&quot; target=&quot;_blank&quot;&gt;dataset&lt;/a&gt; containing the population of Texas cities. 
+Our goal is to visualize the population of Texas cities:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Data Preparation.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open the Excel file.
+    &lt;blockquote&gt;
+      &lt;p&gt;If you are opening this file for the first time, you may need to &lt;strong&gt;enable editing&lt;/strong&gt; by clicking on the prompt that Excel shows at the top of the file.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Select the population numbers you see in column &lt;strong&gt;F&lt;/strong&gt; of the spreadsheet by:
+    &lt;ol&gt;
+      &lt;li&gt;clicking on the first number you see the column (the Texas population),&lt;/li&gt;
+      &lt;li&gt;pressing and holding the &lt;code&gt;ctrl&lt;/code&gt; and &lt;code&gt;shift&lt;/code&gt; keys on the keyboard simultaneously,&lt;/li&gt;
+      &lt;li&gt;while holding the keys, pressing the &lt;strong&gt;arrow-down&lt;/strong&gt; key on the keyboard.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now that you have selected the population data, you can copy the data by pressing and holding the &lt;code&gt;ctrl&lt;/code&gt; key and pressing the &lt;code&gt;C&lt;/code&gt; letter key. 
+You should see the border of the selected numbers animated.&lt;/li&gt;
+  &lt;li&gt;Now, open a new spreadsheet page by clicking at the &lt;code&gt;+&lt;/code&gt; sign you see at the end of the bottom bar in the Excel file.
+This action should create a new spreadsheet in the same Excel file named &lt;code&gt;Sheet1&lt;/code&gt;.
+You can rename this &lt;code&gt;Sheet1&lt;/code&gt; by double-clicking on it and giving it the new name &lt;code&gt;data&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Now, click on the new speadsheet page and paste the copied population data to column &lt;strong&gt;B&lt;/strong&gt; of the spreadsheet.
+    &lt;blockquote&gt;
+      &lt;p&gt;If no data is pasted, you need to go back to the original spreadsheet page, copy the selection again, come back to data spreadsheet page and past it.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Select the pasted data column by clicking on the column name &lt;strong&gt;B&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;Look at the top right of the Excel bar menu. You should see an option &lt;strong&gt;Sort &amp;amp; Filter&lt;/strong&gt; in the &lt;strong&gt;Editing&lt;/strong&gt; panel of the top bar.
+Click on &lt;strong&gt;Sort &amp;amp; Filter&lt;/strong&gt; and select &lt;strong&gt;Sort Largest to Smallest&lt;/strong&gt;.
+This will sort all population numbers in column &lt;strong&gt;B&lt;/strong&gt; from the largest to the smallest.&lt;/li&gt;
+  &lt;li&gt;Select the first cell in column &lt;strong&gt;A&lt;/strong&gt; of the spreadsheet.
+Fill the cells one through four of column &lt;strong&gt;A&lt;/strong&gt; with numbers &lt;code&gt;1&lt;/code&gt; through &lt;code&gt;4&lt;/code&gt; respectively.
+Now, hold the mouse pointer on the lower-right corner of the fourth cell in column &lt;strong&gt;A&lt;/strong&gt;.
+You should see that the mouse pointer changes to a small black &lt;code&gt;+&lt;/code&gt; symbol, called &lt;strong&gt;Fill Handle&lt;/strong&gt;.
+While the Fill Handle is active, double click on the lower right corner of the fourth cell.
+This should fill all cells in column &lt;strong&gt;A&lt;/strong&gt; with sequential numbers starting from number &lt;code&gt;1&lt;/code&gt; in the first cell.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Visualization.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Press and hold the &lt;code&gt;ctrl&lt;/code&gt; key on the keyboard and select columns &lt;strong&gt;A&lt;/strong&gt; and &lt;strong&gt;B&lt;/strong&gt; in the spreadsheet with your mouse.&lt;/li&gt;
+  &lt;li&gt;While the data remains selected, click on the &lt;strong&gt;Insert&lt;/strong&gt; tab on the top-left bar of the Excel file.&lt;/li&gt;
+  &lt;li&gt;Hover the mouse pointer on the last graphics option in the lowest-right corner of the &lt;strong&gt;Charts&lt;/strong&gt; panel.
+This should open a new panel for scatter plot visualizations.&lt;/li&gt;
+  &lt;li&gt;Select the first graphics option in the opened panel.
+This should create a visualization in the spreadsheet of Texas city populations (in column &lt;strong&gt;B&lt;/strong&gt; of the spreadsheet) vs. the city IDs in column &lt;strong&gt;A&lt;/strong&gt;.
+    &lt;figure&gt;
+    &lt;img src=&quot;texas_city_population.png&quot; /&gt;
+&lt;/figure&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Question&lt;/strong&gt;. Based on this plot, what is the approximate population of the $1000$th most populous city in Texas?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Visualization Transformation.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Select the vertical axis of the line-scatter plot and right-click on it with your mouse.
+This should open a menu.&lt;/li&gt;
+  &lt;li&gt;Select the last option &lt;strong&gt;Format Axis…&lt;/strong&gt; from the menu.
+This should open a new panel to the right side of the Excel file.&lt;/li&gt;
+  &lt;li&gt;You should be able to see an option named &lt;strong&gt;Logarithmic Scale&lt;/strong&gt; toward the bottom of this newly-opened panel.
+Select this option. You should immediately see that the visualization in the plot changes.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Question&lt;/strong&gt;. Based on this axis-transformed plot, what is the approximate population of the $1000$th most populous city in Texas?&lt;/li&gt;
+&lt;/ol&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/vis-excel-axis-transformation/vis-excel-axis-transformation&quot;&gt;Better visualizations through axes transformations&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on April 29, 2024.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[IEEE-storage convention for real numbers]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/digital-storage-real-number/digital/digital-storage-real-number"/>
+  <id>https://www.cdslab.org/recipes/programming/digital-storage-real-number/digital/digital-storage-real-number</id>
+  <published>2023-02-25T00:00:00-07:00</published>
+  <updated>2023-02-25T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#integer" term="integer" /><category scheme="https://www.cdslab.org/recipes/tags/#memory" term="memory" /><category scheme="https://www.cdslab.org/recipes/tags/#IEEE" term="IEEE" /><category scheme="https://www.cdslab.org/recipes/tags/#storage" term="storage" /><category scheme="https://www.cdslab.org/recipes/tags/#real" term="real" /><category scheme="https://www.cdslab.org/recipes/tags/#float" term="float" /><category scheme="https://www.cdslab.org/recipes/tags/#real32" term="real32" /><category scheme="https://www.cdslab.org/recipes/tags/#real64" term="real64" /><category scheme="https://www.cdslab.org/recipes/tags/#real128" term="real128" />
+  <content type="html">
+  
+    
+&lt;p&gt;Recall that computers can only store discrete values in memory.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;What does this imply for the storage of real (floating-point) numbers in computers?&lt;/li&gt;
+  &lt;li&gt;Now consider the IEEE-storage convention for real numbers in computers for &lt;code&gt;real32&lt;/code&gt;, &lt;code&gt;real64&lt;/code&gt;, and &lt;code&gt;real128&lt;/code&gt; bit storage formats as illustrated below.
+    &lt;figure&gt;&lt;img src=&quot;../real32.png&quot; width=&quot;100%&quot; /&gt;&lt;/figure&gt;
+    &lt;figure&gt;&lt;img src=&quot;../real64.png&quot; width=&quot;100%&quot; /&gt;&lt;/figure&gt;
+    &lt;figure&gt;&lt;img src=&quot;../real128.png&quot; width=&quot;100%&quot; /&gt;&lt;/figure&gt;
+    &lt;p&gt;Compute how many real numbers each of the above formats can represent.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;How many of these numbers are in the range $[0, 1)$ for each storage convention?&lt;/li&gt;
+  &lt;li&gt;What are the minimum and maximum possible representable real values in these conventions?&lt;/li&gt;
+  &lt;li&gt;Is there a way to represent numbers that are smaller than the minimum representable real numbers in these conventions?&lt;/li&gt;
+&lt;/ol&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/digital-storage-real-number/digital/digital-storage-real-number&quot;&gt;IEEE-storage convention for real numbers&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on February 25, 2023.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Intel OneAPI C/C++/Fortran Compiler Installation]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/intel-oneapi-c-cpp-fortran-compiler-installation/intel-oneapi-c-cpp-fortran-compiler-installation"/>
+  <id>https://www.cdslab.org/recipes/programming/intel-oneapi-c-cpp-fortran-compiler-installation/intel-oneapi-c-cpp-fortran-compiler-installation</id>
+  <published>2023-01-01T00:00:00-07:00</published>
+  <updated>2020-01-01T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#Intel%20Parallel%20Studio" term="Intel Parallel Studio" /><category scheme="https://www.cdslab.org/recipes/tags/#Microsoft%20Visual%20Studio" term="Microsoft Visual Studio" /><category scheme="https://www.cdslab.org/recipes/tags/#Windows" term="Windows" /><category scheme="https://www.cdslab.org/recipes/tags/#installation" term="installation" /><category scheme="https://www.cdslab.org/recipes/tags/#Fortran" term="Fortran" /><category scheme="https://www.cdslab.org/recipes/tags/#C" term="C" /><category scheme="https://www.cdslab.org/recipes/tags/#C++" term="C++" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;How can I install the Intel OneAPI C/C++/Fortran Compiler on Windows, Linux, or macOS?&lt;/p&gt;
+
+&lt;div style=&quot;text-align:center;margin-top:2rem;margin-bottom:2rem;&quot;&gt;
+
+    &lt;a href=&quot;#solution&quot; style=&quot;display:inline-block;&quot;&gt;
+        &lt;h2 id=&quot;solution&quot; style=&quot;color:blue;&quot;&gt;
+            Solution
+        &lt;/h2&gt;
+    &lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;The Intel OneAPI HPC toolkit provides a wide variety of High-Performance numerical libraries and tools, most importantly, the Intel Fortran and C/C++ compilers.&lt;br /&gt;
+However, its installation, particularly, on Windows systems can be a bit tricky.&lt;/p&gt;
+
+&lt;p&gt;Here are the &lt;strong&gt;steps required to take to properly install the Intel OneAPI compilers on Linux/macOS/Windows&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;If you are a Linux/macOS user move on to step 2.&lt;br /&gt;
+If you are a &lt;strong&gt;Windows&lt;/strong&gt; user,
+    &lt;ol&gt;
+      &lt;li&gt;&lt;strong&gt;Download&lt;/strong&gt; a recent version of &lt;strong&gt;Microsoft Visual Studio (MSVS) Community edition&lt;/strong&gt; installer 
+which is &lt;a href=&quot;https://visualstudio.microsoft.com/vs/community&quot; target=&quot;_blank&quot;&gt;available free of charge&lt;/a&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Run the Microsoft Visual Studio installer&lt;/strong&gt;.&lt;br /&gt;
+Once you see the following prompt window, make sure you &lt;strong&gt;select at least the C++ components to install on your system&lt;/strong&gt; (if you do not want all of the components).&lt;br /&gt;
+This component selection is essential for successful installation of Intel OneAPI components and compilers,
+        &lt;figure&gt;
+    &lt;img src=&quot;community-page-installer.png&quot; /&gt;
+&lt;/figure&gt;
+        &lt;p&gt;Once the installation is complete, you may need to reboot your system.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Download Intel OneAPI Base Toolkit&lt;/strong&gt; from its &lt;a href=&quot;https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html&quot; target=&quot;_blank&quot;&gt;dedicated website&lt;/a&gt;. &lt;br /&gt;
+Follow the installation instructions provided by Intel to install the Base Toolkit.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Download Intel OneAPI HPC Toolkit&lt;/strong&gt; from its &lt;a href=&quot;https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit-download.html&quot; target=&quot;_blank&quot;&gt;dedicated website&lt;/a&gt;. &lt;br /&gt;
+Follow the installation instructions provided by Intel to install the HPC Toolkit.&lt;br /&gt;
+This component contains all Intel products relevant to scientific computing, parallel computing, and C/C++/Fortran compilers.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Your installation is complete&lt;/strong&gt; (you may need a reboot again).
+    &lt;ol&gt;
+      &lt;li&gt;If you are on &lt;strong&gt;Windows&lt;/strong&gt;,
+        &lt;ol&gt;
+          &lt;li&gt;You can now access intel compilers and tools from within the Microsoft Visual Studio application.&lt;/li&gt;
+          &lt;li&gt;You can also use the &lt;strong&gt;use Intel’s provided Windows command-line environment (CMD)&lt;/strong&gt; that comes with all the Intel OneAPI.&lt;br /&gt;
+This environment contains all paths to Intel applications predefined &lt;strong&gt;to help build your applications on the command line, much like a Linux environment&lt;/strong&gt;.&lt;br /&gt;
+In the long run, you will likely find the command line much more convenient than the GUI interface that the Microsoft Visual Studio application offers.
+            &lt;figure&gt;
+    &lt;img src=&quot;intelCMD.png&quot; /&gt;
+&lt;/figure&gt;
+          &lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;On all platforms, whether Windows or Unix, you can now open the relevant terminal (Intel CMD on Windows and Bash/dash/zsh/… terminal on Linux/macOS) 
+to test whether the Intel compilers have been correctly installed by typing &lt;code&gt;ifx&lt;/code&gt; to invoke the Intel Fortran compiler or &lt;code&gt;icl&lt;/code&gt; to invoke the Intel C++ compiler, 
+The following snapshot demonstrates the usage on Windows CMD terminal,
+        &lt;figure&gt;
+    &lt;img src=&quot;compilerTest.png&quot; /&gt;
+&lt;/figure&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/intel-oneapi-c-cpp-fortran-compiler-installation/intel-oneapi-c-cpp-fortran-compiler-installation&quot;&gt;Intel OneAPI C/C++/Fortran Compiler Installation&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on January 01, 2023.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Logic NAND and NOR]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/logic-nand-nor/logic/logic-nand-nor"/>
+  <id>https://www.cdslab.org/recipes/programming/logic-nand-nor/logic/logic-nand-nor</id>
+  <published>2022-11-01T00:00:00-06:00</published>
+  <updated>2020-11-01T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#plausibility" term="plausibility" /><category scheme="https://www.cdslab.org/recipes/tags/#deduction" term="deduction" /><category scheme="https://www.cdslab.org/recipes/tags/#reasoning" term="reasoning" /><category scheme="https://www.cdslab.org/recipes/tags/#logic" term="logic" /><category scheme="https://www.cdslab.org/recipes/tags/#boolean" term="boolean" /><category scheme="https://www.cdslab.org/recipes/tags/#implication" term="implication" />
+  <content type="html">
+  
+    
+&lt;p&gt;Recall the definitions of NAND and NOR from our lecture notes. Show that,&lt;/p&gt;
+
+\[\overline{(A \uparrow A) \downarrow (B \uparrow B)} \equiv (\overline{A} \downarrow \overline{A}) \uparrow (\overline{B} \downarrow \overline{B}) ~.\]
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/logic-nand-nor/logic/logic-nand-nor&quot;&gt;Logic NAND and NOR&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on November 01, 2022.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Logical implication in terms of logic functions]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/logic-functions-implication/logic-functions-implication"/>
+  <id>https://www.cdslab.org/recipes/programming/logic-functions-implication/logic-functions-implication</id>
+  <published>2022-10-21T00:00:00-06:00</published>
+  <updated>2020-10-21T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#plausibility" term="plausibility" /><category scheme="https://www.cdslab.org/recipes/tags/#deduction" term="deduction" /><category scheme="https://www.cdslab.org/recipes/tags/#reasoning" term="reasoning" /><category scheme="https://www.cdslab.org/recipes/tags/#logic" term="logic" /><category scheme="https://www.cdslab.org/recipes/tags/#boolean" term="boolean" /><category scheme="https://www.cdslab.org/recipes/tags/#implication" term="implication" />
+  <content type="html">
+  
+    
+&lt;p&gt;Consider the following logic functions,&lt;/p&gt;
+
+&lt;figure&gt;&lt;img src=&quot;basisTruthTable.png&quot; width=&quot;350&quot; /&gt;&lt;/figure&gt;
+
+&lt;p&gt;Show that,&lt;/p&gt;
+
+\[f_1(A, B) + f_3(A, B) + f_4(A, B)\]
+
+&lt;p&gt;is equivalent to logical implication $A \Rightarrow B$.&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/logic-functions-implication/logic-functions-implication&quot;&gt;Logical implication in terms of logic functions&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on October 21, 2022.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Version-control: Setting up Git Software and GitHub Account]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/vcs-git-github-setup/vcs-git-github-setup"/>
+  <id>https://www.cdslab.org/recipes/programming/vcs-git-github-setup/vcs-git-github-setup</id>
+  <published>2022-09-13T00:00:00-06:00</published>
+  <updated>2022-09-13T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#VCS" term="VCS" /><category scheme="https://www.cdslab.org/recipes/tags/#git" term="git" /><category scheme="https://www.cdslab.org/recipes/tags/#GitHub" term="GitHub" /><category scheme="https://www.cdslab.org/recipes/tags/#version%20control%20system" term="version control system" /><category scheme="https://www.cdslab.org/recipes/tags/#project" term="project" /><category scheme="https://www.cdslab.org/recipes/tags/#markdown" term="markdown" /><category scheme="https://www.cdslab.org/recipes/tags/#git%20branch" term="git branch" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:4rem;margin-bottom:1rem;&quot;&gt;
+    
+    
+    
+    &lt;figure&gt;
+        &lt;a href=&quot;#git&quot; id=&quot;git&quot;&gt;
+            &lt;img src=&quot;https://www.cdslab.org/recipes/images/Git.png&quot; width=&quot;75px&quot; /&gt;
+        &lt;/a&gt;
+        &lt;figcaption&gt;
+            &lt;a href=&quot;https://en.wikipedia.org/wiki/Git&quot; target=&quot;_blank&quot;&gt;
+                Git
+            &lt;/a&gt;
+        &lt;/figcaption&gt;
+    &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This exercise guides you through the steps needed to take to properly install and minimally use the git software and the Git Bash terminal on your system.&lt;br /&gt;
+By the end of this exercise, you will be able to initialize an empty git project anywhere in your computer, or initialize a project on GitHub and clone it to your system.&lt;br /&gt;
+&lt;strong&gt;Guidelines.&lt;/strong&gt; Use the following references for operations in a (Git) Bash terminal.&lt;br /&gt;
+    - &lt;a href=&quot;https://www.cdslab.org/python/notes/preliminary-foundations/version-control-system/linuxRef.pdf&quot; target=&quot;_blank&quot;&gt;Linux Bash command reference&lt;/a&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Only Windows users&lt;/strong&gt;. Before installing the Git software, I highly recommend you to download and install the most recent version of &lt;a href=&quot;https://notepad-plus-plus.org/downloads/&quot; target=&quot;_blank&quot;&gt;Nodepad++ text editor&lt;/a&gt; on your system, if you do not have it already.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Git installation&lt;/strong&gt;. Visit the &lt;a href=&quot;https://git-scm.com/downloads&quot; target=&quot;_blank&quot;&gt;Git downloads website&lt;/a&gt; and download the most recent version of the git software to install on your system.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Only Windows users&lt;/strong&gt;. During the installation, the git software may ask you to link your Notepad++ software with git. If given this option, choose it.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Only macOS users&lt;/strong&gt;. One of the easiest ways to install the Git software is via the Homebrew package manager.
+        &lt;ol&gt;
+          &lt;li&gt;First, open a command line terminal and type &lt;code&gt;brew&lt;/code&gt; and press &lt;code&gt;Enter&lt;/code&gt; key.&lt;br /&gt;
+If the terminal returns an error not recognizing Homebrew &lt;code&gt;brew&lt;/code&gt; command, it means you do not have &lt;code&gt;brew&lt;/code&gt; installed on your system.&lt;br /&gt;
+If you do have &lt;code&gt;brew&lt;/code&gt; already installed, skip the next step.&lt;/li&gt;
+          &lt;li&gt;In you terminal, copy and paste the following command and press &lt;code&gt;Enter&lt;/code&gt;:
+            &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/bin/bash &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-fsSL&lt;/span&gt; https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+            &lt;p&gt;The Homebrew installation may take a while depending on the quality of your network connection.&lt;br /&gt;
+&lt;strong&gt;Carefully read any questions and message prompted by Homebrew and respond correctly.&lt;/strong&gt;&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Once done, type the following command to install &lt;code&gt;git&lt;/code&gt; on your system:
+            &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Interacting with Git&lt;/strong&gt;.
+    &lt;ul&gt;
+      &lt;li&gt;Depending on your operating system,
+        &lt;ul&gt;
+          &lt;li&gt;&lt;strong&gt;On Windows systems&lt;/strong&gt;,
+            &lt;ol&gt;
+              &lt;li&gt;press the Windows key + &lt;code&gt;E&lt;/code&gt; to open a Windows explorer.&lt;br /&gt;
+&lt;img src=&quot;explorer-key-shortcut.jpg&quot; alt=&quot;explorer-key-shortcut.jpg&quot; /&gt;&lt;/li&gt;
+              &lt;li&gt;Then, navigate to the directory &lt;code&gt;C:\Users\account&lt;/code&gt;, where you have to replace &lt;code&gt;account&lt;/code&gt; with your Windows account name.&lt;/li&gt;
+              &lt;li&gt;Now right-click on an empty region of the Windows explorer, you should see a menu like the following.&lt;br /&gt;
+&lt;img src=&quot;git.bash.here.png&quot; alt=&quot;git.bash.here.png&quot; /&gt;&lt;br /&gt;
+Click on “Git Bash Here” to open a Git Bash session. You should see a Bash session opened like the following screen shot,&lt;br /&gt;
+&lt;img src=&quot;git.bash.png&quot; alt=&quot;git.bash.png&quot; /&gt;&lt;br /&gt;
+What is &lt;strong&gt;Git Bash&lt;/strong&gt;? Git Bash is simply a &lt;a href=&quot;https://en.wikipedia.org/wiki/Bash_(Unix_shell)&quot; target=&quot;_blank&quot;&gt;Bash terminal&lt;/a&gt; that is tailored for Git usage on Windows.&lt;br /&gt;
+The Linux and macOS operating systems have Bash-compatible terminals (shells) that allow interaction with the operating system.&lt;br /&gt;
+The Git software was originally built as a Linux application that natively used the Linux terminals for interaction.&lt;br /&gt;
+However, Windows system is not fully compatible with Linux terminals and does not have native Linux-compatible terminals.&lt;br /&gt;
+Therefore, the Git developers decided to ship the Git software with a dedicated Bash terminal for use on Windows systems,
+so that Windows users also get the same feeling as Linux and macOS users when dealing with Git software.&lt;/li&gt;
+            &lt;/ol&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;On Linux / macOS systems&lt;/strong&gt;.
+            &lt;ol&gt;
+              &lt;li&gt;Simply search for &lt;strong&gt;terminal&lt;/strong&gt; in the search box of your operating system and open a terminal.&lt;/li&gt;
+              &lt;li&gt;Then type &lt;code&gt;cd ~&lt;/code&gt; and press enter. This will take you to &lt;strong&gt;home directory&lt;/strong&gt; of your system.&lt;/li&gt;
+              &lt;li&gt;Then type &lt;code&gt;open .&lt;/code&gt; in your terminal and press enter to open a &lt;strong&gt;macOS finder&lt;/strong&gt; in the same location as your home folder.&lt;/li&gt;
+            &lt;/ol&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Now, within your terminal (whether Git Bash or Linux/macOS terminal), type &lt;code&gt;pwd&lt;/code&gt; and press enter.&lt;br /&gt;
+&lt;strong&gt;Why?&lt;/strong&gt; This Bash command displays the current working directory where you are.&lt;br /&gt;
+It should print the path to the home directory of your system, because you are already in the home directory.&lt;/li&gt;
+      &lt;li&gt;Now type &lt;code&gt;ls -a&lt;/code&gt; and press enter.&lt;br /&gt;
+&lt;strong&gt;Why?&lt;/strong&gt; This Bash command will display a list of all files and folders in the home directory of your computer.&lt;br /&gt;
+The &lt;code&gt;-a&lt;/code&gt; flag requests the Bash terminal to show all files (&lt;strong&gt;including hidden files&lt;/strong&gt;).&lt;br /&gt;
+Note that any file or folder whose name begins with a &lt;code&gt;.&lt;/code&gt; is automatically hidden from your view.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Creating your first Git project.&lt;/strong&gt;&lt;br /&gt;
+There are two ways to create git projects,
+    &lt;ol&gt;
+      &lt;li&gt;Creating a git project on your local system.
+        &lt;ul&gt;
+          &lt;li&gt;Now type &lt;code&gt;mkdir git&lt;/code&gt; and press enter.&lt;br /&gt;
+&lt;strong&gt;Why?&lt;/strong&gt; This Bash command will create a new folder named &lt;code&gt;git&lt;/code&gt; within the current directory of your Bash session (which is already your home directory).&lt;br /&gt;
+Although you can use any place in your computer to store your Git projects, it is good practice and much easier to keep them all in one place (the &lt;code&gt;git&lt;/code&gt; folder you just created).
+            &lt;blockquote&gt;
+              &lt;p&gt;Some of you may have already created a &lt;code&gt;git&lt;/code&gt; folder in your home directory. &lt;br /&gt;
+  In such a case, the command &lt;code&gt;mkdir git&lt;/code&gt; will lead to an error because the folder already exists.&lt;br /&gt;
+  Do not panic, ignore the error message and move on to the next step below.&lt;/p&gt;
+            &lt;/blockquote&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Now type &lt;code&gt;ls -l&lt;/code&gt; again and press enter.&lt;br /&gt;
+&lt;strong&gt;Why?&lt;/strong&gt; If you have successfully created the new folder &lt;code&gt;git&lt;/code&gt; in your current directory, this command will show you the new folder in the listing it displays.&lt;br /&gt;
+If you cannot find it, you need to reach out to me to identify the roots of the problem.&lt;/li&gt;
+          &lt;li&gt;Now type &lt;code&gt;cd git&lt;/code&gt; and press enter.&lt;br /&gt;
+&lt;strong&gt;Why?&lt;/strong&gt; The &lt;code&gt;cd&lt;/code&gt; Bash command stands for &lt;strong&gt;Change Directory&lt;/strong&gt;. Therefore, &lt;code&gt;cd git&lt;/code&gt; will change your current working directory from your home directory to the subdirectory &lt;code&gt;git&lt;/code&gt;.&lt;/li&gt;
+          &lt;li&gt;Now, we want to create a new git project in this folder. Let’s say the name of the project is &lt;code&gt;test&lt;/code&gt;.&lt;/li&gt;
+          &lt;li&gt;First, we will have to create a &lt;code&gt;test&lt;/code&gt; folder where we will store all files and materials related to the &lt;code&gt;test&lt;/code&gt; git project. Type the following in the terminal and press enter.
+            &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;mkdir test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cd test&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+            &lt;p&gt;This command will create a &lt;code&gt;test&lt;/code&gt; subfolder in your &lt;code&gt;git&lt;/code&gt; folder and then will change the current directory to wihtin the &lt;code&gt;test&lt;/code&gt; subfolder.&lt;br /&gt;
+The &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; simply means &lt;strong&gt;and&lt;/strong&gt;: Make directory &lt;code&gt;test&lt;/code&gt; &lt;strong&gt;and&lt;/strong&gt; change directory to &lt;code&gt;test&lt;/code&gt;.&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;This is where we want to host our git test project. To initialize an empty Git project here, type the following git command in the terminal,
+            &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;Done.&lt;/strong&gt; You have successfully created an empty test Git project on your computer.&lt;/li&gt;
+          &lt;li&gt;Each and every Git project is always associated with a &lt;code&gt;.git&lt;/code&gt; subfolder in the same location where your store your project on your system.&lt;br /&gt;
+To ensure you have successfully initiated a Git project, type &lt;code&gt;ls -a&lt;/code&gt; in your terminal and press enter.&lt;br /&gt;
+This should display a list among which there is &lt;code&gt;.git&lt;/code&gt;.&lt;br /&gt;
+If you do not see this hidden folder in the list displayed, your &lt;code&gt;test&lt;/code&gt; folder is &lt;strong&gt;not&lt;/strong&gt; a git project yet!&lt;/li&gt;
+          &lt;li&gt;Of course, your Git project is still empty. But you can now put anything you like in it and make it part of your project.&lt;br /&gt;
+For example, we can add an empty text file to it by typing,
+            &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;touch &lt;/span&gt;README.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+            &lt;p&gt;in the Bash terminal and pressing enter.&lt;/p&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Creating a git project on a server and cloning the project on your local system.&lt;br /&gt;
+This is the easier way of initializing projects and sharing them with other Team members in the project.&lt;br /&gt;
+In the follow-up exercises, we will learn how to initialize Git projects using &lt;a href=&quot;https://github.com/&quot; target=&quot;_blank&quot;&gt;GitHub&lt;/a&gt; as the git server.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/vcs-git-github-setup/vcs-git-github-setup&quot;&gt;Version-control: Setting up Git Software and GitHub Account&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on September 13, 2022.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Performance benchmarking of naive matrix multiplication in Python vs. optimized libraries]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/hpc-matmul-python/hpc-matmul-python"/>
+  <id>https://www.cdslab.org/recipes/programming/hpc-matmul-python/hpc-matmul-python</id>
+  <published>2022-04-17T00:00:00-06:00</published>
+  <updated>2022-04-17T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#MKL" term="MKL" /><category scheme="https://www.cdslab.org/recipes/tags/#matmul" term="matmul" /><category scheme="https://www.cdslab.org/recipes/tags/#matrix" term="matrix" /><category scheme="https://www.cdslab.org/recipes/tags/#multiplication" term="multiplication" /><category scheme="https://www.cdslab.org/recipes/tags/#performance" term="performance" /><category scheme="https://www.cdslab.org/recipes/tags/#optimization" term="optimization" /><category scheme="https://www.cdslab.org/recipes/tags/#hpc" term="hpc" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+&lt;ol&gt;
+  &lt;li&gt;Write a Python function with the following interface that computes the matrix multiplication of two input matrices.
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;matmul&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;matB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;bp&quot;&gt;...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;such that it returns the following result for the given input matrices.&lt;/p&gt;
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;matA&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;matB&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;matmul&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;matB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;pre&gt;&lt;code&gt;[[ 48.  76.  57. 100.]  
+ [ 36.  62.  64.  50.]  
+ [ 24.  41.  38.  47.]]  
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now, confirm the results of your function with the &lt;code&gt;numpy&lt;/code&gt; library’s &lt;code&gt;matmul&lt;/code&gt; function.&lt;/li&gt;
+  &lt;li&gt;Now, benchmark the performance of the numpy &lt;code&gt;matmul&lt;/code&gt; with the one you implemented for square matrices of rank: &lt;code&gt;2, 4, 16, 32, 64, 128, 256, 512, 1024&lt;/code&gt;.&lt;br /&gt;
+To make the benchmark accurate and fair, we will have to first fill these matrices with random values.&lt;br /&gt;
+You can do so via numpy as the following code snippet,
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;matA&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;rand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;matB&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;rand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;Note that the matrix initializations must occur out of the timing sections of your benchmark.&lt;br /&gt;
+To measure time, you can either use the Jupyter notebook’s &lt;code&gt;%%timeit&lt;/code&gt; magic if you are with Jupyter environment
+or use the &lt;code&gt;perf_counter&lt;/code&gt; function from the &lt;a href=&quot;https://docs.python.org/3/library/time.html&quot;&gt;Python module &lt;code&gt;time&lt;/code&gt;&lt;/a&gt;.&lt;br /&gt;
+There are also many other ways to time your code.  Feel free use any method that best suits your needs.&lt;br /&gt;
+If you use the &lt;code&gt;perf_counter&lt;/code&gt; function, remember to perform many matrix multiplications for small matrix ranks 
+and gradually decrease the number of multiplications in your benchmark for larger matrix ranks.&lt;br /&gt;
+Then you will have to properly normalize the timing for each matrix rank by the number repetitions 
+of the matrix multiplication to ensure the numbers are comparable.&lt;br /&gt;
+Repetitions are essential to capture the tiny time it takes to multiply small rank matrices.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Store the timing results for matrix multiplication for the two methods in an array.&lt;br /&gt;
+Then use &lt;code&gt;matplotlib&lt;/code&gt; python library to plot the two timing vectors vs. matrix ranks with which you did the benchmark.&lt;br /&gt;
+Seek help from our &lt;a href=&quot;https://www.cdslab.org/python/notes/visualization/2d/2d.html&quot;&gt;lecture notes on plotting&lt;/a&gt; if you do not know how to make line/scatter plots in Python.&lt;/li&gt;
+&lt;/ol&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/hpc-matmul-python/hpc-matmul-python&quot;&gt;Performance benchmarking of naive matrix multiplication in Python vs. optimized libraries&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on April 17, 2022.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Performance benchmarking of naive matrix multiplication: naive vs. matmul vs. MKL]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/hpc-matmul-mkl/hpc-matmul-mkl"/>
+  <id>https://www.cdslab.org/recipes/programming/hpc-matmul-mkl/hpc-matmul-mkl</id>
+  <published>2022-04-17T00:00:00-06:00</published>
+  <updated>2022-04-17T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#MKL" term="MKL" /><category scheme="https://www.cdslab.org/recipes/tags/#matmul" term="matmul" /><category scheme="https://www.cdslab.org/recipes/tags/#matrix" term="matrix" /><category scheme="https://www.cdslab.org/recipes/tags/#multiplication" term="multiplication" /><category scheme="https://www.cdslab.org/recipes/tags/#performance" term="performance" /><category scheme="https://www.cdslab.org/recipes/tags/#optimization" term="optimization" /><category scheme="https://www.cdslab.org/recipes/tags/#hpc" term="hpc" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Unlike The C/C++ programming languages, The Fortran language has native functions for matrix operations.&lt;br /&gt;
+The most important of these is the &lt;code&gt;matmul&lt;/code&gt; intrinsic function, which has inspired all other programming languages for the same functionality.&lt;br /&gt;
+However, we can also implement a naive version of matrix multiplication in all languages.&lt;br /&gt;
+Additionally, there are highly optimized parallel libraries that implement matrix multiplication for us.&lt;br /&gt;
+Originally written in Fortran, these libraries are now known as BLAS and LAPACK libraries and different vendors offer different implementations of these libraries.&lt;br /&gt;
+One of the most popular and optimized such implementations is offer by Intel through its Math Kernel Library (MKL).&lt;br /&gt;
+The following program tests the performance of matrix multiplication approaches using a naive looping, intrinsic &lt;code&gt;matmul&lt;/code&gt;, and finally an optimized BLAS implementation.&lt;/p&gt;
+&lt;div class=&quot;language-fortran highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;program&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matmul_benchmark&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iso_fortran_env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;only&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error_unit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;int64&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;implicit&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;integer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;int64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;toc&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;real&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;allocatable&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:,:),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:,:),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:,:)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;real&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;naiveTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matmulTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;blasTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dummy&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;integer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;parameter&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nrepeat&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;17&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;integer&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;irepeat&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;(*(g0,:,&apos;, &apos;))&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;matrixRank&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;seconds_naive&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;seconds_matmul&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;seconds_blas&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! Loop over array sizes.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! matrix rank.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;allocate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! allocate memory for the matrices.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+        &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! Benchmark the naive matrix multiplication implementation.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;system_clock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;irepeat&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nrepeat&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setMatMul&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;system_clock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;toc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;naiveTime&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;toc&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rate&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nrepeat&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dummy&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dummy&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;naiveTime&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! dummy operation to prevent aggressive compiler optimizations each benchmark.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+        &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! Benchmark the intrinsic `matmul` matrix multiplication implementation.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;system_clock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;irepeat&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nrepeat&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matC&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matC&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;matmul&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;system_clock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;toc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matmulTime&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;toc&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rate&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nrepeat&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dummy&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dummy&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matmulTime&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! dummy operation to prevent aggressive compiler optimizations each benchmark.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+        &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! Benchmark the intrinsic `matmul` matrix multiplication implementation.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;system_clock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;irepeat&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nrepeat&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sgemm&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;N&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;           &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! transposition of matA.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;N&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;           &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! transposition of matB.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! the number of rows of `matA`.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! the number of columns of `matB`.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! the number of columns of `matA`.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;            &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! the `alpha` coefficient of multiplication: C := alpha*op( A )*op( B ) + beta*C&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matA&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! matrix matA.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! the leading dimension of matA.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matB&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! matrix matB.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! the leading dimension of matB.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;            &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! the `beta` coefficient of multiplication: C := alpha*op( A )*op( B ) + beta*C&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matC&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! matrix matC.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! the leading dimension of matC.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;system_clock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;toc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;blasTime&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;toc&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rate&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nrepeat&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dummy&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dummy&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;blasTime&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! dummy operation to prevent aggressive compiler optimizations each benchmark.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+        &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! Report the timings.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;(*(g0,:,&apos;, &apos;))&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;naiveTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matmulTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;blasTime&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;deallocate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;(*(g0,:,&apos;, &apos;))&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dummy&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! dummy operation to prevent aggressive compiler optimizations each benchmark.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;contains&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;subroutine&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! Reset and fill the matrices with random values in range [-.5, .5].&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;real&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;intent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:,:),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:,:),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:,:)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;random_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matA&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matA&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;random_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matB&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matB&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;random_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matC&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matC&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;pure&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;subroutine&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setMatMul&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;! Update the input `matC` with the result of the matrix multiplication of `matA` with `matB`.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;real&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;intent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;contiguous&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:,:),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:,:)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;real&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;intent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;inout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;contiguous&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:,:)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;integer&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;                                     &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;concurrent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Download the above code as the file &lt;a href=&quot;main.F90&quot;&gt;main.F90&lt;/a&gt;, then compile and run this program on your system.&lt;br /&gt;
+    To do so, first navigate to the folder containing this file in a shell environment, then,&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;If you are using Intel Fortran compiler on Windows, try the following command to compile and run it.&lt;br /&gt;
+First open an Intel command line environment (open Windows startup, then look for &lt;code&gt;Intel oneAPI command prompt&lt;/code&gt; application).
+    &lt;div class=&quot;language-batch highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;ifort&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;main&lt;/span&gt;.F90 &lt;span class=&quot;na&quot;&gt;-O&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;/F&lt;/span&gt;&lt;span class=&quot;mh&quot;&gt;0x1000000000&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;/Qmkl&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;:parallel&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;/exe&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;:main&lt;/span&gt;.exe
+&lt;span class=&quot;kd&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.exe&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;If you are using Intel Fortran compiler on Linux or macOS, try the following command to compile and run it.
+    &lt;div class=&quot;language-batch highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;ifort&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;-O&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;main&lt;/span&gt;.F90 &lt;span class=&quot;na&quot;&gt;-lblas -o &lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.exe&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/hpc-matmul-mkl/hpc-matmul-mkl&quot;&gt;Performance benchmarking of naive matrix multiplication: naive vs. matmul vs. MKL&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on April 17, 2022.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Performance optimization: loop invariant code motion]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/hpc-loop-invariant-code-motion/hpc-loop-invariant-code-motion"/>
+  <id>https://www.cdslab.org/recipes/programming/hpc-loop-invariant-code-motion/hpc-loop-invariant-code-motion</id>
+  <published>2022-04-17T00:00:00-06:00</published>
+  <updated>2022-04-17T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#performance" term="performance" /><category scheme="https://www.cdslab.org/recipes/tags/#optimization" term="optimization" /><category scheme="https://www.cdslab.org/recipes/tags/#hpc" term="hpc" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Consider the following Python code snippet,&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;256.&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;z&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;What can you do to the above code without changing the computation results at any precision digit to make the code more performant?&lt;br /&gt;
+Prove your suggestion by benchmarking your revised code against the original code above.&lt;br /&gt;
+How much performance improvement do you observe?&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/hpc-loop-invariant-code-motion/hpc-loop-invariant-code-motion&quot;&gt;Performance optimization: loop invariant code motion&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on April 17, 2022.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Performance optimization: Searching sorted array via linear vs. binary search]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/hpc-linear-binary-search/hpc-linear-binary-search"/>
+  <id>https://www.cdslab.org/recipes/programming/hpc-linear-binary-search/hpc-linear-binary-search</id>
+  <published>2022-04-17T00:00:00-06:00</published>
+  <updated>2022-04-17T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#performance" term="performance" /><category scheme="https://www.cdslab.org/recipes/tags/#optimization" term="optimization" /><category scheme="https://www.cdslab.org/recipes/tags/#sorting" term="sorting" /><category scheme="https://www.cdslab.org/recipes/tags/#binary" term="binary" /><category scheme="https://www.cdslab.org/recipes/tags/#linear" term="linear" /><category scheme="https://www.cdslab.org/recipes/tags/#search" term="search" /><category scheme="https://www.cdslab.org/recipes/tags/#array" term="array" /><category scheme="https://www.cdslab.org/recipes/tags/#hpc" term="hpc" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Recall our discussion of linear vs. binary searching of sorted arrays for a particular value.&lt;br /&gt;
+Suppose we a set of &lt;code&gt;nbin&lt;/code&gt; ascending-sorted histogram bins &lt;code&gt;edges = range(nbin)&lt;/code&gt; and a given number &lt;code&gt;x&lt;/code&gt;
+whose histogram bin &lt;code&gt;i&lt;/code&gt; we wish to find such that &lt;code&gt;edges[i] &amp;lt;= x &amp;lt; edges[i + 1]&lt;/code&gt; assuming &lt;code&gt;i &amp;lt; nbin - 1&lt;/code&gt;.&lt;br /&gt;
+Write a function (e.g., in Python) with the following example Python interface that use &lt;strong&gt;linear searching&lt;/strong&gt; method to find the correct histogram bin of &lt;code&gt;x&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getBinLinear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;edges&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;
+    Return the index of the element of `edges` such that the condition `edges[i] &amp;lt;= x &amp;lt; edges[i + 1]` holds.
+    If `x` is larger than all elements of `edges`, then the function returns `len(edges) - 1`.
+    If `x` is smaller than all elements of `edges`, then the function returns `- 1`.
+    &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Recall that for sorted arrays, we can also use the binary search method to compute the corresponding bin of &lt;code&gt;x&lt;/code&gt;.&lt;br /&gt;
+Write a new function with the following example Python interface to use the &lt;strong&gt;binary searching&lt;/strong&gt; method to find the histogram bin of &lt;code&gt;x&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getBinBinary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;edges&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;
+    Return the index of the element of `edges` such that the condition `edges[i] &amp;lt;= x &amp;lt; edges[i + 1]` holds.
+    If `x` is larger than all elements of `edges`, then the function returns `len(edges) - 1`.
+    If `x` is smaller than all elements of `edges`, then the function returns `- 1`.
+    &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Which algorithm is faster for finding the bin of an arbitrary &lt;code&gt;x&lt;/code&gt; value? When? Why?&lt;br /&gt;
+Benchmark the two algorithms you have implemented for a range of incrementally-increasing &lt;code&gt;edges&lt;/code&gt; array values and lengths.&lt;br /&gt;
+Make a plot of the benchmark and justify your answer to the performance of the two algorithms based on your benchmark results.&lt;br /&gt;
+&lt;strong&gt;Hint&lt;/strong&gt;: To simplify the benchmark, you can fix the value of &lt;code&gt;x&lt;/code&gt; in your benchmark to &lt;code&gt;edges[-2]&lt;/code&gt; (the element before the last in edges).&lt;br /&gt;
+Then, run the benchmarks for different values of &lt;code&gt;nbin&lt;/code&gt;, for example, from &lt;code&gt;5&lt;/code&gt; to &lt;code&gt;50,000&lt;/code&gt; edges.&lt;br /&gt;
+The specific suggested value of &lt;code&gt;x&lt;/code&gt; roughly leads to the worst-case performance of the linear and binary searches.&lt;br /&gt;
+This benchmark setting, therefore, gives you a rough idea of how fast the two methods are compared to each other.&lt;br /&gt;
+Here is an example range of &lt;code&gt;nbin&lt;/code&gt; values (in Python) with which you can test your algorithms,&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;logspace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;log2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;log2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;nbin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;edges&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nbin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;edges&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;nbin = {}, x = {}&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nbin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;pre&gt;&lt;code&gt;nbin = 4, x = 2
+nbin = 13, x = 11
+nbin = 38, x = 36
+nbin = 107, x = 105
+nbin = 299, x = 297
+nbin = 834, x = 832
+nbin = 2320, x = 2318
+nbin = 6457, x = 6455
+nbin = 17969, x = 17967
+nbin = 50000, x = 49998
+&lt;/code&gt;&lt;/pre&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/hpc-linear-binary-search/hpc-linear-binary-search&quot;&gt;Performance optimization: Searching sorted array via linear vs. binary search&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on April 17, 2022.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Performance optimization: Forced reduction - sin(x)cos(y) + cos(x)sin(y)]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/hpc-forced-reduction-sinxpy/hpc-forced-reduction-sinxpy"/>
+  <id>https://www.cdslab.org/recipes/programming/hpc-forced-reduction-sinxpy/hpc-forced-reduction-sinxpy</id>
+  <published>2022-04-17T00:00:00-06:00</published>
+  <updated>2022-04-17T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#performance" term="performance" /><category scheme="https://www.cdslab.org/recipes/tags/#optimization" term="optimization" /><category scheme="https://www.cdslab.org/recipes/tags/#hpc" term="hpc" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Consider the following Python function,&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getSCCS_slow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;
+    Return `sin(x) * cos(y) + cos(x) * sin(y)`.
+    &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;What can you do to the above code to make it more performant?&lt;br /&gt;
+Prove your suggestion by benchmarking your revised code against the original code above.&lt;br /&gt;
+How much performance improvement do you observe?&lt;br /&gt;
+(&lt;strong&gt;Hint&lt;/strong&gt;: Think of rewriting the above trigonometric expression in terms of a single &lt;code&gt;sin()&lt;/code&gt; term.)&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/hpc-forced-reduction-sinxpy/hpc-forced-reduction-sinxpy&quot;&gt;Performance optimization: Forced reduction - sin(x)cos(y) + cos(x)sin(y)&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on April 17, 2022.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Performance optimization: Forced reduction - sincos]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/hpc-forced-reduction-sincos/hpc-forced-reduction-sincos"/>
+  <id>https://www.cdslab.org/recipes/programming/hpc-forced-reduction-sincos/hpc-forced-reduction-sincos</id>
+  <published>2022-04-17T00:00:00-06:00</published>
+  <updated>2022-04-17T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#performance" term="performance" /><category scheme="https://www.cdslab.org/recipes/tags/#optimization" term="optimization" /><category scheme="https://www.cdslab.org/recipes/tags/#hpc" term="hpc" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Consider the following Python function,&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sincos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;
+    Return `sin(x) * cos(x)`.
+    &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;What can you do to the above code to make it more performant?&lt;br /&gt;
+Prove your suggestion by benchmarking your revised code against the original code above.&lt;br /&gt;
+How much performance improvement do you observe?&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/hpc-forced-reduction-sincos/hpc-forced-reduction-sincos&quot;&gt;Performance optimization: Forced reduction - sincos&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on April 17, 2022.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Performance optimization: Forced reduction - hidden opportunities]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/hpc-forced-reduction-exp/hpc-forced-reduction-exp"/>
+  <id>https://www.cdslab.org/recipes/programming/hpc-forced-reduction-exp/hpc-forced-reduction-exp</id>
+  <published>2022-04-17T00:00:00-06:00</published>
+  <updated>2022-04-17T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#performance" term="performance" /><category scheme="https://www.cdslab.org/recipes/tags/#optimization" term="optimization" /><category scheme="https://www.cdslab.org/recipes/tags/#hpc" term="hpc" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Consider the following Python function,&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xvec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;
+    Return the count of elements of the input `xvec` whose natural logarithm is less than `0`.
+    &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;counter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xvec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; 
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;counter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;counter&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;What can you do to the above code to make it more performant?&lt;br /&gt;
+Prove your suggestion by benchmarking your revised code against the original code above.&lt;br /&gt;
+How much performance improvement do you observe?&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/hpc-forced-reduction-exp/hpc-forced-reduction-exp&quot;&gt;Performance optimization: Forced reduction - hidden opportunities&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on April 17, 2022.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Performance optimization: Breaking out of loop early]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/hpc-breaking-out-of-loop-early/hpc-breaking-out-of-loop-early"/>
+  <id>https://www.cdslab.org/recipes/programming/hpc-breaking-out-of-loop-early/hpc-breaking-out-of-loop-early</id>
+  <published>2022-04-17T00:00:00-06:00</published>
+  <updated>2022-04-17T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#performance" term="performance" /><category scheme="https://www.cdslab.org/recipes/tags/#optimization" term="optimization" /><category scheme="https://www.cdslab.org/recipes/tags/#hpc" term="hpc" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Consider the following Python function,&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;boolVec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;
+    Return True if any of the elements of the input value are True, otherwise, return False.
+    &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;boolVec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;element&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;What can you do to the above code to make it more performant?&lt;br /&gt;
+Prove your suggestion by benchmarking your revised code against the original code above.&lt;br /&gt;
+For your benchmark, you can generate very long vectors of random Boolean (logical) values to pass them to the function.&lt;br /&gt;
+For example, you can use the NumPy library’s &lt;code&gt;choice&lt;/code&gt; function,&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;choice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;How much performance improvement do you observe?&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/hpc-breaking-out-of-loop-early/hpc-breaking-out-of-loop-early&quot;&gt;Performance optimization: Breaking out of loop early&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on April 17, 2022.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[A naive implementation of Kmedoids clustering]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/clustering-naive-kmedioid-implementation/clustering-naive-kmedioid-implementation"/>
+  <id>https://www.cdslab.org/recipes/programming/clustering-naive-kmedioid-implementation/clustering-naive-kmedioid-implementation</id>
+  <published>2021-12-01T00:00:00-07:00</published>
+  <updated>2021-12-01T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#MATLAB" term="MATLAB" /><category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#matplotlib" term="matplotlib" /><category scheme="https://www.cdslab.org/recipes/tags/#scikit-learn" term="scikit-learn" /><category scheme="https://www.cdslab.org/recipes/tags/#clustering" term="clustering" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#kmeans" term="kmeans" /><category scheme="https://www.cdslab.org/recipes/tags/#Kmedoids" term="Kmedoids" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;The K-medoids is a classical partitioning technique of clustering that splits the data set of $n$ objects into $k$ clusters, where the number $k$ of clusters is assumed to be known a priori. Unlike the K-means algorithm however, &lt;strong&gt;the K-medoids algorithm chooses points within the dataset as the centers of the clusters&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;A naive implementation of the K-medoids algorithm is similar to the K-means algorithm and requires the following steps,&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Select the initial medoids randomly (that is, select $k$ points from the dataset randomly as the cluster centers).&lt;/li&gt;
+  &lt;li&gt;Iterate while the cost decreases:
+    &lt;ol&gt;
+      &lt;li&gt;In each cluster, make the point that minimizes the sum of distances within the cluster the medoid.&lt;/li&gt;
+      &lt;li&gt;Reassign each point to the cluster defined by the closest medoid determined in the previous step.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Write a function in Python, MATLAB, or your preferred language to cluster an input dataset using the naive K-medoids method.&lt;br /&gt;
+Test the functionality of your algorithm with &lt;a href=&quot;https://www.cdslab.orghttps://www.cdslab.org/recipes/programming/clustering-kmeans-implementation/points.txt&quot; target=&quot;_blank&quot;&gt;this example dataset&lt;/a&gt; for 6 clusters.&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/clustering-naive-kmedioid-implementation/clustering-naive-kmedioid-implementation&quot;&gt;A naive implementation of Kmedoids clustering&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on December 01, 2021.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Online comparison of the Kmeans clustering algorithm with DBSCAN]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/clustering-kmeans-vs-dbscan-online/clustering-kmeans-vs-dbscan-online"/>
+  <id>https://www.cdslab.org/recipes/programming/clustering-kmeans-vs-dbscan-online/clustering-kmeans-vs-dbscan-online</id>
+  <published>2021-12-01T00:00:00-07:00</published>
+  <updated>2021-12-01T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#clustering" term="clustering" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#scatter%20plot" term="scatter plot" /><category scheme="https://www.cdslab.org/recipes/tags/#kmeans" term="kmeans" /><category scheme="https://www.cdslab.org/recipes/tags/#DBSCAN" term="DBSCAN" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;On &lt;a href=&quot;https://www.naftaliharris.com/blog/visualizing-k-means-clustering/&quot; target=&quot;_blank&quot;&gt;this website&lt;/a&gt;, you will find an online simulator of the Kmeans clustering technique.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Visit this page and choose the first choice stating &lt;strong&gt;I’ll Chooose&lt;/strong&gt;. You will be taken to a new page.&lt;/li&gt;
+  &lt;li&gt;On this new page, choose &lt;strong&gt;Smiley Face&lt;/strong&gt;. Then, you will be taken to a another page where you see a set of points like a smiley face.&lt;/li&gt;
+  &lt;li&gt;You will notice that you have the choice of adding (specifying) as many cluster centers as you like. Using mouse clicks, specify (add) four cluster centers on your best guess for the cluster centers.&lt;/li&gt;
+  &lt;li&gt;Then, press &lt;strong&gt;Go!&lt;/strong&gt; and then continue updating &lt;strong&gt;Centroids&lt;/strong&gt; (cluster centers) until the cluster do not change visibly anymore (convergence to a set of clusters has occurred).&lt;/li&gt;
+  &lt;li&gt;Is the final set of clusters that you get satisfying?&lt;/li&gt;
+  &lt;li&gt;Take a screenshot of the clusters that you get and submit it with your homework.&lt;/li&gt;
+  &lt;li&gt;Repeat this procedure with a new random set of cluster centers.&lt;/li&gt;
+  &lt;li&gt;Do the resulting clusters look the same as you got before? Why?&lt;/li&gt;
+  &lt;li&gt;Take a screenshot of the clusters that you get and submit it with your homework.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Now, visit &lt;a href=&quot;https://www.naftaliharris.com/blog/visualizing-dbscan-clustering/&quot; target=&quot;_blank&quot;&gt;this website&lt;/a&gt; and choose the same option &lt;strong&gt;Smiley Face&lt;/strong&gt; as before to perform DBSCAN clustering on the same &lt;strong&gt;Smiley Face&lt;/strong&gt; data. Adjust the parameters such that the two eyes, mouth, and the face-circle each become separate clusters. Why is the DBSCAN clustering so much more successful than the Kmeans? Take a screenshot of the clustering result to submit with your homework.&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/clustering-kmeans-vs-dbscan-online/clustering-kmeans-vs-dbscan-online&quot;&gt;Online comparison of the Kmeans clustering algorithm with DBSCAN&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on December 01, 2021.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Online experimentation with DBSCAN clustering technique]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/clustering-dbscan-online/clustering-dbscan-online"/>
+  <id>https://www.cdslab.org/recipes/programming/clustering-dbscan-online/clustering-dbscan-online</id>
+  <published>2021-12-01T00:00:00-07:00</published>
+  <updated>2021-12-01T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#clustering" term="clustering" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#scatter%20plot" term="scatter plot" /><category scheme="https://www.cdslab.org/recipes/tags/#DBSCAN" term="DBSCAN" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;On &lt;a href=&quot;https://www.naftaliharris.com/blog/visualizing-dbscan-clustering/&quot; target=&quot;_blank&quot;&gt;this website&lt;/a&gt;, you will find an online simulator of the DBSCAN clustering technique. Visit this page and choose the first dataset option named &lt;strong&gt;Uniform&lt;/strong&gt;. Recall from our lecture notes that the DBSCAN method has two free adjustable parameters that you need to set prior to clustering.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;What are the two free parameters of the DBSCAN clustering technique?&lt;/li&gt;
+  &lt;li&gt;Choose a set of parameters for DBSCAN on this page for the uniform dataset such that all points are partitioned a single cluster. Is this set of parameters unique to achieve the same clustering result? If not, provide another example set of parameters?&lt;/li&gt;
+  &lt;li&gt;Now, choose another set of parameters such that there is at least one outlier (noise) point left at the end of clustering that does not belong to any cluster.&lt;/li&gt;
+&lt;/ol&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/clustering-dbscan-online/clustering-dbscan-online&quot;&gt;Online experimentation with DBSCAN clustering technique&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on December 01, 2021.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Kmeans clustering - an implementation]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/clustering-kmeans-implementation/clustering-kmeans-implementation"/>
+  <id>https://www.cdslab.org/recipes/programming/clustering-kmeans-implementation/clustering-kmeans-implementation</id>
+  <published>2021-11-29T00:00:00-07:00</published>
+  <updated>2019-11-21T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#numpy" term="numpy" /><category scheme="https://www.cdslab.org/recipes/tags/#matplotlib" term="matplotlib" /><category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#scikit-learn" term="scikit-learn" /><category scheme="https://www.cdslab.org/recipes/tags/#clustering" term="clustering" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#scatter%20plot" term="scatter plot" /><category scheme="https://www.cdslab.org/recipes/tags/#kmeans" term="kmeans" /><category scheme="https://www.cdslab.org/recipes/tags/#kmeans++" term="kmeans++" /><category scheme="https://www.cdslab.org/recipes/tags/#figure" term="figure" /><category scheme="https://www.cdslab.org/recipes/tags/#random%20number" term="random number" /><category scheme="https://www.cdslab.org/recipes/tags/#pandas" term="pandas" /><category scheme="https://www.cdslab.org/recipes/tags/#read_csv" term="read_csv" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Consider this dataset &lt;a href=&quot;points.txt&quot; target=&quot;_blank&quot;&gt;points.txt&lt;/a&gt;. 
+Write a script that reads this dataset and plots the second column of the dataset versus the first column as the following,&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;points.png&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Now write another script that applies Kmeans clustering technique to this data set and plot the 
+resulting clusters for a range of input number of clusters. Here is an example plot for a cluster count of 6.&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;clusters6.png&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Make an Elbow plot with the inertia of the clusterings you have done with various cluster counts.&lt;/p&gt;
+
+&lt;p&gt;Now, write a new algorithm implementing the Kmeans method.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;The function that you write must take a two dimensional data as input and the number of clusters to find.&lt;/li&gt;
+  &lt;li&gt;Then the function randomly initializes the centers of the clusters.&lt;/li&gt;
+  &lt;li&gt;Then it computes the distances of each point from each cluster center.&lt;/li&gt;
+  &lt;li&gt;Then it assigns each point to its nearest cluster center.&lt;/li&gt;
+  &lt;li&gt;Based on the members identified for each cluster, the function computes the new cluster centers as the averages of their member points.&lt;/li&gt;
+  &lt;li&gt;Then it compares the new centers with the old centers and if no center has changed by more than a certain threshold, it returns the memberships and the cluster centers as the clustering result. Otherwise, if at least one center has change beyond the arbitrary threshold that you have set (or the user passes to your function), then it repeats all of the above tasks from 3 to the end, until convergence occurs.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Verify the functionality of your implementation with the external package that you originally used to perform Kmeans clustering.&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/clustering-kmeans-implementation/clustering-kmeans-implementation&quot;&gt;Kmeans clustering - an implementation&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on November 29, 2021.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Kmeans clustering: Determining the cluster number using the Elbow method]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/clustering-kmeans-customers/clustering-kmeans-customers"/>
+  <id>https://www.cdslab.org/recipes/programming/clustering-kmeans-customers/clustering-kmeans-customers</id>
+  <published>2021-11-21T00:00:00-07:00</published>
+  <updated>2019-11-21T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#numpy" term="numpy" /><category scheme="https://www.cdslab.org/recipes/tags/#matplotlib" term="matplotlib" /><category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#scikit-learn" term="scikit-learn" /><category scheme="https://www.cdslab.org/recipes/tags/#clustering" term="clustering" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#scatter%20plot" term="scatter plot" /><category scheme="https://www.cdslab.org/recipes/tags/#kmeans" term="kmeans" /><category scheme="https://www.cdslab.org/recipes/tags/#kmeans++" term="kmeans++" /><category scheme="https://www.cdslab.org/recipes/tags/#figure" term="figure" /><category scheme="https://www.cdslab.org/recipes/tags/#random%20number" term="random number" /><category scheme="https://www.cdslab.org/recipes/tags/#pandas" term="pandas" /><category scheme="https://www.cdslab.org/recipes/tags/#read_csv" term="read_csv" /><category scheme="https://www.cdslab.org/recipes/tags/#Elbow%20method" term="Elbow method" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Consider this dataset &lt;a href=&quot;customers.csv&quot; target=&quot;_blank&quot;&gt;customers.csv&lt;/a&gt; of a Mall’s customers containing the details of customers in a mall. Our aim is to cluster the customers based on the relevant features “annual income” and “spending score”. Write a script that reads this dataset and plots the relevant attributes of the dataset against each other like the following,&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;customers.png&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Then, the script performs K-means clustering on the two selected attributes of data with a range of number of clusters. Then use the Elbow method to find the optimal number of clusters for the customers in this dataset.&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/clustering-kmeans-customers/clustering-kmeans-customers&quot;&gt;Kmeans clustering: Determining the cluster number using the Elbow method&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on November 21, 2021.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Regression: Predicting the distribution of the a dataset subjected to a smooth censorship (sample incompleteness)]]></title>
+  
+  <link rel="alternate" type="text/html" href="https://www.cdslab.org/recipes/programming/regression-erf-censored-gaussian-data/regression-erf-censored-gaussian-data"/>
+  <id>https://www.cdslab.org/recipes/programming/regression-erf-censored-gaussian-data/regression-erf-censored-gaussian-data</id>
+  <published>2021-11-19T00:00:00-07:00</published>
+  <updated>2021-11-19T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Amir Shahmoradi</name>
+    <uri>https://www.cdslab.org/recipes</uri>
+    <email>shahmoradi@utexas.edu</email>
+  </author>
+  <category scheme="https://www.cdslab.org/recipes/tags/#MATLAB" term="MATLAB" /><category scheme="https://www.cdslab.org/recipes/tags/#Python" term="Python" /><category scheme="https://www.cdslab.org/recipes/tags/#Gaussian" term="Gaussian" /><category scheme="https://www.cdslab.org/recipes/tags/#Error%20Function" term="Error Function" /><category scheme="https://www.cdslab.org/recipes/tags/#Cumulative%20Distribution%20Function" term="Cumulative Distribution Function" /><category scheme="https://www.cdslab.org/recipes/tags/#integration" term="integration" /><category scheme="https://www.cdslab.org/recipes/tags/#CDF" term="CDF" /><category scheme="https://www.cdslab.org/recipes/tags/#regression" term="regression" /><category scheme="https://www.cdslab.org/recipes/tags/#distribution" term="distribution" /><category scheme="https://www.cdslab.org/recipes/tags/#censored" term="censored" /><category scheme="https://www.cdslab.org/recipes/tags/#sample%20incompleteness" term="sample incompleteness" /><category scheme="https://www.cdslab.org/recipes/tags/#Normal%20distribution" term="Normal distribution" /><category scheme="https://www.cdslab.org/recipes/tags/#visualization" term="visualization" /><category scheme="https://www.cdslab.org/recipes/tags/#plot" term="plot" /><category scheme="https://www.cdslab.org/recipes/tags/#line" term="line" /><category scheme="https://www.cdslab.org/recipes/tags/#figure" term="figure" /><category scheme="https://www.cdslab.org/recipes/tags/#random%20number" term="random number" /><category scheme="https://www.cdslab.org/recipes/tags/#distribution%20function" term="distribution function" /><category scheme="https://www.cdslab.org/recipes/tags/#probability%20density%20function" term="probability density function" /><category scheme="https://www.cdslab.org/recipes/tags/#PDF" term="PDF" /><category scheme="https://www.cdslab.org/recipes/tags/#probability" term="probability" /><category scheme="https://www.cdslab.org/recipes/tags/#objective%20function" term="objective function" /><category scheme="https://www.cdslab.org/recipes/tags/#maximum%20likelihood%20method" term="maximum likelihood method" /><category scheme="https://www.cdslab.org/recipes/tags/#Monte%20Carlo" term="Monte Carlo" /><category scheme="https://www.cdslab.org/recipes/tags/#Markov%20Chain" term="Markov Chain" /><category scheme="https://www.cdslab.org/recipes/tags/#MCMC" term="MCMC" /><category scheme="https://www.cdslab.org/recipes/tags/#ParaMonte" term="ParaMonte" /><category scheme="https://www.cdslab.org/recipes/tags/#ParaDRAM" term="ParaDRAM" /><category scheme="https://www.cdslab.org/recipes/tags/#uncertainty%20quantification" term="uncertainty quantification" />
+  <content type="html">
+  
+    
+&lt;div style=&quot;text-align:center;margin-top:3rem;margin-bottom:2rem;&quot;&gt;
+    
+        &lt;a href=&quot;#problem&quot; style=&quot;display:inline-block;&quot;&gt;
+            &lt;h2 id=&quot;problem&quot; style=&quot;color:red;&quot;&gt;
+                Problem
+            &lt;/h2&gt;
+        &lt;/a&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;Supposed we have observed a dataset of events with one attribute &lt;code&gt;variable&lt;/code&gt; in this file: &lt;a href=&quot;data.csv&quot; target=&quot;_blank&quot;&gt;data.csv&lt;/a&gt;. Plotting these points would yield a blue-colored histogram like the following plot,&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;data.png&quot; width=&quot;900&quot; /&gt;
+&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Unlike the previous problems where the censorship was due to a sharp cutoff on a Gaussian dataset, the smooth cutoff in this problem is due to the following Gaussian model mixed with and inverted Gaussian CDF,&lt;/p&gt;
+
+\[\pi( x | \mu_G, \sigma_G, \mu_C, \sigma_C) \propto \mathcal{N}(x | \mu_G, \sigma_G) \times \frac{1}{2} \Big[ 1 + \text{erf}\Big(\frac{\mu_C-x}{\sigma_C\sqrt{2}}\Big) \Big] ~,\]
+
+&lt;p&gt;where $\mu_G, \sigma_G$ are the mean and standard deviation parameters of the Gaussian distribution and $\mu_G, \sigma_G$ are the unknown parameters of the Gaussian CDF smooth cutoff on this dataset.&lt;/p&gt;
+
+&lt;p&gt;Now our goal is to constrain the four unknown parameters of the above model using the maximum likelihood method. You can use the &lt;a href=&quot;https://www.cdslab.org/paramonte/&quot; target=&quot;_blank&quot;&gt;ParaMonte library&lt;/a&gt; in Python or in MATLAB to explore the resulting log-likelihood function. In such s case, make sure you start your MCMC exploration by a good set of initial parameter values, such that the MCMC sampler can correctly explore the parameter-space without getting lost. You can get help from &lt;a href=&quot;https://www.cdslab.orghttps://www.cdslab.org/recipes/programming/regression-censored-gaussian-data/regression-censored-gaussian-data&quot; target=&quot;_blank&quot;&gt;another relevant problem here&lt;/a&gt;.&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://www.cdslab.org/recipes/programming/regression-erf-censored-gaussian-data/regression-erf-censored-gaussian-data&quot;&gt;Regression: Predicting the distribution of the a dataset subjected to a smooth censorship (sample incompleteness)&lt;/a&gt; was originally published by Amir Shahmoradi at &lt;a href=&quot;https://www.cdslab.org/recipes&quot;&gt;CDSLab Recipes - A repository for all sorts of problems with solutions&lt;/a&gt; on November 19, 2021.&lt;/p&gt;</content>
+</entry>
+
+</feed>
