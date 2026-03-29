@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="utf-8">
+<title>READING DATA FROM THE WORLD WIDE WEB &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<meta name="description" content="CDSLab Recipes">
+<meta name="keywords" content="MATLAB, Python, visualization, web, data transfer, IO, input, output, string, exception, exception handling, raise, try-catch, try-except, scatter plot, urllib, HTTPError, matplotlib, plot, figure">
+
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reading data from the World Wide Web">
+<meta property="og:description" content="CDSLab Recipes">
+<meta property="og:url" content="/recipes/programming/reading-data-from-web/reading-data-from-web">
+<meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
+<meta property="og:image" content="/recipes/images/">
+
+
+
+
+
+<link rel="canonical" href="/recipes/programming/reading-data-from-web/reading-data-from-web">
+<!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>
+<!--
+<link rel="stylesheet" href="/recipes/assets/css/vendor/font-awesome.min.css">
+-->
+<link rel="stylesheet" href="/recipes/assets/css/vendor/normalize.css">
+<link rel="stylesheet" href="/recipes/assets/css/vendor/nprogress.css">
+<link rel="stylesheet" href="/recipes/assets/css/vendor/foundation.min.css">
+<link rel="stylesheet" href="/recipes/assets/css/style.css">
+<link rel="stylesheet" href="/recipes/assets/css/post.css">
+
+<!--Mathjax LaTeX engine-->
+<script>
+    var MathJax = {"HTML-CSS": {scale: 100}};
+</script>
+<style TYPE="text/css">
+    code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        config: ["MMLorHTML.js"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+        jax: ["input/TeX"],
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<link rel="shortcut icon" href="/recipes/favicon.ico">
+
+<link href="/recipes/assets/css/prismOkaidia.css" rel="stylesheet" />
+<link href="/recipes/assets/css/alert.css" rel="stylesheet" />
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    
+</head>
+<body class="post-template" itemscope itemtype="https://schema.org/WebPage">
+
+
+
+    <main id="notepad-post-container-simple" class="notepad-post-container-simple" role="main">
+        <header class="notepad-post-header-simple">
+            <div class="notepad-post-menu-header-simple">
+
+                <a class="notepad-blog-logo" href=https://www.cdslab.org target="_blank"><img src="/recipes/images/logo.png" alt="cdslab.org" /></a>
+                <div class="notepad-blog-menu">      
+                    <div class="notepad-mobile-menu show-for-small">
+                        <a href="#"><i class="fa fa-bars"></i></a>
+                    </div>
+                    <ul class="notepad-menu">
+                        <li class="notepad-mobile-close-btn show-for-small text-right">
+                            <a href="#"><i class="fa fa-times"></i></a>
+                        </li>
+                        
+                            <li>
+                                
+                                    <a href="/recipes/">Home</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/recipes/highlights">Highlights</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/recipes/tags">Tags</a>
+                                
+                            </li>
+                        
+                            <li>
+                                
+                                    <a href="/recipes/about">About</a>
+                                
+                            </li>
+                                    
+                        <li><a href="/recipes/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+                    </ul>
+                </div>
+            </div>
+
+                <div class="notepad-post-title-simple row">
+                    <div class="small-12 columns">
+                        <div class="notepad-post-meta-simple">
+                            <h2><a href="/recipes/programming/reading-data-from-web/reading-data-from-web">Reading data from the World Wide Web</a></h2>
+                            <p>
+                                by <strong><a href="https://www.cdslab.org/people/#amir-shahmoradi" target="_blank">Amir Shahmoradi</a></strong>
+                                
+                                    &#8212; Last updated: 
+                                    <strong><time datetime="2019-07-04T00:00:00-05:00">04 July 2019</time></strong>
+                                
+                                <ul class="tag-box inline">
+                                    <span style="margin-right:1rem;">Tags:</span>
+                                    
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#HTTPError" data-toggle="tooltip" title="Posts tagged with HTTPError" rel="tag">HTTPError</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#IO" data-toggle="tooltip" title="Posts tagged with IO" rel="tag">IO</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#MATLAB" data-toggle="tooltip" title="Posts tagged with MATLAB" rel="tag">MATLAB</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#Python" data-toggle="tooltip" title="Posts tagged with Python" rel="tag">Python</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#data transfer" data-toggle="tooltip" title="Posts tagged with data transfer" rel="tag">data transfer</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#exception" data-toggle="tooltip" title="Posts tagged with exception" rel="tag">exception</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#exception handling" data-toggle="tooltip" title="Posts tagged with exception handling" rel="tag">exception handling</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#figure" data-toggle="tooltip" title="Posts tagged with figure" rel="tag">figure</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#input" data-toggle="tooltip" title="Posts tagged with input" rel="tag">input</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#matplotlib" data-toggle="tooltip" title="Posts tagged with matplotlib" rel="tag">matplotlib</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#output" data-toggle="tooltip" title="Posts tagged with output" rel="tag">output</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#plot" data-toggle="tooltip" title="Posts tagged with plot" rel="tag">plot</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#raise" data-toggle="tooltip" title="Posts tagged with raise" rel="tag">raise</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#scatter plot" data-toggle="tooltip" title="Posts tagged with scatter plot" rel="tag">scatter plot</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#string" data-toggle="tooltip" title="Posts tagged with string" rel="tag">string</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#try-catch" data-toggle="tooltip" title="Posts tagged with try-catch" rel="tag">try-catch</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#try-except" data-toggle="tooltip" title="Posts tagged with try-except" rel="tag">try-except</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#urllib" data-toggle="tooltip" title="Posts tagged with urllib" rel="tag">urllib</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#visualization" data-toggle="tooltip" title="Posts tagged with visualization" rel="tag">visualization</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="/recipes/tags/index.html#web" data-toggle="tooltip" title="Posts tagged with web" rel="tag">web</a>
+                                            </li>
+                                            
+                                        
+                                    
+                                </ul>
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <article class="notepad-post-content post tag-simple">
+
+            <div style="text-align:left;">
+                
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+    
+        <a href="#problem-part-a" style="display:inline-block;">
+            <h2 id="problem-part-a" style="color:red;">
+                Problem Part A
+            </h2>
+        </a>
+    
+</div>
+
+<p>Consider the following web-page address <a href="https://cdslaborg.github.io/DataRepos_SwiftBat/index.html" target="_blank">https://cdslaborg.github.io/DataRepos_SwiftBat/index.html</a>. This is an data table (in HTML language) containing data from the <a href="https://www.nasa.gov/mission_pages/swift/main" target="_blank">NASA Swift satellite</a>. Each row in this table represents information about a <a href="https://en.wikipedia.org/wiki/Gamma-ray_burst" target="_blank">Gamma-Ray Burst (GRB)</a> detection that Swift has made in the past years. Now, corresponding to each of the event IDs, there <em>might</em> exist files that contain some attributes of these events which we wish to plot and understand their behavior against each other.</p>
+
+<p>For example, for the first event in this table, <code>GRB170406x (00745966)</code>, there is a data file which is hidden in a directory on <a href="https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/GRB00745966_ep_flu.txt" target="_blank">https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/GRB00745966_ep_flu.txt</a>. Notice how the event ID (inside paratheses) is inserted into the web address. Now, for each event in the GRB event table, there might exist one such text file hidden on the web directory beginning with <code>https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/</code> (followed by the GRB’s ID) and <code>.txt</code>.</p>
+
+<p>Our goal here is to fetch all these files from the website and save them locally on our computer. Then read their contents one by one and plot the two columns of data in all of these files together on a single plot.</p>
+
+<p>Write a script named <code>fetchDataFromWeb</code> in the language of your own choice that uses this web address: <code>https://raw.githubusercontent.com/cdslaborg/DataRepos_SwiftBat/master/triggers.txt</code> to read a list of all GRB events and then writes the entire table of <code>triggers.txt</code> to a local file with the same name on your device.</p>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+    
+        <a href="#problem-part-b" style="display:inline-block;">
+            <h2 id="problem-part-b" style="color:red;">
+                Problem Part B
+            </h2>
+        </a>
+    
+</div>
+
+<p>Now, add to your script another set of commands that uses the event IDs stored in this file, to generate the corresponding web addresses like,</p>
+
+<p><a href="https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/GRB00745966_ep_flu.txt" target="_blank">https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/GRB00745966_ep_flu.txt</a>.</p>
+
+<p>Then it uses the generated web address to read the content of the page and store it in a local file on your device with the same name as it is stored on the web page (for example, for the given web page, the filename would be <code>GRB00745966_ep_flu.txt</code>).</p>
+
+<p class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Some of the web addresses for the given event IDs do not exist. Therefore, you should exception handling constructs to avoid runtime errors in your code that could break your code prematurely.</p>
+
+<div style="text-align:center;margin-top:4rem;margin-bottom:1rem;">
+    
+    
+    
+    <figure>
+        <a href="#hint-1-python" id="hint-1-python">
+            <img src="/recipes/images/Python.png" width="75px" />
+        </a>
+        <figcaption>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+                Python
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> For the events for which the web address might not exist, for example,
+<br />
+<a href="https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/GRB00680331_ep_flu.txt">https://cdslaborg.github.io/DataRepos_SwiftBat/ep_flu/GRB00680331_ep_flu.txt</a>,
+<br />
+your script will have to raise a <code>urllib.request.HTTPError</code> exception. Write your code such that it can smoothly skip these exceptions. </p>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+    
+        <a href="#problem-part-c" style="display:inline-block;">
+            <h2 id="problem-part-c" style="color:red;">
+                Problem Part C
+            </h2>
+        </a>
+    
+</div>
+
+<p>Now write another script named <code>plotDatafromFile</code>, that reads all of these files in your downloaded set of files one by one and plots the contents of all of them together on a single scatter plot like the following,</p>
+
+<figure>
+    <img src="SwiftDataPlot.png" width="900" />  
+</figure>
+<p><br /></p>
+
+<p class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Remember that some of the data files stored on your computer might be empty and some others might have useless data if the data in the second column of the file is larger than $0$ (data in such files have a different scientific meaning than the other ones. The meaning of that goes beyond the scope of what we are trying to do here, but the important point is that we can simply ignore such files if any data value in the second column is larger than $0$). Therefore, you will have to write your script in such a way that it checks for non-emptiness of the files. In other words, you have to make sure that the file does indeed contain some numerical data. Also, your script must check for the negativity of the values in the column of data in each file. Once you have done all of these checks, you will have to do one final manipulation of the data. Note that the values on the second column of the data files are the log of data in natural Neperian base. Therefore, you will have to transform the values in the second column of the files to the original non-log values via the mathematical function <code>exp()</code> before plotting them (Note that the plot in the figure above is a <strong>log-log plot</strong> and we want to exactly regenerate it). Also, in order to find out how many files you have plotted in the figure, you will have to define a variable counter which increases by one unit, each time a new non-empty negative-second-column data file is read and plotted (you will have to ignore those files that have positive values in the second columns as well as those files that empty). In the end, you will have to set a title for your plot and label the axes of the plot, and save it to an output file, for example, named <code>SwiftDataPlot.png</code>.</p>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+    
+        <a href="#problem-part-d" style="display:inline-block;">
+            <h2 id="problem-part-d" style="color:red;">
+                Problem Part D
+            </h2>
+        </a>
+    
+</div>
+
+<p>Write a script that performs a linear fit to this data that you have plotted and report the best fit slope and intercept that you obtain.</p>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+    
+        <a href="#problem-part-e" style="display:inline-block;">
+            <h2 id="problem-part-e" style="color:red;">
+                Problem Part E
+            </h2>
+        </a>
+    
+</div>
+
+<p>Use the <a href="https://github.com/cdslaborg/paramonte" target="_blank">ParaMonte</a> or any other Monte Carlo sampling package that you want to also compute the uncertainties associated with the slope and intercept of the linear fit to the data.</p>
+
+<p class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> For this part, you can get help from the instructor during the lectures to explain the concepts to you.</p>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+    
+        <a href="#problem-part-f" style="display:inline-block;">
+            <h2 id="problem-part-f" style="color:red;">
+                Problem Part F
+            </h2>
+        </a>
+    
+</div>
+
+<p>By now, you may have realized that each file, that you downloaded and visualized in the above, contains information for a single observed event, and that the rows in each file correspond to different possible <strong>realizations</strong> of the same observation. In other words, the rows represent together the uncertainty in the observation corresponding to the file. The above scatter plot that you have made illustrates all such possible realizations of <strong>all</strong> observations in a single visualization. While the result looks beautiful, sometimes it does not and you may need to reduce the data for a better illustration. For example, one common method is to represent each observation with the mean value of data and and add $1\sigma$ standard deviation error-bars to the mean values in the plots.</p>
+
+<p>Now using the above suggested data-reduction method, make an error-bar plot of the data. For reference, here is an example errobar plot of the reduced data, showing only the mean and standard deviations.</p>
+
+<figure>
+    <img src="SwiftDataPlotReduced.png" width="900" />  
+</figure>
+<p><br /></p>
+
+<p>Compare this graph with the previous one that you generated.</p>
+
+<div style="text-align:center;margin-top:3rem;margin-bottom:2rem;">
+    
+        <a href="#problem-part-g" style="display:inline-block;">
+            <h2 id="problem-part-g" style="color:red;">
+                Problem Part G
+            </h2>
+        </a>
+    
+</div>
+
+<p>Although the above graph looks simpler than the original plot containing all thousands of points, the error bars do not correctly represent the uncertainties. Why? Because the y-error is correlated with x-error in most observations. To see this, compare the original plot of all data points with the latter reduced-data plot. How can we fix this problem, while keeping the plot simple, using only reduced data? The remedy is to use 2D ellipses to represent the $1\sigma$ standard deviations of data on both attributes. Unlike simple error bars, ellipses can capture potential correlations among the two attributes.</p>
+
+<p>Now, instead of representing the attribute error bars independently and individually in the plot, use a single ellipsoid to represent the $1\sigma$ uncertainty for each data point. For this, you will have to form the bivariate covariance matrix of the uncertainty for each observation. Then you pass this covariance matrix along with the mean to the <a href="getEllipsoidBoundary.py" target="_blank">this function</a> to get a set of representative points on the boundary of the ellipse corresponding to the mean and covariance matrix. Then you plot these representative points a closed line on the current plot. You repeat this process for all observation to obtain the full illustration as depicted below.</p>
+
+<figure>
+    <img src="SwiftDataPlotEllipse.png" width="900" />  
+</figure>
+<p><br /></p>
+
+<p>Unlike the previous plots, this ellipsoidal illustration is revealing something new to us never seen before; that the bivariate uncertainty of observations at high <code>epeak</code> values are positively correlated whereas the observations in the low <code>epeak</code> part of the plot are negatively correlated.</p>
+
+<p>To get the color-map seen in the plot, you can use this helper script to define the color for each ellipsoid drawing in the figure.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#### set up color mapping via correlations
+</span>
+<span class="n">cmap</span> <span class="o">=</span> <span class="nc">Struct</span><span class="p">()</span>
+<span class="n">cmap</span><span class="p">.</span><span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">stat</span><span class="p">.</span><span class="n">ndata</span><span class="p">):</span> <span class="n">cmap</span><span class="p">.</span><span class="n">values</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">stat</span><span class="p">.</span><span class="n">cor</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">cmap</span><span class="p">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">(</span><span class="n">cmap</span><span class="p">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">cmap</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">coolwarm</span><span class="sh">"</span>
+
+<span class="kn">import</span> <span class="n">matplotlib.colors</span> <span class="k">as</span> <span class="n">colors</span>
+<span class="kn">import</span> <span class="n">matplotlib.cm</span> <span class="k">as</span> <span class="n">cmx</span>
+
+<span class="n">cmapObject</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">get_cmap</span><span class="p">(</span><span class="n">cmap</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+<span class="c1">#cNorm = colors.Normalize( vmin = np.min(cmap.values), vmax = np.max(cmap.values), clip = True )
+</span><span class="n">cNorm</span> <span class="o">=</span> <span class="n">colors</span><span class="p">.</span><span class="nc">Normalize</span><span class="p">(</span> <span class="n">vmin</span><span class="o">=-</span><span class="mf">1.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">clip</span> <span class="o">=</span> <span class="bp">True</span> <span class="p">)</span>
+<span class="n">mappable</span> <span class="o">=</span> <span class="n">cmx</span><span class="p">.</span><span class="nc">ScalarMappable</span><span class="p">(</span> <span class="n">norm</span> <span class="o">=</span> <span class="n">cNorm</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="n">cmapObject</span> <span class="p">)</span>
+<span class="n">cmap</span><span class="p">.</span><span class="n">_rgba</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">zeros</span><span class="p">(</span> <span class="p">(</span> <span class="nf">len</span><span class="p">(</span><span class="n">cmap</span><span class="p">.</span><span class="n">values</span><span class="p">)</span> <span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">rho</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">(</span><span class="n">cmap</span><span class="p">.</span><span class="n">values</span><span class="p">):</span> <span class="n">cmap</span><span class="p">.</span><span class="n">_rgba</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">mappable</span><span class="p">.</span><span class="nf">to_rgba</span><span class="p">(</span><span class="n">cmap</span><span class="p">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>Here in this code, <code>stat</code> is a data structure containing summary statistics of data, including mean (<code>stat.avg</code>), covariance (<code>stat.cov</code>) and correlation (<code>stat.cor</code>) matrices for each observation. Describe what each line of this helper script does in your answer.</p>
+
+
+            </div>
+        </article>
+        <div class="cf"></div>
+<div class="row text-center">
+    <section class="notepad-post-share">
+        <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Reading data from the World Wide Web&quot;%20https://www.cdslab.org/recipes/programming/reading-data-from-web/reading-data-from-web%20via%20&#64;"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+            <i class="fa fa-twitter"></i>
+        </a>
+        <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://www.cdslab.org/recipes/programming/reading-data-from-web/reading-data-from-web"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+            <i class="fa fa-facebook"></i>
+        </a>
+        
+    </section>
+</div>
+        <div class="cf"></div>
+<div class="notepad-author-info">
+    <div class="row">
+        <section class="notepad-post-author small-12 columns">
+            <a href=https://www.shahmoradi.org target="_blank">
+                <img src="/recipes/images/AmirShahmoradi.png" class="notepad-post-author-avatar" alt="Amir Shahmoradi's photo">
+            </a>
+            <span class="author-label">Author</span>
+            <h1>Amir Shahmoradi</h1>
+            <p><a href="mailto:shahmoradi@utexas.edu" class="author-website">shahmoradi@utexas.edu</a></p>
+            <p>Genius is 99% perspiration and 1% inspiration</p>
+        </section>
+    </div>
+</div> 
+        <div class="cf"></div>
+
+        <section class="notepad-disqus row">
+            <div class="small-12 columns">
+                <h1 class="notepad-comments-header">Comments</h1>
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'shahmoradi'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+        </section>
+
+        <div class="cf"></div>
+        <footer class="notepad-site-footer">
+    <div class="copyright">
+         <!-- <section>Last updated 2026 / 03 / 28</section></br> -->
+         <section>Last updated Saturday, 28 Mar 2026 at 08:25 PM CST</section></br>
+         <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
+         <section>SEIR 365 | Arlington TX 76010</section></br>
+    </div>
+    <div class="social-icons">
+
+        
+        <a href="https://facebook.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+        </a>
+        
+
+        
+        <a href="https://github.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+        </a>
+        
+
+        
+
+        
+        <a href="https://instagram.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-instagram fa-stack-1x"></i>
+            </span>
+        </a>
+        
+
+        
+        <a href="https://medium.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-medium fa-stack-1x"></i>
+                <!--
+                -->
+            </span>
+        </a>
+        
+
+        
+        <a href="https://twitter.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+<div style="color: #000000; float: none; width: 100%; padding-top: 1rem;">
+    <span style="font-size:0.8em">visitor count: 
+        <script type="text/javascript">
+            var sc_project=12051053; 
+            var sc_invisible=0; 
+            var sc_security="e095256f"; 
+            var sc_text=3; 
+            var scJsHost = "https://";
+            document.write("<sc"+"ript type='text/javascript' src='" + scJsHost + 
+            "statcounter.com/counter/counter.js'></"+"script>");
+        </script>
+    </span>
+</div>
+
+
+    </div>
+    <div class="cf"></div>
+</footer> 
+    </main>
+    <!--dynamic page header-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/recipes/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+  <script src="/recipes/assets/js/vendor/modernizr.js"></script>
+  <script src="/recipes/assets/js/foundation.min.js"></script>
+  
+  <script src="/recipes/assets/js/notepad.js"></script>
+  <script src="/recipes/assets/js/scripts.min.js"></script>
+  <script src="/recipes/assets/js/vendor/nprogress.js"></script>
+  
+  <script>
+    $(document).foundation();
+  </script>
+  <script type='text/javascript'>console.log("N/A");</script>
+  <script type='text/javascript'>console.log("https://www.cdslab.org/");</script>
+
+<!--header anchor links-->
+<script src="/recipes/assets/js/autoAnchorLink.js"></script>
+
+<!-- <script src="/recipes/assets/js/prismOkaidia.js"></script>
+<script src="/recipes/assets/js/prismTwilight.js"></script>
+<script src="/recipes/assets/js/prismDefault.js"></script>
+ -->
+<script src="/recipes/assets/js/prismCoy.js"></script> 
+    <!--automatic Table of Content.-->
+    <script src="/recipes/assets/js/autoTOC.js"></script>
+</body>
+</html>

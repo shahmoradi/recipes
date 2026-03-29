@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<title>CDSLAB RECIPES &vert; CDSLAB RECIPES - A REPOSITORY FOR ALL SORTS OF PROBLEMS WITH SOLUTIONS</title>
+<meta name="description" content="CDSLab Recipes -- A cookbook for all sorts of problems">
+<meta name="keywords" content="Computer, Programming, Amir, Shahmoradi, University, Texas, Arlington, Physics">
+
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CDSLab Recipes">
+<meta property="og:description" content="CDSLab Recipes -- A cookbook for all sorts of problems">
+<meta property="og:url" content="/recipes/page7/">
+<meta property="og:site_name" content="CDSLab Recipes - A repository for all sorts of problems with solutions">
+<meta property="og:image" content="/recipes/images/">
+
+
+
+
+
+<link rel="canonical" href="/recipes/page7/">
+<!-- <link href="/recipes/feed.xml" type="application/atom+xml" rel="alternate" title="CDSLab Recipes - A repository for all sorts of problems with solutions Feed"> -->
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>
+<!--
+<link rel="stylesheet" href="/recipes/assets/css/vendor/font-awesome.min.css">
+-->
+<link rel="stylesheet" href="/recipes/assets/css/vendor/normalize.css">
+<link rel="stylesheet" href="/recipes/assets/css/vendor/nprogress.css">
+<link rel="stylesheet" href="/recipes/assets/css/vendor/foundation.min.css">
+<link rel="stylesheet" href="/recipes/assets/css/style.css">
+<link rel="stylesheet" href="/recipes/assets/css/post.css">
+
+<!--Mathjax LaTeX engine-->
+<script>
+    var MathJax = {"HTML-CSS": {scale: 100}};
+</script>
+<style TYPE="text/css">
+    code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        config: ["MMLorHTML.js"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+        jax: ["input/TeX"],
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<link rel="shortcut icon" href="/recipes/favicon.ico">
+
+<link href="/recipes/assets/css/prismOkaidia.css" rel="stylesheet" />
+<link href="/recipes/assets/css/alert.css" rel="stylesheet" />
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+    <body class="home-template" itemscope itemtype="https://schema.org/WebPage">
+        <header class="notepad-site-head">
+    <div class="notepad-site-head-menu">
+        <a class="notepad-blog-logo" href="https://www.cdslab.org" target="_blank"><img src="/recipes/images/logo.png" alt="cdslab.org" /></a>
+        
+        <div class="notepad-blog-menu">      
+            <div class="notepad-mobile-menu show-for-small">
+                <a href="#"><i class="fa fa-bars"></i></a>
+            </div>
+            <ul class="notepad-menu">
+                <li class="notepad-mobile-close-btn show-for-small text-right">
+                    <a href="#"><i class="fa fa-times"></i></a>
+                </li>
+                
+                    <li>
+                    <a href="/recipes/">Home</a>
+                     </li>
+                
+                    <li>
+                    <a href="/recipes/highlights">Highlights</a>
+                     </li>
+                
+                    <li>
+                    <a href="/recipes/tags">Tags</a>
+                     </li>
+                
+                    <li>
+                    <a href="/recipes/about">About</a>
+                     </li>
+                            
+                <li><a href="/recipes/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="notepad-site-head-content">
+            <!--
+            -->
+            <!--
+        <div class="notepad-site-head-bg"></div>
+            -->
+        <h1 class="notepad-blog-title" >
+            <a href="https://www.uta.edu/science/" target="_blank"><img src="/recipes/images/uta.png" width="200px" style="margin-top:-4rem;" ></a><br><br>
+            <span class="notepad-site-head-title-bg" style="text-transform: none">
+                CDSLab Recipes - A repository for all sorts of problems with solutions
+            </span>
+        </h1>
+        <h2 class="notepad-blog-description" style="margin-bottom:-5rem;" >
+          CDSLab Recipes
+        </h2>
+            <!--
+            -->
+    </div>
+</header>
+
+        <main class="notepad-content" role="main">
+            
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2019-07-04T00:00:00-05:00">
+                        <span class="day">
+                            04
+                        </span>
+                        <span class="month-year">
+                            July 2019
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/python-script-full-of-errors/python-script-full-of-errors">
+                            Python script full of errors
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Python Download this Python script. This Python script is full of syntax, runtime, and semantic errors. Please identify and correct these errors, such that code becomes fully executable and outputs the following message on the screen when running from...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#error" title="Other posts tagged error">error</a>&nbsp;<a href="/recipes/tags/index.html#string" title="Other posts tagged string">string</a>&nbsp;<a href="/recipes/tags/index.html#syntax error" title="Other posts tagged syntax error">syntax error</a>&nbsp;<a href="/recipes/tags/index.html#type" title="Other posts tagged type">type</a>&nbsp;<a href="/recipes/tags/index.html#type" title="Other posts tagged type">type</a>&nbsp;<a href="/recipes/tags/index.html#value" title="Other posts tagged value">value</a>&nbsp;<a href="/recipes/tags/index.html#value" title="Other posts tagged value">value</a>&nbsp;<a href="/recipes/tags/index.html#variable" title="Other posts tagged variable">variable</a>&nbsp;<a href="/recipes/tags/index.html#variable" title="Other posts tagged variable">variable</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2019-07-04T00:00:00-05:00">
+                        <span class="day">
+                            04
+                        </span>
+                        <span class="month-year">
+                            July 2019
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/python-dictionary-of-class-members/python-dictionary-of-class-members">
+                            Python dictionary of class members
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Python The following is the name list of all people in a hypothetical class. Christian-Andrew Bagby-wright Matthew Chrysler Niyousha Davachi Pauline Dredger Marcos Guillen Lauren Kuffel Shashank Kumbhare Hany Mahdy Sarah Moorman Andrew Myers Joshua Osborne Rebecca Proni Amir...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#dictionary" title="Other posts tagged dictionary">dictionary</a>&nbsp;<a href="/recipes/tags/index.html#type" title="Other posts tagged type">type</a>&nbsp;<a href="/recipes/tags/index.html#value" title="Other posts tagged value">value</a>&nbsp;<a href="/recipes/tags/index.html#variable" title="Other posts tagged variable">variable</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2019-07-04T00:00:00-05:00">
+                        <span class="day">
+                            04
+                        </span>
+                        <span class="month-year">
+                            July 2019
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/python-call-script-from-bash/python-call-script-from-bash">
+                            Python script call from the Bash command line
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Python Write a Python script that is directly executable from the Git Bash command line, without any need to invoke python interpreter. The script should produce exactly the following output, including line breaks and separations. Each part of the...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#cd" title="Other posts tagged cd">cd</a>&nbsp;<a href="/recipes/tags/index.html#directory" title="Other posts tagged directory">directory</a>&nbsp;<a href="/recipes/tags/index.html#escape character" title="Other posts tagged escape character">escape character</a>&nbsp;<a href="/recipes/tags/index.html#mkdir" title="Other posts tagged mkdir">mkdir</a>&nbsp;<a href="/recipes/tags/index.html#print" title="Other posts tagged print">print</a>&nbsp;<a href="/recipes/tags/index.html#run" title="Other posts tagged run">run</a>&nbsp;<a href="/recipes/tags/index.html#script" title="Other posts tagged script">script</a>&nbsp;<a href="/recipes/tags/index.html#string" title="Other posts tagged string">string</a>&nbsp;<a href="/recipes/tags/index.html#type" title="Other posts tagged type">type</a>&nbsp;<a href="/recipes/tags/index.html#value" title="Other posts tagged value">value</a>&nbsp;<a href="/recipes/tags/index.html#variable" title="Other posts tagged variable">variable</a>&nbsp;<a href="/recipes/tags/index.html#working directory" title="Other posts tagged working directory">working directory</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2019-07-04T00:00:00-05:00">
+                        <span class="day">
+                            04
+                        </span>
+                        <span class="month-year">
+                            July 2019
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/precision-error-paradox/precision-error-paradox">
+                            Impact of machine precision on numerical computation
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem MATLAB Consider the following code named epsError.m, eps = 1.0; while 1.0 ~= 1.0 + eps disp(num2str(eps)); eps = eps / 2.0; end disp(['final eps:', num2str(eps)]); Explain what the code is doing. Run the code and observe the output....</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#MATLAB" title="Other posts tagged MATLAB">MATLAB</a>&nbsp;<a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#error" title="Other posts tagged error">error</a>&nbsp;<a href="/recipes/tags/index.html#for-loop" title="Other posts tagged for-loop">for-loop</a>&nbsp;<a href="/recipes/tags/index.html#loop" title="Other posts tagged loop">loop</a>&nbsp;<a href="/recipes/tags/index.html#precision" title="Other posts tagged precision">precision</a>&nbsp;<a href="/recipes/tags/index.html#roundoff" title="Other posts tagged roundoff">roundoff</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2019-07-04T00:00:00-05:00">
+                        <span class="day">
+                            04
+                        </span>
+                        <span class="month-year">
+                            July 2019
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/polar-cartesian-coordinates-conversion/polar-cartesian-coordinates-conversion">
+                            Converting polar and Cartesian vector representations using functions and structures
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem A vector is a mathematical quantity that has both magnitude and direction. A 2-dimensional vector can be represented as a displacement along $x$ and $y$ axes in rectangular (Cartesian) coordinates or, by a distance $r$ and an angle $\phi$...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#Cartesian" title="Other posts tagged Cartesian">Cartesian</a>&nbsp;<a href="/recipes/tags/index.html#MATLAB" title="Other posts tagged MATLAB">MATLAB</a>&nbsp;<a href="/recipes/tags/index.html#branching" title="Other posts tagged branching">branching</a>&nbsp;<a href="/recipes/tags/index.html#coordinates" title="Other posts tagged coordinates">coordinates</a>&nbsp;<a href="/recipes/tags/index.html#function" title="Other posts tagged function">function</a>&nbsp;<a href="/recipes/tags/index.html#isfield" title="Other posts tagged isfield">isfield</a>&nbsp;<a href="/recipes/tags/index.html#logical" title="Other posts tagged logical">logical</a>&nbsp;<a href="/recipes/tags/index.html#polar" title="Other posts tagged polar">polar</a>&nbsp;<a href="/recipes/tags/index.html#structure" title="Other posts tagged structure">structure</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2019-07-04T00:00:00-05:00">
+                        <span class="day">
+                            04
+                        </span>
+                        <span class="month-year">
+                            July 2019
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/operator-precedence/operator-precedence">
+                            Operator precedence
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Operator Precedence. Think about what the results would be for the following expressions, and then type them into the terminal to verify your answers. Briefly explain the results for each one. &gt;&gt; 1\2 &gt;&gt; 1/2 &gt;&gt; int8(1/2) &gt;&gt; int8(1/3)...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#MATLAB" title="Other posts tagged MATLAB">MATLAB</a>&nbsp;<a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#operator" title="Other posts tagged operator">operator</a>&nbsp;<a href="/recipes/tags/index.html#operator precedence" title="Other posts tagged operator precedence">operator precedence</a>&nbsp;<a href="/recipes/tags/index.html#precedence" title="Other posts tagged precedence">precedence</a>&nbsp;<a href="/recipes/tags/index.html#type" title="Other posts tagged type">type</a>&nbsp;<a href="/recipes/tags/index.html#value" title="Other posts tagged value">value</a>&nbsp;<a href="/recipes/tags/index.html#variable" title="Other posts tagged variable">variable</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2019-07-04T00:00:00-05:00">
+                        <span class="day">
+                            04
+                        </span>
+                        <span class="month-year">
+                            July 2019
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/one-line-check-even-number/one-line-check-even-number">
+                            Check if number is even in one line function definition
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>
+
+    
+        
+            
+                Problem
+            
+        
+    
+
+
+Write a one-line function is_even() that returns True is the input value to the function is an even number, and False otherwise. For example,
+
+is_even(3)
+
+False
+
+
+</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#even" title="Other posts tagged even">even</a>&nbsp;<a href="/recipes/tags/index.html#function" title="Other posts tagged function">function</a>&nbsp;<a href="/recipes/tags/index.html#logical" title="Other posts tagged logical">logical</a>&nbsp;<a href="/recipes/tags/index.html#modulo" title="Other posts tagged modulo">modulo</a>&nbsp;<a href="/recipes/tags/index.html#modulus" title="Other posts tagged modulus">modulus</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2019-07-04T00:00:00-05:00">
+                        <span class="day">
+                            04
+                        </span>
+                        <span class="month-year">
+                            July 2019
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/object-boundary-detection/object-boundary-detection">
+                            Getting the boundary of objects in images
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Consider this MATLAB data file data3D.mat which contains a 3-dimensional $41\times 61\times 16$ matrix of the brain of a rat. Write a MATLAB script that creates and saves a graph of all $X-Y$ information for the 16 slices along...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#MATLAB" title="Other posts tagged MATLAB">MATLAB</a>&nbsp;<a href="/recipes/tags/index.html#bwboundaries" title="Other posts tagged bwboundaries">bwboundaries</a>&nbsp;<a href="/recipes/tags/index.html#cell array" title="Other posts tagged cell array">cell array</a>&nbsp;<a href="/recipes/tags/index.html#figure" title="Other posts tagged figure">figure</a>&nbsp;<a href="/recipes/tags/index.html#image" title="Other posts tagged image">image</a>&nbsp;<a href="/recipes/tags/index.html#imagesc" title="Other posts tagged imagesc">imagesc</a>&nbsp;<a href="/recipes/tags/index.html#object boundary" title="Other posts tagged object boundary">object boundary</a>&nbsp;<a href="/recipes/tags/index.html#plot" title="Other posts tagged plot">plot</a>&nbsp;<a href="/recipes/tags/index.html#subplot" title="Other posts tagged subplot">subplot</a>&nbsp;<a href="/recipes/tags/index.html#visualization" title="Other posts tagged visualization">visualization</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2019-07-04T00:00:00-05:00">
+                        <span class="day">
+                            04
+                        </span>
+                        <span class="month-year">
+                            July 2019
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/monte-carlo-sampling-of-distribution-functions/monte-carlo-sampling-of-distribution-functions">
+                            Monte Carlo sampling of distribution functions
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Suppose that you wanted to generate points whose distribution follows the blue curve in the following curve, whose mathematical formulation is known (in the case here, the function is just the sum of two Gaussian distributions). Now, one way...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#Monte Carlo" title="Other posts tagged Monte Carlo">Monte Carlo</a>&nbsp;<a href="/recipes/tags/index.html#PDF" title="Other posts tagged PDF">PDF</a>&nbsp;<a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#distribution function" title="Other posts tagged distribution function">distribution function</a>&nbsp;<a href="/recipes/tags/index.html#figure" title="Other posts tagged figure">figure</a>&nbsp;<a href="/recipes/tags/index.html#line" title="Other posts tagged line">line</a>&nbsp;<a href="/recipes/tags/index.html#matplotlib" title="Other posts tagged matplotlib">matplotlib</a>&nbsp;<a href="/recipes/tags/index.html#numpy" title="Other posts tagged numpy">numpy</a>&nbsp;<a href="/recipes/tags/index.html#plot" title="Other posts tagged plot">plot</a>&nbsp;<a href="/recipes/tags/index.html#probability" title="Other posts tagged probability">probability</a>&nbsp;<a href="/recipes/tags/index.html#probability density function" title="Other posts tagged probability density function">probability density function</a>&nbsp;<a href="/recipes/tags/index.html#random number" title="Other posts tagged random number">random number</a>&nbsp;<a href="/recipes/tags/index.html#simulation" title="Other posts tagged simulation">simulation</a>&nbsp;<a href="/recipes/tags/index.html#visualization" title="Other posts tagged visualization">visualization</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2019-07-04T00:00:00-05:00">
+                        <span class="day">
+                            04
+                        </span>
+                        <span class="month-year">
+                            July 2019
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/monte-carlo-approximation-of-pi/monte-carlo-approximation-of-pi">
+                            Monte Carlo approximation of the number Pi
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Suppose we did not know the value of $\pi$ and we wanted to estimate its value using Monte Carlo methods. One practical approach is to draw a square of unit side, with its diagonal opposite corners extending from the...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#MATLAB" title="Other posts tagged MATLAB">MATLAB</a>&nbsp;<a href="/recipes/tags/index.html#Monte Carlo" title="Other posts tagged Monte Carlo">Monte Carlo</a>&nbsp;<a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#figure" title="Other posts tagged figure">figure</a>&nbsp;<a href="/recipes/tags/index.html#line" title="Other posts tagged line">line</a>&nbsp;<a href="/recipes/tags/index.html#matplotlib" title="Other posts tagged matplotlib">matplotlib</a>&nbsp;<a href="/recipes/tags/index.html#numpy" title="Other posts tagged numpy">numpy</a>&nbsp;<a href="/recipes/tags/index.html#plot" title="Other posts tagged plot">plot</a>&nbsp;<a href="/recipes/tags/index.html#probability" title="Other posts tagged probability">probability</a>&nbsp;<a href="/recipes/tags/index.html#random number" title="Other posts tagged random number">random number</a>&nbsp;<a href="/recipes/tags/index.html#simulation" title="Other posts tagged simulation">simulation</a>&nbsp;<a href="/recipes/tags/index.html#visualization" title="Other posts tagged visualization">visualization</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2019-07-04T00:00:00-05:00">
+                        <span class="day">
+                            04
+                        </span>
+                        <span class="month-year">
+                            July 2019
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/modifying-loop-index-value/modifying-loop-index-value">
+                            Modifying the index of a for-loop
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Python Consider the following list, numbers = list(range(10)) print(numbers) [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] Now run the following code, given the above list. Explain the weird behavior that you observe. for n in numbers:...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#for-loop" title="Other posts tagged for-loop">for-loop</a>&nbsp;<a href="/recipes/tags/index.html#loop" title="Other posts tagged loop">loop</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2019-07-04T00:00:00-05:00">
+                        <span class="day">
+                            04
+                        </span>
+                        <span class="month-year">
+                            July 2019
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/matrix-initialization/matrix-initialization">
+                            Matrix Initialization
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Provide three different methods of generating the matrix a, one method should use the diag() function, one should use the eye function, and one should use the zeros function. &gt;&gt; a a = 2 0 0 0 2 0...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#MATLAB" title="Other posts tagged MATLAB">MATLAB</a>&nbsp;<a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#diag" title="Other posts tagged diag">diag</a>&nbsp;<a href="/recipes/tags/index.html#eye" title="Other posts tagged eye">eye</a>&nbsp;<a href="/recipes/tags/index.html#initialization" title="Other posts tagged initialization">initialization</a>&nbsp;<a href="/recipes/tags/index.html#matrix" title="Other posts tagged matrix">matrix</a>&nbsp;<a href="/recipes/tags/index.html#numpy" title="Other posts tagged numpy">numpy</a>&nbsp;<a href="/recipes/tags/index.html#type" title="Other posts tagged type">type</a>&nbsp;<a href="/recipes/tags/index.html#value" title="Other posts tagged value">value</a>&nbsp;<a href="/recipes/tags/index.html#variable" title="Other posts tagged variable">variable</a>&nbsp;<a href="/recipes/tags/index.html#zeros" title="Other posts tagged zeros">zeros</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2019-07-04T00:00:00-05:00">
+                        <span class="day">
+                            04
+                        </span>
+                        <span class="month-year">
+                            July 2019
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/matlab-working-directory/matlab-working-directory">
+                            MATLAB working directory
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Part 1 MATLAB Use MATLAB help to find out how you can create a new directory named mynewdir from the MATLAB command line. Then change the working directory the newly-created directory. Then create a MATLAB script in this directory...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#MATLAB" title="Other posts tagged MATLAB">MATLAB</a>&nbsp;<a href="/recipes/tags/index.html#cd" title="Other posts tagged cd">cd</a>&nbsp;<a href="/recipes/tags/index.html#directory" title="Other posts tagged directory">directory</a>&nbsp;<a href="/recipes/tags/index.html#figure" title="Other posts tagged figure">figure</a>&nbsp;<a href="/recipes/tags/index.html#mkdir" title="Other posts tagged mkdir">mkdir</a>&nbsp;<a href="/recipes/tags/index.html#plot" title="Other posts tagged plot">plot</a>&nbsp;<a href="/recipes/tags/index.html#script" title="Other posts tagged script">script</a>&nbsp;<a href="/recipes/tags/index.html#type" title="Other posts tagged type">type</a>&nbsp;<a href="/recipes/tags/index.html#value" title="Other posts tagged value">value</a>&nbsp;<a href="/recipes/tags/index.html#variable" title="Other posts tagged variable">variable</a>&nbsp;<a href="/recipes/tags/index.html#working directory" title="Other posts tagged working directory">working directory</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2019-07-04T00:00:00-05:00">
+                        <span class="day">
+                            04
+                        </span>
+                        <span class="month-year">
+                            July 2019
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/matlab-subplots/matlab-subplots">
+                            Subplots in MATLAB
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem MATLAB Consider this MATLAB data file data3D.mat which contains a 3-dimensional $41\times 61\times 16$ matrix of the brain of a rat. Write a MATLAB script that creates and saves a graph of all $X-Y$ information for the 16 slices...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#MATLAB" title="Other posts tagged MATLAB">MATLAB</a>&nbsp;<a href="/recipes/tags/index.html#figure" title="Other posts tagged figure">figure</a>&nbsp;<a href="/recipes/tags/index.html#plot" title="Other posts tagged plot">plot</a>&nbsp;<a href="/recipes/tags/index.html#subplot" title="Other posts tagged subplot">subplot</a>&nbsp;<a href="/recipes/tags/index.html#visualization" title="Other posts tagged visualization">visualization</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2019-07-04T00:00:00-05:00">
+                        <span class="day">
+                            04
+                        </span>
+                        <span class="month-year">
+                            July 2019
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/matlab-script-full-of-errors/matlab-script-full-of-errors">
+                            MATLAB script full of errors
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem MATLAB Download this code. This code is full syntax errors. Fix the errors and submit the corrected code with name matlab_script_full_of_errors_fixed.m in your folder for this HW. Explain in front of each corrected MATLAB statement, why the error occurred....</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#MATLAB" title="Other posts tagged MATLAB">MATLAB</a>&nbsp;<a href="/recipes/tags/index.html#error" title="Other posts tagged error">error</a>&nbsp;<a href="/recipes/tags/index.html#string" title="Other posts tagged string">string</a>&nbsp;<a href="/recipes/tags/index.html#syntax error" title="Other posts tagged syntax error">syntax error</a>&nbsp;<a href="/recipes/tags/index.html#type" title="Other posts tagged type">type</a>&nbsp;<a href="/recipes/tags/index.html#value" title="Other posts tagged value">value</a>&nbsp;<a href="/recipes/tags/index.html#variable" title="Other posts tagged variable">variable</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2019-07-04T00:00:00-05:00">
+                        <span class="day">
+                            04
+                        </span>
+                        <span class="month-year">
+                            July 2019
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/largest-prime-number-smaller-than-input/largest-prime-number-smaller-than-input">
+                            Getting the largest prime number smaller than the input value
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem MATLAB Suppose you want to find the largest prime number that is smaller than a given input value by the user. Write a function named getLargestPrime that does so, using for-loop, break, and MATLAB’s intrinsic function isprime(). Here is...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#MATLAB" title="Other posts tagged MATLAB">MATLAB</a>&nbsp;<a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#branching" title="Other posts tagged branching">branching</a>&nbsp;<a href="/recipes/tags/index.html#for-loop" title="Other posts tagged for-loop">for-loop</a>&nbsp;<a href="/recipes/tags/index.html#function" title="Other posts tagged function">function</a>&nbsp;<a href="/recipes/tags/index.html#isprime" title="Other posts tagged isprime">isprime</a>&nbsp;<a href="/recipes/tags/index.html#logical" title="Other posts tagged logical">logical</a>&nbsp;<a href="/recipes/tags/index.html#prime number" title="Other posts tagged prime number">prime number</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2019-07-04T00:00:00-05:00">
+                        <span class="day">
+                            04
+                        </span>
+                        <span class="month-year">
+                            July 2019
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/isprime-recursive/isprime-recursive">
+                            Checking if an input is a prime number (via recursive function calls)?
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Write a logical (boolean) function named isPrime(n) that takes in an integer number n, and finds whether it is a Prime number or not. Example output is the following, isPrime(23) True isPrime(12) False Note that you do not need...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#MATLAB" title="Other posts tagged MATLAB">MATLAB</a>&nbsp;<a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#branching" title="Other posts tagged branching">branching</a>&nbsp;<a href="/recipes/tags/index.html#function" title="Other posts tagged function">function</a>&nbsp;<a href="/recipes/tags/index.html#isprime" title="Other posts tagged isprime">isprime</a>&nbsp;<a href="/recipes/tags/index.html#logical" title="Other posts tagged logical">logical</a>&nbsp;<a href="/recipes/tags/index.html#nested function" title="Other posts tagged nested function">nested function</a>&nbsp;<a href="/recipes/tags/index.html#prime number" title="Other posts tagged prime number">prime number</a>&nbsp;<a href="/recipes/tags/index.html#recursive" title="Other posts tagged recursive">recursive</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2019-07-04T00:00:00-05:00">
+                        <span class="day">
+                            04
+                        </span>
+                        <span class="month-year">
+                            July 2019
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/integer-overflow/integer-overflow">
+                            Integer overflow
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Overflow. What would happen if you went beyond the range for a particular type? For example, the largest integer that can be stored in int8 is 127, and the smallest integer is -128, so what would happen if we...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#MATLAB" title="Other posts tagged MATLAB">MATLAB</a>&nbsp;<a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#integer" title="Other posts tagged integer">integer</a>&nbsp;<a href="/recipes/tags/index.html#overflow" title="Other posts tagged overflow">overflow</a>&nbsp;<a href="/recipes/tags/index.html#semantic error" title="Other posts tagged semantic error">semantic error</a>&nbsp;<a href="/recipes/tags/index.html#type" title="Other posts tagged type">type</a>&nbsp;<a href="/recipes/tags/index.html#value" title="Other posts tagged value">value</a>&nbsp;<a href="/recipes/tags/index.html#variable" title="Other posts tagged variable">variable</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2019-07-04T00:00:00-05:00">
+                        <span class="day">
+                            04
+                        </span>
+                        <span class="month-year">
+                            July 2019
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/implementing-gaussian-function/implementing-gaussian-function">
+                            Implementing the Bell-shaped (Gaussian) function
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem The bell-shaped Gaussian probability density function, \[f(x)=\frac{1}{\sqrt{2\pi}\sigma}\exp\bigg[ -\frac{1}{2}\bigg( \frac{x-\mu}{\sigma} \bigg)^2 \bigg]\] is one of the most widely used functions in science and technology. The parameters of the function (mu,sigma&gt;0) are prescribed real numbers. Write a program for evaluating this...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#Gaussian" title="Other posts tagged Gaussian">Gaussian</a>&nbsp;<a href="/recipes/tags/index.html#MATLAB" title="Other posts tagged MATLAB">MATLAB</a>&nbsp;<a href="/recipes/tags/index.html#Python" title="Other posts tagged Python">Python</a>&nbsp;<a href="/recipes/tags/index.html#bell-shaped" title="Other posts tagged bell-shaped">bell-shaped</a>&nbsp;<a href="/recipes/tags/index.html#pi" title="Other posts tagged pi">pi</a>&nbsp;<a href="/recipes/tags/index.html#type" title="Other posts tagged type">type</a>&nbsp;<a href="/recipes/tags/index.html#value" title="Other posts tagged value">value</a>&nbsp;<a href="/recipes/tags/index.html#variable" title="Other posts tagged variable">variable</a>
+                </div>
+            </div>
+        </article>
+	
+        <article class="notepad-index-post post row">
+            <div class="small-12 medium-3 large-2 columns datetime">
+                <span class="notepad-post-meta">
+                    <time datetime="2019-07-04T00:00:00-05:00">
+                        <span class="day">
+                            04
+                        </span>
+                        <span class="month-year">
+                            July 2019
+                        </span>
+                    </time>
+                </span>
+            </div>
+            <div class="small-12 medium-9 large-10 columns">
+                <header class="notepad-post-header">
+                    <h6 class="notepad-post-title">
+                        <a href="/recipes/programming/function-generators/function-generators">
+                            Function generators
+                        </a>
+                    </h6>
+                </header>
+                <section class="notepad-post-excerpt">
+                    <p>Problem Write a nested function that evaluates a polynomial of the form $y = ax^2+bx+c$. The host function genFunc() should be able to take a varying number of arguments using varargin with a maximum of 3 arguments (a,b,c) to initialize...</p>
+                </section>
+                <div class="notepad-index-post-tags">
+                    
+                    
+                    <a href="/recipes/tags/index.html#MATLAB" title="Other posts tagged MATLAB">MATLAB</a>&nbsp;<a href="/recipes/tags/index.html#branching" title="Other posts tagged branching">branching</a>&nbsp;<a href="/recipes/tags/index.html#function" title="Other posts tagged function">function</a>&nbsp;<a href="/recipes/tags/index.html#function generator" title="Other posts tagged function generator">function generator</a>&nbsp;<a href="/recipes/tags/index.html#generator" title="Other posts tagged generator">generator</a>&nbsp;<a href="/recipes/tags/index.html#nargin" title="Other posts tagged nargin">nargin</a>&nbsp;<a href="/recipes/tags/index.html#nested function" title="Other posts tagged nested function">nested function</a>&nbsp;<a href="/recipes/tags/index.html#switch" title="Other posts tagged switch">switch</a>
+                </div>
+            </div>
+        </article>
+	
+    <nav class="pagination" role="navigation">
+        
+            
+            <a class="newer-posts" href="/recipes/page6"><i class="fa fa-chevron-left"></i> Newer</a>
+            
+        
+        <span class="page-number">Page 7 of 8</span>
+         
+            <a class="older-posts" href="/recipes/page8/">Older <i class="fa fa-chevron-right"></i></a>
+        
+    </nav>
+
+        </main>
+        <footer class="notepad-site-footer">
+    <div class="copyright">
+         <!-- <section>Last updated 2026 / 03 / 28</section></br> -->
+         <section>Last updated Saturday, 28 Mar 2026 at 08:25 PM CST</section></br>
+         <section>All content exclusively maintained by <a href=https://www.shahmoradi.org target="_blank">Amir Shahmoradi</a> <!-- &copy;--> </section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/physics/" target="_blank">Department of Physics | Data Science Program</a></section></br>
+         <section><a class="icon-ghost" href="https://www.uta.edu/" target="_blank">The University of Texas at Arlington</a></section></br>
+         <section>SEIR 365 | Arlington TX 76010</section></br>
+    </div>
+    <div class="social-icons">
+
+        
+        <a href="https://facebook.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+        </a>
+        
+
+        
+        <a href="https://github.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+        </a>
+        
+
+        
+
+        
+        <a href="https://instagram.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-instagram fa-stack-1x"></i>
+            </span>
+        </a>
+        
+
+        
+        <a href="https://medium.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-medium fa-stack-1x"></i>
+                <!--
+                -->
+            </span>
+        </a>
+        
+
+        
+        <a href="https://twitter.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+<div style="color: #000000; float: none; width: 100%; padding-top: 1rem;">
+    <span style="font-size:0.8em">visitor count: 
+        <script type="text/javascript">
+            var sc_project=12051053; 
+            var sc_invisible=0; 
+            var sc_security="e095256f"; 
+            var sc_text=3; 
+            var scJsHost = "https://";
+            document.write("<sc"+"ript type='text/javascript' src='" + scJsHost + 
+            "statcounter.com/counter/counter.js'></"+"script>");
+        </script>
+    </span>
+</div>
+
+
+    </div>
+    <div class="cf"></div>
+</footer>
+        <!--dynamic page header-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/recipes/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+  <script src="/recipes/assets/js/vendor/modernizr.js"></script>
+  <script src="/recipes/assets/js/foundation.min.js"></script>
+  
+  <script src="/recipes/assets/js/notepad.js"></script>
+  <script src="/recipes/assets/js/scripts.min.js"></script>
+  <script src="/recipes/assets/js/vendor/nprogress.js"></script>
+  
+  <script>
+    $(document).foundation();
+  </script>
+  <script type='text/javascript'>console.log("N/A");</script>
+  <script type='text/javascript'>console.log("https://www.cdslab.org/");</script>
+
+<!--header anchor links-->
+<script src="/recipes/assets/js/autoAnchorLink.js"></script>
+
+<!-- <script src="/recipes/assets/js/prismOkaidia.js"></script>
+<script src="/recipes/assets/js/prismTwilight.js"></script>
+<script src="/recipes/assets/js/prismDefault.js"></script>
+ -->
+<script src="/recipes/assets/js/prismCoy.js"></script>  
+    </body>
+</html>
